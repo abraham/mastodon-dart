@@ -1,0 +1,1339 @@
+# mastodon.api.AccountsApi
+
+## Load the API package
+```dart
+import 'package:mastodon/api.dart';
+```
+
+All URIs are relative to *https://mastodon.example*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**createAccount**](AccountsApi.md#createaccount) | **POST** /api/v1/accounts | Register an account
+[**getAccount**](AccountsApi.md#getaccount) | **GET** /api/v1/accounts/{id} | Get account
+[**getAccountEndorsements**](AccountsApi.md#getaccountendorsements) | **GET** /api/v1/accounts/{id}/endorsements | Get featured accounts
+[**getAccountFeaturedTags**](AccountsApi.md#getaccountfeaturedtags) | **GET** /api/v1/accounts/{id}/featured_tags | Get account&#39;s featured tags
+[**getAccountFollowers**](AccountsApi.md#getaccountfollowers) | **GET** /api/v1/accounts/{id}/followers | Get account&#39;s followers
+[**getAccountFollowing**](AccountsApi.md#getaccountfollowing) | **GET** /api/v1/accounts/{id}/following | Get account&#39;s following
+[**getAccountIdentityProofs**](AccountsApi.md#getaccountidentityproofs) | **GET** /api/v1/accounts/{id}/identity_proofs | Identity proofs
+[**getAccountLists**](AccountsApi.md#getaccountlists) | **GET** /api/v1/accounts/{id}/lists | Get lists containing this account
+[**getAccountLookup**](AccountsApi.md#getaccountlookup) | **GET** /api/v1/accounts/lookup | Lookup account ID from Webfinger address
+[**getAccountRelationships**](AccountsApi.md#getaccountrelationships) | **GET** /api/v1/accounts/relationships | Check relationships to other accounts
+[**getAccountSearch**](AccountsApi.md#getaccountsearch) | **GET** /api/v1/accounts/search | Search for matching accounts
+[**getAccountStatuses**](AccountsApi.md#getaccountstatuses) | **GET** /api/v1/accounts/{id}/statuses | Get account&#39;s statuses
+[**getAccounts**](AccountsApi.md#getaccounts) | **GET** /api/v1/accounts | Get multiple accounts
+[**getAccountsVerifyCredentials**](AccountsApi.md#getaccountsverifycredentials) | **GET** /api/v1/accounts/verify_credentials | Verify account credentials
+[**getFamiliarFollowers**](AccountsApi.md#getfamiliarfollowers) | **GET** /api/v1/accounts/familiar_followers | Find familiar followers
+[**patchAccountsUpdateCredentials**](AccountsApi.md#patchaccountsupdatecredentials) | **PATCH** /api/v1/accounts/update_credentials | Update account credentials
+[**postAccountBlock**](AccountsApi.md#postaccountblock) | **POST** /api/v1/accounts/{id}/block | Block account
+[**postAccountEndorse**](AccountsApi.md#postaccountendorse) | **POST** /api/v1/accounts/{id}/endorse | Feature account on your profile
+[**postAccountFollow**](AccountsApi.md#postaccountfollow) | **POST** /api/v1/accounts/{id}/follow | Follow account
+[**postAccountMute**](AccountsApi.md#postaccountmute) | **POST** /api/v1/accounts/{id}/mute | Mute account
+[**postAccountNote**](AccountsApi.md#postaccountnote) | **POST** /api/v1/accounts/{id}/note | Set private note on profile
+[**postAccountPin**](AccountsApi.md#postaccountpin) | **POST** /api/v1/accounts/{id}/pin | Feature account on your profile
+[**postAccountRemoveFromFollowers**](AccountsApi.md#postaccountremovefromfollowers) | **POST** /api/v1/accounts/{id}/remove_from_followers | Remove account from followers
+[**postAccountUnblock**](AccountsApi.md#postaccountunblock) | **POST** /api/v1/accounts/{id}/unblock | Unblock account
+[**postAccountUnendorse**](AccountsApi.md#postaccountunendorse) | **POST** /api/v1/accounts/{id}/unendorse | Unfeature account from profile
+[**postAccountUnfollow**](AccountsApi.md#postaccountunfollow) | **POST** /api/v1/accounts/{id}/unfollow | Unfollow account
+[**postAccountUnmute**](AccountsApi.md#postaccountunmute) | **POST** /api/v1/accounts/{id}/unmute | Unmute account
+[**postAccountUnpin**](AccountsApi.md#postaccountunpin) | **POST** /api/v1/accounts/{id}/unpin | Unfeature account from profile
+
+
+# **createAccount**
+> Token createAccount(createAccountRequest)
+
+Register an account
+
+Creates a user and account records. Returns an account access token for the app that initiated the request. The app should save this token for later, and should wait for the user to confirm their account by clicking a link in their email inbox.
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2ClientCredentials
+//defaultApiClient.getAuthentication<OAuth>('OAuth2ClientCredentials').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = Mastodon().getAccountsApi();
+final CreateAccountRequest createAccountRequest = ; // CreateAccountRequest | JSON request body parameters
+
+try {
+    final response = api.createAccount(createAccountRequest);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AccountsApi->createAccount: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **createAccountRequest** | [**CreateAccountRequest**](CreateAccountRequest.md)| JSON request body parameters | 
+
+### Return type
+
+[**Token**](Token.md)
+
+### Authorization
+
+[OAuth2ClientCredentials](../README.md#OAuth2ClientCredentials)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getAccount**
+> Account getAccount(id)
+
+Get account
+
+View information about a profile.
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+
+final api = Mastodon().getAccountsApi();
+final String id = id_example; // String | id parameter
+
+try {
+    final response = api.getAccount(id);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AccountsApi->getAccount: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| id parameter | 
+
+### Return type
+
+[**Account**](Account.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getAccountEndorsements**
+> Account getAccountEndorsements(id, limit, maxId, sinceId)
+
+Get featured accounts
+
+Accounts that the user is currently featuring on their profile.
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+
+final api = Mastodon().getAccountsApi();
+final String id = id_example; // String | id parameter
+final int limit = 56; // int | Maximum number of results to return. Defaults to 40 accounts. Max 80 accounts.
+final String maxId = maxId_example; // String | Internal parameter. Use HTTP `Link` header for pagination.
+final String sinceId = sinceId_example; // String | Internal parameter. Use HTTP `Link` header for pagination.
+
+try {
+    final response = api.getAccountEndorsements(id, limit, maxId, sinceId);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AccountsApi->getAccountEndorsements: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| id parameter | 
+ **limit** | **int**| Maximum number of results to return. Defaults to 40 accounts. Max 80 accounts. | [optional] [default to 40]
+ **maxId** | **String**| Internal parameter. Use HTTP `Link` header for pagination. | [optional] 
+ **sinceId** | **String**| Internal parameter. Use HTTP `Link` header for pagination. | [optional] 
+
+### Return type
+
+[**Account**](Account.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getAccountFeaturedTags**
+> List<FeaturedTag> getAccountFeaturedTags(id)
+
+Get account's featured tags
+
+Tags featured by this account.
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+
+final api = Mastodon().getAccountsApi();
+final String id = id_example; // String | id parameter
+
+try {
+    final response = api.getAccountFeaturedTags(id);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AccountsApi->getAccountFeaturedTags: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| id parameter | 
+
+### Return type
+
+[**List&lt;FeaturedTag&gt;**](FeaturedTag.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getAccountFollowers**
+> List<Account> getAccountFollowers(id, limit, maxId, minId, sinceId)
+
+Get account's followers
+
+Accounts which follow the given account, if network is not hidden by the account owner.
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+
+final api = Mastodon().getAccountsApi();
+final String id = id_example; // String | id parameter
+final int limit = 56; // int | Maximum number of results to return. Defaults to 40 accounts. Max 80 accounts.
+final String maxId = maxId_example; // String | Internal parameter. Use HTTP `Link` header for pagination.
+final String minId = minId_example; // String | Internal parameter. Use HTTP `Link` header for pagination.
+final String sinceId = sinceId_example; // String | Internal parameter. Use HTTP `Link` header for pagination.
+
+try {
+    final response = api.getAccountFollowers(id, limit, maxId, minId, sinceId);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AccountsApi->getAccountFollowers: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| id parameter | 
+ **limit** | **int**| Maximum number of results to return. Defaults to 40 accounts. Max 80 accounts. | [optional] [default to 40]
+ **maxId** | **String**| Internal parameter. Use HTTP `Link` header for pagination. | [optional] 
+ **minId** | **String**| Internal parameter. Use HTTP `Link` header for pagination. | [optional] 
+ **sinceId** | **String**| Internal parameter. Use HTTP `Link` header for pagination. | [optional] 
+
+### Return type
+
+[**List&lt;Account&gt;**](Account.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getAccountFollowing**
+> List<Account> getAccountFollowing(id, limit, maxId, minId, sinceId)
+
+Get account's following
+
+Accounts which the given account is following, if network is not hidden by the account owner.
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+
+final api = Mastodon().getAccountsApi();
+final String id = id_example; // String | id parameter
+final int limit = 56; // int | Maximum number of results to return. Defaults to 40 accounts. Max 80 accounts.
+final String maxId = maxId_example; // String | Internal parameter. Use HTTP `Link` header for pagination.
+final String minId = minId_example; // String | Internal parameter. Use HTTP `Link` header for pagination.
+final String sinceId = sinceId_example; // String | Internal parameter. Use HTTP `Link` header for pagination.
+
+try {
+    final response = api.getAccountFollowing(id, limit, maxId, minId, sinceId);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AccountsApi->getAccountFollowing: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| id parameter | 
+ **limit** | **int**| Maximum number of results to return. Defaults to 40 accounts. Max 80 accounts. | [optional] [default to 40]
+ **maxId** | **String**| Internal parameter. Use HTTP `Link` header for pagination. | [optional] 
+ **minId** | **String**| Internal parameter. Use HTTP `Link` header for pagination. | [optional] 
+ **sinceId** | **String**| Internal parameter. Use HTTP `Link` header for pagination. | [optional] 
+
+### Return type
+
+[**List&lt;Account&gt;**](Account.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getAccountIdentityProofs**
+> List<IdentityProof> getAccountIdentityProofs(id)
+
+Identity proofs
+
+
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = Mastodon().getAccountsApi();
+final String id = id_example; // String | id parameter
+
+try {
+    final response = api.getAccountIdentityProofs(id);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AccountsApi->getAccountIdentityProofs: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| id parameter | 
+
+### Return type
+
+[**List&lt;IdentityProof&gt;**](IdentityProof.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getAccountLists**
+> List<List> getAccountLists(id)
+
+Get lists containing this account
+
+User lists that you have added this account to.
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = Mastodon().getAccountsApi();
+final String id = id_example; // String | id parameter
+
+try {
+    final response = api.getAccountLists(id);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AccountsApi->getAccountLists: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| id parameter | 
+
+### Return type
+
+[**List&lt;List&gt;**](List.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getAccountLookup**
+> Account getAccountLookup(acct)
+
+Lookup account ID from Webfinger address
+
+Quickly lookup a username to see if it is available, skipping WebFinger resolution.
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+
+final api = Mastodon().getAccountsApi();
+final String acct = acct_example; // String | The username or Webfinger address to lookup.
+
+try {
+    final response = api.getAccountLookup(acct);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AccountsApi->getAccountLookup: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **acct** | **String**| The username or Webfinger address to lookup. | 
+
+### Return type
+
+[**Account**](Account.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getAccountRelationships**
+> List<Relationship> getAccountRelationships(id, withSuspended)
+
+Check relationships to other accounts
+
+Find out whether a given account is followed, blocked, muted, etc.
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = Mastodon().getAccountsApi();
+final List<String> id = ; // List<String> | Check relationships for the provided account IDs.
+final bool withSuspended = true; // bool | Whether relationships should be returned for suspended users, defaults to false.
+
+try {
+    final response = api.getAccountRelationships(id, withSuspended);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AccountsApi->getAccountRelationships: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**List&lt;String&gt;**](String.md)| Check relationships for the provided account IDs. | [optional] 
+ **withSuspended** | **bool**| Whether relationships should be returned for suspended users, defaults to false. | [optional] [default to false]
+
+### Return type
+
+[**List&lt;Relationship&gt;**](Relationship.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getAccountSearch**
+> List<Account> getAccountSearch(q, following, limit, offset, resolve)
+
+Search for matching accounts
+
+Search for matching accounts by username or display name.
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = Mastodon().getAccountsApi();
+final String q = q_example; // String | Search query for accounts.
+final bool following = true; // bool | Limit the search to users you are following. Defaults to false.
+final int limit = 56; // int | Maximum number of results. Defaults to 40 accounts. Max 80 accounts.
+final int offset = 56; // int | Skip the first n results.
+final bool resolve = true; // bool | Attempt WebFinger lookup. Defaults to false. Use this when `q` is an exact address.
+
+try {
+    final response = api.getAccountSearch(q, following, limit, offset, resolve);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AccountsApi->getAccountSearch: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **q** | **String**| Search query for accounts. | 
+ **following** | **bool**| Limit the search to users you are following. Defaults to false. | [optional] [default to false]
+ **limit** | **int**| Maximum number of results. Defaults to 40 accounts. Max 80 accounts. | [optional] [default to 40]
+ **offset** | **int**| Skip the first n results. | [optional] 
+ **resolve** | **bool**| Attempt WebFinger lookup. Defaults to false. Use this when `q` is an exact address. | [optional] [default to false]
+
+### Return type
+
+[**List&lt;Account&gt;**](Account.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getAccountStatuses**
+> List<Status> getAccountStatuses(id, excludeReblogs, excludeReplies, limit, maxId, minId, onlyMedia, pinned, sinceId, tagged)
+
+Get account's statuses
+
+Statuses posted to the given account.
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = Mastodon().getAccountsApi();
+final String id = id_example; // String | id parameter
+final bool excludeReblogs = true; // bool | Filter out boosts from the response.
+final bool excludeReplies = true; // bool | Filter out statuses in reply to a different account.
+final int limit = 56; // int | Maximum number of results to return. Defaults to 20 statuses. Max 40 statuses.
+final String maxId = maxId_example; // String | All results returned will be lesser than this ID. In effect, sets an upper bound on results.
+final String minId = minId_example; // String | Returns results immediately newer than this ID. In effect, sets a cursor at this ID and paginates forward.
+final bool onlyMedia = true; // bool | Filter out statuses without attachments.
+final bool pinned = true; // bool | Filter for pinned statuses only. Defaults to false, which includes all statuses. Pinned statuses do not receive special priority in the order of the returned results.
+final String sinceId = sinceId_example; // String | All results returned will be greater than this ID. In effect, sets a lower bound on results.
+final String tagged = tagged_example; // String | Filter for statuses using a specific hashtag.
+
+try {
+    final response = api.getAccountStatuses(id, excludeReblogs, excludeReplies, limit, maxId, minId, onlyMedia, pinned, sinceId, tagged);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AccountsApi->getAccountStatuses: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| id parameter | 
+ **excludeReblogs** | **bool**| Filter out boosts from the response. | [optional] 
+ **excludeReplies** | **bool**| Filter out statuses in reply to a different account. | [optional] 
+ **limit** | **int**| Maximum number of results to return. Defaults to 20 statuses. Max 40 statuses. | [optional] [default to 20]
+ **maxId** | **String**| All results returned will be lesser than this ID. In effect, sets an upper bound on results. | [optional] 
+ **minId** | **String**| Returns results immediately newer than this ID. In effect, sets a cursor at this ID and paginates forward. | [optional] 
+ **onlyMedia** | **bool**| Filter out statuses without attachments. | [optional] 
+ **pinned** | **bool**| Filter for pinned statuses only. Defaults to false, which includes all statuses. Pinned statuses do not receive special priority in the order of the returned results. | [optional] [default to false]
+ **sinceId** | **String**| All results returned will be greater than this ID. In effect, sets a lower bound on results. | [optional] 
+ **tagged** | **String**| Filter for statuses using a specific hashtag. | [optional] 
+
+### Return type
+
+[**List&lt;Status&gt;**](Status.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getAccounts**
+> List<Account> getAccounts(id)
+
+Get multiple accounts
+
+View information about multiple profiles.
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+
+final api = Mastodon().getAccountsApi();
+final List<String> id = ; // List<String> | The IDs of the Accounts in the database.
+
+try {
+    final response = api.getAccounts(id);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AccountsApi->getAccounts: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**List&lt;String&gt;**](String.md)| The IDs of the Accounts in the database. | [optional] 
+
+### Return type
+
+[**List&lt;Account&gt;**](Account.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getAccountsVerifyCredentials**
+> CredentialAccount getAccountsVerifyCredentials()
+
+Verify account credentials
+
+Test to make sure that the user token works.
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = Mastodon().getAccountsApi();
+
+try {
+    final response = api.getAccountsVerifyCredentials();
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AccountsApi->getAccountsVerifyCredentials: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**CredentialAccount**](CredentialAccount.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getFamiliarFollowers**
+> List<FamiliarFollowers> getFamiliarFollowers(id)
+
+Find familiar followers
+
+Obtain a list of all accounts that follow a given account, filtered for accounts you follow.
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = Mastodon().getAccountsApi();
+final List<String> id = ; // List<String> | Find familiar followers for the provided account IDs.
+
+try {
+    final response = api.getFamiliarFollowers(id);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AccountsApi->getFamiliarFollowers: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**List&lt;String&gt;**](String.md)| Find familiar followers for the provided account IDs. | [optional] 
+
+### Return type
+
+[**List&lt;FamiliarFollowers&gt;**](FamiliarFollowers.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patchAccountsUpdateCredentials**
+> CredentialAccount patchAccountsUpdateCredentials(patchAccountsUpdateCredentialsRequest)
+
+Update account credentials
+
+Update the user's display and preferences.
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = Mastodon().getAccountsApi();
+final PatchAccountsUpdateCredentialsRequest patchAccountsUpdateCredentialsRequest = ; // PatchAccountsUpdateCredentialsRequest | JSON request body parameters
+
+try {
+    final response = api.patchAccountsUpdateCredentials(patchAccountsUpdateCredentialsRequest);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AccountsApi->patchAccountsUpdateCredentials: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **patchAccountsUpdateCredentialsRequest** | [**PatchAccountsUpdateCredentialsRequest**](PatchAccountsUpdateCredentialsRequest.md)| JSON request body parameters | 
+
+### Return type
+
+[**CredentialAccount**](CredentialAccount.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **postAccountBlock**
+> Relationship postAccountBlock(id)
+
+Block account
+
+Block the given account. Clients should filter statuses from this account if received (e.g. due to a boost in the Home timeline)
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = Mastodon().getAccountsApi();
+final String id = id_example; // String | id parameter
+
+try {
+    final response = api.postAccountBlock(id);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AccountsApi->postAccountBlock: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| id parameter | 
+
+### Return type
+
+[**Relationship**](Relationship.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **postAccountEndorse**
+> Relationship postAccountEndorse(id)
+
+Feature account on your profile
+
+Add the given account to the user's featured profiles.
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = Mastodon().getAccountsApi();
+final String id = id_example; // String | id parameter
+
+try {
+    final response = api.postAccountEndorse(id);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AccountsApi->postAccountEndorse: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| id parameter | 
+
+### Return type
+
+[**Relationship**](Relationship.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **postAccountFollow**
+> Relationship postAccountFollow(id, postAccountFollowRequest)
+
+Follow account
+
+Follow the given account. Can also be used to update whether to show reblogs or enable notifications.
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = Mastodon().getAccountsApi();
+final String id = id_example; // String | id parameter
+final PostAccountFollowRequest postAccountFollowRequest = ; // PostAccountFollowRequest | JSON request body parameters
+
+try {
+    final response = api.postAccountFollow(id, postAccountFollowRequest);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AccountsApi->postAccountFollow: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| id parameter | 
+ **postAccountFollowRequest** | [**PostAccountFollowRequest**](PostAccountFollowRequest.md)| JSON request body parameters | [optional] 
+
+### Return type
+
+[**Relationship**](Relationship.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **postAccountMute**
+> Relationship postAccountMute(id, postAccountMuteRequest)
+
+Mute account
+
+Mute the given account. Clients should filter statuses and notifications from this account, if received (e.g. due to a boost in the Home timeline).
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = Mastodon().getAccountsApi();
+final String id = id_example; // String | id parameter
+final PostAccountMuteRequest postAccountMuteRequest = ; // PostAccountMuteRequest | JSON request body parameters
+
+try {
+    final response = api.postAccountMute(id, postAccountMuteRequest);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AccountsApi->postAccountMute: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| id parameter | 
+ **postAccountMuteRequest** | [**PostAccountMuteRequest**](PostAccountMuteRequest.md)| JSON request body parameters | [optional] 
+
+### Return type
+
+[**Relationship**](Relationship.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **postAccountNote**
+> Relationship postAccountNote(id, postAccountNoteRequest)
+
+Set private note on profile
+
+Sets a private note on a user.
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = Mastodon().getAccountsApi();
+final String id = id_example; // String | id parameter
+final PostAccountNoteRequest postAccountNoteRequest = ; // PostAccountNoteRequest | JSON request body parameters
+
+try {
+    final response = api.postAccountNote(id, postAccountNoteRequest);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AccountsApi->postAccountNote: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| id parameter | 
+ **postAccountNoteRequest** | [**PostAccountNoteRequest**](PostAccountNoteRequest.md)| JSON request body parameters | [optional] 
+
+### Return type
+
+[**Relationship**](Relationship.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **postAccountPin**
+> Relationship postAccountPin(id)
+
+Feature account on your profile
+
+Add the given account to the user's featured profiles. (Featured profiles are currently shown on the user's own public profile.)
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = Mastodon().getAccountsApi();
+final String id = id_example; // String | id parameter
+
+try {
+    final response = api.postAccountPin(id);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AccountsApi->postAccountPin: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| id parameter | 
+
+### Return type
+
+[**Relationship**](Relationship.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **postAccountRemoveFromFollowers**
+> Relationship postAccountRemoveFromFollowers(id)
+
+Remove account from followers
+
+Remove the given account from your followers.
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = Mastodon().getAccountsApi();
+final String id = id_example; // String | id parameter
+
+try {
+    final response = api.postAccountRemoveFromFollowers(id);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AccountsApi->postAccountRemoveFromFollowers: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| id parameter | 
+
+### Return type
+
+[**Relationship**](Relationship.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **postAccountUnblock**
+> Relationship postAccountUnblock(id)
+
+Unblock account
+
+Unblock the given account.
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = Mastodon().getAccountsApi();
+final String id = id_example; // String | id parameter
+
+try {
+    final response = api.postAccountUnblock(id);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AccountsApi->postAccountUnblock: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| id parameter | 
+
+### Return type
+
+[**Relationship**](Relationship.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **postAccountUnendorse**
+> Relationship postAccountUnendorse(id)
+
+Unfeature account from profile
+
+Remove the given account from the user's featured profiles.
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = Mastodon().getAccountsApi();
+final String id = id_example; // String | id parameter
+
+try {
+    final response = api.postAccountUnendorse(id);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AccountsApi->postAccountUnendorse: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| id parameter | 
+
+### Return type
+
+[**Relationship**](Relationship.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **postAccountUnfollow**
+> Relationship postAccountUnfollow(id)
+
+Unfollow account
+
+Unfollow the given account.
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = Mastodon().getAccountsApi();
+final String id = id_example; // String | id parameter
+
+try {
+    final response = api.postAccountUnfollow(id);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AccountsApi->postAccountUnfollow: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| id parameter | 
+
+### Return type
+
+[**Relationship**](Relationship.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **postAccountUnmute**
+> Relationship postAccountUnmute(id)
+
+Unmute account
+
+Unmute the given account.
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = Mastodon().getAccountsApi();
+final String id = id_example; // String | id parameter
+
+try {
+    final response = api.postAccountUnmute(id);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AccountsApi->postAccountUnmute: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| id parameter | 
+
+### Return type
+
+[**Relationship**](Relationship.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **postAccountUnpin**
+> Relationship postAccountUnpin(id)
+
+Unfeature account from profile
+
+Remove the given account from the user's featured profiles.
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = Mastodon().getAccountsApi();
+final String id = id_example; // String | id parameter
+
+try {
+    final response = api.postAccountUnpin(id);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AccountsApi->postAccountUnpin: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| id parameter | 
+
+### Return type
+
+[**Relationship**](Relationship.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+

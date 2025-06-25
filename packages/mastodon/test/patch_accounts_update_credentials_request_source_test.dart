@@ -1,0 +1,29 @@
+import 'package:test/test.dart';
+import 'package:mastodon/mastodon.dart';
+
+// tests for PatchAccountsUpdateCredentialsRequestSource
+void main() {
+  final PatchAccountsUpdateCredentialsRequestSource?
+      instance = /* PatchAccountsUpdateCredentialsRequestSource(...) */ null;
+  // TODO add properties to the entity
+
+  group(PatchAccountsUpdateCredentialsRequestSource, () {
+    // Default post privacy for authored statuses. Can be `public`, `unlisted`, or `private`.
+    // String privacy
+    test('to test the property `privacy`', () async {
+      // TODO
+    });
+
+    // Whether to mark authored statuses as sensitive by default.
+    // bool sensitive
+    test('to test the property `sensitive`', () async {
+      // TODO
+    });
+
+    // Default language to use for authored statuses (ISO 6391)
+    // String language
+    test('to test the property `language`', () async {
+      // TODO
+    });
+  });
+}

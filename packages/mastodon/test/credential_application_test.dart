@@ -1,0 +1,64 @@
+import 'package:test/test.dart';
+import 'package:mastodon/mastodon.dart';
+
+// tests for CredentialApplication
+void main() {
+  final CredentialApplication? instance = /* CredentialApplication(...) */ null;
+  // TODO add properties to the entity
+
+  group(CredentialApplication, () {
+    // Client ID key, to be used for obtaining OAuth tokens
+    // String clientId
+    test('to test the property `clientId`', () async {
+      // TODO
+    });
+
+    // Client secret key, to be used for obtaining OAuth tokens
+    // String clientSecret
+    test('to test the property `clientSecret`', () async {
+      // TODO
+    });
+
+    // When the client secret key will expire at, presently this always returns `0` indicating that OAuth Clients do not expire
+    // int clientSecretExpiresAt
+    test('to test the property `clientSecretExpiresAt`', () async {
+      // TODO
+    });
+
+    // The name of your application.
+    // String name
+    test('to test the property `name`', () async {
+      // TODO
+    });
+
+    // The registered redirection URI(s) for your application.
+    // String redirectUri
+    test('to test the property `redirectUri`', () async {
+      // TODO
+    });
+
+    // The registered redirection URI(s) for your application.
+    // List<Uri> redirectUris
+    test('to test the property `redirectUris`', () async {
+      // TODO
+    });
+
+    // Array of OAuth scopes
+    // List<OAuthScope> scopes
+    test('to test the property `scopes`', () async {
+      // TODO
+    });
+
+    // Used for Push Streaming API. Returned with [POST /api/v1/apps]({{< relref \"methods/apps#create\" >}}). Equivalent to [WebPushSubscription#server_key]({{< relref \"entities/WebPushSubscription#server_key\" >}}) and [Instance#vapid_public_key]({{< relref \"entities/Instance#vapid_public_key\" >}})
+    // String vapidKey
+    test('to test the property `vapidKey`', () async {
+      // TODO
+    });
+
+    // The website associated with your application.
+    // Uri website
+    test('to test the property `website`', () async {
+      // TODO
+    });
+  });
+}

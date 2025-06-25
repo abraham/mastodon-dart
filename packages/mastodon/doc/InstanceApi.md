@@ -1,0 +1,458 @@
+# mastodon.api.InstanceApi
+
+## Load the API package
+```dart
+import 'package:mastodon/api.dart';
+```
+
+All URIs are relative to *https://mastodon.example*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**getInstance**](InstanceApi.md#getinstance) | **GET** /api/v1/instance | View server information (v1)
+[**getInstanceActivity**](InstanceApi.md#getinstanceactivity) | **GET** /api/v1/instance/activity | Weekly activity
+[**getInstanceDomainBlocks**](InstanceApi.md#getinstancedomainblocks) | **GET** /api/v1/instance/domain_blocks | View moderated servers
+[**getInstanceExtendedDescription**](InstanceApi.md#getinstanceextendeddescription) | **GET** /api/v1/instance/extended_description | View extended description
+[**getInstancePeers**](InstanceApi.md#getinstancepeers) | **GET** /api/v1/instance/peers | List of connected domains
+[**getInstancePrivacyPolicy**](InstanceApi.md#getinstanceprivacypolicy) | **GET** /api/v1/instance/privacy_policy | View privacy policy
+[**getInstanceRules**](InstanceApi.md#getinstancerules) | **GET** /api/v1/instance/rules | List of rules
+[**getInstanceTermsOfService**](InstanceApi.md#getinstancetermsofservice) | **GET** /api/v1/instance/terms_of_service | View terms of service
+[**getInstanceTermsOfServiceByDate**](InstanceApi.md#getinstancetermsofservicebydate) | **GET** /api/v1/instance/terms_of_service/{date} | View a specific version of the terms of service
+[**getInstanceTranslationLanguages**](InstanceApi.md#getinstancetranslationlanguages) | **GET** /api/v1/instance/translation_languages | View translation languages
+[**getInstanceV2**](InstanceApi.md#getinstancev2) | **GET** /api/v2/instance | View server information
+
+
+# **getInstance**
+> V1Instance getInstance()
+
+View server information (v1)
+
+Obtain general information about the server. See [api/v2/instance]({{< relref \"methods/Instance#v2\">}}) instead.
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+
+final api = Mastodon().getInstanceApi();
+
+try {
+    final response = api.getInstance();
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling InstanceApi->getInstance: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**V1Instance**](V1Instance.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getInstanceActivity**
+> List<GetInstanceActivity200ResponseInner> getInstanceActivity()
+
+Weekly activity
+
+Instance activity over the last 3 months, binned weekly.
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+
+final api = Mastodon().getInstanceApi();
+
+try {
+    final response = api.getInstanceActivity();
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling InstanceApi->getInstanceActivity: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**List&lt;GetInstanceActivity200ResponseInner&gt;**](GetInstanceActivity200ResponseInner.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getInstanceDomainBlocks**
+> List<DomainBlock> getInstanceDomainBlocks()
+
+View moderated servers
+
+Obtain a list of domains that have been blocked.
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = Mastodon().getInstanceApi();
+
+try {
+    final response = api.getInstanceDomainBlocks();
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling InstanceApi->getInstanceDomainBlocks: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**List&lt;DomainBlock&gt;**](DomainBlock.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getInstanceExtendedDescription**
+> ExtendedDescription getInstanceExtendedDescription()
+
+View extended description
+
+Obtain an extended description of this server
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+
+final api = Mastodon().getInstanceApi();
+
+try {
+    final response = api.getInstanceExtendedDescription();
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling InstanceApi->getInstanceExtendedDescription: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**ExtendedDescription**](ExtendedDescription.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getInstancePeers**
+> List<String> getInstancePeers()
+
+List of connected domains
+
+Domains that this instance is aware of.
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+
+final api = Mastodon().getInstanceApi();
+
+try {
+    final response = api.getInstancePeers();
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling InstanceApi->getInstancePeers: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+**List&lt;String&gt;**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getInstancePrivacyPolicy**
+> PrivacyPolicy getInstancePrivacyPolicy()
+
+View privacy policy
+
+Obtain the contents of this server's privacy policy.
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+
+final api = Mastodon().getInstanceApi();
+
+try {
+    final response = api.getInstancePrivacyPolicy();
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling InstanceApi->getInstancePrivacyPolicy: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**PrivacyPolicy**](PrivacyPolicy.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getInstanceRules**
+> List<Rule> getInstanceRules()
+
+List of rules
+
+Rules that the users of this service should follow.
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+
+final api = Mastodon().getInstanceApi();
+
+try {
+    final response = api.getInstanceRules();
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling InstanceApi->getInstanceRules: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**List&lt;Rule&gt;**](Rule.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getInstanceTermsOfService**
+> TermsOfService getInstanceTermsOfService()
+
+View terms of service
+
+Obtain the contents of this server's terms of service, if configured.
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+
+final api = Mastodon().getInstanceApi();
+
+try {
+    final response = api.getInstanceTermsOfService();
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling InstanceApi->getInstanceTermsOfService: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**TermsOfService**](TermsOfService.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getInstanceTermsOfServiceByDate**
+> TermsOfService getInstanceTermsOfServiceByDate(date)
+
+View a specific version of the terms of service
+
+Obtain the contents of this server's terms of service, for a specified date, if configured.
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+
+final api = Mastodon().getInstanceApi();
+final String date = date_example; // String | date parameter
+
+try {
+    final response = api.getInstanceTermsOfServiceByDate(date);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling InstanceApi->getInstanceTermsOfServiceByDate: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **date** | **String**| date parameter | 
+
+### Return type
+
+[**TermsOfService**](TermsOfService.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getInstanceTranslationLanguages**
+> getInstanceTranslationLanguages()
+
+View translation languages
+
+Translation language pairs supported by the translation engine used by the server.
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+
+final api = Mastodon().getInstanceApi();
+
+try {
+    api.getInstanceTranslationLanguages();
+} catch on DioException (e) {
+    print('Exception when calling InstanceApi->getInstanceTranslationLanguages: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getInstanceV2**
+> Instance getInstanceV2()
+
+View server information
+
+Obtain general information about the server.
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+
+final api = Mastodon().getInstanceApi();
+
+try {
+    final response = api.getInstanceV2();
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling InstanceApi->getInstanceV2: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**Instance**](Instance.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+

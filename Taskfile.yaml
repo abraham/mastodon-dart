@@ -1,0 +1,28 @@
+version: "3"
+
+tasks:
+  gen:
+    dir: packages/mastodon_generator
+    cmds:
+      - dart run build_runner build --delete-conflicting-outputs
+      - task: hacks
+      - task: build_runner
+      - task: format
+
+  format:
+    cmds:
+      - dart format .
+
+  analyze:
+    cmds:
+      - dart analyze
+
+  hacks:
+    cmds:
+      - dart run packages/mastodon_generator/lib/hacks.dart
+
+  build_runner:
+    dir: packages/mastodon
+    cmds:
+      - dart run build_runner build --delete-conflicting-outputs
+
