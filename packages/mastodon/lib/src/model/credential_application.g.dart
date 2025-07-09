@@ -18,6 +18,7 @@ CredentialApplication _$CredentialApplicationFromJson(
             'client_id',
             'client_secret',
             'client_secret_expires_at',
+            'id',
             'name',
             'redirect_uri',
             'redirect_uris',
@@ -30,6 +31,7 @@ CredentialApplication _$CredentialApplicationFromJson(
           clientSecret: $checkedConvert('client_secret', (v) => v as String),
           clientSecretExpiresAt: $checkedConvert(
               'client_secret_expires_at', (v) => (v as num).toInt()),
+          id: $checkedConvert('id', (v) => v as String),
           name: $checkedConvert('name', (v) => v as String),
           redirectUri: $checkedConvert('redirect_uri', (v) => v as String),
           redirectUris: $checkedConvert(
@@ -64,6 +66,7 @@ Map<String, dynamic> _$CredentialApplicationToJson(
       'client_id': instance.clientId,
       'client_secret': instance.clientSecret,
       'client_secret_expires_at': instance.clientSecretExpiresAt,
+      'id': instance.id,
       'name': instance.name,
       'redirect_uri': instance.redirectUri,
       'redirect_uris': instance.redirectUris.map((e) => e.toString()).toList(),

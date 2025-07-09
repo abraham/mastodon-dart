@@ -19,7 +19,7 @@ class ConversationsApi {
   const ConversationsApi(this._dio);
 
   /// Remove a conversation
-  /// Removes a conversation from your list of conversations.
+  /// Removes a conversation from your list of conversations.  Version history:  2.6.0 - added
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -74,7 +74,7 @@ class ConversationsApi {
   }
 
   /// View all conversations
-  ///
+  /// Version history:  2.6.0 - added\\ 3.3.0 - both &#x60;min_id&#x60; and &#x60;max_id&#x60; can be used at the same time now
   ///
   /// Parameters:
   /// * [limit] - Maximum number of results to return. Defaults to 20 conversations. Max 40 conversations.
@@ -170,7 +170,7 @@ class ConversationsApi {
   }
 
   /// Mark a conversation as read
-  ///
+  /// Version history:  2.6.0 - added
   ///
   /// Parameters:
   /// * [id] - id parameter

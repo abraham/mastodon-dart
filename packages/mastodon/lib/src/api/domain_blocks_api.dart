@@ -92,7 +92,7 @@ class DomainBlocksApi {
   }
 
   /// Unblock a domain
-  /// Remove a domain block, if it exists in the user&#39;s array of blocked domains.
+  /// Remove a domain block, if it exists in the user&#39;s array of blocked domains.  Version history:  1.4.0 - added
   ///
   /// Parameters:
   /// * [deleteDomainBlocksRequest] - JSON request body parameters

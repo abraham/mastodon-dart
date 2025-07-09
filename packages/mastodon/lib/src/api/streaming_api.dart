@@ -18,7 +18,7 @@ class StreamingApi {
   const StreamingApi(this._dio);
 
   /// Watch for direct messages
-  /// Returns events for received direct messages.
+  /// Returns events for received direct messages.  Version history:  2.4.0 - added\\ 2.6.0 - now returns &#x60;conversation&#x60; instead of &#x60;update&#x60;
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -70,7 +70,7 @@ class StreamingApi {
   }
 
   /// Watch the public timeline for a hashtag
-  /// Returns all public statuses for a particular hashtag
+  /// Returns all public statuses for a particular hashtag  Version history:  1.0.0 - added\\ 3.5.0 - now returns &#x60;status.update&#x60;\\ 4.2.0 - changed to require a User token, removing Public and App token access [#23989]
   ///
   /// Parameters:
   /// * [tag] - The name of the hashtag to watch.
@@ -129,7 +129,7 @@ class StreamingApi {
   }
 
   /// Watch the local timeline for a hashtag
-  /// Returns all local public statuses for a particular hashtag
+  /// Returns all local public statuses for a particular hashtag  Version history:  1.1.0 - added\\ 3.5.0 - now returns &#x60;status.update&#x60;\\ 4.2.0 - changed to require a User token, removing Public and App token access [#23989]
   ///
   /// Parameters:
   /// * [tag] - The name of the hashtag to watch.
@@ -188,7 +188,7 @@ class StreamingApi {
   }
 
   /// Check if the server is alive
-  /// Verify that the streaming service is alive before connecting to it
+  /// Verify that the streaming service is alive before connecting to it  Version history:  2.5.0 - added
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -235,7 +235,7 @@ class StreamingApi {
   }
 
   /// Watch for list updates
-  /// Returns statuses for a list
+  /// Returns statuses for a list  Version history:  2.1.0 - added\\ 3.5.0 - now returns &#x60;status.update&#x60;\\ 4.2.0 - changed to require a User token, removing Public and App token access [#23989]
   ///
   /// Parameters:
   /// * [list] - The ID of the list to watch.
@@ -294,7 +294,7 @@ class StreamingApi {
   }
 
   /// Watch the federated timeline
-  /// Returns all public statuses
+  /// Returns all public statuses  Version history:  1.0.0 - added\\ 2.4.0 - add &#x60;only_media&#x60; parameter\\ 3.5.0 - now returns &#x60;status.update&#x60;\\ 4.2.0 - changed to require a User token, removing Public and App token access [#23989]
   ///
   /// Parameters:
   /// * [onlyMedia] - If true, return only statuses with media attachments.
@@ -353,7 +353,7 @@ class StreamingApi {
   }
 
   /// Watch the local timeline
-  /// Returns all local public statuses
+  /// Returns all local public statuses  Version history:  1.1.0 - added\\ 2.4.0 - add &#x60;only_media&#x60; parameter\\ 3.5.0 - now returns &#x60;status.update&#x60;\\ 4.2.0 - changed to require a User token, removing Public and App token access [#23989]
   ///
   /// Parameters:
   /// * [onlyMedia] - If true, return only statuses with media attachments.
@@ -412,7 +412,7 @@ class StreamingApi {
   }
 
   /// Watch for remote statuses
-  /// Returns all public statuses from remote servers.
+  /// Returns all public statuses from remote servers.  Version history:  3.1.4 - added\\ 3.5.0 - now returns &#x60;status.update&#x60;\\ 4.2.0 - changed to require a User token, removing Public and App token access [#23989]
   ///
   /// Parameters:
   /// * [onlyMedia] - If true, return only statuses with media attachments.
@@ -471,7 +471,7 @@ class StreamingApi {
   }
 
   /// Watch your home timeline and notifications
-  /// Returns events that are relevant to the authorized user, i.e. home timeline and notifications
+  /// Returns events that are relevant to the authorized user, i.e. home timeline and notifications  Version history:  1.0.0 - added\\ 1.4.2 - now returns &#x60;notification&#x60;\\ 2.4.3 - now returns &#x60;filters_changed&#x60;\\ 3.1.0 - now returns &#x60;announcement&#x60;, &#x60;announcement.reaction&#x60;, &#x60;announcement.delete&#x60;\\ 3.5.0 - now returns &#x60;status.update&#x60;
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -523,7 +523,7 @@ class StreamingApi {
   }
 
   /// Watch your notifications
-  /// Returns events for received notifications
+  /// Returns events for received notifications  Version history:  1.4.2 - added
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation

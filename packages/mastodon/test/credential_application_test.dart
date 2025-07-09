@@ -7,37 +7,43 @@ void main() {
   // TODO add properties to the entity
 
   group(CredentialApplication, () {
-    // Client ID key, to be used for obtaining OAuth tokens
+    // Client ID key, to be used for obtaining OAuth tokens.
     // String clientId
     test('to test the property `clientId`', () async {
       // TODO
     });
 
-    // Client secret key, to be used for obtaining OAuth tokens
+    // Client secret key, to be used for obtaining OAuth tokens.
     // String clientSecret
     test('to test the property `clientSecret`', () async {
       // TODO
     });
 
-    // When the client secret key will expire at, presently this always returns `0` indicating that OAuth Clients do not expire
+    // When the client secret key will expire. Presently this always returns `0` indicating that OAuth Clients do not expire.
     // int clientSecretExpiresAt
     test('to test the property `clientSecretExpiresAt`', () async {
       // TODO
     });
 
-    // The name of your application.
+    // The numeric ID of the application.
+    // String id
+    test('to test the property `id`', () async {
+      // TODO
+    });
+
+    // The name of the application.
     // String name
     test('to test the property `name`', () async {
       // TODO
     });
 
-    // The registered redirection URI(s) for your application.
+    // The registered redirection URI(s) for the application.
     // String redirectUri
     test('to test the property `redirectUri`', () async {
       // TODO
     });
 
-    // The registered redirection URI(s) for your application.
+    // The registered redirection URI(s) for the application.
     // List<Uri> redirectUris
     test('to test the property `redirectUris`', () async {
       // TODO
@@ -55,7 +61,7 @@ void main() {
       // TODO
     });
 
-    // The website associated with your application.
+    // The website associated with the application.
     // Uri website
     test('to test the property `website`', () async {
       // TODO

@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 Save your position in a timeline
 
-Save current position in timeline.
+Save current position in timeline.  Version history:  3.0.0 - added
 
 ### Example
 ```dart
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 Get saved timeline positions
 
-Get current positions in timelines.
+Get current positions in timelines.  Version history:  3.0.0 - added
 
 ### Example
 ```dart

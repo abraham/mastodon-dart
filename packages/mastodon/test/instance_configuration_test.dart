@@ -12,6 +12,12 @@ void main() {
       // TODO
     });
 
+    // Whether federation is limited to explicitly allowed domains.
+    // bool limitedFederation
+    test('to test the property `limitedFederation`', () async {
+      // TODO
+    });
+
     // InstanceConfigurationMediaAttachments mediaAttachments
     test('to test the property `mediaAttachments`', () async {
       // TODO
@@ -34,12 +40,6 @@ void main() {
 
     // InstanceConfigurationUrls urls
     test('to test the property `urls`', () async {
-      // TODO
-    });
-
-    // Whether federation is limited to explicitly allowed domains.
-    // bool limitedFederation
-    test('to test the property `limitedFederation`', () async {
       // TODO
     });
   });

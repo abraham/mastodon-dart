@@ -17,11 +17,19 @@ part 'instance_configuration_urls.g.dart';
 class InstanceConfigurationUrls {
   /// Returns a new [InstanceConfigurationUrls] instance.
   InstanceConfigurationUrls({
+    required this.about,
     required this.streaming,
-    this.about,
     this.privacyPolicy,
     this.termsOfService,
   });
+
+  /// The URL of the server's about page.
+  @JsonKey(
+    name: r'about',
+    required: true,
+    includeIfNull: false,
+  )
+  final Uri about;
 
   /// The Websockets URL for connecting to the streaming API.
   @JsonKey(
@@ -30,14 +38,6 @@ class InstanceConfigurationUrls {
     includeIfNull: false,
   )
   final Uri streaming;
-
-  /// The URL of the server's about page.
-  @JsonKey(
-    name: r'about',
-    required: false,
-    includeIfNull: false,
-  )
-  final Uri? about;
 
   /// The URL of the server's privacy policy.
   @JsonKey(
@@ -59,15 +59,15 @@ class InstanceConfigurationUrls {
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is InstanceConfigurationUrls &&
-          other.streaming == streaming &&
           other.about == about &&
+          other.streaming == streaming &&
           other.privacyPolicy == privacyPolicy &&
           other.termsOfService == termsOfService;
 
   @override
   int get hashCode =>
+      about.hashCode +
       streaming.hashCode +
-      (about == null ? 0 : about.hashCode) +
       (privacyPolicy == null ? 0 : privacyPolicy.hashCode) +
       (termsOfService == null ? 0 : termsOfService.hashCode);
 

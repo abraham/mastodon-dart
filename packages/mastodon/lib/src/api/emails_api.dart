@@ -19,7 +19,7 @@ class EmailsApi {
   const EmailsApi(this._dio);
 
   /// Resend confirmation email
-  /// Resend a new confirmation email. If an email is provided, updates the unconfirmed user&#39;s email before resending the confirmation email.
+  /// Resend a new confirmation email. If an email is provided, updates the unconfirmed user&#39;s email before resending the confirmation email.  Version history:  3.4.0 - added
   ///
   /// Parameters:
   /// * [createEmailConfirmationsRequest] - JSON request body parameters

@@ -22,7 +22,7 @@ class WebPushSubscription {
     required this.endpoint,
     required this.id,
     required this.serverKey,
-    this.standard,
+    required this.standard,
   });
 
   @JsonKey(
@@ -59,10 +59,10 @@ class WebPushSubscription {
   /// If the push messages follow the standardized specifications (RFC8030+RFC8291+RFC8292). Else they follow a legacy version of the specifications (4th draft of RFC8291 and 1st draft of RFC8292).
   @JsonKey(
     name: r'standard',
-    required: false,
+    required: true,
     includeIfNull: false,
   )
-  final bool? standard;
+  final bool standard;
 
   @override
   bool operator ==(Object other) =>
@@ -80,7 +80,7 @@ class WebPushSubscription {
       endpoint.hashCode +
       id.hashCode +
       serverKey.hashCode +
-      (standard == null ? 0 : standard.hashCode);
+      standard.hashCode;
 
   factory WebPushSubscription.fromJson(Map<String, dynamic> json) =>
       _$WebPushSubscriptionFromJson(json);

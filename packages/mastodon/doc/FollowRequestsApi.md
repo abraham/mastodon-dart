@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 View pending follow requests
 
-
+Version history:  0.0.0 - added
 
 ### Example
 ```dart
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 Accept follow request
 
-
+Version history:  0.0.0 - added\\ 3.0.0 - now returns Relationship instead of nothing
 
 ### Example
 ```dart
@@ -113,7 +113,7 @@ Name | Type | Description  | Notes
 
 Reject follow request
 
-
+Version history:  0.0.0 - added\\ 3.0.0 - now returns Relationship instead of nothing
 
 ### Example
 ```dart

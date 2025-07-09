@@ -16,7 +16,6 @@ CreateAccountRequest _$CreateAccountRequestFromJson(
           json,
           requiredKeys: const [
             'agreement',
-            'date_of_birth',
             'email',
             'locale',
             'password',
@@ -25,11 +24,11 @@ CreateAccountRequest _$CreateAccountRequestFromJson(
         );
         final val = CreateAccountRequest(
           agreement: $checkedConvert('agreement', (v) => v as bool),
-          dateOfBirth: $checkedConvert('date_of_birth', (v) => v as String),
           email: $checkedConvert('email', (v) => v as String),
           locale: $checkedConvert('locale', (v) => v as String),
           password: $checkedConvert('password', (v) => v as String),
           username: $checkedConvert('username', (v) => v as String),
+          dateOfBirth: $checkedConvert('date_of_birth', (v) => v as String?),
           reason: $checkedConvert('reason', (v) => v as String?),
         );
         return val;
@@ -41,10 +40,10 @@ Map<String, dynamic> _$CreateAccountRequestToJson(
         CreateAccountRequest instance) =>
     <String, dynamic>{
       'agreement': instance.agreement,
-      'date_of_birth': instance.dateOfBirth,
       'email': instance.email,
       'locale': instance.locale,
       'password': instance.password,
       'username': instance.username,
+      if (instance.dateOfBirth case final value?) 'date_of_birth': value,
       if (instance.reason case final value?) 'reason': value,
     };

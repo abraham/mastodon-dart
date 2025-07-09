@@ -10,9 +10,13 @@ Quote _$QuoteFromJson(Map<String, dynamic> json) => $checkedCreate(
       'Quote',
       json,
       ($checkedConvert) {
+        $checkKeys(
+          json,
+          requiredKeys: const ['state'],
+        );
         final val = Quote(
           state: $checkedConvert(
-              'state', (v) => $enumDecodeNullable(_$StateEnumEnumMap, v)),
+              'state', (v) => $enumDecode(_$StateEnumEnumMap, v)),
           status: $checkedConvert(
               'status',
               (v) => v == null
@@ -24,7 +28,7 @@ Quote _$QuoteFromJson(Map<String, dynamic> json) => $checkedCreate(
     );
 
 Map<String, dynamic> _$QuoteToJson(Quote instance) => <String, dynamic>{
-      if (_$StateEnumEnumMap[instance.state] case final value?) 'state': value,
+      'state': _$StateEnumEnumMap[instance.state]!,
       if (instance.status?.toJson() case final value?) 'status': value,
     };
 

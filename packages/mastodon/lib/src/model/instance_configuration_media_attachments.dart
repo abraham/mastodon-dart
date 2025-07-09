@@ -16,14 +16,22 @@ part 'instance_configuration_media_attachments.g.dart';
 class InstanceConfigurationMediaAttachments {
   /// Returns a new [InstanceConfigurationMediaAttachments] instance.
   InstanceConfigurationMediaAttachments({
+    required this.descriptionLimit,
     required this.imageMatrixLimit,
     required this.imageSizeLimit,
     required this.supportedMimeTypes,
     required this.videoFrameRateLimit,
     required this.videoMatrixLimit,
     required this.videoSizeLimit,
-    this.descriptionLimit,
   });
+
+  /// The maximum size of a description, in characters.
+  @JsonKey(
+    name: r'description_limit',
+    required: true,
+    includeIfNull: false,
+  )
+  final int descriptionLimit;
 
   /// The maximum number of pixels (width times height) for image uploads.
   @JsonKey(
@@ -73,35 +81,27 @@ class InstanceConfigurationMediaAttachments {
   )
   final int videoSizeLimit;
 
-  /// The maximum size of a description, in characters.
-  @JsonKey(
-    name: r'description_limit',
-    required: false,
-    includeIfNull: false,
-  )
-  final int? descriptionLimit;
-
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is InstanceConfigurationMediaAttachments &&
+          other.descriptionLimit == descriptionLimit &&
           other.imageMatrixLimit == imageMatrixLimit &&
           other.imageSizeLimit == imageSizeLimit &&
           other.supportedMimeTypes == supportedMimeTypes &&
           other.videoFrameRateLimit == videoFrameRateLimit &&
           other.videoMatrixLimit == videoMatrixLimit &&
-          other.videoSizeLimit == videoSizeLimit &&
-          other.descriptionLimit == descriptionLimit;
+          other.videoSizeLimit == videoSizeLimit;
 
   @override
   int get hashCode =>
+      descriptionLimit.hashCode +
       imageMatrixLimit.hashCode +
       imageSizeLimit.hashCode +
       supportedMimeTypes.hashCode +
       videoFrameRateLimit.hashCode +
       videoMatrixLimit.hashCode +
-      videoSizeLimit.hashCode +
-      (descriptionLimit == null ? 0 : descriptionLimit.hashCode);
+      videoSizeLimit.hashCode;
 
   factory InstanceConfigurationMediaAttachments.fromJson(
           Map<String, dynamic> json) =>

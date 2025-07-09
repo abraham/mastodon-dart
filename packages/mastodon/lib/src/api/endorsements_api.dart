@@ -19,7 +19,7 @@ class EndorsementsApi {
   const EndorsementsApi(this._dio);
 
   /// View currently featured profiles
-  /// Accounts that the user is currently featuring on their profile.
+  /// Accounts that the user is currently featuring on their profile.  Version history:  2.5.0 - added
   ///
   /// Parameters:
   /// * [limit] - Maximum number of results to return. Defaults to 40 accounts. Max 80 accounts.

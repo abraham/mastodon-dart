@@ -84,6 +84,7 @@ doc/FollowRequestsApi.md
 doc/FollowedTagsApi.md
 doc/GetInstanceActivity200ResponseInner.md
 doc/GroupedNotificationsResults.md
+doc/HealthApi.md
 doc/IdentityProof.md
 doc/Instance.md
 doc/InstanceApi.md
@@ -235,6 +236,7 @@ lib/src/api/featured_tags_api.dart
 lib/src/api/filters_api.dart
 lib/src/api/follow_requests_api.dart
 lib/src/api/followed_tags_api.dart
+lib/src/api/health_api.dart
 lib/src/api/instance_api.dart
 lib/src/api/lists_api.dart
 lib/src/api/markers_api.dart
@@ -522,6 +524,7 @@ test/follow_requests_api_test.dart
 test/followed_tags_api_test.dart
 test/get_instance_activity200_response_inner_test.dart
 test/grouped_notifications_results_test.dart
+test/health_api_test.dart
 test/identity_proof_test.dart
 test/instance_api_test.dart
 test/instance_api_versions_test.dart

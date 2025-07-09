@@ -26,7 +26,7 @@ class InstanceApi {
   const InstanceApi(this._dio);
 
   /// View server information (v1)
-  /// Obtain general information about the server. See [api/v2/instance]({{&lt; relref \&quot;methods/Instance#v2\&quot;&gt;}}) instead.
+  /// Obtain general information about the server. See [api/v2/instance]({{&lt; relref \&quot;methods/Instance#v2\&quot;&gt;}}) instead.  Version history:  1.1.0 - added\\ 3.0.0 - requires user token if instance is in whitelist mode\\ 3.1.4 - added &#x60;invites_enabled&#x60; to response\\ 3.4.0 - added &#x60;rules&#x60;\\ 3.4.2 - added &#x60;configuration&#x60;\\ 4.0.0 - deprecated. added &#x60;configuration[accounts]&#x60;.
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -101,7 +101,7 @@ class InstanceApi {
   }
 
   /// Weekly activity
-  /// Instance activity over the last 3 months, binned weekly.
+  /// Instance activity over the last 3 months, binned weekly.  Version history:  2.1.2 - added\\ 3.0.0 - requires user token if instance is in whitelist mode
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -178,7 +178,7 @@ class InstanceApi {
   }
 
   /// View moderated servers
-  /// Obtain a list of domains that have been blocked.
+  /// Obtain a list of domains that have been blocked.  Version history:  4.0.0 - added
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -258,7 +258,7 @@ class InstanceApi {
   }
 
   /// View extended description
-  /// Obtain an extended description of this server
+  /// Obtain an extended description of this server  Version history:  4.0.0 - added
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -333,7 +333,7 @@ class InstanceApi {
   }
 
   /// List of connected domains
-  /// Domains that this instance is aware of.
+  /// Domains that this instance is aware of.  Version history:  2.1.2 - added\\ 3.0.0 - requires user token if instance is in whitelist mode
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -407,7 +407,7 @@ class InstanceApi {
   }
 
   /// View privacy policy
-  /// Obtain the contents of this server&#39;s privacy policy.
+  /// Obtain the contents of this server&#39;s privacy policy.  Version history:  4.0.0 - added
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -481,7 +481,7 @@ class InstanceApi {
   }
 
   /// List of rules
-  /// Rules that the users of this service should follow.
+  /// Rules that the users of this service should follow.  Version history:  3.4.0 - added
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -555,7 +555,7 @@ class InstanceApi {
   }
 
   /// View terms of service
-  /// Obtain the contents of this server&#39;s terms of service, if configured.
+  /// Obtain the contents of this server&#39;s terms of service, if configured.  Version history:  4.4.0 - added
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -630,7 +630,7 @@ class InstanceApi {
   }
 
   /// View a specific version of the terms of service
-  /// Obtain the contents of this server&#39;s terms of service, for a specified date, if configured.
+  /// Obtain the contents of this server&#39;s terms of service, for a specified date, if configured.  Version history:  4.4.0 - added
   ///
   /// Parameters:
   /// * [date] - date parameter
@@ -708,7 +708,7 @@ class InstanceApi {
   }
 
   /// View translation languages
-  /// Translation language pairs supported by the translation engine used by the server.
+  /// Translation language pairs supported by the translation engine used by the server.  Version history:  4.2.0 - added
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -755,7 +755,7 @@ class InstanceApi {
   }
 
   /// View server information
-  /// Obtain general information about the server.
+  /// Obtain general information about the server.  Version history:  4.0.0 - added\\ 4.3.0 - added &#x60;configuration.vapid.public_key&#x60;
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation

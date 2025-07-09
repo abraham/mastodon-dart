@@ -24,7 +24,7 @@ class FeaturedTag {
     required this.url,
   });
 
-  /// The internal ID of the featured tag in the database.
+  /// The ID of the featured tag.
   @JsonKey(
     name: r'id',
     required: true,

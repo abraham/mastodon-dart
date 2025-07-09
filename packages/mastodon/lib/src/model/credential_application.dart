@@ -21,6 +21,7 @@ class CredentialApplication {
     required this.clientId,
     required this.clientSecret,
     required this.clientSecretExpiresAt,
+    required this.id,
     required this.name,
     required this.redirectUri,
     required this.redirectUris,
@@ -29,7 +30,7 @@ class CredentialApplication {
     this.website,
   });
 
-  /// Client ID key, to be used for obtaining OAuth tokens
+  /// Client ID key, to be used for obtaining OAuth tokens.
   @JsonKey(
     name: r'client_id',
     required: true,
@@ -37,7 +38,7 @@ class CredentialApplication {
   )
   final String clientId;
 
-  /// Client secret key, to be used for obtaining OAuth tokens
+  /// Client secret key, to be used for obtaining OAuth tokens.
   @JsonKey(
     name: r'client_secret',
     required: true,
@@ -45,7 +46,7 @@ class CredentialApplication {
   )
   final String clientSecret;
 
-  /// When the client secret key will expire at, presently this always returns `0` indicating that OAuth Clients do not expire
+  /// When the client secret key will expire. Presently this always returns `0` indicating that OAuth Clients do not expire.
   @JsonKey(
     name: r'client_secret_expires_at',
     required: true,
@@ -53,7 +54,15 @@ class CredentialApplication {
   )
   final int clientSecretExpiresAt;
 
-  /// The name of your application.
+  /// The numeric ID of the application.
+  @JsonKey(
+    name: r'id',
+    required: true,
+    includeIfNull: false,
+  )
+  final String id;
+
+  /// The name of the application.
   @JsonKey(
     name: r'name',
     required: true,
@@ -61,7 +70,7 @@ class CredentialApplication {
   )
   final String name;
 
-  /// The registered redirection URI(s) for your application.
+  /// The registered redirection URI(s) for the application.
   @Deprecated('redirectUri has been deprecated')
   @JsonKey(
     name: r'redirect_uri',
@@ -70,7 +79,7 @@ class CredentialApplication {
   )
   final String redirectUri;
 
-  /// The registered redirection URI(s) for your application.
+  /// The registered redirection URI(s) for the application.
   @JsonKey(
     name: r'redirect_uris',
     required: true,
@@ -95,7 +104,7 @@ class CredentialApplication {
   )
   final String vapidKey;
 
-  /// The website associated with your application.
+  /// The website associated with the application.
   @JsonKey(
     name: r'website',
     required: false,
@@ -110,6 +119,7 @@ class CredentialApplication {
           other.clientId == clientId &&
           other.clientSecret == clientSecret &&
           other.clientSecretExpiresAt == clientSecretExpiresAt &&
+          other.id == id &&
           other.name == name &&
           other.redirectUri == redirectUri &&
           other.redirectUris == redirectUris &&
@@ -122,6 +132,7 @@ class CredentialApplication {
       clientId.hashCode +
       clientSecret.hashCode +
       clientSecretExpiresAt.hashCode +
+      id.hashCode +
       name.hashCode +
       redirectUri.hashCode +
       redirectUris.hashCode +

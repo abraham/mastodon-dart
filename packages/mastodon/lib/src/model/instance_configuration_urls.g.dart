@@ -14,13 +14,12 @@ InstanceConfigurationUrls _$InstanceConfigurationUrlsFromJson(
       ($checkedConvert) {
         $checkKeys(
           json,
-          requiredKeys: const ['streaming'],
+          requiredKeys: const ['about', 'streaming'],
         );
         final val = InstanceConfigurationUrls(
+          about: $checkedConvert('about', (v) => Uri.parse(v as String)),
           streaming:
               $checkedConvert('streaming', (v) => Uri.parse(v as String)),
-          about: $checkedConvert(
-              'about', (v) => v == null ? null : Uri.parse(v as String)),
           privacyPolicy: $checkedConvert('privacy_policy',
               (v) => v == null ? null : Uri.parse(v as String)),
           termsOfService: $checkedConvert('terms_of_service',
@@ -37,8 +36,8 @@ InstanceConfigurationUrls _$InstanceConfigurationUrlsFromJson(
 Map<String, dynamic> _$InstanceConfigurationUrlsToJson(
         InstanceConfigurationUrls instance) =>
     <String, dynamic>{
+      'about': instance.about.toString(),
       'streaming': instance.streaming.toString(),
-      if (instance.about?.toString() case final value?) 'about': value,
       if (instance.privacyPolicy?.toString() case final value?)
         'privacy_policy': value,
       if (instance.termsOfService?.toString() case final value?)

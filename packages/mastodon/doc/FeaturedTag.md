@@ -8,7 +8,7 @@ import 'package:mastodon/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** | The internal ID of the featured tag in the database. | 
+**id** | **String** | The ID of the featured tag. | 
 **lastStatusAt** | [**DateTime**](DateTime.md) | The date of the last authored status containing this hashtag. | 
 **name** | **String** | The name of the hashtag being featured. | 
 **statusesCount** | **String** | The number of authored statuses containing this hashtag. | 

@@ -17,7 +17,6 @@ part 'patch_accounts_update_credentials_request.g.dart';
 class PatchAccountsUpdateCredentialsRequest {
   /// Returns a new [PatchAccountsUpdateCredentialsRequest] instance.
   PatchAccountsUpdateCredentialsRequest({
-    required this.locked,
     this.attributionDomains,
     this.avatar,
     this.bot,
@@ -27,17 +26,10 @@ class PatchAccountsUpdateCredentialsRequest {
     this.header,
     this.hideCollections,
     this.indexable,
+    this.locked,
     this.note,
     this.source_,
   });
-
-  /// Whether manual approval of follow requests is required.
-  @JsonKey(
-    name: r'locked',
-    required: true,
-    includeIfNull: false,
-  )
-  final bool locked;
 
   /// Domains of websites allowed to credit the account.
   @JsonKey(
@@ -111,6 +103,14 @@ class PatchAccountsUpdateCredentialsRequest {
   )
   final bool? indexable;
 
+  /// Whether manual approval of follow requests is required.
+  @JsonKey(
+    name: r'locked',
+    required: false,
+    includeIfNull: false,
+  )
+  final bool? locked;
+
   /// The account bio.
   @JsonKey(
     name: r'note',
@@ -130,7 +130,6 @@ class PatchAccountsUpdateCredentialsRequest {
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is PatchAccountsUpdateCredentialsRequest &&
-          other.locked == locked &&
           other.attributionDomains == attributionDomains &&
           other.avatar == avatar &&
           other.bot == bot &&
@@ -140,12 +139,12 @@ class PatchAccountsUpdateCredentialsRequest {
           other.header == header &&
           other.hideCollections == hideCollections &&
           other.indexable == indexable &&
+          other.locked == locked &&
           other.note == note &&
           other.source_ == source_;
 
   @override
   int get hashCode =>
-      locked.hashCode +
       attributionDomains.hashCode +
       avatar.hashCode +
       bot.hashCode +
@@ -155,6 +154,7 @@ class PatchAccountsUpdateCredentialsRequest {
       header.hashCode +
       hideCollections.hashCode +
       indexable.hashCode +
+      locked.hashCode +
       note.hashCode +
       source_.hashCode;
 

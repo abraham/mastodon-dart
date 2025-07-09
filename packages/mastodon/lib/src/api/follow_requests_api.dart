@@ -20,7 +20,7 @@ class FollowRequestsApi {
   const FollowRequestsApi(this._dio);
 
   /// View pending follow requests
-  ///
+  /// Version history:  0.0.0 - added
   ///
   /// Parameters:
   /// * [limit] - Maximum number of results to return. Defaults to 40 accounts. Max 80 accounts.
@@ -112,7 +112,7 @@ class FollowRequestsApi {
   }
 
   /// Accept follow request
-  ///
+  /// Version history:  0.0.0 - added\\ 3.0.0 - now returns Relationship instead of nothing
   ///
   /// Parameters:
   /// * [accountId] - account_id parameter
@@ -194,7 +194,7 @@ class FollowRequestsApi {
   }
 
   /// Reject follow request
-  ///
+  /// Version history:  0.0.0 - added\\ 3.0.0 - now returns Relationship instead of nothing
   ///
   /// Parameters:
   /// * [accountId] - account_id parameter

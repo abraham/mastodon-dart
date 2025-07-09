@@ -20,7 +20,7 @@ class SuggestionsApi {
   const SuggestionsApi(this._dio);
 
   /// Remove a suggestion
-  /// Remove an account from follow suggestions.
+  /// Remove an account from follow suggestions.  Version history:  2.4.3 - added
   ///
   /// Parameters:
   /// * [accountId] - account_id parameter
@@ -75,7 +75,7 @@ class SuggestionsApi {
   }
 
   /// View follow suggestions (v1)
-  /// Accounts the user has had past positive interactions with, but is not yet following.
+  /// Accounts the user has had past positive interactions with, but is not yet following.  Version history:  2.4.3 - added\\ 3.4.0 - deprecated
   ///
   /// Parameters:
   /// * [limit] - Maximum number of results to return. Defaults to 40 accounts. Max 80 accounts.
@@ -162,7 +162,7 @@ class SuggestionsApi {
   }
 
   /// View follow suggestions (v2)
-  /// Accounts that are promoted by staff, or that the user has had past positive interactions with, but is not yet following.
+  /// Accounts that are promoted by staff, or that the user has had past positive interactions with, but is not yet following.  Version history:  3.4.0 - added
   ///
   /// Parameters:
   /// * [limit] - Maximum number of results to return. Defaults to 40 accounts. Max 80 accounts.

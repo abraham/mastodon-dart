@@ -63,7 +63,7 @@ void (empty response body)
 
 Unblock a domain
 
-Remove a domain block, if it exists in the user's array of blocked domains.
+Remove a domain block, if it exists in the user's array of blocked domains.  Version history:  1.4.0 - added
 
 ### Example
 ```dart

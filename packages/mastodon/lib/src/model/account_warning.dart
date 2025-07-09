@@ -43,7 +43,7 @@ class AccountWarning {
   )
   final DateTime createdAt;
 
-  /// The ID of the account warning in the database.
+  /// The ID of the account warning.
   @JsonKey(
     name: r'id',
     required: true,
@@ -51,7 +51,7 @@ class AccountWarning {
   )
   final String id;
 
-  /// Account against which a moderation decision has been taken.
+  /// Account against which a moderation decision has been taken. If this `AccountWarning` is present in a [Notification](/entities/Notification/) then this is always the same as the authenticated account that requested the notification.
   @JsonKey(
     name: r'target_account',
     required: true,
@@ -74,7 +74,7 @@ class AccountWarning {
   )
   final Appeal? appeal;
 
-  /// List of status IDs that are relevant to the warning. When `action` is `mark_statuses_as_sensitive` or `delete_statuses`, those are the affected statuses.
+  /// List of status IDs that are relevant to the warning. When `action` is `mark_statuses_as_sensitive` or `delete_statuses`, those are the affected statuses. If the action is `delete_statuses` then they have been irrevocably deleted (irrespective of the appeal state), and will be inaccessible to the client.
   @JsonKey(
     name: r'status_ids',
     required: false,

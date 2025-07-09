@@ -11,11 +11,15 @@ TermsOfService _$TermsOfServiceFromJson(Map<String, dynamic> json) =>
       'TermsOfService',
       json,
       ($checkedConvert) {
+        $checkKeys(
+          json,
+          requiredKeys: const ['content', 'effective', 'effective_date'],
+        );
         final val = TermsOfService(
-          content: $checkedConvert('content', (v) => v as String?),
-          effective: $checkedConvert('effective', (v) => v as bool?),
-          effectiveDate: $checkedConvert('effective_date',
-              (v) => v == null ? null : DateTime.parse(v as String)),
+          content: $checkedConvert('content', (v) => v as String),
+          effective: $checkedConvert('effective', (v) => v as bool),
+          effectiveDate: $checkedConvert(
+              'effective_date', (v) => DateTime.parse(v as String)),
           succeededBy: $checkedConvert('succeeded_by',
               (v) => v == null ? null : DateTime.parse(v as String)),
         );
@@ -29,10 +33,9 @@ TermsOfService _$TermsOfServiceFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$TermsOfServiceToJson(TermsOfService instance) =>
     <String, dynamic>{
-      if (instance.content case final value?) 'content': value,
-      if (instance.effective case final value?) 'effective': value,
-      if (instance.effectiveDate?.toIso8601String() case final value?)
-        'effective_date': value,
+      'content': instance.content,
+      'effective': instance.effective,
+      'effective_date': instance.effectiveDate.toIso8601String(),
       if (instance.succeededBy?.toIso8601String() case final value?)
         'succeeded_by': value,
     };

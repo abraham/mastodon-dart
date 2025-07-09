@@ -8,6 +8,12 @@ void main() {
   // TODO add properties to the entity
 
   group(InstanceConfigurationMediaAttachments, () {
+    // The maximum size of a description, in characters.
+    // int descriptionLimit
+    test('to test the property `descriptionLimit`', () async {
+      // TODO
+    });
+
     // The maximum number of pixels (width times height) for image uploads.
     // int imageMatrixLimit
     test('to test the property `imageMatrixLimit`', () async {
@@ -41,12 +47,6 @@ void main() {
     // The maximum size of any uploaded video, in bytes.
     // int videoSizeLimit
     test('to test the property `videoSizeLimit`', () async {
-      // TODO
-    });
-
-    // The maximum size of a description, in characters.
-    // int descriptionLimit
-    test('to test the property `descriptionLimit`', () async {
       // TODO
     });
   });

@@ -44,7 +44,7 @@ Method | HTTP request | Description
 
 Register an account
 
-Creates a user and account records. Returns an account access token for the app that initiated the request. The app should save this token for later, and should wait for the user to confirm their account by clicking a link in their email inbox.
+Creates a user and account records. Returns an account access token for the app that initiated the request. The app should save this token for later, and should wait for the user to confirm their account by clicking a link in their email inbox.  Version history:  2.7.0 - added\\ 3.0.0 - added `reason` parameter\\ 3.4.0 - added `details` to failure response\\ 4.4.0 - added `date_of_birth` parameter
 
 ### Example
 ```dart
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 
 Get account
 
-View information about a profile.
+View information about a profile.  Version history:  0.0.0 - added\\ 2.4.0 - returns 410 if account is suspended\\ 3.3.0 - returns an Account with `suspended: true` instead of 410
 
 ### Example
 ```dart
@@ -132,7 +132,7 @@ No authorization required
 
 Get featured accounts
 
-Accounts that the user is currently featuring on their profile.
+Accounts that the user is currently featuring on their profile.  Version history:  4.4.0 - added
 
 ### Example
 ```dart
@@ -181,7 +181,7 @@ No authorization required
 
 Get account's featured tags
 
-Tags featured by this account.
+Tags featured by this account.  Version history:  3.3.0 - added
 
 ### Example
 ```dart
@@ -224,7 +224,7 @@ No authorization required
 
 Get account's followers
 
-Accounts which follow the given account, if network is not hidden by the account owner.
+Accounts which follow the given account, if network is not hidden by the account owner.  Version history:  0.0.0 - added\\ 3.3.0 - both `min_id` and `max_id` can be used at the same time now\\ 4.0.0 - no longer requires an app token + `read:accounts`
 
 ### Example
 ```dart
@@ -275,7 +275,7 @@ No authorization required
 
 Get account's following
 
-Accounts which the given account is following, if network is not hidden by the account owner.
+Accounts which the given account is following, if network is not hidden by the account owner.  Version history:  0.0.0 - added\\ 3.3.0 - both `min_id` and `max_id` can be used at the same time now\\ 4.0.0 - no longer requires an app token + `read:accounts`
 
 ### Example
 ```dart
@@ -326,7 +326,7 @@ No authorization required
 
 Identity proofs
 
-
+Version history:  2.8.0 - added\\ 3.5.0 - deprecated. now returns an empty array.
 
 ### Example
 ```dart
@@ -371,7 +371,7 @@ Name | Type | Description  | Notes
 
 Get lists containing this account
 
-User lists that you have added this account to.
+User lists that you have added this account to.  Version history:  2.1.0 - added
 
 ### Example
 ```dart
@@ -416,7 +416,7 @@ Name | Type | Description  | Notes
 
 Lookup account ID from Webfinger address
 
-Quickly lookup a username to see if it is available, skipping WebFinger resolution.
+Quickly lookup a username to see if it is available, skipping WebFinger resolution.  Version history:  3.4.0 - added
 
 ### Example
 ```dart
@@ -459,7 +459,7 @@ No authorization required
 
 Check relationships to other accounts
 
-Find out whether a given account is followed, blocked, muted, etc.
+Find out whether a given account is followed, blocked, muted, etc.  Version history:  0.0.0 - added\\ 4.3.0 - added `with_suspended` parameter
 
 ### Example
 ```dart
@@ -506,7 +506,7 @@ Name | Type | Description  | Notes
 
 Search for matching accounts
 
-Search for matching accounts by username or display name.
+Search for matching accounts by username or display name.  Version history:  0.0.0 - added\\ 2.8.0 - add `limit`, `offset` and `following`
 
 ### Example
 ```dart
@@ -559,7 +559,7 @@ Name | Type | Description  | Notes
 
 Get account's statuses
 
-Statuses posted to the given account.
+Statuses posted to the given account.  Version history:  0.0.0 - added\\ 1.4.2 - add `only_media` and `exclude_replies`\\ 1.6.0 - add `pinned`\\ 2.6.0 - add `min_id`\\ 2.7.0 - add `exclude_reblogs` and allow unauthed use\\ 2.8.0 - add `tagged` parameter\\ 3.3.0 - both `min_id` and `max_id` can be used at the same time now
 
 ### Example
 ```dart
@@ -598,7 +598,7 @@ Name | Type | Description  | Notes
  **maxId** | **String**| All results returned will be lesser than this ID. In effect, sets an upper bound on results. | [optional] 
  **minId** | **String**| Returns results immediately newer than this ID. In effect, sets a cursor at this ID and paginates forward. | [optional] 
  **onlyMedia** | **bool**| Filter out statuses without attachments. | [optional] 
- **pinned** | **bool**| Filter for pinned statuses only. Defaults to false, which includes all statuses. Pinned statuses do not receive special priority in the order of the returned results. | [optional] [default to false]
+ **pinned** | **bool**| Filter for pinned statuses only. Defaults to false, which includes all statuses. Pinned statuses do not receive special priority in the order of the returned results. | [optional] 
  **sinceId** | **String**| All results returned will be greater than this ID. In effect, sets a lower bound on results. | [optional] 
  **tagged** | **String**| Filter for statuses using a specific hashtag. | [optional] 
 
@@ -622,14 +622,14 @@ Name | Type | Description  | Notes
 
 Get multiple accounts
 
-View information about multiple profiles.
+View information about multiple profiles.  Version history:  4.3.0 - added
 
 ### Example
 ```dart
 import 'package:mastodon/api.dart';
 
 final api = Mastodon().getAccountsApi();
-final List<String> id = ; // List<String> | The IDs of the Accounts in the database.
+final List<String> id = ; // List<String> | The IDs of the accounts.
 
 try {
     final response = api.getAccounts(id);
@@ -643,7 +643,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**List&lt;String&gt;**](String.md)| The IDs of the Accounts in the database. | [optional] 
+ **id** | [**List&lt;String&gt;**](String.md)| The IDs of the accounts. | [optional] 
 
 ### Return type
 
@@ -665,7 +665,7 @@ No authorization required
 
 Verify account credentials
 
-Test to make sure that the user token works.
+Test to make sure that the user token works.  Version history:  0.0.0 - added\\ 4.3.0 - added `profile` scope
 
 ### Example
 ```dart
@@ -706,7 +706,7 @@ This endpoint does not need any parameter.
 
 Find familiar followers
 
-Obtain a list of all accounts that follow a given account, filtered for accounts you follow.
+Obtain a list of all accounts that follow a given account, filtered for accounts you follow.  Version history:  3.5.0 - added
 
 ### Example
 ```dart
@@ -751,7 +751,7 @@ Name | Type | Description  | Notes
 
 Update account credentials
 
-Update the user's display and preferences.
+Update the user's display and preferences.  Version history:  1.1.1 - added\\ 2.3.0 - added `locked` parameter\\ 2.4.0 - added `source[privacy,sensitive]` parameters\\ 2.4.2 - added `source[language]` parameter\\ 2.7.0 - added `discoverable` parameter\\ 4.1.0 - added `hide_collections` parameter\\ 4.2.0 - added `indexable` parameter\\ 4.4.0 (`mastodon` [API version] 3) - added `attribution_domains` parameter
 
 ### Example
 ```dart
@@ -774,7 +774,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **patchAccountsUpdateCredentialsRequest** | [**PatchAccountsUpdateCredentialsRequest**](PatchAccountsUpdateCredentialsRequest.md)| JSON request body parameters | 
+ **patchAccountsUpdateCredentialsRequest** | [**PatchAccountsUpdateCredentialsRequest**](PatchAccountsUpdateCredentialsRequest.md)| JSON request body parameters | [optional] 
 
 ### Return type
 
@@ -796,7 +796,7 @@ Name | Type | Description  | Notes
 
 Block account
 
-Block the given account. Clients should filter statuses from this account if received (e.g. due to a boost in the Home timeline)
+Block the given account. Clients should filter statuses from this account if received (e.g. due to a boost in the Home timeline)  Version history:  0.0.0 - added\\ 3.5.0 - deprecated `follow` scope. now additionally accepts `write`
 
 ### Example
 ```dart
@@ -841,7 +841,7 @@ Name | Type | Description  | Notes
 
 Feature account on your profile
 
-Add the given account to the user's featured profiles.
+Add the given account to the user's featured profiles.  Version history:  4.4.0 - added
 
 ### Example
 ```dart
@@ -886,7 +886,7 @@ Name | Type | Description  | Notes
 
 Follow account
 
-Follow the given account. Can also be used to update whether to show reblogs or enable notifications.
+Follow the given account. Can also be used to update whether to show reblogs or enable notifications.  Version history:  0.0.0 - added\\ 3.3.0 - added `notify`\\ 3.5.0 - deprecated `follow` scope. now additionally accepts `write`\\ 4.0.0 - added `languages`
 
 ### Example
 ```dart
@@ -933,7 +933,7 @@ Name | Type | Description  | Notes
 
 Mute account
 
-Mute the given account. Clients should filter statuses and notifications from this account, if received (e.g. due to a boost in the Home timeline).
+Mute the given account. Clients should filter statuses and notifications from this account, if received (e.g. due to a boost in the Home timeline).  Version history:  0.0.0 - added\\ 3.3.0 - added `duration`\\ 3.5.0 - deprecated `follow` scope. now additionally accepts `write`
 
 ### Example
 ```dart
@@ -980,7 +980,7 @@ Name | Type | Description  | Notes
 
 Set private note on profile
 
-Sets a private note on a user.
+Sets a private note on a user.  Version history:  3.2.0 - added
 
 ### Example
 ```dart
@@ -1027,7 +1027,7 @@ Name | Type | Description  | Notes
 
 Feature account on your profile
 
-Add the given account to the user's featured profiles. (Featured profiles are currently shown on the user's own public profile.)
+Add the given account to the user's featured profiles. (Featured profiles are currently shown on the user's own public profile.)  Version history:  2.5.0 - added\\ 4.0.0 - calling this method is now idempotent\\ 4.4.0 - deprecated in favor of `/api/v1/accounts/:id/endorse`
 
 ### Example
 ```dart
@@ -1072,7 +1072,7 @@ Name | Type | Description  | Notes
 
 Remove account from followers
 
-Remove the given account from your followers.
+Remove the given account from your followers.  Version history:  3.5.0 - added
 
 ### Example
 ```dart
@@ -1117,7 +1117,7 @@ Name | Type | Description  | Notes
 
 Unblock account
 
-Unblock the given account.
+Unblock the given account.  Version history:  0.0.0 - added\\ 3.5.0 - deprecated `follow` scope. now additionally accepts `write`
 
 ### Example
 ```dart
@@ -1162,7 +1162,7 @@ Name | Type | Description  | Notes
 
 Unfeature account from profile
 
-Remove the given account from the user's featured profiles.
+Remove the given account from the user's featured profiles.  Version history:  4.4.0 - added
 
 ### Example
 ```dart
@@ -1207,7 +1207,7 @@ Name | Type | Description  | Notes
 
 Unfollow account
 
-Unfollow the given account.
+Unfollow the given account.  Version history:  0.0.0 - added\\ 3.5.0 - deprecated `follow` scope. now additionally accepts `write`
 
 ### Example
 ```dart
@@ -1252,7 +1252,7 @@ Name | Type | Description  | Notes
 
 Unmute account
 
-Unmute the given account.
+Unmute the given account.  Version history:  0.0.0 - added\\ 3.5.0 - deprecated `follow` scope. now additionally accepts `write`
 
 ### Example
 ```dart
@@ -1297,7 +1297,7 @@ Name | Type | Description  | Notes
 
 Unfeature account from profile
 
-Remove the given account from the user's featured profiles.
+Remove the given account from the user's featured profiles.  Version history:  2.5.0 - added\\ 4.4.0 - deprecated in favor of `/api/v1/accounts/:id/unendorse`
 
 ### Example
 ```dart

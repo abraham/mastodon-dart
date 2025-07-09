@@ -12,9 +12,10 @@ ModelList _$ModelListFromJson(Map<String, dynamic> json) => $checkedCreate(
       ($checkedConvert) {
         $checkKeys(
           json,
-          requiredKeys: const ['id', 'replies_policy', 'title'],
+          requiredKeys: const ['exclusive', 'id', 'replies_policy', 'title'],
         );
         final val = ModelList(
+          exclusive: $checkedConvert('exclusive', (v) => v as bool),
           id: $checkedConvert('id', (v) => v as String),
           repliesPolicy: $checkedConvert(
               'replies_policy', (v) => $enumDecode(_$PolicyEnumEnumMap, v)),
@@ -26,6 +27,7 @@ ModelList _$ModelListFromJson(Map<String, dynamic> json) => $checkedCreate(
     );
 
 Map<String, dynamic> _$ModelListToJson(ModelList instance) => <String, dynamic>{
+      'exclusive': instance.exclusive,
       'id': instance.id,
       'replies_policy': _$PolicyEnumEnumMap[instance.repliesPolicy]!,
       'title': instance.title,

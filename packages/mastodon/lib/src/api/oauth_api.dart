@@ -21,7 +21,7 @@ class OauthApi {
   const OauthApi(this._dio);
 
   /// Authorize a user
-  /// Displays an authorization form to the user. If approved, it will create and return an authorization code, then redirect to the desired &#x60;redirect_uri&#x60;, or show the authorization code if &#x60;urn:ietf:wg:oauth:2.0:oob&#x60; was requested. The authorization code can be used while requesting a token to obtain access to user-level methods.
+  /// Displays an authorization form to the user. If approved, it will create and return an authorization code, then redirect to the desired &#x60;redirect_uri&#x60;, or show the authorization code if &#x60;urn:ietf:wg:oauth:2.0:oob&#x60; was requested. The authorization code can be used while requesting a token to obtain access to user-level methods.  Version history:  0.1.0 - added\\ 2.6.0 - added &#x60;force_login&#x60;\\ 3.5.0 - added &#x60;lang&#x60;\\ 4.3.0 - added support for PKCE parameters
   ///
   /// Parameters:
   /// * [clientId] - The client ID, obtained during app registration.
@@ -100,7 +100,7 @@ class OauthApi {
   }
 
   /// Retrieve user information
-  /// Retrieves standardised OIDC [claims](https://www.iana.org/assignments/jwt/jwt.xhtml#claims) about the currently authenticated user.\\
+  /// Retrieves standardised OIDC [claims](https://www.iana.org/assignments/jwt/jwt.xhtml#claims) about the currently authenticated user.\\  Version history:  4.4.0 - added
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -152,7 +152,7 @@ class OauthApi {
   }
 
   /// Revoke a token
-  /// Revoke an access token to make it no longer valid for use.
+  /// Revoke an access token to make it no longer valid for use.  Version history:  0.1.0 - added
   ///
   /// Parameters:
   /// * [postOauthRevokeRequest] - JSON request body parameters
@@ -219,7 +219,7 @@ class OauthApi {
   }
 
   /// Obtain a token
-  /// Obtain an access token, to be used during API calls that are not public.
+  /// Obtain an access token, to be used during API calls that are not public.  Version history:  0.1.0 - added\\ 4.3.0 - added support for PKCE parameter
   ///
   /// Parameters:
   /// * [postOauthTokenRequest] - JSON request body parameters

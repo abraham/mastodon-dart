@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 Remove a conversation
 
-Removes a conversation from your list of conversations.
+Removes a conversation from your list of conversations.  Version history:  2.6.0 - added
 
 ### Example
 ```dart
@@ -63,7 +63,7 @@ void (empty response body)
 
 View all conversations
 
-
+Version history:  2.6.0 - added\\ 3.3.0 - both `min_id` and `max_id` can be used at the same time now
 
 ### Example
 ```dart
@@ -114,7 +114,7 @@ Name | Type | Description  | Notes
 
 Mark a conversation as read
 
-
+Version history:  2.6.0 - added
 
 ### Example
 ```dart

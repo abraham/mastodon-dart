@@ -8,7 +8,6 @@ import 'package:mastodon/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**locked** | **bool** | Whether manual approval of follow requests is required. | 
 **attributionDomains** | **List&lt;String&gt;** | Domains of websites allowed to credit the account. | [optional] 
 **avatar** | **String** | Avatar image encoded using `multipart/form-data` | [optional] 
 **bot** | **bool** | Whether the account has a bot flag. | [optional] 
@@ -18,6 +17,7 @@ Name | Type | Description | Notes
 **header** | **String** | Header image encoded using `multipart/form-data` | [optional] 
 **hideCollections** | **bool** | Whether to hide followers and followed accounts. | [optional] 
 **indexable** | **bool** | Whether public posts should be searchable to anyone. | [optional] 
+**locked** | **bool** | Whether manual approval of follow requests is required. | [optional] 
 **note** | **String** | The account bio. | [optional] 
 **source_** | [**PatchAccountsUpdateCredentialsRequestSource**](PatchAccountsUpdateCredentialsRequestSource.md) |  | [optional] 
 

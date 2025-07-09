@@ -19,7 +19,7 @@ class MediaApi {
   const MediaApi(this._dio);
 
   /// Upload media as an attachment (v1)
-  /// Creates an attachment to be used with a new status. This method will return after the full sized media is done processing.
+  /// Creates an attachment to be used with a new status. This method will return after the full sized media is done processing.  Version history:  0.0.0 - added\\ 2.3.0 - add &#x60;focus&#x60; parameter\\ 3.1.3 - deprecated in favor of [POST /api/v2/media], which is equal to v1 in all aspects, except it returns HTTP 202, and the returned JSON object has a url of null. This is because while the thumbnail is prepared synchronously, the full version of the media attachment will be processed in the background.\\ 3.2.0 - add &#x60;thumbnail&#x60; parameter
   ///
   /// Parameters:
   /// * [file] - The file to be attached, encoded using multipart form data. The file must have a MIME type.
@@ -131,7 +131,7 @@ class MediaApi {
   }
 
   /// Upload media as an attachment (async)
-  /// Creates a media attachment to be used with a new status. The full sized media will be processed asynchronously in the background for large uploads.
+  /// Creates a media attachment to be used with a new status. The full sized media will be processed asynchronously in the background for large uploads.  Version history:  3.1.3 - added\\ 3.2.0 - add &#x60;thumbnail&#x60; parameter\\ 4.0.0 - Smaller media formats (image) will be processed synchronously and return 200 instead of 202. Larger media formats (video, gifv, audio) will continue to be processed asynchronously and return 202.
   ///
   /// Parameters:
   /// * [file] - The file to be attached, encoded using multipart form data. The file must have a MIME type.
@@ -242,7 +242,7 @@ class MediaApi {
   }
 
   /// Delete media attachment
-  /// Delete a media attachment that is not currently attached to a status.
+  /// Delete a media attachment that is not currently attached to a status.  Version history:  - 4.4.0 (&#x60;mastodon&#x60; [API version] 4) - added
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -297,7 +297,7 @@ class MediaApi {
   }
 
   /// Get media attachment
-  /// Get a media attachment, before it is attached to a status and posted, but after it is accepted for processing. Use this method to check that the full-sized media has finished processing.
+  /// Get a media attachment, before it is attached to a status and posted, but after it is accepted for processing. Use this method to check that the full-sized media has finished processing.  Version history:  3.1.3 - added
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -380,7 +380,7 @@ class MediaApi {
   }
 
   /// Update media attachment
-  /// Update a MediaAttachment&#39;s parameters, before it is attached to a status and posted.
+  /// Update a MediaAttachment&#39;s parameters, before it is attached to a status and posted.  Version history:  0.0.0 - added\\ 2.3.0 - add &#x60;focus&#x60; parameter\\ 3.2.0 - added &#x60;thumbnail&#x60;
   ///
   /// Parameters:
   /// * [id] - id parameter

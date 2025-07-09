@@ -18,17 +18,17 @@ part 'quote.g.dart';
 class Quote {
   /// Returns a new [Quote] instance.
   Quote({
-    this.state,
+    required this.state,
     this.status,
   });
 
   /// The state of the quote.
   @JsonKey(
     name: r'state',
-    required: false,
+    required: true,
     includeIfNull: false,
   )
-  final StateEnum? state;
+  final StateEnum state;
 
   @JsonKey(
     name: r'status',

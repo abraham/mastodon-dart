@@ -8,7 +8,7 @@ void main() {
   group(StatusesApi, () {
     // Post a new status
     //
-    // Publish a status with the given parameters.
+    // Publish a status with the given parameters.  Version history:  0.0.0 - added\\ 2.7.0 - `scheduled_at` added\\ 2.8.0 - `poll` added
     //
     //Future<CreateStatus200Response> createStatus(CreateStatusRequest createStatusRequest, { Object idempotencyKey }) async
     test('test createStatus', () async {
@@ -17,7 +17,7 @@ void main() {
 
     // Delete a status
     //
-    // Delete one of your own statuses.
+    // Delete one of your own statuses.  Version history:  0.0.0 - added\\ 2.9.0 - return source properties, for use with delete and redraft\\ 4.4.0 (`mastodon` [API version] 4) - added `delete_media` optional parameter
     //
     //Future<Status> deleteStatus(String id, { bool deleteMedia }) async
     test('test deleteStatus', () async {
@@ -26,7 +26,7 @@ void main() {
 
     // View a single status
     //
-    // Obtain information about a status.
+    // Obtain information about a status.  Version history:  0.0.0 - added\\ 2.7.0 - public statuses no longer require token
     //
     //Future<Status> getStatus(String id) async
     test('test getStatus', () async {
@@ -35,7 +35,7 @@ void main() {
 
     // Fetch preview card
     //
-    //
+    // Version history:  0.0.0 - added\\ 2.6.0 - deprecated in favor of card property inlined on Status entity\\ 3.0.0 - removed
     //
     //Future<PreviewCard> getStatusCard(String id) async
     test('test getStatusCard', () async {
@@ -44,7 +44,7 @@ void main() {
 
     // Get parent and child statuses in context
     //
-    // View statuses above and below this status in the thread.
+    // View statuses above and below this status in the thread.  Version history:  0.0.0 - added\\ 4.0.0 - limit unauthenticated requests
     //
     //Future<Context> getStatusContext(String id) async
     test('test getStatusContext', () async {
@@ -53,7 +53,7 @@ void main() {
 
     // See who favourited a status
     //
-    // View who favourited a given status.
+    // View who favourited a given status.  Version history:  0.0.0 - added
     //
     //Future<List<Account>> getStatusFavouritedBy(String id, { int limit, String maxId, String sinceId }) async
     test('test getStatusFavouritedBy', () async {
@@ -62,7 +62,7 @@ void main() {
 
     // View edit history of a status
     //
-    // Get all known versions of a status, including the initial and current states.
+    // Get all known versions of a status, including the initial and current states.  Version history:  3.5.0 - added
     //
     //Future<List<StatusEdit>> getStatusHistory(String id) async
     test('test getStatusHistory', () async {
@@ -71,7 +71,7 @@ void main() {
 
     // See who boosted a status
     //
-    // View who boosted a given status.
+    // View who boosted a given status.  Version history:  0.0.0 - added
     //
     //Future<List<Account>> getStatusRebloggedBy(String id, { int limit, String maxId, String sinceId }) async
     test('test getStatusRebloggedBy', () async {
@@ -80,7 +80,7 @@ void main() {
 
     // View status source
     //
-    // Obtain the source properties for a status so that it can be edited.
+    // Obtain the source properties for a status so that it can be edited.  Version history:  3.5.0 - added
     //
     //Future<StatusSource> getStatusSource(String id) async
     test('test getStatusSource', () async {
@@ -89,7 +89,7 @@ void main() {
 
     // View multiple statuses
     //
-    // Obtain information about multiple statuses.
+    // Obtain information about multiple statuses.  Version history:  4.3.0 - added
     //
     //Future<List<Status>> getStatuses({ List<String> id }) async
     test('test getStatuses', () async {
@@ -98,7 +98,7 @@ void main() {
 
     // Bookmark a status
     //
-    // Privately bookmark a status.
+    // Privately bookmark a status.  Version history:  3.1.0 - added
     //
     //Future<Status> postStatusBookmark(String id) async
     test('test postStatusBookmark', () async {
@@ -107,7 +107,7 @@ void main() {
 
     // Favourite a status
     //
-    // Add a status to your favourites list.
+    // Add a status to your favourites list.  Version history:  0.0.0 - added
     //
     //Future<Status> postStatusFavourite(String id) async
     test('test postStatusFavourite', () async {
@@ -116,7 +116,7 @@ void main() {
 
     // Mute a conversation
     //
-    // Do not receive notifications for the thread that this status is part of. Must be a thread in which you are a participant.
+    // Do not receive notifications for the thread that this status is part of. Must be a thread in which you are a participant.  Version history:  1.4.2 - added
     //
     //Future<Status> postStatusMute(String id) async
     test('test postStatusMute', () async {
@@ -125,7 +125,7 @@ void main() {
 
     // Pin status to profile
     //
-    // Feature one of your own public statuses at the top of your profile.
+    // Feature one of your own public statuses at the top of your profile.  Version history:  1.6.0 - added\\ 3.5.0 - you can now pin private posts
     //
     //Future<Status> postStatusPin(String id) async
     test('test postStatusPin', () async {
@@ -134,7 +134,7 @@ void main() {
 
     // Boost a status
     //
-    // Reshare a status on your own profile.
+    // Reshare a status on your own profile.  Version history:  0.0.0 - added\\ 2.8.0 - add `visibility` parameter
     //
     //Future<Status> postStatusReblog(String id, { PostStatusReblogRequest postStatusReblogRequest }) async
     test('test postStatusReblog', () async {
@@ -143,7 +143,7 @@ void main() {
 
     // Translate a status
     //
-    // Translate the status content into some language.
+    // Translate the status content into some language.  Version history:  4.0.0 - added
     //
     //Future<Translation> postStatusTranslate(String id, { PostStatusTranslateRequest postStatusTranslateRequest }) async
     test('test postStatusTranslate', () async {
@@ -152,7 +152,7 @@ void main() {
 
     // Undo bookmark of a status
     //
-    // Remove a status from your private bookmarks.
+    // Remove a status from your private bookmarks.  Version history:  3.1.0 - added
     //
     //Future<Status> postStatusUnbookmark(String id) async
     test('test postStatusUnbookmark', () async {
@@ -161,7 +161,7 @@ void main() {
 
     // Undo favourite of a status
     //
-    // Remove a status from your favourites list.
+    // Remove a status from your favourites list.  Version history:  0.0.0 - added
     //
     //Future<Status> postStatusUnfavourite(String id) async
     test('test postStatusUnfavourite', () async {
@@ -170,7 +170,7 @@ void main() {
 
     // Unmute a conversation
     //
-    // Start receiving notifications again for the thread that this status is part of.
+    // Start receiving notifications again for the thread that this status is part of.  Version history:  1.4.2 - added
     //
     //Future<Status> postStatusUnmute(String id) async
     test('test postStatusUnmute', () async {
@@ -179,7 +179,7 @@ void main() {
 
     // Unpin status from profile
     //
-    // Unfeature a status from the top of your profile.
+    // Unfeature a status from the top of your profile.  Version history:  1.6.0 - added
     //
     //Future<Status> postStatusUnpin(String id) async
     test('test postStatusUnpin', () async {
@@ -188,7 +188,7 @@ void main() {
 
     // Undo boost of a status
     //
-    // Undo a reshare of a status.
+    // Undo a reshare of a status.  Version history:  0.0.0 - added
     //
     //Future<Status> postStatusUnreblog(String id) async
     test('test postStatusUnreblog', () async {
@@ -197,7 +197,7 @@ void main() {
 
     // Edit a status
     //
-    // Edit a given status to change its text, sensitivity, media attachments, or poll. Note that editing a poll's options will reset the votes.
+    // Edit a given status to change its text, sensitivity, media attachments, or poll. Note that editing a poll's options will reset the votes.  Version history:  3.5.0 - added\\ 4.0.0 - add `language`
     //
     //Future<Status> updateStatus(String id, { UpdateStatusRequest updateStatusRequest }) async
     test('test updateStatus', () async {

@@ -19,7 +19,7 @@ class TagsApi {
   const TagsApi(this._dio);
 
   /// View information about a single tag
-  /// Show a hashtag and its associated information
+  /// Show a hashtag and its associated information  Version history:  4.0.0 - added
   ///
   /// Parameters:
   /// * [name] - name parameter
@@ -100,7 +100,7 @@ class TagsApi {
   }
 
   /// Feature a hashtag
-  /// Feature the hashtag on your profile.
+  /// Feature the hashtag on your profile.  Version history:  4.4.0 - added
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -181,7 +181,7 @@ class TagsApi {
   }
 
   /// Follow a hashtag
-  /// Follow a hashtag. Posts containing a followed hashtag will be inserted into your home timeline.
+  /// Follow a hashtag. Posts containing a followed hashtag will be inserted into your home timeline.  Version history:  4.0.0 - added\\ 4.1.0 - this action is now idempotent
   ///
   /// Parameters:
   /// * [name] - name parameter
@@ -262,7 +262,7 @@ class TagsApi {
   }
 
   /// Unfeature a hashtag
-  /// Stop featuring the hashtag on your profile.
+  /// Stop featuring the hashtag on your profile.  Version history:  4.4.0 - added
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -343,7 +343,7 @@ class TagsApi {
   }
 
   /// Unfollow a hashtag
-  /// Unfollow a hashtag. Posts containing this hashtag will no longer be inserted into your home timeline.
+  /// Unfollow a hashtag. Posts containing this hashtag will no longer be inserted into your home timeline.  Version history:  4.0.0 - added
   ///
   /// Parameters:
   /// * [name] - name parameter

@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 Get OEmbed info as JSON
 
-
+Version history:  1.0.0 - added
 
 ### Example
 ```dart

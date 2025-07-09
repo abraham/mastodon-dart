@@ -21,7 +21,7 @@ class PushApi {
   const PushApi(this._dio);
 
   /// Subscribe to push notifications
-  /// Add a Web Push API subscription to receive notifications. Each access token can have one push subscription. If you create a new subscription, the old subscription is deleted.
+  /// Add a Web Push API subscription to receive notifications. Each access token can have one push subscription. If you create a new subscription, the old subscription is deleted.  Version history:  2.4.0 - added\\ 3.3.0 - added &#x60;data[alerts][status]&#x60;\\ 3.4.0 - added &#x60;data[policy]&#x60;\\ 3.5.0 - added &#x60;data[alerts][update]&#x60; and &#x60;data[alerts][admin.sign_up]&#x60;\\ 4.0.0 - added &#x60;data[alerts][admin.report]&#x60;\\ 4.3.0 - added stricter request parameter validation, invalid endpoint URLs and subscription keys will now result in an error, previously these would be accepted, but silently fail.\\ 4.4.0 - added &#x60;subscription[standard]&#x60;
   ///
   /// Parameters:
   /// * [createPushSubscriptionRequest] - JSON request body parameters
@@ -121,7 +121,7 @@ class PushApi {
   }
 
   /// Remove current subscription
-  /// Removes the current Web Push API subscription.
+  /// Removes the current Web Push API subscription.  Version history:  2.4.0 - added
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -173,7 +173,7 @@ class PushApi {
   }
 
   /// Get current subscription
-  /// View the PushSubscription currently associated with this access token.
+  /// View the PushSubscription currently associated with this access token.  Version history:  2.4.0 - added
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -253,7 +253,7 @@ class PushApi {
   }
 
   /// Change types of notifications
-  /// Updates the current push subscription. Only the data part can be updated. To change fundamentals, a new subscription must be created instead.
+  /// Updates the current push subscription. Only the data part can be updated. To change fundamentals, a new subscription must be created instead.  Version history:  2.4.0 - added\\ 3.3.0 - added &#x60;data[alerts][status]&#x60;\\ 3.4.0 - added &#x60;policy&#x60;\\ 3.5.0 - added &#x60;data[alerts][update]&#x60; and &#x60;data[alerts][admin.sign_up]&#x60;\\ 4.0.0 - added &#x60;data[alerts][admin.report]&#x60;
   ///
   /// Parameters:
   /// * [putPushSubscriptionRequest] - JSON request body parameters

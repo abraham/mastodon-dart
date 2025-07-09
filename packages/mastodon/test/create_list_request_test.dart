@@ -13,7 +13,7 @@ void main() {
       // TODO
     });
 
-    // Whether members of this list need to get removed from the “Home” feed
+    // Whether members of this list need to get removed from the “Home” feed.
     // bool exclusive
     test('to test the property `exclusive`', () async {
       // TODO

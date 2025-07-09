@@ -7,7 +7,13 @@ void main() {
   // TODO add properties to the entity
 
   group(ModelList, () {
-    // The internal database ID of the list.
+    // Whether members of the list should be removed from the “Home” feed.
+    // bool exclusive
+    test('to test the property `exclusive`', () async {
+      // TODO
+    });
+
+    // The ID of the list.
     // String id
     test('to test the property `id`', () async {
       // TODO

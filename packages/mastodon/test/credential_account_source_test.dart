@@ -8,6 +8,12 @@ void main() {
   // TODO add properties to the entity
 
   group(CredentialAccountSource, () {
+    // Domains of websites allowed to credit the account.
+    // List<String> attributionDomains
+    test('to test the property `attributionDomains`', () async {
+      // TODO
+    });
+
     // Metadata about the account.
     // List<Field> fields
     test('to test the property `fields`', () async {
@@ -35,12 +41,6 @@ void main() {
     // Whether new statuses should be marked sensitive by default.
     // bool sensitive
     test('to test the property `sensitive`', () async {
-      // TODO
-    });
-
-    // Domains of websites allowed to credit the account.
-    // List<String> attributionDomains
-    test('to test the property `attributionDomains`', () async {
       // TODO
     });
 

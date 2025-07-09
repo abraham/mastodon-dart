@@ -28,7 +28,7 @@ class FiltersApi {
   const FiltersApi(this._dio);
 
   /// Create a filter
-  ///
+  /// Version history:  2.4.3 - added\\ 3.1.0 - added &#x60;account&#x60; context to filter in profile views\\ 4.0.0 - deprecated. For compatibility purposes, now returns a V1::Filter representing one FilterKeyword (with the &#x60;keyword&#x60; being presented in the &#x60;phrase&#x60; attribute). This method will create a Filter that contains only one FilterKeyword. The &#x60;title&#x60; of the Filter and the &#x60;keyword&#x60; of the FilterKeyword will be set equal to the &#x60;phrase&#x60; provided.
   ///
   /// Parameters:
   /// * [createFilterRequest] - JSON request body parameters
@@ -128,7 +128,7 @@ class FiltersApi {
   }
 
   /// Create a filter
-  /// Create a filter group with the given parameters.
+  /// Create a filter group with the given parameters.  Version history:  4.0.0 - added\\ 4.4.0 (&#x60;mastodon&#x60; [API version] 5) - added &#x60;blur&#x60; value to &#x60;filter_action&#x60; attribute
   ///
   /// Parameters:
   /// * [createFilterV2Request] - JSON request body parameters
@@ -226,7 +226,7 @@ class FiltersApi {
   }
 
   /// Remove a filter
-  ///
+  /// Version history:  2.4.3 - added\\ 4.0.0 - deprecated. This method will delete only the FilterKeyword from its parent Filter. To delete the parent Filter, you must use the v2 filters API.
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -282,7 +282,7 @@ class FiltersApi {
   }
 
   /// Delete a filter
-  /// Delete a filter group with the given id.
+  /// Delete a filter group with the given id.  Version history:  4.0.0 - added
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -337,7 +337,7 @@ class FiltersApi {
   }
 
   /// Remove keywords from a filter
-  /// Deletes the given filter keyword.
+  /// Deletes the given filter keyword.  Version history:  4.0.0 - added
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -392,7 +392,7 @@ class FiltersApi {
   }
 
   /// Remove a status from a filter group
-  /// Remove a status filter from the current filter group.
+  /// Remove a status filter from the current filter group.  Version history:  4.0.0 - added
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -474,7 +474,7 @@ class FiltersApi {
   }
 
   /// View a single filter
-  ///
+  /// Version history:  2.4.3 - added\\ 4.0.0 - deprecated. For compatibility purposes, now returns a V1::Filter representing one FilterKeyword (with the &#x60;keyword&#x60; being presented in the &#x60;phrase&#x60; attribute)
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -557,7 +557,7 @@ class FiltersApi {
   }
 
   /// View keywords added to a filter
-  /// List all keywords attached to the current filter group.
+  /// List all keywords attached to the current filter group.  Version history:  4.0.0 - added
   ///
   /// Parameters:
   /// * [filterId] - filter_id parameter
@@ -640,7 +640,7 @@ class FiltersApi {
   }
 
   /// View all status filters
-  /// Obtain a list of all status filters within this filter group.
+  /// Obtain a list of all status filters within this filter group.  Version history:  4.0.0 - added
   ///
   /// Parameters:
   /// * [filterId] - filter_id parameter
@@ -723,7 +723,7 @@ class FiltersApi {
   }
 
   /// View a specific filter
-  /// Obtain a single filter group owned by the current user.
+  /// Obtain a single filter group owned by the current user.  Version history:  4.0.0 - added
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -804,7 +804,7 @@ class FiltersApi {
   }
 
   /// View your filters
-  ///
+  /// Version history:  2.4.3 - added\\ 4.0.0 - deprecated. For compatibility purposes, now returns a List of V1::Filter, with each V1::Filter representing one FilterKeyword (with the &#x60;keyword&#x60; being presented in the &#x60;phrase&#x60; attribute)
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -884,7 +884,7 @@ class FiltersApi {
   }
 
   /// View a single keyword
-  /// Get one filter keyword by the given id.
+  /// Get one filter keyword by the given id.  Version history:  4.0.0 - added
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -966,7 +966,7 @@ class FiltersApi {
   }
 
   /// View a single status filter
-  /// Obtain a single status filter.
+  /// Obtain a single status filter.  Version history:  4.0.0 - added
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -1048,7 +1048,7 @@ class FiltersApi {
   }
 
   /// View all filters
-  /// Obtain a list of all filter groups for the current user.
+  /// Obtain a list of all filter groups for the current user.  Version history:  4.0.0 - added
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -1127,7 +1127,7 @@ class FiltersApi {
   }
 
   /// Add a keyword to a filter
-  /// Add the given keyword to the specified filter group
+  /// Add the given keyword to the specified filter group  Version history:  4.0.0 - added
   ///
   /// Parameters:
   /// * [filterId] - filter_id parameter
@@ -1229,7 +1229,7 @@ class FiltersApi {
   }
 
   /// Add a status to a filter group
-  /// Add a status filter to the current filter group.
+  /// Add a status filter to the current filter group.  Version history:  4.0.0 - added
   ///
   /// Parameters:
   /// * [filterId] - filter_id parameter
@@ -1331,7 +1331,7 @@ class FiltersApi {
   }
 
   /// Update a filter
-  /// Replaces a filter&#39;s parameters in-place.
+  /// Replaces a filter&#39;s parameters in-place.  Version history:  2.4.3 - added\\ 3.1.0 - added &#x60;account&#x60; context to filter in profile views\\ 4.0.0 - deprecated. For compatibility purposes, now returns a V1::Filter representing one FilterKeyword (with the &#x60;keyword&#x60; being presented in the &#x60;phrase&#x60; attribute). This method will return an error if you attempt to change &#x60;expires_in&#x60;, &#x60;irreversible&#x60;, or &#x60;context&#x60; for a filter with multiple keywords. Changing &#x60;phrase&#x60; and &#x60;whole_word&#x60; is always safe.
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -1434,7 +1434,7 @@ class FiltersApi {
   }
 
   /// Update a filter
-  /// Update a filter group with the given parameters.
+  /// Update a filter group with the given parameters.  Version history:  4.0.0 - added\\ 4.4.0 (&#x60;mastodon&#x60; [API version] 5) - added &#x60;blur&#x60; value to &#x60;filter_action&#x60; attribute
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -1535,7 +1535,7 @@ class FiltersApi {
   }
 
   /// Edit a keyword within a filter
-  /// Update the given filter keyword.
+  /// Update the given filter keyword.  Version history:  4.0.0 - added
   ///
   /// Parameters:
   /// * [id] - id parameter

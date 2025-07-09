@@ -1,4 +1,4 @@
-# mastodon.api.PreferencesApi
+# mastodon.api.HealthApi
 
 ## Load the API package
 ```dart
@@ -9,28 +9,26 @@ All URIs are relative to *https://mastodon.example*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getPreferences**](PreferencesApi.md#getpreferences) | **GET** /api/v1/preferences | View user preferences
+[**getHealth**](HealthApi.md#gethealth) | **GET** /health | Get basic health status as JSON
 
 
-# **getPreferences**
-> getPreferences()
+# **getHealth**
+> getHealth()
 
-View user preferences
+Get basic health status as JSON
 
-Preferences defined by the user in their account settings.  Version history:  2.8.0 - added
+Version history:  3.0.0 - added
 
 ### Example
 ```dart
 import 'package:mastodon/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api = Mastodon().getPreferencesApi();
+final api = Mastodon().getHealthApi();
 
 try {
-    api.getPreferences();
+    api.getHealth();
 } catch on DioException (e) {
-    print('Exception when calling PreferencesApi->getPreferences: $e\n');
+    print('Exception when calling HealthApi->getHealth: $e\n');
 }
 ```
 
@@ -43,7 +41,7 @@ void (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

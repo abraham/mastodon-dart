@@ -23,6 +23,7 @@ import 'package:mastodon/src/api/featured_tags_api.dart';
 import 'package:mastodon/src/api/filters_api.dart';
 import 'package:mastodon/src/api/follow_requests_api.dart';
 import 'package:mastodon/src/api/followed_tags_api.dart';
+import 'package:mastodon/src/api/health_api.dart';
 import 'package:mastodon/src/api/instance_api.dart';
 import 'package:mastodon/src/api/lists_api.dart';
 import 'package:mastodon/src/api/markers_api.dart';
@@ -200,6 +201,12 @@ class Mastodon {
   /// by doing that all interceptors will not be executed
   FollowedTagsApi getFollowedTagsApi() {
     return FollowedTagsApi(dio);
+  }
+
+  /// Get HealthApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  HealthApi getHealthApi() {
+    return HealthApi(dio);
   }
 
   /// Get InstanceApi instance, base route and serializer can be overridden by a given but be careful,

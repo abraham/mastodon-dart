@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 View profile directory
 
-List accounts visible in the directory.
+List accounts visible in the directory.  Version history:  3.0.0 - added
 
 ### Example
 ```dart

@@ -20,7 +20,7 @@ class PollsApi {
   const PollsApi(this._dio);
 
   /// View a poll
-  /// View a poll attached to a status.
+  /// View a poll attached to a status.  Version history:  2.8.0 - added
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -101,7 +101,7 @@ class PollsApi {
   }
 
   /// Vote on a poll
-  /// Vote on a poll attached to a status.
+  /// Vote on a poll attached to a status.  Version history:  2.8.0 - added
   ///
   /// Parameters:
   /// * [id] - id parameter

@@ -11,9 +11,13 @@ ShallowQuote _$ShallowQuoteFromJson(Map<String, dynamic> json) =>
       'ShallowQuote',
       json,
       ($checkedConvert) {
+        $checkKeys(
+          json,
+          requiredKeys: const ['state'],
+        );
         final val = ShallowQuote(
           state: $checkedConvert(
-              'state', (v) => $enumDecodeNullable(_$StateEnumEnumMap, v)),
+              'state', (v) => $enumDecode(_$StateEnumEnumMap, v)),
           statusId: $checkedConvert('status_id', (v) => v as String?),
         );
         return val;
@@ -23,7 +27,7 @@ ShallowQuote _$ShallowQuoteFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$ShallowQuoteToJson(ShallowQuote instance) =>
     <String, dynamic>{
-      if (_$StateEnumEnumMap[instance.state] case final value?) 'state': value,
+      'state': _$StateEnumEnumMap[instance.state]!,
       if (instance.statusId case final value?) 'status_id': value,
     };
 

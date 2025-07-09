@@ -13,7 +13,7 @@ PostStatusTranslateRequest _$PostStatusTranslateRequestFromJson(
       json,
       ($checkedConvert) {
         final val = PostStatusTranslateRequest(
-          lang: $checkedConvert('lang', (v) => v as String? ?? 'the'),
+          lang: $checkedConvert('lang', (v) => v as String?),
         );
         return val;
       },

@@ -21,7 +21,7 @@ class TrendsApi {
   const TrendsApi(this._dio);
 
   /// View trending links
-  /// Links that have been shared more than others.
+  /// Links that have been shared more than others.  Version history:  3.5.0 - added
   ///
   /// Parameters:
   /// * [limit] - Maximum number of results to return. Defaults to 10 links. Max 20 links.
@@ -106,7 +106,7 @@ class TrendsApi {
   }
 
   /// View trending statuses
-  /// Statuses that have been interacted with more than others.
+  /// Statuses that have been interacted with more than others.  Version history:  3.5.0 - added
   ///
   /// Parameters:
   /// * [limit] - Maximum number of results to return. Defaults to 20 statuses. Max 40 statuses.
@@ -190,7 +190,7 @@ class TrendsApi {
   }
 
   /// View trending tags
-  /// Tags that are being used more frequently within the past week.
+  /// Tags that are being used more frequently within the past week.  Version history:  3.0.0 - added\\ 3.5.0 - method signature changed from &#x60;GET /api/v1/trends&#x60; to &#x60;GET /api/v1/trends/tags&#x60;. The former is a deprecated alias that may be removed in the future.
   ///
   /// Parameters:
   /// * [limit] - Maximum number of results to return. Defaults to 10 tags. Max 20 tags.

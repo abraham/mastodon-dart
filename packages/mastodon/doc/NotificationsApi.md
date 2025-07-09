@@ -38,7 +38,7 @@ Method | HTTP request | Description
 
 Dismiss all notifications
 
-Clear all notifications from the server.
+Clear all notifications from the server.  Version history:  0.0.0 - added
 
 ### Example
 ```dart
@@ -78,7 +78,7 @@ void (empty response body)
 
 Accept multiple notification requests
 
-Accepts multiple notification requests, which merges the filtered notifications from those users back into the main notifications and accepts any future notification from them.
+Accepts multiple notification requests, which merges the filtered notifications from those users back into the main notifications and accepts any future notification from them.  Version history:  4.3.0 - added
 
 ### Example
 ```dart
@@ -118,7 +118,7 @@ void (empty response body)
 
 Dismiss multiple notification requests
 
-Dismiss multiple notification requests, which hides them and prevent them from contributing to the pending notification requests count.
+Dismiss multiple notification requests, which hides them and prevent them from contributing to the pending notification requests count.  Version history:  4.3.0 - added
 
 ### Example
 ```dart
@@ -158,7 +158,7 @@ void (empty response body)
 
 Get a single notification
 
-View information about a notification with a given ID.
+View information about a notification with a given ID.  Version history:  0.0.0 - added
 
 ### Example
 ```dart
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 
 Get accounts of all notifications in a notification group
 
-
+Version history:  4.3.0 (`mastodon` [API version] 2) - added
 
 ### Example
 ```dart
@@ -248,7 +248,7 @@ Name | Type | Description  | Notes
 
 Get the filtering policy for notifications
 
-Notifications filtering policy for the user.
+Notifications filtering policy for the user.  Version history:  4.3.0 - added
 
 ### Example
 ```dart
@@ -289,7 +289,7 @@ This endpoint does not need any parameter.
 
 Get all notification requests
 
-Notification requests for notifications filtered by the user's policy. This API returns Link headers containing links to the next/previous page.
+Notification requests for notifications filtered by the user's policy. This API returns Link headers containing links to the next/previous page.  Version history:  4.3.0 - added
 
 ### Example
 ```dart
@@ -340,7 +340,7 @@ Name | Type | Description  | Notes
 
 Get all notifications
 
-Notifications concerning the user. This API returns Link headers containing links to the next/previous page. However, the links can also be constructed dynamically using query params and `id` values.
+Notifications concerning the user. This API returns Link headers containing links to the next/previous page. However, the links can also be constructed dynamically using query params and `id` values.  Version history:  0.0.0 - added\\ 2.6.0 - added `min_id`\\ 2.9.0 - added `account_id`\\ 3.1.0 - added `follow_request` type\\ 3.3.0 - added `status` type; both `min_id` and `max_id` can be used at the same time now\\ 3.5.0 - added `types`; add `update` and `admin.sign_up` types\\ 4.0.0 - added `admin.report` type\\ 4.1.0 - notification limit changed from 15 (max 30) to 40 (max 80)\\ 4.3.0 - added `include_filtered` parameter
 
 ### Example
 ```dart
@@ -399,7 +399,7 @@ Name | Type | Description  | Notes
 
 Get a single notification group
 
-View information about a specific notification group with a given group key.
+View information about a specific notification group with a given group key.  Version history:  4.3.0 (`mastodon` [API version] 2) - added
 
 ### Example
 ```dart
@@ -444,7 +444,7 @@ Name | Type | Description  | Notes
 
 Get a single notification group
 
-View information about a specific notification group with a given group key.
+View information about a specific notification group with a given group key.  Version history:  4.3.0-beta.1 - added\\ 4.3.0-beta.2 - deprecated
 
 ### Example
 ```dart
@@ -489,7 +489,7 @@ Name | Type | Description  | Notes
 
 Get a single notification request
 
-View information about a notification request with a given ID.
+View information about a notification request with a given ID.  Version history:  4.3.0 - added
 
 ### Example
 ```dart
@@ -534,7 +534,7 @@ Name | Type | Description  | Notes
 
 Check if accepted notification requests have been merged
 
-Check whether accepted notification requests have been merged.
+Check whether accepted notification requests have been merged.  Version history:  4.3.0 - added
 
 ### Example
 ```dart
@@ -728,7 +728,7 @@ void (empty response body)
 
 Get all grouped notifications
 
-Return grouped notifications concerning the user. This API returns Link headers containing links to the next/previous page. However, the links can also be constructed dynamically using query params and `id` values.
+Return grouped notifications concerning the user. This API returns Link headers containing links to the next/previous page. However, the links can also be constructed dynamically using query params and `id` values.  Version history:  4.3.0 (`mastodon` [API version] 2) - added\\ 4.4.0 - added `admin.sign_up` to grouped notification types
 
 ### Example
 ```dart
@@ -791,7 +791,7 @@ Name | Type | Description  | Notes
 
 Get all grouped notifications
 
-Return grouped notifications concerning the user. This API returns Link headers containing links to the next/previous page. However, the links can also be constructed dynamically using query params and `id` values.
+Return grouped notifications concerning the user. This API returns Link headers containing links to the next/previous page. However, the links can also be constructed dynamically using query params and `id` values.  Version history:  4.3.0-beta.1 - added\\ 4.3.0-beta.2 - deprecated
 
 ### Example
 ```dart
@@ -852,7 +852,7 @@ Name | Type | Description  | Notes
 
 Dismiss a single notification
 
-Dismiss a single notification from the server.
+Dismiss a single notification from the server.  Version history:  1.3.0 - added
 
 ### Example
 ```dart
@@ -896,7 +896,7 @@ void (empty response body)
 
 Dismiss a single notification group
 
-Dismiss a single notification group from the server.
+Dismiss a single notification group from the server.  Version history:  4.3.0 (`mastodon` [API version] 2) - added
 
 ### Example
 ```dart
@@ -940,7 +940,7 @@ void (empty response body)
 
 Dismiss a single notification group
 
-Dismiss a single notification group from the server.
+Dismiss a single notification group from the server.  Version history:  4.3.0-beta.1 - added\\ 4.3.0-beta.2 - deprecated
 
 ### Example
 ```dart
@@ -984,7 +984,7 @@ void (empty response body)
 
 Accept a single notification request
 
-Accept a notification request, which merges the filtered notifications from that user back into the main notification and accepts any future notification from them.
+Accept a notification request, which merges the filtered notifications from that user back into the main notification and accepts any future notification from them.  Version history:  4.3.0 - added
 
 ### Example
 ```dart
@@ -1028,7 +1028,7 @@ void (empty response body)
 
 Dismiss a single notification request
 
-Dismiss a notification request, which hides it and prevent it from contributing to the pending notification requests count.
+Dismiss a notification request, which hides it and prevent it from contributing to the pending notification requests count.  Version history:  4.3.0 - added
 
 ### Example
 ```dart

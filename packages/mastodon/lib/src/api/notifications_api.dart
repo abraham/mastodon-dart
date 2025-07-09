@@ -24,7 +24,7 @@ class NotificationsApi {
   const NotificationsApi(this._dio);
 
   /// Dismiss all notifications
-  /// Clear all notifications from the server.
+  /// Clear all notifications from the server.  Version history:  0.0.0 - added
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -76,7 +76,7 @@ class NotificationsApi {
   }
 
   /// Accept multiple notification requests
-  /// Accepts multiple notification requests, which merges the filtered notifications from those users back into the main notifications and accepts any future notification from them.
+  /// Accepts multiple notification requests, which merges the filtered notifications from those users back into the main notifications and accepts any future notification from them.  Version history:  4.3.0 - added
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -128,7 +128,7 @@ class NotificationsApi {
   }
 
   /// Dismiss multiple notification requests
-  /// Dismiss multiple notification requests, which hides them and prevent them from contributing to the pending notification requests count.
+  /// Dismiss multiple notification requests, which hides them and prevent them from contributing to the pending notification requests count.  Version history:  4.3.0 - added
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -180,7 +180,7 @@ class NotificationsApi {
   }
 
   /// Get a single notification
-  /// View information about a notification with a given ID.
+  /// View information about a notification with a given ID.  Version history:  0.0.0 - added
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -262,7 +262,7 @@ class NotificationsApi {
   }
 
   /// Get accounts of all notifications in a notification group
-  ///
+  /// Version history:  4.3.0 (&#x60;mastodon&#x60; [API version] 2) - added
   ///
   /// Parameters:
   /// * [groupKey] - group_key parameter
@@ -344,7 +344,7 @@ class NotificationsApi {
   }
 
   /// Get the filtering policy for notifications
-  /// Notifications filtering policy for the user.
+  /// Notifications filtering policy for the user.  Version history:  4.3.0 - added
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -424,7 +424,7 @@ class NotificationsApi {
   }
 
   /// Get all notification requests
-  /// Notification requests for notifications filtered by the user&#39;s policy. This API returns Link headers containing links to the next/previous page.
+  /// Notification requests for notifications filtered by the user&#39;s policy. This API returns Link headers containing links to the next/previous page.  Version history:  4.3.0 - added
   ///
   /// Parameters:
   /// * [limit] - Maximum number of results to return. Defaults to 40 notification requests. Max 80 notification requests.
@@ -520,7 +520,7 @@ class NotificationsApi {
   }
 
   /// Get all notifications
-  /// Notifications concerning the user. This API returns Link headers containing links to the next/previous page. However, the links can also be constructed dynamically using query params and &#x60;id&#x60; values.
+  /// Notifications concerning the user. This API returns Link headers containing links to the next/previous page. However, the links can also be constructed dynamically using query params and &#x60;id&#x60; values.  Version history:  0.0.0 - added\\ 2.6.0 - added &#x60;min_id&#x60;\\ 2.9.0 - added &#x60;account_id&#x60;\\ 3.1.0 - added &#x60;follow_request&#x60; type\\ 3.3.0 - added &#x60;status&#x60; type; both &#x60;min_id&#x60; and &#x60;max_id&#x60; can be used at the same time now\\ 3.5.0 - added &#x60;types&#x60;; add &#x60;update&#x60; and &#x60;admin.sign_up&#x60; types\\ 4.0.0 - added &#x60;admin.report&#x60; type\\ 4.1.0 - notification limit changed from 15 (max 30) to 40 (max 80)\\ 4.3.0 - added &#x60;include_filtered&#x60; parameter
   ///
   /// Parameters:
   /// * [accountId] - Return only notifications received from the specified account.
@@ -628,7 +628,7 @@ class NotificationsApi {
   }
 
   /// Get a single notification group
-  /// View information about a specific notification group with a given group key.
+  /// View information about a specific notification group with a given group key.  Version history:  4.3.0 (&#x60;mastodon&#x60; [API version] 2) - added
   ///
   /// Parameters:
   /// * [groupKey] - group_key parameter
@@ -712,7 +712,7 @@ class NotificationsApi {
   }
 
   /// Get a single notification group
-  /// View information about a specific notification group with a given group key.
+  /// View information about a specific notification group with a given group key.  Version history:  4.3.0-beta.1 - added\\ 4.3.0-beta.2 - deprecated
   ///
   /// Parameters:
   /// * [groupKey] - group_key parameter
@@ -797,7 +797,7 @@ class NotificationsApi {
   }
 
   /// Get a single notification request
-  /// View information about a notification request with a given ID.
+  /// View information about a notification request with a given ID.  Version history:  4.3.0 - added
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -880,7 +880,7 @@ class NotificationsApi {
   }
 
   /// Check if accepted notification requests have been merged
-  /// Check whether accepted notification requests have been merged.
+  /// Check whether accepted notification requests have been merged.  Version history:  4.3.0 - added
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -1142,7 +1142,7 @@ class NotificationsApi {
   }
 
   /// Get all grouped notifications
-  /// Return grouped notifications concerning the user. This API returns Link headers containing links to the next/previous page. However, the links can also be constructed dynamically using query params and &#x60;id&#x60; values.
+  /// Return grouped notifications concerning the user. This API returns Link headers containing links to the next/previous page. However, the links can also be constructed dynamically using query params and &#x60;id&#x60; values.  Version history:  4.3.0 (&#x60;mastodon&#x60; [API version] 2) - added\\ 4.4.0 - added &#x60;admin.sign_up&#x60; to grouped notification types
   ///
   /// Parameters:
   /// * [accountId] - Return only notifications received from the specified account.
@@ -1257,7 +1257,7 @@ class NotificationsApi {
   }
 
   /// Get all grouped notifications
-  /// Return grouped notifications concerning the user. This API returns Link headers containing links to the next/previous page. However, the links can also be constructed dynamically using query params and &#x60;id&#x60; values.
+  /// Return grouped notifications concerning the user. This API returns Link headers containing links to the next/previous page. However, the links can also be constructed dynamically using query params and &#x60;id&#x60; values.  Version history:  4.3.0-beta.1 - added\\ 4.3.0-beta.2 - deprecated
   ///
   /// Parameters:
   /// * [accountId] - Return only notifications received from the specified account.
@@ -1369,7 +1369,7 @@ class NotificationsApi {
   }
 
   /// Dismiss a single notification
-  /// Dismiss a single notification from the server.
+  /// Dismiss a single notification from the server.  Version history:  1.3.0 - added
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -1424,7 +1424,7 @@ class NotificationsApi {
   }
 
   /// Dismiss a single notification group
-  /// Dismiss a single notification group from the server.
+  /// Dismiss a single notification group from the server.  Version history:  4.3.0 (&#x60;mastodon&#x60; [API version] 2) - added
   ///
   /// Parameters:
   /// * [groupKey] - group_key parameter
@@ -1479,7 +1479,7 @@ class NotificationsApi {
   }
 
   /// Dismiss a single notification group
-  /// Dismiss a single notification group from the server.
+  /// Dismiss a single notification group from the server.  Version history:  4.3.0-beta.1 - added\\ 4.3.0-beta.2 - deprecated
   ///
   /// Parameters:
   /// * [groupKey] - group_key parameter
@@ -1534,7 +1534,7 @@ class NotificationsApi {
   }
 
   /// Accept a single notification request
-  /// Accept a notification request, which merges the filtered notifications from that user back into the main notification and accepts any future notification from them.
+  /// Accept a notification request, which merges the filtered notifications from that user back into the main notification and accepts any future notification from them.  Version history:  4.3.0 - added
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -1589,7 +1589,7 @@ class NotificationsApi {
   }
 
   /// Dismiss a single notification request
-  /// Dismiss a notification request, which hides it and prevent it from contributing to the pending notification requests count.
+  /// Dismiss a notification request, which hides it and prevent it from contributing to the pending notification requests count.  Version history:  4.3.0 - added
   ///
   /// Parameters:
   /// * [id] - id parameter

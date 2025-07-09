@@ -17,14 +17,22 @@ part 'credential_account_source.g.dart';
 class CredentialAccountSource {
   /// Returns a new [CredentialAccountSource] instance.
   CredentialAccountSource({
+    required this.attributionDomains,
     required this.fields,
     required this.followRequestsCount,
     required this.note,
     required this.privacy,
     required this.sensitive,
-    this.attributionDomains,
     this.language,
   });
+
+  /// Domains of websites allowed to credit the account.
+  @JsonKey(
+    name: r'attribution_domains',
+    required: true,
+    includeIfNull: false,
+  )
+  final List<String> attributionDomains;
 
   /// Metadata about the account.
   @JsonKey(
@@ -66,14 +74,6 @@ class CredentialAccountSource {
   )
   final bool sensitive;
 
-  /// Domains of websites allowed to credit the account.
-  @JsonKey(
-    name: r'attribution_domains',
-    required: false,
-    includeIfNull: false,
-  )
-  final List<String>? attributionDomains;
-
   /// The default posting language for new statuses.
   @JsonKey(
     name: r'language',
@@ -86,22 +86,22 @@ class CredentialAccountSource {
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is CredentialAccountSource &&
+          other.attributionDomains == attributionDomains &&
           other.fields == fields &&
           other.followRequestsCount == followRequestsCount &&
           other.note == note &&
           other.privacy == privacy &&
           other.sensitive == sensitive &&
-          other.attributionDomains == attributionDomains &&
           other.language == language;
 
   @override
   int get hashCode =>
+      attributionDomains.hashCode +
       fields.hashCode +
       followRequestsCount.hashCode +
       note.hashCode +
       privacy.hashCode +
       sensitive.hashCode +
-      (attributionDomains == null ? 0 : attributionDomains.hashCode) +
       (language == null ? 0 : language.hashCode);
 
   factory CredentialAccountSource.fromJson(Map<String, dynamic> json) =>

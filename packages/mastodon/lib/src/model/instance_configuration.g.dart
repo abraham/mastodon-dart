@@ -16,6 +16,7 @@ InstanceConfiguration _$InstanceConfigurationFromJson(
           json,
           requiredKeys: const [
             'accounts',
+            'limited_federation',
             'media_attachments',
             'polls',
             'statuses',
@@ -28,6 +29,8 @@ InstanceConfiguration _$InstanceConfigurationFromJson(
               'accounts',
               (v) => InstanceConfigurationAccounts.fromJson(
                   v as Map<String, dynamic>)),
+          limitedFederation:
+              $checkedConvert('limited_federation', (v) => v as bool),
           mediaAttachments: $checkedConvert(
               'media_attachments',
               (v) => InstanceConfigurationMediaAttachments.fromJson(
@@ -48,14 +51,12 @@ InstanceConfiguration _$InstanceConfigurationFromJson(
               'urls',
               (v) => InstanceConfigurationUrls.fromJson(
                   v as Map<String, dynamic>)),
-          limitedFederation:
-              $checkedConvert('limited_federation', (v) => v as bool?),
         );
         return val;
       },
       fieldKeyMap: const {
-        'mediaAttachments': 'media_attachments',
-        'limitedFederation': 'limited_federation'
+        'limitedFederation': 'limited_federation',
+        'mediaAttachments': 'media_attachments'
       },
     );
 
@@ -63,11 +64,10 @@ Map<String, dynamic> _$InstanceConfigurationToJson(
         InstanceConfiguration instance) =>
     <String, dynamic>{
       'accounts': instance.accounts.toJson(),
+      'limited_federation': instance.limitedFederation,
       'media_attachments': instance.mediaAttachments.toJson(),
       'polls': instance.polls.toJson(),
       'statuses': instance.statuses.toJson(),
       'translation': instance.translation.toJson(),
       'urls': instance.urls.toJson(),
-      if (instance.limitedFederation case final value?)
-        'limited_federation': value,
     };

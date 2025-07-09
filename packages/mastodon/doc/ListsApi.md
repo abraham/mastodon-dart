@@ -24,7 +24,7 @@ Method | HTTP request | Description
 
 Create a list
 
-Create a new list.
+Create a new list.  Version history:  2.1.0 - added\\ 3.3.0 - added `replies_policy`\\ 4.2.0 - added `exclusive`
 
 ### Example
 ```dart
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 Delete a list
 
-
+Version history:  2.1.0 - added
 
 ### Example
 ```dart
@@ -113,7 +113,7 @@ void (empty response body)
 
 Remove accounts from list
 
-Remove accounts from the given list.
+Remove accounts from the given list.  Version history:  2.1.0 - added
 
 ### Example
 ```dart
@@ -159,7 +159,7 @@ void (empty response body)
 
 Show a single list
 
-Fetch the list with the given ID. Used for verifying the title of a list, and which replies to show within that list.
+Fetch the list with the given ID.  Version history:  2.1.0 - added
 
 ### Example
 ```dart
@@ -204,7 +204,7 @@ Name | Type | Description  | Notes
 
 View accounts in a list
 
-
+Version history:  2.1.0 - added\\ 3.3.0 - both `min_id` and `max_id` can be used at the same time now
 
 ### Example
 ```dart
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 
 View your lists
 
-Fetch all lists that the user owns.
+Fetch all lists that the user owns.  Version history:  2.1.0 - added
 
 ### Example
 ```dart
@@ -298,7 +298,7 @@ This endpoint does not need any parameter.
 
 Add accounts to a list
 
-Add accounts to the given list. Note that the user must be following these accounts.
+Add accounts to the given list. Note that the user must be following these accounts.  Version history:  2.1.0 - added
 
 ### Example
 ```dart
@@ -344,7 +344,7 @@ void (empty response body)
 
 Update a list
 
-Change the title of a list, or which replies to show.
+Change the properties of a list.  Version history:  2.1.0 - added\\ 3.3.0 - added `replies_policy` 4.2.0 - added `exclusive`
 
 ### Example
 ```dart

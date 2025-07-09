@@ -23,7 +23,7 @@ class ListsApi {
   const ListsApi(this._dio);
 
   /// Create a list
-  /// Create a new list.
+  /// Create a new list.  Version history:  2.1.0 - added\\ 3.3.0 - added &#x60;replies_policy&#x60;\\ 4.2.0 - added &#x60;exclusive&#x60;
   ///
   /// Parameters:
   /// * [createListRequest] - JSON request body parameters
@@ -122,7 +122,7 @@ class ListsApi {
   }
 
   /// Delete a list
-  ///
+  /// Version history:  2.1.0 - added
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -177,7 +177,7 @@ class ListsApi {
   }
 
   /// Remove accounts from list
-  /// Remove accounts from the given list.
+  /// Remove accounts from the given list.  Version history:  2.1.0 - added
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -252,7 +252,7 @@ class ListsApi {
   }
 
   /// Show a single list
-  /// Fetch the list with the given ID. Used for verifying the title of a list, and which replies to show within that list.
+  /// Fetch the list with the given ID.  Version history:  2.1.0 - added
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -334,7 +334,7 @@ class ListsApi {
   }
 
   /// View accounts in a list
-  ///
+  /// Version history:  2.1.0 - added\\ 3.3.0 - both &#x60;min_id&#x60; and &#x60;max_id&#x60; can be used at the same time now
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -432,7 +432,7 @@ class ListsApi {
   }
 
   /// View your lists
-  /// Fetch all lists that the user owns.
+  /// Fetch all lists that the user owns.  Version history:  2.1.0 - added
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -511,7 +511,7 @@ class ListsApi {
   }
 
   /// Add accounts to a list
-  /// Add accounts to the given list. Note that the user must be following these accounts.
+  /// Add accounts to the given list. Note that the user must be following these accounts.  Version history:  2.1.0 - added
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -586,7 +586,7 @@ class ListsApi {
   }
 
   /// Update a list
-  /// Change the title of a list, or which replies to show.
+  /// Change the properties of a list.  Version history:  2.1.0 - added\\ 3.3.0 - added &#x60;replies_policy&#x60; 4.2.0 - added &#x60;exclusive&#x60;
   ///
   /// Parameters:
   /// * [id] - id parameter

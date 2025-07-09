@@ -8,7 +8,7 @@ void main() {
   group(DirectoryApi, () {
     // View profile directory
     //
-    // List accounts visible in the directory.
+    // List accounts visible in the directory.  Version history:  3.0.0 - added
     //
     //Future<List<Account>> getDirectory({ int limit, bool local, int offset, String order }) async
     test('test getDirectory', () async {

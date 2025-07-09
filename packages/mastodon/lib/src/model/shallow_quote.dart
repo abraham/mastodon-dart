@@ -17,17 +17,17 @@ part 'shallow_quote.g.dart';
 class ShallowQuote {
   /// Returns a new [ShallowQuote] instance.
   ShallowQuote({
-    this.state,
+    required this.state,
     this.statusId,
   });
 
   /// The state of the quote.
   @JsonKey(
     name: r'state',
-    required: false,
+    required: true,
     includeIfNull: false,
   )
-  final StateEnum? state;
+  final StateEnum state;
 
   /// The identifier of the status being quoted, if the quote has been accepted. This will be `null`, unless the `state` attribute is `accepted`.
   @JsonKey(

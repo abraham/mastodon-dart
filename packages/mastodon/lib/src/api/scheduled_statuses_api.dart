@@ -20,7 +20,7 @@ class ScheduledStatusesApi {
   const ScheduledStatusesApi(this._dio);
 
   /// Cancel a scheduled status
-  ///
+  /// Version history:  2.7.0 - added
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -75,7 +75,7 @@ class ScheduledStatusesApi {
   }
 
   /// View a single scheduled status
-  ///
+  /// Version history:  2.7.0 - added
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -158,7 +158,7 @@ class ScheduledStatusesApi {
   }
 
   /// View scheduled statuses
-  ///
+  /// Version history:  2.7.0 - added\\ 3.3.0 - both &#x60;min_id&#x60; and &#x60;max_id&#x60; can be used at the same time now
   ///
   /// Parameters:
   /// * [limit] - Maximum number of results to return. Defaults to 20 statuses. Max 40 statuses.
@@ -254,7 +254,7 @@ class ScheduledStatusesApi {
   }
 
   /// Update a scheduled status&#39;s publishing date
-  ///
+  /// Version history:  2.7.0 - added
   ///
   /// Parameters:
   /// * [id] - id parameter

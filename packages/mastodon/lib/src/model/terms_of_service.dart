@@ -16,35 +16,35 @@ part 'terms_of_service.g.dart';
 class TermsOfService {
   /// Returns a new [TermsOfService] instance.
   TermsOfService({
-    this.content,
-    this.effective,
-    this.effectiveDate,
+    required this.content,
+    required this.effective,
+    required this.effectiveDate,
     this.succeededBy,
   });
 
   /// The rendered HTML content of the terms of service.
   @JsonKey(
     name: r'content',
-    required: false,
+    required: true,
     includeIfNull: false,
   )
-  final String? content;
+  final String content;
 
   /// Whether these terms of service are currently in effect.
   @JsonKey(
     name: r'effective',
-    required: false,
+    required: true,
     includeIfNull: false,
   )
-  final bool? effective;
+  final bool effective;
 
   /// The date these terms of service are coming or have come in effect.
   @JsonKey(
     name: r'effective_date',
-    required: false,
+    required: true,
     includeIfNull: false,
   )
-  final DateTime? effectiveDate;
+  final DateTime effectiveDate;
 
   /// If there are newer terms of service, their effective date.
   @JsonKey(
@@ -65,9 +65,9 @@ class TermsOfService {
 
   @override
   int get hashCode =>
-      (content == null ? 0 : content.hashCode) +
-      (effective == null ? 0 : effective.hashCode) +
-      (effectiveDate == null ? 0 : effectiveDate.hashCode) +
+      content.hashCode +
+      effective.hashCode +
+      effectiveDate.hashCode +
       (succeededBy == null ? 0 : succeededBy.hashCode);
 
   factory TermsOfService.fromJson(Map<String, dynamic> json) =>

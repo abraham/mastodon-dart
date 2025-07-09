@@ -8,7 +8,8 @@ import 'package:mastodon/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** | The internal database ID of the list. | 
+**exclusive** | **bool** | Whether members of the list should be removed from the “Home” feed. | 
+**id** | **String** | The ID of the list. | 
 **repliesPolicy** | [**PolicyEnum**](PolicyEnum.md) | Which replies should be shown in the list. | 
 **title** | **String** | The user-defined title of the list. | 
 

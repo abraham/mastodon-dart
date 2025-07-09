@@ -13,12 +13,6 @@ void main() {
       // TODO
     });
 
-    // String ([Date]), required if the server has a minimum age requirement.
-    // String dateOfBirth
-    test('to test the property `dateOfBirth`', () async {
-      // TODO
-    });
-
     // The email address to be used for login
     // String email
     test('to test the property `email`', () async {
@@ -40,6 +34,12 @@ void main() {
     // The desired username for the account
     // String username
     test('to test the property `username`', () async {
+      // TODO
+    });
+
+    // String ([Date]), required if the server has a minimum age requirement.
+    // String dateOfBirth
+    test('to test the property `dateOfBirth`', () async {
       // TODO
     });
 
