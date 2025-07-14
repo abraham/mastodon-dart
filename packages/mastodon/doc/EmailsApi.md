@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 Resend confirmation email
 
-Resend a new confirmation email. If an email is provided, updates the unconfirmed user's email before resending the confirmation email.
+Resend a new confirmation email. If an email is provided, updates the unconfirmed user's email before resending the confirmation email.  Version history:  3.4.0 - added
 
 ### Example
 ```dart

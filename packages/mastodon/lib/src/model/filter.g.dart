@@ -12,7 +12,7 @@ Filter _$FilterFromJson(Map<String, dynamic> json) => $checkedCreate(
       ($checkedConvert) {
         $checkKeys(
           json,
-          requiredKeys: const ['context', 'id', 'title'],
+          requiredKeys: const ['context', 'filter_action', 'id', 'title'],
         );
         final val = Filter(
           context: $checkedConvert(
@@ -20,12 +20,12 @@ Filter _$FilterFromJson(Map<String, dynamic> json) => $checkedCreate(
               (v) => (v as List<dynamic>)
                   .map((e) => $enumDecode(_$FilterContextEnumMap, e))
                   .toList()),
+          filterAction: $checkedConvert('filter_action',
+              (v) => $enumDecode(_$FilterFilterActionEnumEnumMap, v)),
           id: $checkedConvert('id', (v) => v as String),
           title: $checkedConvert('title', (v) => v as String),
           expiresAt: $checkedConvert('expires_at',
               (v) => v == null ? null : DateTime.parse(v as String)),
-          filterAction: $checkedConvert('filter_action',
-              (v) => $enumDecodeNullable(_$FilterFilterActionEnumEnumMap, v)),
           keywords: $checkedConvert(
               'keywords',
               (v) => (v as List<dynamic>?)
@@ -41,21 +41,19 @@ Filter _$FilterFromJson(Map<String, dynamic> json) => $checkedCreate(
         return val;
       },
       fieldKeyMap: const {
-        'expiresAt': 'expires_at',
-        'filterAction': 'filter_action'
+        'filterAction': 'filter_action',
+        'expiresAt': 'expires_at'
       },
     );
 
 Map<String, dynamic> _$FilterToJson(Filter instance) => <String, dynamic>{
       'context':
           instance.context.map((e) => _$FilterContextEnumMap[e]!).toList(),
+      'filter_action': _$FilterFilterActionEnumEnumMap[instance.filterAction]!,
       'id': instance.id,
       'title': instance.title,
       if (instance.expiresAt?.toIso8601String() case final value?)
         'expires_at': value,
-      if (_$FilterFilterActionEnumEnumMap[instance.filterAction]
-          case final value?)
-        'filter_action': value,
       if (instance.keywords?.map((e) => e.toJson()).toList() case final value?)
         'keywords': value,
       if (instance.statuses?.map((e) => e.toJson()).toList() case final value?)

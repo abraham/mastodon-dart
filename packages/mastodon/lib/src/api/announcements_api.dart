@@ -19,7 +19,7 @@ class AnnouncementsApi {
   const AnnouncementsApi(this._dio);
 
   /// Remove a reaction from an announcement
-  /// Undo a react emoji to an announcement.
+  /// Undo a react emoji to an announcement.  Version history:  3.1.0 - added
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -77,7 +77,7 @@ class AnnouncementsApi {
   }
 
   /// View all announcements
-  /// See all currently active announcements set by admins.
+  /// See all currently active announcements set by admins.  Version history:  3.1.0 - added
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -157,7 +157,7 @@ class AnnouncementsApi {
   }
 
   /// Dismiss an announcement
-  /// Allows a user to mark the announcement as read.
+  /// Allows a user to mark the announcement as read.  Version history:  3.1.0 - added
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -212,7 +212,7 @@ class AnnouncementsApi {
   }
 
   /// Add a reaction to an announcement
-  /// React to an announcement with an emoji.
+  /// React to an announcement with an emoji.  Version history:  3.1.0 - added
   ///
   /// Parameters:
   /// * [id] - id parameter

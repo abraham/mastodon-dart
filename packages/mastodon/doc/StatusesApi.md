@@ -38,7 +38,7 @@ Method | HTTP request | Description
 
 Post a new status
 
-Publish a status with the given parameters.
+Publish a status with the given parameters.  Version history:  0.0.0 - added\\ 2.7.0 - `scheduled_at` added\\ 2.8.0 - `poll` added
 
 ### Example
 ```dart
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 
 Delete a status
 
-Delete one of your own statuses.
+Delete one of your own statuses.  Version history:  0.0.0 - added\\ 2.9.0 - return source properties, for use with delete and redraft\\ 4.4.0 (`mastodon` [API version] 4) - added `delete_media` optional parameter
 
 ### Example
 ```dart
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 
 View a single status
 
-Obtain information about a status.
+Obtain information about a status.  Version history:  0.0.0 - added\\ 2.7.0 - public statuses no longer require token
 
 ### Example
 ```dart
@@ -177,7 +177,7 @@ Name | Type | Description  | Notes
 
 Fetch preview card
 
-
+Version history:  0.0.0 - added\\ 2.6.0 - deprecated in favor of card property inlined on Status entity\\ 3.0.0 - removed
 
 ### Example
 ```dart
@@ -222,7 +222,7 @@ Name | Type | Description  | Notes
 
 Get parent and child statuses in context
 
-View statuses above and below this status in the thread.
+View statuses above and below this status in the thread.  Version history:  0.0.0 - added\\ 4.0.0 - limit unauthenticated requests
 
 ### Example
 ```dart
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 See who favourited a status
 
-View who favourited a given status.
+View who favourited a given status.  Version history:  0.0.0 - added
 
 ### Example
 ```dart
@@ -318,7 +318,7 @@ Name | Type | Description  | Notes
 
 View edit history of a status
 
-Get all known versions of a status, including the initial and current states.
+Get all known versions of a status, including the initial and current states.  Version history:  3.5.0 - added
 
 ### Example
 ```dart
@@ -363,7 +363,7 @@ Name | Type | Description  | Notes
 
 See who boosted a status
 
-View who boosted a given status.
+View who boosted a given status.  Version history:  0.0.0 - added
 
 ### Example
 ```dart
@@ -414,7 +414,7 @@ Name | Type | Description  | Notes
 
 View status source
 
-Obtain the source properties for a status so that it can be edited.
+Obtain the source properties for a status so that it can be edited.  Version history:  3.5.0 - added
 
 ### Example
 ```dart
@@ -459,7 +459,7 @@ Name | Type | Description  | Notes
 
 View multiple statuses
 
-Obtain information about multiple statuses.
+Obtain information about multiple statuses.  Version history:  4.3.0 - added
 
 ### Example
 ```dart
@@ -504,7 +504,7 @@ Name | Type | Description  | Notes
 
 Bookmark a status
 
-Privately bookmark a status.
+Privately bookmark a status.  Version history:  3.1.0 - added
 
 ### Example
 ```dart
@@ -549,7 +549,7 @@ Name | Type | Description  | Notes
 
 Favourite a status
 
-Add a status to your favourites list.
+Add a status to your favourites list.  Version history:  0.0.0 - added
 
 ### Example
 ```dart
@@ -594,7 +594,7 @@ Name | Type | Description  | Notes
 
 Mute a conversation
 
-Do not receive notifications for the thread that this status is part of. Must be a thread in which you are a participant.
+Do not receive notifications for the thread that this status is part of. Must be a thread in which you are a participant.  Version history:  1.4.2 - added
 
 ### Example
 ```dart
@@ -639,7 +639,7 @@ Name | Type | Description  | Notes
 
 Pin status to profile
 
-Feature one of your own public statuses at the top of your profile.
+Feature one of your own public statuses at the top of your profile.  Version history:  1.6.0 - added\\ 3.5.0 - you can now pin private posts
 
 ### Example
 ```dart
@@ -684,7 +684,7 @@ Name | Type | Description  | Notes
 
 Boost a status
 
-Reshare a status on your own profile.
+Reshare a status on your own profile.  Version history:  0.0.0 - added\\ 2.8.0 - add `visibility` parameter
 
 ### Example
 ```dart
@@ -731,7 +731,7 @@ Name | Type | Description  | Notes
 
 Translate a status
 
-Translate the status content into some language.
+Translate the status content into some language.  Version history:  4.0.0 - added
 
 ### Example
 ```dart
@@ -778,7 +778,7 @@ Name | Type | Description  | Notes
 
 Undo bookmark of a status
 
-Remove a status from your private bookmarks.
+Remove a status from your private bookmarks.  Version history:  3.1.0 - added
 
 ### Example
 ```dart
@@ -823,7 +823,7 @@ Name | Type | Description  | Notes
 
 Undo favourite of a status
 
-Remove a status from your favourites list.
+Remove a status from your favourites list.  Version history:  0.0.0 - added
 
 ### Example
 ```dart
@@ -868,7 +868,7 @@ Name | Type | Description  | Notes
 
 Unmute a conversation
 
-Start receiving notifications again for the thread that this status is part of.
+Start receiving notifications again for the thread that this status is part of.  Version history:  1.4.2 - added
 
 ### Example
 ```dart
@@ -913,7 +913,7 @@ Name | Type | Description  | Notes
 
 Unpin status from profile
 
-Unfeature a status from the top of your profile.
+Unfeature a status from the top of your profile.  Version history:  1.6.0 - added
 
 ### Example
 ```dart
@@ -958,7 +958,7 @@ Name | Type | Description  | Notes
 
 Undo boost of a status
 
-Undo a reshare of a status.
+Undo a reshare of a status.  Version history:  0.0.0 - added
 
 ### Example
 ```dart
@@ -1003,7 +1003,7 @@ Name | Type | Description  | Notes
 
 Edit a status
 
-Edit a given status to change its text, sensitivity, media attachments, or poll. Note that editing a poll's options will reset the votes.
+Edit a given status to change its text, sensitivity, media attachments, or poll. Note that editing a poll’s options or changing whether it is multiple choice will reset the votes.  Version history:  3.5.0 - added\\ 4.0.0 - add `language`
 
 ### Example
 ```dart

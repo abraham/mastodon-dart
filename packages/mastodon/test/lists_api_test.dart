@@ -8,7 +8,7 @@ void main() {
   group(ListsApi, () {
     // Create a list
     //
-    // Create a new list.
+    // Create a new list.  Version history:  2.1.0 - added\\ 3.3.0 - added `replies_policy`\\ 4.2.0 - added `exclusive`
     //
     //Future<List> createList(CreateListRequest createListRequest) async
     test('test createList', () async {
@@ -17,7 +17,7 @@ void main() {
 
     // Delete a list
     //
-    //
+    // Version history:  2.1.0 - added
     //
     //Future deleteList(String id) async
     test('test deleteList', () async {
@@ -26,7 +26,7 @@ void main() {
 
     // Remove accounts from list
     //
-    // Remove accounts from the given list.
+    // Remove accounts from the given list.  Version history:  2.1.0 - added
     //
     //Future deleteListAccounts(String id, DeleteListAccountsRequest deleteListAccountsRequest) async
     test('test deleteListAccounts', () async {
@@ -35,7 +35,7 @@ void main() {
 
     // Show a single list
     //
-    // Fetch the list with the given ID. Used for verifying the title of a list, and which replies to show within that list.
+    // Fetch the list with the given ID.  Version history:  2.1.0 - added
     //
     //Future<List> getList(String id) async
     test('test getList', () async {
@@ -44,7 +44,7 @@ void main() {
 
     // View accounts in a list
     //
-    //
+    // Version history:  2.1.0 - added\\ 3.3.0 - both `min_id` and `max_id` can be used at the same time now
     //
     //Future<List<Account>> getListAccounts(String id, { int limit, String maxId, String minId, String sinceId }) async
     test('test getListAccounts', () async {
@@ -53,7 +53,7 @@ void main() {
 
     // View your lists
     //
-    // Fetch all lists that the user owns.
+    // Fetch all lists that the user owns.  Version history:  2.1.0 - added
     //
     //Future<List<List>> getLists() async
     test('test getLists', () async {
@@ -62,7 +62,7 @@ void main() {
 
     // Add accounts to a list
     //
-    // Add accounts to the given list. Note that the user must be following these accounts.
+    // Add accounts to the given list. Note that the user must be following these accounts.  Version history:  2.1.0 - added
     //
     //Future postListAccounts(String id, PostListAccountsRequest postListAccountsRequest) async
     test('test postListAccounts', () async {
@@ -71,7 +71,7 @@ void main() {
 
     // Update a list
     //
-    // Change the title of a list, or which replies to show.
+    // Change the properties of a list.  Version history:  2.1.0 - added\\ 3.3.0 - added `replies_policy` 4.2.0 - added `exclusive`
     //
     //Future<List> updateList(String id, CreateListRequest createListRequest) async
     test('test updateList', () async {

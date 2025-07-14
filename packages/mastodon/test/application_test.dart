@@ -7,19 +7,25 @@ void main() {
   // TODO add properties to the entity
 
   group(Application, () {
-    // The name of your application.
+    // The numeric ID of the application.
+    // String id
+    test('to test the property `id`', () async {
+      // TODO
+    });
+
+    // The name of the application.
     // String name
     test('to test the property `name`', () async {
       // TODO
     });
 
-    // The registered redirection URI(s) for your application.
+    // The registered redirection URI(s) for the application.
     // String redirectUri
     test('to test the property `redirectUri`', () async {
       // TODO
     });
 
-    // The registered redirection URI(s) for your application.
+    // The registered redirection URI(s) for the application.
     // List<Uri> redirectUris
     test('to test the property `redirectUris`', () async {
       // TODO
@@ -37,7 +43,7 @@ void main() {
       // TODO
     });
 
-    // The website associated with your application.
+    // The website associated with the application.
     // Uri website
     test('to test the property `website`', () async {
       // TODO

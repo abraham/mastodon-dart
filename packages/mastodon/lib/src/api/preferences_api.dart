@@ -18,7 +18,7 @@ class PreferencesApi {
   const PreferencesApi(this._dio);
 
   /// View user preferences
-  /// Preferences defined by the user in their account settings.
+  /// Preferences defined by the user in their account settings.  Version history:  2.8.0 - added
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation

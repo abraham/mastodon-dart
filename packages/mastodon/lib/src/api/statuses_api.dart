@@ -30,7 +30,7 @@ class StatusesApi {
   const StatusesApi(this._dio);
 
   /// Post a new status
-  /// Publish a status with the given parameters.
+  /// Publish a status with the given parameters.  Version history:  0.0.0 - added\\ 2.7.0 - &#x60;scheduled_at&#x60; added\\ 2.8.0 - &#x60;poll&#x60; added
   ///
   /// Parameters:
   /// * [createStatusRequest] - JSON request body parameters for creating a status. Different types of statuses have different requirements.
@@ -133,7 +133,7 @@ class StatusesApi {
   }
 
   /// Delete a status
-  /// Delete one of your own statuses.
+  /// Delete one of your own statuses.  Version history:  0.0.0 - added\\ 2.9.0 - return source properties, for use with delete and redraft\\ 4.4.0 (&#x60;mastodon&#x60; [API version] 4) - added &#x60;delete_media&#x60; optional parameter
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -221,7 +221,7 @@ class StatusesApi {
   }
 
   /// View a single status
-  /// Obtain information about a status.
+  /// Obtain information about a status.  Version history:  0.0.0 - added\\ 2.7.0 - public statuses no longer require token
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -302,7 +302,7 @@ class StatusesApi {
   }
 
   /// Fetch preview card
-  ///
+  /// Version history:  0.0.0 - added\\ 2.6.0 - deprecated in favor of card property inlined on Status entity\\ 3.0.0 - removed
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -385,7 +385,7 @@ class StatusesApi {
   }
 
   /// Get parent and child statuses in context
-  /// View statuses above and below this status in the thread.
+  /// View statuses above and below this status in the thread.  Version history:  0.0.0 - added\\ 4.0.0 - limit unauthenticated requests
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -466,7 +466,7 @@ class StatusesApi {
   }
 
   /// See who favourited a status
-  /// View who favourited a given status.
+  /// View who favourited a given status.  Version history:  0.0.0 - added
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -561,7 +561,7 @@ class StatusesApi {
   }
 
   /// View edit history of a status
-  /// Get all known versions of a status, including the initial and current states.
+  /// Get all known versions of a status, including the initial and current states.  Version history:  3.5.0 - added
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -644,7 +644,7 @@ class StatusesApi {
   }
 
   /// See who boosted a status
-  /// View who boosted a given status.
+  /// View who boosted a given status.  Version history:  0.0.0 - added
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -739,7 +739,7 @@ class StatusesApi {
   }
 
   /// View status source
-  /// Obtain the source properties for a status so that it can be edited.
+  /// Obtain the source properties for a status so that it can be edited.  Version history:  3.5.0 - added
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -821,7 +821,7 @@ class StatusesApi {
   }
 
   /// View multiple statuses
-  /// Obtain information about multiple statuses.
+  /// Obtain information about multiple statuses.  Version history:  4.3.0 - added
   ///
   /// Parameters:
   /// * [id] - The IDs of the Statuses in the database.
@@ -907,7 +907,7 @@ class StatusesApi {
   }
 
   /// Bookmark a status
-  /// Privately bookmark a status.
+  /// Privately bookmark a status.  Version history:  3.1.0 - added
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -988,7 +988,7 @@ class StatusesApi {
   }
 
   /// Favourite a status
-  /// Add a status to your favourites list.
+  /// Add a status to your favourites list.  Version history:  0.0.0 - added
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -1069,7 +1069,7 @@ class StatusesApi {
   }
 
   /// Mute a conversation
-  /// Do not receive notifications for the thread that this status is part of. Must be a thread in which you are a participant.
+  /// Do not receive notifications for the thread that this status is part of. Must be a thread in which you are a participant.  Version history:  1.4.2 - added
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -1150,7 +1150,7 @@ class StatusesApi {
   }
 
   /// Pin status to profile
-  /// Feature one of your own public statuses at the top of your profile.
+  /// Feature one of your own public statuses at the top of your profile.  Version history:  1.6.0 - added\\ 3.5.0 - you can now pin private posts
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -1231,7 +1231,7 @@ class StatusesApi {
   }
 
   /// Boost a status
-  /// Reshare a status on your own profile.
+  /// Reshare a status on your own profile.  Version history:  0.0.0 - added\\ 2.8.0 - add &#x60;visibility&#x60; parameter
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -1332,7 +1332,7 @@ class StatusesApi {
   }
 
   /// Translate a status
-  /// Translate the status content into some language.
+  /// Translate the status content into some language.  Version history:  4.0.0 - added
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -1434,7 +1434,7 @@ class StatusesApi {
   }
 
   /// Undo bookmark of a status
-  /// Remove a status from your private bookmarks.
+  /// Remove a status from your private bookmarks.  Version history:  3.1.0 - added
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -1515,7 +1515,7 @@ class StatusesApi {
   }
 
   /// Undo favourite of a status
-  /// Remove a status from your favourites list.
+  /// Remove a status from your favourites list.  Version history:  0.0.0 - added
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -1596,7 +1596,7 @@ class StatusesApi {
   }
 
   /// Unmute a conversation
-  /// Start receiving notifications again for the thread that this status is part of.
+  /// Start receiving notifications again for the thread that this status is part of.  Version history:  1.4.2 - added
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -1677,7 +1677,7 @@ class StatusesApi {
   }
 
   /// Unpin status from profile
-  /// Unfeature a status from the top of your profile.
+  /// Unfeature a status from the top of your profile.  Version history:  1.6.0 - added
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -1758,7 +1758,7 @@ class StatusesApi {
   }
 
   /// Undo boost of a status
-  /// Undo a reshare of a status.
+  /// Undo a reshare of a status.  Version history:  0.0.0 - added
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -1839,7 +1839,7 @@ class StatusesApi {
   }
 
   /// Edit a status
-  /// Edit a given status to change its text, sensitivity, media attachments, or poll. Note that editing a poll&#39;s options will reset the votes.
+  /// Edit a given status to change its text, sensitivity, media attachments, or poll. Note that editing a poll’s options or changing whether it is multiple choice will reset the votes.  Version history:  3.5.0 - added\\ 4.0.0 - add &#x60;language&#x60;
   ///
   /// Parameters:
   /// * [id] - id parameter

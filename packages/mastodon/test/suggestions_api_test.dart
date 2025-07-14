@@ -8,7 +8,7 @@ void main() {
   group(SuggestionsApi, () {
     // Remove a suggestion
     //
-    // Remove an account from follow suggestions.
+    // Remove an account from follow suggestions.  Version history:  2.4.3 - added
     //
     //Future deleteSuggestionsByAccountId(String accountId) async
     test('test deleteSuggestionsByAccountId', () async {
@@ -17,7 +17,7 @@ void main() {
 
     // View follow suggestions (v1)
     //
-    // Accounts the user has had past positive interactions with, but is not yet following.
+    // Accounts the user has had past positive interactions with, but is not yet following.  Version history:  2.4.3 - added\\ 3.4.0 - deprecated
     //
     //Future<List<Account>> getSuggestions({ int limit }) async
     test('test getSuggestions', () async {
@@ -26,7 +26,7 @@ void main() {
 
     // View follow suggestions (v2)
     //
-    // Accounts that are promoted by staff, or that the user has had past positive interactions with, but is not yet following.
+    // Accounts that are promoted by staff, or that the user has had past positive interactions with, but is not yet following.  Version history:  3.4.0 - added
     //
     //Future<List<Suggestion>> getSuggestionsV2({ int limit }) async
     test('test getSuggestionsV2', () async {

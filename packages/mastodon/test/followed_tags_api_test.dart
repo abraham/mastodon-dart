@@ -8,7 +8,7 @@ void main() {
   group(FollowedTagsApi, () {
     // View all followed tags
     //
-    // List your followed hashtags.
+    // List your followed hashtags.  Version history:  4.0.0 - added\\ 4.1.0 - add pagination headers
     //
     //Future<List<Tag>> getFollowedTags({ int limit, String maxId, String minId, String sinceId }) async
     test('test getFollowedTags', () async {

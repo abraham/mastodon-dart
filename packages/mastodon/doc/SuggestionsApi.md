@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 Remove a suggestion
 
-Remove an account from follow suggestions.
+Remove an account from follow suggestions.  Version history:  2.4.3 - added
 
 ### Example
 ```dart
@@ -63,7 +63,7 @@ void (empty response body)
 
 View follow suggestions (v1)
 
-Accounts the user has had past positive interactions with, but is not yet following.
+Accounts the user has had past positive interactions with, but is not yet following.  Version history:  2.4.3 - added\\ 3.4.0 - deprecated
 
 ### Example
 ```dart
@@ -108,7 +108,7 @@ Name | Type | Description  | Notes
 
 View follow suggestions (v2)
 
-Accounts that are promoted by staff, or that the user has had past positive interactions with, but is not yet following.
+Accounts that are promoted by staff, or that the user has had past positive interactions with, but is not yet following.  Version history:  3.4.0 - added
 
 ### Example
 ```dart

@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 View bookmarked statuses
 
-Statuses the user has bookmarked.
+Statuses the user has bookmarked.  Version history:  3.1.0 - added\\ 3.3.0 - both `min_id` and `max_id` can be used at the same time now
 
 ### Example
 ```dart

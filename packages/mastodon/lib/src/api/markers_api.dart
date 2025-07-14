@@ -20,7 +20,7 @@ class MarkersApi {
   const MarkersApi(this._dio);
 
   /// Save your position in a timeline
-  /// Save current position in timeline.
+  /// Save current position in timeline.  Version history:  3.0.0 - added
   ///
   /// Parameters:
   /// * [createMarkerRequest] - JSON request body parameters
@@ -118,7 +118,7 @@ class MarkersApi {
   }
 
   /// Get saved timeline positions
-  /// Get current positions in timelines.
+  /// Get current positions in timelines.  Version history:  3.0.0 - added
   ///
   /// Parameters:
   /// * [timeline] - Specify the timeline(s) for which markers should be fetched. Possible values: `home`, `notifications`. If not provided, an empty object will be returned.

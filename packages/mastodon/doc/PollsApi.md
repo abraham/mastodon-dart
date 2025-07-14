@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 View a poll
 
-View a poll attached to a status.
+View a poll attached to a status.  Version history:  2.8.0 - added
 
 ### Example
 ```dart
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 Vote on a poll
 
-Vote on a poll attached to a status.
+Vote on a poll attached to a status.  Version history:  2.8.0 - added
 
 ### Example
 ```dart

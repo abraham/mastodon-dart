@@ -16,6 +16,7 @@ InstanceConfigurationMediaAttachments
             $checkKeys(
               json,
               requiredKeys: const [
+                'description_limit',
                 'image_matrix_limit',
                 'image_size_limit',
                 'supported_mime_types',
@@ -25,6 +26,8 @@ InstanceConfigurationMediaAttachments
               ],
             );
             final val = InstanceConfigurationMediaAttachments(
+              descriptionLimit: $checkedConvert(
+                  'description_limit', (v) => (v as num).toInt()),
               imageMatrixLimit: $checkedConvert(
                   'image_matrix_limit', (v) => (v as num).toInt()),
               imageSizeLimit: $checkedConvert(
@@ -37,31 +40,28 @@ InstanceConfigurationMediaAttachments
                   'video_matrix_limit', (v) => (v as num).toInt()),
               videoSizeLimit: $checkedConvert(
                   'video_size_limit', (v) => (v as num).toInt()),
-              descriptionLimit: $checkedConvert(
-                  'description_limit', (v) => (v as num?)?.toInt()),
             );
             return val;
           },
           fieldKeyMap: const {
+            'descriptionLimit': 'description_limit',
             'imageMatrixLimit': 'image_matrix_limit',
             'imageSizeLimit': 'image_size_limit',
             'supportedMimeTypes': 'supported_mime_types',
             'videoFrameRateLimit': 'video_frame_rate_limit',
             'videoMatrixLimit': 'video_matrix_limit',
-            'videoSizeLimit': 'video_size_limit',
-            'descriptionLimit': 'description_limit'
+            'videoSizeLimit': 'video_size_limit'
           },
         );
 
 Map<String, dynamic> _$InstanceConfigurationMediaAttachmentsToJson(
         InstanceConfigurationMediaAttachments instance) =>
     <String, dynamic>{
+      'description_limit': instance.descriptionLimit,
       'image_matrix_limit': instance.imageMatrixLimit,
       'image_size_limit': instance.imageSizeLimit,
       'supported_mime_types': instance.supportedMimeTypes,
       'video_frame_rate_limit': instance.videoFrameRateLimit,
       'video_matrix_limit': instance.videoMatrixLimit,
       'video_size_limit': instance.videoSizeLimit,
-      if (instance.descriptionLimit case final value?)
-        'description_limit': value,
     };

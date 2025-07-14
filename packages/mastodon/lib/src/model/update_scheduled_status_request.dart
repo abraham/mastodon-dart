@@ -25,7 +25,7 @@ class UpdateScheduledStatusRequest {
     required: false,
     includeIfNull: false,
   )
-  final String? scheduledAt;
+  final DateTime? scheduledAt;
 
   @override
   bool operator ==(Object other) =>

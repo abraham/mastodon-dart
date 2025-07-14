@@ -21,7 +21,7 @@ class FeaturedTagsApi {
   const FeaturedTagsApi(this._dio);
 
   /// Feature a tag
-  /// Promote a hashtag on your profile.
+  /// Promote a hashtag on your profile.  Version history:  3.0.0 - added
   ///
   /// Parameters:
   /// * [createFeaturedTagRequest] - JSON request body parameters
@@ -120,7 +120,7 @@ class FeaturedTagsApi {
   }
 
   /// Unfeature a tag
-  /// Stop promoting a hashtag on your profile.
+  /// Stop promoting a hashtag on your profile.  Version history:  3.0.0 - added
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -175,7 +175,7 @@ class FeaturedTagsApi {
   }
 
   /// View suggested tags to feature
-  /// Shows up to 10 recently-used tags.
+  /// Shows up to 10 recently-used tags.  Version history:  3.0.0 - added
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -253,7 +253,7 @@ class FeaturedTagsApi {
   }
 
   /// View your featured tags
-  /// List all hashtags featured on your profile.
+  /// List all hashtags featured on your profile.  Version history:  3.0.0 - added
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation

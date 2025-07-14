@@ -13,12 +13,7 @@ PatchAccountsUpdateCredentialsRequest
           'PatchAccountsUpdateCredentialsRequest',
           json,
           ($checkedConvert) {
-            $checkKeys(
-              json,
-              requiredKeys: const ['locked'],
-            );
             final val = PatchAccountsUpdateCredentialsRequest(
-              locked: $checkedConvert('locked', (v) => v as bool),
               attributionDomains: $checkedConvert(
                   'attribution_domains',
                   (v) =>
@@ -32,6 +27,7 @@ PatchAccountsUpdateCredentialsRequest
               hideCollections:
                   $checkedConvert('hide_collections', (v) => v as bool?),
               indexable: $checkedConvert('indexable', (v) => v as bool?),
+              locked: $checkedConvert('locked', (v) => v as bool?),
               note: $checkedConvert('note', (v) => v as String?),
               source_: $checkedConvert(
                   'source',
@@ -54,7 +50,6 @@ PatchAccountsUpdateCredentialsRequest
 Map<String, dynamic> _$PatchAccountsUpdateCredentialsRequestToJson(
         PatchAccountsUpdateCredentialsRequest instance) =>
     <String, dynamic>{
-      'locked': instance.locked,
       if (instance.attributionDomains case final value?)
         'attribution_domains': value,
       if (instance.avatar case final value?) 'avatar': value,
@@ -66,6 +61,7 @@ Map<String, dynamic> _$PatchAccountsUpdateCredentialsRequestToJson(
       if (instance.header case final value?) 'header': value,
       if (instance.hideCollections case final value?) 'hide_collections': value,
       if (instance.indexable case final value?) 'indexable': value,
+      if (instance.locked case final value?) 'locked': value,
       if (instance.note case final value?) 'note': value,
       if (instance.source_?.toJson() case final value?) 'source': value,
     };

@@ -13,6 +13,12 @@ void main() {
       // TODO
     });
 
+    // The action to be taken when a status matches this filter.
+    // String filterAction
+    test('to test the property `filterAction`', () async {
+      // TODO
+    });
+
     // The ID of the Filter in the database.
     // String id
     test('to test the property `id`', () async {
@@ -28,12 +34,6 @@ void main() {
     // When the filter should no longer be applied.
     // DateTime expiresAt
     test('to test the property `expiresAt`', () async {
-      // TODO
-    });
-
-    // The action to be taken when a status matches this filter.
-    // String filterAction
-    test('to test the property `filterAction`', () async {
       // TODO
     });
 

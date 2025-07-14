@@ -19,7 +19,7 @@ class BookmarksApi {
   const BookmarksApi(this._dio);
 
   /// View bookmarked statuses
-  /// Statuses the user has bookmarked.
+  /// Statuses the user has bookmarked.  Version history:  3.1.0 - added\\ 3.3.0 - both &#x60;min_id&#x60; and &#x60;max_id&#x60; can be used at the same time now
   ///
   /// Parameters:
   /// * [limit] - Maximum number of results to return. Defaults to 20 statuses. Max 40 statuses.

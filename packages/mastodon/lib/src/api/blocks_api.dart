@@ -19,7 +19,7 @@ class BlocksApi {
   const BlocksApi(this._dio);
 
   /// View blocked users
-  /// Returns your blocked accounts.
+  /// Returns your blocked accounts.  Version history:  0.0.0 - added\\ 3.3.0 - both &#x60;min_id&#x60; and &#x60;max_id&#x60; can be used at the same time now
   ///
   /// Parameters:
   /// * [limit] - Maximum number of results to return. Defaults to 40 accounts. Max 80 accounts.

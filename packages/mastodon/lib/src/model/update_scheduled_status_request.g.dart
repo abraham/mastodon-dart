@@ -13,7 +13,8 @@ UpdateScheduledStatusRequest _$UpdateScheduledStatusRequestFromJson(
       json,
       ($checkedConvert) {
         final val = UpdateScheduledStatusRequest(
-          scheduledAt: $checkedConvert('scheduled_at', (v) => v as String?),
+          scheduledAt: $checkedConvert('scheduled_at',
+              (v) => v == null ? null : DateTime.parse(v as String)),
         );
         return val;
       },
@@ -23,5 +24,6 @@ UpdateScheduledStatusRequest _$UpdateScheduledStatusRequestFromJson(
 Map<String, dynamic> _$UpdateScheduledStatusRequestToJson(
         UpdateScheduledStatusRequest instance) =>
     <String, dynamic>{
-      if (instance.scheduledAt case final value?) 'scheduled_at': value,
+      if (instance.scheduledAt?.toIso8601String() case final value?)
+        'scheduled_at': value,
     };

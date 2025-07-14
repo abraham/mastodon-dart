@@ -19,7 +19,7 @@ class FollowedTagsApi {
   const FollowedTagsApi(this._dio);
 
   /// View all followed tags
-  /// List your followed hashtags.
+  /// List your followed hashtags.  Version history:  4.0.0 - added\\ 4.1.0 - add pagination headers
   ///
   /// Parameters:
   /// * [limit] - Maximum number of results to return. Defaults to 100 tags. Max 200 tags.

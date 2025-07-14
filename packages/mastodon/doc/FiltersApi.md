@@ -35,7 +35,7 @@ Method | HTTP request | Description
 
 Create a filter
 
-
+Version history:  2.4.3 - added\\ 3.1.0 - added `account` context to filter in profile views\\ 4.0.0 - deprecated. For compatibility purposes, now returns a V1::Filter representing one FilterKeyword (with the `keyword` being presented in the `phrase` attribute). This method will create a Filter that contains only one FilterKeyword. The `title` of the Filter and the `keyword` of the FilterKeyword will be set equal to the `phrase` provided.
 
 ### Example
 ```dart
@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 
 Create a filter
 
-Create a filter group with the given parameters.
+Create a filter group with the given parameters.  Version history:  4.0.0 - added\\ 4.4.0 (`mastodon` [API version] 5) - added `blur` value to `filter_action` attribute
 
 ### Example
 ```dart
@@ -125,7 +125,7 @@ Name | Type | Description  | Notes
 
 Remove a filter
 
-
+Version history:  2.4.3 - added\\ 4.0.0 - deprecated. This method will delete only the FilterKeyword from its parent Filter. To delete the parent Filter, you must use the v2 filters API.
 
 ### Example
 ```dart
@@ -169,7 +169,7 @@ void (empty response body)
 
 Delete a filter
 
-Delete a filter group with the given id.
+Delete a filter group with the given id.  Version history:  4.0.0 - added
 
 ### Example
 ```dart
@@ -213,7 +213,7 @@ void (empty response body)
 
 Remove keywords from a filter
 
-Deletes the given filter keyword.
+Deletes the given filter keyword.  Version history:  4.0.0 - added
 
 ### Example
 ```dart
@@ -257,7 +257,7 @@ void (empty response body)
 
 Remove a status from a filter group
 
-Remove a status filter from the current filter group.
+Remove a status filter from the current filter group.  Version history:  4.0.0 - added
 
 ### Example
 ```dart
@@ -302,7 +302,7 @@ Name | Type | Description  | Notes
 
 View a single filter
 
-
+Version history:  2.4.3 - added\\ 4.0.0 - deprecated. For compatibility purposes, now returns a V1::Filter representing one FilterKeyword (with the `keyword` being presented in the `phrase` attribute)
 
 ### Example
 ```dart
@@ -347,7 +347,7 @@ Name | Type | Description  | Notes
 
 View keywords added to a filter
 
-List all keywords attached to the current filter group.
+List all keywords attached to the current filter group.  Version history:  4.0.0 - added
 
 ### Example
 ```dart
@@ -392,7 +392,7 @@ Name | Type | Description  | Notes
 
 View all status filters
 
-Obtain a list of all status filters within this filter group.
+Obtain a list of all status filters within this filter group.  Version history:  4.0.0 - added
 
 ### Example
 ```dart
@@ -437,7 +437,7 @@ Name | Type | Description  | Notes
 
 View a specific filter
 
-Obtain a single filter group owned by the current user.
+Obtain a single filter group owned by the current user.  Version history:  4.0.0 - added
 
 ### Example
 ```dart
@@ -482,7 +482,7 @@ Name | Type | Description  | Notes
 
 View your filters
 
-
+Version history:  2.4.3 - added\\ 4.0.0 - deprecated. For compatibility purposes, now returns a List of V1::Filter, with each V1::Filter representing one FilterKeyword (with the `keyword` being presented in the `phrase` attribute)
 
 ### Example
 ```dart
@@ -523,7 +523,7 @@ This endpoint does not need any parameter.
 
 View a single keyword
 
-Get one filter keyword by the given id.
+Get one filter keyword by the given id.  Version history:  4.0.0 - added
 
 ### Example
 ```dart
@@ -568,7 +568,7 @@ Name | Type | Description  | Notes
 
 View a single status filter
 
-Obtain a single status filter.
+Obtain a single status filter.  Version history:  4.0.0 - added
 
 ### Example
 ```dart
@@ -613,7 +613,7 @@ Name | Type | Description  | Notes
 
 View all filters
 
-Obtain a list of all filter groups for the current user.
+Obtain a list of all filter groups for the current user.  Version history:  4.0.0 - added
 
 ### Example
 ```dart
@@ -654,7 +654,7 @@ This endpoint does not need any parameter.
 
 Add a keyword to a filter
 
-Add the given keyword to the specified filter group
+Add the given keyword to the specified filter group  Version history:  4.0.0 - added
 
 ### Example
 ```dart
@@ -701,7 +701,7 @@ Name | Type | Description  | Notes
 
 Add a status to a filter group
 
-Add a status filter to the current filter group.
+Add a status filter to the current filter group.  Version history:  4.0.0 - added
 
 ### Example
 ```dart
@@ -748,7 +748,7 @@ Name | Type | Description  | Notes
 
 Update a filter
 
-Replaces a filter's parameters in-place.
+Replaces a filter's parameters in-place.  Version history:  2.4.3 - added\\ 3.1.0 - added `account` context to filter in profile views\\ 4.0.0 - deprecated. For compatibility purposes, now returns a V1::Filter representing one FilterKeyword (with the `keyword` being presented in the `phrase` attribute). This method will return an error if you attempt to change `expires_in`, `irreversible`, or `context` for a filter with multiple keywords. Changing `phrase` and `whole_word` is always safe.
 
 ### Example
 ```dart
@@ -795,7 +795,7 @@ Name | Type | Description  | Notes
 
 Update a filter
 
-Update a filter group with the given parameters.
+Update a filter group with the given parameters.  Version history:  4.0.0 - added\\ 4.4.0 (`mastodon` [API version] 5) - added `blur` value to `filter_action` attribute
 
 ### Example
 ```dart
@@ -842,7 +842,7 @@ Name | Type | Description  | Notes
 
 Edit a keyword within a filter
 
-Update the given filter keyword.
+Update the given filter keyword.  Version history:  4.0.0 - added
 
 ### Example
 ```dart

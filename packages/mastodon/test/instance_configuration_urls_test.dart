@@ -8,15 +8,15 @@ void main() {
   // TODO add properties to the entity
 
   group(InstanceConfigurationUrls, () {
-    // The Websockets URL for connecting to the streaming API.
-    // Uri streaming
-    test('to test the property `streaming`', () async {
-      // TODO
-    });
-
     // The URL of the server's about page.
     // Uri about
     test('to test the property `about`', () async {
+      // TODO
+    });
+
+    // The Websockets URL for connecting to the streaming API.
+    // Uri streaming
+    test('to test the property `streaming`', () async {
       // TODO
     });
 

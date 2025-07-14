@@ -7,7 +7,7 @@ void main() {
   // TODO add properties to the entity
 
   group(FeaturedTag, () {
-    // The internal ID of the featured tag in the database.
+    // The ID of the featured tag.
     // String id
     test('to test the property `id`', () async {
       // TODO

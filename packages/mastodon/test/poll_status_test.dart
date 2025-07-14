@@ -18,14 +18,14 @@ void main() {
       // TODO
     });
 
-    // ISO 639 language code for this status.
+    // ISO 639-1 language code for this status.
     // String language
     test('to test the property `language`', () async {
       // TODO
     });
 
     // [Datetime] at which to schedule a status. Providing this parameter will cause ScheduledStatus to be returned instead of Status. Must be at least 5 minutes in the future.
-    // String scheduledAt
+    // DateTime scheduledAt
     test('to test the property `scheduledAt`', () async {
       // TODO
     });

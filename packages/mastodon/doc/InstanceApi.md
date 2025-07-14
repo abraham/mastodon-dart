@@ -27,7 +27,7 @@ Method | HTTP request | Description
 
 View server information (v1)
 
-Obtain general information about the server. See [api/v2/instance]({{< relref \"methods/Instance#v2\">}}) instead.
+Obtain general information about the server. See [api/v2/instance]({{< relref \"methods/Instance#v2\">}}) instead.  Version history:  1.1.0 - added\\ 3.0.0 - requires user token if instance is in whitelist mode\\ 3.1.4 - added `invites_enabled` to response\\ 3.4.0 - added `rules`\\ 3.4.2 - added `configuration`\\ 4.0.0 - deprecated. added `configuration[accounts]`.
 
 ### Example
 ```dart
@@ -66,7 +66,7 @@ No authorization required
 
 Weekly activity
 
-Instance activity over the last 3 months, binned weekly.
+Instance activity over the last 3 months, binned weekly.  Version history:  2.1.2 - added\\ 3.0.0 - requires user token if instance is in whitelist mode
 
 ### Example
 ```dart
@@ -105,7 +105,7 @@ No authorization required
 
 View moderated servers
 
-Obtain a list of domains that have been blocked.
+Obtain a list of domains that have been blocked.  Version history:  4.0.0 - added
 
 ### Example
 ```dart
@@ -146,7 +146,7 @@ This endpoint does not need any parameter.
 
 View extended description
 
-Obtain an extended description of this server
+Obtain an extended description of this server  Version history:  4.0.0 - added
 
 ### Example
 ```dart
@@ -185,7 +185,7 @@ No authorization required
 
 List of connected domains
 
-Domains that this instance is aware of.
+Domains that this instance is aware of.  Version history:  2.1.2 - added\\ 3.0.0 - requires user token if instance is in whitelist mode
 
 ### Example
 ```dart
@@ -224,7 +224,7 @@ No authorization required
 
 View privacy policy
 
-Obtain the contents of this server's privacy policy.
+Obtain the contents of this server's privacy policy.  Version history:  4.0.0 - added
 
 ### Example
 ```dart
@@ -263,7 +263,7 @@ No authorization required
 
 List of rules
 
-Rules that the users of this service should follow.
+Rules that the users of this service should follow.  Version history:  3.4.0 - added
 
 ### Example
 ```dart
@@ -302,7 +302,7 @@ No authorization required
 
 View terms of service
 
-Obtain the contents of this server's terms of service, if configured.
+Obtain the contents of this server's terms of service, if configured.  Version history:  4.4.0 - added
 
 ### Example
 ```dart
@@ -341,7 +341,7 @@ No authorization required
 
 View a specific version of the terms of service
 
-Obtain the contents of this server's terms of service, for a specified date, if configured.
+Obtain the contents of this server's terms of service, for a specified date, if configured.  Version history:  4.4.0 - added
 
 ### Example
 ```dart
@@ -384,7 +384,7 @@ No authorization required
 
 View translation languages
 
-Translation language pairs supported by the translation engine used by the server.
+Translation language pairs supported by the translation engine used by the server.  Version history:  4.2.0 - added
 
 ### Example
 ```dart
@@ -422,7 +422,7 @@ No authorization required
 
 View server information
 
-Obtain general information about the server.
+Obtain general information about the server.  Version history:  4.0.0 - added\\ 4.3.0 - added `configuration.vapid.public_key`
 
 ### Example
 ```dart

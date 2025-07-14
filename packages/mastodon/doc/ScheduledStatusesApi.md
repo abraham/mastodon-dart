@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 Cancel a scheduled status
 
-
+Version history:  2.7.0 - added
 
 ### Example
 ```dart
@@ -64,7 +64,7 @@ void (empty response body)
 
 View a single scheduled status
 
-
+Version history:  2.7.0 - added
 
 ### Example
 ```dart
@@ -109,7 +109,7 @@ Name | Type | Description  | Notes
 
 View scheduled statuses
 
-
+Version history:  2.7.0 - added\\ 3.3.0 - both `min_id` and `max_id` can be used at the same time now
 
 ### Example
 ```dart
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 
 Update a scheduled status's publishing date
 
-
+Version history:  2.7.0 - added
 
 ### Example
 ```dart

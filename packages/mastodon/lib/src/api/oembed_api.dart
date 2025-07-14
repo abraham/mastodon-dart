@@ -19,7 +19,7 @@ class OembedApi {
   const OembedApi(this._dio);
 
   /// Get OEmbed info as JSON
-  ///
+  /// Version history:  1.0.0 - added
   ///
   /// Parameters:
   /// * [url] - URL of a status.

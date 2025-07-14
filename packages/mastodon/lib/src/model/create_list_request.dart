@@ -30,7 +30,7 @@ class CreateListRequest {
   )
   final String title;
 
-  /// Whether members of this list need to get removed from the “Home” feed
+  /// Whether members of this list need to get removed from the “Home” feed.
   @JsonKey(
     name: r'exclusive',
     required: false,

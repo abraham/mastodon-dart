@@ -21,7 +21,7 @@ class AppsApi {
   const AppsApi(this._dio);
 
   /// Create an application
-  /// Create a new application to obtain OAuth2 credentials.
+  /// Create a new application to obtain OAuth2 credentials.  Version history:  0.0.0 - added\\ 2.7.2 - now returns &#x60;vapid_key&#x60;\\ 4.3.0 - deprecated &#x60;vapid_key&#x60;, please see [api/v2/instance]\\ 4.3.0 - added support for multiple &#x60;redirect_uris&#x60; in Form data parameters\\ 4.3.0 - added &#x60;redirect_uris&#x60; response property\\ 4.3.0 - deprecated &#x60;redirect_uri&#x60; response property, since this can be a non-URI if multiple &#x60;redirect_uris&#x60; are registered, use &#x60;redirect_uris&#x60; instead\\ 4.3.0 - changed entity type from [Application] to [CredentialApplication]
   ///
   /// Parameters:
   /// * [createAppRequest] - JSON request body parameters
@@ -116,7 +116,7 @@ class AppsApi {
   }
 
   /// Verify your app works
-  /// Confirm that the app&#39;s OAuth2 credentials work.
+  /// Confirm that the app&#39;s OAuth2 credentials work.  Version history:  2.0.0 - added\\ 2.7.2 - now returns &#x60;vapid_key&#x60;\\ 4.3.0 - deprecated &#x60;vapid_key&#x60;, please see [api/v2/instance]\\ 4.3.0 - removed needing &#x60;read&#x60; scope to access this API, now any valid App token can be used\\ 4.3.0 - added &#x60;scopes&#x60; and &#x60;redirect_uris&#x60; properties
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation

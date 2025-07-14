@@ -11,20 +11,25 @@ ShallowQuote _$ShallowQuoteFromJson(Map<String, dynamic> json) =>
       'ShallowQuote',
       json,
       ($checkedConvert) {
+        $checkKeys(
+          json,
+          requiredKeys: const ['state'],
+        );
         final val = ShallowQuote(
           state: $checkedConvert(
-              'state', (v) => $enumDecodeNullable(_$StateEnumEnumMap, v)),
-          statusId: $checkedConvert('status_id', (v) => v as String?),
+              'state', (v) => $enumDecode(_$StateEnumEnumMap, v)),
+          quotedStatusId:
+              $checkedConvert('quoted_status_id', (v) => v as String?),
         );
         return val;
       },
-      fieldKeyMap: const {'statusId': 'status_id'},
+      fieldKeyMap: const {'quotedStatusId': 'quoted_status_id'},
     );
 
 Map<String, dynamic> _$ShallowQuoteToJson(ShallowQuote instance) =>
     <String, dynamic>{
-      if (_$StateEnumEnumMap[instance.state] case final value?) 'state': value,
-      if (instance.statusId case final value?) 'status_id': value,
+      'state': _$StateEnumEnumMap[instance.state]!,
+      if (instance.quotedStatusId case final value?) 'quoted_status_id': value,
     };
 
 const _$StateEnumEnumMap = {

@@ -7,7 +7,7 @@ void main() {
   // TODO add properties to the entity
 
   group(UpdateStatusRequest, () {
-    // ISO 639 language code for the status.
+    // ISO 639-1 language code for the status.
     // String language
     test('to test the property `language`', () async {
       // TODO

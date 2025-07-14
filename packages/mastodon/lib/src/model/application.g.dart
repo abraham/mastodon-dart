@@ -13,6 +13,7 @@ Application _$ApplicationFromJson(Map<String, dynamic> json) => $checkedCreate(
         $checkKeys(
           json,
           requiredKeys: const [
+            'id',
             'name',
             'redirect_uri',
             'redirect_uris',
@@ -21,6 +22,7 @@ Application _$ApplicationFromJson(Map<String, dynamic> json) => $checkedCreate(
           ],
         );
         final val = Application(
+          id: $checkedConvert('id', (v) => v as String),
           name: $checkedConvert('name', (v) => v as String),
           redirectUri: $checkedConvert('redirect_uri', (v) => v as String),
           redirectUris: $checkedConvert(
@@ -48,6 +50,7 @@ Application _$ApplicationFromJson(Map<String, dynamic> json) => $checkedCreate(
 
 Map<String, dynamic> _$ApplicationToJson(Application instance) =>
     <String, dynamic>{
+      'id': instance.id,
       'name': instance.name,
       'redirect_uri': instance.redirectUri,
       'redirect_uris': instance.redirectUris.map((e) => e.toString()).toList(),

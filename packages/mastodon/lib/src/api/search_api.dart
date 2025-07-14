@@ -19,7 +19,7 @@ class SearchApi {
   const SearchApi(this._dio);
 
   /// Perform a search
-  /// Perform a search for content in accounts, statuses and hashtags with the given parameters.
+  /// Perform a search for content in accounts, statuses and hashtags with the given parameters.  Version history:  2.4.1 - added, limit hardcoded to 5\\ 2.8.0 - add &#x60;type&#x60;, &#x60;limit&#x60;, &#x60;offset&#x60;, &#x60;min_id&#x60;, &#x60;max_id&#x60;, &#x60;account_id&#x60;\\ 3.0.0 - add &#x60;exclude_unreviewed&#x60; param\\ 3.3.0 - &#x60;min_id&#x60; and &#x60;max_id&#x60; can be used together\\ 4.0.0 - no longer requires a user token. Without a valid user token, you cannot use the &#x60;resolve&#x60; or &#x60;offset&#x60; parameters.
   ///
   /// Parameters:
   /// * [q] - The search query.

@@ -37,7 +37,7 @@ class PatchAccountsUpdateCredentialsRequestSource {
   )
   final bool? sensitive;
 
-  /// Default language to use for authored statuses (ISO 6391)
+  /// Default language to use for authored statuses (ISO 639-1)
   @JsonKey(
     name: r'language',
     required: false,

@@ -17,11 +17,11 @@ class CreateAccountRequest {
   /// Returns a new [CreateAccountRequest] instance.
   CreateAccountRequest({
     required this.agreement,
-    required this.dateOfBirth,
     required this.email,
     required this.locale,
     required this.password,
     required this.username,
+    this.dateOfBirth,
     this.reason,
   });
 
@@ -32,14 +32,6 @@ class CreateAccountRequest {
     includeIfNull: false,
   )
   final bool agreement;
-
-  /// String ([Date]), required if the server has a minimum age requirement.
-  @JsonKey(
-    name: r'date_of_birth',
-    required: true,
-    includeIfNull: false,
-  )
-  final String dateOfBirth;
 
   /// The email address to be used for login
   @JsonKey(
@@ -73,6 +65,14 @@ class CreateAccountRequest {
   )
   final String username;
 
+  /// String ([Date]), required if the server has a minimum age requirement.
+  @JsonKey(
+    name: r'date_of_birth',
+    required: false,
+    includeIfNull: false,
+  )
+  final DateTime? dateOfBirth;
+
   /// If registrations require manual approval, this text will be reviewed by moderators.
   @JsonKey(
     name: r'reason',
@@ -86,21 +86,21 @@ class CreateAccountRequest {
       identical(this, other) ||
       other is CreateAccountRequest &&
           other.agreement == agreement &&
-          other.dateOfBirth == dateOfBirth &&
           other.email == email &&
           other.locale == locale &&
           other.password == password &&
           other.username == username &&
+          other.dateOfBirth == dateOfBirth &&
           other.reason == reason;
 
   @override
   int get hashCode =>
       agreement.hashCode +
-      dateOfBirth.hashCode +
       email.hashCode +
       locale.hashCode +
       password.hashCode +
       username.hashCode +
+      dateOfBirth.hashCode +
       reason.hashCode;
 
   factory CreateAccountRequest.fromJson(Map<String, dynamic> json) =>

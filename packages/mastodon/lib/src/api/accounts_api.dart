@@ -32,7 +32,7 @@ class AccountsApi {
   const AccountsApi(this._dio);
 
   /// Register an account
-  /// Creates a user and account records. Returns an account access token for the app that initiated the request. The app should save this token for later, and should wait for the user to confirm their account by clicking a link in their email inbox.
+  /// Creates a user and account records. Returns an account access token for the app that initiated the request. The app should save this token for later, and should wait for the user to confirm their account by clicking a link in their email inbox.  Version history:  2.7.0 - added\\ 3.0.0 - added &#x60;reason&#x60; parameter\\ 3.4.0 - added &#x60;details&#x60; to failure response\\ 4.4.0 - added &#x60;date_of_birth&#x60; parameter
   ///
   /// Parameters:
   /// * [createAccountRequest] - JSON request body parameters
@@ -130,7 +130,7 @@ class AccountsApi {
   }
 
   /// Get account
-  /// View information about a profile.
+  /// View information about a profile.  Version history:  0.0.0 - added\\ 2.4.0 - returns 410 if account is suspended\\ 3.3.0 - returns an Account with &#x60;suspended: true&#x60; instead of 410
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -206,7 +206,7 @@ class AccountsApi {
   }
 
   /// Get featured accounts
-  /// Accounts that the user is currently featuring on their profile.
+  /// Accounts that the user is currently featuring on their profile.  Version history:  4.4.0 - added
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -295,7 +295,7 @@ class AccountsApi {
   }
 
   /// Get account&#39;s featured tags
-  /// Tags featured by this account.
+  /// Tags featured by this account.  Version history:  3.3.0 - added
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -373,7 +373,7 @@ class AccountsApi {
   }
 
   /// Get account&#39;s followers
-  /// Accounts which follow the given account, if network is not hidden by the account owner.
+  /// Accounts which follow the given account, if network is not hidden by the account owner.  Version history:  0.0.0 - added\\ 3.3.0 - both &#x60;min_id&#x60; and &#x60;max_id&#x60; can be used at the same time now\\ 4.0.0 - no longer requires an app token + &#x60;read:accounts&#x60;
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -466,7 +466,7 @@ class AccountsApi {
   }
 
   /// Get account&#39;s following
-  /// Accounts which the given account is following, if network is not hidden by the account owner.
+  /// Accounts which the given account is following, if network is not hidden by the account owner.  Version history:  0.0.0 - added\\ 3.3.0 - both &#x60;min_id&#x60; and &#x60;max_id&#x60; can be used at the same time now\\ 4.0.0 - no longer requires an app token + &#x60;read:accounts&#x60;
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -559,7 +559,7 @@ class AccountsApi {
   }
 
   /// Identity proofs
-  ///
+  /// Version history:  2.8.0 - added\\ 3.5.0 - deprecated. now returns an empty array.
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -643,7 +643,7 @@ class AccountsApi {
   }
 
   /// Get lists containing this account
-  /// User lists that you have added this account to.
+  /// User lists that you have added this account to.  Version history:  2.1.0 - added
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -725,7 +725,7 @@ class AccountsApi {
   }
 
   /// Lookup account ID from Webfinger address
-  /// Quickly lookup a username to see if it is available, skipping WebFinger resolution.
+  /// Quickly lookup a username to see if it is available, skipping WebFinger resolution.  Version history:  3.4.0 - added
   ///
   /// Parameters:
   /// * [acct] - The username or Webfinger address to lookup.
@@ -805,7 +805,7 @@ class AccountsApi {
   }
 
   /// Check relationships to other accounts
-  /// Find out whether a given account is followed, blocked, muted, etc.
+  /// Find out whether a given account is followed, blocked, muted, etc.  Version history:  0.0.0 - added\\ 4.3.0 - added &#x60;with_suspended&#x60; parameter
   ///
   /// Parameters:
   /// * [id] - Check relationships for the provided account IDs.
@@ -895,7 +895,7 @@ class AccountsApi {
   }
 
   /// Search for matching accounts
-  /// Search for matching accounts by username or display name.
+  /// Search for matching accounts by username or display name.  Version history:  0.0.0 - added\\ 2.8.0 - add &#x60;limit&#x60;, &#x60;offset&#x60; and &#x60;following&#x60;
   ///
   /// Parameters:
   /// * [q] - Search query for accounts.
@@ -993,7 +993,7 @@ class AccountsApi {
   }
 
   /// Get account&#39;s statuses
-  /// Statuses posted to the given account.
+  /// Statuses posted to the given account.  Version history:  0.0.0 - added\\ 1.4.2 - add &#x60;only_media&#x60; and &#x60;exclude_replies&#x60;\\ 1.6.0 - add &#x60;pinned&#x60;\\ 2.6.0 - add &#x60;min_id&#x60;\\ 2.7.0 - add &#x60;exclude_reblogs&#x60; and allow unauthed use\\ 2.8.0 - add &#x60;tagged&#x60; parameter\\ 3.3.0 - both &#x60;min_id&#x60; and &#x60;max_id&#x60; can be used at the same time now
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -1025,7 +1025,7 @@ class AccountsApi {
     String? maxId,
     String? minId,
     bool? onlyMedia,
-    bool? pinned = false,
+    bool? pinned,
     String? sinceId,
     String? tagged,
     CancelToken? cancelToken,
@@ -1106,10 +1106,10 @@ class AccountsApi {
   }
 
   /// Get multiple accounts
-  /// View information about multiple profiles.
+  /// View information about multiple profiles.  Version history:  4.3.0 - added
   ///
   /// Parameters:
-  /// * [id] - The IDs of the Accounts in the database.
+  /// * [id] - The IDs of the accounts.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -1187,7 +1187,7 @@ class AccountsApi {
   }
 
   /// Verify account credentials
-  /// Test to make sure that the user token works.
+  /// Test to make sure that the user token works.  Version history:  0.0.0 - added\\ 4.3.0 - added &#x60;profile&#x60; scope
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -1267,7 +1267,7 @@ class AccountsApi {
   }
 
   /// Find familiar followers
-  /// Obtain a list of all accounts that follow a given account, filtered for accounts you follow.
+  /// Obtain a list of all accounts that follow a given account, filtered for accounts you follow.  Version history:  3.5.0 - added
   ///
   /// Parameters:
   /// * [id] - Find familiar followers for the provided account IDs.
@@ -1354,7 +1354,7 @@ class AccountsApi {
   }
 
   /// Update account credentials
-  /// Update the user&#39;s display and preferences.
+  /// Update the user&#39;s display and preferences.  Version history:  1.1.1 - added\\ 2.3.0 - added &#x60;locked&#x60; parameter\\ 2.4.0 - added &#x60;source[privacy,sensitive]&#x60; parameters\\ 2.4.2 - added &#x60;source[language]&#x60; parameter\\ 2.7.0 - added &#x60;discoverable&#x60; parameter\\ 4.1.0 - added &#x60;hide_collections&#x60; parameter\\ 4.2.0 - added &#x60;indexable&#x60; parameter\\ 4.4.0 (&#x60;mastodon&#x60; [API version] 3) - added &#x60;attribution_domains&#x60; parameter
   ///
   /// Parameters:
   /// * [patchAccountsUpdateCredentialsRequest] - JSON request body parameters
@@ -1370,7 +1370,7 @@ class AccountsApi {
   /// Official Mastodon API documentation
   /// Also see [Update account credentials Documentation](https://docs.joinmastodon.org/methods/accounts/#update_credentials)
   Future<Response<CredentialAccount>> patchAccountsUpdateCredentials({
-    required PatchAccountsUpdateCredentialsRequest
+    PatchAccountsUpdateCredentialsRequest?
         patchAccountsUpdateCredentialsRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -1455,7 +1455,7 @@ class AccountsApi {
   }
 
   /// Block account
-  /// Block the given account. Clients should filter statuses from this account if received (e.g. due to a boost in the Home timeline)
+  /// Block the given account. Clients should filter statuses from this account if received (e.g. due to a boost in the Home timeline)  Version history:  0.0.0 - added\\ 3.5.0 - deprecated &#x60;follow&#x60; scope. now additionally accepts &#x60;write&#x60;
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -1537,7 +1537,7 @@ class AccountsApi {
   }
 
   /// Feature account on your profile
-  /// Add the given account to the user&#39;s featured profiles.
+  /// Add the given account to the user&#39;s featured profiles.  Version history:  4.4.0 - added
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -1619,7 +1619,7 @@ class AccountsApi {
   }
 
   /// Follow account
-  /// Follow the given account. Can also be used to update whether to show reblogs or enable notifications.
+  /// Follow the given account. Can also be used to update whether to show reblogs or enable notifications.  Version history:  0.0.0 - added\\ 3.3.0 - added &#x60;notify&#x60;\\ 3.5.0 - deprecated &#x60;follow&#x60; scope. now additionally accepts &#x60;write&#x60;\\ 4.0.0 - added &#x60;languages&#x60;
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -1721,7 +1721,7 @@ class AccountsApi {
   }
 
   /// Mute account
-  /// Mute the given account. Clients should filter statuses and notifications from this account, if received (e.g. due to a boost in the Home timeline).
+  /// Mute the given account. Clients should filter statuses and notifications from this account, if received (e.g. due to a boost in the Home timeline).  Version history:  0.0.0 - added\\ 3.3.0 - added &#x60;duration&#x60;\\ 3.5.0 - deprecated &#x60;follow&#x60; scope. now additionally accepts &#x60;write&#x60;
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -1823,7 +1823,7 @@ class AccountsApi {
   }
 
   /// Set private note on profile
-  /// Sets a private note on a user.
+  /// Sets a private note on a user.  Version history:  3.2.0 - added
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -1925,7 +1925,7 @@ class AccountsApi {
   }
 
   /// Feature account on your profile
-  /// Add the given account to the user&#39;s featured profiles. (Featured profiles are currently shown on the user&#39;s own public profile.)
+  /// Add the given account to the user&#39;s featured profiles. (Featured profiles are currently shown on the user&#39;s own public profile.)  Version history:  2.5.0 - added\\ 4.0.0 - calling this method is now idempotent\\ 4.4.0 - deprecated in favor of &#x60;/api/v1/accounts/:id/endorse&#x60;
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -2008,7 +2008,7 @@ class AccountsApi {
   }
 
   /// Remove account from followers
-  /// Remove the given account from your followers.
+  /// Remove the given account from your followers.  Version history:  3.5.0 - added
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -2090,7 +2090,7 @@ class AccountsApi {
   }
 
   /// Unblock account
-  /// Unblock the given account.
+  /// Unblock the given account.  Version history:  0.0.0 - added\\ 3.5.0 - deprecated &#x60;follow&#x60; scope. now additionally accepts &#x60;write&#x60;
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -2172,7 +2172,7 @@ class AccountsApi {
   }
 
   /// Unfeature account from profile
-  /// Remove the given account from the user&#39;s featured profiles.
+  /// Remove the given account from the user&#39;s featured profiles.  Version history:  4.4.0 - added
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -2254,7 +2254,7 @@ class AccountsApi {
   }
 
   /// Unfollow account
-  /// Unfollow the given account.
+  /// Unfollow the given account.  Version history:  0.0.0 - added\\ 3.5.0 - deprecated &#x60;follow&#x60; scope. now additionally accepts &#x60;write&#x60;
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -2336,7 +2336,7 @@ class AccountsApi {
   }
 
   /// Unmute account
-  /// Unmute the given account.
+  /// Unmute the given account.  Version history:  0.0.0 - added\\ 3.5.0 - deprecated &#x60;follow&#x60; scope. now additionally accepts &#x60;write&#x60;
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -2418,7 +2418,7 @@ class AccountsApi {
   }
 
   /// Unfeature account from profile
-  /// Remove the given account from the user&#39;s featured profiles.
+  /// Remove the given account from the user&#39;s featured profiles.  Version history:  2.5.0 - added\\ 4.4.0 - deprecated in favor of &#x60;/api/v1/accounts/:id/unendorse&#x60;
   ///
   /// Parameters:
   /// * [id] - id parameter

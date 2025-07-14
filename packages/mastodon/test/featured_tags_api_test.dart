@@ -8,7 +8,7 @@ void main() {
   group(FeaturedTagsApi, () {
     // Feature a tag
     //
-    // Promote a hashtag on your profile.
+    // Promote a hashtag on your profile.  Version history:  3.0.0 - added
     //
     //Future<FeaturedTag> createFeaturedTag(CreateFeaturedTagRequest createFeaturedTagRequest) async
     test('test createFeaturedTag', () async {
@@ -17,7 +17,7 @@ void main() {
 
     // Unfeature a tag
     //
-    // Stop promoting a hashtag on your profile.
+    // Stop promoting a hashtag on your profile.  Version history:  3.0.0 - added
     //
     //Future deleteFeaturedTag(String id) async
     test('test deleteFeaturedTag', () async {
@@ -26,7 +26,7 @@ void main() {
 
     // View suggested tags to feature
     //
-    // Shows up to 10 recently-used tags.
+    // Shows up to 10 recently-used tags.  Version history:  3.0.0 - added
     //
     //Future<List<Tag>> getFeaturedTagSuggestions() async
     test('test getFeaturedTagSuggestions', () async {
@@ -35,7 +35,7 @@ void main() {
 
     // View your featured tags
     //
-    // List all hashtags featured on your profile.
+    // List all hashtags featured on your profile.  Version history:  3.0.0 - added
     //
     //Future<List<FeaturedTag>> getFeaturedTags() async
     test('test getFeaturedTags', () async {

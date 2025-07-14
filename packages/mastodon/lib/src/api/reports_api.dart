@@ -19,7 +19,7 @@ class ReportsApi {
   const ReportsApi(this._dio);
 
   /// File a report
-  /// Report problematic accounts and contents to your moderators.
+  /// Report problematic accounts and contents to your moderators.  Version history:  1.1 - added\\ 2.3.0 - add &#x60;forward&#x60; parameter\\ 3.5.0 - add &#x60;category&#x60; and &#x60;rule_ids&#x60; parameters\\ 4.0.0 - &#x60;category&#x60; is now optional if &#x60;rule_ids&#x60; is provided\\ 4.2.0 - add &#x60;legal&#x60; category
   ///
   /// Parameters:
   /// * [createReportRequest] - JSON request body parameters

@@ -18,6 +18,7 @@ part 'application.g.dart';
 class Application {
   /// Returns a new [Application] instance.
   Application({
+    required this.id,
     required this.name,
     required this.redirectUri,
     required this.redirectUris,
@@ -26,7 +27,15 @@ class Application {
     this.website,
   });
 
-  /// The name of your application.
+  /// The numeric ID of the application.
+  @JsonKey(
+    name: r'id',
+    required: true,
+    includeIfNull: false,
+  )
+  final String id;
+
+  /// The name of the application.
   @JsonKey(
     name: r'name',
     required: true,
@@ -34,7 +43,7 @@ class Application {
   )
   final String name;
 
-  /// The registered redirection URI(s) for your application.
+  /// The registered redirection URI(s) for the application.
   @Deprecated('redirectUri has been deprecated')
   @JsonKey(
     name: r'redirect_uri',
@@ -43,7 +52,7 @@ class Application {
   )
   final String redirectUri;
 
-  /// The registered redirection URI(s) for your application.
+  /// The registered redirection URI(s) for the application.
   @JsonKey(
     name: r'redirect_uris',
     required: true,
@@ -68,7 +77,7 @@ class Application {
   )
   final String vapidKey;
 
-  /// The website associated with your application.
+  /// The website associated with the application.
   @JsonKey(
     name: r'website',
     required: false,
@@ -80,6 +89,7 @@ class Application {
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is Application &&
+          other.id == id &&
           other.name == name &&
           other.redirectUri == redirectUri &&
           other.redirectUris == redirectUris &&
@@ -89,6 +99,7 @@ class Application {
 
   @override
   int get hashCode =>
+      id.hashCode +
       name.hashCode +
       redirectUri.hashCode +
       redirectUris.hashCode +

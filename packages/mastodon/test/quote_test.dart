@@ -13,8 +13,8 @@ void main() {
       // TODO
     });
 
-    // Status status
-    test('to test the property `status`', () async {
+    // Status quotedStatus
+    test('to test the property `quotedStatus`', () async {
       // TODO
     });
   });

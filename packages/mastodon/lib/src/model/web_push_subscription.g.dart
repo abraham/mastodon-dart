@@ -13,7 +13,13 @@ WebPushSubscription _$WebPushSubscriptionFromJson(Map<String, dynamic> json) =>
       ($checkedConvert) {
         $checkKeys(
           json,
-          requiredKeys: const ['alerts', 'endpoint', 'id', 'server_key'],
+          requiredKeys: const [
+            'alerts',
+            'endpoint',
+            'id',
+            'server_key',
+            'standard'
+          ],
         );
         final val = WebPushSubscription(
           alerts: $checkedConvert(
@@ -23,7 +29,7 @@ WebPushSubscription _$WebPushSubscriptionFromJson(Map<String, dynamic> json) =>
           endpoint: $checkedConvert('endpoint', (v) => Uri.parse(v as String)),
           id: $checkedConvert('id', (v) => v as String),
           serverKey: $checkedConvert('server_key', (v) => v as String),
-          standard: $checkedConvert('standard', (v) => v as bool?),
+          standard: $checkedConvert('standard', (v) => v as bool),
         );
         return val;
       },
@@ -37,5 +43,5 @@ Map<String, dynamic> _$WebPushSubscriptionToJson(
       'endpoint': instance.endpoint.toString(),
       'id': instance.id,
       'server_key': instance.serverKey,
-      if (instance.standard case final value?) 'standard': value,
+      'standard': instance.standard,
     };

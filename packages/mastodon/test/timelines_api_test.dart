@@ -8,7 +8,7 @@ void main() {
   group(TimelinesApi, () {
     // View direct timeline
     //
-    // View statuses with a \"direct\" privacy, from your account or in your notifications.
+    // View statuses with a \"direct\" privacy, from your account or in your notifications.  Version history:  x.x.x - added\\ 2.6.0 - add `min_id`. deprecated in favor of [Conversations API]\\ 3.0.0 - removed
     //
     //Future<List<Status>> getTimelineDirect({ int limit, String maxId, String minId, String sinceId }) async
     test('test getTimelineDirect', () async {
@@ -17,7 +17,7 @@ void main() {
 
     // View home timeline
     //
-    // View statuses from followed users and hashtags.
+    // View statuses from followed users and hashtags.  Version history:  0.0.0 - added\\ 2.6.0 - add `min_id`\\ 3.3.0 - both `min_id` and `max_id` can be used at the same time now\\ 4.0.0 - as users can now follow hashtags, statuses from non-followed users may appear in the timeline
     //
     //Future<List<Status>> getTimelineHome({ int limit, String maxId, String minId, String sinceId }) async
     test('test getTimelineHome', () async {
@@ -26,7 +26,7 @@ void main() {
 
     // View link timeline
     //
-    // View public statuses containing a link to the specified currently-trending article. This only lists statuses from people who have opted in to discoverability features.
+    // View public statuses containing a link to the specified currently-trending article. This only lists statuses from people who have opted in to discoverability features.  Version history:  4.3.0 - added
     //
     //Future<List<Status>> getTimelineLink(String url, { int limit, String maxId, String minId, String sinceId }) async
     test('test getTimelineLink', () async {
@@ -35,7 +35,7 @@ void main() {
 
     // View public timeline
     //
-    // View public statuses.
+    // View public statuses.  Version history:  0.0.0 - added\\ 2.3.0 - added `only_media`\\ 2.6.0 - add `min_id`\\ 3.0.0 - auth is required if public preview is disabled\\ 3.1.4 - added `remote`\\ 3.3.0 - both `min_id` and `max_id` can be used at the same time now
     //
     //Future<List<Status>> getTimelinePublic({ int limit, bool local, String maxId, String minId, bool onlyMedia, bool remote, String sinceId }) async
     test('test getTimelinePublic', () async {
@@ -44,7 +44,7 @@ void main() {
 
     // View list timeline
     //
-    // View statuses in the given list timeline.
+    // View statuses in the given list timeline.  Version history:  2.1.0 - added\\ 2.6.0 - add `min_id`\\ 3.3.0 - both `min_id` and `max_id` can be used at the same time now
     //
     //Future<List<Status>> getTimelinesListByListId(String listId, { int limit, String maxId, String minId, String sinceId }) async
     test('test getTimelinesListByListId', () async {
@@ -53,7 +53,7 @@ void main() {
 
     // View hashtag timeline
     //
-    // View public statuses containing the given hashtag.
+    // View public statuses containing the given hashtag.  Version history:  0.0.0 - added\\ 2.3.0 - added `only_media`\\ 2.6.0 - add `min_id`\\ 2.7.0 - add `any[]`, `all[]`, `none[]` for additional tags\\ 3.0.0 - auth is required if public preview is disabled\\ 3.3.0 - both `min_id` and `max_id` can be used at the same time now. add `remote`
     //
     //Future<List<Status>> getTimelinesTagByHashtag(String hashtag, { List<String> all, List<String> any, int limit, bool local, String maxId, String minId, List<String> none, bool onlyMedia, bool remote, String sinceId }) async
     test('test getTimelinesTagByHashtag', () async {

@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 Feature a tag
 
-Promote a hashtag on your profile.
+Promote a hashtag on your profile.  Version history:  3.0.0 - added
 
 ### Example
 ```dart
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 Unfeature a tag
 
-Stop promoting a hashtag on your profile.
+Stop promoting a hashtag on your profile.  Version history:  3.0.0 - added
 
 ### Example
 ```dart
@@ -109,7 +109,7 @@ void (empty response body)
 
 View suggested tags to feature
 
-Shows up to 10 recently-used tags.
+Shows up to 10 recently-used tags.  Version history:  3.0.0 - added
 
 ### Example
 ```dart
@@ -150,7 +150,7 @@ This endpoint does not need any parameter.
 
 View your featured tags
 
-List all hashtags featured on your profile.
+List all hashtags featured on your profile.  Version history:  3.0.0 - added
 
 ### Example
 ```dart

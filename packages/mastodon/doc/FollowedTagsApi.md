@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 View all followed tags
 
-List your followed hashtags.
+List your followed hashtags.  Version history:  4.0.0 - added\\ 4.1.0 - add pagination headers
 
 ### Example
 ```dart

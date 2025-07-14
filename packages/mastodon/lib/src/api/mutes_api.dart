@@ -19,7 +19,7 @@ class MutesApi {
   const MutesApi(this._dio);
 
   /// View muted accounts
-  /// Accounts the user has muted.
+  /// Accounts the user has muted.  Version history:  0.0.0 - added\\ 3.3.0 - added &#x60;mute_expires_at&#x60;
   ///
   /// Parameters:
   /// * [limit] - Maximum number of results to return. Defaults to 40 accounts. Max 80 accounts.

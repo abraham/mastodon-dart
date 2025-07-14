@@ -19,7 +19,8 @@ MediaStatus _$MediaStatusFromJson(Map<String, dynamic> json) => $checkedCreate(
               (v) => (v as List<dynamic>).map((e) => e as String).toList()),
           inReplyToId: $checkedConvert('in_reply_to_id', (v) => v as String?),
           language: $checkedConvert('language', (v) => v as String?),
-          scheduledAt: $checkedConvert('scheduled_at', (v) => v as String?),
+          scheduledAt: $checkedConvert('scheduled_at',
+              (v) => v == null ? null : DateTime.parse(v as String)),
           sensitive: $checkedConvert('sensitive', (v) => v as bool? ?? false),
           spoilerText: $checkedConvert('spoiler_text', (v) => v as String?),
           visibility: $checkedConvert('visibility',
@@ -41,7 +42,8 @@ Map<String, dynamic> _$MediaStatusToJson(MediaStatus instance) =>
       'media_ids': instance.mediaIds,
       if (instance.inReplyToId case final value?) 'in_reply_to_id': value,
       if (instance.language case final value?) 'language': value,
-      if (instance.scheduledAt case final value?) 'scheduled_at': value,
+      if (instance.scheduledAt?.toIso8601String() case final value?)
+        'scheduled_at': value,
       if (instance.sensitive case final value?) 'sensitive': value,
       if (instance.spoilerText case final value?) 'spoiler_text': value,
       if (_$VisibilityEnumEnumMap[instance.visibility] case final value?)

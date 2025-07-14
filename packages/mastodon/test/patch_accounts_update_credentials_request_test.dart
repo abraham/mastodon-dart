@@ -8,12 +8,6 @@ void main() {
   // TODO add properties to the entity
 
   group(PatchAccountsUpdateCredentialsRequest, () {
-    // Whether manual approval of follow requests is required.
-    // bool locked
-    test('to test the property `locked`', () async {
-      // TODO
-    });
-
     // Domains of websites allowed to credit the account.
     // List<String> attributionDomains
     test('to test the property `attributionDomains`', () async {
@@ -65,6 +59,12 @@ void main() {
     // Whether public posts should be searchable to anyone.
     // bool indexable
     test('to test the property `indexable`', () async {
+      // TODO
+    });
+
+    // Whether manual approval of follow requests is required.
+    // bool locked
+    test('to test the property `locked`', () async {
       // TODO
     });
 

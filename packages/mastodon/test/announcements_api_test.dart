@@ -8,7 +8,7 @@ void main() {
   group(AnnouncementsApi, () {
     // Remove a reaction from an announcement
     //
-    // Undo a react emoji to an announcement.
+    // Undo a react emoji to an announcement.  Version history:  3.1.0 - added
     //
     //Future deleteAnnouncementReaction(String id, String name) async
     test('test deleteAnnouncementReaction', () async {
@@ -17,7 +17,7 @@ void main() {
 
     // View all announcements
     //
-    // See all currently active announcements set by admins.
+    // See all currently active announcements set by admins.  Version history:  3.1.0 - added
     //
     //Future<List<Announcement>> getAnnouncements() async
     test('test getAnnouncements', () async {
@@ -26,7 +26,7 @@ void main() {
 
     // Dismiss an announcement
     //
-    // Allows a user to mark the announcement as read.
+    // Allows a user to mark the announcement as read.  Version history:  3.1.0 - added
     //
     //Future postAnnouncementDismiss(String id) async
     test('test postAnnouncementDismiss', () async {
@@ -35,7 +35,7 @@ void main() {
 
     // Add a reaction to an announcement
     //
-    // React to an announcement with an emoji.
+    // React to an announcement with an emoji.  Version history:  3.1.0 - added
     //
     //Future updateAnnouncementReaction(String id, String name) async
     test('test updateAnnouncementReaction', () async {

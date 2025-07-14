@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 Remove a reaction from an announcement
 
-Undo a react emoji to an announcement.
+Undo a react emoji to an announcement.  Version history:  3.1.0 - added
 
 ### Example
 ```dart
@@ -66,7 +66,7 @@ void (empty response body)
 
 View all announcements
 
-See all currently active announcements set by admins.
+See all currently active announcements set by admins.  Version history:  3.1.0 - added
 
 ### Example
 ```dart
@@ -107,7 +107,7 @@ This endpoint does not need any parameter.
 
 Dismiss an announcement
 
-Allows a user to mark the announcement as read.
+Allows a user to mark the announcement as read.  Version history:  3.1.0 - added
 
 ### Example
 ```dart
@@ -151,7 +151,7 @@ void (empty response body)
 
 Add a reaction to an announcement
 
-React to an announcement with an emoji.
+React to an announcement with an emoji.  Version history:  3.1.0 - added
 
 ### Example
 ```dart

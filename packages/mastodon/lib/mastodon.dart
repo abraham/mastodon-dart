@@ -24,6 +24,7 @@ export 'package:mastodon/src/api/featured_tags_api.dart';
 export 'package:mastodon/src/api/filters_api.dart';
 export 'package:mastodon/src/api/follow_requests_api.dart';
 export 'package:mastodon/src/api/followed_tags_api.dart';
+export 'package:mastodon/src/api/health_api.dart';
 export 'package:mastodon/src/api/instance_api.dart';
 export 'package:mastodon/src/api/lists_api.dart';
 export 'package:mastodon/src/api/markers_api.dart';

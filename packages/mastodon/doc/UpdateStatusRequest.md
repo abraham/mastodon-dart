@@ -8,7 +8,7 @@ import 'package:mastodon/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**language** | **String** | ISO 639 language code for the status. | [optional] 
+**language** | **String** | ISO 639-1 language code for the status. | [optional] 
 **mediaAttributesLeftSquareBracketRightSquareBracket** | **List&lt;String&gt;** | Each array includes id, description, and focus. | [optional] 
 **mediaIds** | **List&lt;String&gt;** | Include Attachment IDs to be attached as media. If provided, `status` becomes optional, and `poll` cannot be used. | [optional] 
 **poll** | [**UpdateStatusRequestPoll**](UpdateStatusRequestPoll.md) |  | [optional] 

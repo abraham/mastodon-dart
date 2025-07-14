@@ -8,8 +8,8 @@ import 'package:mastodon/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**about** | [**Uri**](Uri.md) | The URL of the server's about page. | 
 **streaming** | [**Uri**](Uri.md) | The Websockets URL for connecting to the streaming API. | 
-**about** | [**Uri**](Uri.md) | The URL of the server's about page. | [optional] 
 **privacyPolicy** | [**Uri**](Uri.md) | The URL of the server's privacy policy. | [optional] 
 **termsOfService** | [**Uri**](Uri.md) | The URL of the server's current terms of service, if any. | [optional] 
 

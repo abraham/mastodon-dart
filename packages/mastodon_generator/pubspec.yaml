@@ -7,4 +7,4 @@ dependencies:
   openapi_generator_annotations: ^6.1.0
 dev_dependencies:
   openapi_generator: ^6.1.0
-  build_runner: ^2.4.15
+  build_runner: ^2.5.4

@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 View muted accounts
 
-Accounts the user has muted.
+Accounts the user has muted.  Version history:  0.0.0 - added\\ 3.3.0 - added `mute_expires_at`
 
 ### Example
 ```dart

@@ -19,7 +19,7 @@ class DirectoryApi {
   const DirectoryApi(this._dio);
 
   /// View profile directory
-  /// List accounts visible in the directory.
+  /// List accounts visible in the directory.  Version history:  3.0.0 - added
   ///
   /// Parameters:
   /// * [limit] - How many accounts to load. Defaults to 40 accounts. Max 80 accounts.

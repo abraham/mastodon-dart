@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 View currently featured profiles
 
-Accounts that the user is currently featuring on their profile.
+Accounts that the user is currently featuring on their profile.  Version history:  2.5.0 - added
 
 ### Example
 ```dart
