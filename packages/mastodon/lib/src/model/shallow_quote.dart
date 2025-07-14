@@ -18,7 +18,7 @@ class ShallowQuote {
   /// Returns a new [ShallowQuote] instance.
   ShallowQuote({
     required this.state,
-    this.statusId,
+    this.quotedStatusId,
   });
 
   /// The state of the quote.
@@ -31,22 +31,22 @@ class ShallowQuote {
 
   /// The identifier of the status being quoted, if the quote has been accepted. This will be `null`, unless the `state` attribute is `accepted`.
   @JsonKey(
-    name: r'status_id',
+    name: r'quoted_status_id',
     required: false,
     includeIfNull: false,
   )
-  final String? statusId;
+  final String? quotedStatusId;
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is ShallowQuote &&
           other.state == state &&
-          other.statusId == statusId;
+          other.quotedStatusId == quotedStatusId;
 
   @override
   int get hashCode =>
-      state.hashCode + (statusId == null ? 0 : statusId.hashCode);
+      state.hashCode + (quotedStatusId == null ? 0 : quotedStatusId.hashCode);
 
   factory ShallowQuote.fromJson(Map<String, dynamic> json) =>
       _$ShallowQuoteFromJson(json);

@@ -9,7 +9,7 @@ void main() {
 
   group(UpdateScheduledStatusRequest, () {
     // [Datetime] at which the status will be published. Must be at least 5 minutes into the future.
-    // String scheduledAt
+    // DateTime scheduledAt
     test('to test the property `scheduledAt`', () async {
       // TODO
     });

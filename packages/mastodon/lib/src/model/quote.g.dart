@@ -17,19 +17,21 @@ Quote _$QuoteFromJson(Map<String, dynamic> json) => $checkedCreate(
         final val = Quote(
           state: $checkedConvert(
               'state', (v) => $enumDecode(_$StateEnumEnumMap, v)),
-          status: $checkedConvert(
-              'status',
+          quotedStatus: $checkedConvert(
+              'quoted_status',
               (v) => v == null
                   ? null
                   : Status.fromJson(v as Map<String, dynamic>)),
         );
         return val;
       },
+      fieldKeyMap: const {'quotedStatus': 'quoted_status'},
     );
 
 Map<String, dynamic> _$QuoteToJson(Quote instance) => <String, dynamic>{
       'state': _$StateEnumEnumMap[instance.state]!,
-      if (instance.status?.toJson() case final value?) 'status': value,
+      if (instance.quotedStatus?.toJson() case final value?)
+        'quoted_status': value,
     };
 
 const _$StateEnumEnumMap = {

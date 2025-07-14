@@ -20,7 +20,7 @@ void main() {
       // TODO
     });
 
-    // Default language to use for authored statuses (ISO 6391)
+    // Default language to use for authored statuses (ISO 639-1)
     // String language
     test('to test the property `language`', () async {
       // TODO

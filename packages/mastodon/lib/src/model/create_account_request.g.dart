@@ -28,7 +28,8 @@ CreateAccountRequest _$CreateAccountRequestFromJson(
           locale: $checkedConvert('locale', (v) => v as String),
           password: $checkedConvert('password', (v) => v as String),
           username: $checkedConvert('username', (v) => v as String),
-          dateOfBirth: $checkedConvert('date_of_birth', (v) => v as String?),
+          dateOfBirth: $checkedConvert('date_of_birth',
+              (v) => v == null ? null : DateTime.parse(v as String)),
           reason: $checkedConvert('reason', (v) => v as String?),
         );
         return val;
@@ -44,6 +45,7 @@ Map<String, dynamic> _$CreateAccountRequestToJson(
       'locale': instance.locale,
       'password': instance.password,
       'username': instance.username,
-      if (instance.dateOfBirth case final value?) 'date_of_birth': value,
+      if (instance.dateOfBirth?.toIso8601String() case final value?)
+        'date_of_birth': value,
       if (instance.reason case final value?) 'reason': value,
     };

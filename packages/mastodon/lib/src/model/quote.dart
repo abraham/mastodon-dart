@@ -19,7 +19,7 @@ class Quote {
   /// Returns a new [Quote] instance.
   Quote({
     required this.state,
-    this.status,
+    this.quotedStatus,
   });
 
   /// The state of the quote.
@@ -31,19 +31,22 @@ class Quote {
   final StateEnum state;
 
   @JsonKey(
-    name: r'status',
+    name: r'quoted_status',
     required: false,
     includeIfNull: false,
   )
-  final Status? status;
+  final Status? quotedStatus;
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is Quote && other.state == state && other.status == status;
+      other is Quote &&
+          other.state == state &&
+          other.quotedStatus == quotedStatus;
 
   @override
-  int get hashCode => state.hashCode + (status == null ? 0 : status.hashCode);
+  int get hashCode =>
+      state.hashCode + (quotedStatus == null ? 0 : quotedStatus.hashCode);
 
   factory Quote.fromJson(Map<String, dynamic> json) => _$QuoteFromJson(json);
 

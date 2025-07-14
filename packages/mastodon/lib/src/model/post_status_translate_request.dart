@@ -19,7 +19,7 @@ class PostStatusTranslateRequest {
     this.lang,
   });
 
-  /// String (ISO 639 language code). The status content will be translated into this language. Defaults to the user's current locale.
+  /// String (ISO 639-1 language code). The status content will be translated into this language. Defaults to the user's current locale.
   @JsonKey(
     name: r'lang',
     required: false,

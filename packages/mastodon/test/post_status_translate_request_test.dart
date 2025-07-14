@@ -8,7 +8,7 @@ void main() {
   // TODO add properties to the entity
 
   group(PostStatusTranslateRequest, () {
-    // String (ISO 639 language code). The status content will be translated into this language. Defaults to the user's current locale.
+    // String (ISO 639-1 language code). The status content will be translated into this language. Defaults to the user's current locale.
     // String lang
     test('to test the property `lang`', () async {
       // TODO

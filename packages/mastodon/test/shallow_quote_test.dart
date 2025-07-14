@@ -14,8 +14,8 @@ void main() {
     });
 
     // The identifier of the status being quoted, if the quote has been accepted. This will be `null`, unless the `state` attribute is `accepted`.
-    // String statusId
-    test('to test the property `statusId`', () async {
+    // String quotedStatusId
+    test('to test the property `quotedStatusId`', () async {
       // TODO
     });
   });

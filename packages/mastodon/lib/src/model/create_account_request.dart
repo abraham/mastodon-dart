@@ -71,7 +71,7 @@ class CreateAccountRequest {
     required: false,
     includeIfNull: false,
   )
-  final String? dateOfBirth;
+  final DateTime? dateOfBirth;
 
   /// If registrations require manual approval, this text will be reviewed by moderators.
   @JsonKey(

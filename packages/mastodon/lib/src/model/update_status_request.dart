@@ -26,7 +26,7 @@ class UpdateStatusRequest {
     this.status,
   });
 
-  /// ISO 639 language code for the status.
+  /// ISO 639-1 language code for the status.
   @JsonKey(
     name: r'language',
     required: false,

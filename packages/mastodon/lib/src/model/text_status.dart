@@ -42,7 +42,7 @@ class TextStatus {
   )
   final String? inReplyToId;
 
-  /// ISO 639 language code for this status.
+  /// ISO 639-1 language code for this status.
   @JsonKey(
     name: r'language',
     required: false,
@@ -56,7 +56,7 @@ class TextStatus {
     required: false,
     includeIfNull: false,
   )
-  final String? scheduledAt;
+  final DateTime? scheduledAt;
 
   /// Mark status and attached media as sensitive? Defaults to false.
   @JsonKey(

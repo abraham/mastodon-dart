@@ -38,7 +38,7 @@ void main() {
     });
 
     // String ([Date]), required if the server has a minimum age requirement.
-    // String dateOfBirth
+    // DateTime dateOfBirth
     test('to test the property `dateOfBirth`', () async {
       // TODO
     });
