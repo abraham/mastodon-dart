@@ -9,9 +9,9 @@ import 'package:mastodon/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** | The ID of the attachment in the database. | 
-**meta** | [**MediaAttachmentMeta**](MediaAttachmentMeta.md) |  | 
 **type** | **String** | The type of the attachment. | 
 **url** | [**Uri**](Uri.md) | The location of the original full-size attachment. | 
+**meta** | [**MediaAttachmentMeta**](MediaAttachmentMeta.md) |  | [optional] 
 **blurhash** | **String** | A hash computed by [the BlurHash algorithm](https://github.com/woltapp/blurhash), for generating colorful preview thumbnails when media has not been downloaded yet. | [optional] 
 **description** | **String** | Alternate text that describes what is in the media attachment, to be used for the visually impaired or when media attachments do not load. | [optional] 
 **previewUrl** | [**Uri**](Uri.md) | The location of a scaled-down preview of the attachment. | [optional] 
