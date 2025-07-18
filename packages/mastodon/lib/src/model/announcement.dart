@@ -26,7 +26,7 @@ class Announcement {
     required this.emojis,
     required this.id,
     required this.mentions,
-    required this.published,
+    this.published,
     required this.publishedAt,
     required this.reactions,
     required this.statuses,
@@ -80,10 +80,10 @@ class Announcement {
   /// Whether the announcement is currently active.
   @JsonKey(
     name: r'published',
-    required: true,
+    required: false,
     includeIfNull: false,
   )
-  final bool published;
+  final bool? published;
 
   /// When the announcement was published.
   @JsonKey(

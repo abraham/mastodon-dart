@@ -31,31 +31,21 @@ class Hack {
     String content = await file.readAsString();
     List<String> lines = content.split('\n');
 
-    // Sort replacements by line numbers in descending order to process from largest line number first
-    final sortedReplacements = [...replacements];
-    sortedReplacements.sort((a, b) {
-      final maxLineA = a.lineNumbers.isNotEmpty
-          ? a.lineNumbers.reduce((a, b) => a > b ? a : b)
-          : 0;
-      final maxLineB = b.lineNumbers.isNotEmpty
-          ? b.lineNumbers.reduce((a, b) => a > b ? a : b)
-          : 0;
+    // Separate replacements with and without line numbers
+    final lineSpecificReplacements =
+        replacements.where((r) => r.lineNumbers.isNotEmpty).toList();
+    final globalReplacements =
+        replacements.where((r) => r.lineNumbers.isEmpty).toList();
+
+    // Sort line-specific replacements by line numbers in descending order to process from largest line number first
+    lineSpecificReplacements.sort((a, b) {
+      final maxLineA = a.lineNumbers.reduce((a, b) => a > b ? a : b);
+      final maxLineB = b.lineNumbers.reduce((a, b) => a > b ? a : b);
       return maxLineB.compareTo(maxLineA);
     });
 
-    for (final replacement in sortedReplacements) {
-      // If no line numbers specified, fall back to old behavior (replace all occurrences)
-      if (replacement.lineNumbers.isEmpty) {
-        if (!content.contains(replacement.searchString)) {
-          throw Exception(
-              'Error: "${replacement.searchString}" not found in $filePath');
-        }
-        content = content.replaceAll(
-            replacement.searchString, replacement.replacement);
-        lines = content.split('\n');
-        continue;
-      }
-
+    // Process line-specific replacements first (from highest line number to lowest)
+    for (final replacement in lineSpecificReplacements) {
       // Process specific line numbers in reverse order (largest first)
       for (final lineNumber in replacement.lineNumbers.reversed) {
         // Convert to 0-based index
@@ -75,6 +65,20 @@ class Hack {
         lines[lineIndex] =
             line.replaceAll(replacement.searchString, replacement.replacement);
       }
+    }
+
+    // Update content after line-specific replacements
+    content = lines.join('\n');
+
+    // Process global replacements (replace all occurrences)
+    for (final replacement in globalReplacements) {
+      if (!content.contains(replacement.searchString)) {
+        throw Exception(
+            'Error: "${replacement.searchString}" not found in $filePath');
+      }
+      content =
+          content.replaceAll(replacement.searchString, replacement.replacement);
+      lines = content.split('\n');
     }
 
     content = lines.join('\n');
@@ -217,6 +221,25 @@ void main() async {
         ),
       ],
       description: "Fix List types",
+    ),
+    Hack(
+      filePath: 'packages/mastodon/lib/src/model/announcement.dart',
+      replacements: [
+        Replacement(
+          "required this.published,",
+          "this.published,",
+        ),
+        Replacement(
+          "final bool published;",
+          "final bool? published;",
+        ),
+        Replacement(
+          "required: true,",
+          "required: false,",
+          [83],
+        ),
+      ],
+      description: "Make published optional in Announcement",
     ),
   ];
 
