@@ -6,6 +6,8 @@
 import 'package:json_annotation/json_annotation.dart';
 
 enum CategoryEnum {
+  @JsonValue(r'legal')
+  legal(r'legal'),
   @JsonValue(r'other')
   other(r'other'),
   @JsonValue(r'spam')

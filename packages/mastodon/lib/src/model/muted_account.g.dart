@@ -28,11 +28,12 @@ MutedAccount _$MutedAccountFromJson(Map<String, dynamic> json) =>
             'header',
             'header_static',
             'id',
+            'indexable',
             'locked',
             'note',
+            'roles',
             'statuses_count',
             'uri',
-            'url',
             'username'
           ],
         );
@@ -64,12 +65,17 @@ MutedAccount _$MutedAccountFromJson(Map<String, dynamic> json) =>
           headerStatic:
               $checkedConvert('header_static', (v) => Uri.parse(v as String)),
           id: $checkedConvert('id', (v) => v as String),
+          indexable: $checkedConvert('indexable', (v) => v as bool),
           locked: $checkedConvert('locked', (v) => v as bool),
           note: $checkedConvert('note', (v) => v as String),
+          roles: $checkedConvert(
+              'roles',
+              (v) => (v as List<dynamic>)
+                  .map((e) => AccountRole.fromJson(e as Map<String, dynamic>))
+                  .toList()),
           statusesCount:
               $checkedConvert('statuses_count', (v) => (v as num).toInt()),
           uri: $checkedConvert('uri', (v) => Uri.parse(v as String)),
-          url: $checkedConvert('url', (v) => Uri.parse(v as String)),
           username: $checkedConvert('username', (v) => v as String),
           discoverable: $checkedConvert('discoverable', (v) => v as bool?),
           hideCollections:
@@ -77,6 +83,7 @@ MutedAccount _$MutedAccountFromJson(Map<String, dynamic> json) =>
           lastStatusAt: $checkedConvert('last_status_at',
               (v) => v == null ? null : DateTime.parse(v as String)),
           limited: $checkedConvert('limited', (v) => v as bool?),
+          memorial: $checkedConvert('memorial', (v) => v as bool?),
           moved: $checkedConvert(
               'moved',
               (v) => v == null
@@ -86,6 +93,8 @@ MutedAccount _$MutedAccountFromJson(Map<String, dynamic> json) =>
               (v) => v == null ? null : DateTime.parse(v as String)),
           noindex: $checkedConvert('noindex', (v) => v as bool?),
           suspended: $checkedConvert('suspended', (v) => v as bool?),
+          url: $checkedConvert(
+              'url', (v) => v == null ? null : Uri.parse(v as String)),
         );
         return val;
       },
@@ -119,20 +128,23 @@ Map<String, dynamic> _$MutedAccountToJson(MutedAccount instance) =>
       'header': instance.header.toString(),
       'header_static': instance.headerStatic.toString(),
       'id': instance.id,
+      'indexable': instance.indexable,
       'locked': instance.locked,
       'note': instance.note,
+      'roles': instance.roles.map((e) => e.toJson()).toList(),
       'statuses_count': instance.statusesCount,
       'uri': instance.uri.toString(),
-      'url': instance.url.toString(),
       'username': instance.username,
       if (instance.discoverable case final value?) 'discoverable': value,
       if (instance.hideCollections case final value?) 'hide_collections': value,
       if (instance.lastStatusAt?.toIso8601String() case final value?)
         'last_status_at': value,
       if (instance.limited case final value?) 'limited': value,
+      if (instance.memorial case final value?) 'memorial': value,
       if (instance.moved?.toJson() case final value?) 'moved': value,
       if (instance.muteExpiresAt?.toIso8601String() case final value?)
         'mute_expires_at': value,
       if (instance.noindex case final value?) 'noindex': value,
       if (instance.suspended case final value?) 'suspended': value,
+      if (instance.url?.toString() case final value?) 'url': value,
     };

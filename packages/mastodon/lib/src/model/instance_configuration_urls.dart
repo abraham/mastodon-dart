@@ -20,6 +20,7 @@ class InstanceConfigurationUrls {
     required this.about,
     required this.streaming,
     this.privacyPolicy,
+    this.status,
     this.termsOfService,
   });
 
@@ -47,6 +48,14 @@ class InstanceConfigurationUrls {
   )
   final Uri? privacyPolicy;
 
+  /// The URL of the server's status page, if configured.
+  @JsonKey(
+    name: r'status',
+    required: false,
+    includeIfNull: false,
+  )
+  final Uri? status;
+
   /// The URL of the server's current terms of service, if any.
   @JsonKey(
     name: r'terms_of_service',
@@ -62,6 +71,7 @@ class InstanceConfigurationUrls {
           other.about == about &&
           other.streaming == streaming &&
           other.privacyPolicy == privacyPolicy &&
+          other.status == status &&
           other.termsOfService == termsOfService;
 
   @override
@@ -69,6 +79,7 @@ class InstanceConfigurationUrls {
       about.hashCode +
       streaming.hashCode +
       (privacyPolicy == null ? 0 : privacyPolicy.hashCode) +
+      (status == null ? 0 : status.hashCode) +
       (termsOfService == null ? 0 : termsOfService.hashCode);
 
   factory InstanceConfigurationUrls.fromJson(Map<String, dynamic> json) =>

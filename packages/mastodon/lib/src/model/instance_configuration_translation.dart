@@ -19,7 +19,7 @@ class InstanceConfigurationTranslation {
     required this.enabled,
   });
 
-  /// Whether the Translations API is available on this instance.
+  /// Whether the Translations API is available on this server.
   @JsonKey(
     name: r'enabled',
     required: true,

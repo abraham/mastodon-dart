@@ -26,7 +26,13 @@ void main() {
       // TODO
     });
 
-    // Profile bio, in plain-text instead of in HTML.
+    // Whether public posts should be searchable to anyone.
+    // bool indexable
+    test('to test the property `indexable`', () async {
+      // TODO
+    });
+
+    // Profile bio, in plain text instead of HTML.
     // String note
     test('to test the property `note`', () async {
       // TODO
@@ -41,6 +47,18 @@ void main() {
     // Whether new statuses should be marked sensitive by default.
     // bool sensitive
     test('to test the property `sensitive`', () async {
+      // TODO
+    });
+
+    // Whether the account has opted into discovery features such as the profile directory.
+    // bool discoverable
+    test('to test the property `discoverable`', () async {
+      // TODO
+    });
+
+    // Whether the user hides the contents of their follows and followers collections.
+    // bool hideCollections
+    test('to test the property `hideCollections`', () async {
       // TODO
     });
 

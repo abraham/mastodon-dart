@@ -41,7 +41,6 @@ Announcement _$AnnouncementFromJson(Map<String, dynamic> json) =>
                   .map((e) =>
                       AnnouncementAccount.fromJson(e as Map<String, dynamic>))
                   .toList()),
-          published: $checkedConvert('published', (v) => v as bool?),
           publishedAt: $checkedConvert(
               'published_at', (v) => DateTime.parse(v as String)),
           reactions: $checkedConvert(
@@ -86,7 +85,6 @@ Map<String, dynamic> _$AnnouncementToJson(Announcement instance) =>
       'emojis': instance.emojis.map((e) => e.toJson()).toList(),
       'id': instance.id,
       'mentions': instance.mentions.map((e) => e.toJson()).toList(),
-      if (instance.published case final value?) 'published': value,
       'published_at': instance.publishedAt.toIso8601String(),
       'reactions': instance.reactions.map((e) => e.toJson()).toList(),
       'statuses': instance.statuses.map((e) => e.toJson()).toList(),

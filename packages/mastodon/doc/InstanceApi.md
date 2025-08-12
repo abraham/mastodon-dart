@@ -66,7 +66,7 @@ No authorization required
 
 Weekly activity
 
-Instance activity over the last 3 months, binned weekly.  Version history:  2.1.2 - added\\ 3.0.0 - requires user token if instance is in whitelist mode
+Server activity over the last 3 months, binned weekly.  Version history:  2.1.2 - added\\ 3.0.0 - requires user token if server is in whitelist mode
 
 ### Example
 ```dart
@@ -146,7 +146,7 @@ This endpoint does not need any parameter.
 
 View extended description
 
-Obtain an extended description of this server  Version history:  4.0.0 - added
+Obtain an extended description of this server.  Version history:  4.0.0 - added
 
 ### Example
 ```dart
@@ -185,7 +185,7 @@ No authorization required
 
 List of connected domains
 
-Domains that this instance is aware of.  Version history:  2.1.2 - added\\ 3.0.0 - requires user token if instance is in whitelist mode
+Domains that this server is aware of.  Version history:  2.1.2 - added\\ 3.0.0 - requires user token if server is in whitelist mode
 
 ### Example
 ```dart
@@ -422,7 +422,7 @@ No authorization required
 
 View server information
 
-Obtain general information about the server.  Version history:  4.0.0 - added\\ 4.3.0 - added `configuration.vapid.public_key`
+Obtain general information about the server.  Version history:  4.0.0 - added\\ 4.1.0 - added `configuration.urls.status`\\ 4.2.0 - added `registrations.url` 4.3.0 - added `configuration.vapid.public_key`, `api_versions`, `configuration.accounts.max_pinned_statuses`, `icon` 4.4.0 - added `configuration.urls.about`, `configuration.urls.privacy_policy`, `configuration.urls.terms_of_service`, `registrations.min_age`, `registrations.reason_required`, `configuration.limited_federation`
 
 ### Example
 ```dart

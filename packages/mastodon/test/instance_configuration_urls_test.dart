@@ -26,6 +26,12 @@ void main() {
       // TODO
     });
 
+    // The URL of the server's status page, if configured.
+    // Uri status
+    test('to test the property `status`', () async {
+      // TODO
+    });
+
     // The URL of the server's current terms of service, if any.
     // Uri termsOfService
     test('to test the property `termsOfService`', () async {

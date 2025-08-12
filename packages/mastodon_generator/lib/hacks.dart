@@ -103,10 +103,9 @@ void main() async {
       filePath: 'packages/mastodon/lib/src/model/create_report_request.dart',
       replacements: [
         Replacement(
-            "this.category = const CreateReportRequestCategoryEnum._('other'),",
-            'this.category = CreateReportRequestCategoryEnum.other,'),
-        Replacement("defaultValue: 'other',",
-            "defaultValue: CreateReportRequestCategoryEnum.other,"),
+            "this.category = 'other',", 'this.category = CategoryEnum.other,'),
+        Replacement(
+            "defaultValue: 'other',", "defaultValue: CategoryEnum.other,"),
       ],
       description:
           "Replace CreateReportRequestCategoryEnum._('other') with CreateReportRequestCategoryEnum.other",
@@ -222,25 +221,25 @@ void main() async {
       ],
       description: "Fix List types",
     ),
-    Hack(
-      filePath: 'packages/mastodon/lib/src/model/announcement.dart',
-      replacements: [
-        Replacement(
-          "required this.published,",
-          "this.published,",
-        ),
-        Replacement(
-          "final bool published;",
-          "final bool? published;",
-        ),
-        Replacement(
-          "required: true,",
-          "required: false,",
-          [83],
-        ),
-      ],
-      description: "Make published optional in Announcement",
-    ),
+    // Hack(
+    //   filePath: 'packages/mastodon/lib/src/model/announcement.dart',
+    //   replacements: [
+    //     Replacement(
+    //       "required this.published,",
+    //       "this.published,",
+    //     ),
+    //     Replacement(
+    //       "final bool published;",
+    //       "final bool? published;",
+    //     ),
+    //     Replacement(
+    //       "required: true,",
+    //       "required: false,",
+    //       [83],
+    //     ),
+    //   ],
+    //   description: "Make published optional in Announcement",
+    // ),
   ];
 
   for (final hack in hacks) {

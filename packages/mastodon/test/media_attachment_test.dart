@@ -13,6 +13,11 @@ void main() {
       // TODO
     });
 
+    // MediaAttachmentMeta meta
+    test('to test the property `meta`', () async {
+      // TODO
+    });
+
     // The type of the attachment.
     // String type
     test('to test the property `type`', () async {
@@ -22,11 +27,6 @@ void main() {
     // The location of the original full-size attachment.
     // Uri url
     test('to test the property `url`', () async {
-      // TODO
-    });
-
-    // MediaAttachmentMeta meta
-    test('to test the property `meta`', () async {
       // TODO
     });
 

@@ -67,6 +67,7 @@ Map<String, dynamic> _$ReportToJson(Report instance) => <String, dynamic>{
     };
 
 const _$CategoryEnumEnumMap = {
+  CategoryEnum.legal: 'legal',
   CategoryEnum.other: 'other',
   CategoryEnum.spam: 'spam',
   CategoryEnum.violation: 'violation',

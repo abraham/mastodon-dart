@@ -22,6 +22,8 @@ InstanceConfigurationUrls _$InstanceConfigurationUrlsFromJson(
               $checkedConvert('streaming', (v) => Uri.parse(v as String)),
           privacyPolicy: $checkedConvert('privacy_policy',
               (v) => v == null ? null : Uri.parse(v as String)),
+          status: $checkedConvert(
+              'status', (v) => v == null ? null : Uri.parse(v as String)),
           termsOfService: $checkedConvert('terms_of_service',
               (v) => v == null ? null : Uri.parse(v as String)),
         );
@@ -40,6 +42,7 @@ Map<String, dynamic> _$InstanceConfigurationUrlsToJson(
       'streaming': instance.streaming.toString(),
       if (instance.privacyPolicy?.toString() case final value?)
         'privacy_policy': value,
+      if (instance.status?.toString() case final value?) 'status': value,
       if (instance.termsOfService?.toString() case final value?)
         'terms_of_service': value,
     };

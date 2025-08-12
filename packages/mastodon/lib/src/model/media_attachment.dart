@@ -19,9 +19,9 @@ class MediaAttachment {
   /// Returns a new [MediaAttachment] instance.
   MediaAttachment({
     required this.id,
+    required this.meta,
     required this.type,
     required this.url,
-    this.meta,
     this.blurhash,
     this.description,
     this.previewUrl,
@@ -35,6 +35,13 @@ class MediaAttachment {
     includeIfNull: false,
   )
   final String id;
+
+  @JsonKey(
+    name: r'meta',
+    required: true,
+    includeIfNull: false,
+  )
+  final MediaAttachmentMeta meta;
 
   /// The type of the attachment.
   @JsonKey(
@@ -51,13 +58,6 @@ class MediaAttachment {
     includeIfNull: false,
   )
   final Uri url;
-
-  @JsonKey(
-    name: r'meta',
-    required: false,
-    includeIfNull: false,
-  )
-  final MediaAttachmentMeta? meta;
 
   /// A hash computed by [the BlurHash algorithm](https://github.com/woltapp/blurhash), for generating colorful preview thumbnails when media has not been downloaded yet.
   @JsonKey(
@@ -96,9 +96,9 @@ class MediaAttachment {
       identical(this, other) ||
       other is MediaAttachment &&
           other.id == id &&
+          other.meta == meta &&
           other.type == type &&
           other.url == url &&
-          other.meta == meta &&
           other.blurhash == blurhash &&
           other.description == description &&
           other.previewUrl == previewUrl &&
@@ -107,9 +107,9 @@ class MediaAttachment {
   @override
   int get hashCode =>
       id.hashCode +
+      meta.hashCode +
       type.hashCode +
       url.hashCode +
-      meta.hashCode +
       (blurhash == null ? 0 : blurhash.hashCode) +
       (description == null ? 0 : description.hashCode) +
       (previewUrl == null ? 0 : previewUrl.hashCode) +

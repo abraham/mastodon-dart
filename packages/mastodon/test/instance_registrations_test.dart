@@ -13,13 +13,13 @@ void main() {
       // TODO
     });
 
-    // Whether registrations are enabled.
+    // Whether registrations are enabled. This will be `false` if `registrations_mode` is `none` or if the server is in `single_user_mode`.
     // bool enabled
     test('to test the property `enabled`', () async {
       // TODO
     });
 
-    // A custom message to be shown when registrations are closed.
+    // A custom message to be shown when registrations are closed. Will be `null` if registrations are open.
     // String message
     test('to test the property `message`', () async {
       // TODO
@@ -34,6 +34,12 @@ void main() {
     // Whether registrations require the user to provide a reason for joining. Only applicable when `registrations[approval_required]` is true.
     // bool reasonRequired
     test('to test the property `reasonRequired`', () async {
+      // TODO
+    });
+
+    // A custom URL for account registration, when using external authentication.
+    // Uri url
+    test('to test the property `url`', () async {
       // TODO
     });
   });

@@ -3,6 +3,7 @@ README.md
 analysis_options.yaml
 build.yaml
 doc/Account.md
+doc/AccountRole.md
 doc/AccountWarning.md
 doc/AccountsApi.md
 doc/AdminAccount.md
@@ -265,6 +266,7 @@ lib/src/auth/bearer_auth.dart
 lib/src/auth/oauth.dart
 lib/src/deserialize.dart
 lib/src/model/account.dart
+lib/src/model/account_role.dart
 lib/src/model/account_warning.dart
 lib/src/model/admin_account.dart
 lib/src/model/admin_canonical_email_block.dart
@@ -442,6 +444,7 @@ lib/src/model/validation_error_details_value_inner.dart
 lib/src/model/visibility_enum.dart
 lib/src/model/web_push_subscription.dart
 lib/src/model/web_push_subscription_alerts.dart
+test/account_role_test.dart
 test/account_test.dart
 test/account_warning_test.dart
 test/accounts_api_test.dart

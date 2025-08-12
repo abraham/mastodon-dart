@@ -1455,7 +1455,7 @@ class AccountsApi {
   }
 
   /// Block account
-  /// Block the given account. Clients should filter statuses from this account if received (e.g. due to a boost in the Home timeline)  Version history:  0.0.0 - added\\ 3.5.0 - deprecated &#x60;follow&#x60; scope. now additionally accepts &#x60;write&#x60;
+  /// [Blocks]({{&lt; relref \&quot;user/moderating#block\&quot;&gt;}}) the given account.  Version history:  0.0.0 - added\\ 3.5.0 - deprecated &#x60;follow&#x60; scope. now additionally accepts &#x60;write&#x60;
   ///
   /// Parameters:
   /// * [id] - id parameter

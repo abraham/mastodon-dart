@@ -31,7 +31,7 @@ class PatchAccountsUpdateCredentialsRequest {
     this.source_,
   });
 
-  /// Domains of websites allowed to credit the account.
+  /// Domains of websites allowed to credit the account. Maximum of 10 domains.
   @JsonKey(
     name: r'attribution_domains',
     required: false,

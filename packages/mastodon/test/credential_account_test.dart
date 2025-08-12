@@ -25,7 +25,7 @@ void main() {
       // TODO
     });
 
-    // Indicates that the account may perform automated actions, may not be monitored, or identifies as a robot.
+    // Indicates that the account may perform automated actions, may not be monitored, or identifies as a robot. This is determined by the account's `actor_type` being set to 'Application' or 'Service'.
     // bool bot
     test('to test the property `bot`', () async {
       // TODO
@@ -91,6 +91,12 @@ void main() {
       // TODO
     });
 
+    // Whether the account allows indexing by search engines.
+    // bool indexable
+    test('to test the property `indexable`', () async {
+      // TODO
+    });
+
     // Whether the account manually approves follow requests.
     // bool locked
     test('to test the property `locked`', () async {
@@ -103,9 +109,15 @@ void main() {
       // TODO
     });
 
-    // The role assigned to the currently authorized user.
+    // The complete role assigned to the currently authorized user, including permissions and highlighted status.
     // Role role
     test('to test the property `role`', () async {
+      // TODO
+    });
+
+    // An array of roles assigned to the user that are publicly visible (highlighted roles only), if the account is local. Will be an empty array if no roles are highlighted or if the account is remote.
+    // List<AccountRole> roles
+    test('to test the property `roles`', () async {
       // TODO
     });
 
@@ -120,15 +132,9 @@ void main() {
       // TODO
     });
 
-    // The user's ActivityPub actor identifier.
+    // The user's ActivityPub actor identifier (used for federation).
     // Uri uri
     test('to test the property `uri`', () async {
-      // TODO
-    });
-
-    // The location of the user's profile page.
-    // Uri url
-    test('to test the property `url`', () async {
       // TODO
     });
 
@@ -162,6 +168,12 @@ void main() {
       // TODO
     });
 
+    // An extra attribute returned only when an account is memorialized (when `memorial` is true).
+    // bool memorial
+    test('to test the property `memorial`', () async {
+      // TODO
+    });
+
     // Account moved
     test('to test the property `moved`', () async {
       // TODO
@@ -176,6 +188,12 @@ void main() {
     // An extra attribute returned only when an account is suspended.
     // bool suspended
     test('to test the property `suspended`', () async {
+      // TODO
+    });
+
+    // The location of the user's profile page (web interface URL).
+    // Uri url
+    test('to test the property `url`', () async {
       // TODO
     });
   });

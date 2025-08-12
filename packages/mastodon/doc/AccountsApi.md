@@ -796,7 +796,7 @@ Name | Type | Description  | Notes
 
 Block account
 
-Block the given account. Clients should filter statuses from this account if received (e.g. due to a boost in the Home timeline)  Version history:  0.0.0 - added\\ 3.5.0 - deprecated `follow` scope. now additionally accepts `write`
+[Blocks]({{< relref \"user/moderating#block\">}}) the given account.  Version history:  0.0.0 - added\\ 3.5.0 - deprecated `follow` scope. now additionally accepts `write`
 
 ### Example
 ```dart

@@ -28,13 +28,14 @@ CredentialAccount _$CredentialAccountFromJson(Map<String, dynamic> json) =>
             'header',
             'header_static',
             'id',
+            'indexable',
             'locked',
             'note',
             'role',
+            'roles',
             'source',
             'statuses_count',
             'uri',
-            'url',
             'username'
           ],
         );
@@ -66,10 +67,16 @@ CredentialAccount _$CredentialAccountFromJson(Map<String, dynamic> json) =>
           headerStatic:
               $checkedConvert('header_static', (v) => Uri.parse(v as String)),
           id: $checkedConvert('id', (v) => v as String),
+          indexable: $checkedConvert('indexable', (v) => v as bool),
           locked: $checkedConvert('locked', (v) => v as bool),
           note: $checkedConvert('note', (v) => v as String),
           role: $checkedConvert(
               'role', (v) => Role.fromJson(v as Map<String, dynamic>)),
+          roles: $checkedConvert(
+              'roles',
+              (v) => (v as List<dynamic>)
+                  .map((e) => AccountRole.fromJson(e as Map<String, dynamic>))
+                  .toList()),
           source_: $checkedConvert(
               'source',
               (v) =>
@@ -77,7 +84,6 @@ CredentialAccount _$CredentialAccountFromJson(Map<String, dynamic> json) =>
           statusesCount:
               $checkedConvert('statuses_count', (v) => (v as num).toInt()),
           uri: $checkedConvert('uri', (v) => Uri.parse(v as String)),
-          url: $checkedConvert('url', (v) => Uri.parse(v as String)),
           username: $checkedConvert('username', (v) => v as String),
           discoverable: $checkedConvert('discoverable', (v) => v as bool?),
           hideCollections:
@@ -85,6 +91,7 @@ CredentialAccount _$CredentialAccountFromJson(Map<String, dynamic> json) =>
           lastStatusAt: $checkedConvert('last_status_at',
               (v) => v == null ? null : DateTime.parse(v as String)),
           limited: $checkedConvert('limited', (v) => v as bool?),
+          memorial: $checkedConvert('memorial', (v) => v as bool?),
           moved: $checkedConvert(
               'moved',
               (v) => v == null
@@ -92,6 +99,8 @@ CredentialAccount _$CredentialAccountFromJson(Map<String, dynamic> json) =>
                   : Account.fromJson(v as Map<String, dynamic>)),
           noindex: $checkedConvert('noindex', (v) => v as bool?),
           suspended: $checkedConvert('suspended', (v) => v as bool?),
+          url: $checkedConvert(
+              'url', (v) => v == null ? null : Uri.parse(v as String)),
         );
         return val;
       },
@@ -125,20 +134,23 @@ Map<String, dynamic> _$CredentialAccountToJson(CredentialAccount instance) =>
       'header': instance.header.toString(),
       'header_static': instance.headerStatic.toString(),
       'id': instance.id,
+      'indexable': instance.indexable,
       'locked': instance.locked,
       'note': instance.note,
       'role': instance.role.toJson(),
+      'roles': instance.roles.map((e) => e.toJson()).toList(),
       'source': instance.source_.toJson(),
       'statuses_count': instance.statusesCount,
       'uri': instance.uri.toString(),
-      'url': instance.url.toString(),
       'username': instance.username,
       if (instance.discoverable case final value?) 'discoverable': value,
       if (instance.hideCollections case final value?) 'hide_collections': value,
       if (instance.lastStatusAt?.toIso8601String() case final value?)
         'last_status_at': value,
       if (instance.limited case final value?) 'limited': value,
+      if (instance.memorial case final value?) 'memorial': value,
       if (instance.moved?.toJson() case final value?) 'moved': value,
       if (instance.noindex case final value?) 'noindex': value,
       if (instance.suspended case final value?) 'suspended': value,
+      if (instance.url?.toString() case final value?) 'url': value,
     };

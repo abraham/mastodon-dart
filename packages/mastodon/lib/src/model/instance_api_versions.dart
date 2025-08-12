@@ -19,7 +19,7 @@ class InstanceApiVersions {
     required this.mastodon,
   });
 
-  /// API version number that this server implements. Starting from Mastodon v4.3.0, API changes will come with a version number, which clients can check against this value.
+  /// API version number that increments with substantial API changes. Clients can use this value to determine API compatibility rather than parsing complex version strings like \"4.4+hometown-123\" from forks or nightly builds. This number increases independently of the human-readable version number.
   @JsonKey(
     name: r'mastodon',
     required: true,

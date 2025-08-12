@@ -48,6 +48,7 @@ export 'package:mastodon/src/api/trends_api.dart';
 export 'package:mastodon/src/api/well_known_api.dart';
 
 export 'package:mastodon/src/model/account.dart';
+export 'package:mastodon/src/model/account_role.dart';
 export 'package:mastodon/src/model/account_warning.dart';
 export 'package:mastodon/src/model/admin_account.dart';
 export 'package:mastodon/src/model/admin_canonical_email_block.dart';

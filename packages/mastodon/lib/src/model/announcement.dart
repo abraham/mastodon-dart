@@ -26,7 +26,6 @@ class Announcement {
     required this.emojis,
     required this.id,
     required this.mentions,
-    this.published,
     required this.publishedAt,
     required this.reactions,
     required this.statuses,
@@ -76,14 +75,6 @@ class Announcement {
     includeIfNull: false,
   )
   final List<AnnouncementAccount> mentions;
-
-  /// Whether the announcement is currently active.
-  @JsonKey(
-    name: r'published',
-    required: false,
-    includeIfNull: false,
-  )
-  final bool? published;
 
   /// When the announcement was published.
   @JsonKey(
@@ -158,7 +149,6 @@ class Announcement {
           other.emojis == emojis &&
           other.id == id &&
           other.mentions == mentions &&
-          other.published == published &&
           other.publishedAt == publishedAt &&
           other.reactions == reactions &&
           other.statuses == statuses &&
@@ -175,7 +165,6 @@ class Announcement {
       emojis.hashCode +
       id.hashCode +
       mentions.hashCode +
-      published.hashCode +
       publishedAt.hashCode +
       reactions.hashCode +
       statuses.hashCode +

@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:mastodon/src/model/category_enum.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'create_report_request.g.dart';
@@ -17,7 +18,7 @@ class CreateReportRequest {
   /// Returns a new [CreateReportRequest] instance.
   CreateReportRequest({
     required this.accountId,
-    this.category = CreateReportRequestCategoryEnum.other,
+    this.category = CategoryEnum.other,
     this.comment,
     this.forward = false,
     this.ruleIds,
@@ -34,12 +35,12 @@ class CreateReportRequest {
 
   /// Specify if the report is due to `spam`, `legal` (illegal content), `violation` of enumerated instance rules, or some `other` reason. Defaults to `other`. Will be set to `violation` if `rule_ids[]` is provided (regardless of any category value you provide).
   @JsonKey(
-    defaultValue: CreateReportRequestCategoryEnum.other,
+    defaultValue: CategoryEnum.other,
     name: r'category',
     required: false,
     includeIfNull: false,
   )
-  final CreateReportRequestCategoryEnum? category;
+  final CategoryEnum? category;
 
   /// The reason for the report. Default maximum of 1000 characters.
   @JsonKey(
@@ -103,30 +104,4 @@ class CreateReportRequest {
   String toString() {
     return toJson().toString();
   }
-}
-
-/// Specify if the report is due to `spam`, `legal` (illegal content), `violation` of enumerated instance rules, or some `other` reason. Defaults to `other`. Will be set to `violation` if `rule_ids[]` is provided (regardless of any category value you provide).
-enum CreateReportRequestCategoryEnum {
-  /// Specify if the report is due to `spam`, `legal` (illegal content), `violation` of enumerated instance rules, or some `other` reason. Defaults to `other`. Will be set to `violation` if `rule_ids[]` is provided (regardless of any category value you provide).
-  @JsonValue(r'spam')
-  spam(r'spam'),
-
-  /// Specify if the report is due to `spam`, `legal` (illegal content), `violation` of enumerated instance rules, or some `other` reason. Defaults to `other`. Will be set to `violation` if `rule_ids[]` is provided (regardless of any category value you provide).
-  @JsonValue(r'legal')
-  legal(r'legal'),
-
-  /// Specify if the report is due to `spam`, `legal` (illegal content), `violation` of enumerated instance rules, or some `other` reason. Defaults to `other`. Will be set to `violation` if `rule_ids[]` is provided (regardless of any category value you provide).
-  @JsonValue(r'violation')
-  violation(r'violation'),
-
-  /// Specify if the report is due to `spam`, `legal` (illegal content), `violation` of enumerated instance rules, or some `other` reason. Defaults to `other`. Will be set to `violation` if `rule_ids[]` is provided (regardless of any category value you provide).
-  @JsonValue(r'other')
-  other(r'other');
-
-  const CreateReportRequestCategoryEnum(this.value);
-
-  final String value;
-
-  @override
-  String toString() => value;
 }

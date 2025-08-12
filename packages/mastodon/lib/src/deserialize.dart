@@ -1,4 +1,5 @@
 import 'package:mastodon/src/model/account.dart';
+import 'package:mastodon/src/model/account_role.dart';
 import 'package:mastodon/src/model/account_warning.dart';
 import 'package:mastodon/src/model/admin_account.dart';
 import 'package:mastodon/src/model/admin_canonical_email_block.dart';
@@ -189,6 +190,8 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
       return (value is double ? value : double.parse('$value')) as ReturnType;
     case 'Account':
       return Account.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'AccountRole':
+      return AccountRole.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'AccountWarning':
       return AccountWarning.fromJson(value as Map<String, dynamic>)
           as ReturnType;

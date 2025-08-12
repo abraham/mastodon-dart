@@ -6,6 +6,7 @@
 import 'package:mastodon/src/model/field.dart';
 import 'package:mastodon/src/model/custom_emoji.dart';
 import 'package:mastodon/src/model/account.dart';
+import 'package:mastodon/src/model/account_role.dart';
 import 'dart:core';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -34,19 +35,22 @@ class MutedAccountMoved {
     required this.header,
     required this.headerStatic,
     required this.id,
+    required this.indexable,
     required this.locked,
     required this.note,
+    required this.roles,
     required this.statusesCount,
     required this.uri,
-    required this.url,
     required this.username,
     this.discoverable,
     this.hideCollections,
     this.lastStatusAt,
     this.limited,
+    this.memorial,
     this.moved,
     this.noindex,
     this.suspended,
+    this.url,
   });
 
   /// The Webfinger account URI. Equal to `username` for local users, or `username@domain` for remote users.
@@ -73,7 +77,7 @@ class MutedAccountMoved {
   )
   final Uri avatarStatic;
 
-  /// Indicates that the account may perform automated actions, may not be monitored, or identifies as a robot.
+  /// Indicates that the account may perform automated actions, may not be monitored, or identifies as a robot. This is determined by the account's `actor_type` being set to 'Application' or 'Service'.
   @JsonKey(
     name: r'bot',
     required: true,
@@ -161,6 +165,14 @@ class MutedAccountMoved {
   )
   final String id;
 
+  /// Whether the account allows indexing by search engines.
+  @JsonKey(
+    name: r'indexable',
+    required: true,
+    includeIfNull: false,
+  )
+  final bool indexable;
+
   /// Whether the account manually approves follow requests.
   @JsonKey(
     name: r'locked',
@@ -177,6 +189,14 @@ class MutedAccountMoved {
   )
   final String note;
 
+  /// An array of roles assigned to the user that are publicly visible (highlighted roles only), if the account is local. Will be an empty array if no roles are highlighted or if the account is remote.
+  @JsonKey(
+    name: r'roles',
+    required: true,
+    includeIfNull: false,
+  )
+  final List<AccountRole> roles;
+
   /// How many statuses are attached to this account.
   @JsonKey(
     name: r'statuses_count',
@@ -185,21 +205,13 @@ class MutedAccountMoved {
   )
   final int statusesCount;
 
-  /// The user's ActivityPub actor identifier.
+  /// The user's ActivityPub actor identifier (used for federation).
   @JsonKey(
     name: r'uri',
     required: true,
     includeIfNull: false,
   )
   final Uri uri;
-
-  /// The location of the user's profile page.
-  @JsonKey(
-    name: r'url',
-    required: true,
-    includeIfNull: false,
-  )
-  final Uri url;
 
   /// The username of the account, not including domain.
   @JsonKey(
@@ -241,6 +253,14 @@ class MutedAccountMoved {
   )
   final bool? limited;
 
+  /// An extra attribute returned only when an account is memorialized (when `memorial` is true).
+  @JsonKey(
+    name: r'memorial',
+    required: false,
+    includeIfNull: false,
+  )
+  final bool? memorial;
+
   @JsonKey(
     name: r'moved',
     required: false,
@@ -264,6 +284,14 @@ class MutedAccountMoved {
   )
   final bool? suspended;
 
+  /// The location of the user's profile page (web interface URL).
+  @JsonKey(
+    name: r'url',
+    required: false,
+    includeIfNull: false,
+  )
+  final Uri? url;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -282,19 +310,22 @@ class MutedAccountMoved {
           other.header == header &&
           other.headerStatic == headerStatic &&
           other.id == id &&
+          other.indexable == indexable &&
           other.locked == locked &&
           other.note == note &&
+          other.roles == roles &&
           other.statusesCount == statusesCount &&
           other.uri == uri &&
-          other.url == url &&
           other.username == username &&
           other.discoverable == discoverable &&
           other.hideCollections == hideCollections &&
           other.lastStatusAt == lastStatusAt &&
           other.limited == limited &&
+          other.memorial == memorial &&
           other.moved == moved &&
           other.noindex == noindex &&
-          other.suspended == suspended;
+          other.suspended == suspended &&
+          other.url == url;
 
   @override
   int get hashCode =>
@@ -312,19 +343,22 @@ class MutedAccountMoved {
       header.hashCode +
       headerStatic.hashCode +
       id.hashCode +
+      indexable.hashCode +
       locked.hashCode +
       note.hashCode +
+      roles.hashCode +
       statusesCount.hashCode +
       uri.hashCode +
-      url.hashCode +
       username.hashCode +
       discoverable.hashCode +
       hideCollections.hashCode +
       lastStatusAt.hashCode +
       limited.hashCode +
+      memorial.hashCode +
       moved.hashCode +
       noindex.hashCode +
-      suspended.hashCode;
+      suspended.hashCode +
+      url.hashCode;
 
   factory MutedAccountMoved.fromJson(Map<String, dynamic> json) =>
       _$MutedAccountMovedFromJson(json);

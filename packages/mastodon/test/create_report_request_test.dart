@@ -14,7 +14,7 @@ void main() {
     });
 
     // Specify if the report is due to `spam`, `legal` (illegal content), `violation` of enumerated instance rules, or some `other` reason. Defaults to `other`. Will be set to `violation` if `rule_ids[]` is provided (regardless of any category value you provide).
-    // String category (default value: 'other')
+    // CategoryEnum category (default value: 'other')
     test('to test the property `category`', () async {
       // TODO
     });

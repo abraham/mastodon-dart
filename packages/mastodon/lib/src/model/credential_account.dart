@@ -8,6 +8,7 @@ import 'package:mastodon/src/model/credential_account_source.dart';
 import 'package:mastodon/src/model/field.dart';
 import 'package:mastodon/src/model/custom_emoji.dart';
 import 'package:mastodon/src/model/account.dart';
+import 'package:mastodon/src/model/account_role.dart';
 import 'dart:core';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -36,21 +37,24 @@ class CredentialAccount {
     required this.header,
     required this.headerStatic,
     required this.id,
+    required this.indexable,
     required this.locked,
     required this.note,
     required this.role,
+    required this.roles,
     required this.source_,
     required this.statusesCount,
     required this.uri,
-    required this.url,
     required this.username,
     this.discoverable,
     this.hideCollections,
     this.lastStatusAt,
     this.limited,
+    this.memorial,
     this.moved,
     this.noindex,
     this.suspended,
+    this.url,
   });
 
   /// The Webfinger account URI. Equal to `username` for local users, or `username@domain` for remote users.
@@ -77,7 +81,7 @@ class CredentialAccount {
   )
   final Uri avatarStatic;
 
-  /// Indicates that the account may perform automated actions, may not be monitored, or identifies as a robot.
+  /// Indicates that the account may perform automated actions, may not be monitored, or identifies as a robot. This is determined by the account's `actor_type` being set to 'Application' or 'Service'.
   @JsonKey(
     name: r'bot',
     required: true,
@@ -165,6 +169,14 @@ class CredentialAccount {
   )
   final String id;
 
+  /// Whether the account allows indexing by search engines.
+  @JsonKey(
+    name: r'indexable',
+    required: true,
+    includeIfNull: false,
+  )
+  final bool indexable;
+
   /// Whether the account manually approves follow requests.
   @JsonKey(
     name: r'locked',
@@ -181,13 +193,21 @@ class CredentialAccount {
   )
   final String note;
 
-  /// The role assigned to the currently authorized user.
+  /// The complete role assigned to the currently authorized user, including permissions and highlighted status.
   @JsonKey(
     name: r'role',
     required: true,
     includeIfNull: false,
   )
   final Role role;
+
+  /// An array of roles assigned to the user that are publicly visible (highlighted roles only), if the account is local. Will be an empty array if no roles are highlighted or if the account is remote.
+  @JsonKey(
+    name: r'roles',
+    required: true,
+    includeIfNull: false,
+  )
+  final List<AccountRole> roles;
 
   @JsonKey(
     name: r'source',
@@ -204,21 +224,13 @@ class CredentialAccount {
   )
   final int statusesCount;
 
-  /// The user's ActivityPub actor identifier.
+  /// The user's ActivityPub actor identifier (used for federation).
   @JsonKey(
     name: r'uri',
     required: true,
     includeIfNull: false,
   )
   final Uri uri;
-
-  /// The location of the user's profile page.
-  @JsonKey(
-    name: r'url',
-    required: true,
-    includeIfNull: false,
-  )
-  final Uri url;
 
   /// The username of the account, not including domain.
   @JsonKey(
@@ -260,6 +272,14 @@ class CredentialAccount {
   )
   final bool? limited;
 
+  /// An extra attribute returned only when an account is memorialized (when `memorial` is true).
+  @JsonKey(
+    name: r'memorial',
+    required: false,
+    includeIfNull: false,
+  )
+  final bool? memorial;
+
   @JsonKey(
     name: r'moved',
     required: false,
@@ -283,6 +303,14 @@ class CredentialAccount {
   )
   final bool? suspended;
 
+  /// The location of the user's profile page (web interface URL).
+  @JsonKey(
+    name: r'url',
+    required: false,
+    includeIfNull: false,
+  )
+  final Uri? url;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -301,21 +329,24 @@ class CredentialAccount {
           other.header == header &&
           other.headerStatic == headerStatic &&
           other.id == id &&
+          other.indexable == indexable &&
           other.locked == locked &&
           other.note == note &&
           other.role == role &&
+          other.roles == roles &&
           other.source_ == source_ &&
           other.statusesCount == statusesCount &&
           other.uri == uri &&
-          other.url == url &&
           other.username == username &&
           other.discoverable == discoverable &&
           other.hideCollections == hideCollections &&
           other.lastStatusAt == lastStatusAt &&
           other.limited == limited &&
+          other.memorial == memorial &&
           other.moved == moved &&
           other.noindex == noindex &&
-          other.suspended == suspended;
+          other.suspended == suspended &&
+          other.url == url;
 
   @override
   int get hashCode =>
@@ -333,21 +364,24 @@ class CredentialAccount {
       header.hashCode +
       headerStatic.hashCode +
       id.hashCode +
+      indexable.hashCode +
       locked.hashCode +
       note.hashCode +
       role.hashCode +
+      roles.hashCode +
       source_.hashCode +
       statusesCount.hashCode +
       uri.hashCode +
-      url.hashCode +
       username.hashCode +
       (discoverable == null ? 0 : discoverable.hashCode) +
       (hideCollections == null ? 0 : hideCollections.hashCode) +
       (lastStatusAt == null ? 0 : lastStatusAt.hashCode) +
       (limited == null ? 0 : limited.hashCode) +
+      (memorial == null ? 0 : memorial.hashCode) +
       (moved == null ? 0 : moved.hashCode) +
       (noindex == null ? 0 : noindex.hashCode) +
-      (suspended == null ? 0 : suspended.hashCode);
+      (suspended == null ? 0 : suspended.hashCode) +
+      (url == null ? 0 : url.hashCode);
 
   factory CredentialAccount.fromJson(Map<String, dynamic> json) =>
       _$CredentialAccountFromJson(json);

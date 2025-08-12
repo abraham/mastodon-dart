@@ -70,7 +70,7 @@ class Instance {
   )
   final String description;
 
-  /// The WebFinger domain name of the instance.
+  /// The WebFinger domain name of the server.
   @JsonKey(
     name: r'domain',
     required: true,
@@ -78,7 +78,7 @@ class Instance {
   )
   final String domain;
 
-  /// The list of available size variants for this instance configured icon.
+  /// The list of available size variants for this server's configured icon.
   @JsonKey(
     name: r'icon',
     required: true,
@@ -109,7 +109,7 @@ class Instance {
   )
   final List<Rule> rules;
 
-  /// The URL for the source code of the software running on this instance, in keeping with AGPL license requirements.
+  /// The URL for the source code of the software running on this server, per the AGPL license requirements.
   @JsonKey(
     name: r'source_url',
     required: true,
@@ -139,7 +139,7 @@ class Instance {
   )
   final InstanceUsage usage;
 
-  /// The version of Mastodon installed on the instance.
+  /// The version of Mastodon installed on the server.
   @JsonKey(
     name: r'version',
     required: true,

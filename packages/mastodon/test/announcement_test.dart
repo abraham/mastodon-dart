@@ -37,12 +37,6 @@ void main() {
       // TODO
     });
 
-    // Whether the announcement is currently active.
-    // bool published
-    test('to test the property `published`', () async {
-      // TODO
-    });
-
     // When the announcement was published.
     // DateTime publishedAt
     test('to test the property `publishedAt`', () async {

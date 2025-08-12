@@ -101,7 +101,7 @@ class InstanceApi {
   }
 
   /// Weekly activity
-  /// Instance activity over the last 3 months, binned weekly.  Version history:  2.1.2 - added\\ 3.0.0 - requires user token if instance is in whitelist mode
+  /// Server activity over the last 3 months, binned weekly.  Version history:  2.1.2 - added\\ 3.0.0 - requires user token if server is in whitelist mode
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -258,7 +258,7 @@ class InstanceApi {
   }
 
   /// View extended description
-  /// Obtain an extended description of this server  Version history:  4.0.0 - added
+  /// Obtain an extended description of this server.  Version history:  4.0.0 - added
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -333,7 +333,7 @@ class InstanceApi {
   }
 
   /// List of connected domains
-  /// Domains that this instance is aware of.  Version history:  2.1.2 - added\\ 3.0.0 - requires user token if instance is in whitelist mode
+  /// Domains that this server is aware of.  Version history:  2.1.2 - added\\ 3.0.0 - requires user token if server is in whitelist mode
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -755,7 +755,7 @@ class InstanceApi {
   }
 
   /// View server information
-  /// Obtain general information about the server.  Version history:  4.0.0 - added\\ 4.3.0 - added &#x60;configuration.vapid.public_key&#x60;
+  /// Obtain general information about the server.  Version history:  4.0.0 - added\\ 4.1.0 - added &#x60;configuration.urls.status&#x60;\\ 4.2.0 - added &#x60;registrations.url&#x60; 4.3.0 - added &#x60;configuration.vapid.public_key&#x60;, &#x60;api_versions&#x60;, &#x60;configuration.accounts.max_pinned_statuses&#x60;, &#x60;icon&#x60; 4.4.0 - added &#x60;configuration.urls.about&#x60;, &#x60;configuration.urls.privacy_policy&#x60;, &#x60;configuration.urls.terms_of_service&#x60;, &#x60;registrations.min_age&#x60;, &#x60;registrations.reason_required&#x60;, &#x60;configuration.limited_federation&#x60;
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation

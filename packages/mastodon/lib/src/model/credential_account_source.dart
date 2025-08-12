@@ -20,9 +20,12 @@ class CredentialAccountSource {
     required this.attributionDomains,
     required this.fields,
     required this.followRequestsCount,
+    required this.indexable,
     required this.note,
     required this.privacy,
     required this.sensitive,
+    this.discoverable,
+    this.hideCollections,
     this.language,
   });
 
@@ -50,7 +53,15 @@ class CredentialAccountSource {
   )
   final int followRequestsCount;
 
-  /// Profile bio, in plain-text instead of in HTML.
+  /// Whether public posts should be searchable to anyone.
+  @JsonKey(
+    name: r'indexable',
+    required: true,
+    includeIfNull: false,
+  )
+  final bool indexable;
+
+  /// Profile bio, in plain text instead of HTML.
   @JsonKey(
     name: r'note',
     required: true,
@@ -74,6 +85,22 @@ class CredentialAccountSource {
   )
   final bool sensitive;
 
+  /// Whether the account has opted into discovery features such as the profile directory.
+  @JsonKey(
+    name: r'discoverable',
+    required: false,
+    includeIfNull: false,
+  )
+  final bool? discoverable;
+
+  /// Whether the user hides the contents of their follows and followers collections.
+  @JsonKey(
+    name: r'hide_collections',
+    required: false,
+    includeIfNull: false,
+  )
+  final bool? hideCollections;
+
   /// The default posting language for new statuses.
   @JsonKey(
     name: r'language',
@@ -89,9 +116,12 @@ class CredentialAccountSource {
           other.attributionDomains == attributionDomains &&
           other.fields == fields &&
           other.followRequestsCount == followRequestsCount &&
+          other.indexable == indexable &&
           other.note == note &&
           other.privacy == privacy &&
           other.sensitive == sensitive &&
+          other.discoverable == discoverable &&
+          other.hideCollections == hideCollections &&
           other.language == language;
 
   @override
@@ -99,9 +129,12 @@ class CredentialAccountSource {
       attributionDomains.hashCode +
       fields.hashCode +
       followRequestsCount.hashCode +
+      indexable.hashCode +
       note.hashCode +
       privacy.hashCode +
       sensitive.hashCode +
+      (discoverable == null ? 0 : discoverable.hashCode) +
+      (hideCollections == null ? 0 : hideCollections.hashCode) +
       (language == null ? 0 : language.hashCode);
 
   factory CredentialAccountSource.fromJson(Map<String, dynamic> json) =>

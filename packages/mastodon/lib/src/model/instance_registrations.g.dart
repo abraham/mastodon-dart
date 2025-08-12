@@ -23,6 +23,8 @@ InstanceRegistrations _$InstanceRegistrationsFromJson(
           message: $checkedConvert('message', (v) => v as String?),
           minAge: $checkedConvert('min_age', (v) => (v as num?)?.toInt()),
           reasonRequired: $checkedConvert('reason_required', (v) => v as bool?),
+          url: $checkedConvert(
+              'url', (v) => v == null ? null : Uri.parse(v as String)),
         );
         return val;
       },
@@ -41,4 +43,5 @@ Map<String, dynamic> _$InstanceRegistrationsToJson(
       if (instance.message case final value?) 'message': value,
       if (instance.minAge case final value?) 'min_age': value,
       if (instance.reasonRequired case final value?) 'reason_required': value,
+      if (instance.url?.toString() case final value?) 'url': value,
     };

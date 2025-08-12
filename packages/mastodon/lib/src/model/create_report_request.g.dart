@@ -20,9 +20,8 @@ CreateReportRequest _$CreateReportRequestFromJson(Map<String, dynamic> json) =>
           category: $checkedConvert(
               'category',
               (v) =>
-                  $enumDecodeNullable(
-                      _$CreateReportRequestCategoryEnumEnumMap, v) ??
-                  CreateReportRequestCategoryEnum.other),
+                  $enumDecodeNullable(_$CategoryEnumEnumMap, v) ??
+                  CategoryEnum.other),
           comment: $checkedConvert('comment', (v) => v as String?),
           forward: $checkedConvert('forward', (v) => v as bool? ?? false),
           ruleIds: $checkedConvert('rule_ids',
@@ -43,8 +42,7 @@ Map<String, dynamic> _$CreateReportRequestToJson(
         CreateReportRequest instance) =>
     <String, dynamic>{
       'account_id': instance.accountId,
-      if (_$CreateReportRequestCategoryEnumEnumMap[instance.category]
-          case final value?)
+      if (_$CategoryEnumEnumMap[instance.category] case final value?)
         'category': value,
       if (instance.comment case final value?) 'comment': value,
       if (instance.forward case final value?) 'forward': value,
@@ -52,9 +50,9 @@ Map<String, dynamic> _$CreateReportRequestToJson(
       if (instance.statusIds case final value?) 'status_ids': value,
     };
 
-const _$CreateReportRequestCategoryEnumEnumMap = {
-  CreateReportRequestCategoryEnum.spam: 'spam',
-  CreateReportRequestCategoryEnum.legal: 'legal',
-  CreateReportRequestCategoryEnum.violation: 'violation',
-  CreateReportRequestCategoryEnum.other: 'other',
+const _$CategoryEnumEnumMap = {
+  CategoryEnum.legal: 'legal',
+  CategoryEnum.other: 'other',
+  CategoryEnum.spam: 'spam',
+  CategoryEnum.violation: 'violation',
 };

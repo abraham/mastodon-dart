@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'dart:core';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'instance_registrations.g.dart';
@@ -21,6 +22,7 @@ class InstanceRegistrations {
     this.message,
     this.minAge,
     this.reasonRequired,
+    this.url,
   });
 
   /// Whether registrations require moderator approval.
@@ -31,7 +33,7 @@ class InstanceRegistrations {
   )
   final bool approvalRequired;
 
-  /// Whether registrations are enabled.
+  /// Whether registrations are enabled. This will be `false` if `registrations_mode` is `none` or if the server is in `single_user_mode`.
   @JsonKey(
     name: r'enabled',
     required: true,
@@ -39,7 +41,7 @@ class InstanceRegistrations {
   )
   final bool enabled;
 
-  /// A custom message to be shown when registrations are closed.
+  /// A custom message to be shown when registrations are closed. Will be `null` if registrations are open.
   @JsonKey(
     name: r'message',
     required: false,
@@ -63,6 +65,14 @@ class InstanceRegistrations {
   )
   final bool? reasonRequired;
 
+  /// A custom URL for account registration, when using external authentication.
+  @JsonKey(
+    name: r'url',
+    required: false,
+    includeIfNull: false,
+  )
+  final Uri? url;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -71,7 +81,8 @@ class InstanceRegistrations {
           other.enabled == enabled &&
           other.message == message &&
           other.minAge == minAge &&
-          other.reasonRequired == reasonRequired;
+          other.reasonRequired == reasonRequired &&
+          other.url == url;
 
   @override
   int get hashCode =>
@@ -79,7 +90,8 @@ class InstanceRegistrations {
       enabled.hashCode +
       (message == null ? 0 : message.hashCode) +
       (minAge == null ? 0 : minAge.hashCode) +
-      (reasonRequired == null ? 0 : reasonRequired.hashCode);
+      (reasonRequired == null ? 0 : reasonRequired.hashCode) +
+      (url == null ? 0 : url.hashCode);
 
   factory InstanceRegistrations.fromJson(Map<String, dynamic> json) =>
       _$InstanceRegistrationsFromJson(json);
