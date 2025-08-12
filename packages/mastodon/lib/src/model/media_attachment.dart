@@ -19,11 +19,11 @@ class MediaAttachment {
   /// Returns a new [MediaAttachment] instance.
   MediaAttachment({
     required this.id,
-    required this.meta,
     required this.type,
     required this.url,
     this.blurhash,
     this.description,
+    this.meta,
     this.previewUrl,
     this.remoteUrl,
   });
@@ -35,13 +35,6 @@ class MediaAttachment {
     includeIfNull: false,
   )
   final String id;
-
-  @JsonKey(
-    name: r'meta',
-    required: true,
-    includeIfNull: false,
-  )
-  final MediaAttachmentMeta meta;
 
   /// The type of the attachment.
   @JsonKey(
@@ -75,6 +68,13 @@ class MediaAttachment {
   )
   final String? description;
 
+  @JsonKey(
+    name: r'meta',
+    required: false,
+    includeIfNull: false,
+  )
+  final MediaAttachmentMeta? meta;
+
   /// The location of a scaled-down preview of the attachment.
   @JsonKey(
     name: r'preview_url',
@@ -96,22 +96,22 @@ class MediaAttachment {
       identical(this, other) ||
       other is MediaAttachment &&
           other.id == id &&
-          other.meta == meta &&
           other.type == type &&
           other.url == url &&
           other.blurhash == blurhash &&
           other.description == description &&
+          other.meta == meta &&
           other.previewUrl == previewUrl &&
           other.remoteUrl == remoteUrl;
 
   @override
   int get hashCode =>
       id.hashCode +
-      meta.hashCode +
       type.hashCode +
       url.hashCode +
       (blurhash == null ? 0 : blurhash.hashCode) +
       (description == null ? 0 : description.hashCode) +
+      meta.hashCode +
       (previewUrl == null ? 0 : previewUrl.hashCode) +
       (remoteUrl == null ? 0 : remoteUrl.hashCode);
 

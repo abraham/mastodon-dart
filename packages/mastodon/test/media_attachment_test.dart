@@ -13,11 +13,6 @@ void main() {
       // TODO
     });
 
-    // MediaAttachmentMeta meta
-    test('to test the property `meta`', () async {
-      // TODO
-    });
-
     // The type of the attachment.
     // String type
     test('to test the property `type`', () async {
@@ -39,6 +34,11 @@ void main() {
     // Alternate text that describes what is in the media attachment, to be used for the visually impaired or when media attachments do not load.
     // String description
     test('to test the property `description`', () async {
+      // TODO
+    });
+
+    // MediaAttachmentMeta meta
+    test('to test the property `meta`', () async {
       // TODO
     });
 
