@@ -8,8 +8,9 @@ part of 'instance_contact.dart';
 
 InstanceContact _$InstanceContactFromJson(Map<String, dynamic> json) =>
     $checkedCreate('InstanceContact', json, ($checkedConvert) {
+      $checkKeys(json, requiredKeys: const ['email']);
       final val = InstanceContact(
-        email: $checkedConvert('email', (v) => v as String?),
+        email: $checkedConvert('email', (v) => v as String),
         account: $checkedConvert(
           'account',
           (v) => v == null ? null : Account.fromJson(v as Map<String, dynamic>),
@@ -19,7 +20,7 @@ InstanceContact _$InstanceContactFromJson(Map<String, dynamic> json) =>
     });
 
 Map<String, dynamic> _$InstanceContactToJson(InstanceContact instance) {
-  final val = <String, dynamic>{};
+  final val = <String, dynamic>{'email': instance.email};
 
   void writeNotNull(String key, dynamic value) {
     if (value != null) {
@@ -27,7 +28,6 @@ Map<String, dynamic> _$InstanceContactToJson(InstanceContact instance) {
     }
   }
 
-  writeNotNull('email', instance.email);
   writeNotNull('account', instance.account?.toJson());
   return val;
 }

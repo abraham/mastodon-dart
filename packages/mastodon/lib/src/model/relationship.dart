@@ -40,11 +40,11 @@ class Relationship {
 
     required this.requested,
 
+    required this.requestedBy,
+
     required this.showingReblogs,
 
     this.languages,
-
-    this.requestedBy,
   });
 
   /// Is this user blocking you?
@@ -95,6 +95,10 @@ class Relationship {
   @JsonKey(name: r'requested', required: true, includeIfNull: false)
   final bool requested;
 
+  /// Has this user requested to follow you?
+  @JsonKey(name: r'requested_by', required: true, includeIfNull: false)
+  final bool requestedBy;
+
   /// Are you receiving this user's boosts in your home timeline?
   @JsonKey(name: r'showing_reblogs', required: true, includeIfNull: false)
   final bool showingReblogs;
@@ -102,10 +106,6 @@ class Relationship {
   /// Which languages are you following from this user?
   @JsonKey(name: r'languages', required: false, includeIfNull: false)
   final List<String>? languages;
-
-  /// Has this user requested to follow you?
-  @JsonKey(name: r'requested_by', required: false, includeIfNull: false)
-  final bool? requestedBy;
 
   @override
   bool operator ==(Object other) =>
@@ -123,9 +123,9 @@ class Relationship {
           other.note == note &&
           other.notifying == notifying &&
           other.requested == requested &&
+          other.requestedBy == requestedBy &&
           other.showingReblogs == showingReblogs &&
-          other.languages == languages &&
-          other.requestedBy == requestedBy;
+          other.languages == languages;
 
   @override
   int get hashCode =>
@@ -141,9 +141,9 @@ class Relationship {
       note.hashCode +
       notifying.hashCode +
       requested.hashCode +
+      requestedBy.hashCode +
       showingReblogs.hashCode +
-      (languages == null ? 0 : languages.hashCode) +
-      (requestedBy == null ? 0 : requestedBy.hashCode);
+      (languages == null ? 0 : languages.hashCode);
 
   factory Relationship.fromJson(Map<String, dynamic> json) =>
       _$RelationshipFromJson(json);

@@ -24,9 +24,13 @@ class AdminReport {
 
     required this.actionTaken,
 
+    required this.category,
+
     required this.comment,
 
     required this.createdAt,
+
+    required this.forwarded,
 
     required this.id,
 
@@ -43,10 +47,6 @@ class AdminReport {
     this.actionTakenByAccount,
 
     this.assignedAccount,
-
-    this.category,
-
-    this.forwarded,
   });
 
   /// The account which filed the report.
@@ -57,6 +57,10 @@ class AdminReport {
   @JsonKey(name: r'action_taken', required: true, includeIfNull: false)
   final bool actionTaken;
 
+  /// The category under which the report is classified.
+  @JsonKey(name: r'category', required: true, includeIfNull: false)
+  final CategoryEnum category;
+
   /// An optional reason for reporting.
   @JsonKey(name: r'comment', required: true, includeIfNull: false)
   final String comment;
@@ -64,6 +68,10 @@ class AdminReport {
   /// The time the report was filed.
   @JsonKey(name: r'created_at', required: true, includeIfNull: false)
   final DateTime createdAt;
+
+  /// Whether a report was forwarded to a remote instance.
+  @JsonKey(name: r'forwarded', required: true, includeIfNull: false)
+  final bool forwarded;
 
   /// The ID of the report in the database.
   @JsonKey(name: r'id', required: true, includeIfNull: false)
@@ -99,22 +107,16 @@ class AdminReport {
   @JsonKey(name: r'assigned_account', required: false, includeIfNull: false)
   final AdminAccount? assignedAccount;
 
-  /// The category under which the report is classified.
-  @JsonKey(name: r'category', required: false, includeIfNull: false)
-  final CategoryEnum? category;
-
-  /// Whether a report was forwarded to a remote instance.
-  @JsonKey(name: r'forwarded', required: false, includeIfNull: false)
-  final bool? forwarded;
-
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is AdminReport &&
           other.account == account &&
           other.actionTaken == actionTaken &&
+          other.category == category &&
           other.comment == comment &&
           other.createdAt == createdAt &&
+          other.forwarded == forwarded &&
           other.id == id &&
           other.rules == rules &&
           other.statuses == statuses &&
@@ -122,16 +124,16 @@ class AdminReport {
           other.updatedAt == updatedAt &&
           other.actionTakenAt == actionTakenAt &&
           other.actionTakenByAccount == actionTakenByAccount &&
-          other.assignedAccount == assignedAccount &&
-          other.category == category &&
-          other.forwarded == forwarded;
+          other.assignedAccount == assignedAccount;
 
   @override
   int get hashCode =>
       account.hashCode +
       actionTaken.hashCode +
+      category.hashCode +
       comment.hashCode +
       createdAt.hashCode +
+      forwarded.hashCode +
       id.hashCode +
       rules.hashCode +
       statuses.hashCode +
@@ -139,9 +141,7 @@ class AdminReport {
       updatedAt.hashCode +
       (actionTakenAt == null ? 0 : actionTakenAt.hashCode) +
       (actionTakenByAccount == null ? 0 : actionTakenByAccount.hashCode) +
-      (assignedAccount == null ? 0 : assignedAccount.hashCode) +
-      category.hashCode +
-      (forwarded == null ? 0 : forwarded.hashCode);
+      (assignedAccount == null ? 0 : assignedAccount.hashCode);
 
   factory AdminReport.fromJson(Map<String, dynamic> json) =>
       _$AdminReportFromJson(json);

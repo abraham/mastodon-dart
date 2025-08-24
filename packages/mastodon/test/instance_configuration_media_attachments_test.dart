@@ -8,15 +8,9 @@ void main() {
   // TODO add properties to the entity
 
   group(InstanceConfigurationMediaAttachments, () {
-    // Contains MIME types that can be uploaded.
-    // List<String> supportedMimeTypes
-    test('to test the property `supportedMimeTypes`', () async {
-      // TODO
-    });
-
-    // The maximum size of a description, in characters.
-    // int descriptionLimit
-    test('to test the property `descriptionLimit`', () async {
+    // The maximum number of pixels (width times height) for image uploads.
+    // int imageMatrixLimit
+    test('to test the property `imageMatrixLimit`', () async {
       // TODO
     });
 
@@ -26,15 +20,9 @@ void main() {
       // TODO
     });
 
-    // The maximum number of pixels (width times height) for image uploads.
-    // int imageMatrixLimit
-    test('to test the property `imageMatrixLimit`', () async {
-      // TODO
-    });
-
-    // The maximum size of any uploaded video, in bytes.
-    // int videoSizeLimit
-    test('to test the property `videoSizeLimit`', () async {
+    // Contains MIME types that can be uploaded.
+    // List<String> supportedMimeTypes
+    test('to test the property `supportedMimeTypes`', () async {
       // TODO
     });
 
@@ -47,6 +35,18 @@ void main() {
     // The maximum number of pixels (width times height) for video uploads.
     // int videoMatrixLimit
     test('to test the property `videoMatrixLimit`', () async {
+      // TODO
+    });
+
+    // The maximum size of any uploaded video, in bytes.
+    // int videoSizeLimit
+    test('to test the property `videoSizeLimit`', () async {
+      // TODO
+    });
+
+    // The maximum size of a description, in characters.
+    // int descriptionLimit
+    test('to test the property `descriptionLimit`', () async {
       // TODO
     });
   });

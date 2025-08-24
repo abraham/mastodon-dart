@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **id** | **String** | The ID of the account in the database. | 
 **ips** | [**List&lt;AdminIp&gt;**](AdminIp.md) | All known IP addresses associated with this account. | 
 **locale** | **String** | The locale of the account. | 
+**role** | [**Role**](Role.md) | The current role of the account. | 
 **silenced** | **bool** | Whether the account is currently silenced. | 
 **suspended** | **bool** | Whether the account is currently suspended. | 
 **username** | **String** | The username of the account. | 
@@ -25,7 +26,6 @@ Name | Type | Description | Notes
 **inviteRequest** | **String** | The reason given when requesting an invite (for instances that require manual approval of registrations) | [optional] 
 **invitedByAccountId** | **String** | The ID of the [Account]({{< relref \"entities/account\" >}}) that invited this user, if applicable. | [optional] 
 **ip** | **String** | The IP address last used to login to this account. | [optional] 
-**role** | [**Role**](Role.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

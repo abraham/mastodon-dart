@@ -37,6 +37,8 @@ class AdminAccount {
 
     required this.locale,
 
+    required this.role,
+
     required this.silenced,
 
     required this.suspended,
@@ -52,8 +54,6 @@ class AdminAccount {
     this.invitedByAccountId,
 
     this.ip,
-
-    this.role,
   });
 
   /// User-level information about the account.
@@ -91,6 +91,10 @@ class AdminAccount {
   /// The locale of the account.
   @JsonKey(name: r'locale', required: true, includeIfNull: false)
   final String locale;
+
+  /// The current role of the account.
+  @JsonKey(name: r'role', required: true, includeIfNull: false)
+  final Role role;
 
   /// Whether the account is currently silenced.
   @JsonKey(name: r'silenced', required: true, includeIfNull: false)
@@ -132,9 +136,6 @@ class AdminAccount {
   @JsonKey(name: r'ip', required: false, includeIfNull: false)
   final String? ip;
 
-  @JsonKey(name: r'role', required: false, includeIfNull: false)
-  final Role? role;
-
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -148,6 +149,7 @@ class AdminAccount {
           other.id == id &&
           other.ips == ips &&
           other.locale == locale &&
+          other.role == role &&
           other.silenced == silenced &&
           other.suspended == suspended &&
           other.username == username &&
@@ -155,8 +157,7 @@ class AdminAccount {
           other.domain == domain &&
           other.inviteRequest == inviteRequest &&
           other.invitedByAccountId == invitedByAccountId &&
-          other.ip == ip &&
-          other.role == role;
+          other.ip == ip;
 
   @override
   int get hashCode =>
@@ -169,6 +170,7 @@ class AdminAccount {
       id.hashCode +
       ips.hashCode +
       locale.hashCode +
+      role.hashCode +
       silenced.hashCode +
       suspended.hashCode +
       username.hashCode +
@@ -176,8 +178,7 @@ class AdminAccount {
       (domain == null ? 0 : domain.hashCode) +
       (inviteRequest == null ? 0 : inviteRequest.hashCode) +
       (invitedByAccountId == null ? 0 : invitedByAccountId.hashCode) +
-      (ip == null ? 0 : ip.hashCode) +
-      (role == null ? 0 : role.hashCode);
+      (ip == null ? 0 : ip.hashCode);
 
   factory AdminAccount.fromJson(Map<String, dynamic> json) =>
       _$AdminAccountFromJson(json);

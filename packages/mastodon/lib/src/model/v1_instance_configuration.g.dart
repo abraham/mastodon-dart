@@ -14,9 +14,19 @@ V1InstanceConfiguration _$V1InstanceConfigurationFromJson(
   ($checkedConvert) {
     $checkKeys(
       json,
-      requiredKeys: const ['media_attachments', 'polls', 'statuses'],
+      requiredKeys: const [
+        'accounts',
+        'media_attachments',
+        'polls',
+        'statuses',
+      ],
     );
     final val = V1InstanceConfiguration(
+      accounts: $checkedConvert(
+        'accounts',
+        (v) =>
+            V1InstanceConfigurationAccounts.fromJson(v as Map<String, dynamic>),
+      ),
       mediaAttachments: $checkedConvert(
         'media_attachments',
         (v) => V1InstanceConfigurationMediaAttachments.fromJson(
@@ -25,20 +35,12 @@ V1InstanceConfiguration _$V1InstanceConfigurationFromJson(
       ),
       polls: $checkedConvert(
         'polls',
-        (v) => V1InstanceConfigurationPolls.fromJson(v as Map<String, dynamic>),
+        (v) => InstanceConfigurationPolls.fromJson(v as Map<String, dynamic>),
       ),
       statuses: $checkedConvert(
         'statuses',
         (v) =>
-            V1InstanceConfigurationStatuses.fromJson(v as Map<String, dynamic>),
-      ),
-      accounts: $checkedConvert(
-        'accounts',
-        (v) => v == null
-            ? null
-            : V1InstanceConfigurationAccounts.fromJson(
-                v as Map<String, dynamic>,
-              ),
+            InstanceConfigurationStatuses.fromJson(v as Map<String, dynamic>),
       ),
     );
     return val;
@@ -48,19 +50,9 @@ V1InstanceConfiguration _$V1InstanceConfigurationFromJson(
 
 Map<String, dynamic> _$V1InstanceConfigurationToJson(
   V1InstanceConfiguration instance,
-) {
-  final val = <String, dynamic>{
-    'media_attachments': instance.mediaAttachments.toJson(),
-    'polls': instance.polls.toJson(),
-    'statuses': instance.statuses.toJson(),
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('accounts', instance.accounts?.toJson());
-  return val;
-}
+) => <String, dynamic>{
+  'accounts': instance.accounts.toJson(),
+  'media_attachments': instance.mediaAttachments.toJson(),
+  'polls': instance.polls.toJson(),
+  'statuses': instance.statuses.toJson(),
+};

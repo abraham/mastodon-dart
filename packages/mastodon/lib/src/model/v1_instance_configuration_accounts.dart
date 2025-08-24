@@ -15,11 +15,11 @@ part 'v1_instance_configuration_accounts.g.dart';
 )
 class V1InstanceConfigurationAccounts {
   /// Returns a new [V1InstanceConfigurationAccounts] instance.
-  V1InstanceConfigurationAccounts({this.maxFeaturedTags});
+  V1InstanceConfigurationAccounts({required this.maxFeaturedTags});
 
   /// The maximum number of featured tags allowed for each account.
-  @JsonKey(name: r'max_featured_tags', required: false, includeIfNull: false)
-  final int? maxFeaturedTags;
+  @JsonKey(name: r'max_featured_tags', required: true, includeIfNull: false)
+  final int maxFeaturedTags;
 
   @override
   bool operator ==(Object other) =>
@@ -28,7 +28,7 @@ class V1InstanceConfigurationAccounts {
           other.maxFeaturedTags == maxFeaturedTags;
 
   @override
-  int get hashCode => (maxFeaturedTags == null ? 0 : maxFeaturedTags.hashCode);
+  int get hashCode => maxFeaturedTags.hashCode;
 
   factory V1InstanceConfigurationAccounts.fromJson(Map<String, dynamic> json) =>
       _$V1InstanceConfigurationAccountsFromJson(json);

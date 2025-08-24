@@ -11,41 +11,60 @@ AdminDomainBlock _$AdminDomainBlockFromJson(Map<String, dynamic> json) =>
       'AdminDomainBlock',
       json,
       ($checkedConvert) {
+        $checkKeys(
+          json,
+          requiredKeys: const [
+            'created_at',
+            'domain',
+            'id',
+            'obfuscate',
+            'reject_media',
+            'reject_reports',
+            'severity',
+          ],
+        );
         final val = AdminDomainBlock(
           createdAt: $checkedConvert(
             'created_at',
-            (v) => v == null ? null : DateTime.parse(v as String),
+            (v) => DateTime.parse(v as String),
+          ),
+          domain: $checkedConvert('domain', (v) => v as String),
+          id: $checkedConvert('id', (v) => v as String),
+          obfuscate: $checkedConvert('obfuscate', (v) => v as bool),
+          rejectMedia: $checkedConvert('reject_media', (v) => v as bool),
+          rejectReports: $checkedConvert('reject_reports', (v) => v as bool),
+          severity: $checkedConvert(
+            'severity',
+            (v) => $enumDecode(_$AdminDomainBlockSeverityEnumEnumMap, v),
           ),
           digest: $checkedConvert('digest', (v) => v as String?),
-          domain: $checkedConvert('domain', (v) => v as String?),
-          id: $checkedConvert('id', (v) => v as String?),
-          obfuscate: $checkedConvert('obfuscate', (v) => v as bool?),
           privateComment: $checkedConvert(
             'private_comment',
             (v) => v as String?,
           ),
           publicComment: $checkedConvert('public_comment', (v) => v as String?),
-          rejectMedia: $checkedConvert('reject_media', (v) => v as bool?),
-          rejectReports: $checkedConvert('reject_reports', (v) => v as bool?),
-          severity: $checkedConvert(
-            'severity',
-            (v) =>
-                $enumDecodeNullable(_$AdminDomainBlockSeverityEnumEnumMap, v),
-          ),
         );
         return val;
       },
       fieldKeyMap: const {
         'createdAt': 'created_at',
-        'privateComment': 'private_comment',
-        'publicComment': 'public_comment',
         'rejectMedia': 'reject_media',
         'rejectReports': 'reject_reports',
+        'privateComment': 'private_comment',
+        'publicComment': 'public_comment',
       },
     );
 
 Map<String, dynamic> _$AdminDomainBlockToJson(AdminDomainBlock instance) {
-  final val = <String, dynamic>{};
+  final val = <String, dynamic>{
+    'created_at': instance.createdAt.toIso8601String(),
+    'domain': instance.domain,
+    'id': instance.id,
+    'obfuscate': instance.obfuscate,
+    'reject_media': instance.rejectMedia,
+    'reject_reports': instance.rejectReports,
+    'severity': _$AdminDomainBlockSeverityEnumEnumMap[instance.severity]!,
+  };
 
   void writeNotNull(String key, dynamic value) {
     if (value != null) {
@@ -53,19 +72,9 @@ Map<String, dynamic> _$AdminDomainBlockToJson(AdminDomainBlock instance) {
     }
   }
 
-  writeNotNull('created_at', instance.createdAt?.toIso8601String());
   writeNotNull('digest', instance.digest);
-  writeNotNull('domain', instance.domain);
-  writeNotNull('id', instance.id);
-  writeNotNull('obfuscate', instance.obfuscate);
   writeNotNull('private_comment', instance.privateComment);
   writeNotNull('public_comment', instance.publicComment);
-  writeNotNull('reject_media', instance.rejectMedia);
-  writeNotNull('reject_reports', instance.rejectReports);
-  writeNotNull(
-    'severity',
-    _$AdminDomainBlockSeverityEnumEnumMap[instance.severity],
-  );
   return val;
 }
 

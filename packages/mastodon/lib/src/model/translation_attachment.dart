@@ -15,15 +15,15 @@ part 'translation_attachment.g.dart';
 )
 class TranslationAttachment {
   /// Returns a new [TranslationAttachment] instance.
-  TranslationAttachment({this.description, this.id});
+  TranslationAttachment({required this.description, required this.id});
 
   /// The translated description of the attachment.
-  @JsonKey(name: r'description', required: false, includeIfNull: false)
-  final String? description;
+  @JsonKey(name: r'description', required: true, includeIfNull: false)
+  final String description;
 
   /// The id of the attachment.
-  @JsonKey(name: r'id', required: false, includeIfNull: false)
-  final String? id;
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
+  final String id;
 
   @override
   bool operator ==(Object other) =>
@@ -33,9 +33,7 @@ class TranslationAttachment {
           other.id == id;
 
   @override
-  int get hashCode =>
-      (description == null ? 0 : description.hashCode) +
-      (id == null ? 0 : id.hashCode);
+  int get hashCode => description.hashCode + id.hashCode;
 
   factory TranslationAttachment.fromJson(Map<String, dynamic> json) =>
       _$TranslationAttachmentFromJson(json);

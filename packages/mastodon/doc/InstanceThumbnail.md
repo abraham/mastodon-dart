@@ -8,7 +8,7 @@ import 'package:mastodon/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**url** | [**Uri**](Uri.md) | The URL for the thumbnail image. | [optional] 
+**url** | [**Uri**](Uri.md) | The URL for the thumbnail image. | 
 **blurhash** | **String** | A hash computed by [the BlurHash algorithm](https://github.com/woltapp/blurhash), for generating colorful preview thumbnails when media has not been downloaded yet. | [optional] 
 **versions** | [**InstanceThumbnailVersions**](InstanceThumbnailVersions.md) |  | [optional] 
 

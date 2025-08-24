@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:mastodon/src/model/filter_context.dart';
 import 'package:mastodon/src/model/filter_keyword.dart';
 import 'package:mastodon/src/model/filter_status.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -18,24 +19,32 @@ part 'filter.g.dart';
 class Filter {
   /// Returns a new [Filter] instance.
   Filter({
-    this.context,
+    required this.context,
+
+    required this.id,
+
+    required this.title,
 
     this.expiresAt,
 
     this.filterAction,
 
-    this.id,
-
     this.keywords,
 
     this.statuses,
-
-    this.title,
   });
 
   /// The contexts in which the filter should be applied.
-  @JsonKey(name: r'context', required: false, includeIfNull: false)
-  final List<FilterContextEnum>? context;
+  @JsonKey(name: r'context', required: true, includeIfNull: false)
+  final List<FilterContext> context;
+
+  /// The ID of the Filter in the database.
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
+  final String id;
+
+  /// A title given by the user to name the filter.
+  @JsonKey(name: r'title', required: true, includeIfNull: false)
+  final String title;
 
   /// When the filter should no longer be applied.
   @JsonKey(name: r'expires_at', required: false, includeIfNull: false)
@@ -45,10 +54,6 @@ class Filter {
   @JsonKey(name: r'filter_action', required: false, includeIfNull: false)
   final FilterFilterActionEnum? filterAction;
 
-  /// The ID of the Filter in the database.
-  @JsonKey(name: r'id', required: false, includeIfNull: false)
-  final String? id;
-
   /// The keywords grouped under this filter. Omitted when part of a [FilterResult]({{< relref \"entities/FilterResult\" >}}).
   @JsonKey(name: r'keywords', required: false, includeIfNull: false)
   final List<FilterKeyword>? keywords;
@@ -57,31 +62,27 @@ class Filter {
   @JsonKey(name: r'statuses', required: false, includeIfNull: false)
   final List<FilterStatus>? statuses;
 
-  /// A title given by the user to name the filter.
-  @JsonKey(name: r'title', required: false, includeIfNull: false)
-  final String? title;
-
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is Filter &&
           other.context == context &&
+          other.id == id &&
+          other.title == title &&
           other.expiresAt == expiresAt &&
           other.filterAction == filterAction &&
-          other.id == id &&
           other.keywords == keywords &&
-          other.statuses == statuses &&
-          other.title == title;
+          other.statuses == statuses;
 
   @override
   int get hashCode =>
-      (context == null ? 0 : context.hashCode) +
+      context.hashCode +
+      id.hashCode +
+      title.hashCode +
       (expiresAt == null ? 0 : expiresAt.hashCode) +
       (filterAction == null ? 0 : filterAction.hashCode) +
-      (id == null ? 0 : id.hashCode) +
       (keywords == null ? 0 : keywords.hashCode) +
-      (statuses == null ? 0 : statuses.hashCode) +
-      (title == null ? 0 : title.hashCode);
+      (statuses == null ? 0 : statuses.hashCode);
 
   factory Filter.fromJson(Map<String, dynamic> json) => _$FilterFromJson(json);
 
@@ -91,26 +92,6 @@ class Filter {
   String toString() {
     return toJson().toString();
   }
-}
-
-enum FilterContextEnum {
-  @JsonValue(r'home')
-  home(r'home'),
-  @JsonValue(r'notifications')
-  notifications(r'notifications'),
-  @JsonValue(r'public')
-  public(r'public'),
-  @JsonValue(r'thread')
-  thread(r'thread'),
-  @JsonValue(r'account')
-  account(r'account');
-
-  const FilterContextEnum(this.value);
-
-  final String value;
-
-  @override
-  String toString() => value;
 }
 
 /// The action to be taken when a status matches this filter.

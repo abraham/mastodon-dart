@@ -210,8 +210,6 @@ doc/V1Instance.md
 doc/V1InstanceConfiguration.md
 doc/V1InstanceConfigurationAccounts.md
 doc/V1InstanceConfigurationMediaAttachments.md
-doc/V1InstanceConfigurationPolls.md
-doc/V1InstanceConfigurationStatuses.md
 doc/V1InstanceStats.md
 doc/V1InstanceUrls.md
 doc/V1NotificationPolicy.md
@@ -438,8 +436,6 @@ lib/src/model/v1_instance.dart
 lib/src/model/v1_instance_configuration.dart
 lib/src/model/v1_instance_configuration_accounts.dart
 lib/src/model/v1_instance_configuration_media_attachments.dart
-lib/src/model/v1_instance_configuration_polls.dart
-lib/src/model/v1_instance_configuration_statuses.dart
 lib/src/model/v1_instance_stats.dart
 lib/src/model/v1_instance_urls.dart
 lib/src/model/v1_notification_policy.dart
@@ -654,8 +650,6 @@ test/update_status_request_test.dart
 test/v1_filter_test.dart
 test/v1_instance_configuration_accounts_test.dart
 test/v1_instance_configuration_media_attachments_test.dart
-test/v1_instance_configuration_polls_test.dart
-test/v1_instance_configuration_statuses_test.dart
 test/v1_instance_configuration_test.dart
 test/v1_instance_stats_test.dart
 test/v1_instance_test.dart

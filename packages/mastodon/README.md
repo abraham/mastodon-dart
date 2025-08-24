@@ -433,8 +433,6 @@ Class | Method | HTTP request | Description
  - [V1InstanceConfiguration](doc/V1InstanceConfiguration.md)
  - [V1InstanceConfigurationAccounts](doc/V1InstanceConfigurationAccounts.md)
  - [V1InstanceConfigurationMediaAttachments](doc/V1InstanceConfigurationMediaAttachments.md)
- - [V1InstanceConfigurationPolls](doc/V1InstanceConfigurationPolls.md)
- - [V1InstanceConfigurationStatuses](doc/V1InstanceConfigurationStatuses.md)
  - [V1InstanceStats](doc/V1InstanceStats.md)
  - [V1InstanceUrls](doc/V1InstanceUrls.md)
  - [V1NotificationPolicy](doc/V1NotificationPolicy.md)

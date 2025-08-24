@@ -16,50 +16,50 @@ part 'instance_configuration_polls.g.dart';
 class InstanceConfigurationPolls {
   /// Returns a new [InstanceConfigurationPolls] instance.
   InstanceConfigurationPolls({
-    this.maxOptions,
+    required this.maxCharactersPerOption,
 
-    this.maxCharactersPerOption,
+    required this.maxExpiration,
 
-    this.minExpiration,
+    required this.maxOptions,
 
-    this.maxExpiration,
+    required this.minExpiration,
   });
-
-  /// Each poll is allowed to have up to this many options.
-  @JsonKey(name: r'max_options', required: false, includeIfNull: false)
-  final int? maxOptions;
 
   /// Each poll option is allowed to have this many characters.
   @JsonKey(
     name: r'max_characters_per_option',
-    required: false,
+    required: true,
     includeIfNull: false,
   )
-  final int? maxCharactersPerOption;
-
-  /// The shortest allowed poll duration, in seconds.
-  @JsonKey(name: r'min_expiration', required: false, includeIfNull: false)
-  final int? minExpiration;
+  final int maxCharactersPerOption;
 
   /// The longest allowed poll duration, in seconds.
-  @JsonKey(name: r'max_expiration', required: false, includeIfNull: false)
-  final int? maxExpiration;
+  @JsonKey(name: r'max_expiration', required: true, includeIfNull: false)
+  final int maxExpiration;
+
+  /// Each poll is allowed to have up to this many options.
+  @JsonKey(name: r'max_options', required: true, includeIfNull: false)
+  final int maxOptions;
+
+  /// The shortest allowed poll duration, in seconds.
+  @JsonKey(name: r'min_expiration', required: true, includeIfNull: false)
+  final int minExpiration;
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is InstanceConfigurationPolls &&
-          other.maxOptions == maxOptions &&
           other.maxCharactersPerOption == maxCharactersPerOption &&
-          other.minExpiration == minExpiration &&
-          other.maxExpiration == maxExpiration;
+          other.maxExpiration == maxExpiration &&
+          other.maxOptions == maxOptions &&
+          other.minExpiration == minExpiration;
 
   @override
   int get hashCode =>
-      (maxOptions == null ? 0 : maxOptions.hashCode) +
-      (maxCharactersPerOption == null ? 0 : maxCharactersPerOption.hashCode) +
-      (minExpiration == null ? 0 : minExpiration.hashCode) +
-      (maxExpiration == null ? 0 : maxExpiration.hashCode);
+      maxCharactersPerOption.hashCode +
+      maxExpiration.hashCode +
+      maxOptions.hashCode +
+      minExpiration.hashCode;
 
   factory InstanceConfigurationPolls.fromJson(Map<String, dynamic> json) =>
       _$InstanceConfigurationPollsFromJson(json);

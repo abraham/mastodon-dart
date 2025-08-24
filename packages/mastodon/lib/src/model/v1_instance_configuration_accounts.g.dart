@@ -12,10 +12,11 @@ V1InstanceConfigurationAccounts _$V1InstanceConfigurationAccountsFromJson(
   'V1InstanceConfigurationAccounts',
   json,
   ($checkedConvert) {
+    $checkKeys(json, requiredKeys: const ['max_featured_tags']);
     final val = V1InstanceConfigurationAccounts(
       maxFeaturedTags: $checkedConvert(
         'max_featured_tags',
-        (v) => (v as num?)?.toInt(),
+        (v) => (v as num).toInt(),
       ),
     );
     return val;
@@ -25,15 +26,4 @@ V1InstanceConfigurationAccounts _$V1InstanceConfigurationAccountsFromJson(
 
 Map<String, dynamic> _$V1InstanceConfigurationAccountsToJson(
   V1InstanceConfigurationAccounts instance,
-) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('max_featured_tags', instance.maxFeaturedTags);
-  return val;
-}
+) => <String, dynamic>{'max_featured_tags': instance.maxFeaturedTags};

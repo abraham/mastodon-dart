@@ -79,6 +79,12 @@ void main() {
       // TODO
     });
 
+    // Has this user requested to follow you?
+    // bool requestedBy
+    test('to test the property `requestedBy`', () async {
+      // TODO
+    });
+
     // Are you receiving this user's boosts in your home timeline?
     // bool showingReblogs
     test('to test the property `showingReblogs`', () async {
@@ -88,12 +94,6 @@ void main() {
     // Which languages are you following from this user?
     // List<String> languages
     test('to test the property `languages`', () async {
-      // TODO
-    });
-
-    // Has this user requested to follow you?
-    // bool requestedBy
-    test('to test the property `requestedBy`', () async {
       // TODO
     });
   });

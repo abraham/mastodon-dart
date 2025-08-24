@@ -17,9 +17,9 @@ part 'instance_registrations.g.dart';
 class InstanceRegistrations {
   /// Returns a new [InstanceRegistrations] instance.
   InstanceRegistrations({
-    this.enabled,
+    required this.approvalRequired,
 
-    this.approvalRequired,
+    required this.enabled,
 
     this.message,
 
@@ -30,13 +30,13 @@ class InstanceRegistrations {
     this.url,
   });
 
-  /// Whether registrations are enabled. This will be `false` if `registrations_mode` is `none` or if the server is in `single_user_mode`.
-  @JsonKey(name: r'enabled', required: false, includeIfNull: false)
-  final bool? enabled;
-
   /// Whether registrations require moderator approval.
-  @JsonKey(name: r'approval_required', required: false, includeIfNull: false)
-  final bool? approvalRequired;
+  @JsonKey(name: r'approval_required', required: true, includeIfNull: false)
+  final bool approvalRequired;
+
+  /// Whether registrations are enabled. This will be `false` if `registrations_mode` is `none` or if the server is in `single_user_mode`.
+  @JsonKey(name: r'enabled', required: true, includeIfNull: false)
+  final bool enabled;
 
   /// A custom message to be shown when registrations are closed. Will be `null` if registrations are open.
   @JsonKey(name: r'message', required: false, includeIfNull: false)
@@ -58,8 +58,8 @@ class InstanceRegistrations {
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is InstanceRegistrations &&
-          other.enabled == enabled &&
           other.approvalRequired == approvalRequired &&
+          other.enabled == enabled &&
           other.message == message &&
           other.minAge == minAge &&
           other.reasonRequired == reasonRequired &&
@@ -67,8 +67,8 @@ class InstanceRegistrations {
 
   @override
   int get hashCode =>
-      (enabled == null ? 0 : enabled.hashCode) +
-      (approvalRequired == null ? 0 : approvalRequired.hashCode) +
+      approvalRequired.hashCode +
+      enabled.hashCode +
       (message == null ? 0 : message.hashCode) +
       (minAge == null ? 0 : minAge.hashCode) +
       (reasonRequired == null ? 0 : reasonRequired.hashCode) +

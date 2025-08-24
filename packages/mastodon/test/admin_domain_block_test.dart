@@ -13,12 +13,6 @@ void main() {
       // TODO
     });
 
-    // The sha256 hex digest of the domain that is not allowed to federated.
-    // String digest
-    test('to test the property `digest`', () async {
-      // TODO
-    });
-
     // The domain that is not allowed to federate.
     // String domain
     test('to test the property `domain`', () async {
@@ -37,18 +31,6 @@ void main() {
       // TODO
     });
 
-    //
-    // String privateComment
-    test('to test the property `privateComment`', () async {
-      // TODO
-    });
-
-    //
-    // String publicComment
-    test('to test the property `publicComment`', () async {
-      // TODO
-    });
-
     // Whether to reject media attachments from this domain
     // bool rejectMedia
     test('to test the property `rejectMedia`', () async {
@@ -64,6 +46,24 @@ void main() {
     // The policy to be applied by this domain block.
     // String severity
     test('to test the property `severity`', () async {
+      // TODO
+    });
+
+    // The sha256 hex digest of the domain that is not allowed to federated.
+    // String digest
+    test('to test the property `digest`', () async {
+      // TODO
+    });
+
+    //
+    // String privateComment
+    test('to test the property `privateComment`', () async {
+      // TODO
+    });
+
+    //
+    // String publicComment
+    test('to test the property `publicComment`', () async {
       // TODO
     });
   });

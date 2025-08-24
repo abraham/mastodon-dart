@@ -11,11 +11,11 @@ FilterResult _$FilterResultFromJson(Map<String, dynamic> json) =>
       'FilterResult',
       json,
       ($checkedConvert) {
+        $checkKeys(json, requiredKeys: const ['filter']);
         final val = FilterResult(
           filter: $checkedConvert(
             'filter',
-            (v) =>
-                v == null ? null : Filter.fromJson(v as Map<String, dynamic>),
+            (v) => Filter.fromJson(v as Map<String, dynamic>),
           ),
           keywordMatches: $checkedConvert(
             'keyword_matches',
@@ -35,7 +35,7 @@ FilterResult _$FilterResultFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$FilterResultToJson(FilterResult instance) {
-  final val = <String, dynamic>{};
+  final val = <String, dynamic>{'filter': instance.filter.toJson()};
 
   void writeNotNull(String key, dynamic value) {
     if (value != null) {
@@ -43,7 +43,6 @@ Map<String, dynamic> _$FilterResultToJson(FilterResult instance) {
     }
   }
 
-  writeNotNull('filter', instance.filter?.toJson());
   writeNotNull('keyword_matches', instance.keywordMatches);
   writeNotNull('status_matches', instance.statusMatches);
   return val;

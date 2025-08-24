@@ -10,24 +10,39 @@ Report _$ReportFromJson(Map<String, dynamic> json) => $checkedCreate(
   'Report',
   json,
   ($checkedConvert) {
-    $checkKeys(json, requiredKeys: const ['action_taken', 'id']);
+    $checkKeys(
+      json,
+      requiredKeys: const [
+        'action_taken',
+        'category',
+        'comment',
+        'created_at',
+        'forwarded',
+        'id',
+        'target_account',
+      ],
+    );
     final val = Report(
       actionTaken: $checkedConvert('action_taken', (v) => v as bool),
+      category: $checkedConvert(
+        'category',
+        (v) => $enumDecode(_$CategoryEnumEnumMap, v),
+      ),
+      comment: $checkedConvert('comment', (v) => v as String),
+      createdAt: $checkedConvert(
+        'created_at',
+        (v) => DateTime.parse(v as String),
+      ),
+      forwarded: $checkedConvert('forwarded', (v) => v as bool),
       id: $checkedConvert('id', (v) => v as String),
+      targetAccount: $checkedConvert(
+        'target_account',
+        (v) => Account.fromJson(v as Map<String, dynamic>),
+      ),
       actionTakenAt: $checkedConvert(
         'action_taken_at',
         (v) => v == null ? null : DateTime.parse(v as String),
       ),
-      category: $checkedConvert(
-        'category',
-        (v) => $enumDecodeNullable(_$CategoryEnumEnumMap, v),
-      ),
-      comment: $checkedConvert('comment', (v) => v as String?),
-      createdAt: $checkedConvert(
-        'created_at',
-        (v) => v == null ? null : DateTime.parse(v as String),
-      ),
-      forwarded: $checkedConvert('forwarded', (v) => v as bool?),
       ruleIds: $checkedConvert(
         'rule_ids',
         (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -36,27 +51,28 @@ Report _$ReportFromJson(Map<String, dynamic> json) => $checkedCreate(
         'status_ids',
         (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
       ),
-      targetAccount: $checkedConvert(
-        'target_account',
-        (v) => v == null ? null : Account.fromJson(v as Map<String, dynamic>),
-      ),
     );
     return val;
   },
   fieldKeyMap: const {
     'actionTaken': 'action_taken',
-    'actionTakenAt': 'action_taken_at',
     'createdAt': 'created_at',
+    'targetAccount': 'target_account',
+    'actionTakenAt': 'action_taken_at',
     'ruleIds': 'rule_ids',
     'statusIds': 'status_ids',
-    'targetAccount': 'target_account',
   },
 );
 
 Map<String, dynamic> _$ReportToJson(Report instance) {
   final val = <String, dynamic>{
     'action_taken': instance.actionTaken,
+    'category': _$CategoryEnumEnumMap[instance.category]!,
+    'comment': instance.comment,
+    'created_at': instance.createdAt.toIso8601String(),
+    'forwarded': instance.forwarded,
     'id': instance.id,
+    'target_account': instance.targetAccount.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -66,13 +82,8 @@ Map<String, dynamic> _$ReportToJson(Report instance) {
   }
 
   writeNotNull('action_taken_at', instance.actionTakenAt?.toIso8601String());
-  writeNotNull('category', _$CategoryEnumEnumMap[instance.category]);
-  writeNotNull('comment', instance.comment);
-  writeNotNull('created_at', instance.createdAt?.toIso8601String());
-  writeNotNull('forwarded', instance.forwarded);
   writeNotNull('rule_ids', instance.ruleIds);
   writeNotNull('status_ids', instance.statusIds);
-  writeNotNull('target_account', instance.targetAccount?.toJson());
   return val;
 }
 

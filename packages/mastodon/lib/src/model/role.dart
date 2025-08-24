@@ -15,27 +15,37 @@ part 'role.g.dart';
 )
 class Role {
   /// Returns a new [Role] instance.
-  Role({this.color, this.highlighted, this.id, this.name, this.permissions});
+  Role({
+    required this.color,
+
+    required this.highlighted,
+
+    required this.id,
+
+    required this.name,
+
+    required this.permissions,
+  });
 
   /// The hex code assigned to this role. If no hex code is assigned, the string will be empty.
-  @JsonKey(name: r'color', required: false, includeIfNull: false)
-  final String? color;
+  @JsonKey(name: r'color', required: true, includeIfNull: false)
+  final String color;
 
   /// Whether the role is publicly visible as a badge on user profiles.
-  @JsonKey(name: r'highlighted', required: false, includeIfNull: false)
-  final bool? highlighted;
+  @JsonKey(name: r'highlighted', required: true, includeIfNull: false)
+  final bool highlighted;
 
   /// The ID of the Role in the database.
-  @JsonKey(name: r'id', required: false, includeIfNull: false)
-  final String? id;
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
+  final String id;
 
   /// The name of the role.
-  @JsonKey(name: r'name', required: false, includeIfNull: false)
-  final String? name;
+  @JsonKey(name: r'name', required: true, includeIfNull: false)
+  final String name;
 
   /// A bitmask that represents the sum of all permissions granted to the role.
-  @JsonKey(name: r'permissions', required: false, includeIfNull: false)
-  final String? permissions;
+  @JsonKey(name: r'permissions', required: true, includeIfNull: false)
+  final String permissions;
 
   @override
   bool operator ==(Object other) =>
@@ -49,11 +59,11 @@ class Role {
 
   @override
   int get hashCode =>
-      (color == null ? 0 : color.hashCode) +
-      (highlighted == null ? 0 : highlighted.hashCode) +
-      (id == null ? 0 : id.hashCode) +
-      (name == null ? 0 : name.hashCode) +
-      (permissions == null ? 0 : permissions.hashCode);
+      color.hashCode +
+      highlighted.hashCode +
+      id.hashCode +
+      name.hashCode +
+      permissions.hashCode;
 
   factory Role.fromJson(Map<String, dynamic> json) => _$RoleFromJson(json);
 

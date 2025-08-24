@@ -17,14 +17,18 @@ part 'model_list.g.dart';
 class ModelList {
   /// Returns a new [ModelList] instance.
   ModelList({
+    required this.exclusive,
+
     required this.id,
 
     required this.repliesPolicy,
 
     required this.title,
-
-    this.exclusive,
   });
+
+  /// Whether members of the list should be removed from the “Home” feed.
+  @JsonKey(name: r'exclusive', required: true, includeIfNull: false)
+  final bool exclusive;
 
   /// The ID of the list.
   @JsonKey(name: r'id', required: true, includeIfNull: false)
@@ -38,25 +42,21 @@ class ModelList {
   @JsonKey(name: r'title', required: true, includeIfNull: false)
   final String title;
 
-  /// Whether members of the list should be removed from the “Home” feed.
-  @JsonKey(name: r'exclusive', required: false, includeIfNull: false)
-  final bool? exclusive;
-
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is ModelList &&
+          other.exclusive == exclusive &&
           other.id == id &&
           other.repliesPolicy == repliesPolicy &&
-          other.title == title &&
-          other.exclusive == exclusive;
+          other.title == title;
 
   @override
   int get hashCode =>
+      exclusive.hashCode +
       id.hashCode +
       repliesPolicy.hashCode +
-      title.hashCode +
-      (exclusive == null ? 0 : exclusive.hashCode);
+      title.hashCode;
 
   factory ModelList.fromJson(Map<String, dynamic> json) =>
       _$ModelListFromJson(json);

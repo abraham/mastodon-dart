@@ -26,6 +26,7 @@ Relationship _$RelationshipFromJson(Map<String, dynamic> json) =>
             'note',
             'notifying',
             'requested',
+            'requested_by',
             'showing_reblogs',
           ],
         );
@@ -45,12 +46,12 @@ Relationship _$RelationshipFromJson(Map<String, dynamic> json) =>
           note: $checkedConvert('note', (v) => v as String),
           notifying: $checkedConvert('notifying', (v) => v as bool),
           requested: $checkedConvert('requested', (v) => v as bool),
+          requestedBy: $checkedConvert('requested_by', (v) => v as bool),
           showingReblogs: $checkedConvert('showing_reblogs', (v) => v as bool),
           languages: $checkedConvert(
             'languages',
             (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
           ),
-          requestedBy: $checkedConvert('requested_by', (v) => v as bool?),
         );
         return val;
       },
@@ -59,8 +60,8 @@ Relationship _$RelationshipFromJson(Map<String, dynamic> json) =>
         'domainBlocking': 'domain_blocking',
         'followedBy': 'followed_by',
         'mutingNotifications': 'muting_notifications',
-        'showingReblogs': 'showing_reblogs',
         'requestedBy': 'requested_by',
+        'showingReblogs': 'showing_reblogs',
       },
     );
 
@@ -78,6 +79,7 @@ Map<String, dynamic> _$RelationshipToJson(Relationship instance) {
     'note': instance.note,
     'notifying': instance.notifying,
     'requested': instance.requested,
+    'requested_by': instance.requestedBy,
     'showing_reblogs': instance.showingReblogs,
   };
 
@@ -88,6 +90,5 @@ Map<String, dynamic> _$RelationshipToJson(Relationship instance) {
   }
 
   writeNotNull('languages', instance.languages);
-  writeNotNull('requested_by', instance.requestedBy);
   return val;
 }

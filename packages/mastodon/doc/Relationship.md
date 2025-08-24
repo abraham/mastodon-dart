@@ -20,9 +20,9 @@ Name | Type | Description | Notes
 **note** | **String** | This user's profile bio | 
 **notifying** | **bool** | Have you enabled notifications for this user? | 
 **requested** | **bool** | Do you have a pending follow request for this user? | 
+**requestedBy** | **bool** | Has this user requested to follow you? | 
 **showingReblogs** | **bool** | Are you receiving this user's boosts in your home timeline? | 
 **languages** | **List&lt;String&gt;** | Which languages are you following from this user? | [optional] 
-**requestedBy** | **bool** | Has this user requested to follow you? | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

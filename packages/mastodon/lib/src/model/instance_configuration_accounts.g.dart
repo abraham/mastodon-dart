@@ -12,10 +12,11 @@ InstanceConfigurationAccounts _$InstanceConfigurationAccountsFromJson(
   'InstanceConfigurationAccounts',
   json,
   ($checkedConvert) {
+    $checkKeys(json, requiredKeys: const ['max_featured_tags']);
     final val = InstanceConfigurationAccounts(
       maxFeaturedTags: $checkedConvert(
         'max_featured_tags',
-        (v) => (v as num?)?.toInt(),
+        (v) => (v as num).toInt(),
       ),
       maxPinnedStatuses: $checkedConvert(
         'max_pinned_statuses',
@@ -33,7 +34,7 @@ InstanceConfigurationAccounts _$InstanceConfigurationAccountsFromJson(
 Map<String, dynamic> _$InstanceConfigurationAccountsToJson(
   InstanceConfigurationAccounts instance,
 ) {
-  final val = <String, dynamic>{};
+  final val = <String, dynamic>{'max_featured_tags': instance.maxFeaturedTags};
 
   void writeNotNull(String key, dynamic value) {
     if (value != null) {
@@ -41,7 +42,6 @@ Map<String, dynamic> _$InstanceConfigurationAccountsToJson(
     }
   }
 
-  writeNotNull('max_featured_tags', instance.maxFeaturedTags);
   writeNotNull('max_pinned_statuses', instance.maxPinnedStatuses);
   return val;
 }

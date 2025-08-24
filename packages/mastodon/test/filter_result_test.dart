@@ -7,6 +7,7 @@ void main() {
   // TODO add properties to the entity
 
   group(FilterResult, () {
+    // The filter that was matched.
     // Filter filter
     test('to test the property `filter`', () async {
       // TODO

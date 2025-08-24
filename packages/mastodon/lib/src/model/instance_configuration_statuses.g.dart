@@ -12,45 +12,41 @@ InstanceConfigurationStatuses _$InstanceConfigurationStatusesFromJson(
   'InstanceConfigurationStatuses',
   json,
   ($checkedConvert) {
+    $checkKeys(
+      json,
+      requiredKeys: const [
+        'characters_reserved_per_url',
+        'max_characters',
+        'max_media_attachments',
+      ],
+    );
     final val = InstanceConfigurationStatuses(
+      charactersReservedPerUrl: $checkedConvert(
+        'characters_reserved_per_url',
+        (v) => (v as num).toInt(),
+      ),
       maxCharacters: $checkedConvert(
         'max_characters',
-        (v) => (v as num?)?.toInt(),
+        (v) => (v as num).toInt(),
       ),
       maxMediaAttachments: $checkedConvert(
         'max_media_attachments',
-        (v) => (v as num?)?.toInt(),
-      ),
-      charactersReservedPerUrl: $checkedConvert(
-        'characters_reserved_per_url',
-        (v) => (v as num?)?.toInt(),
+        (v) => (v as num).toInt(),
       ),
     );
     return val;
   },
   fieldKeyMap: const {
+    'charactersReservedPerUrl': 'characters_reserved_per_url',
     'maxCharacters': 'max_characters',
     'maxMediaAttachments': 'max_media_attachments',
-    'charactersReservedPerUrl': 'characters_reserved_per_url',
   },
 );
 
 Map<String, dynamic> _$InstanceConfigurationStatusesToJson(
   InstanceConfigurationStatuses instance,
-) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('max_characters', instance.maxCharacters);
-  writeNotNull('max_media_attachments', instance.maxMediaAttachments);
-  writeNotNull(
-    'characters_reserved_per_url',
-    instance.charactersReservedPerUrl,
-  );
-  return val;
-}
+) => <String, dynamic>{
+  'characters_reserved_per_url': instance.charactersReservedPerUrl,
+  'max_characters': instance.maxCharacters,
+  'max_media_attachments': instance.maxMediaAttachments,
+};

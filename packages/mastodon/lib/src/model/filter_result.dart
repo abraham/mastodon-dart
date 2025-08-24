@@ -16,10 +16,11 @@ part 'filter_result.g.dart';
 )
 class FilterResult {
   /// Returns a new [FilterResult] instance.
-  FilterResult({this.filter, this.keywordMatches, this.statusMatches});
+  FilterResult({required this.filter, this.keywordMatches, this.statusMatches});
 
-  @JsonKey(name: r'filter', required: false, includeIfNull: false)
-  final Filter? filter;
+  /// The filter that was matched.
+  @JsonKey(name: r'filter', required: true, includeIfNull: false)
+  final Filter filter;
 
   /// The keyword within the filter that was matched.
   @JsonKey(name: r'keyword_matches', required: false, includeIfNull: false)
@@ -39,7 +40,7 @@ class FilterResult {
 
   @override
   int get hashCode =>
-      (filter == null ? 0 : filter.hashCode) +
+      filter.hashCode +
       (keywordMatches == null ? 0 : keywordMatches.hashCode) +
       (statusMatches == null ? 0 : statusMatches.hashCode);
 

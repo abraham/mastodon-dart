@@ -23,6 +23,7 @@ AdminAccount _$AdminAccountFromJson(Map<String, dynamic> json) =>
             'id',
             'ips',
             'locale',
+            'role',
             'silenced',
             'suspended',
             'username',
@@ -49,6 +50,10 @@ AdminAccount _$AdminAccountFromJson(Map<String, dynamic> json) =>
                 .toList(),
           ),
           locale: $checkedConvert('locale', (v) => v as String),
+          role: $checkedConvert(
+            'role',
+            (v) => Role.fromJson(v as Map<String, dynamic>),
+          ),
           silenced: $checkedConvert('silenced', (v) => v as bool),
           suspended: $checkedConvert('suspended', (v) => v as bool),
           username: $checkedConvert('username', (v) => v as String),
@@ -63,10 +68,6 @@ AdminAccount _$AdminAccountFromJson(Map<String, dynamic> json) =>
             (v) => v as String?,
           ),
           ip: $checkedConvert('ip', (v) => v as String?),
-          role: $checkedConvert(
-            'role',
-            (v) => v == null ? null : Role.fromJson(v as Map<String, dynamic>),
-          ),
         );
         return val;
       },
@@ -89,6 +90,7 @@ Map<String, dynamic> _$AdminAccountToJson(AdminAccount instance) {
     'id': instance.id,
     'ips': instance.ips.map((e) => e.toJson()).toList(),
     'locale': instance.locale,
+    'role': instance.role.toJson(),
     'silenced': instance.silenced,
     'suspended': instance.suspended,
     'username': instance.username,
@@ -105,6 +107,5 @@ Map<String, dynamic> _$AdminAccountToJson(AdminAccount instance) {
   writeNotNull('invite_request', instance.inviteRequest);
   writeNotNull('invited_by_account_id', instance.invitedByAccountId);
   writeNotNull('ip', instance.ip);
-  writeNotNull('role', instance.role?.toJson());
   return val;
 }

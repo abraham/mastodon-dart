@@ -15,11 +15,11 @@ part 'instance_usage_users.g.dart';
 )
 class InstanceUsageUsers {
   /// Returns a new [InstanceUsageUsers] instance.
-  InstanceUsageUsers({this.activeMonth});
+  InstanceUsageUsers({required this.activeMonth});
 
   /// The number of active users in the past 4 weeks. This is set to zero for server with `configuration[limited_federation]`.
-  @JsonKey(name: r'active_month', required: false, includeIfNull: false)
-  final int? activeMonth;
+  @JsonKey(name: r'active_month', required: true, includeIfNull: false)
+  final int activeMonth;
 
   @override
   bool operator ==(Object other) =>
@@ -27,7 +27,7 @@ class InstanceUsageUsers {
       other is InstanceUsageUsers && other.activeMonth == activeMonth;
 
   @override
-  int get hashCode => (activeMonth == null ? 0 : activeMonth.hashCode);
+  int get hashCode => activeMonth.hashCode;
 
   factory InstanceUsageUsers.fromJson(Map<String, dynamic> json) =>
       _$InstanceUsageUsersFromJson(json);

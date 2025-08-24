@@ -8,28 +8,21 @@ part of 'admin_domain_allow.dart';
 
 AdminDomainAllow _$AdminDomainAllowFromJson(Map<String, dynamic> json) =>
     $checkedCreate('AdminDomainAllow', json, ($checkedConvert) {
+      $checkKeys(json, requiredKeys: const ['created_at', 'domain', 'id']);
       final val = AdminDomainAllow(
         createdAt: $checkedConvert(
           'created_at',
-          (v) => v == null ? null : DateTime.parse(v as String),
+          (v) => DateTime.parse(v as String),
         ),
-        domain: $checkedConvert('domain', (v) => v as String?),
-        id: $checkedConvert('id', (v) => v as String?),
+        domain: $checkedConvert('domain', (v) => v as String),
+        id: $checkedConvert('id', (v) => v as String),
       );
       return val;
     }, fieldKeyMap: const {'createdAt': 'created_at'});
 
-Map<String, dynamic> _$AdminDomainAllowToJson(AdminDomainAllow instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('created_at', instance.createdAt?.toIso8601String());
-  writeNotNull('domain', instance.domain);
-  writeNotNull('id', instance.id);
-  return val;
-}
+Map<String, dynamic> _$AdminDomainAllowToJson(AdminDomainAllow instance) =>
+    <String, dynamic>{
+      'created_at': instance.createdAt.toIso8601String(),
+      'domain': instance.domain,
+      'id': instance.id,
+    };

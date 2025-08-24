@@ -14,12 +14,6 @@ void main() {
       // TODO
     });
 
-    // The URL of the server's status page, if configured.
-    // Uri status
-    test('to test the property `status`', () async {
-      // TODO
-    });
-
     // The URL of the server's about page.
     // Uri about
     test('to test the property `about`', () async {
@@ -29,6 +23,12 @@ void main() {
     // The URL of the server's privacy policy.
     // Uri privacyPolicy
     test('to test the property `privacyPolicy`', () async {
+      // TODO
+    });
+
+    // The URL of the server's status page, if configured.
+    // Uri status
+    test('to test the property `status`', () async {
       // TODO
     });
 

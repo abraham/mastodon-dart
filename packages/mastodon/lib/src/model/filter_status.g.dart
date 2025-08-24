@@ -8,23 +8,13 @@ part of 'filter_status.dart';
 
 FilterStatus _$FilterStatusFromJson(Map<String, dynamic> json) =>
     $checkedCreate('FilterStatus', json, ($checkedConvert) {
+      $checkKeys(json, requiredKeys: const ['id', 'status_id']);
       final val = FilterStatus(
-        id: $checkedConvert('id', (v) => v as String?),
-        statusId: $checkedConvert('status_id', (v) => v as String?),
+        id: $checkedConvert('id', (v) => v as String),
+        statusId: $checkedConvert('status_id', (v) => v as String),
       );
       return val;
     }, fieldKeyMap: const {'statusId': 'status_id'});
 
-Map<String, dynamic> _$FilterStatusToJson(FilterStatus instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('id', instance.id);
-  writeNotNull('status_id', instance.statusId);
-  return val;
-}
+Map<String, dynamic> _$FilterStatusToJson(FilterStatus instance) =>
+    <String, dynamic>{'id': instance.id, 'status_id': instance.statusId};

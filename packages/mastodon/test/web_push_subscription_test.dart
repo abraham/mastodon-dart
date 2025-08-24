@@ -7,6 +7,11 @@ void main() {
   // TODO add properties to the entity
 
   group(WebPushSubscription, () {
+    // WebPushSubscriptionAlerts alerts
+    test('to test the property `alerts`', () async {
+      // TODO
+    });
+
     // Where push alerts will be sent to.
     // Uri endpoint
     test('to test the property `endpoint`', () async {
@@ -22,11 +27,6 @@ void main() {
     // The streaming server's VAPID key.
     // String serverKey
     test('to test the property `serverKey`', () async {
-      // TODO
-    });
-
-    // WebPushSubscriptionAlerts alerts
-    test('to test the property `alerts`', () async {
       // TODO
     });
 

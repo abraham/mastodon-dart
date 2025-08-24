@@ -53,7 +53,11 @@ class MutedAccountMoved {
 
     required this.note,
 
+    required this.roles,
+
     required this.statusesCount,
+
+    required this.uri,
 
     required this.username,
 
@@ -73,11 +77,7 @@ class MutedAccountMoved {
 
     this.noindex,
 
-    this.roles,
-
     this.suspended,
-
-    this.uri,
 
     this.url,
   });
@@ -146,9 +146,17 @@ class MutedAccountMoved {
   @JsonKey(name: r'note', required: true, includeIfNull: false)
   final String note;
 
+  /// An array of roles assigned to the user that are publicly visible (highlighted roles only), if the account is local. Will be an empty array if no roles are highlighted or if the account is remote.
+  @JsonKey(name: r'roles', required: true, includeIfNull: false)
+  final List<AccountRole> roles;
+
   /// How many statuses are attached to this account.
   @JsonKey(name: r'statuses_count', required: true, includeIfNull: false)
   final int statusesCount;
+
+  /// The user's ActivityPub actor identifier (used for federation).
+  @JsonKey(name: r'uri', required: true, includeIfNull: false)
+  final Uri uri;
 
   /// The username of the account, not including domain.
   @JsonKey(name: r'username', required: true, includeIfNull: false)
@@ -185,17 +193,9 @@ class MutedAccountMoved {
   @JsonKey(name: r'noindex', required: false, includeIfNull: false)
   final bool? noindex;
 
-  /// An array of roles assigned to the user that are publicly visible (highlighted roles only), if the account is local. Will be an empty array if no roles are highlighted or if the account is remote.
-  @JsonKey(name: r'roles', required: false, includeIfNull: false)
-  final List<AccountRole>? roles;
-
   /// An extra attribute returned only when an account is suspended.
   @JsonKey(name: r'suspended', required: false, includeIfNull: false)
   final bool? suspended;
-
-  /// The user's ActivityPub actor identifier (used for federation).
-  @JsonKey(name: r'uri', required: false, includeIfNull: false)
-  final Uri? uri;
 
   /// The location of the user's profile page (web interface URL).
   @JsonKey(name: r'url', required: false, includeIfNull: false)
@@ -221,7 +221,9 @@ class MutedAccountMoved {
           other.id == id &&
           other.locked == locked &&
           other.note == note &&
+          other.roles == roles &&
           other.statusesCount == statusesCount &&
+          other.uri == uri &&
           other.username == username &&
           other.discoverable == discoverable &&
           other.hideCollections == hideCollections &&
@@ -231,9 +233,7 @@ class MutedAccountMoved {
           other.memorial == memorial &&
           other.moved == moved &&
           other.noindex == noindex &&
-          other.roles == roles &&
           other.suspended == suspended &&
-          other.uri == uri &&
           other.url == url;
 
   @override
@@ -254,7 +254,9 @@ class MutedAccountMoved {
       id.hashCode +
       locked.hashCode +
       note.hashCode +
+      roles.hashCode +
       statusesCount.hashCode +
+      uri.hashCode +
       username.hashCode +
       discoverable.hashCode +
       hideCollections.hashCode +
@@ -264,9 +266,7 @@ class MutedAccountMoved {
       memorial.hashCode +
       moved.hashCode +
       noindex.hashCode +
-      roles.hashCode +
       suspended.hashCode +
-      uri.hashCode +
       url.hashCode;
 
   factory MutedAccountMoved.fromJson(Map<String, dynamic> json) =>

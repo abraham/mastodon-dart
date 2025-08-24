@@ -12,9 +12,10 @@ InstanceRegistrations _$InstanceRegistrationsFromJson(
   'InstanceRegistrations',
   json,
   ($checkedConvert) {
+    $checkKeys(json, requiredKeys: const ['approval_required', 'enabled']);
     final val = InstanceRegistrations(
-      enabled: $checkedConvert('enabled', (v) => v as bool?),
-      approvalRequired: $checkedConvert('approval_required', (v) => v as bool?),
+      approvalRequired: $checkedConvert('approval_required', (v) => v as bool),
+      enabled: $checkedConvert('enabled', (v) => v as bool),
       message: $checkedConvert('message', (v) => v as String?),
       minAge: $checkedConvert('min_age', (v) => (v as num?)?.toInt()),
       reasonRequired: $checkedConvert('reason_required', (v) => v as bool?),
@@ -35,7 +36,10 @@ InstanceRegistrations _$InstanceRegistrationsFromJson(
 Map<String, dynamic> _$InstanceRegistrationsToJson(
   InstanceRegistrations instance,
 ) {
-  final val = <String, dynamic>{};
+  final val = <String, dynamic>{
+    'approval_required': instance.approvalRequired,
+    'enabled': instance.enabled,
+  };
 
   void writeNotNull(String key, dynamic value) {
     if (value != null) {
@@ -43,8 +47,6 @@ Map<String, dynamic> _$InstanceRegistrationsToJson(
     }
   }
 
-  writeNotNull('enabled', instance.enabled);
-  writeNotNull('approval_required', instance.approvalRequired);
   writeNotNull('message', instance.message);
   writeNotNull('min_age', instance.minAge);
   writeNotNull('reason_required', instance.reasonRequired);

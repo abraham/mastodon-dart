@@ -16,11 +16,11 @@ part 'instance_contact.g.dart';
 )
 class InstanceContact {
   /// Returns a new [InstanceContact] instance.
-  InstanceContact({this.email, this.account});
+  InstanceContact({required this.email, this.account});
 
   /// An email address that can be messaged regarding inquiries or issues.
-  @JsonKey(name: r'email', required: false, includeIfNull: false)
-  final String? email;
+  @JsonKey(name: r'email', required: true, includeIfNull: false)
+  final String email;
 
   @JsonKey(name: r'account', required: false, includeIfNull: false)
   final Account? account;
@@ -33,9 +33,7 @@ class InstanceContact {
           other.account == account;
 
   @override
-  int get hashCode =>
-      (email == null ? 0 : email.hashCode) +
-      (account == null ? 0 : account.hashCode);
+  int get hashCode => email.hashCode + (account == null ? 0 : account.hashCode);
 
   factory InstanceContact.fromJson(Map<String, dynamic> json) =>
       _$InstanceContactFromJson(json);

@@ -8,11 +8,9 @@ part of 'instance_thumbnail.dart';
 
 InstanceThumbnail _$InstanceThumbnailFromJson(Map<String, dynamic> json) =>
     $checkedCreate('InstanceThumbnail', json, ($checkedConvert) {
+      $checkKeys(json, requiredKeys: const ['url']);
       final val = InstanceThumbnail(
-        url: $checkedConvert(
-          'url',
-          (v) => v == null ? null : Uri.parse(v as String),
-        ),
+        url: $checkedConvert('url', (v) => Uri.parse(v as String)),
         blurhash: $checkedConvert('blurhash', (v) => v as String?),
         versions: $checkedConvert(
           'versions',
@@ -25,7 +23,7 @@ InstanceThumbnail _$InstanceThumbnailFromJson(Map<String, dynamic> json) =>
     });
 
 Map<String, dynamic> _$InstanceThumbnailToJson(InstanceThumbnail instance) {
-  final val = <String, dynamic>{};
+  final val = <String, dynamic>{'url': instance.url.toString()};
 
   void writeNotNull(String key, dynamic value) {
     if (value != null) {
@@ -33,7 +31,6 @@ Map<String, dynamic> _$InstanceThumbnailToJson(InstanceThumbnail instance) {
     }
   }
 
-  writeNotNull('url', instance.url?.toString());
   writeNotNull('blurhash', instance.blurhash);
   writeNotNull('versions', instance.versions?.toJson());
   return val;

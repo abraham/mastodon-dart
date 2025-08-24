@@ -15,15 +15,15 @@ part 'filter_status.g.dart';
 )
 class FilterStatus {
   /// Returns a new [FilterStatus] instance.
-  FilterStatus({this.id, this.statusId});
+  FilterStatus({required this.id, required this.statusId});
 
   /// The ID of the FilterStatus in the database.
-  @JsonKey(name: r'id', required: false, includeIfNull: false)
-  final String? id;
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
+  final String id;
 
   /// The ID of the Status that will be filtered.
-  @JsonKey(name: r'status_id', required: false, includeIfNull: false)
-  final String? statusId;
+  @JsonKey(name: r'status_id', required: true, includeIfNull: false)
+  final String statusId;
 
   @override
   bool operator ==(Object other) =>
@@ -31,9 +31,7 @@ class FilterStatus {
       other is FilterStatus && other.id == id && other.statusId == statusId;
 
   @override
-  int get hashCode =>
-      (id == null ? 0 : id.hashCode) +
-      (statusId == null ? 0 : statusId.hashCode);
+  int get hashCode => id.hashCode + statusId.hashCode;
 
   factory FilterStatus.fromJson(Map<String, dynamic> json) =>
       _$FilterStatusFromJson(json);

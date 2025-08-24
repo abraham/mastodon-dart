@@ -16,23 +16,31 @@ part 'admin_email_domain_block.g.dart';
 )
 class AdminEmailDomainBlock {
   /// Returns a new [AdminEmailDomainBlock] instance.
-  AdminEmailDomainBlock({this.createdAt, this.domain, this.history, this.id});
+  AdminEmailDomainBlock({
+    required this.createdAt,
+
+    required this.domain,
+
+    required this.history,
+
+    required this.id,
+  });
 
   /// When the email domain was disallowed from signups.
-  @JsonKey(name: r'created_at', required: false, includeIfNull: false)
-  final DateTime? createdAt;
+  @JsonKey(name: r'created_at', required: true, includeIfNull: false)
+  final DateTime createdAt;
 
   /// The email domain that is not allowed to be used for signups.
-  @JsonKey(name: r'domain', required: false, includeIfNull: false)
-  final String? domain;
+  @JsonKey(name: r'domain', required: true, includeIfNull: false)
+  final String domain;
 
   /// Usage statistics for given days (typically the past week).
-  @JsonKey(name: r'history', required: false, includeIfNull: false)
-  final List<AdminEmailDomainBlockHistory>? history;
+  @JsonKey(name: r'history', required: true, includeIfNull: false)
+  final List<AdminEmailDomainBlockHistory> history;
 
   /// The ID of the EmailDomainBlock in the database.
-  @JsonKey(name: r'id', required: false, includeIfNull: false)
-  final String? id;
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
+  final String id;
 
   @override
   bool operator ==(Object other) =>
@@ -45,10 +53,7 @@ class AdminEmailDomainBlock {
 
   @override
   int get hashCode =>
-      (createdAt == null ? 0 : createdAt.hashCode) +
-      (domain == null ? 0 : domain.hashCode) +
-      (history == null ? 0 : history.hashCode) +
-      (id == null ? 0 : id.hashCode);
+      createdAt.hashCode + domain.hashCode + history.hashCode + id.hashCode;
 
   factory AdminEmailDomainBlock.fromJson(Map<String, dynamic> json) =>
       _$AdminEmailDomainBlockFromJson(json);

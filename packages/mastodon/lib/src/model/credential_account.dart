@@ -55,9 +55,15 @@ class CredentialAccount {
 
     required this.note,
 
+    required this.role,
+
+    required this.roles,
+
     required this.source_,
 
     required this.statusesCount,
+
+    required this.uri,
 
     required this.username,
 
@@ -77,13 +83,7 @@ class CredentialAccount {
 
     this.noindex,
 
-    this.role,
-
-    this.roles,
-
     this.suspended,
-
-    this.uri,
 
     this.url,
   });
@@ -152,12 +152,24 @@ class CredentialAccount {
   @JsonKey(name: r'note', required: true, includeIfNull: false)
   final String note;
 
+  /// The complete role assigned to the currently authorized user, including permissions and highlighted status.
+  @JsonKey(name: r'role', required: true, includeIfNull: false)
+  final Role role;
+
+  /// An array of roles assigned to the user that are publicly visible (highlighted roles only), if the account is local. Will be an empty array if no roles are highlighted or if the account is remote.
+  @JsonKey(name: r'roles', required: true, includeIfNull: false)
+  final List<AccountRole> roles;
+
   @JsonKey(name: r'source', required: true, includeIfNull: false)
   final CredentialAccountSource source_;
 
   /// How many statuses are attached to this account.
   @JsonKey(name: r'statuses_count', required: true, includeIfNull: false)
   final int statusesCount;
+
+  /// The user's ActivityPub actor identifier (used for federation).
+  @JsonKey(name: r'uri', required: true, includeIfNull: false)
+  final Uri uri;
 
   /// The username of the account, not including domain.
   @JsonKey(name: r'username', required: true, includeIfNull: false)
@@ -194,20 +206,9 @@ class CredentialAccount {
   @JsonKey(name: r'noindex', required: false, includeIfNull: false)
   final bool? noindex;
 
-  @JsonKey(name: r'role', required: false, includeIfNull: false)
-  final Role? role;
-
-  /// An array of roles assigned to the user that are publicly visible (highlighted roles only), if the account is local. Will be an empty array if no roles are highlighted or if the account is remote.
-  @JsonKey(name: r'roles', required: false, includeIfNull: false)
-  final List<AccountRole>? roles;
-
   /// An extra attribute returned only when an account is suspended.
   @JsonKey(name: r'suspended', required: false, includeIfNull: false)
   final bool? suspended;
-
-  /// The user's ActivityPub actor identifier (used for federation).
-  @JsonKey(name: r'uri', required: false, includeIfNull: false)
-  final Uri? uri;
 
   /// The location of the user's profile page (web interface URL).
   @JsonKey(name: r'url', required: false, includeIfNull: false)
@@ -233,8 +234,11 @@ class CredentialAccount {
           other.id == id &&
           other.locked == locked &&
           other.note == note &&
+          other.role == role &&
+          other.roles == roles &&
           other.source_ == source_ &&
           other.statusesCount == statusesCount &&
+          other.uri == uri &&
           other.username == username &&
           other.discoverable == discoverable &&
           other.hideCollections == hideCollections &&
@@ -244,10 +248,7 @@ class CredentialAccount {
           other.memorial == memorial &&
           other.moved == moved &&
           other.noindex == noindex &&
-          other.role == role &&
-          other.roles == roles &&
           other.suspended == suspended &&
-          other.uri == uri &&
           other.url == url;
 
   @override
@@ -268,8 +269,11 @@ class CredentialAccount {
       id.hashCode +
       locked.hashCode +
       note.hashCode +
+      role.hashCode +
+      roles.hashCode +
       source_.hashCode +
       statusesCount.hashCode +
+      uri.hashCode +
       username.hashCode +
       (discoverable == null ? 0 : discoverable.hashCode) +
       (hideCollections == null ? 0 : hideCollections.hashCode) +
@@ -279,10 +283,7 @@ class CredentialAccount {
       (memorial == null ? 0 : memorial.hashCode) +
       (moved == null ? 0 : moved.hashCode) +
       (noindex == null ? 0 : noindex.hashCode) +
-      (role == null ? 0 : role.hashCode) +
-      (roles == null ? 0 : roles.hashCode) +
       (suspended == null ? 0 : suspended.hashCode) +
-      (uri == null ? 0 : uri.hashCode) +
       (url == null ? 0 : url.hashCode);
 
   factory CredentialAccount.fromJson(Map<String, dynamic> json) =>

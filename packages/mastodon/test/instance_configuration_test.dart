@@ -7,18 +7,8 @@ void main() {
   // TODO add properties to the entity
 
   group(InstanceConfiguration, () {
-    // InstanceConfigurationUrls urls
-    test('to test the property `urls`', () async {
-      // TODO
-    });
-
     // InstanceConfigurationAccounts accounts
     test('to test the property `accounts`', () async {
-      // TODO
-    });
-
-    // InstanceConfigurationStatuses statuses
-    test('to test the property `statuses`', () async {
       // TODO
     });
 
@@ -32,8 +22,18 @@ void main() {
       // TODO
     });
 
+    // InstanceConfigurationStatuses statuses
+    test('to test the property `statuses`', () async {
+      // TODO
+    });
+
     // InstanceConfigurationTranslation translation
     test('to test the property `translation`', () async {
+      // TODO
+    });
+
+    // InstanceConfigurationUrls urls
+    test('to test the property `urls`', () async {
       // TODO
     });
 

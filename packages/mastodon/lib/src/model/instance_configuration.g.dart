@@ -12,46 +12,47 @@ InstanceConfiguration _$InstanceConfigurationFromJson(
   'InstanceConfiguration',
   json,
   ($checkedConvert) {
-    final val = InstanceConfiguration(
-      urls: $checkedConvert(
+    $checkKeys(
+      json,
+      requiredKeys: const [
+        'accounts',
+        'media_attachments',
+        'polls',
+        'statuses',
+        'translation',
         'urls',
-        (v) => v == null
-            ? null
-            : InstanceConfigurationUrls.fromJson(v as Map<String, dynamic>),
-      ),
+      ],
+    );
+    final val = InstanceConfiguration(
       accounts: $checkedConvert(
         'accounts',
-        (v) => v == null
-            ? null
-            : InstanceConfigurationAccounts.fromJson(v as Map<String, dynamic>),
-      ),
-      statuses: $checkedConvert(
-        'statuses',
-        (v) => v == null
-            ? null
-            : InstanceConfigurationStatuses.fromJson(v as Map<String, dynamic>),
+        (v) =>
+            InstanceConfigurationAccounts.fromJson(v as Map<String, dynamic>),
       ),
       mediaAttachments: $checkedConvert(
         'media_attachments',
-        (v) => v == null
-            ? null
-            : InstanceConfigurationMediaAttachments.fromJson(
-                v as Map<String, dynamic>,
-              ),
+        (v) => InstanceConfigurationMediaAttachments.fromJson(
+          v as Map<String, dynamic>,
+        ),
       ),
       polls: $checkedConvert(
         'polls',
-        (v) => v == null
-            ? null
-            : InstanceConfigurationPolls.fromJson(v as Map<String, dynamic>),
+        (v) => InstanceConfigurationPolls.fromJson(v as Map<String, dynamic>),
+      ),
+      statuses: $checkedConvert(
+        'statuses',
+        (v) =>
+            InstanceConfigurationStatuses.fromJson(v as Map<String, dynamic>),
       ),
       translation: $checkedConvert(
         'translation',
-        (v) => v == null
-            ? null
-            : InstanceConfigurationTranslation.fromJson(
-                v as Map<String, dynamic>,
-              ),
+        (v) => InstanceConfigurationTranslation.fromJson(
+          v as Map<String, dynamic>,
+        ),
+      ),
+      urls: $checkedConvert(
+        'urls',
+        (v) => InstanceConfigurationUrls.fromJson(v as Map<String, dynamic>),
       ),
       limitedFederation: $checkedConvert(
         'limited_federation',
@@ -69,7 +70,14 @@ InstanceConfiguration _$InstanceConfigurationFromJson(
 Map<String, dynamic> _$InstanceConfigurationToJson(
   InstanceConfiguration instance,
 ) {
-  final val = <String, dynamic>{};
+  final val = <String, dynamic>{
+    'accounts': instance.accounts.toJson(),
+    'media_attachments': instance.mediaAttachments.toJson(),
+    'polls': instance.polls.toJson(),
+    'statuses': instance.statuses.toJson(),
+    'translation': instance.translation.toJson(),
+    'urls': instance.urls.toJson(),
+  };
 
   void writeNotNull(String key, dynamic value) {
     if (value != null) {
@@ -77,12 +85,6 @@ Map<String, dynamic> _$InstanceConfigurationToJson(
     }
   }
 
-  writeNotNull('urls', instance.urls?.toJson());
-  writeNotNull('accounts', instance.accounts?.toJson());
-  writeNotNull('statuses', instance.statuses?.toJson());
-  writeNotNull('media_attachments', instance.mediaAttachments?.toJson());
-  writeNotNull('polls', instance.polls?.toJson());
-  writeNotNull('translation', instance.translation?.toJson());
   writeNotNull('limited_federation', instance.limitedFederation);
   return val;
 }

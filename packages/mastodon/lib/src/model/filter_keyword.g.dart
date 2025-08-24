@@ -8,25 +8,18 @@ part of 'filter_keyword.dart';
 
 FilterKeyword _$FilterKeywordFromJson(Map<String, dynamic> json) =>
     $checkedCreate('FilterKeyword', json, ($checkedConvert) {
+      $checkKeys(json, requiredKeys: const ['id', 'keyword', 'whole_word']);
       final val = FilterKeyword(
-        id: $checkedConvert('id', (v) => v as String?),
-        keyword: $checkedConvert('keyword', (v) => v as String?),
-        wholeWord: $checkedConvert('whole_word', (v) => v as bool?),
+        id: $checkedConvert('id', (v) => v as String),
+        keyword: $checkedConvert('keyword', (v) => v as String),
+        wholeWord: $checkedConvert('whole_word', (v) => v as bool),
       );
       return val;
     }, fieldKeyMap: const {'wholeWord': 'whole_word'});
 
-Map<String, dynamic> _$FilterKeywordToJson(FilterKeyword instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('id', instance.id);
-  writeNotNull('keyword', instance.keyword);
-  writeNotNull('whole_word', instance.wholeWord);
-  return val;
-}
+Map<String, dynamic> _$FilterKeywordToJson(FilterKeyword instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'keyword': instance.keyword,
+      'whole_word': instance.wholeWord,
+    };

@@ -61,6 +61,12 @@ void main() {
       // TODO
     });
 
+    // The current role of the account.
+    // Role role
+    test('to test the property `role`', () async {
+      // TODO
+    });
+
     // Whether the account is currently silenced.
     // bool silenced
     test('to test the property `silenced`', () async {
@@ -106,11 +112,6 @@ void main() {
     // The IP address last used to login to this account.
     // String ip
     test('to test the property `ip`', () async {
-      // TODO
-    });
-
-    // Role role
-    test('to test the property `role`', () async {
       // TODO
     });
   });

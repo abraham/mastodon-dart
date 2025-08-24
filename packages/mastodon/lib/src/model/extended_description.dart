@@ -15,15 +15,15 @@ part 'extended_description.g.dart';
 )
 class ExtendedDescription {
   /// Returns a new [ExtendedDescription] instance.
-  ExtendedDescription({this.content, this.updatedAt});
+  ExtendedDescription({required this.content, required this.updatedAt});
 
   /// The rendered HTML content of the extended description.
-  @JsonKey(name: r'content', required: false, includeIfNull: false)
-  final String? content;
+  @JsonKey(name: r'content', required: true, includeIfNull: false)
+  final String content;
 
   /// A timestamp of when the extended description was last updated.
-  @JsonKey(name: r'updated_at', required: false, includeIfNull: false)
-  final DateTime? updatedAt;
+  @JsonKey(name: r'updated_at', required: true, includeIfNull: false)
+  final DateTime updatedAt;
 
   @override
   bool operator ==(Object other) =>
@@ -33,9 +33,7 @@ class ExtendedDescription {
           other.updatedAt == updatedAt;
 
   @override
-  int get hashCode =>
-      (content == null ? 0 : content.hashCode) +
-      (updatedAt == null ? 0 : updatedAt.hashCode);
+  int get hashCode => content.hashCode + updatedAt.hashCode;
 
   factory ExtendedDescription.fromJson(Map<String, dynamic> json) =>
       _$ExtendedDescriptionFromJson(json);

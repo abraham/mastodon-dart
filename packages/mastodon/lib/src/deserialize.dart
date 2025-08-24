@@ -161,8 +161,6 @@ import 'package:mastodon/src/model/v1_instance.dart';
 import 'package:mastodon/src/model/v1_instance_configuration.dart';
 import 'package:mastodon/src/model/v1_instance_configuration_accounts.dart';
 import 'package:mastodon/src/model/v1_instance_configuration_media_attachments.dart';
-import 'package:mastodon/src/model/v1_instance_configuration_polls.dart';
-import 'package:mastodon/src/model/v1_instance_configuration_statuses.dart';
 import 'package:mastodon/src/model/v1_instance_stats.dart';
 import 'package:mastodon/src/model/v1_instance_urls.dart';
 import 'package:mastodon/src/model/v1_notification_policy.dart';
@@ -674,16 +672,6 @@ ReturnType deserialize<ReturnType, BaseType>(
           as ReturnType;
     case 'V1InstanceConfigurationMediaAttachments':
       return V1InstanceConfigurationMediaAttachments.fromJson(
-            value as Map<String, dynamic>,
-          )
-          as ReturnType;
-    case 'V1InstanceConfigurationPolls':
-      return V1InstanceConfigurationPolls.fromJson(
-            value as Map<String, dynamic>,
-          )
-          as ReturnType;
-    case 'V1InstanceConfigurationStatuses':
-      return V1InstanceConfigurationStatuses.fromJson(
             value as Map<String, dynamic>,
           )
           as ReturnType;

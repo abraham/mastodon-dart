@@ -15,11 +15,11 @@ part 'instance_configuration_translation.g.dart';
 )
 class InstanceConfigurationTranslation {
   /// Returns a new [InstanceConfigurationTranslation] instance.
-  InstanceConfigurationTranslation({this.enabled});
+  InstanceConfigurationTranslation({required this.enabled});
 
   /// Whether the Translations API is available on this server.
-  @JsonKey(name: r'enabled', required: false, includeIfNull: false)
-  final bool? enabled;
+  @JsonKey(name: r'enabled', required: true, includeIfNull: false)
+  final bool enabled;
 
   @override
   bool operator ==(Object other) =>
@@ -27,7 +27,7 @@ class InstanceConfigurationTranslation {
       other is InstanceConfigurationTranslation && other.enabled == enabled;
 
   @override
-  int get hashCode => (enabled == null ? 0 : enabled.hashCode);
+  int get hashCode => enabled.hashCode;
 
   factory InstanceConfigurationTranslation.fromJson(
     Map<String, dynamic> json,

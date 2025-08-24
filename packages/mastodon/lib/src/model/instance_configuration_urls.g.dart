@@ -12,21 +12,19 @@ InstanceConfigurationUrls _$InstanceConfigurationUrlsFromJson(
   'InstanceConfigurationUrls',
   json,
   ($checkedConvert) {
+    $checkKeys(json, requiredKeys: const ['streaming']);
     final val = InstanceConfigurationUrls(
-      streaming: $checkedConvert(
-        'streaming',
-        (v) => v == null ? null : Uri.parse(v as String),
-      ),
-      status: $checkedConvert(
-        'status',
-        (v) => v == null ? null : Uri.parse(v as String),
-      ),
+      streaming: $checkedConvert('streaming', (v) => Uri.parse(v as String)),
       about: $checkedConvert(
         'about',
         (v) => v == null ? null : Uri.parse(v as String),
       ),
       privacyPolicy: $checkedConvert(
         'privacy_policy',
+        (v) => v == null ? null : Uri.parse(v as String),
+      ),
+      status: $checkedConvert(
+        'status',
         (v) => v == null ? null : Uri.parse(v as String),
       ),
       termsOfService: $checkedConvert(
@@ -45,7 +43,7 @@ InstanceConfigurationUrls _$InstanceConfigurationUrlsFromJson(
 Map<String, dynamic> _$InstanceConfigurationUrlsToJson(
   InstanceConfigurationUrls instance,
 ) {
-  final val = <String, dynamic>{};
+  final val = <String, dynamic>{'streaming': instance.streaming.toString()};
 
   void writeNotNull(String key, dynamic value) {
     if (value != null) {
@@ -53,10 +51,9 @@ Map<String, dynamic> _$InstanceConfigurationUrlsToJson(
     }
   }
 
-  writeNotNull('streaming', instance.streaming?.toString());
-  writeNotNull('status', instance.status?.toString());
   writeNotNull('about', instance.about?.toString());
   writeNotNull('privacy_policy', instance.privacyPolicy?.toString());
+  writeNotNull('status', instance.status?.toString());
   writeNotNull('terms_of_service', instance.termsOfService?.toString());
   return val;
 }

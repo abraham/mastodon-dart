@@ -16,10 +16,10 @@ part 'instance_usage.g.dart';
 )
 class InstanceUsage {
   /// Returns a new [InstanceUsage] instance.
-  InstanceUsage({this.users});
+  InstanceUsage({required this.users});
 
-  @JsonKey(name: r'users', required: false, includeIfNull: false)
-  final InstanceUsageUsers? users;
+  @JsonKey(name: r'users', required: true, includeIfNull: false)
+  final InstanceUsageUsers users;
 
   @override
   bool operator ==(Object other) =>

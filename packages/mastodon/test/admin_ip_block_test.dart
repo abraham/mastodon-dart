@@ -19,12 +19,6 @@ void main() {
       // TODO
     });
 
-    // When the IP block will expire.
-    // DateTime expiresAt
-    test('to test the property `expiresAt`', () async {
-      // TODO
-    });
-
     // The ID of the DomainBlock in the database.
     // String id
     test('to test the property `id`', () async {
@@ -40,6 +34,12 @@ void main() {
     // The associated policy with this IP block.
     // String severity
     test('to test the property `severity`', () async {
+      // TODO
+    });
+
+    // When the IP block will expire.
+    // DateTime expiresAt
+    test('to test the property `expiresAt`', () async {
       // TODO
     });
   });

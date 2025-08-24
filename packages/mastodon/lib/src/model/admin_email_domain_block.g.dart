@@ -9,41 +9,36 @@ part of 'admin_email_domain_block.dart';
 AdminEmailDomainBlock _$AdminEmailDomainBlockFromJson(
   Map<String, dynamic> json,
 ) => $checkedCreate('AdminEmailDomainBlock', json, ($checkedConvert) {
+  $checkKeys(
+    json,
+    requiredKeys: const ['created_at', 'domain', 'history', 'id'],
+  );
   final val = AdminEmailDomainBlock(
     createdAt: $checkedConvert(
       'created_at',
-      (v) => v == null ? null : DateTime.parse(v as String),
+      (v) => DateTime.parse(v as String),
     ),
-    domain: $checkedConvert('domain', (v) => v as String?),
+    domain: $checkedConvert('domain', (v) => v as String),
     history: $checkedConvert(
       'history',
-      (v) => (v as List<dynamic>?)
-          ?.map(
+      (v) => (v as List<dynamic>)
+          .map(
             (e) => AdminEmailDomainBlockHistory.fromJson(
               e as Map<String, dynamic>,
             ),
           )
           .toList(),
     ),
-    id: $checkedConvert('id', (v) => v as String?),
+    id: $checkedConvert('id', (v) => v as String),
   );
   return val;
 }, fieldKeyMap: const {'createdAt': 'created_at'});
 
 Map<String, dynamic> _$AdminEmailDomainBlockToJson(
   AdminEmailDomainBlock instance,
-) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('created_at', instance.createdAt?.toIso8601String());
-  writeNotNull('domain', instance.domain);
-  writeNotNull('history', instance.history?.map((e) => e.toJson()).toList());
-  writeNotNull('id', instance.id);
-  return val;
-}
+) => <String, dynamic>{
+  'created_at': instance.createdAt.toIso8601String(),
+  'domain': instance.domain,
+  'history': instance.history.map((e) => e.toJson()).toList(),
+  'id': instance.id,
+};
