@@ -12,12 +12,15 @@ CredentialApplication _$CredentialApplicationFromJson(
   'CredentialApplication',
   json,
   ($checkedConvert) {
-    $checkKeys(json, requiredKeys: const ['id', 'name']);
+    $checkKeys(
+      json,
+      requiredKeys: const ['client_id', 'client_secret', 'id', 'name'],
+    );
     final val = CredentialApplication(
+      clientId: $checkedConvert('client_id', (v) => v as String),
+      clientSecret: $checkedConvert('client_secret', (v) => v as String),
       id: $checkedConvert('id', (v) => v as String),
       name: $checkedConvert('name', (v) => v as String),
-      clientId: $checkedConvert('client_id', (v) => v as String?),
-      clientSecret: $checkedConvert('client_secret', (v) => v as String?),
       clientSecretExpiresAt: $checkedConvert(
         'client_secret_expires_at',
         (v) => (v as num?)?.toInt(),
@@ -55,7 +58,12 @@ CredentialApplication _$CredentialApplicationFromJson(
 Map<String, dynamic> _$CredentialApplicationToJson(
   CredentialApplication instance,
 ) {
-  final val = <String, dynamic>{'id': instance.id, 'name': instance.name};
+  final val = <String, dynamic>{
+    'client_id': instance.clientId,
+    'client_secret': instance.clientSecret,
+    'id': instance.id,
+    'name': instance.name,
+  };
 
   void writeNotNull(String key, dynamic value) {
     if (value != null) {
@@ -63,8 +71,6 @@ Map<String, dynamic> _$CredentialApplicationToJson(
     }
   }
 
-  writeNotNull('client_id', instance.clientId);
-  writeNotNull('client_secret', instance.clientSecret);
   writeNotNull('client_secret_expires_at', instance.clientSecretExpiresAt);
   writeNotNull('redirect_uri', instance.redirectUri);
   writeNotNull(

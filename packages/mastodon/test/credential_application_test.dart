@@ -7,18 +7,6 @@ void main() {
   // TODO add properties to the entity
 
   group(CredentialApplication, () {
-    // The numeric ID of the application.
-    // String id
-    test('to test the property `id`', () async {
-      // TODO
-    });
-
-    // The name of the application.
-    // String name
-    test('to test the property `name`', () async {
-      // TODO
-    });
-
     // Client ID key, to be used for obtaining OAuth tokens.
     // String clientId
     test('to test the property `clientId`', () async {
@@ -28,6 +16,18 @@ void main() {
     // Client secret key, to be used for obtaining OAuth tokens.
     // String clientSecret
     test('to test the property `clientSecret`', () async {
+      // TODO
+    });
+
+    // The numeric ID of the application.
+    // String id
+    test('to test the property `id`', () async {
+      // TODO
+    });
+
+    // The name of the application.
+    // String name
+    test('to test the property `name`', () async {
       // TODO
     });
 

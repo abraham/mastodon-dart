@@ -8,10 +8,10 @@ import 'package:mastodon/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**clientId** | **String** | Client ID key, to be used for obtaining OAuth tokens. | 
+**clientSecret** | **String** | Client secret key, to be used for obtaining OAuth tokens. | 
 **id** | **String** | The numeric ID of the application. | 
 **name** | **String** | The name of the application. | 
-**clientId** | **String** | Client ID key, to be used for obtaining OAuth tokens. | [optional] 
-**clientSecret** | **String** | Client secret key, to be used for obtaining OAuth tokens. | [optional] 
 **clientSecretExpiresAt** | **int** | When the client secret key will expire. Presently this always returns `0` indicating that OAuth Clients do not expire. | [optional] 
 **redirectUri** | **String** | The registered redirection URI(s) for the application. | [optional] 
 **redirectUris** | [**List&lt;Uri&gt;**](Uri.md) | The registered redirection URI(s) for the application. | [optional] 

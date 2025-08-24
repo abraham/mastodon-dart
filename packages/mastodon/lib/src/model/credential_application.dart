@@ -18,13 +18,13 @@ part 'credential_application.g.dart';
 class CredentialApplication {
   /// Returns a new [CredentialApplication] instance.
   CredentialApplication({
+    required this.clientId,
+
+    required this.clientSecret,
+
     required this.id,
 
     required this.name,
-
-    this.clientId,
-
-    this.clientSecret,
 
     this.clientSecretExpiresAt,
 
@@ -39,6 +39,14 @@ class CredentialApplication {
     this.website,
   });
 
+  /// Client ID key, to be used for obtaining OAuth tokens.
+  @JsonKey(name: r'client_id', required: true, includeIfNull: false)
+  final String clientId;
+
+  /// Client secret key, to be used for obtaining OAuth tokens.
+  @JsonKey(name: r'client_secret', required: true, includeIfNull: false)
+  final String clientSecret;
+
   /// The numeric ID of the application.
   @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
@@ -46,14 +54,6 @@ class CredentialApplication {
   /// The name of the application.
   @JsonKey(name: r'name', required: true, includeIfNull: false)
   final String name;
-
-  /// Client ID key, to be used for obtaining OAuth tokens.
-  @JsonKey(name: r'client_id', required: false, includeIfNull: false)
-  final String? clientId;
-
-  /// Client secret key, to be used for obtaining OAuth tokens.
-  @JsonKey(name: r'client_secret', required: false, includeIfNull: false)
-  final String? clientSecret;
 
   /// When the client secret key will expire. Presently this always returns `0` indicating that OAuth Clients do not expire.
   @JsonKey(
@@ -89,10 +89,10 @@ class CredentialApplication {
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is CredentialApplication &&
-          other.id == id &&
-          other.name == name &&
           other.clientId == clientId &&
           other.clientSecret == clientSecret &&
+          other.id == id &&
+          other.name == name &&
           other.clientSecretExpiresAt == clientSecretExpiresAt &&
           other.redirectUri == redirectUri &&
           other.redirectUris == redirectUris &&
@@ -102,10 +102,10 @@ class CredentialApplication {
 
   @override
   int get hashCode =>
+      clientId.hashCode +
+      clientSecret.hashCode +
       id.hashCode +
       name.hashCode +
-      (clientId == null ? 0 : clientId.hashCode) +
-      (clientSecret == null ? 0 : clientSecret.hashCode) +
       (clientSecretExpiresAt == null ? 0 : clientSecretExpiresAt.hashCode) +
       (redirectUri == null ? 0 : redirectUri.hashCode) +
       (redirectUris == null ? 0 : redirectUris.hashCode) +
