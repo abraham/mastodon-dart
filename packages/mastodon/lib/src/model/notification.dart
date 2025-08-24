@@ -28,6 +28,8 @@ class Notification {
 
     required this.id,
 
+    required this.type,
+
     this.event,
 
     this.groupKey,
@@ -37,8 +39,6 @@ class Notification {
     this.report,
 
     this.status,
-
-    this.type,
   });
 
   /// The account that performed the action that generated the notification.
@@ -52,6 +52,10 @@ class Notification {
   /// The id of the notification in the database.
   @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
+
+  /// The type of event that resulted in the notification.
+  @JsonKey(name: r'type', required: true, includeIfNull: false)
+  final NotificationTypeEnum type;
 
   @JsonKey(name: r'event', required: false, includeIfNull: false)
   final RelationshipSeveranceEvent? event;
@@ -69,10 +73,6 @@ class Notification {
   @JsonKey(name: r'status', required: false, includeIfNull: false)
   final Status? status;
 
-  /// The type of event that resulted in the notification.
-  @JsonKey(name: r'type', required: false, includeIfNull: false)
-  final NotificationTypeEnum? type;
-
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -80,24 +80,24 @@ class Notification {
           other.account == account &&
           other.createdAt == createdAt &&
           other.id == id &&
+          other.type == type &&
           other.event == event &&
           other.groupKey == groupKey &&
           other.moderationWarning == moderationWarning &&
           other.report == report &&
-          other.status == status &&
-          other.type == type;
+          other.status == status;
 
   @override
   int get hashCode =>
       account.hashCode +
       createdAt.hashCode +
       id.hashCode +
+      type.hashCode +
       (event == null ? 0 : event.hashCode) +
       (groupKey == null ? 0 : groupKey.hashCode) +
       (moderationWarning == null ? 0 : moderationWarning.hashCode) +
       (report == null ? 0 : report.hashCode) +
-      (status == null ? 0 : status.hashCode) +
-      type.hashCode;
+      (status == null ? 0 : status.hashCode);
 
   factory Notification.fromJson(Map<String, dynamic> json) =>
       _$NotificationFromJson(json);

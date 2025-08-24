@@ -11,7 +11,10 @@ Notification _$NotificationFromJson(Map<String, dynamic> json) =>
       'Notification',
       json,
       ($checkedConvert) {
-        $checkKeys(json, requiredKeys: const ['account', 'created_at', 'id']);
+        $checkKeys(
+          json,
+          requiredKeys: const ['account', 'created_at', 'id', 'type'],
+        );
         final val = Notification(
           account: $checkedConvert(
             'account',
@@ -22,6 +25,10 @@ Notification _$NotificationFromJson(Map<String, dynamic> json) =>
             (v) => DateTime.parse(v as String),
           ),
           id: $checkedConvert('id', (v) => v as String),
+          type: $checkedConvert(
+            'type',
+            (v) => $enumDecode(_$NotificationTypeEnumEnumMap, v),
+          ),
           event: $checkedConvert(
             'event',
             (v) => v == null
@@ -47,10 +54,6 @@ Notification _$NotificationFromJson(Map<String, dynamic> json) =>
             (v) =>
                 v == null ? null : Status.fromJson(v as Map<String, dynamic>),
           ),
-          type: $checkedConvert(
-            'type',
-            (v) => $enumDecodeNullable(_$NotificationTypeEnumEnumMap, v),
-          ),
         );
         return val;
       },
@@ -66,6 +69,7 @@ Map<String, dynamic> _$NotificationToJson(Notification instance) {
     'account': instance.account.toJson(),
     'created_at': instance.createdAt.toIso8601String(),
     'id': instance.id,
+    'type': _$NotificationTypeEnumEnumMap[instance.type]!,
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -79,7 +83,6 @@ Map<String, dynamic> _$NotificationToJson(Notification instance) {
   writeNotNull('moderation_warning', instance.moderationWarning?.toJson());
   writeNotNull('report', instance.report?.toJson());
   writeNotNull('status', instance.status?.toJson());
-  writeNotNull('type', _$NotificationTypeEnumEnumMap[instance.type]);
   return val;
 }
 

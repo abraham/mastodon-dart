@@ -25,6 +25,12 @@ void main() {
       // TODO
     });
 
+    // The type of event that resulted in the notification.
+    // NotificationTypeEnum type
+    test('to test the property `type`', () async {
+      // TODO
+    });
+
     // RelationshipSeveranceEvent event
     test('to test the property `event`', () async {
       // TODO
@@ -48,12 +54,6 @@ void main() {
 
     // Status status
     test('to test the property `status`', () async {
-      // TODO
-    });
-
-    // The type of event that resulted in the notification.
-    // NotificationTypeEnum type
-    test('to test the property `type`', () async {
       // TODO
     });
   });

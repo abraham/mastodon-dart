@@ -21,13 +21,13 @@ class Filter {
   Filter({
     required this.context,
 
+    required this.filterAction,
+
     required this.id,
 
     required this.title,
 
     this.expiresAt,
-
-    this.filterAction,
 
     this.keywords,
 
@@ -37,6 +37,10 @@ class Filter {
   /// The contexts in which the filter should be applied.
   @JsonKey(name: r'context', required: true, includeIfNull: false)
   final List<FilterContext> context;
+
+  /// The action to be taken when a status matches this filter.
+  @JsonKey(name: r'filter_action', required: true, includeIfNull: false)
+  final FilterFilterActionEnum filterAction;
 
   /// The ID of the Filter in the database.
   @JsonKey(name: r'id', required: true, includeIfNull: false)
@@ -49,10 +53,6 @@ class Filter {
   /// When the filter should no longer be applied.
   @JsonKey(name: r'expires_at', required: false, includeIfNull: false)
   final DateTime? expiresAt;
-
-  /// The action to be taken when a status matches this filter.
-  @JsonKey(name: r'filter_action', required: false, includeIfNull: false)
-  final FilterFilterActionEnum? filterAction;
 
   /// The keywords grouped under this filter. Omitted when part of a [FilterResult]({{< relref \"entities/FilterResult\" >}}).
   @JsonKey(name: r'keywords', required: false, includeIfNull: false)
@@ -67,20 +67,20 @@ class Filter {
       identical(this, other) ||
       other is Filter &&
           other.context == context &&
+          other.filterAction == filterAction &&
           other.id == id &&
           other.title == title &&
           other.expiresAt == expiresAt &&
-          other.filterAction == filterAction &&
           other.keywords == keywords &&
           other.statuses == statuses;
 
   @override
   int get hashCode =>
       context.hashCode +
+      filterAction.hashCode +
       id.hashCode +
       title.hashCode +
       (expiresAt == null ? 0 : expiresAt.hashCode) +
-      (filterAction == null ? 0 : filterAction.hashCode) +
       (keywords == null ? 0 : keywords.hashCode) +
       (statuses == null ? 0 : statuses.hashCode);
 

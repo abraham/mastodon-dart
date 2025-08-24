@@ -10,7 +10,10 @@ Filter _$FilterFromJson(Map<String, dynamic> json) => $checkedCreate(
   'Filter',
   json,
   ($checkedConvert) {
-    $checkKeys(json, requiredKeys: const ['context', 'id', 'title']);
+    $checkKeys(
+      json,
+      requiredKeys: const ['context', 'filter_action', 'id', 'title'],
+    );
     final val = Filter(
       context: $checkedConvert(
         'context',
@@ -18,15 +21,15 @@ Filter _$FilterFromJson(Map<String, dynamic> json) => $checkedCreate(
             .map((e) => $enumDecode(_$FilterContextEnumMap, e))
             .toList(),
       ),
+      filterAction: $checkedConvert(
+        'filter_action',
+        (v) => $enumDecode(_$FilterFilterActionEnumEnumMap, v),
+      ),
       id: $checkedConvert('id', (v) => v as String),
       title: $checkedConvert('title', (v) => v as String),
       expiresAt: $checkedConvert(
         'expires_at',
         (v) => v == null ? null : DateTime.parse(v as String),
-      ),
-      filterAction: $checkedConvert(
-        'filter_action',
-        (v) => $enumDecodeNullable(_$FilterFilterActionEnumEnumMap, v),
       ),
       keywords: $checkedConvert(
         'keywords',
@@ -44,14 +47,15 @@ Filter _$FilterFromJson(Map<String, dynamic> json) => $checkedCreate(
     return val;
   },
   fieldKeyMap: const {
-    'expiresAt': 'expires_at',
     'filterAction': 'filter_action',
+    'expiresAt': 'expires_at',
   },
 );
 
 Map<String, dynamic> _$FilterToJson(Filter instance) {
   final val = <String, dynamic>{
     'context': instance.context.map((e) => _$FilterContextEnumMap[e]!).toList(),
+    'filter_action': _$FilterFilterActionEnumEnumMap[instance.filterAction]!,
     'id': instance.id,
     'title': instance.title,
   };
@@ -63,10 +67,6 @@ Map<String, dynamic> _$FilterToJson(Filter instance) {
   }
 
   writeNotNull('expires_at', instance.expiresAt?.toIso8601String());
-  writeNotNull(
-    'filter_action',
-    _$FilterFilterActionEnumEnumMap[instance.filterAction],
-  );
   writeNotNull('keywords', instance.keywords?.map((e) => e.toJson()).toList());
   writeNotNull('statuses', instance.statuses?.map((e) => e.toJson()).toList());
   return val;
