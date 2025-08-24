@@ -4,15 +4,15 @@ description: Mastodon API client generated from the unofficial OpenAPI specifica
 homepage: https://github.com/abraham/mastodon-dart
 
 environment:
-  sdk: ^3.6.0
+  sdk: ^3.9.0
 
 resolution: workspace
 
 dependencies:
-  dio: '^5.2.0'
-  json_annotation: '^4.4.0'
+  dio: any
+  json_annotation: any
 
 dev_dependencies:
   build_runner: any
-  json_serializable: '^6.1.5'
-  test: ^1.16.0
+  json_serializable: any
+  test: any

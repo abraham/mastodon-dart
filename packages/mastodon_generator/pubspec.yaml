@@ -1,10 +1,10 @@
 name: mastodon_generator
 publish_to: none
 environment:
-  sdk: ^3.6.0
+  sdk: ^3.9.0
 resolution: workspace
 dependencies:
-  openapi_generator_annotations: ^6.1.0
+  openapi_generator_annotations: any
 dev_dependencies:
-  openapi_generator: ^6.1.0
-  build_runner: ^2.5.4
+  openapi_generator: any
+  build_runner: any
