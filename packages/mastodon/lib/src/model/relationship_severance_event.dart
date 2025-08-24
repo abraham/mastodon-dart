@@ -16,70 +16,48 @@ part 'relationship_severance_event.g.dart';
 class RelationshipSeveranceEvent {
   /// Returns a new [RelationshipSeveranceEvent] instance.
   RelationshipSeveranceEvent({
-    required this.createdAt,
-    required this.followersCount,
-    required this.followingCount,
-    required this.id,
-    required this.purged,
-    required this.targetName,
-    required this.type,
+    this.createdAt,
+
+    this.followersCount,
+
+    this.followingCount,
+
+    this.id,
+
+    this.purged,
+
+    this.targetName,
+
+    this.type,
   });
 
   /// When the event took place.
-  @JsonKey(
-    name: r'created_at',
-    required: true,
-    includeIfNull: false,
-  )
-  final DateTime createdAt;
+  @JsonKey(name: r'created_at', required: false, includeIfNull: false)
+  final DateTime? createdAt;
 
   /// Number of followers that were removed as result of the event.
-  @JsonKey(
-    name: r'followers_count',
-    required: true,
-    includeIfNull: false,
-  )
-  final int followersCount;
+  @JsonKey(name: r'followers_count', required: false, includeIfNull: false)
+  final int? followersCount;
 
   /// Number of accounts the user stopped following as result of the event.
-  @JsonKey(
-    name: r'following_count',
-    required: true,
-    includeIfNull: false,
-  )
-  final int followingCount;
+  @JsonKey(name: r'following_count', required: false, includeIfNull: false)
+  final int? followingCount;
 
   /// The ID of the relationship severance event in the database.
-  @JsonKey(
-    name: r'id',
-    required: true,
-    includeIfNull: false,
-  )
-  final String id;
+  @JsonKey(name: r'id', required: false, includeIfNull: false)
+  final String? id;
 
   /// Whether the list of severed relationships is unavailable because the underlying issue has been purged.
-  @JsonKey(
-    name: r'purged',
-    required: true,
-    includeIfNull: false,
-  )
-  final bool purged;
+  @JsonKey(name: r'purged', required: false, includeIfNull: false)
+  final bool? purged;
 
   /// Name of the target of the moderation/block event. This is either a domain name or a user handle, depending on the event type.
-  @JsonKey(
-    name: r'target_name',
-    required: true,
-    includeIfNull: false,
-  )
-  final String targetName;
+  @JsonKey(name: r'target_name', required: false, includeIfNull: false)
+  final String? targetName;
 
   /// Type of event.
-  @JsonKey(
-    name: r'type',
-    required: true,
-    includeIfNull: false,
-  )
-  final RelationshipSeveranceEventTypeEnum type;
+  @JsonKey(name: r'type', required: false, includeIfNull: false)
+  final RelationshipSeveranceEventTypeEnum? type;
 
   @override
   bool operator ==(Object other) =>
@@ -95,13 +73,13 @@ class RelationshipSeveranceEvent {
 
   @override
   int get hashCode =>
-      createdAt.hashCode +
-      followersCount.hashCode +
-      followingCount.hashCode +
-      id.hashCode +
-      purged.hashCode +
-      targetName.hashCode +
-      type.hashCode;
+      (createdAt == null ? 0 : createdAt.hashCode) +
+      (followersCount == null ? 0 : followersCount.hashCode) +
+      (followingCount == null ? 0 : followingCount.hashCode) +
+      (id == null ? 0 : id.hashCode) +
+      (purged == null ? 0 : purged.hashCode) +
+      (targetName == null ? 0 : targetName.hashCode) +
+      (type == null ? 0 : type.hashCode);
 
   factory RelationshipSeveranceEvent.fromJson(Map<String, dynamic> json) =>
       _$RelationshipSeveranceEventFromJson(json);

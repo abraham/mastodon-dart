@@ -4,7 +4,7 @@ import 'package:mastodon/mastodon.dart';
 // tests for UpdateScheduledStatusRequest
 void main() {
   final UpdateScheduledStatusRequest?
-      instance = /* UpdateScheduledStatusRequest(...) */ null;
+  instance = /* UpdateScheduledStatusRequest(...) */ null;
   // TODO add properties to the entity
 
   group(UpdateScheduledStatusRequest, () {

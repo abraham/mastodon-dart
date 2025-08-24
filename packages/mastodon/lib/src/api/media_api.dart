@@ -53,15 +53,10 @@ class MediaApi {
     final _path = r'/api/v1/media';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -76,14 +71,11 @@ class MediaApi {
         'file': file,
         'thumbnail': thumbnail,
         'description': description,
-        'focus': focus
+        'focus': focus,
       });
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -106,8 +98,10 @@ class MediaApi {
       _responseData = rawData == null
           ? null
           : deserialize<MediaAttachment, MediaAttachment>(
-              rawData, 'MediaAttachment',
-              growable: true);
+              rawData,
+              'MediaAttachment',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -164,15 +158,10 @@ class MediaApi {
     final _path = r'/api/v2/media';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -187,14 +176,11 @@ class MediaApi {
         'file': file,
         'thumbnail': thumbnail,
         'description': description,
-        'focus': focus
+        'focus': focus,
       });
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -217,8 +203,10 @@ class MediaApi {
       _responseData = rawData == null
           ? null
           : deserialize<MediaAttachment, MediaAttachment>(
-              rawData, 'MediaAttachment',
-              growable: true);
+              rawData,
+              'MediaAttachment',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -266,19 +254,18 @@ class MediaApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path =
-        r'/api/v1/media/{id}'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/media/{id}'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -321,19 +308,18 @@ class MediaApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path =
-        r'/api/v1/media/{id}'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/media/{id}'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -355,8 +341,10 @@ class MediaApi {
       _responseData = rawData == null
           ? null
           : deserialize<MediaAttachment, MediaAttachment>(
-              rawData, 'MediaAttachment',
-              growable: true);
+              rawData,
+              'MediaAttachment',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -410,19 +398,18 @@ class MediaApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path =
-        r'/api/v1/media/{id}'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/media/{id}'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -434,10 +421,7 @@ class MediaApi {
 
     try {} catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -460,8 +444,10 @@ class MediaApi {
       _responseData = rawData == null
           ? null
           : deserialize<MediaAttachment, MediaAttachment>(
-              rawData, 'MediaAttachment',
-              growable: true);
+              rawData,
+              'MediaAttachment',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

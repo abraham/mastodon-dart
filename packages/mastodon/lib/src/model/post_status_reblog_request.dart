@@ -15,9 +15,7 @@ part 'post_status_reblog_request.g.dart';
 )
 class PostStatusReblogRequest {
   /// Returns a new [PostStatusReblogRequest] instance.
-  PostStatusReblogRequest({
-    this.visibility = 'public',
-  });
+  PostStatusReblogRequest({this.visibility = 'public'});
 
   /// Any visibility except `limited` or `direct` (i.e. `public`, `unlisted`, `private`). Defaults to public.
   @JsonKey(

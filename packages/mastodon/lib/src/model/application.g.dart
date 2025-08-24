@@ -7,57 +7,62 @@ part of 'application.dart';
 // **************************************************************************
 
 Application _$ApplicationFromJson(Map<String, dynamic> json) => $checkedCreate(
-      'Application',
-      json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const [
-            'id',
-            'name',
-            'redirect_uri',
-            'redirect_uris',
-            'scopes',
-            'vapid_key'
-          ],
-        );
-        final val = Application(
-          id: $checkedConvert('id', (v) => v as String),
-          name: $checkedConvert('name', (v) => v as String),
-          redirectUri: $checkedConvert('redirect_uri', (v) => v as String),
-          redirectUris: $checkedConvert(
-              'redirect_uris',
-              (v) => (v as List<dynamic>)
-                  .map((e) => Uri.parse(e as String))
-                  .toList()),
-          scopes: $checkedConvert(
-              'scopes',
-              (v) => (v as List<dynamic>)
-                  .map((e) => $enumDecode(_$OAuthScopeEnumMap, e))
-                  .toList()),
-          vapidKey: $checkedConvert('vapid_key', (v) => v as String),
-          website: $checkedConvert(
-              'website', (v) => v == null ? null : Uri.parse(v as String)),
-        );
-        return val;
-      },
-      fieldKeyMap: const {
-        'redirectUri': 'redirect_uri',
-        'redirectUris': 'redirect_uris',
-        'vapidKey': 'vapid_key'
-      },
+  'Application',
+  json,
+  ($checkedConvert) {
+    $checkKeys(json, requiredKeys: const ['id', 'name']);
+    final val = Application(
+      id: $checkedConvert('id', (v) => v as String),
+      name: $checkedConvert('name', (v) => v as String),
+      redirectUri: $checkedConvert('redirect_uri', (v) => v as String?),
+      redirectUris: $checkedConvert(
+        'redirect_uris',
+        (v) =>
+            (v as List<dynamic>?)?.map((e) => Uri.parse(e as String)).toList(),
+      ),
+      scopes: $checkedConvert(
+        'scopes',
+        (v) => (v as List<dynamic>?)
+            ?.map((e) => $enumDecode(_$OAuthScopeEnumMap, e))
+            .toList(),
+      ),
+      vapidKey: $checkedConvert('vapid_key', (v) => v as String?),
+      website: $checkedConvert(
+        'website',
+        (v) => v == null ? null : Uri.parse(v as String),
+      ),
     );
+    return val;
+  },
+  fieldKeyMap: const {
+    'redirectUri': 'redirect_uri',
+    'redirectUris': 'redirect_uris',
+    'vapidKey': 'vapid_key',
+  },
+);
 
-Map<String, dynamic> _$ApplicationToJson(Application instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'redirect_uri': instance.redirectUri,
-      'redirect_uris': instance.redirectUris.map((e) => e.toString()).toList(),
-      'scopes': instance.scopes.map((e) => _$OAuthScopeEnumMap[e]!).toList(),
-      'vapid_key': instance.vapidKey,
-      if (instance.website?.toString() case final value?) 'website': value,
-    };
+Map<String, dynamic> _$ApplicationToJson(Application instance) {
+  final val = <String, dynamic>{'id': instance.id, 'name': instance.name};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('redirect_uri', instance.redirectUri);
+  writeNotNull(
+    'redirect_uris',
+    instance.redirectUris?.map((e) => e.toString()).toList(),
+  );
+  writeNotNull(
+    'scopes',
+    instance.scopes?.map((e) => _$OAuthScopeEnumMap[e]!).toList(),
+  );
+  writeNotNull('vapid_key', instance.vapidKey);
+  writeNotNull('website', instance.website?.toString());
+  return val;
+}
 
 const _$OAuthScopeEnumMap = {
   OAuthScope.profile: 'profile',

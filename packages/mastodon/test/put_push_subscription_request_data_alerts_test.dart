@@ -4,7 +4,7 @@ import 'package:mastodon/mastodon.dart';
 // tests for PutPushSubscriptionRequestDataAlerts
 void main() {
   final PutPushSubscriptionRequestDataAlerts?
-      instance = /* PutPushSubscriptionRequestDataAlerts(...) */ null;
+  instance = /* PutPushSubscriptionRequestDataAlerts(...) */ null;
   // TODO add properties to the entity
 
   group(PutPushSubscriptionRequestDataAlerts, () {

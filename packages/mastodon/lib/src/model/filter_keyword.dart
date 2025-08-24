@@ -15,35 +15,19 @@ part 'filter_keyword.g.dart';
 )
 class FilterKeyword {
   /// Returns a new [FilterKeyword] instance.
-  FilterKeyword({
-    required this.id,
-    required this.keyword,
-    required this.wholeWord,
-  });
+  FilterKeyword({this.id, this.keyword, this.wholeWord});
 
   /// The ID of the FilterKeyword in the database.
-  @JsonKey(
-    name: r'id',
-    required: true,
-    includeIfNull: false,
-  )
-  final String id;
+  @JsonKey(name: r'id', required: false, includeIfNull: false)
+  final String? id;
 
   /// The phrase to be matched against.
-  @JsonKey(
-    name: r'keyword',
-    required: true,
-    includeIfNull: false,
-  )
-  final String keyword;
+  @JsonKey(name: r'keyword', required: false, includeIfNull: false)
+  final String? keyword;
 
   /// Should the filter consider word boundaries? See [implementation guidelines for filters]({{< relref \"api/guidelines#filters\" >}}).
-  @JsonKey(
-    name: r'whole_word',
-    required: true,
-    includeIfNull: false,
-  )
-  final bool wholeWord;
+  @JsonKey(name: r'whole_word', required: false, includeIfNull: false)
+  final bool? wholeWord;
 
   @override
   bool operator ==(Object other) =>
@@ -54,7 +38,10 @@ class FilterKeyword {
           other.wholeWord == wholeWord;
 
   @override
-  int get hashCode => id.hashCode + keyword.hashCode + wholeWord.hashCode;
+  int get hashCode =>
+      (id == null ? 0 : id.hashCode) +
+      (keyword == null ? 0 : keyword.hashCode) +
+      (wholeWord == null ? 0 : wholeWord.hashCode);
 
   factory FilterKeyword.fromJson(Map<String, dynamic> json) =>
       _$FilterKeywordFromJson(json);

@@ -4,7 +4,7 @@ import 'package:mastodon/mastodon.dart';
 // tests for PostStatusTranslateRequest
 void main() {
   final PostStatusTranslateRequest?
-      instance = /* PostStatusTranslateRequest(...) */ null;
+  instance = /* PostStatusTranslateRequest(...) */ null;
   // TODO add properties to the entity
 
   group(PostStatusTranslateRequest, () {

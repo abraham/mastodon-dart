@@ -4,7 +4,7 @@ import 'package:mastodon/mastodon.dart';
 // tests for InstanceConfigurationTranslation
 void main() {
   final InstanceConfigurationTranslation?
-      instance = /* InstanceConfigurationTranslation(...) */ null;
+  instance = /* InstanceConfigurationTranslation(...) */ null;
   // TODO add properties to the entity
 
   group(InstanceConfigurationTranslation, () {

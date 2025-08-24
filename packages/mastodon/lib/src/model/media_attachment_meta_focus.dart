@@ -15,25 +15,14 @@ part 'media_attachment_meta_focus.g.dart';
 )
 class MediaAttachmentMetaFocus {
   /// Returns a new [MediaAttachmentMetaFocus] instance.
-  MediaAttachmentMetaFocus({
-    required this.x,
-    required this.y,
-  });
+  MediaAttachmentMetaFocus({required this.x, required this.y});
 
   /// Horizontal focal point
-  @JsonKey(
-    name: r'x',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'x', required: true, includeIfNull: false)
   final num x;
 
   /// Vertical focal point
-  @JsonKey(
-    name: r'y',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'y', required: true, includeIfNull: false)
   final num y;
 
   @override

@@ -4,7 +4,7 @@ import 'package:mastodon/mastodon.dart';
 // tests for V1InstanceConfigurationAccounts
 void main() {
   final V1InstanceConfigurationAccounts?
-      instance = /* V1InstanceConfigurationAccounts(...) */ null;
+  instance = /* V1InstanceConfigurationAccounts(...) */ null;
   // TODO add properties to the entity
 
   group(V1InstanceConfigurationAccounts, () {

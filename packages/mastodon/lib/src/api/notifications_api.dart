@@ -49,15 +49,10 @@ class NotificationsApi {
     final _path = r'/api/v1/notifications/clear';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -101,15 +96,10 @@ class NotificationsApi {
     final _path = r'/api/v1/notifications/requests/accept';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -153,15 +143,10 @@ class NotificationsApi {
     final _path = r'/api/v1/notifications/requests/dismiss';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -204,19 +189,18 @@ class NotificationsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path =
-        r'/api/v1/notifications/{id}'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/notifications/{id}'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -237,8 +221,11 @@ class NotificationsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<Notification, Notification>(rawData, 'Notification',
-              growable: true);
+          : deserialize<Notification, Notification>(
+              rawData,
+              'Notification',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -286,19 +273,18 @@ class NotificationsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v2/notifications/{group_key}/accounts'
-        .replaceAll('{' r'group_key' '}', groupKey.toString());
+    final _path = r'/api/v2/notifications/{group_key}/accounts'.replaceAll(
+      '{'
+      r'group_key'
+      '}',
+      groupKey.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -319,8 +305,11 @@ class NotificationsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<Account>, Account>(rawData, 'List<Account>',
-              growable: true);
+          : deserialize<List<Account>, Account>(
+              rawData,
+              'List<Account>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -369,15 +358,10 @@ class NotificationsApi {
     final _path = r'/api/v2/notifications/policy';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -399,8 +383,10 @@ class NotificationsApi {
       _responseData = rawData == null
           ? null
           : deserialize<NotificationPolicy, NotificationPolicy>(
-              rawData, 'NotificationPolicy',
-              growable: true);
+              rawData,
+              'NotificationPolicy',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -457,15 +443,10 @@ class NotificationsApi {
     final _path = r'/api/v1/notifications/requests';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -495,8 +476,10 @@ class NotificationsApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<NotificationRequest>, NotificationRequest>(
-              rawData, 'List<NotificationRequest>',
-              growable: true);
+              rawData,
+              'List<NotificationRequest>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -561,15 +544,10 @@ class NotificationsApi {
     final _path = r'/api/v1/notifications';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -603,8 +581,10 @@ class NotificationsApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<Notification>, Notification>(
-              rawData, 'List<Notification>',
-              growable: true);
+              rawData,
+              'List<Notification>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -652,19 +632,18 @@ class NotificationsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v2/notifications/{group_key}'
-        .replaceAll('{' r'group_key' '}', groupKey.toString());
+    final _path = r'/api/v2/notifications/{group_key}'.replaceAll(
+      '{'
+      r'group_key'
+      '}',
+      groupKey.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -685,10 +664,10 @@ class NotificationsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<GroupedNotificationsResults,
-                  GroupedNotificationsResults>(
-              rawData, 'GroupedNotificationsResults',
-              growable: true);
+          : deserialize<
+              GroupedNotificationsResults,
+              GroupedNotificationsResults
+            >(rawData, 'GroupedNotificationsResults', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -728,7 +707,7 @@ class NotificationsApi {
   /// Official Mastodon API documentation
   /// Also see [Get a single notification group Documentation](https://docs.joinmastodon.org/methods/notifications_alpha/#get-notification-group)
   Future<Response<GroupedNotificationsResults>>
-      getNotificationsByGroupKeyV2Alpha({
+  getNotificationsByGroupKeyV2Alpha({
     required String groupKey,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -737,19 +716,18 @@ class NotificationsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v2_alpha/notifications/{group_key}'
-        .replaceAll('{' r'group_key' '}', groupKey.toString());
+    final _path = r'/api/v2_alpha/notifications/{group_key}'.replaceAll(
+      '{'
+      r'group_key'
+      '}',
+      groupKey.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -770,10 +748,10 @@ class NotificationsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<GroupedNotificationsResults,
-                  GroupedNotificationsResults>(
-              rawData, 'GroupedNotificationsResults',
-              growable: true);
+          : deserialize<
+              GroupedNotificationsResults,
+              GroupedNotificationsResults
+            >(rawData, 'GroupedNotificationsResults', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -821,19 +799,18 @@ class NotificationsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/notifications/requests/{id}'
-        .replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/notifications/requests/{id}'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -855,8 +832,10 @@ class NotificationsApi {
       _responseData = rawData == null
           ? null
           : deserialize<NotificationRequest, NotificationRequest>(
-              rawData, 'NotificationRequest',
-              growable: true);
+              rawData,
+              'NotificationRequest',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -905,15 +884,10 @@ class NotificationsApi {
     final _path = r'/api/v1/notifications/requests/merged';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -965,15 +939,10 @@ class NotificationsApi {
     final _path = r'/api/v1/notifications/unread_count';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -1035,15 +1004,10 @@ class NotificationsApi {
     final _path = r'/api/v2/notifications/unread_count';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -1106,15 +1070,10 @@ class NotificationsApi {
     final _path = r'/api/v2_alpha/notifications/unread_count';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -1187,15 +1146,10 @@ class NotificationsApi {
     final _path = r'/api/v2/notifications';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -1230,10 +1184,10 @@ class NotificationsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<GroupedNotificationsResults,
-                  GroupedNotificationsResults>(
-              rawData, 'GroupedNotificationsResults',
-              growable: true);
+          : deserialize<
+              GroupedNotificationsResults,
+              GroupedNotificationsResults
+            >(rawData, 'GroupedNotificationsResults', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1300,15 +1254,10 @@ class NotificationsApi {
     final _path = r'/api/v2_alpha/notifications';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -1342,10 +1291,10 @@ class NotificationsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<GroupedNotificationsResults,
-                  GroupedNotificationsResults>(
-              rawData, 'GroupedNotificationsResults',
-              growable: true);
+          : deserialize<
+              GroupedNotificationsResults,
+              GroupedNotificationsResults
+            >(rawData, 'GroupedNotificationsResults', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1393,19 +1342,18 @@ class NotificationsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/notifications/{id}/dismiss'
-        .replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/notifications/{id}/dismiss'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -1448,19 +1396,18 @@ class NotificationsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v2/notifications/{group_key}/dismiss'
-        .replaceAll('{' r'group_key' '}', groupKey.toString());
+    final _path = r'/api/v2/notifications/{group_key}/dismiss'.replaceAll(
+      '{'
+      r'group_key'
+      '}',
+      groupKey.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -1503,19 +1450,18 @@ class NotificationsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v2_alpha/notifications/{group_key}/dismiss'
-        .replaceAll('{' r'group_key' '}', groupKey.toString());
+    final _path = r'/api/v2_alpha/notifications/{group_key}/dismiss'.replaceAll(
+      '{'
+      r'group_key'
+      '}',
+      groupKey.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -1558,19 +1504,18 @@ class NotificationsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/notifications/requests/{id}/accept'
-        .replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/notifications/requests/{id}/accept'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -1613,19 +1558,18 @@ class NotificationsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/notifications/requests/{id}/dismiss'
-        .replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/notifications/requests/{id}/dismiss'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },

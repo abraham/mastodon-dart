@@ -15,26 +15,15 @@ part 'appeal.g.dart';
 )
 class Appeal {
   /// Returns a new [Appeal] instance.
-  Appeal({
-    required this.state,
-    required this.text,
-  });
+  Appeal({this.state, this.text});
 
   /// State of the appeal.
-  @JsonKey(
-    name: r'state',
-    required: true,
-    includeIfNull: false,
-  )
-  final AppealStateEnum state;
+  @JsonKey(name: r'state', required: false, includeIfNull: false)
+  final AppealStateEnum? state;
 
   /// Text of the appeal from the moderated account to the moderators.
-  @JsonKey(
-    name: r'text',
-    required: true,
-    includeIfNull: false,
-  )
-  final String text;
+  @JsonKey(name: r'text', required: false, includeIfNull: false)
+  final String? text;
 
   @override
   bool operator ==(Object other) =>
@@ -42,7 +31,8 @@ class Appeal {
       other is Appeal && other.state == state && other.text == text;
 
   @override
-  int get hashCode => state.hashCode + text.hashCode;
+  int get hashCode =>
+      (state == null ? 0 : state.hashCode) + (text == null ? 0 : text.hashCode);
 
   factory Appeal.fromJson(Map<String, dynamic> json) => _$AppealFromJson(json);
 

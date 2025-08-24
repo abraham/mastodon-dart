@@ -5,8 +5,11 @@ class Replacement {
   final String replacement;
   final List<int> lineNumbers;
 
-  Replacement(this.searchString, this.replacement,
-      [this.lineNumbers = const []]);
+  Replacement(
+    this.searchString,
+    this.replacement, [
+    this.lineNumbers = const [],
+  ]);
 }
 
 class Hack {
@@ -32,10 +35,12 @@ class Hack {
     List<String> lines = content.split('\n');
 
     // Separate replacements with and without line numbers
-    final lineSpecificReplacements =
-        replacements.where((r) => r.lineNumbers.isNotEmpty).toList();
-    final globalReplacements =
-        replacements.where((r) => r.lineNumbers.isEmpty).toList();
+    final lineSpecificReplacements = replacements
+        .where((r) => r.lineNumbers.isNotEmpty)
+        .toList();
+    final globalReplacements = replacements
+        .where((r) => r.lineNumbers.isEmpty)
+        .toList();
 
     // Sort line-specific replacements by line numbers in descending order to process from largest line number first
     lineSpecificReplacements.sort((a, b) {
@@ -53,17 +58,21 @@ class Hack {
 
         if (lineIndex < 0 || lineIndex >= lines.length) {
           throw Exception(
-              'Error: Line number $lineNumber is out of range in $filePath');
+            'Error: Line number $lineNumber is out of range in $filePath',
+          );
         }
 
         final line = lines[lineIndex];
         if (!line.contains(replacement.searchString)) {
           throw Exception(
-              'Error: "${replacement.searchString}" not found on line $lineNumber in $filePath');
+            'Error: "${replacement.searchString}" not found on line $lineNumber in $filePath',
+          );
         }
 
-        lines[lineIndex] =
-            line.replaceAll(replacement.searchString, replacement.replacement);
+        lines[lineIndex] = line.replaceAll(
+          replacement.searchString,
+          replacement.replacement,
+        );
       }
     }
 
@@ -74,10 +83,13 @@ class Hack {
     for (final replacement in globalReplacements) {
       if (!content.contains(replacement.searchString)) {
         throw Exception(
-            'Error: "${replacement.searchString}" not found in $filePath');
+          'Error: "${replacement.searchString}" not found in $filePath',
+        );
       }
-      content =
-          content.replaceAll(replacement.searchString, replacement.replacement);
+      content = content.replaceAll(
+        replacement.searchString,
+        replacement.replacement,
+      );
       lines = content.split('\n');
     }
 
@@ -93,8 +105,10 @@ void main() async {
     Hack(
       filePath: 'packages/mastodon/lib/src/model/create_list_request.dart',
       replacements: [
-        Replacement("this.repliesPolicy = 'list',",
-            'this.repliesPolicy = PolicyEnum.list,'),
+        Replacement(
+          "this.repliesPolicy = 'list',",
+          'this.repliesPolicy = PolicyEnum.list,',
+        ),
         Replacement("defaultValue: 'list',", 'defaultValue: PolicyEnum.list,'),
       ],
       description: "Replace 'list' with PolicyEnum.list",
@@ -103,9 +117,13 @@ void main() async {
       filePath: 'packages/mastodon/lib/src/model/create_report_request.dart',
       replacements: [
         Replacement(
-            "this.category = 'other',", 'this.category = CategoryEnum.other,'),
+          "this.category = 'other',",
+          'this.category = CategoryEnum.other,',
+        ),
         Replacement(
-            "defaultValue: 'other',", "defaultValue: CategoryEnum.other,"),
+          "defaultValue: 'other',",
+          "defaultValue: CategoryEnum.other,",
+        ),
       ],
       description:
           "Replace CreateReportRequestCategoryEnum._('other') with CreateReportRequestCategoryEnum.other",
@@ -114,11 +132,13 @@ void main() async {
       filePath: 'packages/mastodon/lib/mastodon.dart',
       replacements: [
         Replacement(
-            "export 'package:mastodon/src/model/create_status200_response.dart';",
-            "export 'package:mastodon/create_status200_response.dart';"),
+          "export 'package:mastodon/src/model/create_status200_response.dart';",
+          "export 'package:mastodon/create_status200_response.dart';",
+        ),
         Replacement(
-            "export 'package:mastodon/src/model/create_status_request.dart';",
-            "export 'package:mastodon/create_status_request.dart';"),
+          "export 'package:mastodon/src/model/create_status_request.dart';",
+          "export 'package:mastodon/create_status_request.dart';",
+        ),
       ],
       description: "Replace CreateStatus200Response export",
     ),
@@ -126,11 +146,13 @@ void main() async {
       filePath: 'packages/mastodon/lib/src/deserialize.dart',
       replacements: [
         Replacement(
-            "import 'package:mastodon/src/model/create_status200_response.dart';",
-            "import 'package:mastodon/create_status200_response.dart';"),
+          "import 'package:mastodon/src/model/create_status200_response.dart';",
+          "import 'package:mastodon/create_status200_response.dart';",
+        ),
         Replacement(
-            "import 'package:mastodon/src/model/create_status_request.dart';",
-            "import 'package:mastodon/create_status_request.dart';"),
+          "import 'package:mastodon/src/model/create_status_request.dart';",
+          "import 'package:mastodon/create_status_request.dart';",
+        ),
       ],
       description: "Replace CreateStatus200Response import",
     ),
@@ -140,7 +162,7 @@ void main() async {
         Replacement(
           "try {} catch (error, stackTrace) {",
           "try {\n_bodyData = FormData.fromMap({ 'file': file, 'thumbnail': thumbnail, 'description': description, 'focus': focus });\n} catch (error, stackTrace) {",
-          [74, 178],
+          [69, 167],
         ),
       ],
       description: "Replace CreateStatus200Response import",
@@ -161,9 +183,10 @@ void main() async {
           "List<ModelList>? _responseData;",
         ),
         Replacement(
-          ": deserialize<List<List>, List>(rawData, 'List<List>',",
-          ": deserialize<List<ModelList>, ModelList>(rawData, 'List<ModelList>',",
+          "deserialize<List<List>, List>(",
+          "deserialize<List<ModelList>, ModelList>(",
         ),
+        Replacement("'List<List>',", "'List<ModelList>',"),
         Replacement(
           "return Response<List<List>>(",
           "return Response<List<ModelList>>(",
@@ -187,9 +210,10 @@ void main() async {
           "List<ModelList>? _responseData;",
         ),
         Replacement(
-          ": deserialize<List<List>, List>(rawData, 'List<List>',",
-          ": deserialize<List<ModelList>, ModelList>(rawData, 'List<ModelList>',",
+          ": deserialize<List<List>, List>(",
+          ": deserialize<List<ModelList>, ModelList>(",
         ),
+        Replacement("'List<List>',", "'List<ModelList>',"),
         Replacement(
           "return Response<List<List>>(",
           "return Response<List<ModelList>>(",
@@ -198,18 +222,12 @@ void main() async {
           "Future<Response<List>> updateList({",
           "Future<Response<ModelList>> updateList({",
         ),
+        Replacement("List? _responseData;", "ModelList? _responseData;"),
         Replacement(
-          "List? _responseData;",
-          "ModelList? _responseData;",
+          "deserialize<List, List>(rawData, 'List', growable: true);",
+          "deserialize<ModelList, ModelList>(rawData, 'ModelList', growable: true);",
         ),
-        Replacement(
-          ": deserialize<List, List>(rawData, 'List', growable: true);",
-          ": deserialize<ModelList, ModelList>(rawData, 'ModelList', growable: true);",
-        ),
-        Replacement(
-          "return Response<List>(",
-          "return Response<ModelList>(",
-        ),
+        Replacement("return Response<List>(", "return Response<ModelList>("),
         Replacement(
           "Future<Response<List>> createList({",
           "Future<Response<ModelList>> createList({",

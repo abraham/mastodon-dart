@@ -218,6 +218,8 @@ export 'package:mastodon/src/model/v1_instance.dart';
 export 'package:mastodon/src/model/v1_instance_configuration.dart';
 export 'package:mastodon/src/model/v1_instance_configuration_accounts.dart';
 export 'package:mastodon/src/model/v1_instance_configuration_media_attachments.dart';
+export 'package:mastodon/src/model/v1_instance_configuration_polls.dart';
+export 'package:mastodon/src/model/v1_instance_configuration_statuses.dart';
 export 'package:mastodon/src/model/v1_instance_stats.dart';
 export 'package:mastodon/src/model/v1_instance_urls.dart';
 export 'package:mastodon/src/model/v1_notification_policy.dart';

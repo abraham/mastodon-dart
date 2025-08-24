@@ -17,16 +17,14 @@ class PostAccountFollowRequest {
   /// Returns a new [PostAccountFollowRequest] instance.
   PostAccountFollowRequest({
     this.languages,
+
     this.notify = false,
+
     this.reblogs = true,
   });
 
   /// Array of String (ISO 639-1 language two-letter code). Filter received statuses for these languages. If not provided, you will receive this account's posts in all languages.
-  @JsonKey(
-    name: r'languages',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'languages', required: false, includeIfNull: false)
   final List<String>? languages;
 
   /// Receive notifications when this account posts a status? Defaults to false.

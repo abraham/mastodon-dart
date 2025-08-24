@@ -48,15 +48,10 @@ class PushApi {
     final _path = r'/api/v1/push/subscription';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -70,10 +65,7 @@ class PushApi {
       _bodyData = jsonEncode(createPushSubscriptionRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -96,8 +88,10 @@ class PushApi {
       _responseData = rawData == null
           ? null
           : deserialize<WebPushSubscription, WebPushSubscription>(
-              rawData, 'WebPushSubscription',
-              growable: true);
+              rawData,
+              'WebPushSubscription',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -146,15 +140,10 @@ class PushApi {
     final _path = r'/api/v1/push/subscription';
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -198,15 +187,10 @@ class PushApi {
     final _path = r'/api/v1/push/subscription';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -228,8 +212,10 @@ class PushApi {
       _responseData = rawData == null
           ? null
           : deserialize<WebPushSubscription, WebPushSubscription>(
-              rawData, 'WebPushSubscription',
-              growable: true);
+              rawData,
+              'WebPushSubscription',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -280,15 +266,10 @@ class PushApi {
     final _path = r'/api/v1/push/subscription';
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -302,10 +283,7 @@ class PushApi {
       _bodyData = jsonEncode(putPushSubscriptionRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -328,8 +306,10 @@ class PushApi {
       _responseData = rawData == null
           ? null
           : deserialize<WebPushSubscription, WebPushSubscription>(
-              rawData, 'WebPushSubscription',
-              growable: true);
+              rawData,
+              'WebPushSubscription',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

@@ -7,15 +7,15 @@ void main() {
   // TODO add properties to the entity
 
   group(InstanceRegistrations, () {
-    // Whether registrations require moderator approval.
-    // bool approvalRequired
-    test('to test the property `approvalRequired`', () async {
-      // TODO
-    });
-
     // Whether registrations are enabled. This will be `false` if `registrations_mode` is `none` or if the server is in `single_user_mode`.
     // bool enabled
     test('to test the property `enabled`', () async {
+      // TODO
+    });
+
+    // Whether registrations require moderator approval.
+    // bool approvalRequired
+    test('to test the property `approvalRequired`', () async {
       // TODO
     });
 

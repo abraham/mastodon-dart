@@ -11,69 +11,77 @@ Notification _$NotificationFromJson(Map<String, dynamic> json) =>
       'Notification',
       json,
       ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const [
-            'account',
-            'created_at',
-            'group_key',
-            'id',
-            'type'
-          ],
-        );
+        $checkKeys(json, requiredKeys: const ['account', 'created_at', 'id']);
         final val = Notification(
           account: $checkedConvert(
-              'account', (v) => Account.fromJson(v as Map<String, dynamic>)),
-          createdAt:
-              $checkedConvert('created_at', (v) => DateTime.parse(v as String)),
-          groupKey: $checkedConvert('group_key', (v) => v as String),
+            'account',
+            (v) => Account.fromJson(v as Map<String, dynamic>),
+          ),
+          createdAt: $checkedConvert(
+            'created_at',
+            (v) => DateTime.parse(v as String),
+          ),
           id: $checkedConvert('id', (v) => v as String),
-          type: $checkedConvert(
-              'type', (v) => $enumDecode(_$NotificationTypeEnumEnumMap, v)),
           event: $checkedConvert(
-              'event',
-              (v) => v == null
-                  ? null
-                  : RelationshipSeveranceEvent.fromJson(
-                      v as Map<String, dynamic>)),
+            'event',
+            (v) => v == null
+                ? null
+                : RelationshipSeveranceEvent.fromJson(
+                    v as Map<String, dynamic>,
+                  ),
+          ),
+          groupKey: $checkedConvert('group_key', (v) => v as String?),
           moderationWarning: $checkedConvert(
-              'moderation_warning',
-              (v) => v == null
-                  ? null
-                  : AccountWarning.fromJson(v as Map<String, dynamic>)),
+            'moderation_warning',
+            (v) => v == null
+                ? null
+                : AccountWarning.fromJson(v as Map<String, dynamic>),
+          ),
           report: $checkedConvert(
-              'report',
-              (v) => v == null
-                  ? null
-                  : Report.fromJson(v as Map<String, dynamic>)),
+            'report',
+            (v) =>
+                v == null ? null : Report.fromJson(v as Map<String, dynamic>),
+          ),
           status: $checkedConvert(
-              'status',
-              (v) => v == null
-                  ? null
-                  : Status.fromJson(v as Map<String, dynamic>)),
+            'status',
+            (v) =>
+                v == null ? null : Status.fromJson(v as Map<String, dynamic>),
+          ),
+          type: $checkedConvert(
+            'type',
+            (v) => $enumDecodeNullable(_$NotificationTypeEnumEnumMap, v),
+          ),
         );
         return val;
       },
       fieldKeyMap: const {
         'createdAt': 'created_at',
         'groupKey': 'group_key',
-        'moderationWarning': 'moderation_warning'
+        'moderationWarning': 'moderation_warning',
       },
     );
 
-Map<String, dynamic> _$NotificationToJson(Notification instance) =>
-    <String, dynamic>{
-      'account': instance.account.toJson(),
-      'created_at': instance.createdAt.toIso8601String(),
-      'group_key': instance.groupKey,
-      'id': instance.id,
-      'type': _$NotificationTypeEnumEnumMap[instance.type]!,
-      if (instance.event?.toJson() case final value?) 'event': value,
-      if (instance.moderationWarning?.toJson() case final value?)
-        'moderation_warning': value,
-      if (instance.report?.toJson() case final value?) 'report': value,
-      if (instance.status?.toJson() case final value?) 'status': value,
-    };
+Map<String, dynamic> _$NotificationToJson(Notification instance) {
+  final val = <String, dynamic>{
+    'account': instance.account.toJson(),
+    'created_at': instance.createdAt.toIso8601String(),
+    'id': instance.id,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('event', instance.event?.toJson());
+  writeNotNull('group_key', instance.groupKey);
+  writeNotNull('moderation_warning', instance.moderationWarning?.toJson());
+  writeNotNull('report', instance.report?.toJson());
+  writeNotNull('status', instance.status?.toJson());
+  writeNotNull('type', _$NotificationTypeEnumEnumMap[instance.type]);
+  return val;
+}
 
 const _$NotificationTypeEnumEnumMap = {
   NotificationTypeEnum.adminPeriodReport: 'admin.report',

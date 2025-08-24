@@ -18,31 +18,21 @@ class CreatePushSubscriptionRequestSubscription {
   /// Returns a new [CreatePushSubscriptionRequestSubscription] instance.
   CreatePushSubscriptionRequestSubscription({
     this.keys,
+
     this.endpoint,
+
     this.standard,
   });
 
-  @JsonKey(
-    name: r'keys',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'keys', required: false, includeIfNull: false)
   final CreatePushSubscriptionRequestSubscriptionKeys? keys;
 
   /// The endpoint URL that is called when a notification event occurs.
-  @JsonKey(
-    name: r'endpoint',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'endpoint', required: false, includeIfNull: false)
   final String? endpoint;
 
   /// Follow standardized webpush (RFC8030+RFC8291+RFC8292) ? Else follow legacy webpush (unpublished version, 4th draft of RFC8291 and 1st draft of RFC8292). Defaults to false.
-  @JsonKey(
-    name: r'standard',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'standard', required: false, includeIfNull: false)
   final bool? standard;
 
   @override
@@ -57,8 +47,8 @@ class CreatePushSubscriptionRequestSubscription {
   int get hashCode => keys.hashCode + endpoint.hashCode + standard.hashCode;
 
   factory CreatePushSubscriptionRequestSubscription.fromJson(
-          Map<String, dynamic> json) =>
-      _$CreatePushSubscriptionRequestSubscriptionFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$CreatePushSubscriptionRequestSubscriptionFromJson(json);
 
   Map<String, dynamic> toJson() =>
       _$CreatePushSubscriptionRequestSubscriptionToJson(this);

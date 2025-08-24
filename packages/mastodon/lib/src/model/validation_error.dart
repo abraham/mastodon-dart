@@ -16,25 +16,14 @@ part 'validation_error.g.dart';
 )
 class ValidationError {
   /// Returns a new [ValidationError] instance.
-  ValidationError({
-    required this.error,
-    required this.details,
-  });
+  ValidationError({required this.error, required this.details});
 
   /// The overall validation error message.
-  @JsonKey(
-    name: r'error',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'error', required: true, includeIfNull: false)
   final String error;
 
   /// Detailed validation errors for each field.
-  @JsonKey(
-    name: r'details',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'details', required: true, includeIfNull: false)
   final Map<String, List<ValidationErrorDetailsValueInner>> details;
 
   @override

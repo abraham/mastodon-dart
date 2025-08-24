@@ -11,26 +11,29 @@ CreateStatusRequest _$CreateStatusRequestFromJson(Map<String, dynamic> json) =>
       'CreateStatusRequest',
       json,
       ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['status', 'media_ids', 'poll'],
-        );
+        $checkKeys(json, requiredKeys: const ['status', 'media_ids', 'poll']);
         final val = CreateStatusRequest(
           status: $checkedConvert('status', (v) => v as String),
-          mediaIds: $checkedConvert('media_ids',
-              (v) => (v as List<dynamic>).map((e) => e as String).toList()),
+          mediaIds: $checkedConvert(
+            'media_ids',
+            (v) => (v as List<dynamic>).map((e) => e as String).toList(),
+          ),
           poll: $checkedConvert(
-              'poll',
-              (v) =>
-                  UpdateStatusRequestPoll.fromJson(v as Map<String, dynamic>)),
+            'poll',
+            (v) => UpdateStatusRequestPoll.fromJson(v as Map<String, dynamic>),
+          ),
           inReplyToId: $checkedConvert('in_reply_to_id', (v) => v as String?),
           language: $checkedConvert('language', (v) => v as String?),
-          scheduledAt: $checkedConvert('scheduled_at',
-              (v) => v == null ? null : DateTime.parse(v as String)),
+          scheduledAt: $checkedConvert(
+            'scheduled_at',
+            (v) => v == null ? null : DateTime.parse(v as String),
+          ),
           sensitive: $checkedConvert('sensitive', (v) => v as bool? ?? false),
           spoilerText: $checkedConvert('spoiler_text', (v) => v as String?),
-          visibility: $checkedConvert('visibility',
-              (v) => $enumDecodeNullable(_$VisibilityEnumEnumMap, v)),
+          visibility: $checkedConvert(
+            'visibility',
+            (v) => $enumDecodeNullable(_$VisibilityEnumEnumMap, v),
+          ),
         );
         return val;
       },
@@ -38,25 +41,31 @@ CreateStatusRequest _$CreateStatusRequestFromJson(Map<String, dynamic> json) =>
         'mediaIds': 'media_ids',
         'inReplyToId': 'in_reply_to_id',
         'scheduledAt': 'scheduled_at',
-        'spoilerText': 'spoiler_text'
+        'spoilerText': 'spoiler_text',
       },
     );
 
-Map<String, dynamic> _$CreateStatusRequestToJson(
-        CreateStatusRequest instance) =>
-    <String, dynamic>{
-      'status': instance.status,
-      'media_ids': instance.mediaIds,
-      'poll': instance.poll.toJson(),
-      if (instance.inReplyToId case final value?) 'in_reply_to_id': value,
-      if (instance.language case final value?) 'language': value,
-      if (instance.scheduledAt?.toIso8601String() case final value?)
-        'scheduled_at': value,
-      if (instance.sensitive case final value?) 'sensitive': value,
-      if (instance.spoilerText case final value?) 'spoiler_text': value,
-      if (_$VisibilityEnumEnumMap[instance.visibility] case final value?)
-        'visibility': value,
-    };
+Map<String, dynamic> _$CreateStatusRequestToJson(CreateStatusRequest instance) {
+  final val = <String, dynamic>{
+    'status': instance.status,
+    'media_ids': instance.mediaIds,
+    'poll': instance.poll.toJson(),
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('in_reply_to_id', instance.inReplyToId);
+  writeNotNull('language', instance.language);
+  writeNotNull('scheduled_at', instance.scheduledAt?.toIso8601String());
+  writeNotNull('sensitive', instance.sensitive);
+  writeNotNull('spoiler_text', instance.spoilerText);
+  writeNotNull('visibility', _$VisibilityEnumEnumMap[instance.visibility]);
+  return val;
+}
 
 const _$VisibilityEnumEnumMap = {
   VisibilityEnum.direct: 'direct',

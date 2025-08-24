@@ -25,6 +25,11 @@ void main() {
       // TODO
     });
 
+    // TranslationPoll poll
+    test('to test the property `poll`', () async {
+      // TODO
+    });
+
     // The service that provided the machine translation.
     // String provider
     test('to test the property `provider`', () async {
@@ -34,11 +39,6 @@ void main() {
     // The translated spoiler warning of the status.
     // String spoilerText
     test('to test the property `spoilerText`', () async {
-      // TODO
-    });
-
-    // TranslationPoll poll
-    test('to test the property `poll`', () async {
       // TODO
     });
   });

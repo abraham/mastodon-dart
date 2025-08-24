@@ -16,25 +16,14 @@ part 'instance_thumbnail_versions.g.dart';
 )
 class InstanceThumbnailVersions {
   /// Returns a new [InstanceThumbnailVersions] instance.
-  InstanceThumbnailVersions({
-    this.at1x,
-    this.at2x,
-  });
+  InstanceThumbnailVersions({this.at1x, this.at2x});
 
   /// The URL for the thumbnail image at 1x resolution.
-  @JsonKey(
-    name: r'@1x',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'@1x', required: false, includeIfNull: false)
   final Uri? at1x;
 
   /// The URL for the thumbnail image at 2x resolution.
-  @JsonKey(
-    name: r'@2x',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'@2x', required: false, includeIfNull: false)
   final Uri? at2x;
 
   @override

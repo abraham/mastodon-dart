@@ -53,15 +53,10 @@ class TimelinesApi {
     final _path = r'/api/v1/timelines/direct';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -90,8 +85,11 @@ class TimelinesApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<Status>, Status>(rawData, 'List<Status>',
-              growable: true);
+          : deserialize<List<Status>, Status>(
+              rawData,
+              'List<Status>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -148,15 +146,10 @@ class TimelinesApi {
     final _path = r'/api/v1/timelines/home';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -185,8 +178,11 @@ class TimelinesApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<Status>, Status>(rawData, 'List<Status>',
-              growable: true);
+          : deserialize<List<Status>, Status>(
+              rawData,
+              'List<Status>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -245,15 +241,10 @@ class TimelinesApi {
     final _path = r'/api/v1/timelines/link';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2ClientCredentials',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2ClientCredentials'},
         ],
         ...?extra,
       },
@@ -283,8 +274,11 @@ class TimelinesApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<Status>, Status>(rawData, 'List<Status>',
-              growable: true);
+          : deserialize<List<Status>, Status>(
+              rawData,
+              'List<Status>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -347,15 +341,10 @@ class TimelinesApi {
     final _path = r'/api/v1/timelines/public';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2ClientCredentials',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2ClientCredentials'},
         ],
         ...?extra,
       },
@@ -387,8 +376,11 @@ class TimelinesApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<Status>, Status>(rawData, 'List<Status>',
-              growable: true);
+          : deserialize<List<Status>, Status>(
+              rawData,
+              'List<Status>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -444,19 +436,18 @@ class TimelinesApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/timelines/list/{list_id}'
-        .replaceAll('{' r'list_id' '}', listId.toString());
+    final _path = r'/api/v1/timelines/list/{list_id}'.replaceAll(
+      '{'
+      r'list_id'
+      '}',
+      listId.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -485,8 +476,11 @@ class TimelinesApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<Status>, Status>(rawData, 'List<Status>',
-              growable: true);
+          : deserialize<List<Status>, Status>(
+              rawData,
+              'List<Status>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -554,19 +548,18 @@ class TimelinesApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/timelines/tag/{hashtag}'
-        .replaceAll('{' r'hashtag' '}', hashtag.toString());
+    final _path = r'/api/v1/timelines/tag/{hashtag}'.replaceAll(
+      '{'
+      r'hashtag'
+      '}',
+      hashtag.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2ClientCredentials',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2ClientCredentials'},
         ],
         ...?extra,
       },
@@ -601,8 +594,11 @@ class TimelinesApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<Status>, Status>(rawData, 'List<Status>',
-              growable: true);
+          : deserialize<List<Status>, Status>(
+              rawData,
+              'List<Status>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

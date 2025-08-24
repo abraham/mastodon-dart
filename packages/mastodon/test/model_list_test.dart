@@ -7,12 +7,6 @@ void main() {
   // TODO add properties to the entity
 
   group(ModelList, () {
-    // Whether members of the list should be removed from the “Home” feed.
-    // bool exclusive
-    test('to test the property `exclusive`', () async {
-      // TODO
-    });
-
     // The ID of the list.
     // String id
     test('to test the property `id`', () async {
@@ -28,6 +22,12 @@ void main() {
     // The user-defined title of the list.
     // String title
     test('to test the property `title`', () async {
+      // TODO
+    });
+
+    // Whether members of the list should be removed from the “Home” feed.
+    // bool exclusive
+    test('to test the property `exclusive`', () async {
       // TODO
     });
   });

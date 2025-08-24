@@ -52,13 +52,8 @@ class InstanceApi {
     final _path = r'/api/v1/instance';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -76,8 +71,11 @@ class InstanceApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<V1Instance, V1Instance>(rawData, 'V1Instance',
-              growable: true);
+          : deserialize<V1Instance, V1Instance>(
+              rawData,
+              'V1Instance',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -116,7 +114,7 @@ class InstanceApi {
   /// Official Mastodon API documentation
   /// Also see [Weekly activity Documentation](https://docs.joinmastodon.org/methods/instance/#activity)
   Future<Response<List<GetInstanceActivity200ResponseInner>>>
-      getInstanceActivity({
+  getInstanceActivity({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -127,13 +125,8 @@ class InstanceApi {
     final _path = r'/api/v1/instance/activity';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -151,10 +144,14 @@ class InstanceApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<GetInstanceActivity200ResponseInner>,
-                  GetInstanceActivity200ResponseInner>(
-              rawData, 'List<GetInstanceActivity200ResponseInner>',
-              growable: true);
+          : deserialize<
+              List<GetInstanceActivity200ResponseInner>,
+              GetInstanceActivity200ResponseInner
+            >(
+              rawData,
+              'List<GetInstanceActivity200ResponseInner>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -203,15 +200,10 @@ class InstanceApi {
     final _path = r'/api/v1/instance/domain_blocks';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -233,8 +225,10 @@ class InstanceApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<DomainBlock>, DomainBlock>(
-              rawData, 'List<DomainBlock>',
-              growable: true);
+              rawData,
+              'List<DomainBlock>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -283,13 +277,8 @@ class InstanceApi {
     final _path = r'/api/v1/instance/extended_description';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -308,8 +297,10 @@ class InstanceApi {
       _responseData = rawData == null
           ? null
           : deserialize<ExtendedDescription, ExtendedDescription>(
-              rawData, 'ExtendedDescription',
-              growable: true);
+              rawData,
+              'ExtendedDescription',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -358,13 +349,8 @@ class InstanceApi {
     final _path = r'/api/v1/instance/peers';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -382,8 +368,11 @@ class InstanceApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<String>, String>(rawData, 'List<String>',
-              growable: true);
+          : deserialize<List<String>, String>(
+              rawData,
+              'List<String>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -432,13 +421,8 @@ class InstanceApi {
     final _path = r'/api/v1/instance/privacy_policy';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -456,8 +440,11 @@ class InstanceApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<PrivacyPolicy, PrivacyPolicy>(rawData, 'PrivacyPolicy',
-              growable: true);
+          : deserialize<PrivacyPolicy, PrivacyPolicy>(
+              rawData,
+              'PrivacyPolicy',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -506,13 +493,8 @@ class InstanceApi {
     final _path = r'/api/v1/instance/rules';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -530,8 +512,11 @@ class InstanceApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<Rule>, Rule>(rawData, 'List<Rule>',
-              growable: true);
+          : deserialize<List<Rule>, Rule>(
+              rawData,
+              'List<Rule>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -580,13 +565,8 @@ class InstanceApi {
     final _path = r'/api/v1/instance/terms_of_service';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -605,8 +585,10 @@ class InstanceApi {
       _responseData = rawData == null
           ? null
           : deserialize<TermsOfService, TermsOfService>(
-              rawData, 'TermsOfService',
-              growable: true);
+              rawData,
+              'TermsOfService',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -654,17 +636,16 @@ class InstanceApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/instance/terms_of_service/{date}'
-        .replaceAll('{' r'date' '}', date.toString());
+    final _path = r'/api/v1/instance/terms_of_service/{date}'.replaceAll(
+      '{'
+      r'date'
+      '}',
+      date.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -683,8 +664,10 @@ class InstanceApi {
       _responseData = rawData == null
           ? null
           : deserialize<TermsOfService, TermsOfService>(
-              rawData, 'TermsOfService',
-              growable: true);
+              rawData,
+              'TermsOfService',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -733,13 +716,8 @@ class InstanceApi {
     final _path = r'/api/v1/instance/translation_languages';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -780,13 +758,8 @@ class InstanceApi {
     final _path = r'/api/v2/instance';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -804,8 +777,11 @@ class InstanceApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<Instance, Instance>(rawData, 'Instance',
-              growable: true);
+          : deserialize<Instance, Instance>(
+              rawData,
+              'Instance',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

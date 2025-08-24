@@ -18,67 +18,45 @@ class UpdateStatusRequest {
   /// Returns a new [UpdateStatusRequest] instance.
   UpdateStatusRequest({
     this.language,
+
     this.mediaAttributesLeftSquareBracketRightSquareBracket,
+
     this.mediaIds,
+
     this.poll,
+
     this.sensitive,
+
     this.spoilerText,
+
     this.status,
   });
 
   /// ISO 639-1 language code for the status.
-  @JsonKey(
-    name: r'language',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'language', required: false, includeIfNull: false)
   final String? language;
 
   /// Each array includes id, description, and focus.
-  @JsonKey(
-    name: r'media_attributes[]',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'media_attributes[]', required: false, includeIfNull: false)
   final List<String>? mediaAttributesLeftSquareBracketRightSquareBracket;
 
   /// Include Attachment IDs to be attached as media. If provided, `status` becomes optional, and `poll` cannot be used.
-  @JsonKey(
-    name: r'media_ids',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'media_ids', required: false, includeIfNull: false)
   final List<String>? mediaIds;
 
-  @JsonKey(
-    name: r'poll',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'poll', required: false, includeIfNull: false)
   final UpdateStatusRequestPoll? poll;
 
   /// Whether the status should be marked as sensitive.
-  @JsonKey(
-    name: r'sensitive',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'sensitive', required: false, includeIfNull: false)
   final bool? sensitive;
 
   /// The plain text subject or content warning of the status.
-  @JsonKey(
-    name: r'spoiler_text',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'spoiler_text', required: false, includeIfNull: false)
   final String? spoilerText;
 
   /// The plain text content of the status.
-  @JsonKey(
-    name: r'status',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'status', required: false, includeIfNull: false)
   final String? status;
 
   @override

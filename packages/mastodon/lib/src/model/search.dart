@@ -20,32 +20,22 @@ class Search {
   /// Returns a new [Search] instance.
   Search({
     required this.accounts,
+
     required this.hashtags,
+
     required this.statuses,
   });
 
   /// Accounts which match the given query
-  @JsonKey(
-    name: r'accounts',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'accounts', required: true, includeIfNull: false)
   final List<Account> accounts;
 
   /// Hashtags which match the given query
-  @JsonKey(
-    name: r'hashtags',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'hashtags', required: true, includeIfNull: false)
   final List<Tag> hashtags;
 
   /// Statuses which match the given query
-  @JsonKey(
-    name: r'statuses',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'statuses', required: true, includeIfNull: false)
   final List<Status> statuses;
 
   @override

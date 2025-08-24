@@ -16,25 +16,14 @@ part 'status_application.g.dart';
 )
 class StatusApplication {
   /// Returns a new [StatusApplication] instance.
-  StatusApplication({
-    required this.name,
-    this.website,
-  });
+  StatusApplication({required this.name, this.website});
 
   /// The name of the application that posted this status.
-  @JsonKey(
-    name: r'name',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'name', required: true, includeIfNull: false)
   final String name;
 
   /// The website associated with the application that posted this status.
-  @JsonKey(
-    name: r'website',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'website', required: false, includeIfNull: false)
   final Uri? website;
 
   @override

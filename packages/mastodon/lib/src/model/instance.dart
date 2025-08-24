@@ -25,127 +25,84 @@ part 'instance.g.dart';
 class Instance {
   /// Returns a new [Instance] instance.
   Instance({
-    required this.apiVersions,
-    required this.configuration,
-    required this.contact,
-    required this.description,
-    required this.domain,
-    required this.icon,
-    required this.languages,
-    required this.registrations,
-    required this.rules,
-    required this.sourceUrl,
-    required this.thumbnail,
-    required this.title,
-    required this.usage,
-    required this.version,
+    this.apiVersions,
+
+    this.configuration,
+
+    this.contact,
+
+    this.description,
+
+    this.domain,
+
+    this.icon,
+
+    this.languages,
+
+    this.registrations,
+
+    this.rules,
+
+    this.sourceUrl,
+
+    this.thumbnail,
+
+    this.title,
+
+    this.usage,
+
+    this.version,
   });
 
-  @JsonKey(
-    name: r'api_versions',
-    required: true,
-    includeIfNull: false,
-  )
-  final InstanceApiVersions apiVersions;
+  @JsonKey(name: r'api_versions', required: false, includeIfNull: false)
+  final InstanceApiVersions? apiVersions;
 
-  @JsonKey(
-    name: r'configuration',
-    required: true,
-    includeIfNull: false,
-  )
-  final InstanceConfiguration configuration;
+  @JsonKey(name: r'configuration', required: false, includeIfNull: false)
+  final InstanceConfiguration? configuration;
 
-  @JsonKey(
-    name: r'contact',
-    required: true,
-    includeIfNull: false,
-  )
-  final InstanceContact contact;
+  @JsonKey(name: r'contact', required: false, includeIfNull: false)
+  final InstanceContact? contact;
 
   /// A short, plain-text description defined by the admin.
-  @JsonKey(
-    name: r'description',
-    required: true,
-    includeIfNull: false,
-  )
-  final String description;
+  @JsonKey(name: r'description', required: false, includeIfNull: false)
+  final String? description;
 
   /// The WebFinger domain name of the server.
-  @JsonKey(
-    name: r'domain',
-    required: true,
-    includeIfNull: false,
-  )
-  final String domain;
+  @JsonKey(name: r'domain', required: false, includeIfNull: false)
+  final String? domain;
 
   /// The list of available size variants for this server's configured icon.
-  @JsonKey(
-    name: r'icon',
-    required: true,
-    includeIfNull: false,
-  )
-  final List<InstanceIcon> icon;
+  @JsonKey(name: r'icon', required: false, includeIfNull: false)
+  final List<InstanceIcon>? icon;
 
   /// Primary languages of the website and its staff.
-  @JsonKey(
-    name: r'languages',
-    required: true,
-    includeIfNull: false,
-  )
-  final List<String> languages;
+  @JsonKey(name: r'languages', required: false, includeIfNull: false)
+  final List<String>? languages;
 
-  @JsonKey(
-    name: r'registrations',
-    required: true,
-    includeIfNull: false,
-  )
-  final InstanceRegistrations registrations;
+  @JsonKey(name: r'registrations', required: false, includeIfNull: false)
+  final InstanceRegistrations? registrations;
 
   /// An itemized list of rules for this website.
-  @JsonKey(
-    name: r'rules',
-    required: true,
-    includeIfNull: false,
-  )
-  final List<Rule> rules;
+  @JsonKey(name: r'rules', required: false, includeIfNull: false)
+  final List<Rule>? rules;
 
   /// The URL for the source code of the software running on this server, per the AGPL license requirements.
-  @JsonKey(
-    name: r'source_url',
-    required: true,
-    includeIfNull: false,
-  )
-  final Uri sourceUrl;
+  @JsonKey(name: r'source_url', required: false, includeIfNull: false)
+  final Uri? sourceUrl;
 
-  @JsonKey(
-    name: r'thumbnail',
-    required: true,
-    includeIfNull: false,
-  )
-  final InstanceThumbnail thumbnail;
+  @JsonKey(name: r'thumbnail', required: false, includeIfNull: false)
+  final InstanceThumbnail? thumbnail;
 
   /// The title of the website.
-  @JsonKey(
-    name: r'title',
-    required: true,
-    includeIfNull: false,
-  )
-  final String title;
+  @JsonKey(name: r'title', required: false, includeIfNull: false)
+  final String? title;
 
-  @JsonKey(
-    name: r'usage',
-    required: true,
-    includeIfNull: false,
-  )
-  final InstanceUsage usage;
+  @JsonKey(name: r'usage', required: false, includeIfNull: false)
+  final InstanceUsage? usage;
 
   /// The version of Mastodon installed on the server.
-  @JsonKey(
-    name: r'version',
-    required: true,
-    includeIfNull: false,
-  )
-  final String version;
+  @JsonKey(name: r'version', required: false, includeIfNull: false)
+  final String? version;
 
   @override
   bool operator ==(Object other) =>
@@ -171,17 +128,17 @@ class Instance {
       apiVersions.hashCode +
       configuration.hashCode +
       contact.hashCode +
-      description.hashCode +
-      domain.hashCode +
-      icon.hashCode +
-      languages.hashCode +
+      (description == null ? 0 : description.hashCode) +
+      (domain == null ? 0 : domain.hashCode) +
+      (icon == null ? 0 : icon.hashCode) +
+      (languages == null ? 0 : languages.hashCode) +
       registrations.hashCode +
-      rules.hashCode +
-      sourceUrl.hashCode +
+      (rules == null ? 0 : rules.hashCode) +
+      (sourceUrl == null ? 0 : sourceUrl.hashCode) +
       thumbnail.hashCode +
-      title.hashCode +
+      (title == null ? 0 : title.hashCode) +
       usage.hashCode +
-      version.hashCode;
+      (version == null ? 0 : version.hashCode);
 
   factory Instance.fromJson(Map<String, dynamic> json) =>
       _$InstanceFromJson(json);

@@ -19,76 +19,51 @@ class MediaAttachment {
   /// Returns a new [MediaAttachment] instance.
   MediaAttachment({
     required this.id,
+
     required this.type,
+
     required this.url,
+
     this.blurhash,
+
     this.description,
+
     this.meta,
+
     this.previewUrl,
+
     this.remoteUrl,
   });
 
   /// The ID of the attachment in the database.
-  @JsonKey(
-    name: r'id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
   /// The type of the attachment.
-  @JsonKey(
-    name: r'type',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'type', required: true, includeIfNull: false)
   final MediaAttachmentTypeEnum type;
 
   /// The location of the original full-size attachment.
-  @JsonKey(
-    name: r'url',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'url', required: true, includeIfNull: false)
   final Uri url;
 
   /// A hash computed by [the BlurHash algorithm](https://github.com/woltapp/blurhash), for generating colorful preview thumbnails when media has not been downloaded yet.
-  @JsonKey(
-    name: r'blurhash',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'blurhash', required: false, includeIfNull: false)
   final String? blurhash;
 
   /// Alternate text that describes what is in the media attachment, to be used for the visually impaired or when media attachments do not load.
-  @JsonKey(
-    name: r'description',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'description', required: false, includeIfNull: false)
   final String? description;
 
-  @JsonKey(
-    name: r'meta',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'meta', required: false, includeIfNull: false)
   final MediaAttachmentMeta? meta;
 
   /// The location of a scaled-down preview of the attachment.
-  @JsonKey(
-    name: r'preview_url',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'preview_url', required: false, includeIfNull: false)
   final Uri? previewUrl;
 
   /// The location of the full-size original attachment on the remote website.
-  @JsonKey(
-    name: r'remote_url',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'remote_url', required: false, includeIfNull: false)
   final Uri? remoteUrl;
 
   @override

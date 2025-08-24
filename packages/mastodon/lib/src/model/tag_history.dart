@@ -15,34 +15,18 @@ part 'tag_history.g.dart';
 )
 class TagHistory {
   /// Returns a new [TagHistory] instance.
-  TagHistory({
-    required this.accounts,
-    required this.day,
-    required this.uses,
-  });
+  TagHistory({required this.accounts, required this.day, required this.uses});
 
   /// The total of accounts using the tag within that day.
-  @JsonKey(
-    name: r'accounts',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'accounts', required: true, includeIfNull: false)
   final String accounts;
 
   /// UNIX timestamp on midnight of the given day.
-  @JsonKey(
-    name: r'day',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'day', required: true, includeIfNull: false)
   final String day;
 
   /// The counted usage of the tag within that day.
-  @JsonKey(
-    name: r'uses',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'uses', required: true, includeIfNull: false)
   final String uses;
 
   @override

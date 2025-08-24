@@ -18,50 +18,34 @@ class FeaturedTag {
   /// Returns a new [FeaturedTag] instance.
   FeaturedTag({
     required this.id,
+
     required this.lastStatusAt,
+
     required this.name,
+
     required this.statusesCount,
+
     required this.url,
   });
 
   /// The ID of the featured tag.
-  @JsonKey(
-    name: r'id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
   /// The date of the last authored status containing this hashtag.
-  @JsonKey(
-    name: r'last_status_at',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'last_status_at', required: true, includeIfNull: false)
   final DateTime lastStatusAt;
 
   /// The name of the hashtag being featured.
-  @JsonKey(
-    name: r'name',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'name', required: true, includeIfNull: false)
   final String name;
 
   /// The number of authored statuses containing this hashtag.
-  @JsonKey(
-    name: r'statuses_count',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'statuses_count', required: true, includeIfNull: false)
   final String statusesCount;
 
   /// A link to all statuses by a user that contain this hashtag.
-  @JsonKey(
-    name: r'url',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'url', required: true, includeIfNull: false)
   final Uri url;
 
   @override

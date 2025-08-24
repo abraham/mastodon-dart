@@ -15,25 +15,14 @@ part 'create_push_subscription_request_subscription_keys.g.dart';
 )
 class CreatePushSubscriptionRequestSubscriptionKeys {
   /// Returns a new [CreatePushSubscriptionRequestSubscriptionKeys] instance.
-  CreatePushSubscriptionRequestSubscriptionKeys({
-    this.p256dh,
-    this.auth,
-  });
+  CreatePushSubscriptionRequestSubscriptionKeys({this.p256dh, this.auth});
 
   /// User agent public key. Base64 encoded string of a public key from a ECDH keypair using the `prime256v1` curve.
-  @JsonKey(
-    name: r'p256dh',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'p256dh', required: false, includeIfNull: false)
   final String? p256dh;
 
   /// Auth secret. Base64 encoded string of 16 bytes of random data.
-  @JsonKey(
-    name: r'auth',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'auth', required: false, includeIfNull: false)
   final String? auth;
 
   @override
@@ -47,8 +36,8 @@ class CreatePushSubscriptionRequestSubscriptionKeys {
   int get hashCode => p256dh.hashCode + auth.hashCode;
 
   factory CreatePushSubscriptionRequestSubscriptionKeys.fromJson(
-          Map<String, dynamic> json) =>
-      _$CreatePushSubscriptionRequestSubscriptionKeysFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$CreatePushSubscriptionRequestSubscriptionKeysFromJson(json);
 
   Map<String, dynamic> toJson() =>
       _$CreatePushSubscriptionRequestSubscriptionKeysToJson(this);

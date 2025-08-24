@@ -16,16 +16,10 @@ part 'status_edit_poll.g.dart';
 )
 class StatusEditPoll {
   /// Returns a new [StatusEditPoll] instance.
-  StatusEditPoll({
-    required this.options,
-  });
+  StatusEditPoll({required this.options});
 
   /// The poll options at this revision.
-  @JsonKey(
-    name: r'options',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'options', required: true, includeIfNull: false)
   final List<StatusEditPollOptionsInner> options;
 
   @override

@@ -11,10 +11,7 @@ AdminDimensionData _$AdminDimensionDataFromJson(Map<String, dynamic> json) =>
       'AdminDimensionData',
       json,
       ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['human_key', 'key', 'value'],
-        );
+        $checkKeys(json, requiredKeys: const ['human_key', 'key', 'value']);
         final val = AdminDimensionData(
           humanKey: $checkedConvert('human_key', (v) => v as String),
           key: $checkedConvert('key', (v) => v as String),
@@ -27,11 +24,20 @@ AdminDimensionData _$AdminDimensionDataFromJson(Map<String, dynamic> json) =>
       fieldKeyMap: const {'humanKey': 'human_key', 'humanValue': 'human_value'},
     );
 
-Map<String, dynamic> _$AdminDimensionDataToJson(AdminDimensionData instance) =>
-    <String, dynamic>{
-      'human_key': instance.humanKey,
-      'key': instance.key,
-      'value': instance.value,
-      if (instance.humanValue case final value?) 'human_value': value,
-      if (instance.unit case final value?) 'unit': value,
-    };
+Map<String, dynamic> _$AdminDimensionDataToJson(AdminDimensionData instance) {
+  final val = <String, dynamic>{
+    'human_key': instance.humanKey,
+    'key': instance.key,
+    'value': instance.value,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('human_value', instance.humanValue);
+  writeNotNull('unit', instance.unit);
+  return val;
+}

@@ -7,35 +7,32 @@ part of 'create_list_request.dart';
 // **************************************************************************
 
 CreateListRequest _$CreateListRequestFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'CreateListRequest',
-      json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['title'],
-        );
-        final val = CreateListRequest(
-          title: $checkedConvert('title', (v) => v as String),
-          exclusive: $checkedConvert('exclusive', (v) => v as bool?),
-          repliesPolicy: $checkedConvert(
-              'replies_policy',
-              (v) =>
-                  $enumDecodeNullable(_$PolicyEnumEnumMap, v) ??
-                  PolicyEnum.list),
-        );
-        return val;
-      },
-      fieldKeyMap: const {'repliesPolicy': 'replies_policy'},
-    );
+    $checkedCreate('CreateListRequest', json, ($checkedConvert) {
+      $checkKeys(json, requiredKeys: const ['title']);
+      final val = CreateListRequest(
+        title: $checkedConvert('title', (v) => v as String),
+        exclusive: $checkedConvert('exclusive', (v) => v as bool?),
+        repliesPolicy: $checkedConvert(
+          'replies_policy',
+          (v) => $enumDecodeNullable(_$PolicyEnumEnumMap, v) ?? PolicyEnum.list,
+        ),
+      );
+      return val;
+    }, fieldKeyMap: const {'repliesPolicy': 'replies_policy'});
 
-Map<String, dynamic> _$CreateListRequestToJson(CreateListRequest instance) =>
-    <String, dynamic>{
-      'title': instance.title,
-      if (instance.exclusive case final value?) 'exclusive': value,
-      if (_$PolicyEnumEnumMap[instance.repliesPolicy] case final value?)
-        'replies_policy': value,
-    };
+Map<String, dynamic> _$CreateListRequestToJson(CreateListRequest instance) {
+  final val = <String, dynamic>{'title': instance.title};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('exclusive', instance.exclusive);
+  writeNotNull('replies_policy', _$PolicyEnumEnumMap[instance.repliesPolicy]);
+  return val;
+}
 
 const _$PolicyEnumEnumMap = {
   PolicyEnum.followed: 'followed',

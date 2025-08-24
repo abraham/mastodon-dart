@@ -8,8 +8,14 @@ void main() {
 
   group(Filter, () {
     // The contexts in which the filter should be applied.
-    // List<FilterContext> context
+    // List<String> context
     test('to test the property `context`', () async {
+      // TODO
+    });
+
+    // When the filter should no longer be applied.
+    // DateTime expiresAt
+    test('to test the property `expiresAt`', () async {
       // TODO
     });
 
@@ -25,18 +31,6 @@ void main() {
       // TODO
     });
 
-    // A title given by the user to name the filter.
-    // String title
-    test('to test the property `title`', () async {
-      // TODO
-    });
-
-    // When the filter should no longer be applied.
-    // DateTime expiresAt
-    test('to test the property `expiresAt`', () async {
-      // TODO
-    });
-
     // The keywords grouped under this filter. Omitted when part of a [FilterResult]({{< relref \"entities/FilterResult\" >}}).
     // List<FilterKeyword> keywords
     test('to test the property `keywords`', () async {
@@ -46,6 +40,12 @@ void main() {
     // The statuses grouped under this filter. Omitted when part of a [FilterResult]({{< relref \"entities/FilterResult\" >}}).
     // List<FilterStatus> statuses
     test('to test the property `statuses`', () async {
+      // TODO
+    });
+
+    // A title given by the user to name the filter.
+    // String title
+    test('to test the property `title`', () async {
       // TODO
     });
   });

@@ -4,7 +4,7 @@ import 'package:mastodon/mastodon.dart';
 // tests for DeleteDomainBlocksRequest
 void main() {
   final DeleteDomainBlocksRequest?
-      instance = /* DeleteDomainBlocksRequest(...) */ null;
+  instance = /* DeleteDomainBlocksRequest(...) */ null;
   // TODO add properties to the entity
 
   group(DeleteDomainBlocksRequest, () {

@@ -4,7 +4,7 @@ import 'package:mastodon/mastodon.dart';
 // tests for RelationshipSeveranceEvent
 void main() {
   final RelationshipSeveranceEvent?
-      instance = /* RelationshipSeveranceEvent(...) */ null;
+  instance = /* RelationshipSeveranceEvent(...) */ null;
   // TODO add properties to the entity
 
   group(RelationshipSeveranceEvent, () {

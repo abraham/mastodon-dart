@@ -17,32 +17,22 @@ class PatchAccountsUpdateCredentialsRequestSource {
   /// Returns a new [PatchAccountsUpdateCredentialsRequestSource] instance.
   PatchAccountsUpdateCredentialsRequestSource({
     this.privacy,
+
     this.sensitive,
+
     this.language,
   });
 
   /// Default post privacy for authored statuses. Can be `public`, `unlisted`, or `private`.
-  @JsonKey(
-    name: r'privacy',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'privacy', required: false, includeIfNull: false)
   final PatchAccountsUpdateCredentialsRequestSourcePrivacyEnum? privacy;
 
   /// Whether to mark authored statuses as sensitive by default.
-  @JsonKey(
-    name: r'sensitive',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'sensitive', required: false, includeIfNull: false)
   final bool? sensitive;
 
   /// Default language to use for authored statuses (ISO 639-1)
-  @JsonKey(
-    name: r'language',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'language', required: false, includeIfNull: false)
   final String? language;
 
   @override
@@ -57,8 +47,8 @@ class PatchAccountsUpdateCredentialsRequestSource {
   int get hashCode => privacy.hashCode + sensitive.hashCode + language.hashCode;
 
   factory PatchAccountsUpdateCredentialsRequestSource.fromJson(
-          Map<String, dynamic> json) =>
-      _$PatchAccountsUpdateCredentialsRequestSourceFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$PatchAccountsUpdateCredentialsRequestSourceFromJson(json);
 
   Map<String, dynamic> toJson() =>
       _$PatchAccountsUpdateCredentialsRequestSourceToJson(this);

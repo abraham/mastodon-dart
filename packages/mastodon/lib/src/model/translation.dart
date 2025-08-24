@@ -18,60 +18,45 @@ part 'translation.g.dart';
 class Translation {
   /// Returns a new [Translation] instance.
   Translation({
-    required this.content,
-    required this.detectedSourceLanguage,
-    required this.mediaAttachments,
-    required this.provider,
-    required this.spoilerText,
+    this.content,
+
+    this.detectedSourceLanguage,
+
+    this.mediaAttachments,
+
     this.poll,
+
+    this.provider,
+
+    this.spoilerText,
   });
 
   /// HTML-encoded translated content of the status.
-  @JsonKey(
-    name: r'content',
-    required: true,
-    includeIfNull: false,
-  )
-  final String content;
+  @JsonKey(name: r'content', required: false, includeIfNull: false)
+  final String? content;
 
   /// The language of the source text, as auto-detected by the machine translation provider.
   @JsonKey(
     name: r'detected_source_language',
-    required: true,
-    includeIfNull: false,
-  )
-  final String detectedSourceLanguage;
-
-  /// The translated media descriptions of the status.
-  @JsonKey(
-    name: r'media_attachments',
-    required: true,
-    includeIfNull: false,
-  )
-  final List<TranslationAttachment> mediaAttachments;
-
-  /// The service that provided the machine translation.
-  @JsonKey(
-    name: r'provider',
-    required: true,
-    includeIfNull: false,
-  )
-  final String provider;
-
-  /// The translated spoiler warning of the status.
-  @JsonKey(
-    name: r'spoiler_text',
-    required: true,
-    includeIfNull: false,
-  )
-  final String spoilerText;
-
-  @JsonKey(
-    name: r'poll',
     required: false,
     includeIfNull: false,
   )
+  final String? detectedSourceLanguage;
+
+  /// The translated media descriptions of the status.
+  @JsonKey(name: r'media_attachments', required: false, includeIfNull: false)
+  final List<TranslationAttachment>? mediaAttachments;
+
+  @JsonKey(name: r'poll', required: false, includeIfNull: false)
   final TranslationPoll? poll;
+
+  /// The service that provided the machine translation.
+  @JsonKey(name: r'provider', required: false, includeIfNull: false)
+  final String? provider;
+
+  /// The translated spoiler warning of the status.
+  @JsonKey(name: r'spoiler_text', required: false, includeIfNull: false)
+  final String? spoilerText;
 
   @override
   bool operator ==(Object other) =>
@@ -80,18 +65,18 @@ class Translation {
           other.content == content &&
           other.detectedSourceLanguage == detectedSourceLanguage &&
           other.mediaAttachments == mediaAttachments &&
+          other.poll == poll &&
           other.provider == provider &&
-          other.spoilerText == spoilerText &&
-          other.poll == poll;
+          other.spoilerText == spoilerText;
 
   @override
   int get hashCode =>
-      content.hashCode +
-      detectedSourceLanguage.hashCode +
-      mediaAttachments.hashCode +
-      provider.hashCode +
-      spoilerText.hashCode +
-      (poll == null ? 0 : poll.hashCode);
+      (content == null ? 0 : content.hashCode) +
+      (detectedSourceLanguage == null ? 0 : detectedSourceLanguage.hashCode) +
+      (mediaAttachments == null ? 0 : mediaAttachments.hashCode) +
+      (poll == null ? 0 : poll.hashCode) +
+      (provider == null ? 0 : provider.hashCode) +
+      (spoilerText == null ? 0 : spoilerText.hashCode);
 
   factory Translation.fromJson(Map<String, dynamic> json) =>
       _$TranslationFromJson(json);

@@ -16,16 +16,10 @@ part 'v1_instance_urls.g.dart';
 )
 class V1InstanceUrls {
   /// Returns a new [V1InstanceUrls] instance.
-  V1InstanceUrls({
-    required this.streamingApi,
-  });
+  V1InstanceUrls({required this.streamingApi});
 
   /// The Websockets URL for connecting to the streaming API.
-  @JsonKey(
-    name: r'streaming_api',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'streaming_api', required: true, includeIfNull: false)
   final Uri streamingApi;
 
   @override

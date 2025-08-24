@@ -8,23 +8,23 @@ void main() {
   // TODO add properties to the entity
 
   group(V1InstanceConfiguration, () {
-    // V1InstanceConfigurationAccounts accounts
-    test('to test the property `accounts`', () async {
-      // TODO
-    });
-
     // V1InstanceConfigurationMediaAttachments mediaAttachments
     test('to test the property `mediaAttachments`', () async {
       // TODO
     });
 
-    // InstanceConfigurationPolls polls
+    // V1InstanceConfigurationPolls polls
     test('to test the property `polls`', () async {
       // TODO
     });
 
-    // InstanceConfigurationStatuses statuses
+    // V1InstanceConfigurationStatuses statuses
     test('to test the property `statuses`', () async {
+      // TODO
+    });
+
+    // V1InstanceConfigurationAccounts accounts
+    test('to test the property `accounts`', () async {
       // TODO
     });
   });

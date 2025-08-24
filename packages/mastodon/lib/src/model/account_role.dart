@@ -15,35 +15,19 @@ part 'account_role.g.dart';
 )
 class AccountRole {
   /// Returns a new [AccountRole] instance.
-  AccountRole({
-    required this.color,
-    required this.id,
-    required this.name,
-  });
+  AccountRole({this.color, this.id, this.name});
 
   /// The hex code assigned to this role. If no hex code is assigned, the string will be empty.
-  @JsonKey(
-    name: r'color',
-    required: true,
-    includeIfNull: false,
-  )
-  final String color;
+  @JsonKey(name: r'color', required: false, includeIfNull: false)
+  final String? color;
 
   /// The ID of the Role in the database.
-  @JsonKey(
-    name: r'id',
-    required: true,
-    includeIfNull: false,
-  )
-  final String id;
+  @JsonKey(name: r'id', required: false, includeIfNull: false)
+  final String? id;
 
   /// The name of the role.
-  @JsonKey(
-    name: r'name',
-    required: true,
-    includeIfNull: false,
-  )
-  final String name;
+  @JsonKey(name: r'name', required: false, includeIfNull: false)
+  final String? name;
 
   @override
   bool operator ==(Object other) =>
@@ -54,7 +38,10 @@ class AccountRole {
           other.name == name;
 
   @override
-  int get hashCode => color.hashCode + id.hashCode + name.hashCode;
+  int get hashCode =>
+      (color == null ? 0 : color.hashCode) +
+      (id == null ? 0 : id.hashCode) +
+      (name == null ? 0 : name.hashCode);
 
   factory AccountRole.fromJson(Map<String, dynamic> json) =>
       _$AccountRoleFromJson(json);

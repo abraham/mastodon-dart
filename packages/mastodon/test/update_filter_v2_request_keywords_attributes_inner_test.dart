@@ -4,7 +4,7 @@ import 'package:mastodon/mastodon.dart';
 // tests for UpdateFilterV2RequestKeywordsAttributesInner
 void main() {
   final UpdateFilterV2RequestKeywordsAttributesInner?
-      instance = /* UpdateFilterV2RequestKeywordsAttributesInner(...) */ null;
+  instance = /* UpdateFilterV2RequestKeywordsAttributesInner(...) */ null;
   // TODO add properties to the entity
 
   group(UpdateFilterV2RequestKeywordsAttributesInner, () {

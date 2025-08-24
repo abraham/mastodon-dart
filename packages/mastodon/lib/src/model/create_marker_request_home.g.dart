@@ -7,21 +7,25 @@ part of 'create_marker_request_home.dart';
 // **************************************************************************
 
 CreateMarkerRequestHome _$CreateMarkerRequestHomeFromJson(
-        Map<String, dynamic> json) =>
-    $checkedCreate(
-      'CreateMarkerRequestHome',
-      json,
-      ($checkedConvert) {
-        final val = CreateMarkerRequestHome(
-          lastReadId: $checkedConvert('last_read_id', (v) => v as String?),
-        );
-        return val;
-      },
-      fieldKeyMap: const {'lastReadId': 'last_read_id'},
-    );
+  Map<String, dynamic> json,
+) => $checkedCreate('CreateMarkerRequestHome', json, ($checkedConvert) {
+  final val = CreateMarkerRequestHome(
+    lastReadId: $checkedConvert('last_read_id', (v) => v as String?),
+  );
+  return val;
+}, fieldKeyMap: const {'lastReadId': 'last_read_id'});
 
 Map<String, dynamic> _$CreateMarkerRequestHomeToJson(
-        CreateMarkerRequestHome instance) =>
-    <String, dynamic>{
-      if (instance.lastReadId case final value?) 'last_read_id': value,
-    };
+  CreateMarkerRequestHome instance,
+) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('last_read_id', instance.lastReadId);
+  return val;
+}

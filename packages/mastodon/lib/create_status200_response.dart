@@ -1,9 +1,6 @@
 import 'package:mastodon/mastodon.dart';
 
-enum CreateStatus200ResponseType {
-  status,
-  scheduledStatus,
-}
+enum CreateStatus200ResponseType { status, scheduledStatus }
 
 class CreateStatus200Response {
   final CreateStatus200ResponseType statusType;

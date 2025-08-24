@@ -17,32 +17,22 @@ class StatusSource {
   /// Returns a new [StatusSource] instance.
   StatusSource({
     required this.id,
+
     required this.spoilerText,
+
     required this.text,
   });
 
   /// ID of the status in the database.
-  @JsonKey(
-    name: r'id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
   /// The plain text used to compose the status's subject or content warning.
-  @JsonKey(
-    name: r'spoiler_text',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'spoiler_text', required: true, includeIfNull: false)
   final String spoilerText;
 
   /// The plain text used to compose the status.
-  @JsonKey(
-    name: r'text',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'text', required: true, includeIfNull: false)
   final String text;
 
   @override

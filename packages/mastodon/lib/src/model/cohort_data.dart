@@ -15,34 +15,18 @@ part 'cohort_data.g.dart';
 )
 class CohortData {
   /// Returns a new [CohortData] instance.
-  CohortData({
-    required this.date,
-    required this.rate,
-    required this.value,
-  });
+  CohortData({required this.date, required this.rate, required this.value});
 
   /// The timestamp for the start of the bucket, at midnight.
-  @JsonKey(
-    name: r'date',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'date', required: true, includeIfNull: false)
   final DateTime date;
 
   /// The percentage rate of users who registered in the specified `period` and were active for the given `date` bucket.
-  @JsonKey(
-    name: r'rate',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'rate', required: true, includeIfNull: false)
   final num rate;
 
   /// How many users registered in the specified `period` and were active for the given `date` bucket.
-  @JsonKey(
-    name: r'value',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'value', required: true, includeIfNull: false)
   final String value;
 
   @override

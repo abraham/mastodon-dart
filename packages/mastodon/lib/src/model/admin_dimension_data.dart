@@ -17,50 +17,34 @@ class AdminDimensionData {
   /// Returns a new [AdminDimensionData] instance.
   AdminDimensionData({
     required this.humanKey,
+
     required this.key,
+
     required this.value,
+
     this.humanValue,
+
     this.unit,
   });
 
   /// A human-readable key for this data item.
-  @JsonKey(
-    name: r'human_key',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'human_key', required: true, includeIfNull: false)
   final String humanKey;
 
   /// The unique keystring for this data item.
-  @JsonKey(
-    name: r'key',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'key', required: true, includeIfNull: false)
   final String key;
 
   /// The value for this data item.
-  @JsonKey(
-    name: r'value',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'value', required: true, includeIfNull: false)
   final String value;
 
   /// A human-readable formatted value for this data item.
-  @JsonKey(
-    name: r'human_value',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'human_value', required: false, includeIfNull: false)
   final String? humanValue;
 
   /// The units associated with this data item's value, if applicable.
-  @JsonKey(
-    name: r'unit',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'unit', required: false, includeIfNull: false)
   final String? unit;
 
   @override

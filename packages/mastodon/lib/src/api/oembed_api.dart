@@ -50,13 +50,8 @@ class OembedApi {
     final _path = r'/api/oembed';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -82,8 +77,10 @@ class OembedApi {
       _responseData = rawData == null
           ? null
           : deserialize<OEmbedResponse, OEmbedResponse>(
-              rawData, 'OEmbedResponse',
-              growable: true);
+              rawData,
+              'OEmbedResponse',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

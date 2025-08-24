@@ -16,15 +16,9 @@ part 'put_push_subscription_request_data.g.dart';
 )
 class PutPushSubscriptionRequestData {
   /// Returns a new [PutPushSubscriptionRequestData] instance.
-  PutPushSubscriptionRequestData({
-    this.alerts,
-  });
+  PutPushSubscriptionRequestData({this.alerts});
 
-  @JsonKey(
-    name: r'alerts',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'alerts', required: false, includeIfNull: false)
   final PutPushSubscriptionRequestDataAlerts? alerts;
 
   @override

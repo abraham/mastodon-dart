@@ -11,44 +11,51 @@ CreateReportRequest _$CreateReportRequestFromJson(Map<String, dynamic> json) =>
       'CreateReportRequest',
       json,
       ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['account_id'],
-        );
+        $checkKeys(json, requiredKeys: const ['account_id']);
         final val = CreateReportRequest(
           accountId: $checkedConvert('account_id', (v) => v as String),
           category: $checkedConvert(
-              'category',
-              (v) =>
-                  $enumDecodeNullable(_$CategoryEnumEnumMap, v) ??
-                  CategoryEnum.other),
+            'category',
+            (v) =>
+                $enumDecodeNullable(_$CategoryEnumEnumMap, v) ??
+                CategoryEnum.other,
+          ),
           comment: $checkedConvert('comment', (v) => v as String?),
           forward: $checkedConvert('forward', (v) => v as bool? ?? false),
-          ruleIds: $checkedConvert('rule_ids',
-              (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
-          statusIds: $checkedConvert('status_ids',
-              (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
+          ruleIds: $checkedConvert(
+            'rule_ids',
+            (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+          ),
+          statusIds: $checkedConvert(
+            'status_ids',
+            (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+          ),
         );
         return val;
       },
       fieldKeyMap: const {
         'accountId': 'account_id',
         'ruleIds': 'rule_ids',
-        'statusIds': 'status_ids'
+        'statusIds': 'status_ids',
       },
     );
 
-Map<String, dynamic> _$CreateReportRequestToJson(
-        CreateReportRequest instance) =>
-    <String, dynamic>{
-      'account_id': instance.accountId,
-      if (_$CategoryEnumEnumMap[instance.category] case final value?)
-        'category': value,
-      if (instance.comment case final value?) 'comment': value,
-      if (instance.forward case final value?) 'forward': value,
-      if (instance.ruleIds case final value?) 'rule_ids': value,
-      if (instance.statusIds case final value?) 'status_ids': value,
-    };
+Map<String, dynamic> _$CreateReportRequestToJson(CreateReportRequest instance) {
+  final val = <String, dynamic>{'account_id': instance.accountId};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('category', _$CategoryEnumEnumMap[instance.category]);
+  writeNotNull('comment', instance.comment);
+  writeNotNull('forward', instance.forward);
+  writeNotNull('rule_ids', instance.ruleIds);
+  writeNotNull('status_ids', instance.statusIds);
+  return val;
+}
 
 const _$CategoryEnumEnumMap = {
   CategoryEnum.legal: 'legal',

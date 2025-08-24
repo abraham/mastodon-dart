@@ -22,122 +22,82 @@ class Announcement {
   /// Returns a new [Announcement] instance.
   Announcement({
     required this.allDay,
+
     required this.content,
+
     required this.emojis,
+
     required this.id,
+
     required this.mentions,
+
     required this.publishedAt,
+
     required this.reactions,
+
     required this.statuses,
+
     required this.tags,
+
     required this.updatedAt,
+
     this.endsAt,
+
     this.read,
+
     this.startsAt,
   });
 
   /// Whether the announcement should start and end on dates only instead of datetimes. Will be false if there is no `starts_at` or `ends_at` time.
-  @JsonKey(
-    name: r'all_day',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'all_day', required: true, includeIfNull: false)
   final bool allDay;
 
   /// The text of the announcement.
-  @JsonKey(
-    name: r'content',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'content', required: true, includeIfNull: false)
   final String content;
 
   /// Custom emoji used in the announcement text.
-  @JsonKey(
-    name: r'emojis',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'emojis', required: true, includeIfNull: false)
   final List<CustomEmoji> emojis;
 
   /// The ID of the announcement in the database.
-  @JsonKey(
-    name: r'id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
   /// Accounts mentioned in the announcement text.
-  @JsonKey(
-    name: r'mentions',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'mentions', required: true, includeIfNull: false)
   final List<AnnouncementAccount> mentions;
 
   /// When the announcement was published.
-  @JsonKey(
-    name: r'published_at',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'published_at', required: true, includeIfNull: false)
   final DateTime publishedAt;
 
   /// Emoji reactions attached to the announcement.
-  @JsonKey(
-    name: r'reactions',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'reactions', required: true, includeIfNull: false)
   final List<Reaction> reactions;
 
   /// Statuses linked in the announcement text.
-  @JsonKey(
-    name: r'statuses',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'statuses', required: true, includeIfNull: false)
   final List<AnnouncementStatus> statuses;
 
   /// Tags linked in the announcement text.
-  @JsonKey(
-    name: r'tags',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'tags', required: true, includeIfNull: false)
   final List<StatusTag> tags;
 
   /// When the announcement was last updated.
-  @JsonKey(
-    name: r'updated_at',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'updated_at', required: true, includeIfNull: false)
   final DateTime updatedAt;
 
   /// When the announcement will end.
-  @JsonKey(
-    name: r'ends_at',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'ends_at', required: false, includeIfNull: false)
   final DateTime? endsAt;
 
   /// Whether the announcement has been read by the current user.
-  @JsonKey(
-    name: r'read',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'read', required: false, includeIfNull: false)
   final bool? read;
 
   /// When the announcement will start.
-  @JsonKey(
-    name: r'starts_at',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'starts_at', required: false, includeIfNull: false)
   final DateTime? startsAt;
 
   @override

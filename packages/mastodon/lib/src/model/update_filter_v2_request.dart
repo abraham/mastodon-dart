@@ -19,50 +19,34 @@ class UpdateFilterV2Request {
   /// Returns a new [UpdateFilterV2Request] instance.
   UpdateFilterV2Request({
     this.context,
+
     this.expiresIn,
+
     this.filterAction,
+
     this.keywordsAttributes,
+
     this.title,
   });
 
   /// Where the filter should be applied. Specify at least one of `home`, `notifications`, `public`, `thread`, `account`.
-  @JsonKey(
-    name: r'context',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'context', required: false, includeIfNull: false)
   final List<FilterContext>? context;
 
   /// How many seconds from now should the filter expire?
-  @JsonKey(
-    name: r'expires_in',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'expires_in', required: false, includeIfNull: false)
   final int? expiresIn;
 
   /// The policy to be applied when the filter is matched. Specify `warn`, `hide` or `blur`.
-  @JsonKey(
-    name: r'filter_action',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'filter_action', required: false, includeIfNull: false)
   final String? filterAction;
 
   /// Array of objects with properties: keyword, whole_word, id, _destroy
-  @JsonKey(
-    name: r'keywords_attributes',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'keywords_attributes', required: false, includeIfNull: false)
   final List<UpdateFilterV2RequestKeywordsAttributesInner>? keywordsAttributes;
 
   /// The name of the filter group.
-  @JsonKey(
-    name: r'title',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'title', required: false, includeIfNull: false)
   final String? title;
 
   @override

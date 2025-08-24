@@ -7,24 +7,14 @@ part of 'announcement_status.dart';
 // **************************************************************************
 
 AnnouncementStatus _$AnnouncementStatusFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'AnnouncementStatus',
-      json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['id', 'url'],
-        );
-        final val = AnnouncementStatus(
-          id: $checkedConvert('id', (v) => v as String),
-          url: $checkedConvert('url', (v) => Uri.parse(v as String)),
-        );
-        return val;
-      },
-    );
+    $checkedCreate('AnnouncementStatus', json, ($checkedConvert) {
+      $checkKeys(json, requiredKeys: const ['id', 'url']);
+      final val = AnnouncementStatus(
+        id: $checkedConvert('id', (v) => v as String),
+        url: $checkedConvert('url', (v) => Uri.parse(v as String)),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$AnnouncementStatusToJson(AnnouncementStatus instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'url': instance.url.toString(),
-    };
+    <String, dynamic>{'id': instance.id, 'url': instance.url.toString()};

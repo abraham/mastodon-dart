@@ -15,26 +15,15 @@ part 'admin_canonical_email_block.g.dart';
 )
 class AdminCanonicalEmailBlock {
   /// Returns a new [AdminCanonicalEmailBlock] instance.
-  AdminCanonicalEmailBlock({
-    required this.canonicalEmailHash,
-    required this.id,
-  });
+  AdminCanonicalEmailBlock({this.canonicalEmailHash, this.id});
 
   /// The SHA256 hash of the canonical email address.
-  @JsonKey(
-    name: r'canonical_email_hash',
-    required: true,
-    includeIfNull: false,
-  )
-  final String canonicalEmailHash;
+  @JsonKey(name: r'canonical_email_hash', required: false, includeIfNull: false)
+  final String? canonicalEmailHash;
 
   /// The ID of the email block in the database.
-  @JsonKey(
-    name: r'id',
-    required: true,
-    includeIfNull: false,
-  )
-  final String id;
+  @JsonKey(name: r'id', required: false, includeIfNull: false)
+  final String? id;
 
   @override
   bool operator ==(Object other) =>
@@ -44,7 +33,9 @@ class AdminCanonicalEmailBlock {
           other.id == id;
 
   @override
-  int get hashCode => canonicalEmailHash.hashCode + id.hashCode;
+  int get hashCode =>
+      (canonicalEmailHash == null ? 0 : canonicalEmailHash.hashCode) +
+      (id == null ? 0 : id.hashCode);
 
   factory AdminCanonicalEmailBlock.fromJson(Map<String, dynamic> json) =>
       _$AdminCanonicalEmailBlockFromJson(json);

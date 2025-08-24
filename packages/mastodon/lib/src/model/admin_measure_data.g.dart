@@ -7,21 +7,14 @@ part of 'admin_measure_data.dart';
 // **************************************************************************
 
 AdminMeasureData _$AdminMeasureDataFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'AdminMeasureData',
-      json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['date', 'value'],
-        );
-        final val = AdminMeasureData(
-          date: $checkedConvert('date', (v) => DateTime.parse(v as String)),
-          value: $checkedConvert('value', (v) => v as String),
-        );
-        return val;
-      },
-    );
+    $checkedCreate('AdminMeasureData', json, ($checkedConvert) {
+      $checkKeys(json, requiredKeys: const ['date', 'value']);
+      final val = AdminMeasureData(
+        date: $checkedConvert('date', (v) => DateTime.parse(v as String)),
+        value: $checkedConvert('value', (v) => v as String),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$AdminMeasureDataToJson(AdminMeasureData instance) =>
     <String, dynamic>{

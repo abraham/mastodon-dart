@@ -17,23 +17,12 @@ part 'create_push_subscription_request.g.dart';
 )
 class CreatePushSubscriptionRequest {
   /// Returns a new [CreatePushSubscriptionRequest] instance.
-  CreatePushSubscriptionRequest({
-    required this.subscription,
-    this.data,
-  });
+  CreatePushSubscriptionRequest({required this.subscription, this.data});
 
-  @JsonKey(
-    name: r'subscription',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'subscription', required: true, includeIfNull: false)
   final CreatePushSubscriptionRequestSubscription subscription;
 
-  @JsonKey(
-    name: r'data',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'data', required: false, includeIfNull: false)
   final CreatePushSubscriptionRequestData? data;
 
   @override

@@ -20,43 +20,29 @@ part 'grouped_notifications_results.g.dart';
 class GroupedNotificationsResults {
   /// Returns a new [GroupedNotificationsResults] instance.
   GroupedNotificationsResults({
-    required this.accounts,
-    required this.notificationGroups,
-    required this.statuses,
+    this.accounts,
+
+    this.notificationGroups,
+
     this.partialAccounts,
+
+    this.statuses,
   });
 
   /// Accounts referenced by grouped notifications.
-  @JsonKey(
-    name: r'accounts',
-    required: true,
-    includeIfNull: false,
-  )
-  final List<Account> accounts;
+  @JsonKey(name: r'accounts', required: false, includeIfNull: false)
+  final List<Account>? accounts;
 
-  /// The grouped notifications themselves.
-  @JsonKey(
-    name: r'notification_groups',
-    required: true,
-    includeIfNull: false,
-  )
-  final NotificationGroup notificationGroups;
-
-  /// Statuses referenced by grouped notifications.
-  @JsonKey(
-    name: r'statuses',
-    required: true,
-    includeIfNull: false,
-  )
-  final List<Status> statuses;
+  @JsonKey(name: r'notification_groups', required: false, includeIfNull: false)
+  final NotificationGroup? notificationGroups;
 
   /// Partial accounts referenced by grouped notifications. Those are only returned when requesting grouped notifications with `expand_accounts=partial_avatars`.
-  @JsonKey(
-    name: r'partial_accounts',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'partial_accounts', required: false, includeIfNull: false)
   final List<PartialAccountWithAvatar>? partialAccounts;
+
+  /// Statuses referenced by grouped notifications.
+  @JsonKey(name: r'statuses', required: false, includeIfNull: false)
+  final List<Status>? statuses;
 
   @override
   bool operator ==(Object other) =>
@@ -64,15 +50,15 @@ class GroupedNotificationsResults {
       other is GroupedNotificationsResults &&
           other.accounts == accounts &&
           other.notificationGroups == notificationGroups &&
-          other.statuses == statuses &&
-          other.partialAccounts == partialAccounts;
+          other.partialAccounts == partialAccounts &&
+          other.statuses == statuses;
 
   @override
   int get hashCode =>
-      accounts.hashCode +
-      notificationGroups.hashCode +
-      statuses.hashCode +
-      (partialAccounts == null ? 0 : partialAccounts.hashCode);
+      (accounts == null ? 0 : accounts.hashCode) +
+      (notificationGroups == null ? 0 : notificationGroups.hashCode) +
+      (partialAccounts == null ? 0 : partialAccounts.hashCode) +
+      (statuses == null ? 0 : statuses.hashCode);
 
   factory GroupedNotificationsResults.fromJson(Map<String, dynamic> json) =>
       _$GroupedNotificationsResultsFromJson(json);

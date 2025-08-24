@@ -6,33 +6,34 @@ part of 'quote.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Quote _$QuoteFromJson(Map<String, dynamic> json) => $checkedCreate(
-      'Quote',
-      json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['state'],
-        );
-        final val = Quote(
-          state: $checkedConvert(
-              'state', (v) => $enumDecode(_$StateEnumEnumMap, v)),
-          quotedStatus: $checkedConvert(
-              'quoted_status',
-              (v) => v == null
-                  ? null
-                  : Status.fromJson(v as Map<String, dynamic>)),
-        );
-        return val;
-      },
-      fieldKeyMap: const {'quotedStatus': 'quoted_status'},
-    );
+Quote _$QuoteFromJson(Map<String, dynamic> json) =>
+    $checkedCreate('Quote', json, ($checkedConvert) {
+      final val = Quote(
+        quotedStatus: $checkedConvert(
+          'quoted_status',
+          (v) => v == null ? null : Status.fromJson(v as Map<String, dynamic>),
+        ),
+        state: $checkedConvert(
+          'state',
+          (v) => $enumDecodeNullable(_$StateEnumEnumMap, v),
+        ),
+      );
+      return val;
+    }, fieldKeyMap: const {'quotedStatus': 'quoted_status'});
 
-Map<String, dynamic> _$QuoteToJson(Quote instance) => <String, dynamic>{
-      'state': _$StateEnumEnumMap[instance.state]!,
-      if (instance.quotedStatus?.toJson() case final value?)
-        'quoted_status': value,
-    };
+Map<String, dynamic> _$QuoteToJson(Quote instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('quoted_status', instance.quotedStatus?.toJson());
+  writeNotNull('state', _$StateEnumEnumMap[instance.state]);
+  return val;
+}
 
 const _$StateEnumEnumMap = {
   StateEnum.accepted: 'accepted',

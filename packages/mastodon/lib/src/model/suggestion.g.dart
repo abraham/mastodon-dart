@@ -6,34 +6,39 @@ part of 'suggestion.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Suggestion _$SuggestionFromJson(Map<String, dynamic> json) => $checkedCreate(
-      'Suggestion',
-      json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['account', 'sources'],
-        );
-        final val = Suggestion(
-          account: $checkedConvert(
-              'account', (v) => Account.fromJson(v as Map<String, dynamic>)),
-          sources: $checkedConvert(
-              'sources',
-              (v) => (v as List<dynamic>)
-                  .map((e) => $enumDecode(_$SuggestionSourcesEnumEnumMap, e))
-                  .toList()),
-        );
-        return val;
-      },
-    );
+Suggestion _$SuggestionFromJson(Map<String, dynamic> json) =>
+    $checkedCreate('Suggestion', json, ($checkedConvert) {
+      $checkKeys(json, requiredKeys: const ['account']);
+      final val = Suggestion(
+        account: $checkedConvert(
+          'account',
+          (v) => Account.fromJson(v as Map<String, dynamic>),
+        ),
+        sources: $checkedConvert(
+          'sources',
+          (v) => (v as List<dynamic>?)
+              ?.map((e) => $enumDecode(_$SuggestionSourcesEnumEnumMap, e))
+              .toList(),
+        ),
+      );
+      return val;
+    });
 
-Map<String, dynamic> _$SuggestionToJson(Suggestion instance) =>
-    <String, dynamic>{
-      'account': instance.account.toJson(),
-      'sources': instance.sources
-          .map((e) => _$SuggestionSourcesEnumEnumMap[e]!)
-          .toList(),
-    };
+Map<String, dynamic> _$SuggestionToJson(Suggestion instance) {
+  final val = <String, dynamic>{'account': instance.account.toJson()};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull(
+    'sources',
+    instance.sources?.map((e) => _$SuggestionSourcesEnumEnumMap[e]!).toList(),
+  );
+  return val;
+}
 
 const _$SuggestionSourcesEnumEnumMap = {
   SuggestionSourcesEnum.featured: 'featured',

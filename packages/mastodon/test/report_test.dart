@@ -13,6 +13,18 @@ void main() {
       // TODO
     });
 
+    // The ID of the report in the database.
+    // String id
+    test('to test the property `id`', () async {
+      // TODO
+    });
+
+    // When an action was taken against the report.
+    // DateTime actionTakenAt
+    test('to test the property `actionTakenAt`', () async {
+      // TODO
+    });
+
     // The generic reason for the report.
     // CategoryEnum category
     test('to test the property `category`', () async {
@@ -37,24 +49,6 @@ void main() {
       // TODO
     });
 
-    // The ID of the report in the database.
-    // String id
-    test('to test the property `id`', () async {
-      // TODO
-    });
-
-    // The account that was reported.
-    // Account targetAccount
-    test('to test the property `targetAccount`', () async {
-      // TODO
-    });
-
-    // When an action was taken against the report.
-    // DateTime actionTakenAt
-    test('to test the property `actionTakenAt`', () async {
-      // TODO
-    });
-
     // IDs of the rules that have been cited as a violation by this report.
     // List<String> ruleIds
     test('to test the property `ruleIds`', () async {
@@ -64,6 +58,11 @@ void main() {
     // IDs of statuses that have been attached to this report for additional context.
     // List<String> statusIds
     test('to test the property `statusIds`', () async {
+      // TODO
+    });
+
+    // Account targetAccount
+    test('to test the property `targetAccount`', () async {
       // TODO
     });
   });

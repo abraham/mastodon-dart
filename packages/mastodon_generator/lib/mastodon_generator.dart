@@ -1,4 +1,4 @@
-// Openapi Generator last run: : 2025-08-11T22:04:18.871878
+// Openapi Generator last run: : 2025-08-23T23:45:06.568762
 import 'package:openapi_generator_annotations/openapi_generator_annotations.dart';
 
 @Openapi(
@@ -17,9 +17,7 @@ import 'package:openapi_generator_annotations/openapi_generator_annotations.dart
   apiPackage: 'mastodon',
   generatorName: Generator.dio,
   runSourceGenOnOutput: true,
-  nameMappings: {
-    'update': 'edit',
-  },
+  nameMappings: {'update': 'edit'},
   typeMappings: {'string+uri': 'Uri'},
   importMappings: {
     'Uri': 'dart:core',

@@ -15,59 +15,38 @@ part 'rule.g.dart';
 )
 class Rule {
   /// Returns a new [Rule] instance.
-  Rule({
-    required this.hint,
-    required this.id,
-    required this.text,
-    this.translations,
-  });
-
-  /// Longer-form description of the rule.
-  @JsonKey(
-    name: r'hint',
-    required: true,
-    includeIfNull: false,
-  )
-  final String hint;
+  Rule({required this.id, required this.text, this.hint, this.translations});
 
   /// An identifier for the rule.
-  @JsonKey(
-    name: r'id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
   /// The rule to be followed.
-  @JsonKey(
-    name: r'text',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'text', required: true, includeIfNull: false)
   final String text;
 
+  /// Longer-form description of the rule.
+  @JsonKey(name: r'hint', required: false, includeIfNull: false)
+  final String? hint;
+
   /// Available translations for this rule's `text` and `hint`, as a Hash where keys are locale codes and values are hashes with `text` and `hint` keys.
-  @JsonKey(
-    name: r'translations',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'translations', required: false, includeIfNull: false)
   final Object? translations;
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is Rule &&
-          other.hint == hint &&
           other.id == id &&
           other.text == text &&
+          other.hint == hint &&
           other.translations == translations;
 
   @override
   int get hashCode =>
-      hint.hashCode +
       id.hashCode +
       text.hashCode +
+      (hint == null ? 0 : hint.hashCode) +
       (translations == null ? 0 : translations.hashCode);
 
   factory Rule.fromJson(Map<String, dynamic> json) => _$RuleFromJson(json);

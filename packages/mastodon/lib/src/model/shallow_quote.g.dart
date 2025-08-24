@@ -7,30 +7,33 @@ part of 'shallow_quote.dart';
 // **************************************************************************
 
 ShallowQuote _$ShallowQuoteFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'ShallowQuote',
-      json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['state'],
-        );
-        final val = ShallowQuote(
-          state: $checkedConvert(
-              'state', (v) => $enumDecode(_$StateEnumEnumMap, v)),
-          quotedStatusId:
-              $checkedConvert('quoted_status_id', (v) => v as String?),
-        );
-        return val;
-      },
-      fieldKeyMap: const {'quotedStatusId': 'quoted_status_id'},
-    );
+    $checkedCreate('ShallowQuote', json, ($checkedConvert) {
+      final val = ShallowQuote(
+        quotedStatusId: $checkedConvert(
+          'quoted_status_id',
+          (v) => v as String?,
+        ),
+        state: $checkedConvert(
+          'state',
+          (v) => $enumDecodeNullable(_$StateEnumEnumMap, v),
+        ),
+      );
+      return val;
+    }, fieldKeyMap: const {'quotedStatusId': 'quoted_status_id'});
 
-Map<String, dynamic> _$ShallowQuoteToJson(ShallowQuote instance) =>
-    <String, dynamic>{
-      'state': _$StateEnumEnumMap[instance.state]!,
-      if (instance.quotedStatusId case final value?) 'quoted_status_id': value,
-    };
+Map<String, dynamic> _$ShallowQuoteToJson(ShallowQuote instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('quoted_status_id', instance.quotedStatusId);
+  writeNotNull('state', _$StateEnumEnumMap[instance.state]);
+  return val;
+}
 
 const _$StateEnumEnumMap = {
   StateEnum.accepted: 'accepted',

@@ -91,12 +91,6 @@ void main() {
       // TODO
     });
 
-    // Whether the account allows indexing by search engines.
-    // bool indexable
-    test('to test the property `indexable`', () async {
-      // TODO
-    });
-
     // Whether the account manually approves follow requests.
     // bool locked
     test('to test the property `locked`', () async {
@@ -109,18 +103,6 @@ void main() {
       // TODO
     });
 
-    // The complete role assigned to the currently authorized user, including permissions and highlighted status.
-    // Role role
-    test('to test the property `role`', () async {
-      // TODO
-    });
-
-    // An array of roles assigned to the user that are publicly visible (highlighted roles only), if the account is local. Will be an empty array if no roles are highlighted or if the account is remote.
-    // List<AccountRole> roles
-    test('to test the property `roles`', () async {
-      // TODO
-    });
-
     // CredentialAccountSource source_
     test('to test the property `source_`', () async {
       // TODO
@@ -129,12 +111,6 @@ void main() {
     // How many statuses are attached to this account.
     // int statusesCount
     test('to test the property `statusesCount`', () async {
-      // TODO
-    });
-
-    // The user's ActivityPub actor identifier (used for federation).
-    // Uri uri
-    test('to test the property `uri`', () async {
       // TODO
     });
 
@@ -153,6 +129,12 @@ void main() {
     // Whether the user hides the contents of their follows and followers collections.
     // bool hideCollections
     test('to test the property `hideCollections`', () async {
+      // TODO
+    });
+
+    // Whether the account allows indexing by search engines.
+    // bool indexable
+    test('to test the property `indexable`', () async {
       // TODO
     });
 
@@ -185,9 +167,26 @@ void main() {
       // TODO
     });
 
+    // Role role
+    test('to test the property `role`', () async {
+      // TODO
+    });
+
+    // An array of roles assigned to the user that are publicly visible (highlighted roles only), if the account is local. Will be an empty array if no roles are highlighted or if the account is remote.
+    // List<AccountRole> roles
+    test('to test the property `roles`', () async {
+      // TODO
+    });
+
     // An extra attribute returned only when an account is suspended.
     // bool suspended
     test('to test the property `suspended`', () async {
+      // TODO
+    });
+
+    // The user's ActivityPub actor identifier (used for federation).
+    // Uri uri
+    test('to test the property `uri`', () async {
       // TODO
     });
 

@@ -18,9 +18,13 @@ class Preferences {
   /// Returns a new [Preferences] instance.
   Preferences({
     required this.postingColonDefaultColonSensitive,
+
     required this.postingColonDefaultColonVisibility,
+
     required this.readingColonExpandColonMedia,
+
     required this.readingColonExpandColonSpoilers,
+
     this.postingColonDefaultColonLanguage,
   });
 
@@ -41,13 +45,9 @@ class Preferences {
   final VisibilityEnum postingColonDefaultColonVisibility;
 
   /// Whether media attachments should be automatically displayed or blurred/hidden.
-  @JsonKey(
-    name: r'reading:expand:media',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'reading:expand:media', required: true, includeIfNull: false)
   final PreferencesReadingColonExpandColonMediaEnum
-      readingColonExpandColonMedia;
+  readingColonExpandColonMedia;
 
   /// Whether CWs should be expanded by default.
   @JsonKey(

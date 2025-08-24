@@ -15,34 +15,18 @@ part 'field.g.dart';
 )
 class Field {
   /// Returns a new [Field] instance.
-  Field({
-    required this.name,
-    required this.value,
-    this.verifiedAt,
-  });
+  Field({required this.name, required this.value, this.verifiedAt});
 
   /// The key of a given field's key-value pair.
-  @JsonKey(
-    name: r'name',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'name', required: true, includeIfNull: false)
   final String name;
 
   /// The value associated with the `name` key.
-  @JsonKey(
-    name: r'value',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'value', required: true, includeIfNull: false)
   final String value;
 
   /// Timestamp of when the server verified a URL value for a rel=\"me\" link.
-  @JsonKey(
-    name: r'verified_at',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'verified_at', required: false, includeIfNull: false)
   final DateTime? verifiedAt;
 
   @override

@@ -17,41 +17,28 @@ class Token {
   /// Returns a new [Token] instance.
   Token({
     required this.accessToken,
+
     required this.createdAt,
+
     required this.scope,
+
     required this.tokenType,
   });
 
   /// An OAuth token to be used for authorization.
-  @JsonKey(
-    name: r'access_token',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'access_token', required: true, includeIfNull: false)
   final String accessToken;
 
   /// When the token was generated.
-  @JsonKey(
-    name: r'created_at',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'created_at', required: true, includeIfNull: false)
   final num createdAt;
 
   /// The OAuth scopes granted by this token, space-separated.
-  @JsonKey(
-    name: r'scope',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'scope', required: true, includeIfNull: false)
   final String scope;
 
   /// The OAuth token type. Mastodon uses `Bearer` tokens.
-  @JsonKey(
-    name: r'token_type',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'token_type', required: true, includeIfNull: false)
   final String tokenType;
 
   @override

@@ -19,40 +19,27 @@ class ScheduledStatus {
   /// Returns a new [ScheduledStatus] instance.
   ScheduledStatus({
     required this.id,
+
     required this.mediaAttachments,
+
     required this.params,
+
     required this.scheduledAt,
   });
 
   /// ID of the scheduled status in the database.
-  @JsonKey(
-    name: r'id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
   /// Media that will be attached when the status is posted.
-  @JsonKey(
-    name: r'media_attachments',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'media_attachments', required: true, includeIfNull: false)
   final List<MediaAttachment> mediaAttachments;
 
-  @JsonKey(
-    name: r'params',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'params', required: true, includeIfNull: false)
   final ScheduledStatusParams params;
 
   /// The timestamp for when the status will be posted.
-  @JsonKey(
-    name: r'scheduled_at',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'scheduled_at', required: true, includeIfNull: false)
   final DateTime scheduledAt;
 
   @override

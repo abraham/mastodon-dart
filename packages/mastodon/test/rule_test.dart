@@ -7,12 +7,6 @@ void main() {
   // TODO add properties to the entity
 
   group(Rule, () {
-    // Longer-form description of the rule.
-    // String hint
-    test('to test the property `hint`', () async {
-      // TODO
-    });
-
     // An identifier for the rule.
     // String id
     test('to test the property `id`', () async {
@@ -22,6 +16,12 @@ void main() {
     // The rule to be followed.
     // String text
     test('to test the property `text`', () async {
+      // TODO
+    });
+
+    // Longer-form description of the rule.
+    // String hint
+    test('to test the property `hint`', () async {
       // TODO
     });
 

@@ -17,32 +17,22 @@ class AdminTag {
   /// Returns a new [AdminTag] instance.
   AdminTag({
     required this.requiresReview,
+
     required this.trendable,
+
     required this.usable,
   });
 
   /// Whether the hashtag has not been reviewed yet to approve or deny its trending.
-  @JsonKey(
-    name: r'requires_review',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'requires_review', required: true, includeIfNull: false)
   final bool requiresReview;
 
   /// Whether the hashtag has been approved to trend.
-  @JsonKey(
-    name: r'trendable',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'trendable', required: true, includeIfNull: false)
   final bool trendable;
 
   /// Whether the hashtag has not been disabled from auto-linking.
-  @JsonKey(
-    name: r'usable',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'usable', required: true, includeIfNull: false)
   final bool usable;
 
   @override

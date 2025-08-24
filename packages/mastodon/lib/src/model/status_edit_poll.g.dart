@@ -7,25 +7,22 @@ part of 'status_edit_poll.dart';
 // **************************************************************************
 
 StatusEditPoll _$StatusEditPollFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'StatusEditPoll',
-      json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['options'],
-        );
-        final val = StatusEditPoll(
-          options: $checkedConvert(
-              'options',
-              (v) => (v as List<dynamic>)
-                  .map((e) => StatusEditPollOptionsInner.fromJson(
-                      e as Map<String, dynamic>))
-                  .toList()),
-        );
-        return val;
-      },
-    );
+    $checkedCreate('StatusEditPoll', json, ($checkedConvert) {
+      $checkKeys(json, requiredKeys: const ['options']);
+      final val = StatusEditPoll(
+        options: $checkedConvert(
+          'options',
+          (v) => (v as List<dynamic>)
+              .map(
+                (e) => StatusEditPollOptionsInner.fromJson(
+                  e as Map<String, dynamic>,
+                ),
+              )
+              .toList(),
+        ),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$StatusEditPollToJson(StatusEditPoll instance) =>
     <String, dynamic>{

@@ -4,7 +4,7 @@ import 'package:mastodon/mastodon.dart';
 // tests for DiscoverOauthServerConfigurationResponse
 void main() {
   final DiscoverOauthServerConfigurationResponse?
-      instance = /* DiscoverOauthServerConfigurationResponse(...) */ null;
+  instance = /* DiscoverOauthServerConfigurationResponse(...) */ null;
   // TODO add properties to the entity
 
   group(DiscoverOauthServerConfigurationResponse, () {

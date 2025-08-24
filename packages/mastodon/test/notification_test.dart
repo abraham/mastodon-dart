@@ -19,26 +19,20 @@ void main() {
       // TODO
     });
 
-    // Group key shared by similar notifications, to be used in the grouped notifications feature. Should be considered opaque, but ungrouped notifications can be assumed to have a `group_key` of the form `ungrouped-{notification_id}`.
-    // String groupKey
-    test('to test the property `groupKey`', () async {
-      // TODO
-    });
-
     // The id of the notification in the database.
     // String id
     test('to test the property `id`', () async {
       // TODO
     });
 
-    // The type of event that resulted in the notification.
-    // NotificationTypeEnum type
-    test('to test the property `type`', () async {
+    // RelationshipSeveranceEvent event
+    test('to test the property `event`', () async {
       // TODO
     });
 
-    // RelationshipSeveranceEvent event
-    test('to test the property `event`', () async {
+    // Group key shared by similar notifications, to be used in the grouped notifications feature. Should be considered opaque, but ungrouped notifications can be assumed to have a `group_key` of the form `ungrouped-{notification_id}`.
+    // String groupKey
+    test('to test the property `groupKey`', () async {
       // TODO
     });
 
@@ -54,6 +48,12 @@ void main() {
 
     // Status status
     test('to test the property `status`', () async {
+      // TODO
+    });
+
+    // The type of event that resulted in the notification.
+    // NotificationTypeEnum type
+    test('to test the property `type`', () async {
       // TODO
     });
   });

@@ -18,24 +18,18 @@ class CreateListRequest {
   /// Returns a new [CreateListRequest] instance.
   CreateListRequest({
     required this.title,
+
     this.exclusive,
+
     this.repliesPolicy = PolicyEnum.list,
   });
 
   /// The title of the list to be created.
-  @JsonKey(
-    name: r'title',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'title', required: true, includeIfNull: false)
   final String title;
 
   /// Whether members of this list need to get removed from the “Home” feed.
-  @JsonKey(
-    name: r'exclusive',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'exclusive', required: false, includeIfNull: false)
   final bool? exclusive;
 
   /// One of `followed`, `list`, or `none`. Defaults to `list`.

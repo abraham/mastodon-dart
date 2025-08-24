@@ -4,19 +4,19 @@ import 'package:mastodon/mastodon.dart';
 // tests for InstanceConfigurationMediaAttachments
 void main() {
   final InstanceConfigurationMediaAttachments?
-      instance = /* InstanceConfigurationMediaAttachments(...) */ null;
+  instance = /* InstanceConfigurationMediaAttachments(...) */ null;
   // TODO add properties to the entity
 
   group(InstanceConfigurationMediaAttachments, () {
-    // The maximum size of a description, in characters.
-    // int descriptionLimit
-    test('to test the property `descriptionLimit`', () async {
+    // Contains MIME types that can be uploaded.
+    // List<String> supportedMimeTypes
+    test('to test the property `supportedMimeTypes`', () async {
       // TODO
     });
 
-    // The maximum number of pixels (width times height) for image uploads.
-    // int imageMatrixLimit
-    test('to test the property `imageMatrixLimit`', () async {
+    // The maximum size of a description, in characters.
+    // int descriptionLimit
+    test('to test the property `descriptionLimit`', () async {
       // TODO
     });
 
@@ -26,9 +26,15 @@ void main() {
       // TODO
     });
 
-    // Contains MIME types that can be uploaded.
-    // List<String> supportedMimeTypes
-    test('to test the property `supportedMimeTypes`', () async {
+    // The maximum number of pixels (width times height) for image uploads.
+    // int imageMatrixLimit
+    test('to test the property `imageMatrixLimit`', () async {
+      // TODO
+    });
+
+    // The maximum size of any uploaded video, in bytes.
+    // int videoSizeLimit
+    test('to test the property `videoSizeLimit`', () async {
       // TODO
     });
 
@@ -41,12 +47,6 @@ void main() {
     // The maximum number of pixels (width times height) for video uploads.
     // int videoMatrixLimit
     test('to test the property `videoMatrixLimit`', () async {
-      // TODO
-    });
-
-    // The maximum size of any uploaded video, in bytes.
-    // int videoSizeLimit
-    test('to test the property `videoSizeLimit`', () async {
       // TODO
     });
   });

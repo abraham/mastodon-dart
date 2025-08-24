@@ -18,32 +18,22 @@ class AdminCohort {
   /// Returns a new [AdminCohort] instance.
   AdminCohort({
     required this.data,
+
     required this.frequency,
+
     required this.period,
   });
 
   /// Retention data for users who registered during the given period.
-  @JsonKey(
-    name: r'data',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'data', required: true, includeIfNull: false)
   final List<CohortData> data;
 
   /// The size of the bucket for the returned data.
-  @JsonKey(
-    name: r'frequency',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'frequency', required: true, includeIfNull: false)
   final AdminCohortFrequencyEnum frequency;
 
   /// The timestamp for the start of the period, at midnight.
-  @JsonKey(
-    name: r'period',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'period', required: true, includeIfNull: false)
   final DateTime period;
 
   @override

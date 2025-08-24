@@ -7,35 +7,45 @@ part of 'patch_accounts_update_credentials_request_source.dart';
 // **************************************************************************
 
 PatchAccountsUpdateCredentialsRequestSource
-    _$PatchAccountsUpdateCredentialsRequestSourceFromJson(
-            Map<String, dynamic> json) =>
-        $checkedCreate(
-          'PatchAccountsUpdateCredentialsRequestSource',
-          json,
-          ($checkedConvert) {
-            final val = PatchAccountsUpdateCredentialsRequestSource(
-              privacy: $checkedConvert(
-                  'privacy',
-                  (v) => $enumDecodeNullable(
-                      _$PatchAccountsUpdateCredentialsRequestSourcePrivacyEnumEnumMap,
-                      v)),
-              sensitive: $checkedConvert('sensitive', (v) => v as bool?),
-              language: $checkedConvert('language', (v) => v as String?),
-            );
-            return val;
-          },
-        );
+_$PatchAccountsUpdateCredentialsRequestSourceFromJson(
+  Map<String, dynamic> json,
+) => $checkedCreate('PatchAccountsUpdateCredentialsRequestSource', json, (
+  $checkedConvert,
+) {
+  final val = PatchAccountsUpdateCredentialsRequestSource(
+    privacy: $checkedConvert(
+      'privacy',
+      (v) => $enumDecodeNullable(
+        _$PatchAccountsUpdateCredentialsRequestSourcePrivacyEnumEnumMap,
+        v,
+      ),
+    ),
+    sensitive: $checkedConvert('sensitive', (v) => v as bool?),
+    language: $checkedConvert('language', (v) => v as String?),
+  );
+  return val;
+});
 
 Map<String, dynamic> _$PatchAccountsUpdateCredentialsRequestSourceToJson(
-        PatchAccountsUpdateCredentialsRequestSource instance) =>
-    <String, dynamic>{
-      if (_$PatchAccountsUpdateCredentialsRequestSourcePrivacyEnumEnumMap[
-              instance.privacy]
-          case final value?)
-        'privacy': value,
-      if (instance.sensitive case final value?) 'sensitive': value,
-      if (instance.language case final value?) 'language': value,
-    };
+  PatchAccountsUpdateCredentialsRequestSource instance,
+) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull(
+    'privacy',
+    _$PatchAccountsUpdateCredentialsRequestSourcePrivacyEnumEnumMap[instance
+        .privacy],
+  );
+  writeNotNull('sensitive', instance.sensitive);
+  writeNotNull('language', instance.language);
+  return val;
+}
 
 const _$PatchAccountsUpdateCredentialsRequestSourcePrivacyEnumEnumMap = {
   PatchAccountsUpdateCredentialsRequestSourcePrivacyEnum.public: 'public',

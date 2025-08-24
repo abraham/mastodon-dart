@@ -4,7 +4,7 @@ import 'package:mastodon/mastodon.dart';
 // tests for InstanceThumbnailVersions
 void main() {
   final InstanceThumbnailVersions?
-      instance = /* InstanceThumbnailVersions(...) */ null;
+  instance = /* InstanceThumbnailVersions(...) */ null;
   // TODO add properties to the entity
 
   group(InstanceThumbnailVersions, () {

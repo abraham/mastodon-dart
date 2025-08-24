@@ -18,44 +18,34 @@ class TextStatus {
   /// Returns a new [TextStatus] instance.
   TextStatus({
     required this.status,
+
     this.inReplyToId,
+
     this.language,
+
     this.scheduledAt,
+
     this.sensitive = false,
+
     this.spoilerText,
+
     this.visibility,
   });
 
   /// The text content of the status. If `media_ids` is provided, this becomes optional. Attaching a `poll` is optional while `status` is provided.
-  @JsonKey(
-    name: r'status',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'status', required: true, includeIfNull: false)
   final String status;
 
   /// ID of the status being replied to, if status is a reply.
-  @JsonKey(
-    name: r'in_reply_to_id',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'in_reply_to_id', required: false, includeIfNull: false)
   final String? inReplyToId;
 
   /// ISO 639-1 language code for this status.
-  @JsonKey(
-    name: r'language',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'language', required: false, includeIfNull: false)
   final String? language;
 
   /// [Datetime] at which to schedule a status. Providing this parameter will cause ScheduledStatus to be returned instead of Status. Must be at least 5 minutes in the future.
-  @JsonKey(
-    name: r'scheduled_at',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'scheduled_at', required: false, includeIfNull: false)
   final DateTime? scheduledAt;
 
   /// Mark status and attached media as sensitive? Defaults to false.
@@ -68,19 +58,11 @@ class TextStatus {
   final bool? sensitive;
 
   /// Text to be shown as a warning or subject before the actual content. Statuses are generally collapsed behind this field.
-  @JsonKey(
-    name: r'spoiler_text',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'spoiler_text', required: false, includeIfNull: false)
   final String? spoilerText;
 
   /// Sets the visibility of the posted status to `public`, `unlisted`, `private`, `direct`.
-  @JsonKey(
-    name: r'visibility',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'visibility', required: false, includeIfNull: false)
   final VisibilityEnum? visibility;
 
   @override

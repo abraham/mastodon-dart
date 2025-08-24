@@ -4,7 +4,7 @@ import 'package:mastodon/mastodon.dart';
 // tests for AdminEmailDomainBlockHistory
 void main() {
   final AdminEmailDomainBlockHistory?
-      instance = /* AdminEmailDomainBlockHistory(...) */ null;
+  instance = /* AdminEmailDomainBlockHistory(...) */ null;
   // TODO add properties to the entity
 
   group(AdminEmailDomainBlockHistory, () {

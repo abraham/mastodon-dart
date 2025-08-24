@@ -15,16 +15,10 @@ part 'create_marker_request_notifications.g.dart';
 )
 class CreateMarkerRequestNotifications {
   /// Returns a new [CreateMarkerRequestNotifications] instance.
-  CreateMarkerRequestNotifications({
-    this.lastReadId,
-  });
+  CreateMarkerRequestNotifications({this.lastReadId});
 
   /// ID of the last notification read.
-  @JsonKey(
-    name: r'last_read_id',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'last_read_id', required: false, includeIfNull: false)
   final String? lastReadId;
 
   @override
@@ -37,8 +31,8 @@ class CreateMarkerRequestNotifications {
   int get hashCode => lastReadId.hashCode;
 
   factory CreateMarkerRequestNotifications.fromJson(
-          Map<String, dynamic> json) =>
-      _$CreateMarkerRequestNotificationsFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$CreateMarkerRequestNotificationsFromJson(json);
 
   Map<String, dynamic> toJson() =>
       _$CreateMarkerRequestNotificationsToJson(this);

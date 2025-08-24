@@ -7,28 +7,21 @@ part of 'admin_email_domain_block_history.dart';
 // **************************************************************************
 
 AdminEmailDomainBlockHistory _$AdminEmailDomainBlockHistoryFromJson(
-        Map<String, dynamic> json) =>
-    $checkedCreate(
-      'AdminEmailDomainBlockHistory',
-      json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['accounts', 'day', 'uses'],
-        );
-        final val = AdminEmailDomainBlockHistory(
-          accounts: $checkedConvert('accounts', (v) => v as String),
-          day: $checkedConvert('day', (v) => v as String),
-          uses: $checkedConvert('uses', (v) => v as String),
-        );
-        return val;
-      },
-    );
+  Map<String, dynamic> json,
+) => $checkedCreate('AdminEmailDomainBlockHistory', json, ($checkedConvert) {
+  $checkKeys(json, requiredKeys: const ['accounts', 'day', 'uses']);
+  final val = AdminEmailDomainBlockHistory(
+    accounts: $checkedConvert('accounts', (v) => v as String),
+    day: $checkedConvert('day', (v) => v as String),
+    uses: $checkedConvert('uses', (v) => v as String),
+  );
+  return val;
+});
 
 Map<String, dynamic> _$AdminEmailDomainBlockHistoryToJson(
-        AdminEmailDomainBlockHistory instance) =>
-    <String, dynamic>{
-      'accounts': instance.accounts,
-      'day': instance.day,
-      'uses': instance.uses,
-    };
+  AdminEmailDomainBlockHistory instance,
+) => <String, dynamic>{
+  'accounts': instance.accounts,
+  'day': instance.day,
+  'uses': instance.uses,
+};

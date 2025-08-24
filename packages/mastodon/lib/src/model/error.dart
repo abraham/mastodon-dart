@@ -15,25 +15,14 @@ part 'error.g.dart';
 )
 class Error {
   /// Returns a new [Error] instance.
-  Error({
-    required this.error,
-    this.errorDescription,
-  });
+  Error({required this.error, this.errorDescription});
 
   /// The error message.
-  @JsonKey(
-    name: r'error',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'error', required: true, includeIfNull: false)
   final String error;
 
   /// A longer description of the error, mainly provided with the OAuth API.
-  @JsonKey(
-    name: r'error_description',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'error_description', required: false, includeIfNull: false)
   final String? errorDescription;
 
   @override

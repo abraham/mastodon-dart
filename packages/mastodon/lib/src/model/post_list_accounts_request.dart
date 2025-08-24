@@ -15,16 +15,10 @@ part 'post_list_accounts_request.g.dart';
 )
 class PostListAccountsRequest {
   /// Returns a new [PostListAccountsRequest] instance.
-  PostListAccountsRequest({
-    required this.accountIds,
-  });
+  PostListAccountsRequest({required this.accountIds});
 
   /// The accounts that should be added to the list.
-  @JsonKey(
-    name: r'account_ids',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'account_ids', required: true, includeIfNull: false)
   final List<String> accountIds;
 
   @override

@@ -4,7 +4,7 @@ import 'package:mastodon/mastodon.dart';
 // tests for CreatePushSubscriptionRequestSubscription
 void main() {
   final CreatePushSubscriptionRequestSubscription?
-      instance = /* CreatePushSubscriptionRequestSubscription(...) */ null;
+  instance = /* CreatePushSubscriptionRequestSubscription(...) */ null;
   // TODO add properties to the entity
 
   group(CreatePushSubscriptionRequestSubscription, () {

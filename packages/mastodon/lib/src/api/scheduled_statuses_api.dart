@@ -44,19 +44,18 @@ class ScheduledStatusesApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/scheduled_statuses/{id}'
-        .replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/scheduled_statuses/{id}'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -99,19 +98,18 @@ class ScheduledStatusesApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/scheduled_statuses/{id}'
-        .replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/scheduled_statuses/{id}'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -133,8 +131,10 @@ class ScheduledStatusesApi {
       _responseData = rawData == null
           ? null
           : deserialize<ScheduledStatus, ScheduledStatus>(
-              rawData, 'ScheduledStatus',
-              growable: true);
+              rawData,
+              'ScheduledStatus',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -191,15 +191,10 @@ class ScheduledStatusesApi {
     final _path = r'/api/v1/scheduled_statuses';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -229,8 +224,10 @@ class ScheduledStatusesApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<ScheduledStatus>, ScheduledStatus>(
-              rawData, 'List<ScheduledStatus>',
-              growable: true);
+              rawData,
+              'List<ScheduledStatus>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -280,19 +277,18 @@ class ScheduledStatusesApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/scheduled_statuses/{id}'
-        .replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/scheduled_statuses/{id}'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -306,10 +302,7 @@ class ScheduledStatusesApi {
       _bodyData = jsonEncode(updateScheduledStatusRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -332,8 +325,10 @@ class ScheduledStatusesApi {
       _responseData = rawData == null
           ? null
           : deserialize<ScheduledStatus, ScheduledStatus>(
-              rawData, 'ScheduledStatus',
-              growable: true);
+              rawData,
+              'ScheduledStatus',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

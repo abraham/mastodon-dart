@@ -4,7 +4,7 @@ import 'package:mastodon/mastodon.dart';
 // tests for PatchAccountsUpdateCredentialsRequest
 void main() {
   final PatchAccountsUpdateCredentialsRequest?
-      instance = /* PatchAccountsUpdateCredentialsRequest(...) */ null;
+  instance = /* PatchAccountsUpdateCredentialsRequest(...) */ null;
   // TODO add properties to the entity
 
   group(PatchAccountsUpdateCredentialsRequest, () {

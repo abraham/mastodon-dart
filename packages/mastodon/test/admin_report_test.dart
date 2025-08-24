@@ -19,12 +19,6 @@ void main() {
       // TODO
     });
 
-    // The category under which the report is classified.
-    // CategoryEnum category
-    test('to test the property `category`', () async {
-      // TODO
-    });
-
     // An optional reason for reporting.
     // String comment
     test('to test the property `comment`', () async {
@@ -34,12 +28,6 @@ void main() {
     // The time the report was filed.
     // DateTime createdAt
     test('to test the property `createdAt`', () async {
-      // TODO
-    });
-
-    // Whether a report was forwarded to a remote instance.
-    // bool forwarded
-    test('to test the property `forwarded`', () async {
       // TODO
     });
 
@@ -86,6 +74,18 @@ void main() {
 
     // AdminAccount assignedAccount
     test('to test the property `assignedAccount`', () async {
+      // TODO
+    });
+
+    // The category under which the report is classified.
+    // CategoryEnum category
+    test('to test the property `category`', () async {
+      // TODO
+    });
+
+    // Whether a report was forwarded to a remote instance.
+    // bool forwarded
+    test('to test the property `forwarded`', () async {
       // TODO
     });
   });

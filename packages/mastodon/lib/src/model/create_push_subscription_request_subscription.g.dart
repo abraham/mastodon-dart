@@ -7,30 +7,39 @@ part of 'create_push_subscription_request_subscription.dart';
 // **************************************************************************
 
 CreatePushSubscriptionRequestSubscription
-    _$CreatePushSubscriptionRequestSubscriptionFromJson(
-            Map<String, dynamic> json) =>
-        $checkedCreate(
-          'CreatePushSubscriptionRequestSubscription',
-          json,
-          ($checkedConvert) {
-            final val = CreatePushSubscriptionRequestSubscription(
-              keys: $checkedConvert(
-                  'keys',
-                  (v) => v == null
-                      ? null
-                      : CreatePushSubscriptionRequestSubscriptionKeys.fromJson(
-                          v as Map<String, dynamic>)),
-              endpoint: $checkedConvert('endpoint', (v) => v as String?),
-              standard: $checkedConvert('standard', (v) => v as bool?),
-            );
-            return val;
-          },
-        );
+_$CreatePushSubscriptionRequestSubscriptionFromJson(
+  Map<String, dynamic> json,
+) => $checkedCreate('CreatePushSubscriptionRequestSubscription', json, (
+  $checkedConvert,
+) {
+  final val = CreatePushSubscriptionRequestSubscription(
+    keys: $checkedConvert(
+      'keys',
+      (v) => v == null
+          ? null
+          : CreatePushSubscriptionRequestSubscriptionKeys.fromJson(
+              v as Map<String, dynamic>,
+            ),
+    ),
+    endpoint: $checkedConvert('endpoint', (v) => v as String?),
+    standard: $checkedConvert('standard', (v) => v as bool?),
+  );
+  return val;
+});
 
 Map<String, dynamic> _$CreatePushSubscriptionRequestSubscriptionToJson(
-        CreatePushSubscriptionRequestSubscription instance) =>
-    <String, dynamic>{
-      if (instance.keys?.toJson() case final value?) 'keys': value,
-      if (instance.endpoint case final value?) 'endpoint': value,
-      if (instance.standard case final value?) 'standard': value,
-    };
+  CreatePushSubscriptionRequestSubscription instance,
+) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('keys', instance.keys?.toJson());
+  writeNotNull('endpoint', instance.endpoint);
+  writeNotNull('standard', instance.standard);
+  return val;
+}

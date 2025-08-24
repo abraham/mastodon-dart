@@ -7,9 +7,25 @@ void main() {
   // TODO add properties to the entity
 
   group(NotificationGroup, () {
+    // RelationshipSeveranceEvent event
+    test('to test the property `event`', () async {
+      // TODO
+    });
+
     // Group key identifying the grouped notifications. Should be treated as an opaque value.
     // String groupKey
     test('to test the property `groupKey`', () async {
+      // TODO
+    });
+
+    // Date at which the most recent notification from this group within the current page has been created. This is only returned when paginating through notification groups.
+    // DateTime latestPageNotificationAt
+    test('to test the property `latestPageNotificationAt`', () async {
+      // TODO
+    });
+
+    // AccountWarning moderationWarning
+    test('to test the property `moderationWarning`', () async {
       // TODO
     });
 
@@ -22,34 +38,6 @@ void main() {
     // Total number of individual notifications that are part of this notification group.
     // int notificationsCount
     test('to test the property `notificationsCount`', () async {
-      // TODO
-    });
-
-    // IDs of some of the accounts who most recently triggered notifications in this group.
-    // List<String> sampleAccountIds
-    test('to test the property `sampleAccountIds`', () async {
-      // TODO
-    });
-
-    // The type of event that resulted in the notifications in this group.
-    // NotificationTypeEnum type
-    test('to test the property `type`', () async {
-      // TODO
-    });
-
-    // RelationshipSeveranceEvent event
-    test('to test the property `event`', () async {
-      // TODO
-    });
-
-    // Date at which the most recent notification from this group within the current page has been created. This is only returned when paginating through notification groups.
-    // DateTime latestPageNotificationAt
-    test('to test the property `latestPageNotificationAt`', () async {
-      // TODO
-    });
-
-    // AccountWarning moderationWarning
-    test('to test the property `moderationWarning`', () async {
       // TODO
     });
 
@@ -70,9 +58,21 @@ void main() {
       // TODO
     });
 
+    // IDs of some of the accounts who most recently triggered notifications in this group.
+    // List<String> sampleAccountIds
+    test('to test the property `sampleAccountIds`', () async {
+      // TODO
+    });
+
     // ID of the [Status]({{< relref \"entities/Status\" >}}) that was the object of the notification. Attached when `type` of the notification is `favourite`, `reblog`, `status`, `mention`, `poll`, or `update`.
     // String statusId
     test('to test the property `statusId`', () async {
+      // TODO
+    });
+
+    // The type of event that resulted in the notifications in this group.
+    // NotificationTypeEnum type
+    test('to test the property `type`', () async {
       // TODO
     });
   });

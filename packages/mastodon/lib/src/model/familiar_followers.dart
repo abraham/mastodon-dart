@@ -16,25 +16,14 @@ part 'familiar_followers.g.dart';
 )
 class FamiliarFollowers {
   /// Returns a new [FamiliarFollowers] instance.
-  FamiliarFollowers({
-    required this.accounts,
-    required this.id,
-  });
+  FamiliarFollowers({required this.accounts, required this.id});
 
   /// Accounts you follow that also follow this account.
-  @JsonKey(
-    name: r'accounts',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'accounts', required: true, includeIfNull: false)
   final List<Account> accounts;
 
   /// The ID of the Account in the database.
-  @JsonKey(
-    name: r'id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
   @override

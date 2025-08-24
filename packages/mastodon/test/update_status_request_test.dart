@@ -16,10 +16,11 @@ void main() {
     // Each array includes id, description, and focus.
     // List<String> mediaAttributesLeftSquareBracketRightSquareBracket
     test(
-        'to test the property `mediaAttributesLeftSquareBracketRightSquareBracket`',
-        () async {
-      // TODO
-    });
+      'to test the property `mediaAttributesLeftSquareBracketRightSquareBracket`',
+      () async {
+        // TODO
+      },
+    );
 
     // Include Attachment IDs to be attached as media. If provided, `status` becomes optional, and `poll` cannot be used.
     // List<String> mediaIds

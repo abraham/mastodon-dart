@@ -8,12 +8,6 @@ void main() {
   // TODO add properties to the entity
 
   group(CredentialAccountSource, () {
-    // Domains of websites allowed to credit the account.
-    // List<String> attributionDomains
-    test('to test the property `attributionDomains`', () async {
-      // TODO
-    });
-
     // Metadata about the account.
     // List<Field> fields
     test('to test the property `fields`', () async {
@@ -23,12 +17,6 @@ void main() {
     // The number of pending follow requests.
     // int followRequestsCount
     test('to test the property `followRequestsCount`', () async {
-      // TODO
-    });
-
-    // Whether public posts should be searchable to anyone.
-    // bool indexable
-    test('to test the property `indexable`', () async {
       // TODO
     });
 
@@ -50,6 +38,12 @@ void main() {
       // TODO
     });
 
+    // Domains of websites allowed to credit the account.
+    // List<String> attributionDomains
+    test('to test the property `attributionDomains`', () async {
+      // TODO
+    });
+
     // Whether the account has opted into discovery features such as the profile directory.
     // bool discoverable
     test('to test the property `discoverable`', () async {
@@ -59,6 +53,12 @@ void main() {
     // Whether the user hides the contents of their follows and followers collections.
     // bool hideCollections
     test('to test the property `hideCollections`', () async {
+      // TODO
+    });
+
+    // Whether public posts should be searchable to anyone.
+    // bool indexable
+    test('to test the property `indexable`', () async {
       // TODO
     });
 

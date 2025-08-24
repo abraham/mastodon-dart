@@ -7,6 +7,12 @@ void main() {
   // TODO add properties to the entity
 
   group(DomainBlock, () {
+    // An optional reason for the domain block.
+    // String comment
+    test('to test the property `comment`', () async {
+      // TODO
+    });
+
     // The SHA256 hash digest of the domain string.
     // String digest
     test('to test the property `digest`', () async {
@@ -22,12 +28,6 @@ void main() {
     // The level to which the domain is blocked.
     // String severity
     test('to test the property `severity`', () async {
-      // TODO
-    });
-
-    // An optional reason for the domain block.
-    // String comment
-    test('to test the property `comment`', () async {
       // TODO
     });
   });

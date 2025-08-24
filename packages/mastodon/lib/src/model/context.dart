@@ -16,25 +16,14 @@ part 'context.g.dart';
 )
 class Context {
   /// Returns a new [Context] instance.
-  Context({
-    required this.ancestors,
-    required this.descendants,
-  });
+  Context({required this.ancestors, required this.descendants});
 
   /// Parents in the thread.
-  @JsonKey(
-    name: r'ancestors',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'ancestors', required: true, includeIfNull: false)
   final List<Status> ancestors;
 
   /// Children in the thread.
-  @JsonKey(
-    name: r'descendants',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'descendants', required: true, includeIfNull: false)
   final List<Status> descendants;
 
   @override

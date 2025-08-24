@@ -34,7 +34,7 @@ class WellKnownApi {
   /// Official Mastodon API documentation
   /// Also see [Discover OAuth Server Configuration Documentation](https://docs.joinmastodon.org/methods/oauth/#authorization-server-metadata)
   Future<Response<DiscoverOauthServerConfigurationResponse>>
-      getWellKnownOauthAuthorizationServer({
+  getWellKnownOauthAuthorizationServer({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -45,13 +45,8 @@ class WellKnownApi {
     final _path = r'/.well-known/oauth-authorization-server';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -69,10 +64,14 @@ class WellKnownApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<DiscoverOauthServerConfigurationResponse,
-                  DiscoverOauthServerConfigurationResponse>(
-              rawData, 'DiscoverOauthServerConfigurationResponse',
-              growable: true);
+          : deserialize<
+              DiscoverOauthServerConfigurationResponse,
+              DiscoverOauthServerConfigurationResponse
+            >(
+              rawData,
+              'DiscoverOauthServerConfigurationResponse',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

@@ -7,15 +7,15 @@ void main() {
   // TODO add properties to the entity
 
   group(ShallowQuote, () {
-    // The state of the quote.
-    // StateEnum state
-    test('to test the property `state`', () async {
-      // TODO
-    });
-
     // The identifier of the status being quoted, if the quote has been accepted. This will be `null`, unless the `state` attribute is `accepted`.
     // String quotedStatusId
     test('to test the property `quotedStatusId`', () async {
+      // TODO
+    });
+
+    // The state of the quote.
+    // StateEnum state
+    test('to test the property `state`', () async {
       // TODO
     });
   });

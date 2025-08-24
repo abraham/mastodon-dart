@@ -7,49 +7,59 @@ part of 'post_oauth_token_request.dart';
 // **************************************************************************
 
 PostOauthTokenRequest _$PostOauthTokenRequestFromJson(
-        Map<String, dynamic> json) =>
-    $checkedCreate(
-      'PostOauthTokenRequest',
+  Map<String, dynamic> json,
+) => $checkedCreate(
+  'PostOauthTokenRequest',
+  json,
+  ($checkedConvert) {
+    $checkKeys(
       json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const [
-            'client_id',
-            'client_secret',
-            'code',
-            'grant_type',
-            'redirect_uri'
-          ],
-        );
-        final val = PostOauthTokenRequest(
-          clientId: $checkedConvert('client_id', (v) => v as String),
-          clientSecret: $checkedConvert('client_secret', (v) => v as String),
-          code: $checkedConvert('code', (v) => v as String),
-          grantType: $checkedConvert('grant_type', (v) => v as String),
-          redirectUri: $checkedConvert('redirect_uri', (v) => v as String),
-          codeVerifier: $checkedConvert('code_verifier', (v) => v as String?),
-          scope: $checkedConvert('scope', (v) => v as String? ?? 'read'),
-        );
-        return val;
-      },
-      fieldKeyMap: const {
-        'clientId': 'client_id',
-        'clientSecret': 'client_secret',
-        'grantType': 'grant_type',
-        'redirectUri': 'redirect_uri',
-        'codeVerifier': 'code_verifier'
-      },
+      requiredKeys: const [
+        'client_id',
+        'client_secret',
+        'code',
+        'grant_type',
+        'redirect_uri',
+      ],
     );
+    final val = PostOauthTokenRequest(
+      clientId: $checkedConvert('client_id', (v) => v as String),
+      clientSecret: $checkedConvert('client_secret', (v) => v as String),
+      code: $checkedConvert('code', (v) => v as String),
+      grantType: $checkedConvert('grant_type', (v) => v as String),
+      redirectUri: $checkedConvert('redirect_uri', (v) => v as String),
+      codeVerifier: $checkedConvert('code_verifier', (v) => v as String?),
+      scope: $checkedConvert('scope', (v) => v as String? ?? 'read'),
+    );
+    return val;
+  },
+  fieldKeyMap: const {
+    'clientId': 'client_id',
+    'clientSecret': 'client_secret',
+    'grantType': 'grant_type',
+    'redirectUri': 'redirect_uri',
+    'codeVerifier': 'code_verifier',
+  },
+);
 
 Map<String, dynamic> _$PostOauthTokenRequestToJson(
-        PostOauthTokenRequest instance) =>
-    <String, dynamic>{
-      'client_id': instance.clientId,
-      'client_secret': instance.clientSecret,
-      'code': instance.code,
-      'grant_type': instance.grantType,
-      'redirect_uri': instance.redirectUri,
-      if (instance.codeVerifier case final value?) 'code_verifier': value,
-      if (instance.scope case final value?) 'scope': value,
-    };
+  PostOauthTokenRequest instance,
+) {
+  final val = <String, dynamic>{
+    'client_id': instance.clientId,
+    'client_secret': instance.clientSecret,
+    'code': instance.code,
+    'grant_type': instance.grantType,
+    'redirect_uri': instance.redirectUri,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('code_verifier', instance.codeVerifier);
+  writeNotNull('scope', instance.scope);
+  return val;
+}

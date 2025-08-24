@@ -15,26 +15,15 @@ part 'instance_configuration_accounts.g.dart';
 )
 class InstanceConfigurationAccounts {
   /// Returns a new [InstanceConfigurationAccounts] instance.
-  InstanceConfigurationAccounts({
-    required this.maxFeaturedTags,
-    required this.maxPinnedStatuses,
-  });
+  InstanceConfigurationAccounts({this.maxFeaturedTags, this.maxPinnedStatuses});
 
   /// The maximum number of featured tags allowed for each account.
-  @JsonKey(
-    name: r'max_featured_tags',
-    required: true,
-    includeIfNull: false,
-  )
-  final int maxFeaturedTags;
+  @JsonKey(name: r'max_featured_tags', required: false, includeIfNull: false)
+  final int? maxFeaturedTags;
 
   /// The maximum number of pinned statuses for each account.
-  @JsonKey(
-    name: r'max_pinned_statuses',
-    required: true,
-    includeIfNull: false,
-  )
-  final int maxPinnedStatuses;
+  @JsonKey(name: r'max_pinned_statuses', required: false, includeIfNull: false)
+  final int? maxPinnedStatuses;
 
   @override
   bool operator ==(Object other) =>
@@ -44,7 +33,9 @@ class InstanceConfigurationAccounts {
           other.maxPinnedStatuses == maxPinnedStatuses;
 
   @override
-  int get hashCode => maxFeaturedTags.hashCode + maxPinnedStatuses.hashCode;
+  int get hashCode =>
+      (maxFeaturedTags == null ? 0 : maxFeaturedTags.hashCode) +
+      (maxPinnedStatuses == null ? 0 : maxPinnedStatuses.hashCode);
 
   factory InstanceConfigurationAccounts.fromJson(Map<String, dynamic> json) =>
       _$InstanceConfigurationAccountsFromJson(json);

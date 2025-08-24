@@ -13,12 +13,6 @@ void main() {
       // TODO
     });
 
-    // ID of the hashtag in the database. Useful for constructing URLs for the moderation tools & Admin API.
-    // String id
-    test('to test the property `id`', () async {
-      // TODO
-    });
-
     // The value of the hashtag after the # sign.
     // String name
     test('to test the property `name`', () async {
@@ -40,6 +34,12 @@ void main() {
     // Whether the current token's authorized user is following this tag.
     // bool following
     test('to test the property `following`', () async {
+      // TODO
+    });
+
+    // ID of the hashtag in the database. Useful for constructing URLs for the moderation tools & Admin API.
+    // String id
+    test('to test the property `id`', () async {
       // TODO
     });
   });

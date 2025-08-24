@@ -18,59 +18,40 @@ class AdminMeasure {
   /// Returns a new [AdminMeasure] instance.
   AdminMeasure({
     required this.data,
+
     required this.key,
+
     required this.total,
+
     this.humanValue,
+
     this.previousTotal,
+
     this.unit,
   });
 
   /// The data available for the requested measure, split into daily buckets.
-  @JsonKey(
-    name: r'data',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'data', required: true, includeIfNull: false)
   final List<AdminMeasureData> data;
 
   /// The unique keystring for the requested measure.
-  @JsonKey(
-    name: r'key',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'key', required: true, includeIfNull: false)
   final String key;
 
   /// The numeric total associated with the requested measure.
-  @JsonKey(
-    name: r'total',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'total', required: true, includeIfNull: false)
   final String total;
 
   /// A human-readable formatted value for this data item.
-  @JsonKey(
-    name: r'human_value',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'human_value', required: false, includeIfNull: false)
   final String? humanValue;
 
   /// The numeric total associated with the requested measure, in the previous period. Previous period is calculated by subtracting the start_at and end_at dates, then offsetting both start and end dates backwards by the length of the time period.
-  @JsonKey(
-    name: r'previous_total',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'previous_total', required: false, includeIfNull: false)
   final String? previousTotal;
 
   /// The units associated with this data item's value, if applicable.
-  @JsonKey(
-    name: r'unit',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'unit', required: false, includeIfNull: false)
   final String? unit;
 
   @override

@@ -17,33 +17,17 @@ part 'instance_thumbnail.g.dart';
 )
 class InstanceThumbnail {
   /// Returns a new [InstanceThumbnail] instance.
-  InstanceThumbnail({
-    required this.url,
-    this.blurhash,
-    this.versions,
-  });
+  InstanceThumbnail({this.url, this.blurhash, this.versions});
 
   /// The URL for the thumbnail image.
-  @JsonKey(
-    name: r'url',
-    required: true,
-    includeIfNull: false,
-  )
-  final Uri url;
+  @JsonKey(name: r'url', required: false, includeIfNull: false)
+  final Uri? url;
 
   /// A hash computed by [the BlurHash algorithm](https://github.com/woltapp/blurhash), for generating colorful preview thumbnails when media has not been downloaded yet.
-  @JsonKey(
-    name: r'blurhash',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'blurhash', required: false, includeIfNull: false)
   final String? blurhash;
 
-  @JsonKey(
-    name: r'versions',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'versions', required: false, includeIfNull: false)
   final InstanceThumbnailVersions? versions;
 
   @override
@@ -56,7 +40,7 @@ class InstanceThumbnail {
 
   @override
   int get hashCode =>
-      url.hashCode +
+      (url == null ? 0 : url.hashCode) +
       (blurhash == null ? 0 : blurhash.hashCode) +
       versions.hashCode;
 

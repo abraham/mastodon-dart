@@ -4,7 +4,7 @@ import 'package:mastodon/mastodon.dart';
 // tests for PostFilterKeywordsV2Request
 void main() {
   final PostFilterKeywordsV2Request?
-      instance = /* PostFilterKeywordsV2Request(...) */ null;
+  instance = /* PostFilterKeywordsV2Request(...) */ null;
   // TODO add properties to the entity
 
   group(PostFilterKeywordsV2Request, () {

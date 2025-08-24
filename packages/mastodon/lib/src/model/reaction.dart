@@ -18,50 +18,34 @@ class Reaction {
   /// Returns a new [Reaction] instance.
   Reaction({
     required this.count,
+
     required this.name,
+
     this.me,
+
     this.staticUrl,
+
     this.url,
   });
 
   /// The total number of users who have added this reaction.
-  @JsonKey(
-    name: r'count',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'count', required: true, includeIfNull: false)
   final int count;
 
   /// The emoji used for the reaction. Either a unicode emoji, or a custom emoji's shortcode.
-  @JsonKey(
-    name: r'name',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'name', required: true, includeIfNull: false)
   final String name;
 
   /// If there is a currently authorized user: Have you added this reaction?
-  @JsonKey(
-    name: r'me',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'me', required: false, includeIfNull: false)
   final bool? me;
 
   /// If the reaction is a custom emoji: A link to a non-animated version of the custom emoji.
-  @JsonKey(
-    name: r'static_url',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'static_url', required: false, includeIfNull: false)
   final Uri? staticUrl;
 
   /// If the reaction is a custom emoji: A link to the custom emoji.
-  @JsonKey(
-    name: r'url',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'url', required: false, includeIfNull: false)
   final Uri? url;
 
   @override

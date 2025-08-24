@@ -18,50 +18,34 @@ class IdentityProof {
   /// Returns a new [IdentityProof] instance.
   IdentityProof({
     required this.profileUrl,
+
     required this.proofUrl,
+
     required this.provider,
+
     required this.providerUsername,
+
     required this.updatedAt,
   });
 
   /// The account owner's profile URL on the identity provider.
-  @JsonKey(
-    name: r'profile_url',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'profile_url', required: true, includeIfNull: false)
   final Uri profileUrl;
 
   /// A link to a statement of identity proof, hosted by the identity provider.
-  @JsonKey(
-    name: r'proof_url',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'proof_url', required: true, includeIfNull: false)
   final Uri proofUrl;
 
   /// The name of the identity provider.
-  @JsonKey(
-    name: r'provider',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'provider', required: true, includeIfNull: false)
   final String provider;
 
   /// The account owner's username on the identity provider's service.
-  @JsonKey(
-    name: r'provider_username',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'provider_username', required: true, includeIfNull: false)
   final String providerUsername;
 
   /// When the identity proof was last updated.
-  @JsonKey(
-    name: r'updated_at',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'updated_at', required: true, includeIfNull: false)
   final DateTime updatedAt;
 
   @override

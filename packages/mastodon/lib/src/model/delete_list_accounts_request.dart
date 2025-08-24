@@ -15,16 +15,10 @@ part 'delete_list_accounts_request.g.dart';
 )
 class DeleteListAccountsRequest {
   /// Returns a new [DeleteListAccountsRequest] instance.
-  DeleteListAccountsRequest({
-    required this.accountIds,
-  });
+  DeleteListAccountsRequest({required this.accountIds});
 
   /// The accounts that should be removed from the list.
-  @JsonKey(
-    name: r'account_ids',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'account_ids', required: true, includeIfNull: false)
   final List<String> accountIds;
 
   @override

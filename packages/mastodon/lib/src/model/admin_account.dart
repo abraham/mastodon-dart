@@ -20,127 +20,88 @@ class AdminAccount {
   /// Returns a new [AdminAccount] instance.
   AdminAccount({
     required this.account,
+
     required this.approved,
+
     required this.confirmed,
+
     required this.createdAt,
+
     required this.disabled,
+
     required this.email,
+
     required this.id,
+
     required this.ips,
+
     required this.locale,
-    required this.role,
+
     required this.silenced,
+
     required this.suspended,
+
     required this.username,
+
     this.createdByApplicationId,
+
     this.domain,
+
     this.inviteRequest,
+
     this.invitedByAccountId,
+
     this.ip,
+
+    this.role,
   });
 
   /// User-level information about the account.
-  @JsonKey(
-    name: r'account',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'account', required: true, includeIfNull: false)
   final Account account;
 
   /// Whether the account is currently approved.
-  @JsonKey(
-    name: r'approved',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'approved', required: true, includeIfNull: false)
   final bool approved;
 
   /// Whether the account has confirmed their email address.
-  @JsonKey(
-    name: r'confirmed',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'confirmed', required: true, includeIfNull: false)
   final bool confirmed;
 
   /// When the account was first discovered.
-  @JsonKey(
-    name: r'created_at',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'created_at', required: true, includeIfNull: false)
   final DateTime createdAt;
 
   /// Whether the account is currently disabled.
-  @JsonKey(
-    name: r'disabled',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'disabled', required: true, includeIfNull: false)
   final bool disabled;
 
   /// The email address associated with the account.
-  @JsonKey(
-    name: r'email',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'email', required: true, includeIfNull: false)
   final String email;
 
   /// The ID of the account in the database.
-  @JsonKey(
-    name: r'id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
   /// All known IP addresses associated with this account.
-  @JsonKey(
-    name: r'ips',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'ips', required: true, includeIfNull: false)
   final List<AdminIp> ips;
 
   /// The locale of the account.
-  @JsonKey(
-    name: r'locale',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'locale', required: true, includeIfNull: false)
   final String locale;
 
-  /// The current role of the account.
-  @JsonKey(
-    name: r'role',
-    required: true,
-    includeIfNull: false,
-  )
-  final Role role;
-
   /// Whether the account is currently silenced.
-  @JsonKey(
-    name: r'silenced',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'silenced', required: true, includeIfNull: false)
   final bool silenced;
 
   /// Whether the account is currently suspended.
-  @JsonKey(
-    name: r'suspended',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'suspended', required: true, includeIfNull: false)
   final bool suspended;
 
   /// The username of the account.
-  @JsonKey(
-    name: r'username',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'username', required: true, includeIfNull: false)
   final String username;
 
   /// The ID of the [Application]({{< relref \"entities/application\" >}}) that created this account, if applicable.
@@ -152,19 +113,11 @@ class AdminAccount {
   final String? createdByApplicationId;
 
   /// The domain of the account, if it is remote.
-  @JsonKey(
-    name: r'domain',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'domain', required: false, includeIfNull: false)
   final String? domain;
 
   /// The reason given when requesting an invite (for instances that require manual approval of registrations)
-  @JsonKey(
-    name: r'invite_request',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'invite_request', required: false, includeIfNull: false)
   final String? inviteRequest;
 
   /// The ID of the [Account]({{< relref \"entities/account\" >}}) that invited this user, if applicable.
@@ -176,12 +129,11 @@ class AdminAccount {
   final String? invitedByAccountId;
 
   /// The IP address last used to login to this account.
-  @JsonKey(
-    name: r'ip',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'ip', required: false, includeIfNull: false)
   final String? ip;
+
+  @JsonKey(name: r'role', required: false, includeIfNull: false)
+  final Role? role;
 
   @override
   bool operator ==(Object other) =>
@@ -196,7 +148,6 @@ class AdminAccount {
           other.id == id &&
           other.ips == ips &&
           other.locale == locale &&
-          other.role == role &&
           other.silenced == silenced &&
           other.suspended == suspended &&
           other.username == username &&
@@ -204,7 +155,8 @@ class AdminAccount {
           other.domain == domain &&
           other.inviteRequest == inviteRequest &&
           other.invitedByAccountId == invitedByAccountId &&
-          other.ip == ip;
+          other.ip == ip &&
+          other.role == role;
 
   @override
   int get hashCode =>
@@ -217,7 +169,6 @@ class AdminAccount {
       id.hashCode +
       ips.hashCode +
       locale.hashCode +
-      role.hashCode +
       silenced.hashCode +
       suspended.hashCode +
       username.hashCode +
@@ -225,7 +176,8 @@ class AdminAccount {
       (domain == null ? 0 : domain.hashCode) +
       (inviteRequest == null ? 0 : inviteRequest.hashCode) +
       (invitedByAccountId == null ? 0 : invitedByAccountId.hashCode) +
-      (ip == null ? 0 : ip.hashCode);
+      (ip == null ? 0 : ip.hashCode) +
+      (role == null ? 0 : role.hashCode);
 
   factory AdminAccount.fromJson(Map<String, dynamic> json) =>
       _$AdminAccountFromJson(json);

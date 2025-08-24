@@ -4,7 +4,7 @@ import 'package:mastodon/mastodon.dart';
 // tests for ValidationErrorDetailsValueInner
 void main() {
   final ValidationErrorDetailsValueInner?
-      instance = /* ValidationErrorDetailsValueInner(...) */ null;
+  instance = /* ValidationErrorDetailsValueInner(...) */ null;
   // TODO add properties to the entity
 
   group(ValidationErrorDetailsValueInner, () {

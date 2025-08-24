@@ -7,29 +7,32 @@ part of 'translation_poll.dart';
 // **************************************************************************
 
 TranslationPoll _$TranslationPollFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'TranslationPoll',
-      json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['id', 'options'],
-        );
-        final val = TranslationPoll(
-          id: $checkedConvert('id', (v) => v as String),
-          options: $checkedConvert(
-              'options',
-              (v) => (v as List<dynamic>)
-                  .map((e) =>
-                      TranslationPollOption.fromJson(e as Map<String, dynamic>))
-                  .toList()),
-        );
-        return val;
-      },
-    );
+    $checkedCreate('TranslationPoll', json, ($checkedConvert) {
+      final val = TranslationPoll(
+        id: $checkedConvert('id', (v) => v as String?),
+        options: $checkedConvert(
+          'options',
+          (v) => (v as List<dynamic>?)
+              ?.map(
+                (e) =>
+                    TranslationPollOption.fromJson(e as Map<String, dynamic>),
+              )
+              .toList(),
+        ),
+      );
+      return val;
+    });
 
-Map<String, dynamic> _$TranslationPollToJson(TranslationPoll instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'options': instance.options.map((e) => e.toJson()).toList(),
-    };
+Map<String, dynamic> _$TranslationPollToJson(TranslationPoll instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('id', instance.id);
+  writeNotNull('options', instance.options?.map((e) => e.toJson()).toList());
+  return val;
+}

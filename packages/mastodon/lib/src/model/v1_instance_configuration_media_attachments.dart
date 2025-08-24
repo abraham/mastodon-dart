@@ -17,35 +17,28 @@ class V1InstanceConfigurationMediaAttachments {
   /// Returns a new [V1InstanceConfigurationMediaAttachments] instance.
   V1InstanceConfigurationMediaAttachments({
     required this.imageMatrixLimit,
+
     required this.imageSizeLimit,
+
     required this.supportedMimeTypes,
+
     required this.videoFrameRateLimit,
+
     required this.videoMatrixLimit,
+
     required this.videoSizeLimit,
   });
 
   /// The maximum number of pixels (width times height) for image uploads.
-  @JsonKey(
-    name: r'image_matrix_limit',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'image_matrix_limit', required: true, includeIfNull: false)
   final int imageMatrixLimit;
 
   /// The maximum size of any uploaded image, in bytes.
-  @JsonKey(
-    name: r'image_size_limit',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'image_size_limit', required: true, includeIfNull: false)
   final int imageSizeLimit;
 
   /// Contains MIME types that can be uploaded.
-  @JsonKey(
-    name: r'supported_mime_types',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'supported_mime_types', required: true, includeIfNull: false)
   final List<String> supportedMimeTypes;
 
   /// The maximum frame rate for any uploaded video.
@@ -57,19 +50,11 @@ class V1InstanceConfigurationMediaAttachments {
   final int videoFrameRateLimit;
 
   /// The maximum number of pixels (width times height) for video uploads.
-  @JsonKey(
-    name: r'video_matrix_limit',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'video_matrix_limit', required: true, includeIfNull: false)
   final int videoMatrixLimit;
 
   /// The maximum size of any uploaded video, in bytes.
-  @JsonKey(
-    name: r'video_size_limit',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'video_size_limit', required: true, includeIfNull: false)
   final int videoSizeLimit;
 
   @override
@@ -93,8 +78,8 @@ class V1InstanceConfigurationMediaAttachments {
       videoSizeLimit.hashCode;
 
   factory V1InstanceConfigurationMediaAttachments.fromJson(
-          Map<String, dynamic> json) =>
-      _$V1InstanceConfigurationMediaAttachmentsFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$V1InstanceConfigurationMediaAttachmentsFromJson(json);
 
   Map<String, dynamic> toJson() =>
       _$V1InstanceConfigurationMediaAttachmentsToJson(this);

@@ -4,7 +4,7 @@ import 'package:mastodon/mastodon.dart';
 // tests for CreateEmailConfirmationsRequest
 void main() {
   final CreateEmailConfirmationsRequest?
-      instance = /* CreateEmailConfirmationsRequest(...) */ null;
+  instance = /* CreateEmailConfirmationsRequest(...) */ null;
   // TODO add properties to the entity
 
   group(CreateEmailConfirmationsRequest, () {

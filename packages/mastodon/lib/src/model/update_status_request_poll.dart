@@ -17,41 +17,28 @@ class UpdateStatusRequestPoll {
   /// Returns a new [UpdateStatusRequestPoll] instance.
   UpdateStatusRequestPoll({
     this.options,
+
     this.expiresIn,
+
     this.multiple,
+
     this.hideTotals,
   });
 
   /// Possible answers to the poll. If provided, `media_ids` cannot be used, and `poll[expires_in]` must be provided.
-  @JsonKey(
-    name: r'options',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'options', required: false, includeIfNull: false)
   final List<String>? options;
 
   /// Duration that the poll should be open, in seconds. If provided, `media_ids` cannot be used, and `poll[options]` must be provided.
-  @JsonKey(
-    name: r'expires_in',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'expires_in', required: false, includeIfNull: false)
   final int? expiresIn;
 
   /// Allow multiple choices? Defaults to false.
-  @JsonKey(
-    name: r'multiple',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'multiple', required: false, includeIfNull: false)
   final bool? multiple;
 
   /// Hide vote counts until the poll ends? Defaults to false.
-  @JsonKey(
-    name: r'hide_totals',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'hide_totals', required: false, includeIfNull: false)
   final bool? hideTotals;
 
   @override
