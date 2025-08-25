@@ -25,7 +25,6 @@ Name | Type | Description | Notes
 **locked** | **bool** | Whether the account manually approves follow requests. | 
 **note** | **String** | The profile's bio or description. | 
 **role** | [**Role**](Role.md) | The complete role assigned to the currently authorized user, including permissions and highlighted status. | 
-**roles** | [**List&lt;AccountRole&gt;**](AccountRole.md) | An array of roles assigned to the user that are publicly visible (highlighted roles only), if the account is local. Will be an empty array if no roles are highlighted or if the account is remote. | 
 **source_** | [**CredentialAccountSource**](CredentialAccountSource.md) |  | 
 **statusesCount** | **int** | How many statuses are attached to this account. | 
 **uri** | [**Uri**](Uri.md) | The user's ActivityPub actor identifier (used for federation). | 
@@ -38,6 +37,7 @@ Name | Type | Description | Notes
 **memorial** | **bool** | An extra attribute returned only when an account is memorialized (when `memorial` is true). | [optional] 
 **moved** | [**Account**](Account.md) |  | [optional] 
 **noindex** | **bool** | Whether the local user has opted out of being indexed by search engines. | [optional] 
+**roles** | [**List&lt;AccountRole&gt;**](AccountRole.md) | An array of roles assigned to the user that are publicly visible (highlighted roles only), if the account is local. Will be an empty array if no roles are highlighted or if the account is remote. | [optional] 
 **suspended** | **bool** | An extra attribute returned only when an account is suspended. | [optional] 
 **url** | [**Uri**](Uri.md) | The location of the user's profile page (web interface URL). | [optional] 
 

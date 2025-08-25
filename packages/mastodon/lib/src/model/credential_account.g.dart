@@ -31,7 +31,6 @@ CredentialAccount _$CredentialAccountFromJson(Map<String, dynamic> json) =>
             'locked',
             'note',
             'role',
-            'roles',
             'source',
             'statuses_count',
             'uri',
@@ -84,12 +83,6 @@ CredentialAccount _$CredentialAccountFromJson(Map<String, dynamic> json) =>
             'role',
             (v) => Role.fromJson(v as Map<String, dynamic>),
           ),
-          roles: $checkedConvert(
-            'roles',
-            (v) => (v as List<dynamic>)
-                .map((e) => AccountRole.fromJson(e as Map<String, dynamic>))
-                .toList(),
-          ),
           source_: $checkedConvert(
             'source',
             (v) => CredentialAccountSource.fromJson(v as Map<String, dynamic>),
@@ -118,6 +111,12 @@ CredentialAccount _$CredentialAccountFromJson(Map<String, dynamic> json) =>
                 v == null ? null : Account.fromJson(v as Map<String, dynamic>),
           ),
           noindex: $checkedConvert('noindex', (v) => v as bool?),
+          roles: $checkedConvert(
+            'roles',
+            (v) => (v as List<dynamic>?)
+                ?.map((e) => AccountRole.fromJson(e as Map<String, dynamic>))
+                .toList(),
+          ),
           suspended: $checkedConvert('suspended', (v) => v as bool?),
           url: $checkedConvert(
             'url',
@@ -159,7 +158,6 @@ Map<String, dynamic> _$CredentialAccountToJson(CredentialAccount instance) {
     'locked': instance.locked,
     'note': instance.note,
     'role': instance.role.toJson(),
-    'roles': instance.roles.map((e) => e.toJson()).toList(),
     'source': instance.source_.toJson(),
     'statuses_count': instance.statusesCount,
     'uri': instance.uri.toString(),
@@ -180,6 +178,7 @@ Map<String, dynamic> _$CredentialAccountToJson(CredentialAccount instance) {
   writeNotNull('memorial', instance.memorial);
   writeNotNull('moved', instance.moved?.toJson());
   writeNotNull('noindex', instance.noindex);
+  writeNotNull('roles', instance.roles?.map((e) => e.toJson()).toList());
   writeNotNull('suspended', instance.suspended);
   writeNotNull('url', instance.url?.toString());
   return val;

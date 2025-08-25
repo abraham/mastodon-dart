@@ -57,8 +57,6 @@ class CredentialAccount {
 
     required this.role,
 
-    required this.roles,
-
     required this.source_,
 
     required this.statusesCount,
@@ -82,6 +80,8 @@ class CredentialAccount {
     this.moved,
 
     this.noindex,
+
+    this.roles,
 
     this.suspended,
 
@@ -156,10 +156,6 @@ class CredentialAccount {
   @JsonKey(name: r'role', required: true, includeIfNull: false)
   final Role role;
 
-  /// An array of roles assigned to the user that are publicly visible (highlighted roles only), if the account is local. Will be an empty array if no roles are highlighted or if the account is remote.
-  @JsonKey(name: r'roles', required: true, includeIfNull: false)
-  final List<AccountRole> roles;
-
   @JsonKey(name: r'source', required: true, includeIfNull: false)
   final CredentialAccountSource source_;
 
@@ -206,6 +202,10 @@ class CredentialAccount {
   @JsonKey(name: r'noindex', required: false, includeIfNull: false)
   final bool? noindex;
 
+  /// An array of roles assigned to the user that are publicly visible (highlighted roles only), if the account is local. Will be an empty array if no roles are highlighted or if the account is remote.
+  @JsonKey(name: r'roles', required: false, includeIfNull: false)
+  final List<AccountRole>? roles;
+
   /// An extra attribute returned only when an account is suspended.
   @JsonKey(name: r'suspended', required: false, includeIfNull: false)
   final bool? suspended;
@@ -235,7 +235,6 @@ class CredentialAccount {
           other.locked == locked &&
           other.note == note &&
           other.role == role &&
-          other.roles == roles &&
           other.source_ == source_ &&
           other.statusesCount == statusesCount &&
           other.uri == uri &&
@@ -248,6 +247,7 @@ class CredentialAccount {
           other.memorial == memorial &&
           other.moved == moved &&
           other.noindex == noindex &&
+          other.roles == roles &&
           other.suspended == suspended &&
           other.url == url;
 
@@ -270,7 +270,6 @@ class CredentialAccount {
       locked.hashCode +
       note.hashCode +
       role.hashCode +
-      roles.hashCode +
       source_.hashCode +
       statusesCount.hashCode +
       uri.hashCode +
@@ -283,6 +282,7 @@ class CredentialAccount {
       (memorial == null ? 0 : memorial.hashCode) +
       (moved == null ? 0 : moved.hashCode) +
       (noindex == null ? 0 : noindex.hashCode) +
+      (roles == null ? 0 : roles.hashCode) +
       (suspended == null ? 0 : suspended.hashCode) +
       (url == null ? 0 : url.hashCode);
 

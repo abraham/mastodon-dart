@@ -103,12 +103,6 @@ void main() {
       // TODO
     });
 
-    // An array of roles assigned to the user that are publicly visible (highlighted roles only), if the account is local. Will be an empty array if no roles are highlighted or if the account is remote.
-    // List<AccountRole> roles
-    test('to test the property `roles`', () async {
-      // TODO
-    });
-
     // How many statuses are attached to this account.
     // int statusesCount
     test('to test the property `statusesCount`', () async {
@@ -177,6 +171,12 @@ void main() {
     // Whether the local user has opted out of being indexed by search engines.
     // bool noindex
     test('to test the property `noindex`', () async {
+      // TODO
+    });
+
+    // An array of roles assigned to the user that are publicly visible (highlighted roles only), if the account is local. Will be an empty array if no roles are highlighted or if the account is remote.
+    // List<AccountRole> roles
+    test('to test the property `roles`', () async {
       // TODO
     });
 

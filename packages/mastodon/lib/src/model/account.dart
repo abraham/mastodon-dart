@@ -52,8 +52,6 @@ class Account {
 
     required this.note,
 
-    required this.roles,
-
     required this.statusesCount,
 
     required this.uri,
@@ -75,6 +73,8 @@ class Account {
     this.moved,
 
     this.noindex,
+
+    this.roles,
 
     this.suspended,
 
@@ -145,10 +145,6 @@ class Account {
   @JsonKey(name: r'note', required: true, includeIfNull: false)
   final String note;
 
-  /// An array of roles assigned to the user that are publicly visible (highlighted roles only), if the account is local. Will be an empty array if no roles are highlighted or if the account is remote.
-  @JsonKey(name: r'roles', required: true, includeIfNull: false)
-  final List<AccountRole> roles;
-
   /// How many statuses are attached to this account.
   @JsonKey(name: r'statuses_count', required: true, includeIfNull: false)
   final int statusesCount;
@@ -192,6 +188,10 @@ class Account {
   @JsonKey(name: r'noindex', required: false, includeIfNull: false)
   final bool? noindex;
 
+  /// An array of roles assigned to the user that are publicly visible (highlighted roles only), if the account is local. Will be an empty array if no roles are highlighted or if the account is remote.
+  @JsonKey(name: r'roles', required: false, includeIfNull: false)
+  final List<AccountRole>? roles;
+
   /// An extra attribute returned only when an account is suspended.
   @JsonKey(name: r'suspended', required: false, includeIfNull: false)
   final bool? suspended;
@@ -220,7 +220,6 @@ class Account {
           other.id == id &&
           other.locked == locked &&
           other.note == note &&
-          other.roles == roles &&
           other.statusesCount == statusesCount &&
           other.uri == uri &&
           other.username == username &&
@@ -232,6 +231,7 @@ class Account {
           other.memorial == memorial &&
           other.moved == moved &&
           other.noindex == noindex &&
+          other.roles == roles &&
           other.suspended == suspended &&
           other.url == url;
 
@@ -253,7 +253,6 @@ class Account {
       id.hashCode +
       locked.hashCode +
       note.hashCode +
-      roles.hashCode +
       statusesCount.hashCode +
       uri.hashCode +
       username.hashCode +
@@ -265,6 +264,7 @@ class Account {
       (memorial == null ? 0 : memorial.hashCode) +
       (moved == null ? 0 : moved.hashCode) +
       (noindex == null ? 0 : noindex.hashCode) +
+      (roles == null ? 0 : roles.hashCode) +
       (suspended == null ? 0 : suspended.hashCode) +
       (url == null ? 0 : url.hashCode);
 

@@ -29,7 +29,6 @@ Account _$AccountFromJson(Map<String, dynamic> json) => $checkedCreate(
         'id',
         'locked',
         'note',
-        'roles',
         'statuses_count',
         'uri',
         'username',
@@ -77,12 +76,6 @@ Account _$AccountFromJson(Map<String, dynamic> json) => $checkedCreate(
       id: $checkedConvert('id', (v) => v as String),
       locked: $checkedConvert('locked', (v) => v as bool),
       note: $checkedConvert('note', (v) => v as String),
-      roles: $checkedConvert(
-        'roles',
-        (v) => (v as List<dynamic>)
-            .map((e) => AccountRole.fromJson(e as Map<String, dynamic>))
-            .toList(),
-      ),
       statusesCount: $checkedConvert(
         'statuses_count',
         (v) => (v as num).toInt(),
@@ -103,6 +96,12 @@ Account _$AccountFromJson(Map<String, dynamic> json) => $checkedCreate(
         (v) => v == null ? null : Account.fromJson(v as Map<String, dynamic>),
       ),
       noindex: $checkedConvert('noindex', (v) => v as bool?),
+      roles: $checkedConvert(
+        'roles',
+        (v) => (v as List<dynamic>?)
+            ?.map((e) => AccountRole.fromJson(e as Map<String, dynamic>))
+            .toList(),
+      ),
       suspended: $checkedConvert('suspended', (v) => v as bool?),
       url: $checkedConvert(
         'url',
@@ -142,7 +141,6 @@ Map<String, dynamic> _$AccountToJson(Account instance) {
     'id': instance.id,
     'locked': instance.locked,
     'note': instance.note,
-    'roles': instance.roles.map((e) => e.toJson()).toList(),
     'statuses_count': instance.statusesCount,
     'uri': instance.uri.toString(),
     'username': instance.username,
@@ -162,6 +160,7 @@ Map<String, dynamic> _$AccountToJson(Account instance) {
   writeNotNull('memorial', instance.memorial);
   writeNotNull('moved', instance.moved?.toJson());
   writeNotNull('noindex', instance.noindex);
+  writeNotNull('roles', instance.roles?.map((e) => e.toJson()).toList());
   writeNotNull('suspended', instance.suspended);
   writeNotNull('url', instance.url?.toString());
   return val;
