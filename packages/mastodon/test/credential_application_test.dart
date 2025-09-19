@@ -37,7 +37,7 @@ void main() {
       // TODO
     });
 
-    // The registered redirection URI(s) for the application.
+    // The registered redirection URI(s) for the application stored as a single string. Multiple URIs are separated by whitespace characters. May contain `\\n` characters when multiple redirect URIs are registered.
     // String redirectUri
     test('to test the property `redirectUri`', () async {
       // TODO

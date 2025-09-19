@@ -41,7 +41,7 @@ class Application {
   @JsonKey(name: r'name', required: true, includeIfNull: false)
   final String name;
 
-  /// The registered redirection URI(s) for the application.
+  /// The registered redirection URI(s) for the application stored as a single string. Multiple URIs are separated by whitespace characters. May contain `\\n` characters when multiple redirect URIs are registered.
   @Deprecated('redirectUri has been deprecated')
   @JsonKey(name: r'redirect_uri', required: false, includeIfNull: false)
   final String? redirectUri;

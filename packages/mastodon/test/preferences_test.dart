@@ -7,13 +7,13 @@ void main() {
   // TODO add properties to the entity
 
   group(Preferences, () {
-    // Default sensitivity flag for new posts. Equivalent to [CredentialAccount#source
+    // Default sensitivity flag for new posts. Equivalent to [CredentialAccount#source\\[sensitive\\]]({{< relref \"entities/Account#source-sensitive\" >}}).
     // bool postingColonDefaultColonSensitive
     test('to test the property `postingColonDefaultColonSensitive`', () async {
       // TODO
     });
 
-    // Default visibility for new posts. Equivalent to [CredentialAccount#source
+    // Default visibility for new posts. Equivalent to [CredentialAccount#source\\[privacy\\]]({{< relref \"entities/Account#source-privacy\" >}}).
     // VisibilityEnum postingColonDefaultColonVisibility
     test('to test the property `postingColonDefaultColonVisibility`', () async {
       // TODO
@@ -31,7 +31,7 @@ void main() {
       // TODO
     });
 
-    // Default language for new posts. Equivalent to [CredentialAccount#source
+    // Default language for new posts. Equivalent to [CredentialAccount#source\\[language\\]]({{< relref \"entities/Account#source-language\" >}})
     // String postingColonDefaultColonLanguage
     test('to test the property `postingColonDefaultColonLanguage`', () async {
       // TODO
