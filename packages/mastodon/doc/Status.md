@@ -35,6 +35,8 @@ Name | Type | Description | Notes
 **muted** | **bool** | If the current token has an authorized user: Have you muted notifications for this status's conversation? | [optional] 
 **pinned** | **bool** | If the current token has an authorized user: Have you pinned this status? Only appears if the status is pinnable. | [optional] 
 **poll** | [**Poll**](Poll.md) |  | [optional] 
+**quoteApproval** | [**QuoteApproval**](QuoteApproval.md) |  | [optional] 
+**quotesCount** | **int** | How many accepted quotes this status has. | [optional] 
 **reblog** | [**Status**](Status.md) |  | [optional] 
 **reblogged** | **bool** | If the current token has an authorized user: Have you boosted this status? | [optional] 
 **text** | **String** | Plain-text source of a status. Returned instead of `content` when status is deleted, so the user may redraft from the source text without the client having to reverse-engineer the original text from the HTML content. | [optional] 

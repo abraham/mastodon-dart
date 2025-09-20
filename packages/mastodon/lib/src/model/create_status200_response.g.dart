@@ -125,6 +125,13 @@ CreateStatus200Response _$CreateStatus200ResponseFromJson(
         'poll',
         (v) => v == null ? null : Poll.fromJson(v as Map<String, dynamic>),
       ),
+      quoteApproval: $checkedConvert(
+        'quote_approval',
+        (v) => v == null
+            ? null
+            : QuoteApproval.fromJson(v as Map<String, dynamic>),
+      ),
+      quotesCount: $checkedConvert('quotes_count', (v) => (v as num?)?.toInt()),
       reblog: $checkedConvert(
         'reblog',
         (v) => v == null ? null : Status.fromJson(v as Map<String, dynamic>),
@@ -149,6 +156,8 @@ CreateStatus200Response _$CreateStatus200ResponseFromJson(
     'editedAt': 'edited_at',
     'inReplyToAccountId': 'in_reply_to_account_id',
     'inReplyToId': 'in_reply_to_id',
+    'quoteApproval': 'quote_approval',
+    'quotesCount': 'quotes_count',
   },
 );
 
@@ -195,6 +204,8 @@ Map<String, dynamic> _$CreateStatus200ResponseToJson(
   writeNotNull('muted', instance.muted);
   writeNotNull('pinned', instance.pinned);
   writeNotNull('poll', instance.poll?.toJson());
+  writeNotNull('quote_approval', instance.quoteApproval?.toJson());
+  writeNotNull('quotes_count', instance.quotesCount);
   writeNotNull('reblog', instance.reblog?.toJson());
   writeNotNull('reblogged', instance.reblogged);
   writeNotNull('text', instance.text);

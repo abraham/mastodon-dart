@@ -6,6 +6,7 @@
 import 'package:mastodon/src/model/scheduled_status.dart';
 import 'package:mastodon/src/model/status.dart';
 import 'package:mastodon/src/model/status_mention.dart';
+import 'package:mastodon/src/model/quote_approval.dart';
 import 'package:mastodon/src/model/media_attachment.dart';
 import 'package:mastodon/src/model/status_application.dart';
 import 'package:mastodon/src/model/preview_card.dart';
@@ -87,6 +88,10 @@ class CreateStatus200Response {
     this.pinned,
 
     this.poll,
+
+    this.quoteApproval,
+
+    this.quotesCount,
 
     this.reblog,
 
@@ -213,6 +218,13 @@ class CreateStatus200Response {
   @JsonKey(name: r'poll', required: false, includeIfNull: false)
   final Poll? poll;
 
+  @JsonKey(name: r'quote_approval', required: false, includeIfNull: false)
+  final QuoteApproval? quoteApproval;
+
+  /// How many accepted quotes this status has.
+  @JsonKey(name: r'quotes_count', required: false, includeIfNull: false)
+  final int? quotesCount;
+
   @JsonKey(name: r'reblog', required: false, includeIfNull: false)
   final Status? reblog;
 
@@ -261,6 +273,8 @@ class CreateStatus200Response {
           other.muted == muted &&
           other.pinned == pinned &&
           other.poll == poll &&
+          other.quoteApproval == quoteApproval &&
+          other.quotesCount == quotesCount &&
           other.reblog == reblog &&
           other.reblogged == reblogged &&
           other.text == text &&
@@ -297,6 +311,8 @@ class CreateStatus200Response {
       muted.hashCode +
       pinned.hashCode +
       poll.hashCode +
+      quoteApproval.hashCode +
+      quotesCount.hashCode +
       reblog.hashCode +
       reblogged.hashCode +
       text.hashCode +

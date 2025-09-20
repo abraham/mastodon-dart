@@ -1330,7 +1330,7 @@ class AccountsApi {
   }
 
   /// Update account credentials
-  /// Update the user&#39;s display and preferences.  Version history:  1.1.1 - added\\ 2.3.0 - added &#x60;locked&#x60; parameter\\ 2.4.0 - added &#x60;source[privacy,sensitive]&#x60; parameters\\ 2.4.2 - added &#x60;source[language]&#x60; parameter\\ 2.7.0 - added &#x60;discoverable&#x60; parameter\\ 4.1.0 - added &#x60;hide_collections&#x60; parameter\\ 4.2.0 - added &#x60;indexable&#x60; parameter\\ 4.4.0 (&#x60;mastodon&#x60; [API version] 3) - added &#x60;attribution_domains&#x60; parameter
+  /// Update the user&#39;s display and preferences.  Version history:  1.1.1 - added\\ 2.3.0 - added &#x60;locked&#x60; parameter\\ 2.4.0 - added &#x60;source[privacy,sensitive]&#x60; parameters\\ 2.4.2 - added &#x60;source[language]&#x60; parameter\\ 2.7.0 - added &#x60;discoverable&#x60; parameter\\ 4.1.0 - added &#x60;hide_collections&#x60; parameter\\ 4.2.0 - added &#x60;indexable&#x60; parameter\\ 4.4.0 (&#x60;mastodon&#x60; [API version] 3) - added &#x60;attribution_domains&#x60; parameter\\ 4.5.0 (&#x60;mastodon&#x60; [API version] 7) - added &#x60;quote_policy&#x60; parameter
   ///
   /// Parameters:
   /// * [patchAccountsUpdateCredentialsRequest] - JSON request body parameters

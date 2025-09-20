@@ -178,6 +178,17 @@ void main() {
       // TODO
     });
 
+    // QuoteApproval quoteApproval
+    test('to test the property `quoteApproval`', () async {
+      // TODO
+    });
+
+    // How many accepted quotes this status has.
+    // int quotesCount
+    test('to test the property `quotesCount`', () async {
+      // TODO
+    });
+
     // Status reblog
     test('to test the property `reblog`', () async {
       // TODO

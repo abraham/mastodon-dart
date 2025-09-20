@@ -8,7 +8,7 @@ void main() {
   group(StatusesApi, () {
     // Post a new status
     //
-    // Publish a status with the given parameters.  Version history:  0.0.0 - added\\ 2.7.0 - `scheduled_at` added\\ 2.8.0 - `poll` added
+    // Publish a status with the given parameters.  Version history:  0.0.0 - added\\ 2.7.0 - `scheduled_at` added\\ 2.8.0 - `poll` added 4.5.0 (`mastodon` [API version] 7) - `quoted_status_id` and `quote_approval_policy` added
     //
     //Future<CreateStatus200Response> createStatus(CreateStatusRequest createStatusRequest, { Object idempotencyKey }) async
     test('test createStatus', () async {
@@ -66,6 +66,15 @@ void main() {
     //
     //Future<List<StatusEdit>> getStatusHistory(String id) async
     test('test getStatusHistory', () async {
+      // TODO
+    });
+
+    // See quotes of a status
+    //
+    // View quotes of a status you have posted.  Version history:  4.5.0 (`mastodon` [API version] 7) - added
+    //
+    //Future<List<Status>> getStatusQuotes(String id, { int limit, String maxId, String sinceId }) async
+    test('test getStatusQuotes', () async {
       // TODO
     });
 
@@ -195,12 +204,30 @@ void main() {
       // TODO
     });
 
+    // Revoke a quote post
+    //
+    // Revoke quote authorization of status `quoting_status_id`, detaching status `id`.  Version history:  4.5.0 (`mastodon` [API version] 7) - added
+    //
+    //Future<Status> postStatusesByIdQuotesByQuotingStatusIdRevoke(String id, String quotingStatusId) async
+    test('test postStatusesByIdQuotesByQuotingStatusIdRevoke', () async {
+      // TODO
+    });
+
     // Edit a status
     //
-    // Edit a given status to change its text, sensitivity, media attachments, or poll. Note that editing a poll’s options or changing whether it is multiple choice will reset the votes.  Version history:  3.5.0 - added\\ 4.0.0 - add `language`
+    // Edit a given status to change its text, sensitivity, media attachments, or poll. Note that editing a poll’s options or changing whether it is multiple choice will reset the votes.  Version history:  3.5.0 - added\\ 4.0.0 - add `language`\\ 4.5.0 (`mastodon` [API version] 7) - add `quote_approval_policy`
     //
     //Future<Status> updateStatus(String id, { UpdateStatusRequest updateStatusRequest }) async
     test('test updateStatus', () async {
+      // TODO
+    });
+
+    // Edit a status' interaction policies
+    //
+    // Edit a given status to change its interaction policies. Currently, this means changing its quote approval policy.  Version history:  4.5.0 (`mastodon` [API version] 7) - added
+    //
+    //Future<Status> updateStatusInteractionPolicy(String id, { UpdateStatusInteractionPolicyRequest updateStatusInteractionPolicyRequest }) async
+    test('test updateStatusInteractionPolicy', () async {
       // TODO
     });
   });

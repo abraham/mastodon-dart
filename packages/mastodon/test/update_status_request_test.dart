@@ -33,6 +33,12 @@ void main() {
       // TODO
     });
 
+    // String (Enumerable, oneOf). Sets who is allowed to quote the status. Ignored if `visibility` is `private` or `direct`, in which case the policy will always be set to `nobody`. Changing the policy does not invalidate past quotes.
+    // String quoteApprovalPolicy
+    test('to test the property `quoteApprovalPolicy`', () async {
+      // TODO
+    });
+
     // Whether the status should be marked as sensitive.
     // bool sensitive
     test('to test the property `sensitive`', () async {

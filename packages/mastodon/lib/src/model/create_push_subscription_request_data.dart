@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:mastodon/src/model/put_push_subscription_request_data_alerts.dart';
+import 'package:mastodon/src/model/create_push_subscription_request_data_alerts.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'create_push_subscription_request_data.g.dart';
@@ -19,7 +19,7 @@ class CreatePushSubscriptionRequestData {
   CreatePushSubscriptionRequestData({this.alerts, this.policy});
 
   @JsonKey(name: r'alerts', required: false, includeIfNull: false)
-  final PutPushSubscriptionRequestDataAlerts? alerts;
+  final CreatePushSubscriptionRequestDataAlerts? alerts;
 
   /// Specify whether to receive push notifications from `all`, `followed`, `follower`, or `none` users.
   @JsonKey(name: r'policy', required: false, includeIfNull: false)

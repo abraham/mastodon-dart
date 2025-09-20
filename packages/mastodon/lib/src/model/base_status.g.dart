@@ -13,6 +13,11 @@ BaseStatus _$BaseStatusFromJson(Map<String, dynamic> json) => $checkedCreate(
     final val = BaseStatus(
       inReplyToId: $checkedConvert('in_reply_to_id', (v) => v as String?),
       language: $checkedConvert('language', (v) => v as String?),
+      quoteApprovalPolicy: $checkedConvert(
+        'quote_approval_policy',
+        (v) => v as String?,
+      ),
+      quotedStatusId: $checkedConvert('quoted_status_id', (v) => v as String?),
       scheduledAt: $checkedConvert(
         'scheduled_at',
         (v) => v == null ? null : DateTime.parse(v as String),
@@ -28,6 +33,8 @@ BaseStatus _$BaseStatusFromJson(Map<String, dynamic> json) => $checkedCreate(
   },
   fieldKeyMap: const {
     'inReplyToId': 'in_reply_to_id',
+    'quoteApprovalPolicy': 'quote_approval_policy',
+    'quotedStatusId': 'quoted_status_id',
     'scheduledAt': 'scheduled_at',
     'spoilerText': 'spoiler_text',
   },
@@ -44,6 +51,8 @@ Map<String, dynamic> _$BaseStatusToJson(BaseStatus instance) {
 
   writeNotNull('in_reply_to_id', instance.inReplyToId);
   writeNotNull('language', instance.language);
+  writeNotNull('quote_approval_policy', instance.quoteApprovalPolicy);
+  writeNotNull('quoted_status_id', instance.quotedStatusId);
   writeNotNull('scheduled_at', instance.scheduledAt?.toIso8601String());
   writeNotNull('sensitive', instance.sensitive);
   writeNotNull('spoiler_text', instance.spoilerText);

@@ -8,7 +8,7 @@ void main() {
   // TODO add properties to the entity
 
   group(CreatePushSubscriptionRequestData, () {
-    // PutPushSubscriptionRequestDataAlerts alerts
+    // CreatePushSubscriptionRequestDataAlerts alerts
     test('to test the property `alerts`', () async {
       // TODO
     });

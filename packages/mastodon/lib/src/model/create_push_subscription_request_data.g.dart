@@ -16,7 +16,7 @@ CreatePushSubscriptionRequestData _$CreatePushSubscriptionRequestDataFromJson(
       'alerts',
       (v) => v == null
           ? null
-          : PutPushSubscriptionRequestDataAlerts.fromJson(
+          : CreatePushSubscriptionRequestDataAlerts.fromJson(
               v as Map<String, dynamic>,
             ),
     ),

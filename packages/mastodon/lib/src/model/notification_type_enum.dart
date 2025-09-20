@@ -22,6 +22,10 @@ enum NotificationTypeEnum {
   moderationWarning(r'moderation_warning'),
   @JsonValue(r'poll')
   poll(r'poll'),
+  @JsonValue(r'quote')
+  quote(r'quote'),
+  @JsonValue(r'quoted_update')
+  quotedUpdate(r'quoted_update'),
   @JsonValue(r'reblog')
   reblog(r'reblog'),
   @JsonValue(r'severed_relationships')

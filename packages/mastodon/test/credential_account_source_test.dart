@@ -67,5 +67,11 @@ void main() {
     test('to test the property `language`', () async {
       // TODO
     });
+
+    // The default quote policy to be used for new statuses.
+    // String quotePolicy
+    test('to test the property `quotePolicy`', () async {
+      // TODO
+    });
   });
 }

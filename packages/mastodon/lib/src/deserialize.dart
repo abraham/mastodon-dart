@@ -39,6 +39,7 @@ import 'package:mastodon/src/model/create_marker_request_home.dart';
 import 'package:mastodon/src/model/create_marker_request_notifications.dart';
 import 'package:mastodon/src/model/create_push_subscription_request.dart';
 import 'package:mastodon/src/model/create_push_subscription_request_data.dart';
+import 'package:mastodon/src/model/create_push_subscription_request_data_alerts.dart';
 import 'package:mastodon/src/model/create_push_subscription_request_subscription.dart';
 import 'package:mastodon/src/model/create_push_subscription_request_subscription_keys.dart';
 import 'package:mastodon/src/model/create_report_request.dart';
@@ -119,6 +120,7 @@ import 'package:mastodon/src/model/put_push_subscription_request.dart';
 import 'package:mastodon/src/model/put_push_subscription_request_data.dart';
 import 'package:mastodon/src/model/put_push_subscription_request_data_alerts.dart';
 import 'package:mastodon/src/model/quote.dart';
+import 'package:mastodon/src/model/quote_approval.dart';
 import 'package:mastodon/src/model/reaction.dart';
 import 'package:mastodon/src/model/relationship.dart';
 import 'package:mastodon/src/model/relationship_severance_event.dart';
@@ -154,6 +156,7 @@ import 'package:mastodon/src/model/update_filter_request.dart';
 import 'package:mastodon/src/model/update_filter_v2_request.dart';
 import 'package:mastodon/src/model/update_filter_v2_request_keywords_attributes_inner.dart';
 import 'package:mastodon/src/model/update_scheduled_status_request.dart';
+import 'package:mastodon/src/model/update_status_interaction_policy_request.dart';
 import 'package:mastodon/src/model/update_status_request.dart';
 import 'package:mastodon/src/model/update_status_request_poll.dart';
 import 'package:mastodon/src/model/v1_filter.dart';
@@ -308,6 +311,11 @@ ReturnType deserialize<ReturnType, BaseType>(
           as ReturnType;
     case 'CreatePushSubscriptionRequestData':
       return CreatePushSubscriptionRequestData.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
+    case 'CreatePushSubscriptionRequestDataAlerts':
+      return CreatePushSubscriptionRequestDataAlerts.fromJson(
             value as Map<String, dynamic>,
           )
           as ReturnType;
@@ -559,6 +567,9 @@ ReturnType deserialize<ReturnType, BaseType>(
           as ReturnType;
     case 'Quote':
       return Quote.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'QuoteApproval':
+      return QuoteApproval.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'Reaction':
       return Reaction.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'Relationship':
@@ -649,6 +660,11 @@ ReturnType deserialize<ReturnType, BaseType>(
           as ReturnType;
     case 'UpdateScheduledStatusRequest':
       return UpdateScheduledStatusRequest.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
+    case 'UpdateStatusInteractionPolicyRequest':
+      return UpdateStatusInteractionPolicyRequest.fromJson(
             value as Map<String, dynamic>,
           )
           as ReturnType;

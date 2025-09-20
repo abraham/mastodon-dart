@@ -25,6 +25,8 @@ class UpdateStatusRequest {
 
     this.poll,
 
+    this.quoteApprovalPolicy,
+
     this.sensitive,
 
     this.spoilerText,
@@ -47,6 +49,14 @@ class UpdateStatusRequest {
   @JsonKey(name: r'poll', required: false, includeIfNull: false)
   final UpdateStatusRequestPoll? poll;
 
+  /// String (Enumerable, oneOf). Sets who is allowed to quote the status. Ignored if `visibility` is `private` or `direct`, in which case the policy will always be set to `nobody`. Changing the policy does not invalidate past quotes.
+  @JsonKey(
+    name: r'quote_approval_policy',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? quoteApprovalPolicy;
+
   /// Whether the status should be marked as sensitive.
   @JsonKey(name: r'sensitive', required: false, includeIfNull: false)
   final bool? sensitive;
@@ -68,6 +78,7 @@ class UpdateStatusRequest {
               mediaAttributesLeftSquareBracketRightSquareBracket &&
           other.mediaIds == mediaIds &&
           other.poll == poll &&
+          other.quoteApprovalPolicy == quoteApprovalPolicy &&
           other.sensitive == sensitive &&
           other.spoilerText == spoilerText &&
           other.status == status;
@@ -78,6 +89,7 @@ class UpdateStatusRequest {
       mediaAttributesLeftSquareBracketRightSquareBracket.hashCode +
       mediaIds.hashCode +
       poll.hashCode +
+      quoteApprovalPolicy.hashCode +
       sensitive.hashCode +
       spoilerText.hashCode +
       status.hashCode;

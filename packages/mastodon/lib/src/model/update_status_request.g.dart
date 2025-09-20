@@ -27,6 +27,10 @@ UpdateStatusRequest _$UpdateStatusRequestFromJson(Map<String, dynamic> json) =>
                 ? null
                 : UpdateStatusRequestPoll.fromJson(v as Map<String, dynamic>),
           ),
+          quoteApprovalPolicy: $checkedConvert(
+            'quote_approval_policy',
+            (v) => v as String?,
+          ),
           sensitive: $checkedConvert('sensitive', (v) => v as bool?),
           spoilerText: $checkedConvert('spoiler_text', (v) => v as String?),
           status: $checkedConvert('status', (v) => v as String?),
@@ -37,6 +41,7 @@ UpdateStatusRequest _$UpdateStatusRequestFromJson(Map<String, dynamic> json) =>
         'mediaAttributesLeftSquareBracketRightSquareBracket':
             'media_attributes[]',
         'mediaIds': 'media_ids',
+        'quoteApprovalPolicy': 'quote_approval_policy',
         'spoilerText': 'spoiler_text',
       },
     );
@@ -57,6 +62,7 @@ Map<String, dynamic> _$UpdateStatusRequestToJson(UpdateStatusRequest instance) {
   );
   writeNotNull('media_ids', instance.mediaIds);
   writeNotNull('poll', instance.poll?.toJson());
+  writeNotNull('quote_approval_policy', instance.quoteApprovalPolicy);
   writeNotNull('sensitive', instance.sensitive);
   writeNotNull('spoiler_text', instance.spoilerText);
   writeNotNull('status', instance.status);

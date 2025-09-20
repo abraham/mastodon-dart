@@ -21,6 +21,7 @@ import 'package:mastodon/src/model/status.dart';
 import 'package:mastodon/src/model/status_edit.dart';
 import 'package:mastodon/src/model/status_source.dart';
 import 'package:mastodon/src/model/translation.dart';
+import 'package:mastodon/src/model/update_status_interaction_policy_request.dart';
 import 'package:mastodon/src/model/update_status_request.dart';
 import 'package:mastodon/src/model/validation_error.dart';
 
@@ -30,7 +31,7 @@ class StatusesApi {
   const StatusesApi(this._dio);
 
   /// Post a new status
-  /// Publish a status with the given parameters.  Version history:  0.0.0 - added\\ 2.7.0 - &#x60;scheduled_at&#x60; added\\ 2.8.0 - &#x60;poll&#x60; added
+  /// Publish a status with the given parameters.  Version history:  0.0.0 - added\\ 2.7.0 - &#x60;scheduled_at&#x60; added\\ 2.8.0 - &#x60;poll&#x60; added 4.5.0 (&#x60;mastodon&#x60; [API version] 7) - &#x60;quoted_status_id&#x60; and &#x60;quote_approval_policy&#x60; added
   ///
   /// Parameters:
   /// * [createStatusRequest] - JSON request body parameters for creating a status. Different types of statuses have different requirements.
@@ -630,6 +631,103 @@ class StatusesApi {
     }
 
     return Response<List<StatusEdit>>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// See quotes of a status
+  /// View quotes of a status you have posted.  Version history:  4.5.0 (&#x60;mastodon&#x60; [API version] 7) - added
+  ///
+  /// Parameters:
+  /// * [id] - id parameter
+  /// * [limit] - Maximum number of results to return. Defaults to 40 accounts. Max 80 accounts.
+  /// * [maxId] - Internal parameter. Use HTTP `Link` header for pagination.
+  /// * [sinceId] - Internal parameter. Use HTTP `Link` header for pagination.
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [List<Status>] as data
+  /// Throws [DioException] if API call or serialization fails
+  /// Official Mastodon API documentation
+  /// Also see [See quotes of a status Documentation](https://docs.joinmastodon.org/methods/statuses/#quotes)
+  Future<Response<List<Status>>> getStatusQuotes({
+    required String id,
+    int? limit = 40,
+    String? maxId,
+    String? sinceId,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/api/v1/statuses/{id}/quotes'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {'type': 'oauth2', 'name': 'OAuth2'},
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _queryParameters = <String, dynamic>{
+      if (limit != null) r'limit': limit,
+      if (maxId != null) r'max_id': maxId,
+      if (sinceId != null) r'since_id': sinceId,
+    };
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      queryParameters: _queryParameters,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    List<Status>? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<Status>, Status>(
+              rawData,
+              'List<Status>',
+              growable: true,
+            );
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<List<Status>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -1822,8 +1920,97 @@ class StatusesApi {
     );
   }
 
+  /// Revoke a quote post
+  /// Revoke quote authorization of status &#x60;quoting_status_id&#x60;, detaching status &#x60;id&#x60;.  Version history:  4.5.0 (&#x60;mastodon&#x60; [API version] 7) - added
+  ///
+  /// Parameters:
+  /// * [id] - id parameter
+  /// * [quotingStatusId] - quoting_status_id parameter
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [Status] as data
+  /// Throws [DioException] if API call or serialization fails
+  /// Official Mastodon API documentation
+  /// Also see [Revoke a quote post Documentation](https://docs.joinmastodon.org/methods/statuses/#revoke_quote)
+  Future<Response<Status>> postStatusesByIdQuotesByQuotingStatusIdRevoke({
+    required String id,
+    required String quotingStatusId,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/api/v1/statuses/{id}/quotes/{quoting_status_id}/revoke'
+        .replaceAll(
+          '{'
+          r'id'
+          '}',
+          id.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'quoting_status_id'
+          '}',
+          quotingStatusId.toString(),
+        );
+    final _options = Options(
+      method: r'POST',
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {'type': 'oauth2', 'name': 'OAuth2'},
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    Status? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Status, Status>(rawData, 'Status', growable: true);
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<Status>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
   /// Edit a status
-  /// Edit a given status to change its text, sensitivity, media attachments, or poll. Note that editing a poll’s options or changing whether it is multiple choice will reset the votes.  Version history:  3.5.0 - added\\ 4.0.0 - add &#x60;language&#x60;
+  /// Edit a given status to change its text, sensitivity, media attachments, or poll. Note that editing a poll’s options or changing whether it is multiple choice will reset the votes.  Version history:  3.5.0 - added\\ 4.0.0 - add &#x60;language&#x60;\\ 4.5.0 (&#x60;mastodon&#x60; [API version] 7) - add &#x60;quote_approval_policy&#x60;
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -1872,6 +2059,103 @@ class StatusesApi {
 
     try {
       _bodyData = jsonEncode(updateStatusRequest);
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _options.compose(_dio.options, _path),
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    Status? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Status, Status>(rawData, 'Status', growable: true);
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<Status>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// Edit a status&#39; interaction policies
+  /// Edit a given status to change its interaction policies. Currently, this means changing its quote approval policy.  Version history:  4.5.0 (&#x60;mastodon&#x60; [API version] 7) - added
+  ///
+  /// Parameters:
+  /// * [id] - id parameter
+  /// * [updateStatusInteractionPolicyRequest] - JSON request body parameters
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [Status] as data
+  /// Throws [DioException] if API call or serialization fails
+  /// Official Mastodon API documentation
+  /// Also see [Edit a status&#39; interaction policies Documentation](https://docs.joinmastodon.org/methods/statuses/#edit_interaction_policy)
+  Future<Response<Status>> updateStatusInteractionPolicy({
+    required String id,
+    UpdateStatusInteractionPolicyRequest? updateStatusInteractionPolicyRequest,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/api/v1/statuses/{id}/interaction_policy'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
+    final _options = Options(
+      method: r'PUT',
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {'type': 'oauth2', 'name': 'OAuth2'},
+        ],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
+
+    dynamic _bodyData;
+
+    try {
+      _bodyData = jsonEncode(updateStatusInteractionPolicyRequest);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(_dio.options, _path),

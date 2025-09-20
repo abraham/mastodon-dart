@@ -25,5 +25,11 @@ void main() {
     test('to test the property `language`', () async {
       // TODO
     });
+
+    // String (Enumerable, oneOf `public` `followers` `nobody`). Default quote policy for new posts.
+    // String quotePolicy
+    test('to test the property `quotePolicy`', () async {
+      // TODO
+    });
   });
 }

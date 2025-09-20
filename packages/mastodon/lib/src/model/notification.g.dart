@@ -95,6 +95,8 @@ const _$NotificationTypeEnumEnumMap = {
   NotificationTypeEnum.mention: 'mention',
   NotificationTypeEnum.moderationWarning: 'moderation_warning',
   NotificationTypeEnum.poll: 'poll',
+  NotificationTypeEnum.quote: 'quote',
+  NotificationTypeEnum.quotedUpdate: 'quoted_update',
   NotificationTypeEnum.reblog: 'reblog',
   NotificationTypeEnum.severedRelationships: 'severed_relationships',
   NotificationTypeEnum.status: 'status',

@@ -31,6 +31,10 @@ class CreateStatusRequest {
 
     this.language,
 
+    this.quoteApprovalPolicy,
+
+    this.quotedStatusId,
+
     this.scheduledAt,
 
     this.sensitive = false,
@@ -58,6 +62,18 @@ class CreateStatusRequest {
   /// ISO 639-1 language code for this status.
   @JsonKey(name: r'language', required: false, includeIfNull: false)
   final String? language;
+
+  /// String (Enumerable, oneOf). Sets who is allowed to quote the status. When omitted, the user's [default setting] will be used instead. Ignored if `visibility` is `private` or `direct`, in which case the policy will always be set to `nobody`.
+  @JsonKey(
+    name: r'quote_approval_policy',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? quoteApprovalPolicy;
+
+  /// ID of the status being quoted, if any. Will raise an error if the status does not exist, the author does not have access to it, or quoting is denied by Mastodon's understanding of the attached quote policy. All posts except Private Mentions (`direct` visibility) are quotable by their author. Quoting a `private` post will restrict the quoting post's `visibility` to `private` or `direct` (if the given `visibility` is `public` or `unlisted`, `private` will be used instead). If the `status` text doesn't include a link to the quoted post, Mastodon will prepend a `<p class=\"quote-inline\">RE: <a href=\"…\">…</a></p>` paragraph for backward compatibility (such a paragraph will be hidden by Mastodon's web interface).
+  @JsonKey(name: r'quoted_status_id', required: false, includeIfNull: false)
+  final String? quotedStatusId;
 
   /// [Datetime] at which to schedule a status. Providing this parameter will cause ScheduledStatus to be returned instead of Status. Must be at least 5 minutes in the future.
   @JsonKey(name: r'scheduled_at', required: false, includeIfNull: false)
@@ -89,6 +105,8 @@ class CreateStatusRequest {
           other.poll == poll &&
           other.inReplyToId == inReplyToId &&
           other.language == language &&
+          other.quoteApprovalPolicy == quoteApprovalPolicy &&
+          other.quotedStatusId == quotedStatusId &&
           other.scheduledAt == scheduledAt &&
           other.sensitive == sensitive &&
           other.spoilerText == spoilerText &&
@@ -101,6 +119,8 @@ class CreateStatusRequest {
       poll.hashCode +
       inReplyToId.hashCode +
       language.hashCode +
+      quoteApprovalPolicy.hashCode +
+      quotedStatusId.hashCode +
       scheduledAt.hashCode +
       sensitive.hashCode +
       spoilerText.hashCode +

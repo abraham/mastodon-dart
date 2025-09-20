@@ -8,7 +8,7 @@ void main() {
   group(PushApi, () {
     // Subscribe to push notifications
     //
-    // Add a Web Push API subscription to receive notifications. Each access token can have one push subscription. If you create a new subscription, the old subscription is deleted.  Version history:  2.4.0 - added\\ 3.3.0 - added `data[alerts][status]`\\ 3.4.0 - added `data[policy]`\\ 3.5.0 - added `data[alerts][update]` and `data[alerts][admin.sign_up]`\\ 4.0.0 - added `data[alerts][admin.report]`\\ 4.3.0 - added stricter request parameter validation, invalid endpoint URLs and subscription keys will now result in an error, previously these would be accepted, but silently fail.\\ 4.4.0 - added `subscription[standard]`
+    // Add a Web Push API subscription to receive notifications. Each access token can have one push subscription. If you create a new subscription, the old subscription is deleted.  Version history:  2.4.0 - added\\ 3.3.0 - added `data[alerts][status]`\\ 3.4.0 - added `data[policy]`\\ 3.5.0 - added `data[alerts][update]` and `data[alerts][admin.sign_up]`\\ 4.0.0 - added `data[alerts][admin.report]`\\ 4.3.0 - added stricter request parameter validation, invalid endpoint URLs and subscription keys will now result in an error, previously these would be accepted, but silently fail.\\ 4.4.0 - added `subscription[standard]`\\ 4.5.0 (`mastodon` [API version] 7)- added `data[alerts][quote]` and `data[alerts][quoted_update]`
     //
     //Future<WebPushSubscription> createPushSubscription(CreatePushSubscriptionRequest createPushSubscriptionRequest) async
     test('test createPushSubscription', () async {

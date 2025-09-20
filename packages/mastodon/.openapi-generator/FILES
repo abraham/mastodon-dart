@@ -50,6 +50,7 @@ doc/CreateMarkerRequestHome.md
 doc/CreateMarkerRequestNotifications.md
 doc/CreatePushSubscriptionRequest.md
 doc/CreatePushSubscriptionRequestData.md
+doc/CreatePushSubscriptionRequestDataAlerts.md
 doc/CreatePushSubscriptionRequestSubscription.md
 doc/CreatePushSubscriptionRequestSubscriptionKeys.md
 doc/CreateReportRequest.md
@@ -157,6 +158,7 @@ doc/PutPushSubscriptionRequest.md
 doc/PutPushSubscriptionRequestData.md
 doc/PutPushSubscriptionRequestDataAlerts.md
 doc/Quote.md
+doc/QuoteApproval.md
 doc/Reaction.md
 doc/Relationship.md
 doc/RelationshipSeveranceEvent.md
@@ -203,6 +205,7 @@ doc/UpdateFilterRequest.md
 doc/UpdateFilterV2Request.md
 doc/UpdateFilterV2RequestKeywordsAttributesInner.md
 doc/UpdateScheduledStatusRequest.md
+doc/UpdateStatusInteractionPolicyRequest.md
 doc/UpdateStatusRequest.md
 doc/UpdateStatusRequestPoll.md
 doc/V1Filter.md
@@ -307,6 +310,7 @@ lib/src/model/create_marker_request_home.dart
 lib/src/model/create_marker_request_notifications.dart
 lib/src/model/create_push_subscription_request.dart
 lib/src/model/create_push_subscription_request_data.dart
+lib/src/model/create_push_subscription_request_data_alerts.dart
 lib/src/model/create_push_subscription_request_subscription.dart
 lib/src/model/create_push_subscription_request_subscription_keys.dart
 lib/src/model/create_report_request.dart
@@ -392,6 +396,7 @@ lib/src/model/put_push_subscription_request.dart
 lib/src/model/put_push_subscription_request_data.dart
 lib/src/model/put_push_subscription_request_data_alerts.dart
 lib/src/model/quote.dart
+lib/src/model/quote_approval.dart
 lib/src/model/reaction.dart
 lib/src/model/relationship.dart
 lib/src/model/relationship_severance_event.dart
@@ -429,6 +434,7 @@ lib/src/model/update_filter_request.dart
 lib/src/model/update_filter_v2_request.dart
 lib/src/model/update_filter_v2_request_keywords_attributes_inner.dart
 lib/src/model/update_scheduled_status_request.dart
+lib/src/model/update_status_interaction_policy_request.dart
 lib/src/model/update_status_request.dart
 lib/src/model/update_status_request_poll.dart
 lib/src/model/v1_filter.dart
@@ -490,6 +496,7 @@ test/create_list_request_test.dart
 test/create_marker_request_home_test.dart
 test/create_marker_request_notifications_test.dart
 test/create_marker_request_test.dart
+test/create_push_subscription_request_data_alerts_test.dart
 test/create_push_subscription_request_data_test.dart
 test/create_push_subscription_request_subscription_keys_test.dart
 test/create_push_subscription_request_subscription_test.dart
@@ -598,6 +605,7 @@ test/push_api_test.dart
 test/put_push_subscription_request_data_alerts_test.dart
 test/put_push_subscription_request_data_test.dart
 test/put_push_subscription_request_test.dart
+test/quote_approval_test.dart
 test/quote_test.dart
 test/reaction_test.dart
 test/relationship_severance_event_test.dart
@@ -645,6 +653,7 @@ test/update_filter_request_test.dart
 test/update_filter_v2_request_keywords_attributes_inner_test.dart
 test/update_filter_v2_request_test.dart
 test/update_scheduled_status_request_test.dart
+test/update_status_interaction_policy_request_test.dart
 test/update_status_request_poll_test.dart
 test/update_status_request_test.dart
 test/v1_filter_test.dart

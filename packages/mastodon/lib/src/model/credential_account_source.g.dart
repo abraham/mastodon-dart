@@ -47,6 +47,13 @@ CredentialAccountSource _$CredentialAccountSourceFromJson(
       hideCollections: $checkedConvert('hide_collections', (v) => v as bool?),
       indexable: $checkedConvert('indexable', (v) => v as bool?),
       language: $checkedConvert('language', (v) => v as String?),
+      quotePolicy: $checkedConvert(
+        'quote_policy',
+        (v) => $enumDecodeNullable(
+          _$CredentialAccountSourceQuotePolicyEnumEnumMap,
+          v,
+        ),
+      ),
     );
     return val;
   },
@@ -54,6 +61,7 @@ CredentialAccountSource _$CredentialAccountSourceFromJson(
     'followRequestsCount': 'follow_requests_count',
     'attributionDomains': 'attribution_domains',
     'hideCollections': 'hide_collections',
+    'quotePolicy': 'quote_policy',
   },
 );
 
@@ -79,6 +87,10 @@ Map<String, dynamic> _$CredentialAccountSourceToJson(
   writeNotNull('hide_collections', instance.hideCollections);
   writeNotNull('indexable', instance.indexable);
   writeNotNull('language', instance.language);
+  writeNotNull(
+    'quote_policy',
+    _$CredentialAccountSourceQuotePolicyEnumEnumMap[instance.quotePolicy],
+  );
   return val;
 }
 
@@ -87,4 +99,10 @@ const _$CredentialAccountSourcePrivacyEnumEnumMap = {
   CredentialAccountSourcePrivacyEnum.unlisted: 'unlisted',
   CredentialAccountSourcePrivacyEnum.private: 'private',
   CredentialAccountSourcePrivacyEnum.direct: 'direct',
+};
+
+const _$CredentialAccountSourceQuotePolicyEnumEnumMap = {
+  CredentialAccountSourceQuotePolicyEnum.public: 'public',
+  CredentialAccountSourceQuotePolicyEnum.followers: 'followers',
+  CredentialAccountSourceQuotePolicyEnum.nobody: 'nobody',
 };

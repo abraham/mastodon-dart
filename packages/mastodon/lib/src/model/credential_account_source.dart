@@ -36,6 +36,8 @@ class CredentialAccountSource {
     this.indexable,
 
     this.language,
+
+    this.quotePolicy,
   });
 
   /// Metadata about the account.
@@ -78,6 +80,10 @@ class CredentialAccountSource {
   @JsonKey(name: r'language', required: false, includeIfNull: false)
   final String? language;
 
+  /// The default quote policy to be used for new statuses.
+  @JsonKey(name: r'quote_policy', required: false, includeIfNull: false)
+  final CredentialAccountSourceQuotePolicyEnum? quotePolicy;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -91,7 +97,8 @@ class CredentialAccountSource {
           other.discoverable == discoverable &&
           other.hideCollections == hideCollections &&
           other.indexable == indexable &&
-          other.language == language;
+          other.language == language &&
+          other.quotePolicy == quotePolicy;
 
   @override
   int get hashCode =>
@@ -104,7 +111,8 @@ class CredentialAccountSource {
       (discoverable == null ? 0 : discoverable.hashCode) +
       (hideCollections == null ? 0 : hideCollections.hashCode) +
       (indexable == null ? 0 : indexable.hashCode) +
-      (language == null ? 0 : language.hashCode);
+      (language == null ? 0 : language.hashCode) +
+      (quotePolicy == null ? 0 : quotePolicy.hashCode);
 
   factory CredentialAccountSource.fromJson(Map<String, dynamic> json) =>
       _$CredentialAccountSourceFromJson(json);
@@ -136,6 +144,28 @@ enum CredentialAccountSourcePrivacyEnum {
   direct(r'direct');
 
   const CredentialAccountSourcePrivacyEnum(this.value);
+
+  final String value;
+
+  @override
+  String toString() => value;
+}
+
+/// The default quote policy to be used for new statuses.
+enum CredentialAccountSourceQuotePolicyEnum {
+  /// The default quote policy to be used for new statuses.
+  @JsonValue(r'public')
+  public(r'public'),
+
+  /// The default quote policy to be used for new statuses.
+  @JsonValue(r'followers')
+  followers(r'followers'),
+
+  /// The default quote policy to be used for new statuses.
+  @JsonValue(r'nobody')
+  nobody(r'nobody');
+
+  const CredentialAccountSourceQuotePolicyEnum(this.value);
 
   final String value;
 
