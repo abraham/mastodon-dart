@@ -20,7 +20,7 @@ void main() {
     });
 
     // Whether media attachments should be automatically displayed or blurred/hidden.
-    // String readingColonExpandColonMedia
+    // MediaExpandEnum readingColonExpandColonMedia
     test('to test the property `readingColonExpandColonMedia`', () async {
       // TODO
     });

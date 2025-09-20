@@ -51,9 +51,9 @@ Map<String, dynamic> _$CreateFilterRequestToJson(CreateFilterRequest instance) {
 }
 
 const _$FilterContextEnumMap = {
-  FilterContext.account: 'account',
   FilterContext.home: 'home',
   FilterContext.notifications: 'notifications',
   FilterContext.public: 'public',
   FilterContext.thread: 'thread',
+  FilterContext.account: 'account',
 };

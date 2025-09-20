@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:mastodon/src/model/severity_enum.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'domain_block.g.dart';
@@ -35,7 +36,7 @@ class DomainBlock {
 
   /// The level to which the domain is blocked.
   @JsonKey(name: r'severity', required: true, includeIfNull: false)
-  final DomainBlockSeverityEnum severity;
+  final SeverityEnum severity;
 
   /// An optional reason for the domain block.
   @JsonKey(name: r'comment', required: false, includeIfNull: false)
@@ -66,22 +67,4 @@ class DomainBlock {
   String toString() {
     return toJson().toString();
   }
-}
-
-/// The level to which the domain is blocked.
-enum DomainBlockSeverityEnum {
-  /// The level to which the domain is blocked.
-  @JsonValue(r'silence')
-  silence(r'silence'),
-
-  /// The level to which the domain is blocked.
-  @JsonValue(r'suspend')
-  suspend(r'suspend');
-
-  const DomainBlockSeverityEnum(this.value);
-
-  final String value;
-
-  @override
-  String toString() => value;
 }

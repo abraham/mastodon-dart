@@ -30,8 +30,7 @@ RelationshipSeveranceEvent _$RelationshipSeveranceEventFromJson(
       targetName: $checkedConvert('target_name', (v) => v as String?),
       type: $checkedConvert(
         'type',
-        (v) =>
-            $enumDecodeNullable(_$RelationshipSeveranceEventTypeEnumEnumMap, v),
+        (v) => $enumDecodeNullable(_$TypeEnumEnumMap, v),
       ),
     );
     return val;
@@ -61,15 +60,12 @@ Map<String, dynamic> _$RelationshipSeveranceEventToJson(
   writeNotNull('id', instance.id);
   writeNotNull('purged', instance.purged);
   writeNotNull('target_name', instance.targetName);
-  writeNotNull(
-    'type',
-    _$RelationshipSeveranceEventTypeEnumEnumMap[instance.type],
-  );
+  writeNotNull('type', _$TypeEnumEnumMap[instance.type]);
   return val;
 }
 
-const _$RelationshipSeveranceEventTypeEnumEnumMap = {
-  RelationshipSeveranceEventTypeEnum.domainBlock: 'domain_block',
-  RelationshipSeveranceEventTypeEnum.userDomainBlock: 'user_domain_block',
-  RelationshipSeveranceEventTypeEnum.accountSuspension: 'account_suspension',
+const _$TypeEnumEnumMap = {
+  TypeEnum.domainBlock: 'domain_block',
+  TypeEnum.userDomainBlock: 'user_domain_block',
+  TypeEnum.accountSuspension: 'account_suspension',
 };

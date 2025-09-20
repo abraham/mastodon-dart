@@ -6,6 +6,7 @@ doc/Account.md
 doc/AccountRole.md
 doc/AccountWarning.md
 doc/AccountsApi.md
+doc/ActionEnum.md
 doc/AdminAccount.md
 doc/AdminCanonicalEmailBlock.md
 doc/AdminCohort.md
@@ -59,6 +60,7 @@ doc/CreateStatusRequest.md
 doc/CredentialAccount.md
 doc/CredentialAccountSource.md
 doc/CredentialApplication.md
+doc/CurrentUserEnum.md
 doc/CustomEmoji.md
 doc/CustomEmojisApi.md
 doc/DeleteDomainBlocksRequest.md
@@ -77,6 +79,7 @@ doc/FeaturedTag.md
 doc/FeaturedTagsApi.md
 doc/Field.md
 doc/Filter.md
+doc/FilterActionEnum.md
 doc/FilterContext.md
 doc/FilterKeyword.md
 doc/FilterResult.md
@@ -84,6 +87,7 @@ doc/FilterStatus.md
 doc/FiltersApi.md
 doc/FollowRequestsApi.md
 doc/FollowedTagsApi.md
+doc/FrequencyEnum.md
 doc/GetInstanceActivity200ResponseInner.md
 doc/GroupedNotificationsResults.md
 doc/HealthApi.md
@@ -112,6 +116,7 @@ doc/MediaApi.md
 doc/MediaAttachment.md
 doc/MediaAttachmentMeta.md
 doc/MediaAttachmentMetaFocus.md
+doc/MediaExpandEnum.md
 doc/MediaStatus.md
 doc/ModelList.md
 doc/MutedAccount.md
@@ -131,7 +136,6 @@ doc/OembedApi.md
 doc/PartialAccountWithAvatar.md
 doc/PatchAccountsUpdateCredentialsRequest.md
 doc/PatchAccountsUpdateCredentialsRequestSource.md
-doc/PolicyEnum.md
 doc/Poll.md
 doc/PollOption.md
 doc/PollStatus.md
@@ -162,6 +166,7 @@ doc/QuoteApproval.md
 doc/Reaction.md
 doc/Relationship.md
 doc/RelationshipSeveranceEvent.md
+doc/RepliesPolicyEnum.md
 doc/Report.md
 doc/ReportsApi.md
 doc/Role.md
@@ -172,6 +177,7 @@ doc/ScheduledStatusParamsPoll.md
 doc/ScheduledStatusesApi.md
 doc/Search.md
 doc/SearchApi.md
+doc/SeverityEnum.md
 doc/ShallowQuote.md
 doc/StateEnum.md
 doc/Status.md
@@ -200,6 +206,7 @@ doc/TranslationPollOption.md
 doc/TrendsApi.md
 doc/TrendsLink.md
 doc/TrendsLinkHistoryInner.md
+doc/TypeEnum.md
 doc/TypesEnum.md
 doc/UpdateFilterRequest.md
 doc/UpdateFilterV2Request.md
@@ -271,6 +278,7 @@ lib/src/deserialize.dart
 lib/src/model/account.dart
 lib/src/model/account_role.dart
 lib/src/model/account_warning.dart
+lib/src/model/action_enum.dart
 lib/src/model/admin_account.dart
 lib/src/model/admin_canonical_email_block.dart
 lib/src/model/admin_cohort.dart
@@ -319,6 +327,7 @@ lib/src/model/create_status_request.dart
 lib/src/model/credential_account.dart
 lib/src/model/credential_account_source.dart
 lib/src/model/credential_application.dart
+lib/src/model/current_user_enum.dart
 lib/src/model/custom_emoji.dart
 lib/src/model/delete_domain_blocks_request.dart
 lib/src/model/delete_list_accounts_request.dart
@@ -330,10 +339,12 @@ lib/src/model/familiar_followers.dart
 lib/src/model/featured_tag.dart
 lib/src/model/field.dart
 lib/src/model/filter.dart
+lib/src/model/filter_action_enum.dart
 lib/src/model/filter_context.dart
 lib/src/model/filter_keyword.dart
 lib/src/model/filter_result.dart
 lib/src/model/filter_status.dart
+lib/src/model/frequency_enum.dart
 lib/src/model/get_instance_activity200_response_inner.dart
 lib/src/model/grouped_notifications_results.dart
 lib/src/model/identity_proof.dart
@@ -357,6 +368,7 @@ lib/src/model/marker.dart
 lib/src/model/media_attachment.dart
 lib/src/model/media_attachment_meta.dart
 lib/src/model/media_attachment_meta_focus.dart
+lib/src/model/media_expand_enum.dart
 lib/src/model/media_status.dart
 lib/src/model/model_list.dart
 lib/src/model/muted_account.dart
@@ -372,7 +384,6 @@ lib/src/model/o_embed_response.dart
 lib/src/model/partial_account_with_avatar.dart
 lib/src/model/patch_accounts_update_credentials_request.dart
 lib/src/model/patch_accounts_update_credentials_request_source.dart
-lib/src/model/policy_enum.dart
 lib/src/model/poll.dart
 lib/src/model/poll_option.dart
 lib/src/model/poll_status.dart
@@ -400,6 +411,7 @@ lib/src/model/quote_approval.dart
 lib/src/model/reaction.dart
 lib/src/model/relationship.dart
 lib/src/model/relationship_severance_event.dart
+lib/src/model/replies_policy_enum.dart
 lib/src/model/report.dart
 lib/src/model/role.dart
 lib/src/model/rule.dart
@@ -407,6 +419,7 @@ lib/src/model/scheduled_status.dart
 lib/src/model/scheduled_status_params.dart
 lib/src/model/scheduled_status_params_poll.dart
 lib/src/model/search.dart
+lib/src/model/severity_enum.dart
 lib/src/model/shallow_quote.dart
 lib/src/model/state_enum.dart
 lib/src/model/status.dart
@@ -429,6 +442,7 @@ lib/src/model/translation_poll.dart
 lib/src/model/translation_poll_option.dart
 lib/src/model/trends_link.dart
 lib/src/model/trends_link_history_inner.dart
+lib/src/model/type_enum.dart
 lib/src/model/types_enum.dart
 lib/src/model/update_filter_request.dart
 lib/src/model/update_filter_v2_request.dart
@@ -454,6 +468,7 @@ test/account_role_test.dart
 test/account_test.dart
 test/account_warning_test.dart
 test/accounts_api_test.dart
+test/action_enum_test.dart
 test/admin_account_test.dart
 test/admin_canonical_email_block_test.dart
 test/admin_cohort_test.dart
@@ -507,6 +522,7 @@ test/create_status_request_test.dart
 test/credential_account_source_test.dart
 test/credential_account_test.dart
 test/credential_application_test.dart
+test/current_user_enum_test.dart
 test/custom_emoji_test.dart
 test/custom_emojis_api_test.dart
 test/delete_domain_blocks_request_test.dart
@@ -524,6 +540,7 @@ test/favourites_api_test.dart
 test/featured_tag_test.dart
 test/featured_tags_api_test.dart
 test/field_test.dart
+test/filter_action_enum_test.dart
 test/filter_context_test.dart
 test/filter_keyword_test.dart
 test/filter_result_test.dart
@@ -532,6 +549,7 @@ test/filter_test.dart
 test/filters_api_test.dart
 test/follow_requests_api_test.dart
 test/followed_tags_api_test.dart
+test/frequency_enum_test.dart
 test/get_instance_activity200_response_inner_test.dart
 test/grouped_notifications_results_test.dart
 test/health_api_test.dart
@@ -560,6 +578,7 @@ test/media_api_test.dart
 test/media_attachment_meta_focus_test.dart
 test/media_attachment_meta_test.dart
 test/media_attachment_test.dart
+test/media_expand_enum_test.dart
 test/media_status_test.dart
 test/model_list_test.dart
 test/muted_account_moved_test.dart
@@ -579,7 +598,6 @@ test/oembed_api_test.dart
 test/partial_account_with_avatar_test.dart
 test/patch_accounts_update_credentials_request_source_test.dart
 test/patch_accounts_update_credentials_request_test.dart
-test/policy_enum_test.dart
 test/poll_option_test.dart
 test/poll_status_test.dart
 test/poll_test.dart
@@ -610,6 +628,7 @@ test/quote_test.dart
 test/reaction_test.dart
 test/relationship_severance_event_test.dart
 test/relationship_test.dart
+test/replies_policy_enum_test.dart
 test/report_test.dart
 test/reports_api_test.dart
 test/role_test.dart
@@ -620,6 +639,7 @@ test/scheduled_status_test.dart
 test/scheduled_statuses_api_test.dart
 test/search_api_test.dart
 test/search_test.dart
+test/severity_enum_test.dart
 test/shallow_quote_test.dart
 test/state_enum_test.dart
 test/status_application_test.dart
@@ -648,6 +668,7 @@ test/translation_test.dart
 test/trends_api_test.dart
 test/trends_link_history_inner_test.dart
 test/trends_link_test.dart
+test/type_enum_test.dart
 test/types_enum_test.dart
 test/update_filter_request_test.dart
 test/update_filter_v2_request_keywords_attributes_inner_test.dart

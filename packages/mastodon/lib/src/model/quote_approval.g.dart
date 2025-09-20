@@ -17,7 +17,7 @@ QuoteApproval _$QuoteApprovalFromJson(Map<String, dynamic> json) =>
         ),
         currentUser: $checkedConvert(
           'current_user',
-          (v) => $enumDecodeNullable(_$QuoteApprovalCurrentUserEnumEnumMap, v),
+          (v) => $enumDecodeNullable(_$CurrentUserEnumEnumMap, v),
         ),
         manual: $checkedConvert(
           'manual',
@@ -44,10 +44,7 @@ Map<String, dynamic> _$QuoteApprovalToJson(QuoteApproval instance) {
         ?.map((e) => _$QuoteApprovalAutomaticEnumEnumMap[e]!)
         .toList(),
   );
-  writeNotNull(
-    'current_user',
-    _$QuoteApprovalCurrentUserEnumEnumMap[instance.currentUser],
-  );
+  writeNotNull('current_user', _$CurrentUserEnumEnumMap[instance.currentUser]);
   writeNotNull(
     'manual',
     instance.manual?.map((e) => _$QuoteApprovalManualEnumEnumMap[e]!).toList(),
@@ -62,11 +59,11 @@ const _$QuoteApprovalAutomaticEnumEnumMap = {
   QuoteApprovalAutomaticEnum.unsupportedPolicy: 'unsupported_policy',
 };
 
-const _$QuoteApprovalCurrentUserEnumEnumMap = {
-  QuoteApprovalCurrentUserEnum.automatic: 'automatic',
-  QuoteApprovalCurrentUserEnum.manual: 'manual',
-  QuoteApprovalCurrentUserEnum.denied: 'denied',
-  QuoteApprovalCurrentUserEnum.unknown: 'unknown',
+const _$CurrentUserEnumEnumMap = {
+  CurrentUserEnum.automatic: 'automatic',
+  CurrentUserEnum.manual: 'manual',
+  CurrentUserEnum.denied: 'denied',
+  CurrentUserEnum.unknown: 'unknown',
 };
 
 const _$QuoteApprovalManualEnumEnumMap = {

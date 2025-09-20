@@ -6,6 +6,7 @@
 import 'package:mastodon/src/model/filter_context.dart';
 import 'package:mastodon/src/model/filter_keyword.dart';
 import 'package:mastodon/src/model/filter_status.dart';
+import 'package:mastodon/src/model/filter_action_enum.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'filter.g.dart';
@@ -40,7 +41,7 @@ class Filter {
 
   /// The action to be taken when a status matches this filter.
   @JsonKey(name: r'filter_action', required: true, includeIfNull: false)
-  final FilterFilterActionEnum filterAction;
+  final FilterActionEnum filterAction;
 
   /// The ID of the Filter in the database.
   @JsonKey(name: r'id', required: true, includeIfNull: false)
@@ -92,26 +93,4 @@ class Filter {
   String toString() {
     return toJson().toString();
   }
-}
-
-/// The action to be taken when a status matches this filter.
-enum FilterFilterActionEnum {
-  /// The action to be taken when a status matches this filter.
-  @JsonValue(r'warn')
-  warn(r'warn'),
-
-  /// The action to be taken when a status matches this filter.
-  @JsonValue(r'hide')
-  hide_(r'hide'),
-
-  /// The action to be taken when a status matches this filter.
-  @JsonValue(r'blur')
-  blur(r'blur');
-
-  const FilterFilterActionEnum(this.value);
-
-  final String value;
-
-  @override
-  String toString() => value;
 }

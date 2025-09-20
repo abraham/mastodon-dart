@@ -63,8 +63,8 @@ Map<String, dynamic> _$TextStatusToJson(TextStatus instance) {
 }
 
 const _$VisibilityEnumEnumMap = {
-  VisibilityEnum.direct: 'direct',
-  VisibilityEnum.private: 'private',
   VisibilityEnum.public: 'public',
   VisibilityEnum.unlisted: 'unlisted',
+  VisibilityEnum.private: 'private',
+  VisibilityEnum.direct: 'direct',
 };

@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:mastodon/src/model/state_enum.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'appeal.g.dart';
@@ -19,7 +20,7 @@ class Appeal {
 
   /// State of the appeal.
   @JsonKey(name: r'state', required: false, includeIfNull: false)
-  final AppealStateEnum? state;
+  final StateEnum? state;
 
   /// Text of the appeal from the moderated account to the moderators.
   @JsonKey(name: r'text', required: false, includeIfNull: false)
@@ -31,8 +32,7 @@ class Appeal {
       other is Appeal && other.state == state && other.text == text;
 
   @override
-  int get hashCode =>
-      (state == null ? 0 : state.hashCode) + (text == null ? 0 : text.hashCode);
+  int get hashCode => state.hashCode + (text == null ? 0 : text.hashCode);
 
   factory Appeal.fromJson(Map<String, dynamic> json) => _$AppealFromJson(json);
 
@@ -42,26 +42,4 @@ class Appeal {
   String toString() {
     return toJson().toString();
   }
-}
-
-/// State of the appeal.
-enum AppealStateEnum {
-  /// State of the appeal.
-  @JsonValue(r'approved')
-  approved(r'approved'),
-
-  /// State of the appeal.
-  @JsonValue(r'rejected')
-  rejected(r'rejected'),
-
-  /// State of the appeal.
-  @JsonValue(r'pending')
-  pending(r'pending');
-
-  const AppealStateEnum(this.value);
-
-  final String value;
-
-  @override
-  String toString() => value;
 }

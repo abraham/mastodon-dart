@@ -6,6 +6,7 @@
 import 'package:mastodon/src/model/report.dart';
 import 'package:mastodon/src/model/account_warning.dart';
 import 'package:mastodon/src/model/relationship_severance_event.dart';
+import 'package:mastodon/src/model/notification_type_enum.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'notification_group.g.dart';
@@ -95,7 +96,7 @@ class NotificationGroup {
 
   /// The type of event that resulted in the notifications in this group.
   @JsonKey(name: r'type', required: false, includeIfNull: false)
-  final NotificationGroupTypeEnum? type;
+  final NotificationTypeEnum? type;
 
   @override
   bool operator ==(Object other) =>
@@ -131,7 +132,7 @@ class NotificationGroup {
       (report == null ? 0 : report.hashCode) +
       (sampleAccountIds == null ? 0 : sampleAccountIds.hashCode) +
       (statusId == null ? 0 : statusId.hashCode) +
-      (type == null ? 0 : type.hashCode);
+      type.hashCode;
 
   factory NotificationGroup.fromJson(Map<String, dynamic> json) =>
       _$NotificationGroupFromJson(json);
@@ -142,62 +143,4 @@ class NotificationGroup {
   String toString() {
     return toJson().toString();
   }
-}
-
-/// The type of event that resulted in the notifications in this group.
-enum NotificationGroupTypeEnum {
-  /// The type of event that resulted in the notifications in this group.
-  @JsonValue(r'mention')
-  mention(r'mention'),
-
-  /// The type of event that resulted in the notifications in this group.
-  @JsonValue(r'status')
-  status(r'status'),
-
-  /// The type of event that resulted in the notifications in this group.
-  @JsonValue(r'reblog')
-  reblog(r'reblog'),
-
-  /// The type of event that resulted in the notifications in this group.
-  @JsonValue(r'follow')
-  follow(r'follow'),
-
-  /// The type of event that resulted in the notifications in this group.
-  @JsonValue(r'follow_request')
-  followRequest(r'follow_request'),
-
-  /// The type of event that resulted in the notifications in this group.
-  @JsonValue(r'favourite')
-  favourite(r'favourite'),
-
-  /// The type of event that resulted in the notifications in this group.
-  @JsonValue(r'poll')
-  poll(r'poll'),
-
-  /// The type of event that resulted in the notifications in this group.
-  @JsonValue(r'update')
-  edit(r'update'),
-
-  /// The type of event that resulted in the notifications in this group.
-  @JsonValue(r'admin.sign_up')
-  adminPeriodSignUp(r'admin.sign_up'),
-
-  /// The type of event that resulted in the notifications in this group.
-  @JsonValue(r'admin.report')
-  adminPeriodReport(r'admin.report'),
-
-  /// The type of event that resulted in the notifications in this group.
-  @JsonValue(r'severed_relationships')
-  severedRelationships(r'severed_relationships'),
-
-  /// The type of event that resulted in the notifications in this group.
-  @JsonValue(r'moderation_warning')
-  moderationWarning(r'moderation_warning');
-
-  const NotificationGroupTypeEnum(this.value);
-
-  final String value;
-
-  @override
-  String toString() => value;
 }

@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:mastodon/src/model/policy_enum.dart';
+import 'package:mastodon/src/model/replies_policy_enum.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'model_list.g.dart';
@@ -36,7 +36,7 @@ class ModelList {
 
   /// Which replies should be shown in the list.
   @JsonKey(name: r'replies_policy', required: true, includeIfNull: false)
-  final PolicyEnum repliesPolicy;
+  final RepliesPolicyEnum repliesPolicy;
 
   /// The user-defined title of the list.
   @JsonKey(name: r'title', required: true, includeIfNull: false)

@@ -20,7 +20,7 @@ void main() {
     });
 
     // The level to which the domain is blocked.
-    // String severity
+    // SeverityEnum severity
     test('to test the property `severity`', () async {
       // TODO
     });

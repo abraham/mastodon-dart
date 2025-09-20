@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **postingColonDefaultColonSensitive** | **bool** | Default sensitivity flag for new posts. Equivalent to [CredentialAccount#source\\[sensitive\\]]({{< relref \"entities/Account#source-sensitive\" >}}). | 
 **postingColonDefaultColonVisibility** | [**VisibilityEnum**](VisibilityEnum.md) | Default visibility for new posts. Equivalent to [CredentialAccount#source\\[privacy\\]]({{< relref \"entities/Account#source-privacy\" >}}). | 
-**readingColonExpandColonMedia** | **String** | Whether media attachments should be automatically displayed or blurred/hidden. | 
+**readingColonExpandColonMedia** | [**MediaExpandEnum**](MediaExpandEnum.md) | Whether media attachments should be automatically displayed or blurred/hidden. | 
 **readingColonExpandColonSpoilers** | **bool** | Whether CWs should be expanded by default. | 
 **postingColonDefaultColonLanguage** | **String** | Default language for new posts. Equivalent to [CredentialAccount#source\\[language\\]]({{< relref \"entities/Account#source-language\" >}}) | [optional] 
 

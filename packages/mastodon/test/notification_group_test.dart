@@ -71,7 +71,7 @@ void main() {
     });
 
     // The type of event that resulted in the notifications in this group.
-    // String type
+    // NotificationTypeEnum type
     test('to test the property `type`', () async {
       // TODO
     });

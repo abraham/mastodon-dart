@@ -11,7 +11,7 @@ Appeal _$AppealFromJson(Map<String, dynamic> json) =>
       final val = Appeal(
         state: $checkedConvert(
           'state',
-          (v) => $enumDecodeNullable(_$AppealStateEnumEnumMap, v),
+          (v) => $enumDecodeNullable(_$StateEnumEnumMap, v),
         ),
         text: $checkedConvert('text', (v) => v as String?),
       );
@@ -27,13 +27,16 @@ Map<String, dynamic> _$AppealToJson(Appeal instance) {
     }
   }
 
-  writeNotNull('state', _$AppealStateEnumEnumMap[instance.state]);
+  writeNotNull('state', _$StateEnumEnumMap[instance.state]);
   writeNotNull('text', instance.text);
   return val;
 }
 
-const _$AppealStateEnumEnumMap = {
-  AppealStateEnum.approved: 'approved',
-  AppealStateEnum.rejected: 'rejected',
-  AppealStateEnum.pending: 'pending',
+const _$StateEnumEnumMap = {
+  StateEnum.pending: 'pending',
+  StateEnum.accepted: 'accepted',
+  StateEnum.rejected: 'rejected',
+  StateEnum.revoked: 'revoked',
+  StateEnum.deleted: 'deleted',
+  StateEnum.unauthorized: 'unauthorized',
 };

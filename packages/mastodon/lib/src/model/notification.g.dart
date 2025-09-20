@@ -87,18 +87,16 @@ Map<String, dynamic> _$NotificationToJson(Notification instance) {
 }
 
 const _$NotificationTypeEnumEnumMap = {
-  NotificationTypeEnum.adminPeriodReport: 'admin.report',
-  NotificationTypeEnum.adminPeriodSignUp: 'admin.sign_up',
-  NotificationTypeEnum.favourite: 'favourite',
+  NotificationTypeEnum.mention: 'mention',
+  NotificationTypeEnum.status: 'status',
+  NotificationTypeEnum.reblog: 'reblog',
   NotificationTypeEnum.follow: 'follow',
   NotificationTypeEnum.followRequest: 'follow_request',
-  NotificationTypeEnum.mention: 'mention',
-  NotificationTypeEnum.moderationWarning: 'moderation_warning',
+  NotificationTypeEnum.favourite: 'favourite',
   NotificationTypeEnum.poll: 'poll',
-  NotificationTypeEnum.quote: 'quote',
-  NotificationTypeEnum.quotedUpdate: 'quoted_update',
-  NotificationTypeEnum.reblog: 'reblog',
-  NotificationTypeEnum.severedRelationships: 'severed_relationships',
-  NotificationTypeEnum.status: 'status',
   NotificationTypeEnum.edit: 'update',
+  NotificationTypeEnum.adminPeriodSignUp: 'admin.sign_up',
+  NotificationTypeEnum.adminPeriodReport: 'admin.report',
+  NotificationTypeEnum.severedRelationships: 'severed_relationships',
+  NotificationTypeEnum.moderationWarning: 'moderation_warning',
 };

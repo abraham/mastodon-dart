@@ -8,7 +8,7 @@ import 'package:mastodon/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**action** | **String** | Action taken against the account. | [optional] 
+**action** | [**ActionEnum**](ActionEnum.md) | Action taken against the account. | [optional] 
 **appeal** | [**Appeal**](Appeal.md) |  | [optional] 
 **createdAt** | [**DateTime**](DateTime.md) | When the event took place. | [optional] 
 **id** | **String** | The ID of the account warning. | [optional] 

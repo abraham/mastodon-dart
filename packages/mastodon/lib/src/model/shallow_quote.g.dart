@@ -36,10 +36,10 @@ Map<String, dynamic> _$ShallowQuoteToJson(ShallowQuote instance) {
 }
 
 const _$StateEnumEnumMap = {
-  StateEnum.accepted: 'accepted',
-  StateEnum.deleted: 'deleted',
   StateEnum.pending: 'pending',
+  StateEnum.accepted: 'accepted',
   StateEnum.rejected: 'rejected',
   StateEnum.revoked: 'revoked',
+  StateEnum.deleted: 'deleted',
   StateEnum.unauthorized: 'unauthorized',
 };

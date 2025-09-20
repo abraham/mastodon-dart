@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:mastodon/src/model/type_enum.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'relationship_severance_event.g.dart';
@@ -57,7 +58,7 @@ class RelationshipSeveranceEvent {
 
   /// Type of event.
   @JsonKey(name: r'type', required: false, includeIfNull: false)
-  final RelationshipSeveranceEventTypeEnum? type;
+  final TypeEnum? type;
 
   @override
   bool operator ==(Object other) =>
@@ -79,7 +80,7 @@ class RelationshipSeveranceEvent {
       (id == null ? 0 : id.hashCode) +
       (purged == null ? 0 : purged.hashCode) +
       (targetName == null ? 0 : targetName.hashCode) +
-      (type == null ? 0 : type.hashCode);
+      type.hashCode;
 
   factory RelationshipSeveranceEvent.fromJson(Map<String, dynamic> json) =>
       _$RelationshipSeveranceEventFromJson(json);
@@ -90,26 +91,4 @@ class RelationshipSeveranceEvent {
   String toString() {
     return toJson().toString();
   }
-}
-
-/// Type of event.
-enum RelationshipSeveranceEventTypeEnum {
-  /// Type of event.
-  @JsonValue(r'domain_block')
-  domainBlock(r'domain_block'),
-
-  /// Type of event.
-  @JsonValue(r'user_domain_block')
-  userDomainBlock(r'user_domain_block'),
-
-  /// Type of event.
-  @JsonValue(r'account_suspension')
-  accountSuspension(r'account_suspension');
-
-  const RelationshipSeveranceEventTypeEnum(this.value);
-
-  final String value;
-
-  @override
-  String toString() => value;
 }

@@ -23,7 +23,7 @@ Filter _$FilterFromJson(Map<String, dynamic> json) => $checkedCreate(
       ),
       filterAction: $checkedConvert(
         'filter_action',
-        (v) => $enumDecode(_$FilterFilterActionEnumEnumMap, v),
+        (v) => $enumDecode(_$FilterActionEnumEnumMap, v),
       ),
       id: $checkedConvert('id', (v) => v as String),
       title: $checkedConvert('title', (v) => v as String),
@@ -55,7 +55,7 @@ Filter _$FilterFromJson(Map<String, dynamic> json) => $checkedCreate(
 Map<String, dynamic> _$FilterToJson(Filter instance) {
   final val = <String, dynamic>{
     'context': instance.context.map((e) => _$FilterContextEnumMap[e]!).toList(),
-    'filter_action': _$FilterFilterActionEnumEnumMap[instance.filterAction]!,
+    'filter_action': _$FilterActionEnumEnumMap[instance.filterAction]!,
     'id': instance.id,
     'title': instance.title,
   };
@@ -73,15 +73,15 @@ Map<String, dynamic> _$FilterToJson(Filter instance) {
 }
 
 const _$FilterContextEnumMap = {
-  FilterContext.account: 'account',
   FilterContext.home: 'home',
   FilterContext.notifications: 'notifications',
   FilterContext.public: 'public',
   FilterContext.thread: 'thread',
+  FilterContext.account: 'account',
 };
 
-const _$FilterFilterActionEnumEnumMap = {
-  FilterFilterActionEnum.warn: 'warn',
-  FilterFilterActionEnum.hide_: 'hide',
-  FilterFilterActionEnum.blur: 'blur',
+const _$FilterActionEnumEnumMap = {
+  FilterActionEnum.warn: 'warn',
+  FilterActionEnum.hide_: 'hide',
+  FilterActionEnum.blur: 'blur',
 };

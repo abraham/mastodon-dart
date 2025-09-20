@@ -107,11 +107,14 @@ void main() async {
       replacements: [
         Replacement(
           "this.repliesPolicy = 'list',",
-          'this.repliesPolicy = PolicyEnum.list,',
+          'this.repliesPolicy = RepliesPolicyEnum.list,',
         ),
-        Replacement("defaultValue: 'list',", 'defaultValue: PolicyEnum.list,'),
+        Replacement(
+          "defaultValue: 'list',",
+          'defaultValue: RepliesPolicyEnum.list,',
+        ),
       ],
-      description: "Replace 'list' with PolicyEnum.list",
+      description: "Replace 'list' with RepliesPolicyEnum.list",
     ),
     Hack(
       filePath: 'packages/mastodon/lib/src/model/create_report_request.dart',

@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:mastodon/src/model/type_enum.dart';
 import 'package:mastodon/src/model/media_attachment_meta.dart';
 import 'dart:core';
 import 'package:json_annotation/json_annotation.dart';
@@ -41,7 +42,7 @@ class MediaAttachment {
 
   /// The type of the attachment.
   @JsonKey(name: r'type', required: true, includeIfNull: false)
-  final MediaAttachmentTypeEnum type;
+  final TypeEnum type;
 
   /// The location of the original full-size attachment.
   @JsonKey(name: r'url', required: true, includeIfNull: false)
@@ -99,34 +100,4 @@ class MediaAttachment {
   String toString() {
     return toJson().toString();
   }
-}
-
-/// The type of the attachment.
-enum MediaAttachmentTypeEnum {
-  /// The type of the attachment.
-  @JsonValue(r'unknown')
-  unknown(r'unknown'),
-
-  /// The type of the attachment.
-  @JsonValue(r'image')
-  image(r'image'),
-
-  /// The type of the attachment.
-  @JsonValue(r'gifv')
-  gifv(r'gifv'),
-
-  /// The type of the attachment.
-  @JsonValue(r'video')
-  video(r'video'),
-
-  /// The type of the attachment.
-  @JsonValue(r'audio')
-  audio(r'audio');
-
-  const MediaAttachmentTypeEnum(this.value);
-
-  final String value;
-
-  @override
-  String toString() => value;
 }

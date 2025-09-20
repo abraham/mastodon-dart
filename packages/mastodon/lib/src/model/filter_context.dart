@@ -6,8 +6,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
 enum FilterContext {
-  @JsonValue(r'account')
-  account(r'account'),
   @JsonValue(r'home')
   home(r'home'),
   @JsonValue(r'notifications')
@@ -15,7 +13,9 @@ enum FilterContext {
   @JsonValue(r'public')
   public(r'public'),
   @JsonValue(r'thread')
-  thread(r'thread');
+  thread(r'thread'),
+  @JsonValue(r'account')
+  account(r'account');
 
   const FilterContext(this.value);
 

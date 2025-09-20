@@ -5,15 +5,13 @@
 // ignore_for_file: unused_element
 import 'package:json_annotation/json_annotation.dart';
 
-enum PolicyEnum {
-  @JsonValue(r'followed')
-  followed(r'followed'),
-  @JsonValue(r'list')
-  list(r'list'),
-  @JsonValue(r'none')
-  none(r'none');
+enum SeverityEnum {
+  @JsonValue(r'silence')
+  silence(r'silence'),
+  @JsonValue(r'suspend')
+  suspend(r'suspend');
 
-  const PolicyEnum(this.value);
+  const SeverityEnum(this.value);
 
   final String value;
 

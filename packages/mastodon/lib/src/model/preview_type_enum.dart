@@ -10,10 +10,10 @@ enum PreviewTypeEnum {
   link(r'link'),
   @JsonValue(r'photo')
   photo(r'photo'),
-  @JsonValue(r'rich')
-  rich(r'rich'),
   @JsonValue(r'video')
-  video(r'video');
+  video(r'video'),
+  @JsonValue(r'rich')
+  rich(r'rich');
 
   const PreviewTypeEnum(this.value);
 

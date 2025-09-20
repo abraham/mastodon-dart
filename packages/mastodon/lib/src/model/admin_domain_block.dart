@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:mastodon/src/model/severity_enum.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'admin_domain_block.g.dart';
@@ -63,7 +64,7 @@ class AdminDomainBlock {
 
   /// The policy to be applied by this domain block.
   @JsonKey(name: r'severity', required: true, includeIfNull: false)
-  final AdminDomainBlockSeverityEnum severity;
+  final SeverityEnum severity;
 
   /// The sha256 hex digest of the domain that is not allowed to federated.
   @JsonKey(name: r'digest', required: false, includeIfNull: false)
@@ -114,26 +115,4 @@ class AdminDomainBlock {
   String toString() {
     return toJson().toString();
   }
-}
-
-/// The policy to be applied by this domain block.
-enum AdminDomainBlockSeverityEnum {
-  /// The policy to be applied by this domain block.
-  @JsonValue(r'silence')
-  silence(r'silence'),
-
-  /// The policy to be applied by this domain block.
-  @JsonValue(r'suspend')
-  suspend(r'suspend'),
-
-  /// The policy to be applied by this domain block.
-  @JsonValue(r'noop')
-  noop(r'noop');
-
-  const AdminDomainBlockSeverityEnum(this.value);
-
-  final String value;
-
-  @override
-  String toString() => value;
 }

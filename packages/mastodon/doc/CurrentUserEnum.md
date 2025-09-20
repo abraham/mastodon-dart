@@ -1,4 +1,4 @@
-# mastodon.model.PolicyEnum
+# mastodon.model.CurrentUserEnum
 
 ## Load the model package
 ```dart

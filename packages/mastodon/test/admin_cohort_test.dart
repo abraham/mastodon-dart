@@ -14,7 +14,7 @@ void main() {
     });
 
     // The size of the bucket for the returned data.
-    // String frequency
+    // FrequencyEnum frequency
     test('to test the property `frequency`', () async {
       // TODO
     });

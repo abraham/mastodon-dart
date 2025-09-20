@@ -17,7 +17,7 @@ ModelList _$ModelListFromJson(Map<String, dynamic> json) =>
         id: $checkedConvert('id', (v) => v as String),
         repliesPolicy: $checkedConvert(
           'replies_policy',
-          (v) => $enumDecode(_$PolicyEnumEnumMap, v),
+          (v) => $enumDecode(_$RepliesPolicyEnumEnumMap, v),
         ),
         title: $checkedConvert('title', (v) => v as String),
       );
@@ -27,12 +27,12 @@ ModelList _$ModelListFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$ModelListToJson(ModelList instance) => <String, dynamic>{
   'exclusive': instance.exclusive,
   'id': instance.id,
-  'replies_policy': _$PolicyEnumEnumMap[instance.repliesPolicy]!,
+  'replies_policy': _$RepliesPolicyEnumEnumMap[instance.repliesPolicy]!,
   'title': instance.title,
 };
 
-const _$PolicyEnumEnumMap = {
-  PolicyEnum.followed: 'followed',
-  PolicyEnum.list: 'list',
-  PolicyEnum.none: 'none',
+const _$RepliesPolicyEnumEnumMap = {
+  RepliesPolicyEnum.followed: 'followed',
+  RepliesPolicyEnum.list: 'list',
+  RepliesPolicyEnum.none: 'none',
 };

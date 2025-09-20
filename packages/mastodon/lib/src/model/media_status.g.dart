@@ -69,8 +69,8 @@ Map<String, dynamic> _$MediaStatusToJson(MediaStatus instance) {
 }
 
 const _$VisibilityEnumEnumMap = {
-  VisibilityEnum.direct: 'direct',
-  VisibilityEnum.private: 'private',
   VisibilityEnum.public: 'public',
   VisibilityEnum.unlisted: 'unlisted',
+  VisibilityEnum.private: 'private',
+  VisibilityEnum.direct: 'direct',
 };

@@ -14,7 +14,7 @@ DomainBlock _$DomainBlockFromJson(Map<String, dynamic> json) =>
         domain: $checkedConvert('domain', (v) => v as String),
         severity: $checkedConvert(
           'severity',
-          (v) => $enumDecode(_$DomainBlockSeverityEnumEnumMap, v),
+          (v) => $enumDecode(_$SeverityEnumEnumMap, v),
         ),
         comment: $checkedConvert('comment', (v) => v as String?),
       );
@@ -25,7 +25,7 @@ Map<String, dynamic> _$DomainBlockToJson(DomainBlock instance) {
   final val = <String, dynamic>{
     'digest': instance.digest,
     'domain': instance.domain,
-    'severity': _$DomainBlockSeverityEnumEnumMap[instance.severity]!,
+    'severity': _$SeverityEnumEnumMap[instance.severity]!,
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -38,7 +38,7 @@ Map<String, dynamic> _$DomainBlockToJson(DomainBlock instance) {
   return val;
 }
 
-const _$DomainBlockSeverityEnumEnumMap = {
-  DomainBlockSeverityEnum.silence: 'silence',
-  DomainBlockSeverityEnum.suspend: 'suspend',
+const _$SeverityEnumEnumMap = {
+  SeverityEnum.silence: 'silence',
+  SeverityEnum.suspend: 'suspend',
 };

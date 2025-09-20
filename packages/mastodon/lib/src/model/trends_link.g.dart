@@ -111,6 +111,6 @@ Map<String, dynamic> _$TrendsLinkToJson(TrendsLink instance) {
 const _$PreviewTypeEnumEnumMap = {
   PreviewTypeEnum.link: 'link',
   PreviewTypeEnum.photo: 'photo',
-  PreviewTypeEnum.rich: 'rich',
   PreviewTypeEnum.video: 'video',
+  PreviewTypeEnum.rich: 'rich',
 };

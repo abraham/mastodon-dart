@@ -20,7 +20,7 @@ void main() {
     });
 
     // One of `followed`, `list`, or `none`. Defaults to `list`.
-    // PolicyEnum repliesPolicy (default value: 'list')
+    // RepliesPolicyEnum repliesPolicy (default value: 'list')
     test('to test the property `repliesPolicy`', () async {
       // TODO
     });

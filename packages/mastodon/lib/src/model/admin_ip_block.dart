@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:mastodon/src/model/severity_enum.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'admin_ip_block.g.dart';
@@ -47,7 +48,7 @@ class AdminIpBlock {
 
   /// The associated policy with this IP block.
   @JsonKey(name: r'severity', required: true, includeIfNull: false)
-  final AdminIpBlockSeverityEnum severity;
+  final SeverityEnum severity;
 
   /// When the IP block will expire.
   @JsonKey(name: r'expires_at', required: false, includeIfNull: false)
@@ -82,26 +83,4 @@ class AdminIpBlock {
   String toString() {
     return toJson().toString();
   }
-}
-
-/// The associated policy with this IP block.
-enum AdminIpBlockSeverityEnum {
-  /// The associated policy with this IP block.
-  @JsonValue(r'sign_up_requires_approval')
-  signUpRequiresApproval(r'sign_up_requires_approval'),
-
-  /// The associated policy with this IP block.
-  @JsonValue(r'sign_up_block')
-  signUpBlock(r'sign_up_block'),
-
-  /// The associated policy with this IP block.
-  @JsonValue(r'no_access')
-  noAccess(r'no_access');
-
-  const AdminIpBlockSeverityEnum(this.value);
-
-  final String value;
-
-  @override
-  String toString() => value;
 }

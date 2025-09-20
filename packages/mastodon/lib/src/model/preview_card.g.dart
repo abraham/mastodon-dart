@@ -101,6 +101,6 @@ Map<String, dynamic> _$PreviewCardToJson(PreviewCard instance) {
 const _$PreviewTypeEnumEnumMap = {
   PreviewTypeEnum.link: 'link',
   PreviewTypeEnum.photo: 'photo',
-  PreviewTypeEnum.rich: 'rich',
   PreviewTypeEnum.video: 'video',
+  PreviewTypeEnum.rich: 'rich',
 };

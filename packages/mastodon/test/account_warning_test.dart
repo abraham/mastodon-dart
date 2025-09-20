@@ -8,7 +8,7 @@ void main() {
 
   group(AccountWarning, () {
     // Action taken against the account.
-    // String action
+    // ActionEnum action
     test('to test the property `action`', () async {
       // TODO
     });

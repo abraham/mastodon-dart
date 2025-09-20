@@ -14,7 +14,7 @@ void main() {
     });
 
     // The action to be taken when a status matches this filter.
-    // String filterAction
+    // FilterActionEnum filterAction
     test('to test the property `filterAction`', () async {
       // TODO
     });

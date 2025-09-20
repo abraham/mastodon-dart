@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:mastodon/src/model/media_expand_enum.dart';
 import 'package:mastodon/src/model/visibility_enum.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -46,8 +47,7 @@ class Preferences {
 
   /// Whether media attachments should be automatically displayed or blurred/hidden.
   @JsonKey(name: r'reading:expand:media', required: true, includeIfNull: false)
-  final PreferencesReadingColonExpandColonMediaEnum
-  readingColonExpandColonMedia;
+  final MediaExpandEnum readingColonExpandColonMedia;
 
   /// Whether CWs should be expanded by default.
   @JsonKey(
@@ -98,26 +98,4 @@ class Preferences {
   String toString() {
     return toJson().toString();
   }
-}
-
-/// Whether media attachments should be automatically displayed or blurred/hidden.
-enum PreferencesReadingColonExpandColonMediaEnum {
-  /// Whether media attachments should be automatically displayed or blurred/hidden.
-  @JsonValue(r'default')
-  default_(r'default'),
-
-  /// Whether media attachments should be automatically displayed or blurred/hidden.
-  @JsonValue(r'show_all')
-  showAll(r'show_all'),
-
-  /// Whether media attachments should be automatically displayed or blurred/hidden.
-  @JsonValue(r'hide_all')
-  hideAll(r'hide_all');
-
-  const PreferencesReadingColonExpandColonMediaEnum(this.value);
-
-  final String value;
-
-  @override
-  String toString() => value;
 }

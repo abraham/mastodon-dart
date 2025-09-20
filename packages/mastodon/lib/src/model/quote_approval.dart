@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:mastodon/src/model/current_user_enum.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'quote_approval.g.dart';
@@ -23,7 +24,7 @@ class QuoteApproval {
 
   /// Describes how this status' quote policy applies to the current user.
   @JsonKey(name: r'current_user', required: false, includeIfNull: false)
-  final QuoteApprovalCurrentUserEnum? currentUser;
+  final CurrentUserEnum? currentUser;
 
   /// Describes who is expected to have their quotes of this status be manually reviewed by the author before being accepted. An empty list means that nobody is expected to be able to quote this post. Other values may be added in the future, so unknown values should be treated as `unsupported_policy`.
   @JsonKey(name: r'manual', required: false, includeIfNull: false)
@@ -40,7 +41,7 @@ class QuoteApproval {
   @override
   int get hashCode =>
       (automatic == null ? 0 : automatic.hashCode) +
-      (currentUser == null ? 0 : currentUser.hashCode) +
+      currentUser.hashCode +
       (manual == null ? 0 : manual.hashCode);
 
   factory QuoteApproval.fromJson(Map<String, dynamic> json) =>
@@ -65,32 +66,6 @@ enum QuoteApprovalAutomaticEnum {
   unsupportedPolicy(r'unsupported_policy');
 
   const QuoteApprovalAutomaticEnum(this.value);
-
-  final String value;
-
-  @override
-  String toString() => value;
-}
-
-/// Describes how this status' quote policy applies to the current user.
-enum QuoteApprovalCurrentUserEnum {
-  /// Describes how this status' quote policy applies to the current user.
-  @JsonValue(r'automatic')
-  automatic(r'automatic'),
-
-  /// Describes how this status' quote policy applies to the current user.
-  @JsonValue(r'manual')
-  manual(r'manual'),
-
-  /// Describes how this status' quote policy applies to the current user.
-  @JsonValue(r'denied')
-  denied(r'denied'),
-
-  /// Describes how this status' quote policy applies to the current user.
-  @JsonValue(r'unknown')
-  unknown(r'unknown');
-
-  const QuoteApprovalCurrentUserEnum(this.value);
 
   final String value;
 

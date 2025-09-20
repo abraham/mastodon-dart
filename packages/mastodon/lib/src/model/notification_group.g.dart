@@ -53,7 +53,7 @@ NotificationGroup _$NotificationGroupFromJson(Map<String, dynamic> json) =>
           statusId: $checkedConvert('status_id', (v) => v as String?),
           type: $checkedConvert(
             'type',
-            (v) => $enumDecodeNullable(_$NotificationGroupTypeEnumEnumMap, v),
+            (v) => $enumDecodeNullable(_$NotificationTypeEnumEnumMap, v),
           ),
         );
         return val;
@@ -97,21 +97,21 @@ Map<String, dynamic> _$NotificationGroupToJson(NotificationGroup instance) {
   writeNotNull('report', instance.report?.toJson());
   writeNotNull('sample_account_ids', instance.sampleAccountIds);
   writeNotNull('status_id', instance.statusId);
-  writeNotNull('type', _$NotificationGroupTypeEnumEnumMap[instance.type]);
+  writeNotNull('type', _$NotificationTypeEnumEnumMap[instance.type]);
   return val;
 }
 
-const _$NotificationGroupTypeEnumEnumMap = {
-  NotificationGroupTypeEnum.mention: 'mention',
-  NotificationGroupTypeEnum.status: 'status',
-  NotificationGroupTypeEnum.reblog: 'reblog',
-  NotificationGroupTypeEnum.follow: 'follow',
-  NotificationGroupTypeEnum.followRequest: 'follow_request',
-  NotificationGroupTypeEnum.favourite: 'favourite',
-  NotificationGroupTypeEnum.poll: 'poll',
-  NotificationGroupTypeEnum.edit: 'update',
-  NotificationGroupTypeEnum.adminPeriodSignUp: 'admin.sign_up',
-  NotificationGroupTypeEnum.adminPeriodReport: 'admin.report',
-  NotificationGroupTypeEnum.severedRelationships: 'severed_relationships',
-  NotificationGroupTypeEnum.moderationWarning: 'moderation_warning',
+const _$NotificationTypeEnumEnumMap = {
+  NotificationTypeEnum.mention: 'mention',
+  NotificationTypeEnum.status: 'status',
+  NotificationTypeEnum.reblog: 'reblog',
+  NotificationTypeEnum.follow: 'follow',
+  NotificationTypeEnum.followRequest: 'follow_request',
+  NotificationTypeEnum.favourite: 'favourite',
+  NotificationTypeEnum.poll: 'poll',
+  NotificationTypeEnum.edit: 'update',
+  NotificationTypeEnum.adminPeriodSignUp: 'admin.sign_up',
+  NotificationTypeEnum.adminPeriodReport: 'admin.report',
+  NotificationTypeEnum.severedRelationships: 'severed_relationships',
+  NotificationTypeEnum.moderationWarning: 'moderation_warning',
 };

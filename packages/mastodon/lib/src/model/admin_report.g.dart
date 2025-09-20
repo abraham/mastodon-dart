@@ -122,8 +122,8 @@ Map<String, dynamic> _$AdminReportToJson(AdminReport instance) {
 }
 
 const _$CategoryEnumEnumMap = {
-  CategoryEnum.legal: 'legal',
-  CategoryEnum.other: 'other',
   CategoryEnum.spam: 'spam',
+  CategoryEnum.legal: 'legal',
   CategoryEnum.violation: 'violation',
+  CategoryEnum.other: 'other',
 };

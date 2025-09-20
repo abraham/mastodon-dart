@@ -1,7 +1,7 @@
 import 'package:test/test.dart';
 import 'package:mastodon/mastodon.dart';
 
-// tests for PolicyEnum
+// tests for ActionEnum
 void main() {
-  group(PolicyEnum, () {});
+  group(ActionEnum, () {});
 }

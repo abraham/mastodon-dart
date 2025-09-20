@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:mastodon/src/model/action_enum.dart';
 import 'package:mastodon/src/model/appeal.dart';
 import 'package:mastodon/src/model/account.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -35,7 +36,7 @@ class AccountWarning {
 
   /// Action taken against the account.
   @JsonKey(name: r'action', required: false, includeIfNull: false)
-  final AccountWarningActionEnum? action;
+  final ActionEnum? action;
 
   @JsonKey(name: r'appeal', required: false, includeIfNull: false)
   final Appeal? appeal;
@@ -73,7 +74,7 @@ class AccountWarning {
 
   @override
   int get hashCode =>
-      (action == null ? 0 : action.hashCode) +
+      action.hashCode +
       (appeal == null ? 0 : appeal.hashCode) +
       (createdAt == null ? 0 : createdAt.hashCode) +
       (id == null ? 0 : id.hashCode) +
@@ -90,42 +91,4 @@ class AccountWarning {
   String toString() {
     return toJson().toString();
   }
-}
-
-/// Action taken against the account.
-enum AccountWarningActionEnum {
-  /// Action taken against the account.
-  @JsonValue(r'none')
-  none(r'none'),
-
-  /// Action taken against the account.
-  @JsonValue(r'disable')
-  disable(r'disable'),
-
-  /// Action taken against the account.
-  @JsonValue(r'mark_statuses_as_sensitive')
-  markStatusesAsSensitive(r'mark_statuses_as_sensitive'),
-
-  /// Action taken against the account.
-  @JsonValue(r'delete_statuses')
-  deleteStatuses(r'delete_statuses'),
-
-  /// Action taken against the account.
-  @JsonValue(r'sensitive')
-  sensitive(r'sensitive'),
-
-  /// Action taken against the account.
-  @JsonValue(r'silence')
-  silence(r'silence'),
-
-  /// Action taken against the account.
-  @JsonValue(r'suspend')
-  suspend(r'suspend');
-
-  const AccountWarningActionEnum(this.value);
-
-  final String value;
-
-  @override
-  String toString() => value;
 }

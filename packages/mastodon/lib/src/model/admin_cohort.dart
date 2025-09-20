@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:mastodon/src/model/cohort_data.dart';
+import 'package:mastodon/src/model/frequency_enum.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'admin_cohort.g.dart';
@@ -30,7 +31,7 @@ class AdminCohort {
 
   /// The size of the bucket for the returned data.
   @JsonKey(name: r'frequency', required: true, includeIfNull: false)
-  final AdminCohortFrequencyEnum frequency;
+  final FrequencyEnum frequency;
 
   /// The timestamp for the start of the period, at midnight.
   @JsonKey(name: r'period', required: true, includeIfNull: false)
@@ -56,22 +57,4 @@ class AdminCohort {
   String toString() {
     return toJson().toString();
   }
-}
-
-/// The size of the bucket for the returned data.
-enum AdminCohortFrequencyEnum {
-  /// The size of the bucket for the returned data.
-  @JsonValue(r'day')
-  day(r'day'),
-
-  /// The size of the bucket for the returned data.
-  @JsonValue(r'month')
-  month(r'month');
-
-  const AdminCohortFrequencyEnum(this.value);
-
-  final String value;
-
-  @override
-  String toString() => value;
 }

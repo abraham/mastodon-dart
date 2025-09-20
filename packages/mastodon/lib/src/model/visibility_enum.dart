@@ -6,14 +6,14 @@
 import 'package:json_annotation/json_annotation.dart';
 
 enum VisibilityEnum {
-  @JsonValue(r'direct')
-  direct(r'direct'),
-  @JsonValue(r'private')
-  private(r'private'),
   @JsonValue(r'public')
   public(r'public'),
   @JsonValue(r'unlisted')
-  unlisted(r'unlisted');
+  unlisted(r'unlisted'),
+  @JsonValue(r'private')
+  private(r'private'),
+  @JsonValue(r'direct')
+  direct(r'direct');
 
   const VisibilityEnum(this.value);
 

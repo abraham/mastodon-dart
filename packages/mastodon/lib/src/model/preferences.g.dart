@@ -30,10 +30,7 @@ Preferences _$PreferencesFromJson(Map<String, dynamic> json) => $checkedCreate(
       ),
       readingColonExpandColonMedia: $checkedConvert(
         'reading:expand:media',
-        (v) => $enumDecode(
-          _$PreferencesReadingColonExpandColonMediaEnumEnumMap,
-          v,
-        ),
+        (v) => $enumDecode(_$MediaExpandEnumEnumMap, v),
       ),
       readingColonExpandColonSpoilers: $checkedConvert(
         'reading:expand:spoilers',
@@ -61,8 +58,7 @@ Map<String, dynamic> _$PreferencesToJson(Preferences instance) {
     'posting:default:visibility':
         _$VisibilityEnumEnumMap[instance.postingColonDefaultColonVisibility]!,
     'reading:expand:media':
-        _$PreferencesReadingColonExpandColonMediaEnumEnumMap[instance
-            .readingColonExpandColonMedia]!,
+        _$MediaExpandEnumEnumMap[instance.readingColonExpandColonMedia]!,
     'reading:expand:spoilers': instance.readingColonExpandColonSpoilers,
   };
 
@@ -80,14 +76,14 @@ Map<String, dynamic> _$PreferencesToJson(Preferences instance) {
 }
 
 const _$VisibilityEnumEnumMap = {
-  VisibilityEnum.direct: 'direct',
-  VisibilityEnum.private: 'private',
   VisibilityEnum.public: 'public',
   VisibilityEnum.unlisted: 'unlisted',
+  VisibilityEnum.private: 'private',
+  VisibilityEnum.direct: 'direct',
 };
 
-const _$PreferencesReadingColonExpandColonMediaEnumEnumMap = {
-  PreferencesReadingColonExpandColonMediaEnum.default_: 'default',
-  PreferencesReadingColonExpandColonMediaEnum.showAll: 'show_all',
-  PreferencesReadingColonExpandColonMediaEnum.hideAll: 'hide_all',
+const _$MediaExpandEnumEnumMap = {
+  MediaExpandEnum.default_: 'default',
+  MediaExpandEnum.showAll: 'show_all',
+  MediaExpandEnum.hideAll: 'hide_all',
 };

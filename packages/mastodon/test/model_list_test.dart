@@ -20,7 +20,7 @@ void main() {
     });
 
     // Which replies should be shown in the list.
-    // PolicyEnum repliesPolicy
+    // RepliesPolicyEnum repliesPolicy
     test('to test the property `repliesPolicy`', () async {
       // TODO
     });
