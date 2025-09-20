@@ -14,7 +14,7 @@ AccountWarning _$AccountWarningFromJson(Map<String, dynamic> json) =>
         final val = AccountWarning(
           action: $checkedConvert(
             'action',
-            (v) => $enumDecodeNullable(_$ActionEnumEnumMap, v),
+            (v) => $enumDecodeNullable(_$AccountWarningActionEnumEnumMap, v),
           ),
           appeal: $checkedConvert(
             'appeal',
@@ -55,7 +55,7 @@ Map<String, dynamic> _$AccountWarningToJson(AccountWarning instance) {
     }
   }
 
-  writeNotNull('action', _$ActionEnumEnumMap[instance.action]);
+  writeNotNull('action', _$AccountWarningActionEnumEnumMap[instance.action]);
   writeNotNull('appeal', instance.appeal?.toJson());
   writeNotNull('created_at', instance.createdAt?.toIso8601String());
   writeNotNull('id', instance.id);
@@ -65,12 +65,13 @@ Map<String, dynamic> _$AccountWarningToJson(AccountWarning instance) {
   return val;
 }
 
-const _$ActionEnumEnumMap = {
-  ActionEnum.none: 'none',
-  ActionEnum.disable: 'disable',
-  ActionEnum.markStatusesAsSensitive: 'mark_statuses_as_sensitive',
-  ActionEnum.deleteStatuses: 'delete_statuses',
-  ActionEnum.sensitive: 'sensitive',
-  ActionEnum.silence: 'silence',
-  ActionEnum.suspend: 'suspend',
+const _$AccountWarningActionEnumEnumMap = {
+  AccountWarningActionEnum.none: 'none',
+  AccountWarningActionEnum.disable: 'disable',
+  AccountWarningActionEnum.markStatusesAsSensitive:
+      'mark_statuses_as_sensitive',
+  AccountWarningActionEnum.deleteStatuses: 'delete_statuses',
+  AccountWarningActionEnum.sensitive: 'sensitive',
+  AccountWarningActionEnum.silence: 'silence',
+  AccountWarningActionEnum.suspend: 'suspend',
 };

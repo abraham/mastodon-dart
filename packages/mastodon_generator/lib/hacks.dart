@@ -107,29 +107,29 @@ void main() async {
       replacements: [
         Replacement(
           "this.repliesPolicy = 'list',",
-          'this.repliesPolicy = RepliesPolicyEnum.list,',
+          'this.repliesPolicy = ListRepliesPolicyEnum.list,',
         ),
         Replacement(
           "defaultValue: 'list',",
-          'defaultValue: RepliesPolicyEnum.list,',
+          'defaultValue: ListRepliesPolicyEnum.list,',
         ),
       ],
-      description: "Replace 'list' with RepliesPolicyEnum.list",
+      description: "Replace 'list' with ListRepliesPolicyEnum.list",
     ),
     Hack(
       filePath: 'packages/mastodon/lib/src/model/create_report_request.dart',
       replacements: [
         Replacement(
           "this.category = 'other',",
-          'this.category = CategoryEnum.other,',
+          'this.category = AdminReportCategoryEnum.other,',
         ),
         Replacement(
           "defaultValue: 'other',",
-          "defaultValue: CategoryEnum.other,",
+          "defaultValue: AdminReportCategoryEnum.other,",
         ),
       ],
       description:
-          "Replace CreateReportRequestCategoryEnum._('other') with CreateReportRequestCategoryEnum.other",
+          "Replace CreateReportRequestAdminReportCategoryEnum._('other') with CreateReportRequestAdminReportCategoryEnum.other",
     ),
     Hack(
       filePath: 'packages/mastodon/lib/mastodon.dart',

@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:mastodon/src/model/current_user_enum.dart';
+import 'package:mastodon/src/model/quote_approval_current_user_enum.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'quote_approval.g.dart';
@@ -24,7 +24,7 @@ class QuoteApproval {
 
   /// Describes how this status' quote policy applies to the current user.
   @JsonKey(name: r'current_user', required: false, includeIfNull: false)
-  final CurrentUserEnum? currentUser;
+  final QuoteApprovalCurrentUserEnum? currentUser;
 
   /// Describes who is expected to have their quotes of this status be manually reviewed by the author before being accepted. An empty list means that nobody is expected to be able to quote this post. Other values may be added in the future, so unknown values should be treated as `unsupported_policy`.
   @JsonKey(name: r'manual', required: false, includeIfNull: false)

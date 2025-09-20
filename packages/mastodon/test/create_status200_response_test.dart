@@ -93,7 +93,7 @@ void main() {
     });
 
     // Visibility of this status.
-    // VisibilityEnum visibility
+    // PreferencesPostingDefaultVisibilityEnum visibility
     test('to test the property `visibility`', () async {
       // TODO
     });
@@ -175,6 +175,11 @@ void main() {
 
     // Poll poll
     test('to test the property `poll`', () async {
+      // TODO
+    });
+
+    // Quote quote
+    test('to test the property `quote`', () async {
       // TODO
     });
 

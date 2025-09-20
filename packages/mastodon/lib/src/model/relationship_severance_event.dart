@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:mastodon/src/model/type_enum.dart';
+import 'package:mastodon/src/model/relationship_severance_event_type_enum.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'relationship_severance_event.g.dart';
@@ -58,7 +58,7 @@ class RelationshipSeveranceEvent {
 
   /// Type of event.
   @JsonKey(name: r'type', required: false, includeIfNull: false)
-  final TypeEnum? type;
+  final RelationshipSeveranceEventTypeEnum? type;
 
   @override
   bool operator ==(Object other) =>

@@ -76,7 +76,7 @@ Status _$StatusFromJson(Map<String, dynamic> json) => $checkedCreate(
       uri: $checkedConvert('uri', (v) => v as String),
       visibility: $checkedConvert(
         'visibility',
-        (v) => $enumDecode(_$VisibilityEnumEnumMap, v),
+        (v) => $enumDecode(_$PreferencesPostingDefaultVisibilityEnumEnumMap, v),
       ),
       application: $checkedConvert(
         'application',
@@ -112,6 +112,10 @@ Status _$StatusFromJson(Map<String, dynamic> json) => $checkedCreate(
       poll: $checkedConvert(
         'poll',
         (v) => v == null ? null : Poll.fromJson(v as Map<String, dynamic>),
+      ),
+      quote: $checkedConvert(
+        'quote',
+        (v) => v == null ? null : Quote.fromJson(v as Map<String, dynamic>),
       ),
       quoteApproval: $checkedConvert(
         'quote_approval',
@@ -166,7 +170,8 @@ Map<String, dynamic> _$StatusToJson(Status instance) {
     'spoiler_text': instance.spoilerText,
     'tags': instance.tags.map((e) => e.toJson()).toList(),
     'uri': instance.uri,
-    'visibility': _$VisibilityEnumEnumMap[instance.visibility]!,
+    'visibility':
+        _$PreferencesPostingDefaultVisibilityEnumEnumMap[instance.visibility]!,
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -187,6 +192,7 @@ Map<String, dynamic> _$StatusToJson(Status instance) {
   writeNotNull('muted', instance.muted);
   writeNotNull('pinned', instance.pinned);
   writeNotNull('poll', instance.poll?.toJson());
+  writeNotNull('quote', instance.quote?.toJson());
   writeNotNull('quote_approval', instance.quoteApproval?.toJson());
   writeNotNull('quotes_count', instance.quotesCount);
   writeNotNull('reblog', instance.reblog?.toJson());
@@ -196,9 +202,9 @@ Map<String, dynamic> _$StatusToJson(Status instance) {
   return val;
 }
 
-const _$VisibilityEnumEnumMap = {
-  VisibilityEnum.public: 'public',
-  VisibilityEnum.unlisted: 'unlisted',
-  VisibilityEnum.private: 'private',
-  VisibilityEnum.direct: 'direct',
+const _$PreferencesPostingDefaultVisibilityEnumEnumMap = {
+  PreferencesPostingDefaultVisibilityEnum.public: 'public',
+  PreferencesPostingDefaultVisibilityEnum.unlisted: 'unlisted',
+  PreferencesPostingDefaultVisibilityEnum.private: 'private',
+  PreferencesPostingDefaultVisibilityEnum.direct: 'direct',
 };

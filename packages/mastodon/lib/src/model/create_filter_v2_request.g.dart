@@ -17,7 +17,7 @@ CreateFilterV2Request _$CreateFilterV2RequestFromJson(
       context: $checkedConvert(
         'context',
         (v) => (v as List<dynamic>)
-            .map((e) => $enumDecode(_$FilterContextEnumMap, e))
+            .map((e) => $enumDecode(_$FilterContextEnumEnumMap, e))
             .toList(),
       ),
       title: $checkedConvert('title', (v) => v as String),
@@ -47,7 +47,9 @@ Map<String, dynamic> _$CreateFilterV2RequestToJson(
   CreateFilterV2Request instance,
 ) {
   final val = <String, dynamic>{
-    'context': instance.context.map((e) => _$FilterContextEnumMap[e]!).toList(),
+    'context': instance.context
+        .map((e) => _$FilterContextEnumEnumMap[e]!)
+        .toList(),
     'title': instance.title,
   };
 
@@ -66,10 +68,10 @@ Map<String, dynamic> _$CreateFilterV2RequestToJson(
   return val;
 }
 
-const _$FilterContextEnumMap = {
-  FilterContext.home: 'home',
-  FilterContext.notifications: 'notifications',
-  FilterContext.public: 'public',
-  FilterContext.thread: 'thread',
-  FilterContext.account: 'account',
+const _$FilterContextEnumEnumMap = {
+  FilterContextEnum.home: 'home',
+  FilterContextEnum.notifications: 'notifications',
+  FilterContextEnum.public: 'public',
+  FilterContextEnum.thread: 'thread',
+  FilterContextEnum.account: 'account',
 };

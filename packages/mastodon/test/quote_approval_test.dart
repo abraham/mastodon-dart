@@ -14,7 +14,7 @@ void main() {
     });
 
     // Describes how this status' quote policy applies to the current user.
-    // CurrentUserEnum currentUser
+    // QuoteApprovalCurrentUserEnum currentUser
     test('to test the property `currentUser`', () async {
       // TODO
     });

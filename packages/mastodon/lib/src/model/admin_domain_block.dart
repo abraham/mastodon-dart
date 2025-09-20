@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:mastodon/src/model/severity_enum.dart';
+import 'package:mastodon/src/model/admin_domainblock_severity_enum.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'admin_domain_block.g.dart';
@@ -64,7 +64,7 @@ class AdminDomainBlock {
 
   /// The policy to be applied by this domain block.
   @JsonKey(name: r'severity', required: true, includeIfNull: false)
-  final SeverityEnum severity;
+  final AdminDomainblockSeverityEnum severity;
 
   /// The sha256 hex digest of the domain that is not allowed to federated.
   @JsonKey(name: r'digest', required: false, includeIfNull: false)

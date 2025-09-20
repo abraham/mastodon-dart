@@ -31,7 +31,6 @@ MutedAccount _$MutedAccountFromJson(Map<String, dynamic> json) =>
             'locked',
             'note',
             'statuses_count',
-            'uri',
             'username',
           ],
         );
@@ -81,7 +80,6 @@ MutedAccount _$MutedAccountFromJson(Map<String, dynamic> json) =>
             'statuses_count',
             (v) => (v as num).toInt(),
           ),
-          uri: $checkedConvert('uri', (v) => Uri.parse(v as String)),
           username: $checkedConvert('username', (v) => v as String),
           discoverable: $checkedConvert('discoverable', (v) => v as bool?),
           hideCollections: $checkedConvert(
@@ -113,6 +111,10 @@ MutedAccount _$MutedAccountFromJson(Map<String, dynamic> json) =>
                 .toList(),
           ),
           suspended: $checkedConvert('suspended', (v) => v as bool?),
+          uri: $checkedConvert(
+            'uri',
+            (v) => v == null ? null : Uri.parse(v as String),
+          ),
           url: $checkedConvert(
             'url',
             (v) => v == null ? null : Uri.parse(v as String),
@@ -153,7 +155,6 @@ Map<String, dynamic> _$MutedAccountToJson(MutedAccount instance) {
     'locked': instance.locked,
     'note': instance.note,
     'statuses_count': instance.statusesCount,
-    'uri': instance.uri.toString(),
     'username': instance.username,
   };
 
@@ -174,6 +175,7 @@ Map<String, dynamic> _$MutedAccountToJson(MutedAccount instance) {
   writeNotNull('noindex', instance.noindex);
   writeNotNull('roles', instance.roles?.map((e) => e.toJson()).toList());
   writeNotNull('suspended', instance.suspended);
+  writeNotNull('uri', instance.uri?.toString());
   writeNotNull('url', instance.url?.toString());
   return val;
 }

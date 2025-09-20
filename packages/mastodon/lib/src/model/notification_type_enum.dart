@@ -29,7 +29,11 @@ enum NotificationTypeEnum {
   @JsonValue(r'severed_relationships')
   severedRelationships(r'severed_relationships'),
   @JsonValue(r'moderation_warning')
-  moderationWarning(r'moderation_warning');
+  moderationWarning(r'moderation_warning'),
+  @JsonValue(r'quote')
+  quote(r'quote'),
+  @JsonValue(r'quoted_update')
+  quotedUpdate(r'quoted_update');
 
   const NotificationTypeEnum(this.value);
 

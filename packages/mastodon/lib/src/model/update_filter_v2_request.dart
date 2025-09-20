@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:mastodon/src/model/filter_context.dart';
+import 'package:mastodon/src/model/filter_context_enum.dart';
 import 'package:mastodon/src/model/update_filter_v2_request_keywords_attributes_inner.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -31,7 +31,7 @@ class UpdateFilterV2Request {
 
   /// Where the filter should be applied. Specify at least one of `home`, `notifications`, `public`, `thread`, `account`.
   @JsonKey(name: r'context', required: false, includeIfNull: false)
-  final List<FilterContext>? context;
+  final List<FilterContextEnum>? context;
 
   /// How many seconds from now should the filter expire?
   @JsonKey(name: r'expires_in', required: false, includeIfNull: false)

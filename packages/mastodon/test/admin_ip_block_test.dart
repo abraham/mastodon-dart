@@ -32,7 +32,7 @@ void main() {
     });
 
     // The associated policy with this IP block.
-    // SeverityEnum severity
+    // AdminIpblockSeverityEnum severity
     test('to test the property `severity`', () async {
       // TODO
     });

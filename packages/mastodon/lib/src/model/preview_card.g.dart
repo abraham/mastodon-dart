@@ -38,7 +38,7 @@ PreviewCard _$PreviewCardFromJson(Map<String, dynamic> json) => $checkedCreate(
       title: $checkedConvert('title', (v) => v as String),
       type: $checkedConvert(
         'type',
-        (v) => $enumDecode(_$PreviewTypeEnumEnumMap, v),
+        (v) => $enumDecode(_$PreviewCardTypeEnumEnumMap, v),
       ),
       url: $checkedConvert('url', (v) => Uri.parse(v as String)),
       width: $checkedConvert('width', (v) => (v as num).toInt()),
@@ -79,7 +79,7 @@ Map<String, dynamic> _$PreviewCardToJson(PreviewCard instance) {
     'provider_name': instance.providerName,
     'provider_url': instance.providerUrl.toString(),
     'title': instance.title,
-    'type': _$PreviewTypeEnumEnumMap[instance.type]!,
+    'type': _$PreviewCardTypeEnumEnumMap[instance.type]!,
     'url': instance.url.toString(),
     'width': instance.width,
   };
@@ -98,9 +98,9 @@ Map<String, dynamic> _$PreviewCardToJson(PreviewCard instance) {
   return val;
 }
 
-const _$PreviewTypeEnumEnumMap = {
-  PreviewTypeEnum.link: 'link',
-  PreviewTypeEnum.photo: 'photo',
-  PreviewTypeEnum.video: 'video',
-  PreviewTypeEnum.rich: 'rich',
+const _$PreviewCardTypeEnumEnumMap = {
+  PreviewCardTypeEnum.link: 'link',
+  PreviewCardTypeEnum.photo: 'photo',
+  PreviewCardTypeEnum.video: 'video',
+  PreviewCardTypeEnum.rich: 'rich',
 };

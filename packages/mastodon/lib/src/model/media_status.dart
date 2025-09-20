@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:mastodon/src/model/visibility_enum.dart';
+import 'package:mastodon/src/model/preferences_posting_default_visibility_enum.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'media_status.g.dart';
@@ -81,7 +81,7 @@ class MediaStatus {
 
   /// Sets the visibility of the posted status to `public`, `unlisted`, `private`, `direct`.
   @JsonKey(name: r'visibility', required: false, includeIfNull: false)
-  final VisibilityEnum? visibility;
+  final PreferencesPostingDefaultVisibilityEnum? visibility;
 
   /// The text content of the status. If `media_ids` is provided, this becomes optional. Attaching a `poll` is optional while `status` is provided.
   @JsonKey(name: r'status', required: false, includeIfNull: false)

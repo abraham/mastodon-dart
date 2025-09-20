@@ -24,7 +24,7 @@ V1Filter _$V1FilterFromJson(Map<String, dynamic> json) => $checkedCreate(
       context: $checkedConvert(
         'context',
         (v) => (v as List<dynamic>)
-            .map((e) => $enumDecode(_$FilterContextEnumMap, e))
+            .map((e) => $enumDecode(_$FilterContextEnumEnumMap, e))
             .toList(),
       ),
       id: $checkedConvert('id', (v) => v as String),
@@ -43,7 +43,9 @@ V1Filter _$V1FilterFromJson(Map<String, dynamic> json) => $checkedCreate(
 
 Map<String, dynamic> _$V1FilterToJson(V1Filter instance) {
   final val = <String, dynamic>{
-    'context': instance.context.map((e) => _$FilterContextEnumMap[e]!).toList(),
+    'context': instance.context
+        .map((e) => _$FilterContextEnumEnumMap[e]!)
+        .toList(),
     'id': instance.id,
     'irreversible': instance.irreversible,
     'phrase': instance.phrase,
@@ -60,10 +62,10 @@ Map<String, dynamic> _$V1FilterToJson(V1Filter instance) {
   return val;
 }
 
-const _$FilterContextEnumMap = {
-  FilterContext.home: 'home',
-  FilterContext.notifications: 'notifications',
-  FilterContext.public: 'public',
-  FilterContext.thread: 'thread',
-  FilterContext.account: 'account',
+const _$FilterContextEnumEnumMap = {
+  FilterContextEnum.home: 'home',
+  FilterContextEnum.notifications: 'notifications',
+  FilterContextEnum.public: 'public',
+  FilterContextEnum.thread: 'thread',
+  FilterContextEnum.account: 'account',
 };

@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:mastodon/src/model/severity_enum.dart';
+import 'package:mastodon/src/model/domain_block_severity_enum.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'domain_block.g.dart';
@@ -36,7 +36,7 @@ class DomainBlock {
 
   /// The level to which the domain is blocked.
   @JsonKey(name: r'severity', required: true, includeIfNull: false)
-  final SeverityEnum severity;
+  final DomainBlockSeverityEnum severity;
 
   /// An optional reason for the domain block.
   @JsonKey(name: r'comment', required: false, includeIfNull: false)

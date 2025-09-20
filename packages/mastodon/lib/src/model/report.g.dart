@@ -26,7 +26,7 @@ Report _$ReportFromJson(Map<String, dynamic> json) => $checkedCreate(
       actionTaken: $checkedConvert('action_taken', (v) => v as bool),
       category: $checkedConvert(
         'category',
-        (v) => $enumDecode(_$CategoryEnumEnumMap, v),
+        (v) => $enumDecode(_$AdminReportCategoryEnumEnumMap, v),
       ),
       comment: $checkedConvert('comment', (v) => v as String),
       createdAt: $checkedConvert(
@@ -67,7 +67,7 @@ Report _$ReportFromJson(Map<String, dynamic> json) => $checkedCreate(
 Map<String, dynamic> _$ReportToJson(Report instance) {
   final val = <String, dynamic>{
     'action_taken': instance.actionTaken,
-    'category': _$CategoryEnumEnumMap[instance.category]!,
+    'category': _$AdminReportCategoryEnumEnumMap[instance.category]!,
     'comment': instance.comment,
     'created_at': instance.createdAt.toIso8601String(),
     'forwarded': instance.forwarded,
@@ -87,9 +87,9 @@ Map<String, dynamic> _$ReportToJson(Report instance) {
   return val;
 }
 
-const _$CategoryEnumEnumMap = {
-  CategoryEnum.spam: 'spam',
-  CategoryEnum.legal: 'legal',
-  CategoryEnum.violation: 'violation',
-  CategoryEnum.other: 'other',
+const _$AdminReportCategoryEnumEnumMap = {
+  AdminReportCategoryEnum.spam: 'spam',
+  AdminReportCategoryEnum.legal: 'legal',
+  AdminReportCategoryEnum.violation: 'violation',
+  AdminReportCategoryEnum.other: 'other',
 };

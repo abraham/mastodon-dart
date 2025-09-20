@@ -31,7 +31,10 @@ PollStatus _$PollStatusFromJson(Map<String, dynamic> json) => $checkedCreate(
       spoilerText: $checkedConvert('spoiler_text', (v) => v as String?),
       visibility: $checkedConvert(
         'visibility',
-        (v) => $enumDecodeNullable(_$VisibilityEnumEnumMap, v),
+        (v) => $enumDecodeNullable(
+          _$PreferencesPostingDefaultVisibilityEnumEnumMap,
+          v,
+        ),
       ),
       status: $checkedConvert('status', (v) => v as String?),
     );
@@ -62,14 +65,17 @@ Map<String, dynamic> _$PollStatusToJson(PollStatus instance) {
   writeNotNull('scheduled_at', instance.scheduledAt?.toIso8601String());
   writeNotNull('sensitive', instance.sensitive);
   writeNotNull('spoiler_text', instance.spoilerText);
-  writeNotNull('visibility', _$VisibilityEnumEnumMap[instance.visibility]);
+  writeNotNull(
+    'visibility',
+    _$PreferencesPostingDefaultVisibilityEnumEnumMap[instance.visibility],
+  );
   writeNotNull('status', instance.status);
   return val;
 }
 
-const _$VisibilityEnumEnumMap = {
-  VisibilityEnum.public: 'public',
-  VisibilityEnum.unlisted: 'unlisted',
-  VisibilityEnum.private: 'private',
-  VisibilityEnum.direct: 'direct',
+const _$PreferencesPostingDefaultVisibilityEnumEnumMap = {
+  PreferencesPostingDefaultVisibilityEnum.public: 'public',
+  PreferencesPostingDefaultVisibilityEnum.unlisted: 'unlisted',
+  PreferencesPostingDefaultVisibilityEnum.private: 'private',
+  PreferencesPostingDefaultVisibilityEnum.direct: 'direct',
 };

@@ -15,8 +15,8 @@ CreateListRequest _$CreateListRequestFromJson(Map<String, dynamic> json) =>
         repliesPolicy: $checkedConvert(
           'replies_policy',
           (v) =>
-              $enumDecodeNullable(_$RepliesPolicyEnumEnumMap, v) ??
-              RepliesPolicyEnum.list,
+              $enumDecodeNullable(_$ListRepliesPolicyEnumEnumMap, v) ??
+              ListRepliesPolicyEnum.list,
         ),
       );
       return val;
@@ -34,13 +34,13 @@ Map<String, dynamic> _$CreateListRequestToJson(CreateListRequest instance) {
   writeNotNull('exclusive', instance.exclusive);
   writeNotNull(
     'replies_policy',
-    _$RepliesPolicyEnumEnumMap[instance.repliesPolicy],
+    _$ListRepliesPolicyEnumEnumMap[instance.repliesPolicy],
   );
   return val;
 }
 
-const _$RepliesPolicyEnumEnumMap = {
-  RepliesPolicyEnum.followed: 'followed',
-  RepliesPolicyEnum.list: 'list',
-  RepliesPolicyEnum.none: 'none',
+const _$ListRepliesPolicyEnumEnumMap = {
+  ListRepliesPolicyEnum.followed: 'followed',
+  ListRepliesPolicyEnum.list: 'list',
+  ListRepliesPolicyEnum.none: 'none',
 };

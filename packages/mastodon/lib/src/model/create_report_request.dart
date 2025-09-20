@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:mastodon/src/model/category_enum.dart';
+import 'package:mastodon/src/model/admin_report_category_enum.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'create_report_request.g.dart';
@@ -19,7 +19,7 @@ class CreateReportRequest {
   CreateReportRequest({
     required this.accountId,
 
-    this.category = CategoryEnum.other,
+    this.category = AdminReportCategoryEnum.other,
 
     this.comment,
 
@@ -36,12 +36,12 @@ class CreateReportRequest {
 
   /// Specify if the report is due to `spam`, `legal` (illegal content), `violation` of enumerated instance rules, or some `other` reason. Defaults to `other`. Will be set to `violation` if `rule_ids[]` is provided (regardless of any category value you provide).
   @JsonKey(
-    defaultValue: CategoryEnum.other,
+    defaultValue: AdminReportCategoryEnum.other,
     name: r'category',
     required: false,
     includeIfNull: false,
   )
-  final CategoryEnum? category;
+  final AdminReportCategoryEnum? category;
 
   /// The reason for the report. Default maximum of 1000 characters.
   @JsonKey(name: r'comment', required: false, includeIfNull: false)

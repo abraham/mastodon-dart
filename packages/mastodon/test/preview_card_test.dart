@@ -50,7 +50,7 @@ void main() {
     });
 
     // The type of the preview card.
-    // PreviewTypeEnum type
+    // PreviewCardTypeEnum type
     test('to test the property `type`', () async {
       // TODO
     });

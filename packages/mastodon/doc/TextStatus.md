@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **scheduledAt** | [**DateTime**](DateTime.md) | [Datetime] at which to schedule a status. Providing this parameter will cause ScheduledStatus to be returned instead of Status. Must be at least 5 minutes in the future. | [optional] 
 **sensitive** | **bool** | Mark status and attached media as sensitive? Defaults to false. | [optional] [default to false]
 **spoilerText** | **String** | Text to be shown as a warning or subject before the actual content. Statuses are generally collapsed behind this field. | [optional] 
-**visibility** | [**VisibilityEnum**](VisibilityEnum.md) | Sets the visibility of the posted status to `public`, `unlisted`, `private`, `direct`. | [optional] 
+**visibility** | [**PreferencesPostingDefaultVisibilityEnum**](PreferencesPostingDefaultVisibilityEnum.md) | Sets the visibility of the posted status to `public`, `unlisted`, `private`, `direct`. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

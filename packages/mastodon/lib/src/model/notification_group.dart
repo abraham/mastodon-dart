@@ -5,8 +5,8 @@
 // ignore_for_file: unused_element
 import 'package:mastodon/src/model/report.dart';
 import 'package:mastodon/src/model/account_warning.dart';
+import 'package:mastodon/src/model/notification_group_type_enum.dart';
 import 'package:mastodon/src/model/relationship_severance_event.dart';
-import 'package:mastodon/src/model/notification_type_enum.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'notification_group.g.dart';
@@ -96,7 +96,7 @@ class NotificationGroup {
 
   /// The type of event that resulted in the notifications in this group.
   @JsonKey(name: r'type', required: false, includeIfNull: false)
-  final NotificationTypeEnum? type;
+  final NotificationGroupTypeEnum? type;
 
   @override
   bool operator ==(Object other) =>

@@ -8,7 +8,7 @@ void main() {
 
   group(V1Filter, () {
     // The contexts in which the filter should be applied.
-    // List<FilterContext> context
+    // List<FilterContextEnum> context
     test('to test the property `context`', () async {
       // TODO
     });

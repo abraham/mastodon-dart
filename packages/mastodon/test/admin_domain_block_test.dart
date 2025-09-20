@@ -44,7 +44,7 @@ void main() {
     });
 
     // The policy to be applied by this domain block.
-    // SeverityEnum severity
+    // AdminDomainblockSeverityEnum severity
     test('to test the property `severity`', () async {
       // TODO
     });

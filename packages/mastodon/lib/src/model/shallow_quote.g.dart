@@ -15,7 +15,7 @@ ShallowQuote _$ShallowQuoteFromJson(Map<String, dynamic> json) =>
         ),
         state: $checkedConvert(
           'state',
-          (v) => $enumDecodeNullable(_$StateEnumEnumMap, v),
+          (v) => $enumDecodeNullable(_$QuoteStateEnumEnumMap, v),
         ),
       );
       return val;
@@ -31,15 +31,15 @@ Map<String, dynamic> _$ShallowQuoteToJson(ShallowQuote instance) {
   }
 
   writeNotNull('quoted_status_id', instance.quotedStatusId);
-  writeNotNull('state', _$StateEnumEnumMap[instance.state]);
+  writeNotNull('state', _$QuoteStateEnumEnumMap[instance.state]);
   return val;
 }
 
-const _$StateEnumEnumMap = {
-  StateEnum.pending: 'pending',
-  StateEnum.accepted: 'accepted',
-  StateEnum.rejected: 'rejected',
-  StateEnum.revoked: 'revoked',
-  StateEnum.deleted: 'deleted',
-  StateEnum.unauthorized: 'unauthorized',
+const _$QuoteStateEnumEnumMap = {
+  QuoteStateEnum.pending: 'pending',
+  QuoteStateEnum.accepted: 'accepted',
+  QuoteStateEnum.rejected: 'rejected',
+  QuoteStateEnum.revoked: 'revoked',
+  QuoteStateEnum.deleted: 'deleted',
+  QuoteStateEnum.unauthorized: 'unauthorized',
 };

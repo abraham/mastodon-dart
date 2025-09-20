@@ -7,7 +7,7 @@ import 'package:mastodon/src/model/text_status.dart';
 import 'package:mastodon/src/model/update_status_request_poll.dart';
 import 'package:mastodon/src/model/poll_status.dart';
 import 'package:mastodon/src/model/media_status.dart';
-import 'package:mastodon/src/model/visibility_enum.dart';
+import 'package:mastodon/src/model/preferences_posting_default_visibility_enum.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'create_status_request.g.dart';
@@ -94,7 +94,7 @@ class CreateStatusRequest {
 
   /// Sets the visibility of the posted status to `public`, `unlisted`, `private`, `direct`.
   @JsonKey(name: r'visibility', required: false, includeIfNull: false)
-  final VisibilityEnum? visibility;
+  final PreferencesPostingDefaultVisibilityEnum? visibility;
 
   @override
   bool operator ==(Object other) =>

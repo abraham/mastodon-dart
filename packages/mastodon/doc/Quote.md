@@ -9,7 +9,7 @@ import 'package:mastodon/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **quotedStatus** | [**Status**](Status.md) |  | [optional] 
-**state** | [**StateEnum**](StateEnum.md) | The state of the quote. | [optional] 
+**state** | [**QuoteStateEnum**](QuoteStateEnum.md) | The state of the quote. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

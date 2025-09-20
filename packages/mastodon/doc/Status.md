@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **spoilerText** | **String** | Subject or summary line, below which status content is collapsed until expanded. | 
 **tags** | [**List&lt;StatusTag&gt;**](StatusTag.md) | Hashtags used within the status content. | 
 **uri** | **String** | URI of the status used for federation. | 
-**visibility** | [**VisibilityEnum**](VisibilityEnum.md) | Visibility of this status. | 
+**visibility** | [**PreferencesPostingDefaultVisibilityEnum**](PreferencesPostingDefaultVisibilityEnum.md) | Visibility of this status. | 
 **application** | [**StatusApplication**](StatusApplication.md) |  | [optional] 
 **bookmarked** | **bool** | If the current token has an authorized user: Have you bookmarked this status? | [optional] 
 **card** | [**PreviewCard**](PreviewCard.md) |  | [optional] 
@@ -35,6 +35,7 @@ Name | Type | Description | Notes
 **muted** | **bool** | If the current token has an authorized user: Have you muted notifications for this status's conversation? | [optional] 
 **pinned** | **bool** | If the current token has an authorized user: Have you pinned this status? Only appears if the status is pinnable. | [optional] 
 **poll** | [**Poll**](Poll.md) |  | [optional] 
+**quote** | [**Quote**](Quote.md) |  | [optional] 
 **quoteApproval** | [**QuoteApproval**](QuoteApproval.md) |  | [optional] 
 **quotesCount** | **int** | How many accepted quotes this status has. | [optional] 
 **reblog** | [**Status**](Status.md) |  | [optional] 

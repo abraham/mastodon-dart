@@ -3,18 +3,19 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:mastodon/src/model/custom_emoji.dart';
-import 'package:mastodon/src/model/poll.dart';
+import 'package:mastodon/src/model/quote.dart';
 import 'package:mastodon/src/model/status_mention.dart';
-import 'package:mastodon/src/model/account.dart';
-import 'package:mastodon/src/model/filter_result.dart';
 import 'package:mastodon/src/model/quote_approval.dart';
-import 'package:mastodon/src/model/status_tag.dart';
 import 'package:mastodon/src/model/media_attachment.dart';
 import 'package:mastodon/src/model/status_application.dart';
 import 'package:mastodon/src/model/preview_card.dart';
+import 'package:mastodon/src/model/preferences_posting_default_visibility_enum.dart';
+import 'package:mastodon/src/model/custom_emoji.dart';
+import 'package:mastodon/src/model/poll.dart';
+import 'package:mastodon/src/model/account.dart';
+import 'package:mastodon/src/model/filter_result.dart';
+import 'package:mastodon/src/model/status_tag.dart';
 import 'dart:core';
-import 'package:mastodon/src/model/visibility_enum.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'status.g.dart';
@@ -81,6 +82,8 @@ class Status {
     this.pinned,
 
     this.poll,
+
+    this.quote,
 
     this.quoteApproval,
 
@@ -153,7 +156,7 @@ class Status {
 
   /// Visibility of this status.
   @JsonKey(name: r'visibility', required: true, includeIfNull: false)
-  final VisibilityEnum visibility;
+  final PreferencesPostingDefaultVisibilityEnum visibility;
 
   @JsonKey(name: r'application', required: false, includeIfNull: false)
   final StatusApplication? application;
@@ -203,6 +206,9 @@ class Status {
 
   @JsonKey(name: r'poll', required: false, includeIfNull: false)
   final Poll? poll;
+
+  @JsonKey(name: r'quote', required: false, includeIfNull: false)
+  final Quote? quote;
 
   @JsonKey(name: r'quote_approval', required: false, includeIfNull: false)
   final QuoteApproval? quoteApproval;
@@ -257,6 +263,7 @@ class Status {
           other.muted == muted &&
           other.pinned == pinned &&
           other.poll == poll &&
+          other.quote == quote &&
           other.quoteApproval == quoteApproval &&
           other.quotesCount == quotesCount &&
           other.reblog == reblog &&
@@ -293,6 +300,7 @@ class Status {
       (muted == null ? 0 : muted.hashCode) +
       (pinned == null ? 0 : pinned.hashCode) +
       (poll == null ? 0 : poll.hashCode) +
+      (quote == null ? 0 : quote.hashCode) +
       (quoteApproval == null ? 0 : quoteApproval.hashCode) +
       (quotesCount == null ? 0 : quotesCount.hashCode) +
       (reblog == null ? 0 : reblog.hashCode) +

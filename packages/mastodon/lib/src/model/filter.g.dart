@@ -18,12 +18,12 @@ Filter _$FilterFromJson(Map<String, dynamic> json) => $checkedCreate(
       context: $checkedConvert(
         'context',
         (v) => (v as List<dynamic>)
-            .map((e) => $enumDecode(_$FilterContextEnumMap, e))
+            .map((e) => $enumDecode(_$FilterContextEnumEnumMap, e))
             .toList(),
       ),
       filterAction: $checkedConvert(
         'filter_action',
-        (v) => $enumDecode(_$FilterActionEnumEnumMap, v),
+        (v) => $enumDecode(_$FilterFilterActionEnumEnumMap, v),
       ),
       id: $checkedConvert('id', (v) => v as String),
       title: $checkedConvert('title', (v) => v as String),
@@ -54,8 +54,10 @@ Filter _$FilterFromJson(Map<String, dynamic> json) => $checkedCreate(
 
 Map<String, dynamic> _$FilterToJson(Filter instance) {
   final val = <String, dynamic>{
-    'context': instance.context.map((e) => _$FilterContextEnumMap[e]!).toList(),
-    'filter_action': _$FilterActionEnumEnumMap[instance.filterAction]!,
+    'context': instance.context
+        .map((e) => _$FilterContextEnumEnumMap[e]!)
+        .toList(),
+    'filter_action': _$FilterFilterActionEnumEnumMap[instance.filterAction]!,
     'id': instance.id,
     'title': instance.title,
   };
@@ -72,16 +74,16 @@ Map<String, dynamic> _$FilterToJson(Filter instance) {
   return val;
 }
 
-const _$FilterContextEnumMap = {
-  FilterContext.home: 'home',
-  FilterContext.notifications: 'notifications',
-  FilterContext.public: 'public',
-  FilterContext.thread: 'thread',
-  FilterContext.account: 'account',
+const _$FilterContextEnumEnumMap = {
+  FilterContextEnum.home: 'home',
+  FilterContextEnum.notifications: 'notifications',
+  FilterContextEnum.public: 'public',
+  FilterContextEnum.thread: 'thread',
+  FilterContextEnum.account: 'account',
 };
 
-const _$FilterActionEnumEnumMap = {
-  FilterActionEnum.warn: 'warn',
-  FilterActionEnum.hide_: 'hide',
-  FilterActionEnum.blur: 'blur',
+const _$FilterFilterActionEnumEnumMap = {
+  FilterFilterActionEnum.warn: 'warn',
+  FilterFilterActionEnum.hide_: 'hide',
+  FilterFilterActionEnum.blur: 'blur',
 };

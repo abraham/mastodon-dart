@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:mastodon/src/model/filter_context.dart';
+import 'package:mastodon/src/model/filter_context_enum.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'create_filter_request.g.dart';
@@ -30,7 +30,7 @@ class CreateFilterRequest {
 
   /// Where the filter should be applied. Specify at least one of `home`, `notifications`, `public`, `thread`, `account`.
   @JsonKey(name: r'context', required: true, includeIfNull: false)
-  final List<FilterContext> context;
+  final List<FilterContextEnum> context;
 
   /// The text to be filtered.
   @JsonKey(name: r'phrase', required: true, includeIfNull: false)

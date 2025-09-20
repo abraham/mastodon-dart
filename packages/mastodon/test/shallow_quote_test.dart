@@ -14,7 +14,7 @@ void main() {
     });
 
     // The state of the quote.
-    // StateEnum state
+    // QuoteStateEnum state
     test('to test the property `state`', () async {
       // TODO
     });

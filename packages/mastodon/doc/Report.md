@@ -9,7 +9,7 @@ import 'package:mastodon/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **actionTaken** | **bool** | Whether an action was taken yet. | 
-**category** | [**CategoryEnum**](CategoryEnum.md) | The generic reason for the report. | 
+**category** | [**AdminReportCategoryEnum**](AdminReportCategoryEnum.md) | The generic reason for the report. | 
 **comment** | **String** | The reason for the report. | 
 **createdAt** | [**DateTime**](DateTime.md) | When the report was created. | 
 **forwarded** | **bool** | Whether the report was forwarded to a remote domain. | 

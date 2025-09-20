@@ -16,7 +16,7 @@ UpdateFilterV2Request _$UpdateFilterV2RequestFromJson(
       context: $checkedConvert(
         'context',
         (v) => (v as List<dynamic>?)
-            ?.map((e) => $enumDecode(_$FilterContextEnumMap, e))
+            ?.map((e) => $enumDecode(_$FilterContextEnumEnumMap, e))
             .toList(),
       ),
       expiresIn: $checkedConvert('expires_in', (v) => (v as num?)?.toInt()),
@@ -55,7 +55,7 @@ Map<String, dynamic> _$UpdateFilterV2RequestToJson(
 
   writeNotNull(
     'context',
-    instance.context?.map((e) => _$FilterContextEnumMap[e]!).toList(),
+    instance.context?.map((e) => _$FilterContextEnumEnumMap[e]!).toList(),
   );
   writeNotNull('expires_in', instance.expiresIn);
   writeNotNull('filter_action', instance.filterAction);
@@ -67,10 +67,10 @@ Map<String, dynamic> _$UpdateFilterV2RequestToJson(
   return val;
 }
 
-const _$FilterContextEnumMap = {
-  FilterContext.home: 'home',
-  FilterContext.notifications: 'notifications',
-  FilterContext.public: 'public',
-  FilterContext.thread: 'thread',
-  FilterContext.account: 'account',
+const _$FilterContextEnumEnumMap = {
+  FilterContextEnum.home: 'home',
+  FilterContextEnum.notifications: 'notifications',
+  FilterContextEnum.public: 'public',
+  FilterContextEnum.thread: 'thread',
+  FilterContextEnum.account: 'account',
 };

@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **report** | [**Report**](Report.md) |  | [optional] 
 **sampleAccountIds** | **List&lt;String&gt;** | IDs of some of the accounts who most recently triggered notifications in this group. | [optional] 
 **statusId** | **String** | ID of the [Status]({{< relref \"entities/Status\" >}}) that was the object of the notification. Attached when `type` of the notification is `favourite`, `reblog`, `status`, `mention`, `poll`, or `update`. | [optional] 
-**type** | [**NotificationTypeEnum**](NotificationTypeEnum.md) | The type of event that resulted in the notifications in this group. | [optional] 
+**type** | [**NotificationGroupTypeEnum**](NotificationGroupTypeEnum.md) | The type of event that resulted in the notifications in this group. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

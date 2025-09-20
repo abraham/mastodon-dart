@@ -35,7 +35,7 @@ AdminDomainBlock _$AdminDomainBlockFromJson(Map<String, dynamic> json) =>
           rejectReports: $checkedConvert('reject_reports', (v) => v as bool),
           severity: $checkedConvert(
             'severity',
-            (v) => $enumDecode(_$SeverityEnumEnumMap, v),
+            (v) => $enumDecode(_$AdminDomainblockSeverityEnumEnumMap, v),
           ),
           digest: $checkedConvert('digest', (v) => v as String?),
           privateComment: $checkedConvert(
@@ -63,7 +63,7 @@ Map<String, dynamic> _$AdminDomainBlockToJson(AdminDomainBlock instance) {
     'obfuscate': instance.obfuscate,
     'reject_media': instance.rejectMedia,
     'reject_reports': instance.rejectReports,
-    'severity': _$SeverityEnumEnumMap[instance.severity]!,
+    'severity': _$AdminDomainblockSeverityEnumEnumMap[instance.severity]!,
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -78,7 +78,8 @@ Map<String, dynamic> _$AdminDomainBlockToJson(AdminDomainBlock instance) {
   return val;
 }
 
-const _$SeverityEnumEnumMap = {
-  SeverityEnum.silence: 'silence',
-  SeverityEnum.suspend: 'suspend',
+const _$AdminDomainblockSeverityEnumEnumMap = {
+  AdminDomainblockSeverityEnum.silence: 'silence',
+  AdminDomainblockSeverityEnum.suspend: 'suspend',
+  AdminDomainblockSeverityEnum.noop: 'noop',
 };

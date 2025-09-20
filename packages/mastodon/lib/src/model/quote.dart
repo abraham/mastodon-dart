@@ -3,8 +3,8 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:mastodon/src/model/quote_state_enum.dart';
 import 'package:mastodon/src/model/status.dart';
-import 'package:mastodon/src/model/state_enum.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'quote.g.dart';
@@ -24,7 +24,7 @@ class Quote {
 
   /// The state of the quote.
   @JsonKey(name: r'state', required: false, includeIfNull: false)
-  final StateEnum? state;
+  final QuoteStateEnum? state;
 
   @override
   bool operator ==(Object other) =>

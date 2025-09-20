@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:mastodon/src/model/state_enum.dart';
+import 'package:mastodon/src/model/appeal_state_enum.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'appeal.g.dart';
@@ -20,7 +20,7 @@ class Appeal {
 
   /// State of the appeal.
   @JsonKey(name: r'state', required: false, includeIfNull: false)
-  final StateEnum? state;
+  final AppealStateEnum? state;
 
   /// Text of the appeal from the moderated account to the moderators.
   @JsonKey(name: r'text', required: false, includeIfNull: false)

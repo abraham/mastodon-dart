@@ -14,13 +14,13 @@ void main() {
     });
 
     // Default visibility for new posts. Equivalent to [CredentialAccount#source\\[privacy\\]]({{< relref \"entities/Account#source-privacy\" >}}).
-    // VisibilityEnum postingColonDefaultColonVisibility
+    // PreferencesPostingDefaultVisibilityEnum postingColonDefaultColonVisibility
     test('to test the property `postingColonDefaultColonVisibility`', () async {
       // TODO
     });
 
     // Whether media attachments should be automatically displayed or blurred/hidden.
-    // MediaExpandEnum readingColonExpandColonMedia
+    // PreferencesReadingExpandMediaEnum readingColonExpandColonMedia
     test('to test the property `readingColonExpandColonMedia`', () async {
       // TODO
     });

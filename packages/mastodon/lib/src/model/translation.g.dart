@@ -12,13 +12,7 @@ Translation _$TranslationFromJson(Map<String, dynamic> json) => $checkedCreate(
   ($checkedConvert) {
     $checkKeys(
       json,
-      requiredKeys: const [
-        'content',
-        'detected_source_language',
-        'media_attachments',
-        'provider',
-        'spoiler_text',
-      ],
+      requiredKeys: const ['content', 'detected_source_language', 'provider'],
     );
     final val = Translation(
       content: $checkedConvert('content', (v) => v as String),
@@ -26,22 +20,22 @@ Translation _$TranslationFromJson(Map<String, dynamic> json) => $checkedCreate(
         'detected_source_language',
         (v) => v as String,
       ),
+      provider: $checkedConvert('provider', (v) => v as String),
       mediaAttachments: $checkedConvert(
         'media_attachments',
-        (v) => (v as List<dynamic>)
-            .map(
+        (v) => (v as List<dynamic>?)
+            ?.map(
               (e) => TranslationAttachment.fromJson(e as Map<String, dynamic>),
             )
             .toList(),
       ),
-      provider: $checkedConvert('provider', (v) => v as String),
-      spoilerText: $checkedConvert('spoiler_text', (v) => v as String),
       poll: $checkedConvert(
         'poll',
         (v) => v == null
             ? null
             : TranslationPoll.fromJson(v as Map<String, dynamic>),
       ),
+      spoilerText: $checkedConvert('spoiler_text', (v) => v as String?),
     );
     return val;
   },
@@ -56,11 +50,7 @@ Map<String, dynamic> _$TranslationToJson(Translation instance) {
   final val = <String, dynamic>{
     'content': instance.content,
     'detected_source_language': instance.detectedSourceLanguage,
-    'media_attachments': instance.mediaAttachments
-        .map((e) => e.toJson())
-        .toList(),
     'provider': instance.provider,
-    'spoiler_text': instance.spoilerText,
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -69,6 +59,11 @@ Map<String, dynamic> _$TranslationToJson(Translation instance) {
     }
   }
 
+  writeNotNull(
+    'media_attachments',
+    instance.mediaAttachments?.map((e) => e.toJson()).toList(),
+  );
   writeNotNull('poll', instance.poll?.toJson());
+  writeNotNull('spoiler_text', instance.spoilerText);
   return val;
 }

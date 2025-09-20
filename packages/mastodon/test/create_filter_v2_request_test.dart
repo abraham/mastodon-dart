@@ -8,7 +8,7 @@ void main() {
 
   group(CreateFilterV2Request, () {
     // Where the filter should be applied. Specify at least one of `home`, `notifications`, `public`, `thread`, `account`.
-    // List<FilterContext> context
+    // List<FilterContextEnum> context
     test('to test the property `context`', () async {
       // TODO
     });

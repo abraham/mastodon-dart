@@ -25,7 +25,6 @@ Name | Type | Description | Notes
 **locked** | **bool** | Whether the account manually approves follow requests. | 
 **note** | **String** | The profile's bio or description. | 
 **statusesCount** | **int** | How many statuses are attached to this account. | 
-**uri** | [**Uri**](Uri.md) | The user's ActivityPub actor identifier (used for federation). | 
 **username** | **String** | The username of the account, not including domain. | 
 **discoverable** | **bool** | Whether the account has opted into discovery features such as the profile directory. | [optional] 
 **hideCollections** | **bool** | Whether the user hides the contents of their follows and followers collections. | [optional] 
@@ -37,6 +36,7 @@ Name | Type | Description | Notes
 **noindex** | **bool** | Whether the local user has opted out of being indexed by search engines. | [optional] 
 **roles** | [**List&lt;AccountRole&gt;**](AccountRole.md) | An array of roles assigned to the user that are publicly visible (highlighted roles only), if the account is local. Will be an empty array if no roles are highlighted or if the account is remote. | [optional] 
 **suspended** | **bool** | An extra attribute returned only when an account is suspended. | [optional] 
+**uri** | [**Uri**](Uri.md) | The user's ActivityPub actor identifier (used for federation). | [optional] 
 **url** | [**Uri**](Uri.md) | The location of the user's profile page (web interface URL). | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

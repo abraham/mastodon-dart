@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **obfuscate** | **bool** | Whether to obfuscate public displays of this domain block | 
 **rejectMedia** | **bool** | Whether to reject media attachments from this domain | 
 **rejectReports** | **bool** | Whether to reject reports from this domain | 
-**severity** | [**SeverityEnum**](SeverityEnum.md) | The policy to be applied by this domain block. | 
+**severity** | [**AdminDomainblockSeverityEnum**](AdminDomainblockSeverityEnum.md) | The policy to be applied by this domain block. | 
 **digest** | **String** | The sha256 hex digest of the domain that is not allowed to federated. | [optional] 
 **privateComment** | **String** |  | [optional] 
 **publicComment** | **String** |  | [optional] 

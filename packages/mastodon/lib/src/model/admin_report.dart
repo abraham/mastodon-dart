@@ -6,7 +6,7 @@
 import 'package:mastodon/src/model/status.dart';
 import 'package:mastodon/src/model/rule.dart';
 import 'package:mastodon/src/model/admin_account.dart';
-import 'package:mastodon/src/model/category_enum.dart';
+import 'package:mastodon/src/model/admin_report_category_enum.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'admin_report.g.dart';
@@ -59,7 +59,7 @@ class AdminReport {
 
   /// The category under which the report is classified.
   @JsonKey(name: r'category', required: true, includeIfNull: false)
-  final CategoryEnum category;
+  final AdminReportCategoryEnum category;
 
   /// An optional reason for reporting.
   @JsonKey(name: r'comment', required: true, includeIfNull: false)

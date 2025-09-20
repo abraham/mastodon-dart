@@ -3,8 +3,8 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:mastodon/src/model/preview_card_type_enum.dart';
 import 'package:mastodon/src/model/preview_card_author.dart';
-import 'package:mastodon/src/model/preview_type_enum.dart';
 import 'dart:core';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -80,7 +80,7 @@ class PreviewCard {
 
   /// The type of the preview card.
   @JsonKey(name: r'type', required: true, includeIfNull: false)
-  final PreviewTypeEnum type;
+  final PreviewCardTypeEnum type;
 
   /// Location of linked resource.
   @JsonKey(name: r'url', required: true, includeIfNull: false)

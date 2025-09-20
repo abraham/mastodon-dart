@@ -14,7 +14,7 @@ void main() {
     });
 
     // The type of the attachment.
-    // TypeEnum type
+    // MediaAttachmentTypeEnum type
     test('to test the property `type`', () async {
       // TODO
     });

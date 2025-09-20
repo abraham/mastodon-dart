@@ -8,13 +8,13 @@ void main() {
 
   group(Filter, () {
     // The contexts in which the filter should be applied.
-    // List<FilterContext> context
+    // List<FilterContextEnum> context
     test('to test the property `context`', () async {
       // TODO
     });
 
     // The action to be taken when a status matches this filter.
-    // FilterActionEnum filterAction
+    // FilterFilterActionEnum filterAction
     test('to test the property `filterAction`', () async {
       // TODO
     });

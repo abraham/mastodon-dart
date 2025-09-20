@@ -99,4 +99,6 @@ const _$NotificationTypeEnumEnumMap = {
   NotificationTypeEnum.adminPeriodReport: 'admin.report',
   NotificationTypeEnum.severedRelationships: 'severed_relationships',
   NotificationTypeEnum.moderationWarning: 'moderation_warning',
+  NotificationTypeEnum.quote: 'quote',
+  NotificationTypeEnum.quotedUpdate: 'quoted_update',
 };

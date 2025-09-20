@@ -18,7 +18,7 @@ AdminCohort _$AdminCohortFromJson(Map<String, dynamic> json) =>
         ),
         frequency: $checkedConvert(
           'frequency',
-          (v) => $enumDecode(_$FrequencyEnumEnumMap, v),
+          (v) => $enumDecode(_$AdminCohortFrequencyEnumEnumMap, v),
         ),
         period: $checkedConvert('period', (v) => DateTime.parse(v as String)),
       );
@@ -28,11 +28,11 @@ AdminCohort _$AdminCohortFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$AdminCohortToJson(AdminCohort instance) =>
     <String, dynamic>{
       'data': instance.data.map((e) => e.toJson()).toList(),
-      'frequency': _$FrequencyEnumEnumMap[instance.frequency]!,
+      'frequency': _$AdminCohortFrequencyEnumEnumMap[instance.frequency]!,
       'period': instance.period.toIso8601String(),
     };
 
-const _$FrequencyEnumEnumMap = {
-  FrequencyEnum.day: 'day',
-  FrequencyEnum.month: 'month',
+const _$AdminCohortFrequencyEnumEnumMap = {
+  AdminCohortFrequencyEnum.day: 'day',
+  AdminCohortFrequencyEnum.month: 'month',
 };

@@ -120,12 +120,6 @@ void main() {
       // TODO
     });
 
-    // The user's ActivityPub actor identifier (used for federation).
-    // Uri uri
-    test('to test the property `uri`', () async {
-      // TODO
-    });
-
     // The username of the account, not including domain.
     // String username
     test('to test the property `username`', () async {
@@ -188,6 +182,12 @@ void main() {
     // An extra attribute returned only when an account is suspended.
     // bool suspended
     test('to test the property `suspended`', () async {
+      // TODO
+    });
+
+    // The user's ActivityPub actor identifier (used for federation).
+    // Uri uri
+    test('to test the property `uri`', () async {
       // TODO
     });
 

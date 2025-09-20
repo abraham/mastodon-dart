@@ -33,7 +33,6 @@ CredentialAccount _$CredentialAccountFromJson(Map<String, dynamic> json) =>
             'role',
             'source',
             'statuses_count',
-            'uri',
             'username',
           ],
         );
@@ -91,7 +90,6 @@ CredentialAccount _$CredentialAccountFromJson(Map<String, dynamic> json) =>
             'statuses_count',
             (v) => (v as num).toInt(),
           ),
-          uri: $checkedConvert('uri', (v) => Uri.parse(v as String)),
           username: $checkedConvert('username', (v) => v as String),
           discoverable: $checkedConvert('discoverable', (v) => v as bool?),
           hideCollections: $checkedConvert(
@@ -118,6 +116,10 @@ CredentialAccount _$CredentialAccountFromJson(Map<String, dynamic> json) =>
                 .toList(),
           ),
           suspended: $checkedConvert('suspended', (v) => v as bool?),
+          uri: $checkedConvert(
+            'uri',
+            (v) => v == null ? null : Uri.parse(v as String),
+          ),
           url: $checkedConvert(
             'url',
             (v) => v == null ? null : Uri.parse(v as String),
@@ -160,7 +162,6 @@ Map<String, dynamic> _$CredentialAccountToJson(CredentialAccount instance) {
     'role': instance.role.toJson(),
     'source': instance.source_.toJson(),
     'statuses_count': instance.statusesCount,
-    'uri': instance.uri.toString(),
     'username': instance.username,
   };
 
@@ -180,6 +181,7 @@ Map<String, dynamic> _$CredentialAccountToJson(CredentialAccount instance) {
   writeNotNull('noindex', instance.noindex);
   writeNotNull('roles', instance.roles?.map((e) => e.toJson()).toList());
   writeNotNull('suspended', instance.suspended);
+  writeNotNull('uri', instance.uri?.toString());
   writeNotNull('url', instance.url?.toString());
   return val;
 }

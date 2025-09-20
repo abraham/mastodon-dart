@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:mastodon/src/model/filter_context.dart';
+import 'package:mastodon/src/model/filter_context_enum.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'v1_filter.g.dart';
@@ -32,7 +32,7 @@ class V1Filter {
 
   /// The contexts in which the filter should be applied.
   @JsonKey(name: r'context', required: true, includeIfNull: false)
-  final List<FilterContext> context;
+  final List<FilterContextEnum> context;
 
   /// The ID of the filter in the database.
   @JsonKey(name: r'id', required: true, includeIfNull: false)

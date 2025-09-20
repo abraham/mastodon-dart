@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:mastodon/src/model/replies_policy_enum.dart';
+import 'package:mastodon/src/model/list_replies_policy_enum.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'create_list_request.g.dart';
@@ -21,7 +21,7 @@ class CreateListRequest {
 
     this.exclusive,
 
-    this.repliesPolicy = RepliesPolicyEnum.list,
+    this.repliesPolicy = ListRepliesPolicyEnum.list,
   });
 
   /// The title of the list to be created.
@@ -34,12 +34,12 @@ class CreateListRequest {
 
   /// One of `followed`, `list`, or `none`. Defaults to `list`.
   @JsonKey(
-    defaultValue: RepliesPolicyEnum.list,
+    defaultValue: ListRepliesPolicyEnum.list,
     name: r'replies_policy',
     required: false,
     includeIfNull: false,
   )
-  final RepliesPolicyEnum? repliesPolicy;
+  final ListRepliesPolicyEnum? repliesPolicy;
 
   @override
   bool operator ==(Object other) =>

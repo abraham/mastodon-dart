@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:mastodon/src/model/type_enum.dart';
+import 'package:mastodon/src/model/media_attachment_type_enum.dart';
 import 'package:mastodon/src/model/media_attachment_meta.dart';
 import 'dart:core';
 import 'package:json_annotation/json_annotation.dart';
@@ -42,7 +42,7 @@ class MediaAttachment {
 
   /// The type of the attachment.
   @JsonKey(name: r'type', required: true, includeIfNull: false)
-  final TypeEnum type;
+  final MediaAttachmentTypeEnum type;
 
   /// The location of the original full-size attachment.
   @JsonKey(name: r'url', required: true, includeIfNull: false)

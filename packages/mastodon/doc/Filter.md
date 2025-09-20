@@ -8,8 +8,8 @@ import 'package:mastodon/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**context** | [**List&lt;FilterContext&gt;**](FilterContext.md) | The contexts in which the filter should be applied. | 
-**filterAction** | [**FilterActionEnum**](FilterActionEnum.md) | The action to be taken when a status matches this filter. | 
+**context** | [**List&lt;FilterContextEnum&gt;**](FilterContextEnum.md) | The contexts in which the filter should be applied. | 
+**filterAction** | [**FilterFilterActionEnum**](FilterFilterActionEnum.md) | The action to be taken when a status matches this filter. | 
 **id** | **String** | The ID of the Filter in the database. | 
 **title** | **String** | A title given by the user to name the filter. | 
 **expiresAt** | [**DateTime**](DateTime.md) | When the filter should no longer be applied. | [optional] 

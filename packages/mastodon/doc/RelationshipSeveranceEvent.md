@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **id** | **String** | The ID of the relationship severance event in the database. | [optional] 
 **purged** | **bool** | Whether the list of severed relationships is unavailable because the underlying issue has been purged. | [optional] 
 **targetName** | **String** | Name of the target of the moderation/block event. This is either a domain name or a user handle, depending on the event type. | [optional] 
-**type** | [**TypeEnum**](TypeEnum.md) | Type of event. | [optional] 
+**type** | [**RelationshipSeveranceEventTypeEnum**](RelationshipSeveranceEventTypeEnum.md) | Type of event. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

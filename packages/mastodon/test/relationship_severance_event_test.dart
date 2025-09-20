@@ -45,7 +45,7 @@ void main() {
     });
 
     // Type of event.
-    // TypeEnum type
+    // RelationshipSeveranceEventTypeEnum type
     test('to test the property `type`', () async {
       // TODO
     });

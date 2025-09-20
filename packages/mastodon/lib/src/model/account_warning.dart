@@ -3,9 +3,9 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:mastodon/src/model/action_enum.dart';
 import 'package:mastodon/src/model/appeal.dart';
 import 'package:mastodon/src/model/account.dart';
+import 'package:mastodon/src/model/account_warning_action_enum.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'account_warning.g.dart';
@@ -36,7 +36,7 @@ class AccountWarning {
 
   /// Action taken against the account.
   @JsonKey(name: r'action', required: false, includeIfNull: false)
-  final ActionEnum? action;
+  final AccountWarningActionEnum? action;
 
   @JsonKey(name: r'appeal', required: false, includeIfNull: false)
   final Appeal? appeal;

@@ -4,7 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:mastodon/src/model/cohort_data.dart';
-import 'package:mastodon/src/model/frequency_enum.dart';
+import 'package:mastodon/src/model/admin_cohort_frequency_enum.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'admin_cohort.g.dart';
@@ -31,7 +31,7 @@ class AdminCohort {
 
   /// The size of the bucket for the returned data.
   @JsonKey(name: r'frequency', required: true, includeIfNull: false)
-  final FrequencyEnum frequency;
+  final AdminCohortFrequencyEnum frequency;
 
   /// The timestamp for the start of the period, at midnight.
   @JsonKey(name: r'period', required: true, includeIfNull: false)
