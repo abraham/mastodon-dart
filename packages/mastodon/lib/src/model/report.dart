@@ -4,7 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:mastodon/src/model/account.dart';
-import 'package:mastodon/src/model/admin_report_category_enum.dart';
+import 'package:mastodon/src/model/report_category_enum.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'report.g.dart';
@@ -45,7 +45,7 @@ class Report {
 
   /// The generic reason for the report.
   @JsonKey(name: r'category', required: true, includeIfNull: false)
-  final AdminReportCategoryEnum category;
+  final ReportCategoryEnum category;
 
   /// The reason for the report.
   @JsonKey(name: r'comment', required: true, includeIfNull: false)

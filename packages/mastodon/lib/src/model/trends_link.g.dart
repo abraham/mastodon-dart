@@ -47,7 +47,7 @@ TrendsLink _$TrendsLinkFromJson(Map<String, dynamic> json) => $checkedCreate(
       title: $checkedConvert('title', (v) => v as String),
       type: $checkedConvert(
         'type',
-        (v) => $enumDecode(_$PreviewCardTypeEnumEnumMap, v),
+        (v) => $enumDecode(_$TrendsLinkTypeEnumEnumMap, v),
       ),
       url: $checkedConvert('url', (v) => Uri.parse(v as String)),
       width: $checkedConvert('width', (v) => (v as num).toInt()),
@@ -89,7 +89,7 @@ Map<String, dynamic> _$TrendsLinkToJson(TrendsLink instance) {
     'provider_name': instance.providerName,
     'provider_url': instance.providerUrl.toString(),
     'title': instance.title,
-    'type': _$PreviewCardTypeEnumEnumMap[instance.type]!,
+    'type': _$TrendsLinkTypeEnumEnumMap[instance.type]!,
     'url': instance.url.toString(),
     'width': instance.width,
   };
@@ -108,9 +108,9 @@ Map<String, dynamic> _$TrendsLinkToJson(TrendsLink instance) {
   return val;
 }
 
-const _$PreviewCardTypeEnumEnumMap = {
-  PreviewCardTypeEnum.link: 'link',
-  PreviewCardTypeEnum.photo: 'photo',
-  PreviewCardTypeEnum.video: 'video',
-  PreviewCardTypeEnum.rich: 'rich',
+const _$TrendsLinkTypeEnumEnumMap = {
+  TrendsLinkTypeEnum.link: 'link',
+  TrendsLinkTypeEnum.photo: 'photo',
+  TrendsLinkTypeEnum.video: 'video',
+  TrendsLinkTypeEnum.rich: 'rich',
 };

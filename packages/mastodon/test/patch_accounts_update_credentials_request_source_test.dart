@@ -9,7 +9,7 @@ void main() {
 
   group(PatchAccountsUpdateCredentialsRequestSource, () {
     // Default post privacy for authored statuses. Can be `public`, `unlisted`, or `private`.
-    // String privacy
+    // StatusVisibilityEnum privacy
     test('to test the property `privacy`', () async {
       // TODO
     });

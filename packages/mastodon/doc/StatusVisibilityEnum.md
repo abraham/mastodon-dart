@@ -1,4 +1,4 @@
-# mastodon.model.PreviewCardTypeEnum
+# mastodon.model.StatusVisibilityEnum
 
 ## Load the model package
 ```dart

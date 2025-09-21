@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **account** | [**AdminAccount**](AdminAccount.md) | The account which filed the report. | 
 **actionTaken** | **bool** | Whether an action was taken to resolve this report. | 
-**category** | [**AdminReportCategoryEnum**](AdminReportCategoryEnum.md) | The category under which the report is classified. | 
+**category** | [**ReportCategoryEnum**](ReportCategoryEnum.md) | The category under which the report is classified. | 
 **comment** | **String** | An optional reason for reporting. | 
 **createdAt** | [**DateTime**](DateTime.md) | The time the report was filed. | 
 **forwarded** | **bool** | Whether a report was forwarded to a remote instance. | 

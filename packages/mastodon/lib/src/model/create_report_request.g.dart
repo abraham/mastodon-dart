@@ -17,8 +17,8 @@ CreateReportRequest _$CreateReportRequestFromJson(Map<String, dynamic> json) =>
           category: $checkedConvert(
             'category',
             (v) =>
-                $enumDecodeNullable(_$AdminReportCategoryEnumEnumMap, v) ??
-                AdminReportCategoryEnum.other,
+                $enumDecodeNullable(_$ReportCategoryEnumEnumMap, v) ??
+                ReportCategoryEnum.other,
           ),
           comment: $checkedConvert('comment', (v) => v as String?),
           forward: $checkedConvert('forward', (v) => v as bool? ?? false),
@@ -49,7 +49,7 @@ Map<String, dynamic> _$CreateReportRequestToJson(CreateReportRequest instance) {
     }
   }
 
-  writeNotNull('category', _$AdminReportCategoryEnumEnumMap[instance.category]);
+  writeNotNull('category', _$ReportCategoryEnumEnumMap[instance.category]);
   writeNotNull('comment', instance.comment);
   writeNotNull('forward', instance.forward);
   writeNotNull('rule_ids', instance.ruleIds);
@@ -57,9 +57,9 @@ Map<String, dynamic> _$CreateReportRequestToJson(CreateReportRequest instance) {
   return val;
 }
 
-const _$AdminReportCategoryEnumEnumMap = {
-  AdminReportCategoryEnum.spam: 'spam',
-  AdminReportCategoryEnum.legal: 'legal',
-  AdminReportCategoryEnum.violation: 'violation',
-  AdminReportCategoryEnum.other: 'other',
+const _$ReportCategoryEnumEnumMap = {
+  ReportCategoryEnum.spam: 'spam',
+  ReportCategoryEnum.legal: 'legal',
+  ReportCategoryEnum.violation: 'violation',
+  ReportCategoryEnum.other: 'other',
 };

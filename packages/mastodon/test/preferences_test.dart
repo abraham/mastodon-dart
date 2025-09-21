@@ -14,7 +14,7 @@ void main() {
     });
 
     // Default visibility for new posts. Equivalent to [CredentialAccount#source\\[privacy\\]]({{< relref \"entities/Account#source-privacy\" >}}).
-    // PreferencesPostingDefaultVisibilityEnum postingColonDefaultColonVisibility
+    // StatusVisibilityEnum postingColonDefaultColonVisibility
     test('to test the property `postingColonDefaultColonVisibility`', () async {
       // TODO
     });

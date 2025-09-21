@@ -93,7 +93,7 @@ void main() {
     });
 
     // Visibility of this status.
-    // PreferencesPostingDefaultVisibilityEnum visibility
+    // StatusVisibilityEnum visibility
     test('to test the property `visibility`', () async {
       // TODO
     });

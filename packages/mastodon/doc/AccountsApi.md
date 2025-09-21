@@ -22,8 +22,8 @@ Method | HTTP request | Description
 [**getAccountSearch**](AccountsApi.md#getaccountsearch) | **GET** /api/v1/accounts/search | Search for matching accounts
 [**getAccountStatuses**](AccountsApi.md#getaccountstatuses) | **GET** /api/v1/accounts/{id}/statuses | Get account&#39;s statuses
 [**getAccounts**](AccountsApi.md#getaccounts) | **GET** /api/v1/accounts | Get multiple accounts
+[**getAccountsFamiliarFollowers**](AccountsApi.md#getaccountsfamiliarfollowers) | **GET** /api/v1/accounts/familiar_followers | Find familiar followers
 [**getAccountsVerifyCredentials**](AccountsApi.md#getaccountsverifycredentials) | **GET** /api/v1/accounts/verify_credentials | Verify account credentials
-[**getFamiliarFollowers**](AccountsApi.md#getfamiliarfollowers) | **GET** /api/v1/accounts/familiar_followers | Find familiar followers
 [**patchAccountsUpdateCredentials**](AccountsApi.md#patchaccountsupdatecredentials) | **PATCH** /api/v1/accounts/update_credentials | Update account credentials
 [**postAccountBlock**](AccountsApi.md#postaccountblock) | **POST** /api/v1/accounts/{id}/block | Block account
 [**postAccountEndorse**](AccountsApi.md#postaccountendorse) | **POST** /api/v1/accounts/{id}/endorse | Feature account on your profile
@@ -660,6 +660,51 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **getAccountsFamiliarFollowers**
+> List<FamiliarFollowers> getAccountsFamiliarFollowers(id)
+
+Find familiar followers
+
+Obtain a list of all accounts that follow a given account, filtered for accounts you follow.  Version history:  3.5.0 - added
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = Mastodon().getAccountsApi();
+final List<String> id = ; // List<String> | Find familiar followers for the provided account IDs.
+
+try {
+    final response = api.getAccountsFamiliarFollowers(id);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AccountsApi->getAccountsFamiliarFollowers: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**List&lt;String&gt;**](String.md)| Find familiar followers for the provided account IDs. | [optional] 
+
+### Return type
+
+[**List&lt;FamiliarFollowers&gt;**](FamiliarFollowers.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **getAccountsVerifyCredentials**
 > CredentialAccount getAccountsVerifyCredentials()
 
@@ -689,51 +734,6 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**CredentialAccount**](CredentialAccount.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **getFamiliarFollowers**
-> List<FamiliarFollowers> getFamiliarFollowers(id)
-
-Find familiar followers
-
-Obtain a list of all accounts that follow a given account, filtered for accounts you follow.  Version history:  3.5.0 - added
-
-### Example
-```dart
-import 'package:mastodon/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = Mastodon().getAccountsApi();
-final List<String> id = ; // List<String> | Find familiar followers for the provided account IDs.
-
-try {
-    final response = api.getFamiliarFollowers(id);
-    print(response);
-} catch on DioException (e) {
-    print('Exception when calling AccountsApi->getFamiliarFollowers: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**List&lt;String&gt;**](String.md)| Find familiar followers for the provided account IDs. | [optional] 
-
-### Return type
-
-[**List&lt;FamiliarFollowers&gt;**](FamiliarFollowers.md)
 
 ### Authorization
 

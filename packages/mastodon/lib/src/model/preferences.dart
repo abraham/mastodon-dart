@@ -4,7 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:mastodon/src/model/preferences_reading_expand_media_enum.dart';
-import 'package:mastodon/src/model/preferences_posting_default_visibility_enum.dart';
+import 'package:mastodon/src/model/status_visibility_enum.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'preferences.g.dart';
@@ -43,8 +43,7 @@ class Preferences {
     required: true,
     includeIfNull: false,
   )
-  final PreferencesPostingDefaultVisibilityEnum
-  postingColonDefaultColonVisibility;
+  final StatusVisibilityEnum postingColonDefaultColonVisibility;
 
   /// Whether media attachments should be automatically displayed or blurred/hidden.
   @JsonKey(name: r'reading:expand:media', required: true, includeIfNull: false)

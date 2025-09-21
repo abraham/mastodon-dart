@@ -244,7 +244,6 @@ ReturnType deserialize<ReturnType, BaseType>(
           as ReturnType;
     case 'AdminReport':
       return AdminReport.fromJson(value as Map<String, dynamic>) as ReturnType;
-    case 'AdminReportCategoryEnum':
     case 'AdminTag':
       return AdminTag.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'Announcement':
@@ -350,6 +349,7 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'CredentialAccountSource':
       return CredentialAccountSource.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'CredentialAccountSourceQuotePolicyEnum':
     case 'CredentialApplication':
       return CredentialApplication.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -392,7 +392,6 @@ ReturnType deserialize<ReturnType, BaseType>(
       return FilterResult.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'FilterStatus':
       return FilterStatus.fromJson(value as Map<String, dynamic>) as ReturnType;
-    case 'GetApiV1NotificationsParamTypesEnum':
     case 'GetInstanceActivity200ResponseInner':
       return GetInstanceActivity200ResponseInner.fromJson(
             value as Map<String, dynamic>,
@@ -553,14 +552,12 @@ ReturnType deserialize<ReturnType, BaseType>(
           as ReturnType;
     case 'Preferences':
       return Preferences.fromJson(value as Map<String, dynamic>) as ReturnType;
-    case 'PreferencesPostingDefaultVisibilityEnum':
     case 'PreferencesReadingExpandMediaEnum':
     case 'PreviewCard':
       return PreviewCard.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'PreviewCardAuthor':
       return PreviewCardAuthor.fromJson(value as Map<String, dynamic>)
           as ReturnType;
-    case 'PreviewCardTypeEnum':
     case 'PrivacyPolicy':
       return PrivacyPolicy.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -594,6 +591,7 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'RelationshipSeveranceEventTypeEnum':
     case 'Report':
       return Report.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'ReportCategoryEnum':
     case 'Role':
       return Role.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'Rule':
@@ -633,6 +631,7 @@ ReturnType deserialize<ReturnType, BaseType>(
       return StatusSource.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'StatusTag':
       return StatusTag.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'StatusVisibilityEnum':
     case 'Suggestion':
       return Suggestion.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'Tag':
@@ -662,6 +661,7 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'TrendsLinkHistoryInner':
       return TrendsLinkHistoryInner.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'TrendsLinkTypeEnum':
     case 'UpdateFilterRequest':
       return UpdateFilterRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;

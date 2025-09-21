@@ -1,7 +1,7 @@
 import 'package:test/test.dart';
 import 'package:mastodon/mastodon.dart';
 
-// tests for PreviewCardTypeEnum
+// tests for StatusVisibilityEnum
 void main() {
-  group(PreviewCardTypeEnum, () {});
+  group(StatusVisibilityEnum, () {});
 }

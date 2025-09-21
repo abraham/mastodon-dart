@@ -26,7 +26,7 @@ Preferences _$PreferencesFromJson(Map<String, dynamic> json) => $checkedCreate(
       ),
       postingColonDefaultColonVisibility: $checkedConvert(
         'posting:default:visibility',
-        (v) => $enumDecode(_$PreferencesPostingDefaultVisibilityEnumEnumMap, v),
+        (v) => $enumDecode(_$StatusVisibilityEnumEnumMap, v),
       ),
       readingColonExpandColonMedia: $checkedConvert(
         'reading:expand:media',
@@ -56,7 +56,7 @@ Map<String, dynamic> _$PreferencesToJson(Preferences instance) {
   final val = <String, dynamic>{
     'posting:default:sensitive': instance.postingColonDefaultColonSensitive,
     'posting:default:visibility':
-        _$PreferencesPostingDefaultVisibilityEnumEnumMap[instance
+        _$StatusVisibilityEnumEnumMap[instance
             .postingColonDefaultColonVisibility]!,
     'reading:expand:media':
         _$PreferencesReadingExpandMediaEnumEnumMap[instance
@@ -77,11 +77,11 @@ Map<String, dynamic> _$PreferencesToJson(Preferences instance) {
   return val;
 }
 
-const _$PreferencesPostingDefaultVisibilityEnumEnumMap = {
-  PreferencesPostingDefaultVisibilityEnum.public: 'public',
-  PreferencesPostingDefaultVisibilityEnum.unlisted: 'unlisted',
-  PreferencesPostingDefaultVisibilityEnum.private: 'private',
-  PreferencesPostingDefaultVisibilityEnum.direct: 'direct',
+const _$StatusVisibilityEnumEnumMap = {
+  StatusVisibilityEnum.public: 'public',
+  StatusVisibilityEnum.unlisted: 'unlisted',
+  StatusVisibilityEnum.private: 'private',
+  StatusVisibilityEnum.direct: 'direct',
 };
 
 const _$PreferencesReadingExpandMediaEnumEnumMap = {

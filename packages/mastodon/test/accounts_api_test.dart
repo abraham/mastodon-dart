@@ -123,21 +123,21 @@ void main() {
       // TODO
     });
 
+    // Find familiar followers
+    //
+    // Obtain a list of all accounts that follow a given account, filtered for accounts you follow.  Version history:  3.5.0 - added
+    //
+    //Future<List<FamiliarFollowers>> getAccountsFamiliarFollowers({ List<String> id }) async
+    test('test getAccountsFamiliarFollowers', () async {
+      // TODO
+    });
+
     // Verify account credentials
     //
     // Test to make sure that the user token works.  Version history:  0.0.0 - added\\ 4.3.0 - added `profile` scope
     //
     //Future<CredentialAccount> getAccountsVerifyCredentials() async
     test('test getAccountsVerifyCredentials', () async {
-      // TODO
-    });
-
-    // Find familiar followers
-    //
-    // Obtain a list of all accounts that follow a given account, filtered for accounts you follow.  Version history:  3.5.0 - added
-    //
-    //Future<List<FamiliarFollowers>> getFamiliarFollowers({ List<String> id }) async
-    test('test getFamiliarFollowers', () async {
       // TODO
     });
 

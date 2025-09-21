@@ -1,4 +1,4 @@
-# mastodon.model.PreferencesPostingDefaultVisibilityEnum
+# mastodon.model.ReportCategoryEnum
 
 ## Load the model package
 ```dart

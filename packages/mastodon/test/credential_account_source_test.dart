@@ -27,7 +27,7 @@ void main() {
     });
 
     // The default post privacy to be used for new statuses.
-    // String privacy
+    // StatusVisibilityEnum privacy
     test('to test the property `privacy`', () async {
       // TODO
     });
@@ -69,7 +69,7 @@ void main() {
     });
 
     // The default quote policy to be used for new statuses.
-    // String quotePolicy
+    // CredentialAccountSourceQuotePolicyEnum quotePolicy
     test('to test the property `quotePolicy`', () async {
       // TODO
     });

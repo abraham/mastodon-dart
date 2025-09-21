@@ -1,7 +1,7 @@
 import 'package:test/test.dart';
 import 'package:mastodon/mastodon.dart';
 
-// tests for AdminReportCategoryEnum
+// tests for TrendsLinkTypeEnum
 void main() {
-  group(AdminReportCategoryEnum, () {});
+  group(TrendsLinkTypeEnum, () {});
 }

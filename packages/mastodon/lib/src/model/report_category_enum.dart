@@ -5,7 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:json_annotation/json_annotation.dart';
 
-enum AdminReportCategoryEnum {
+enum ReportCategoryEnum {
   @JsonValue(r'spam')
   spam(r'spam'),
   @JsonValue(r'legal')
@@ -15,7 +15,7 @@ enum AdminReportCategoryEnum {
   @JsonValue(r'other')
   other(r'other');
 
-  const AdminReportCategoryEnum(this.value);
+  const ReportCategoryEnum(this.value);
 
   final String value;
 

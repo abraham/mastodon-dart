@@ -79,8 +79,8 @@ Class | Method | HTTP request | Description
 [*AccountsApi*](doc/AccountsApi.md) | [**getAccountSearch**](doc/AccountsApi.md#getaccountsearch) | **GET** /api/v1/accounts/search | Search for matching accounts
 [*AccountsApi*](doc/AccountsApi.md) | [**getAccountStatuses**](doc/AccountsApi.md#getaccountstatuses) | **GET** /api/v1/accounts/{id}/statuses | Get account&#39;s statuses
 [*AccountsApi*](doc/AccountsApi.md) | [**getAccounts**](doc/AccountsApi.md#getaccounts) | **GET** /api/v1/accounts | Get multiple accounts
+[*AccountsApi*](doc/AccountsApi.md) | [**getAccountsFamiliarFollowers**](doc/AccountsApi.md#getaccountsfamiliarfollowers) | **GET** /api/v1/accounts/familiar_followers | Find familiar followers
 [*AccountsApi*](doc/AccountsApi.md) | [**getAccountsVerifyCredentials**](doc/AccountsApi.md#getaccountsverifycredentials) | **GET** /api/v1/accounts/verify_credentials | Verify account credentials
-[*AccountsApi*](doc/AccountsApi.md) | [**getFamiliarFollowers**](doc/AccountsApi.md#getfamiliarfollowers) | **GET** /api/v1/accounts/familiar_followers | Find familiar followers
 [*AccountsApi*](doc/AccountsApi.md) | [**patchAccountsUpdateCredentials**](doc/AccountsApi.md#patchaccountsupdatecredentials) | **PATCH** /api/v1/accounts/update_credentials | Update account credentials
 [*AccountsApi*](doc/AccountsApi.md) | [**postAccountBlock**](doc/AccountsApi.md#postaccountblock) | **POST** /api/v1/accounts/{id}/block | Block account
 [*AccountsApi*](doc/AccountsApi.md) | [**postAccountEndorse**](doc/AccountsApi.md#postaccountendorse) | **POST** /api/v1/accounts/{id}/endorse | Feature account on your profile
@@ -282,7 +282,6 @@ Class | Method | HTTP request | Description
  - [AdminMeasure](doc/AdminMeasure.md)
  - [AdminMeasureData](doc/AdminMeasureData.md)
  - [AdminReport](doc/AdminReport.md)
- - [AdminReportCategoryEnum](doc/AdminReportCategoryEnum.md)
  - [AdminTag](doc/AdminTag.md)
  - [Announcement](doc/Announcement.md)
  - [AnnouncementAccount](doc/AnnouncementAccount.md)
@@ -316,6 +315,7 @@ Class | Method | HTTP request | Description
  - [CreateStatusRequest](doc/CreateStatusRequest.md)
  - [CredentialAccount](doc/CredentialAccount.md)
  - [CredentialAccountSource](doc/CredentialAccountSource.md)
+ - [CredentialAccountSourceQuotePolicyEnum](doc/CredentialAccountSourceQuotePolicyEnum.md)
  - [CredentialApplication](doc/CredentialApplication.md)
  - [CustomEmoji](doc/CustomEmoji.md)
  - [DeleteDomainBlocksRequest](doc/DeleteDomainBlocksRequest.md)
@@ -334,7 +334,6 @@ Class | Method | HTTP request | Description
  - [FilterKeyword](doc/FilterKeyword.md)
  - [FilterResult](doc/FilterResult.md)
  - [FilterStatus](doc/FilterStatus.md)
- - [GetApiV1NotificationsParamTypesEnum](doc/GetApiV1NotificationsParamTypesEnum.md)
  - [GetInstanceActivity200ResponseInner](doc/GetInstanceActivity200ResponseInner.md)
  - [GroupedNotificationsResults](doc/GroupedNotificationsResults.md)
  - [IdentityProof](doc/IdentityProof.md)
@@ -390,11 +389,9 @@ Class | Method | HTTP request | Description
  - [PostStatusReblogRequest](doc/PostStatusReblogRequest.md)
  - [PostStatusTranslateRequest](doc/PostStatusTranslateRequest.md)
  - [Preferences](doc/Preferences.md)
- - [PreferencesPostingDefaultVisibilityEnum](doc/PreferencesPostingDefaultVisibilityEnum.md)
  - [PreferencesReadingExpandMediaEnum](doc/PreferencesReadingExpandMediaEnum.md)
  - [PreviewCard](doc/PreviewCard.md)
  - [PreviewCardAuthor](doc/PreviewCardAuthor.md)
- - [PreviewCardTypeEnum](doc/PreviewCardTypeEnum.md)
  - [PrivacyPolicy](doc/PrivacyPolicy.md)
  - [PutPushSubscriptionRequest](doc/PutPushSubscriptionRequest.md)
  - [PutPushSubscriptionRequestData](doc/PutPushSubscriptionRequestData.md)
@@ -408,6 +405,7 @@ Class | Method | HTTP request | Description
  - [RelationshipSeveranceEvent](doc/RelationshipSeveranceEvent.md)
  - [RelationshipSeveranceEventTypeEnum](doc/RelationshipSeveranceEventTypeEnum.md)
  - [Report](doc/Report.md)
+ - [ReportCategoryEnum](doc/ReportCategoryEnum.md)
  - [Role](doc/Role.md)
  - [Rule](doc/Rule.md)
  - [ScheduledStatus](doc/ScheduledStatus.md)
@@ -424,6 +422,7 @@ Class | Method | HTTP request | Description
  - [StatusQuote](doc/StatusQuote.md)
  - [StatusSource](doc/StatusSource.md)
  - [StatusTag](doc/StatusTag.md)
+ - [StatusVisibilityEnum](doc/StatusVisibilityEnum.md)
  - [Suggestion](doc/Suggestion.md)
  - [Tag](doc/Tag.md)
  - [TagHistory](doc/TagHistory.md)
@@ -436,6 +435,7 @@ Class | Method | HTTP request | Description
  - [TranslationPollOption](doc/TranslationPollOption.md)
  - [TrendsLink](doc/TrendsLink.md)
  - [TrendsLinkHistoryInner](doc/TrendsLinkHistoryInner.md)
+ - [TrendsLinkTypeEnum](doc/TrendsLinkTypeEnum.md)
  - [UpdateFilterRequest](doc/UpdateFilterRequest.md)
  - [UpdateFilterV2Request](doc/UpdateFilterV2Request.md)
  - [UpdateFilterV2RequestKeywordsAttributesInner](doc/UpdateFilterV2RequestKeywordsAttributesInner.md)

@@ -4,7 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:mastodon/src/model/update_status_request_poll.dart';
-import 'package:mastodon/src/model/preferences_posting_default_visibility_enum.dart';
+import 'package:mastodon/src/model/status_visibility_enum.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'poll_status.g.dart';
@@ -81,7 +81,7 @@ class PollStatus {
 
   /// Sets the visibility of the posted status to `public`, `unlisted`, `private`, `direct`.
   @JsonKey(name: r'visibility', required: false, includeIfNull: false)
-  final PreferencesPostingDefaultVisibilityEnum? visibility;
+  final StatusVisibilityEnum? visibility;
 
   /// The text content of the status. If `media_ids` is provided, this becomes optional. Attaching a `poll` is optional while `status` is provided.
   @JsonKey(name: r'status', required: false, includeIfNull: false)

@@ -80,7 +80,7 @@ CreateStatus200Response _$CreateStatus200ResponseFromJson(
       uri: $checkedConvert('uri', (v) => v as String),
       visibility: $checkedConvert(
         'visibility',
-        (v) => $enumDecode(_$PreferencesPostingDefaultVisibilityEnumEnumMap, v),
+        (v) => $enumDecode(_$StatusVisibilityEnumEnumMap, v),
       ),
       params: $checkedConvert(
         'params',
@@ -186,8 +186,7 @@ Map<String, dynamic> _$CreateStatus200ResponseToJson(
     'spoiler_text': instance.spoilerText,
     'tags': instance.tags.map((e) => e.toJson()).toList(),
     'uri': instance.uri,
-    'visibility':
-        _$PreferencesPostingDefaultVisibilityEnumEnumMap[instance.visibility]!,
+    'visibility': _$StatusVisibilityEnumEnumMap[instance.visibility]!,
     'params': instance.params.toJson(),
     'scheduled_at': instance.scheduledAt.toIso8601String(),
   };
@@ -220,9 +219,9 @@ Map<String, dynamic> _$CreateStatus200ResponseToJson(
   return val;
 }
 
-const _$PreferencesPostingDefaultVisibilityEnumEnumMap = {
-  PreferencesPostingDefaultVisibilityEnum.public: 'public',
-  PreferencesPostingDefaultVisibilityEnum.unlisted: 'unlisted',
-  PreferencesPostingDefaultVisibilityEnum.private: 'private',
-  PreferencesPostingDefaultVisibilityEnum.direct: 'direct',
+const _$StatusVisibilityEnumEnumMap = {
+  StatusVisibilityEnum.public: 'public',
+  StatusVisibilityEnum.unlisted: 'unlisted',
+  StatusVisibilityEnum.private: 'private',
+  StatusVisibilityEnum.direct: 'direct',
 };

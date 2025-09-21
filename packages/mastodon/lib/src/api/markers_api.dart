@@ -11,6 +11,7 @@ import 'package:dio/dio.dart';
 
 import 'package:mastodon/src/model/create_marker_request.dart';
 import 'package:mastodon/src/model/error.dart';
+import 'package:mastodon/src/model/filter_context_enum.dart';
 import 'package:mastodon/src/model/marker.dart';
 import 'package:mastodon/src/model/validation_error.dart';
 
@@ -126,7 +127,7 @@ class MarkersApi {
   /// Official Mastodon API documentation
   /// Also see [Get saved timeline positions Documentation](https://docs.joinmastodon.org/methods/markers/#get)
   Future<Response<Marker>> getMarkers({
-    List<String>? timeline,
+    List<FilterContextEnum>? timeline,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,

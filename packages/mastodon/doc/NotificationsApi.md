@@ -346,13 +346,13 @@ import 'package:mastodon/api.dart';
 
 final api = Mastodon().getNotificationsApi();
 final String accountId = accountId_example; // String | Return only notifications received from the specified account.
-final List<GetApiV1NotificationsParamTypesEnum> excludeTypes = ; // List<GetApiV1NotificationsParamTypesEnum> | Types to exclude from the results.
+final List<NotificationTypeEnum> excludeTypes = ; // List<NotificationTypeEnum> | Types to exclude from the results.
 final bool includeFiltered = true; // bool | Whether to include notifications filtered by the user's [NotificationPolicy]. Defaults to false.
 final int limit = 56; // int | Maximum number of results to return. Defaults to 40 notifications. Max 80 notifications.
 final String maxId = maxId_example; // String | All results returned will be lesser than this ID. In effect, sets an upper bound on results.
 final String minId = minId_example; // String | Returns results immediately newer than this ID. In effect, sets a cursor at this ID and paginates forward.
 final String sinceId = sinceId_example; // String | All results returned will be greater than this ID. In effect, sets a lower bound on results.
-final List<GetApiV1NotificationsParamTypesEnum> types = ; // List<GetApiV1NotificationsParamTypesEnum> | Types to include in the result.
+final List<NotificationTypeEnum> types = ; // List<NotificationTypeEnum> | Types to include in the result.
 
 try {
     final response = api.getNotifications(accountId, excludeTypes, includeFiltered, limit, maxId, minId, sinceId, types);
@@ -367,13 +367,13 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accountId** | **String**| Return only notifications received from the specified account. | [optional] 
- **excludeTypes** | [**List&lt;GetApiV1NotificationsParamTypesEnum&gt;**](GetApiV1NotificationsParamTypesEnum.md)| Types to exclude from the results. | [optional] 
+ **excludeTypes** | [**List&lt;NotificationTypeEnum&gt;**](NotificationTypeEnum.md)| Types to exclude from the results. | [optional] 
  **includeFiltered** | **bool**| Whether to include notifications filtered by the user's [NotificationPolicy]. Defaults to false. | [optional] [default to false]
  **limit** | **int**| Maximum number of results to return. Defaults to 40 notifications. Max 80 notifications. | [optional] [default to 40]
  **maxId** | **String**| All results returned will be lesser than this ID. In effect, sets an upper bound on results. | [optional] 
  **minId** | **String**| Returns results immediately newer than this ID. In effect, sets a cursor at this ID and paginates forward. | [optional] 
  **sinceId** | **String**| All results returned will be greater than this ID. In effect, sets a lower bound on results. | [optional] 
- **types** | [**List&lt;GetApiV1NotificationsParamTypesEnum&gt;**](GetApiV1NotificationsParamTypesEnum.md)| Types to include in the result. | [optional] 
+ **types** | [**List&lt;NotificationTypeEnum&gt;**](NotificationTypeEnum.md)| Types to include in the result. | [optional] 
 
 ### Return type
 
@@ -637,15 +637,15 @@ import 'package:mastodon/api.dart';
 
 final api = Mastodon().getNotificationsApi();
 final String accountId = accountId_example; // String | Return only notifications received from the specified account.
-final List<GetApiV1NotificationsParamTypesEnum> excludeTypes = ; // List<GetApiV1NotificationsParamTypesEnum> | Types to exclude from the results.
+final List<NotificationTypeEnum> excludeTypes = ; // List<NotificationTypeEnum> | Types to exclude from the results.
 final String expandAccounts = expandAccounts_example; // String | One of `full` (default) or `partial_avatars`. When set to `partial_avatars`, some accounts will not be rendered in full in the returned `accounts` list but will be instead returned in stripped-down form in the `partial_accounts` list. The most recent account in a notification group is always rendered in full in the `accounts` attribute.
-final List<GetApiV1NotificationsParamTypesEnum> groupedTypes = ; // List<GetApiV1NotificationsParamTypesEnum> | Restrict which notification types can be grouped. Use this if there are notification types for which your client does not support grouping. If omitted, the server will group notifications of all types it supports (currently, `favourite`, `follow`, `reblog` and `admin.sign_up`). If you do not want any notification grouping, use [GET `/api/v1/notifications`] instead. Notifications that would be grouped if not for this parameter will instead be returned as individual single-notification groups with a unique `group_key` that can be assumed to be of the form `ungrouped-{notification_id}`. Please note that neither the streaming API nor the individual notification APIs are aware of this parameter and will always include a “proper” `group_key` that can be different from what is returned here, meaning that you may have to ignore `group_key` for such notifications that you do not want grouped and use `ungrouped-{notification_id}` instead for consistency.
+final List<NotificationTypeEnum> groupedTypes = ; // List<NotificationTypeEnum> | Restrict which notification types can be grouped. Use this if there are notification types for which your client does not support grouping. If omitted, the server will group notifications of all types it supports (currently, `favourite`, `follow`, `reblog` and `admin.sign_up`). If you do not want any notification grouping, use [GET `/api/v1/notifications`] instead. Notifications that would be grouped if not for this parameter will instead be returned as individual single-notification groups with a unique `group_key` that can be assumed to be of the form `ungrouped-{notification_id}`. Please note that neither the streaming API nor the individual notification APIs are aware of this parameter and will always include a “proper” `group_key` that can be different from what is returned here, meaning that you may have to ignore `group_key` for such notifications that you do not want grouped and use `ungrouped-{notification_id}` instead for consistency.
 final bool includeFiltered = true; // bool | Whether to include notifications filtered by the user's [NotificationPolicy]. Defaults to false.
 final int limit = 56; // int | Maximum number of results to return. Defaults to 40 notifications. Max 80 notification groups.
 final String maxId = maxId_example; // String | All results returned will be about notifications strictly older than this notification ID. In effect, sets an upper bound on results.
 final String minId = minId_example; // String | Returns results about notifications immediately newer than this notification ID. In effect, sets a cursor at this ID and paginates forward.
 final String sinceId = sinceId_example; // String | All results returned will be about notifications strictly newer than this notification ID. In effect, sets a lower bound on results.
-final List<GetApiV1NotificationsParamTypesEnum> types = ; // List<GetApiV1NotificationsParamTypesEnum> | Types to include in the result.
+final List<NotificationTypeEnum> types = ; // List<NotificationTypeEnum> | Types to include in the result.
 
 try {
     final response = api.getNotificationsV2(accountId, excludeTypes, expandAccounts, groupedTypes, includeFiltered, limit, maxId, minId, sinceId, types);
@@ -660,15 +660,15 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accountId** | **String**| Return only notifications received from the specified account. | [optional] 
- **excludeTypes** | [**List&lt;GetApiV1NotificationsParamTypesEnum&gt;**](GetApiV1NotificationsParamTypesEnum.md)| Types to exclude from the results. | [optional] 
+ **excludeTypes** | [**List&lt;NotificationTypeEnum&gt;**](NotificationTypeEnum.md)| Types to exclude from the results. | [optional] 
  **expandAccounts** | **String**| One of `full` (default) or `partial_avatars`. When set to `partial_avatars`, some accounts will not be rendered in full in the returned `accounts` list but will be instead returned in stripped-down form in the `partial_accounts` list. The most recent account in a notification group is always rendered in full in the `accounts` attribute. | [optional] 
- **groupedTypes** | [**List&lt;GetApiV1NotificationsParamTypesEnum&gt;**](GetApiV1NotificationsParamTypesEnum.md)| Restrict which notification types can be grouped. Use this if there are notification types for which your client does not support grouping. If omitted, the server will group notifications of all types it supports (currently, `favourite`, `follow`, `reblog` and `admin.sign_up`). If you do not want any notification grouping, use [GET `/api/v1/notifications`] instead. Notifications that would be grouped if not for this parameter will instead be returned as individual single-notification groups with a unique `group_key` that can be assumed to be of the form `ungrouped-{notification_id}`. Please note that neither the streaming API nor the individual notification APIs are aware of this parameter and will always include a “proper” `group_key` that can be different from what is returned here, meaning that you may have to ignore `group_key` for such notifications that you do not want grouped and use `ungrouped-{notification_id}` instead for consistency. | [optional] 
+ **groupedTypes** | [**List&lt;NotificationTypeEnum&gt;**](NotificationTypeEnum.md)| Restrict which notification types can be grouped. Use this if there are notification types for which your client does not support grouping. If omitted, the server will group notifications of all types it supports (currently, `favourite`, `follow`, `reblog` and `admin.sign_up`). If you do not want any notification grouping, use [GET `/api/v1/notifications`] instead. Notifications that would be grouped if not for this parameter will instead be returned as individual single-notification groups with a unique `group_key` that can be assumed to be of the form `ungrouped-{notification_id}`. Please note that neither the streaming API nor the individual notification APIs are aware of this parameter and will always include a “proper” `group_key` that can be different from what is returned here, meaning that you may have to ignore `group_key` for such notifications that you do not want grouped and use `ungrouped-{notification_id}` instead for consistency. | [optional] 
  **includeFiltered** | **bool**| Whether to include notifications filtered by the user's [NotificationPolicy]. Defaults to false. | [optional] [default to false]
  **limit** | **int**| Maximum number of results to return. Defaults to 40 notifications. Max 80 notification groups. | [optional] [default to 40]
  **maxId** | **String**| All results returned will be about notifications strictly older than this notification ID. In effect, sets an upper bound on results. | [optional] 
  **minId** | **String**| Returns results about notifications immediately newer than this notification ID. In effect, sets a cursor at this ID and paginates forward. | [optional] 
  **sinceId** | **String**| All results returned will be about notifications strictly newer than this notification ID. In effect, sets a lower bound on results. | [optional] 
- **types** | [**List&lt;GetApiV1NotificationsParamTypesEnum&gt;**](GetApiV1NotificationsParamTypesEnum.md)| Types to include in the result. | [optional] 
+ **types** | [**List&lt;NotificationTypeEnum&gt;**](NotificationTypeEnum.md)| Types to include in the result. | [optional] 
 
 ### Return type
 

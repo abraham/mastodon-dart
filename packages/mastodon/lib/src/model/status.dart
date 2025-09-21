@@ -9,9 +9,9 @@ import 'package:mastodon/src/model/quote_approval.dart';
 import 'package:mastodon/src/model/media_attachment.dart';
 import 'package:mastodon/src/model/status_application.dart';
 import 'package:mastodon/src/model/preview_card.dart';
-import 'package:mastodon/src/model/preferences_posting_default_visibility_enum.dart';
 import 'package:mastodon/src/model/custom_emoji.dart';
 import 'package:mastodon/src/model/poll.dart';
+import 'package:mastodon/src/model/status_visibility_enum.dart';
 import 'package:mastodon/src/model/account.dart';
 import 'package:mastodon/src/model/filter_result.dart';
 import 'package:mastodon/src/model/status_tag.dart';
@@ -156,7 +156,7 @@ class Status {
 
   /// Visibility of this status.
   @JsonKey(name: r'visibility', required: true, includeIfNull: false)
-  final PreferencesPostingDefaultVisibilityEnum visibility;
+  final StatusVisibilityEnum visibility;
 
   @JsonKey(name: r'application', required: false, includeIfNull: false)
   final StatusApplication? application;

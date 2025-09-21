@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:mastodon/src/model/status_visibility_enum.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'patch_accounts_update_credentials_request_source.g.dart';
@@ -27,7 +28,7 @@ class PatchAccountsUpdateCredentialsRequestSource {
 
   /// Default post privacy for authored statuses. Can be `public`, `unlisted`, or `private`.
   @JsonKey(name: r'privacy', required: false, includeIfNull: false)
-  final PatchAccountsUpdateCredentialsRequestSourcePrivacyEnum? privacy;
+  final StatusVisibilityEnum? privacy;
 
   /// Whether to mark authored statuses as sensitive by default.
   @JsonKey(name: r'sensitive', required: false, includeIfNull: false)
@@ -68,26 +69,4 @@ class PatchAccountsUpdateCredentialsRequestSource {
   String toString() {
     return toJson().toString();
   }
-}
-
-/// Default post privacy for authored statuses. Can be `public`, `unlisted`, or `private`.
-enum PatchAccountsUpdateCredentialsRequestSourcePrivacyEnum {
-  /// Default post privacy for authored statuses. Can be `public`, `unlisted`, or `private`.
-  @JsonValue(r'public')
-  public(r'public'),
-
-  /// Default post privacy for authored statuses. Can be `public`, `unlisted`, or `private`.
-  @JsonValue(r'unlisted')
-  unlisted(r'unlisted'),
-
-  /// Default post privacy for authored statuses. Can be `public`, `unlisted`, or `private`.
-  @JsonValue(r'private')
-  private(r'private');
-
-  const PatchAccountsUpdateCredentialsRequestSourcePrivacyEnum(this.value);
-
-  final String value;
-
-  @override
-  String toString() => value;
 }

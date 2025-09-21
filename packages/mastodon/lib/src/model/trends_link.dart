@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:mastodon/src/model/preview_card_type_enum.dart';
+import 'package:mastodon/src/model/trends_link_type_enum.dart';
 import 'package:mastodon/src/model/preview_card_author.dart';
 import 'package:mastodon/src/model/trends_link_history_inner.dart';
 import 'dart:core';
@@ -87,7 +87,7 @@ class TrendsLink {
 
   /// The type of the preview card.
   @JsonKey(name: r'type', required: true, includeIfNull: false)
-  final PreviewCardTypeEnum type;
+  final TrendsLinkTypeEnum type;
 
   /// Location of linked resource.
   @JsonKey(name: r'url', required: true, includeIfNull: false)

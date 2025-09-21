@@ -1,4 +1,4 @@
-# mastodon.model.GetApiV1NotificationsParamTypesEnum
+# mastodon.model.CredentialAccountSourceQuotePolicyEnum
 
 ## Load the model package
 ```dart

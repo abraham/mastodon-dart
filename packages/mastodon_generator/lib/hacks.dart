@@ -121,11 +121,11 @@ void main() async {
       replacements: [
         Replacement(
           "this.category = 'other',",
-          'this.category = AdminReportCategoryEnum.other,',
+          'this.category = ReportCategoryEnum.other,',
         ),
         Replacement(
           "defaultValue: 'other',",
-          "defaultValue: AdminReportCategoryEnum.other,",
+          "defaultValue: ReportCategoryEnum.other,",
         ),
       ],
       description:

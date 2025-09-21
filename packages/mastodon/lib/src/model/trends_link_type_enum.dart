@@ -5,7 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:json_annotation/json_annotation.dart';
 
-enum PreviewCardTypeEnum {
+enum TrendsLinkTypeEnum {
   @JsonValue(r'link')
   link(r'link'),
   @JsonValue(r'photo')
@@ -15,7 +15,7 @@ enum PreviewCardTypeEnum {
   @JsonValue(r'rich')
   rich(r'rich');
 
-  const PreviewCardTypeEnum(this.value);
+  const TrendsLinkTypeEnum(this.value);
 
   final String value;
 

@@ -76,7 +76,7 @@ Status _$StatusFromJson(Map<String, dynamic> json) => $checkedCreate(
       uri: $checkedConvert('uri', (v) => v as String),
       visibility: $checkedConvert(
         'visibility',
-        (v) => $enumDecode(_$PreferencesPostingDefaultVisibilityEnumEnumMap, v),
+        (v) => $enumDecode(_$StatusVisibilityEnumEnumMap, v),
       ),
       application: $checkedConvert(
         'application',
@@ -171,8 +171,7 @@ Map<String, dynamic> _$StatusToJson(Status instance) {
     'spoiler_text': instance.spoilerText,
     'tags': instance.tags.map((e) => e.toJson()).toList(),
     'uri': instance.uri,
-    'visibility':
-        _$PreferencesPostingDefaultVisibilityEnumEnumMap[instance.visibility]!,
+    'visibility': _$StatusVisibilityEnumEnumMap[instance.visibility]!,
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -203,9 +202,9 @@ Map<String, dynamic> _$StatusToJson(Status instance) {
   return val;
 }
 
-const _$PreferencesPostingDefaultVisibilityEnumEnumMap = {
-  PreferencesPostingDefaultVisibilityEnum.public: 'public',
-  PreferencesPostingDefaultVisibilityEnum.unlisted: 'unlisted',
-  PreferencesPostingDefaultVisibilityEnum.private: 'private',
-  PreferencesPostingDefaultVisibilityEnum.direct: 'direct',
+const _$StatusVisibilityEnumEnumMap = {
+  StatusVisibilityEnum.public: 'public',
+  StatusVisibilityEnum.unlisted: 'unlisted',
+  StatusVisibilityEnum.private: 'private',
+  StatusVisibilityEnum.direct: 'direct',
 };

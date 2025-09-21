@@ -29,7 +29,7 @@ ScheduledStatusParams _$ScheduledStatusParamsFromJson(
       text: $checkedConvert('text', (v) => v as String),
       visibility: $checkedConvert(
         'visibility',
-        (v) => $enumDecode(_$ScheduledStatusParamsVisibilityEnumEnumMap, v),
+        (v) => $enumDecode(_$StatusVisibilityEnumEnumMap, v),
       ),
       withRateLimit: $checkedConvert('with_rate_limit', (v) => v as bool),
       idempotency: $checkedConvert('idempotency', (v) => v as String?),
@@ -70,8 +70,7 @@ Map<String, dynamic> _$ScheduledStatusParamsToJson(
   final val = <String, dynamic>{
     'application_id': instance.applicationId,
     'text': instance.text,
-    'visibility':
-        _$ScheduledStatusParamsVisibilityEnumEnumMap[instance.visibility]!,
+    'visibility': _$StatusVisibilityEnumEnumMap[instance.visibility]!,
     'with_rate_limit': instance.withRateLimit,
   };
 
@@ -92,9 +91,9 @@ Map<String, dynamic> _$ScheduledStatusParamsToJson(
   return val;
 }
 
-const _$ScheduledStatusParamsVisibilityEnumEnumMap = {
-  ScheduledStatusParamsVisibilityEnum.public: 'public',
-  ScheduledStatusParamsVisibilityEnum.unlisted: 'unlisted',
-  ScheduledStatusParamsVisibilityEnum.private: 'private',
-  ScheduledStatusParamsVisibilityEnum.direct: 'direct',
+const _$StatusVisibilityEnumEnumMap = {
+  StatusVisibilityEnum.public: 'public',
+  StatusVisibilityEnum.unlisted: 'unlisted',
+  StatusVisibilityEnum.private: 'private',
+  StatusVisibilityEnum.direct: 'direct',
 };

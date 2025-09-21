@@ -55,7 +55,7 @@ void main() {
     });
 
     // Sets the visibility of the posted status to `public`, `unlisted`, `private`, `direct`.
-    // PreferencesPostingDefaultVisibilityEnum visibility
+    // StatusVisibilityEnum visibility
     test('to test the property `visibility`', () async {
       // TODO
     });

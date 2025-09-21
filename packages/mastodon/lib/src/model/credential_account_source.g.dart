@@ -36,7 +36,7 @@ CredentialAccountSource _$CredentialAccountSourceFromJson(
       note: $checkedConvert('note', (v) => v as String),
       privacy: $checkedConvert(
         'privacy',
-        (v) => $enumDecode(_$CredentialAccountSourcePrivacyEnumEnumMap, v),
+        (v) => $enumDecode(_$StatusVisibilityEnumEnumMap, v),
       ),
       sensitive: $checkedConvert('sensitive', (v) => v as bool),
       attributionDomains: $checkedConvert(
@@ -72,7 +72,7 @@ Map<String, dynamic> _$CredentialAccountSourceToJson(
     'fields': instance.fields.map((e) => e.toJson()).toList(),
     'follow_requests_count': instance.followRequestsCount,
     'note': instance.note,
-    'privacy': _$CredentialAccountSourcePrivacyEnumEnumMap[instance.privacy]!,
+    'privacy': _$StatusVisibilityEnumEnumMap[instance.privacy]!,
     'sensitive': instance.sensitive,
   };
 
@@ -94,11 +94,11 @@ Map<String, dynamic> _$CredentialAccountSourceToJson(
   return val;
 }
 
-const _$CredentialAccountSourcePrivacyEnumEnumMap = {
-  CredentialAccountSourcePrivacyEnum.public: 'public',
-  CredentialAccountSourcePrivacyEnum.unlisted: 'unlisted',
-  CredentialAccountSourcePrivacyEnum.private: 'private',
-  CredentialAccountSourcePrivacyEnum.direct: 'direct',
+const _$StatusVisibilityEnumEnumMap = {
+  StatusVisibilityEnum.public: 'public',
+  StatusVisibilityEnum.unlisted: 'unlisted',
+  StatusVisibilityEnum.private: 'private',
+  StatusVisibilityEnum.direct: 'direct',
 };
 
 const _$CredentialAccountSourceQuotePolicyEnumEnumMap = {

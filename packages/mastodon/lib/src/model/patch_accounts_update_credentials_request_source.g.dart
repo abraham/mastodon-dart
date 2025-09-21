@@ -16,10 +16,7 @@ _$PatchAccountsUpdateCredentialsRequestSourceFromJson(
     final val = PatchAccountsUpdateCredentialsRequestSource(
       privacy: $checkedConvert(
         'privacy',
-        (v) => $enumDecodeNullable(
-          _$PatchAccountsUpdateCredentialsRequestSourcePrivacyEnumEnumMap,
-          v,
-        ),
+        (v) => $enumDecodeNullable(_$StatusVisibilityEnumEnumMap, v),
       ),
       sensitive: $checkedConvert('sensitive', (v) => v as bool?),
       language: $checkedConvert('language', (v) => v as String?),
@@ -41,19 +38,16 @@ Map<String, dynamic> _$PatchAccountsUpdateCredentialsRequestSourceToJson(
     }
   }
 
-  writeNotNull(
-    'privacy',
-    _$PatchAccountsUpdateCredentialsRequestSourcePrivacyEnumEnumMap[instance
-        .privacy],
-  );
+  writeNotNull('privacy', _$StatusVisibilityEnumEnumMap[instance.privacy]);
   writeNotNull('sensitive', instance.sensitive);
   writeNotNull('language', instance.language);
   writeNotNull('quote_policy', instance.quotePolicy);
   return val;
 }
 
-const _$PatchAccountsUpdateCredentialsRequestSourcePrivacyEnumEnumMap = {
-  PatchAccountsUpdateCredentialsRequestSourcePrivacyEnum.public: 'public',
-  PatchAccountsUpdateCredentialsRequestSourcePrivacyEnum.unlisted: 'unlisted',
-  PatchAccountsUpdateCredentialsRequestSourcePrivacyEnum.private: 'private',
+const _$StatusVisibilityEnumEnumMap = {
+  StatusVisibilityEnum.public: 'public',
+  StatusVisibilityEnum.unlisted: 'unlisted',
+  StatusVisibilityEnum.private: 'private',
+  StatusVisibilityEnum.direct: 'direct',
 };

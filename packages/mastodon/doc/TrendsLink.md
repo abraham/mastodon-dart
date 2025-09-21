@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **providerName** | **String** | The provider of the original resource. | 
 **providerUrl** | [**Uri**](Uri.md) | A link to the provider of the original resource. | 
 **title** | **String** | Title of linked resource. | 
-**type** | [**PreviewCardTypeEnum**](PreviewCardTypeEnum.md) | The type of the preview card. | 
+**type** | [**TrendsLinkTypeEnum**](TrendsLinkTypeEnum.md) | The type of the preview card. | 
 **url** | [**Uri**](Uri.md) | Location of linked resource. | 
 **width** | **int** | Width of preview, in pixels. | 
 **authorName** | **String** | The author of the original resource. Deprecated since 4.3.0, clients should use `authors` instead. | [optional] 

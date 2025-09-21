@@ -40,10 +40,7 @@ CreateStatusRequest _$CreateStatusRequestFromJson(Map<String, dynamic> json) =>
           spoilerText: $checkedConvert('spoiler_text', (v) => v as String?),
           visibility: $checkedConvert(
             'visibility',
-            (v) => $enumDecodeNullable(
-              _$PreferencesPostingDefaultVisibilityEnumEnumMap,
-              v,
-            ),
+            (v) => $enumDecodeNullable(_$StatusVisibilityEnumEnumMap, v),
           ),
         );
         return val;
@@ -80,14 +77,14 @@ Map<String, dynamic> _$CreateStatusRequestToJson(CreateStatusRequest instance) {
   writeNotNull('spoiler_text', instance.spoilerText);
   writeNotNull(
     'visibility',
-    _$PreferencesPostingDefaultVisibilityEnumEnumMap[instance.visibility],
+    _$StatusVisibilityEnumEnumMap[instance.visibility],
   );
   return val;
 }
 
-const _$PreferencesPostingDefaultVisibilityEnumEnumMap = {
-  PreferencesPostingDefaultVisibilityEnum.public: 'public',
-  PreferencesPostingDefaultVisibilityEnum.unlisted: 'unlisted',
-  PreferencesPostingDefaultVisibilityEnum.private: 'private',
-  PreferencesPostingDefaultVisibilityEnum.direct: 'direct',
+const _$StatusVisibilityEnumEnumMap = {
+  StatusVisibilityEnum.public: 'public',
+  StatusVisibilityEnum.unlisted: 'unlisted',
+  StatusVisibilityEnum.private: 'private',
+  StatusVisibilityEnum.direct: 'direct',
 };

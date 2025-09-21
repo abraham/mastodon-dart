@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:mastodon/src/model/status_visibility_enum.dart';
 import 'package:mastodon/src/model/scheduled_status_params_poll.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -53,7 +54,7 @@ class ScheduledStatusParams {
 
   /// The visibility that the status will have once it is posted.
   @JsonKey(name: r'visibility', required: true, includeIfNull: false)
-  final ScheduledStatusParamsVisibilityEnum visibility;
+  final StatusVisibilityEnum visibility;
 
   /// Whether status creation is subject to rate limiting. Provided for historical compatibility only and can be ignored.
   @Deprecated('withRateLimit has been deprecated')
@@ -132,30 +133,4 @@ class ScheduledStatusParams {
   String toString() {
     return toJson().toString();
   }
-}
-
-/// The visibility that the status will have once it is posted.
-enum ScheduledStatusParamsVisibilityEnum {
-  /// The visibility that the status will have once it is posted.
-  @JsonValue(r'public')
-  public(r'public'),
-
-  /// The visibility that the status will have once it is posted.
-  @JsonValue(r'unlisted')
-  unlisted(r'unlisted'),
-
-  /// The visibility that the status will have once it is posted.
-  @JsonValue(r'private')
-  private(r'private'),
-
-  /// The visibility that the status will have once it is posted.
-  @JsonValue(r'direct')
-  direct(r'direct');
-
-  const ScheduledStatusParamsVisibilityEnum(this.value);
-
-  final String value;
-
-  @override
-  String toString() => value;
 }

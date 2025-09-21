@@ -11,11 +11,11 @@ import 'package:dio/dio.dart';
 
 import 'package:mastodon/src/model/account.dart';
 import 'package:mastodon/src/model/error.dart';
-import 'package:mastodon/src/model/get_api_v1_notifications_param_types_enum.dart';
 import 'package:mastodon/src/model/grouped_notifications_results.dart';
 import 'package:mastodon/src/model/notification.dart';
 import 'package:mastodon/src/model/notification_policy.dart';
 import 'package:mastodon/src/model/notification_request.dart';
+import 'package:mastodon/src/model/notification_type_enum.dart';
 import 'package:mastodon/src/model/validation_error.dart';
 
 class NotificationsApi {
@@ -527,13 +527,13 @@ class NotificationsApi {
   /// Also see [Get all notifications Documentation](https://docs.joinmastodon.org/methods/notifications/#get)
   Future<Response<List<Notification>>> getNotifications({
     String? accountId,
-    List<GetApiV1NotificationsParamTypesEnum>? excludeTypes,
+    List<NotificationTypeEnum>? excludeTypes,
     bool? includeFiltered = false,
     int? limit = 40,
     String? maxId,
     String? minId,
     String? sinceId,
-    List<GetApiV1NotificationsParamTypesEnum>? types,
+    List<NotificationTypeEnum>? types,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -977,15 +977,15 @@ class NotificationsApi {
   /// Also see [Get all grouped notifications Documentation](https://docs.joinmastodon.org/methods/grouped_notifications/#get-grouped)
   Future<Response<GroupedNotificationsResults>> getNotificationsV2({
     String? accountId,
-    List<GetApiV1NotificationsParamTypesEnum>? excludeTypes,
+    List<NotificationTypeEnum>? excludeTypes,
     String? expandAccounts,
-    List<GetApiV1NotificationsParamTypesEnum>? groupedTypes,
+    List<NotificationTypeEnum>? groupedTypes,
     bool? includeFiltered = false,
     int? limit = 40,
     String? maxId,
     String? minId,
     String? sinceId,
-    List<GetApiV1NotificationsParamTypesEnum>? types,
+    List<NotificationTypeEnum>? types,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,

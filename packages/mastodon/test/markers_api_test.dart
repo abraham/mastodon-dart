@@ -19,7 +19,7 @@ void main() {
     //
     // Get current positions in timelines.  Version history:  3.0.0 - added
     //
-    //Future<Marker> getMarkers({ List<String> timeline }) async
+    //Future<Marker> getMarkers({ List<FilterContextEnum> timeline }) async
     test('test getMarkers', () async {
       // TODO
     });

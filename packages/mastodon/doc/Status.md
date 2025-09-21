@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **spoilerText** | **String** | Subject or summary line, below which status content is collapsed until expanded. | 
 **tags** | [**List&lt;StatusTag&gt;**](StatusTag.md) | Hashtags used within the status content. | 
 **uri** | **String** | URI of the status used for federation. | 
-**visibility** | [**PreferencesPostingDefaultVisibilityEnum**](PreferencesPostingDefaultVisibilityEnum.md) | Visibility of this status. | 
+**visibility** | [**StatusVisibilityEnum**](StatusVisibilityEnum.md) | Visibility of this status. | 
 **application** | [**StatusApplication**](StatusApplication.md) |  | [optional] 
 **bookmarked** | **bool** | If the current token has an authorized user: Have you bookmarked this status? | [optional] 
 **card** | [**PreviewCard**](PreviewCard.md) |  | [optional] 

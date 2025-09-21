@@ -5,7 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:json_annotation/json_annotation.dart';
 
-enum PreferencesPostingDefaultVisibilityEnum {
+enum StatusVisibilityEnum {
   @JsonValue(r'public')
   public(r'public'),
   @JsonValue(r'unlisted')
@@ -15,7 +15,7 @@ enum PreferencesPostingDefaultVisibilityEnum {
   @JsonValue(r'direct')
   direct(r'direct');
 
-  const PreferencesPostingDefaultVisibilityEnum(this.value);
+  const StatusVisibilityEnum(this.value);
 
   final String value;
 

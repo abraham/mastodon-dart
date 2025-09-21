@@ -1,4 +1,4 @@
-# mastodon.model.AdminReportCategoryEnum
+# mastodon.model.TrendsLinkTypeEnum
 
 ## Load the model package
 ```dart

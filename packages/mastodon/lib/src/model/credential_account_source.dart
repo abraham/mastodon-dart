@@ -4,6 +4,8 @@
 
 // ignore_for_file: unused_element
 import 'package:mastodon/src/model/field.dart';
+import 'package:mastodon/src/model/status_visibility_enum.dart';
+import 'package:mastodon/src/model/credential_account_source_quote_policy_enum.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'credential_account_source.g.dart';
@@ -54,7 +56,7 @@ class CredentialAccountSource {
 
   /// The default post privacy to be used for new statuses.
   @JsonKey(name: r'privacy', required: true, includeIfNull: false)
-  final CredentialAccountSourcePrivacyEnum privacy;
+  final StatusVisibilityEnum privacy;
 
   /// Whether new statuses should be marked sensitive by default.
   @JsonKey(name: r'sensitive', required: true, includeIfNull: false)
@@ -112,7 +114,7 @@ class CredentialAccountSource {
       (hideCollections == null ? 0 : hideCollections.hashCode) +
       (indexable == null ? 0 : indexable.hashCode) +
       (language == null ? 0 : language.hashCode) +
-      (quotePolicy == null ? 0 : quotePolicy.hashCode);
+      quotePolicy.hashCode;
 
   factory CredentialAccountSource.fromJson(Map<String, dynamic> json) =>
       _$CredentialAccountSourceFromJson(json);
@@ -123,52 +125,4 @@ class CredentialAccountSource {
   String toString() {
     return toJson().toString();
   }
-}
-
-/// The default post privacy to be used for new statuses.
-enum CredentialAccountSourcePrivacyEnum {
-  /// The default post privacy to be used for new statuses.
-  @JsonValue(r'public')
-  public(r'public'),
-
-  /// The default post privacy to be used for new statuses.
-  @JsonValue(r'unlisted')
-  unlisted(r'unlisted'),
-
-  /// The default post privacy to be used for new statuses.
-  @JsonValue(r'private')
-  private(r'private'),
-
-  /// The default post privacy to be used for new statuses.
-  @JsonValue(r'direct')
-  direct(r'direct');
-
-  const CredentialAccountSourcePrivacyEnum(this.value);
-
-  final String value;
-
-  @override
-  String toString() => value;
-}
-
-/// The default quote policy to be used for new statuses.
-enum CredentialAccountSourceQuotePolicyEnum {
-  /// The default quote policy to be used for new statuses.
-  @JsonValue(r'public')
-  public(r'public'),
-
-  /// The default quote policy to be used for new statuses.
-  @JsonValue(r'followers')
-  followers(r'followers'),
-
-  /// The default quote policy to be used for new statuses.
-  @JsonValue(r'nobody')
-  nobody(r'nobody');
-
-  const CredentialAccountSourceQuotePolicyEnum(this.value);
-
-  final String value;
-
-  @override
-  String toString() => value;
 }
