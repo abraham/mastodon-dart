@@ -64,14 +64,14 @@ void main() {
       // TODO
     });
 
-    // ID of the [Status]({{< relref \"entities/Status\" >}}) that was the object of the notification. Attached when `type` of the notification is `favourite`, `reblog`, `status`, `mention`, `poll`, or `update`.
+    // ID of the [Status]({{< relref \"entities/Status\" >}}) that was the object of the notification. Attached when `type` of the notification is `favourite`, `reblog`, `status`, `mention`, `poll`, `update`, `quote` or `quoted_update`. In the case of `quoted_update`, your quote of the edited status is attached, not the status that was edited.
     // String statusId
     test('to test the property `statusId`', () async {
       // TODO
     });
 
     // The type of event that resulted in the notifications in this group.
-    // NotificationGroupTypeEnum type
+    // NotificationTypeEnum type
     test('to test the property `type`', () async {
       // TODO
     });

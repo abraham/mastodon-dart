@@ -166,7 +166,7 @@ void main() {
       // TODO
     });
 
-    // Quote quote
+    // StatusQuote quote
     test('to test the property `quote`', () async {
       // TODO
     });

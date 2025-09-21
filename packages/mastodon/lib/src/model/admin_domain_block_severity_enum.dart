@@ -5,7 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:json_annotation/json_annotation.dart';
 
-enum AdminDomainblockSeverityEnum {
+enum AdminDomainBlockSeverityEnum {
   @JsonValue(r'silence')
   silence(r'silence'),
   @JsonValue(r'suspend')
@@ -13,7 +13,7 @@ enum AdminDomainblockSeverityEnum {
   @JsonValue(r'noop')
   noop(r'noop');
 
-  const AdminDomainblockSeverityEnum(this.value);
+  const AdminDomainBlockSeverityEnum(this.value);
 
   final String value;
 

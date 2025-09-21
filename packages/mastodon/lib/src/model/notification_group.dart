@@ -5,8 +5,8 @@
 // ignore_for_file: unused_element
 import 'package:mastodon/src/model/report.dart';
 import 'package:mastodon/src/model/account_warning.dart';
-import 'package:mastodon/src/model/notification_group_type_enum.dart';
 import 'package:mastodon/src/model/relationship_severance_event.dart';
+import 'package:mastodon/src/model/notification_type_enum.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'notification_group.g.dart';
@@ -90,13 +90,13 @@ class NotificationGroup {
   @JsonKey(name: r'sample_account_ids', required: false, includeIfNull: false)
   final List<String>? sampleAccountIds;
 
-  /// ID of the [Status]({{< relref \"entities/Status\" >}}) that was the object of the notification. Attached when `type` of the notification is `favourite`, `reblog`, `status`, `mention`, `poll`, or `update`.
+  /// ID of the [Status]({{< relref \"entities/Status\" >}}) that was the object of the notification. Attached when `type` of the notification is `favourite`, `reblog`, `status`, `mention`, `poll`, `update`, `quote` or `quoted_update`. In the case of `quoted_update`, your quote of the edited status is attached, not the status that was edited.
   @JsonKey(name: r'status_id', required: false, includeIfNull: false)
   final String? statusId;
 
   /// The type of event that resulted in the notifications in this group.
   @JsonKey(name: r'type', required: false, includeIfNull: false)
-  final NotificationGroupTypeEnum? type;
+  final NotificationTypeEnum? type;
 
   @override
   bool operator ==(Object other) =>

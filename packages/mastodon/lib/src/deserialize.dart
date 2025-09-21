@@ -138,6 +138,7 @@ import 'package:mastodon/src/model/status_edit.dart';
 import 'package:mastodon/src/model/status_edit_poll.dart';
 import 'package:mastodon/src/model/status_edit_poll_options_inner.dart';
 import 'package:mastodon/src/model/status_mention.dart';
+import 'package:mastodon/src/model/status_quote.dart';
 import 'package:mastodon/src/model/status_source.dart';
 import 'package:mastodon/src/model/status_tag.dart';
 import 'package:mastodon/src/model/suggestion.dart';
@@ -222,7 +223,7 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'AdminDomainBlock':
       return AdminDomainBlock.fromJson(value as Map<String, dynamic>)
           as ReturnType;
-    case 'AdminDomainblockSeverityEnum':
+    case 'AdminDomainBlockSeverityEnum':
     case 'AdminEmailDomainBlock':
       return AdminEmailDomainBlock.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -235,7 +236,7 @@ ReturnType deserialize<ReturnType, BaseType>(
       return AdminIp.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'AdminIpBlock':
       return AdminIpBlock.fromJson(value as Map<String, dynamic>) as ReturnType;
-    case 'AdminIpblockSeverityEnum':
+    case 'AdminIpBlockSeverityEnum':
     case 'AdminMeasure':
       return AdminMeasure.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'AdminMeasureData':
@@ -484,7 +485,6 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'NotificationGroup':
       return NotificationGroup.fromJson(value as Map<String, dynamic>)
           as ReturnType;
-    case 'NotificationGroupTypeEnum':
     case 'NotificationPolicy':
       return NotificationPolicy.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -627,6 +627,8 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'StatusMention':
       return StatusMention.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'StatusQuote':
+      return StatusQuote.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'StatusSource':
       return StatusSource.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'StatusTag':

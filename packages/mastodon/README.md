@@ -177,17 +177,13 @@ Class | Method | HTTP request | Description
 [*NotificationsApi*](doc/NotificationsApi.md) | [**getNotificationRequests**](doc/NotificationsApi.md#getnotificationrequests) | **GET** /api/v1/notifications/requests | Get all notification requests
 [*NotificationsApi*](doc/NotificationsApi.md) | [**getNotifications**](doc/NotificationsApi.md#getnotifications) | **GET** /api/v1/notifications | Get all notifications
 [*NotificationsApi*](doc/NotificationsApi.md) | [**getNotificationsByGroupKeyV2**](doc/NotificationsApi.md#getnotificationsbygroupkeyv2) | **GET** /api/v2/notifications/{group_key} | Get a single notification group
-[*NotificationsApi*](doc/NotificationsApi.md) | [**getNotificationsByGroupKeyV2Alpha**](doc/NotificationsApi.md#getnotificationsbygroupkeyv2alpha) | **GET** /api/v2_alpha/notifications/{group_key} | Get a single notification group
 [*NotificationsApi*](doc/NotificationsApi.md) | [**getNotificationsRequestsById**](doc/NotificationsApi.md#getnotificationsrequestsbyid) | **GET** /api/v1/notifications/requests/{id} | Get a single notification request
 [*NotificationsApi*](doc/NotificationsApi.md) | [**getNotificationsRequestsMerged**](doc/NotificationsApi.md#getnotificationsrequestsmerged) | **GET** /api/v1/notifications/requests/merged | Check if accepted notification requests have been merged
 [*NotificationsApi*](doc/NotificationsApi.md) | [**getNotificationsUnreadCount**](doc/NotificationsApi.md#getnotificationsunreadcount) | **GET** /api/v1/notifications/unread_count | Get the number of unread notifications
 [*NotificationsApi*](doc/NotificationsApi.md) | [**getNotificationsUnreadCountV2**](doc/NotificationsApi.md#getnotificationsunreadcountv2) | **GET** /api/v2/notifications/unread_count | Get the number of unread notifications
-[*NotificationsApi*](doc/NotificationsApi.md) | [**getNotificationsUnreadCountV2Alpha**](doc/NotificationsApi.md#getnotificationsunreadcountv2alpha) | **GET** /api/v2_alpha/notifications/unread_count | Get the number of unread notifications
 [*NotificationsApi*](doc/NotificationsApi.md) | [**getNotificationsV2**](doc/NotificationsApi.md#getnotificationsv2) | **GET** /api/v2/notifications | Get all grouped notifications
-[*NotificationsApi*](doc/NotificationsApi.md) | [**getNotificationsV2Alpha**](doc/NotificationsApi.md#getnotificationsv2alpha) | **GET** /api/v2_alpha/notifications | Get all grouped notifications
 [*NotificationsApi*](doc/NotificationsApi.md) | [**postNotificationDismiss**](doc/NotificationsApi.md#postnotificationdismiss) | **POST** /api/v1/notifications/{id}/dismiss | Dismiss a single notification
 [*NotificationsApi*](doc/NotificationsApi.md) | [**postNotificationDismissV2**](doc/NotificationsApi.md#postnotificationdismissv2) | **POST** /api/v2/notifications/{group_key}/dismiss | Dismiss a single notification group
-[*NotificationsApi*](doc/NotificationsApi.md) | [**postNotificationDismissV2Alpha**](doc/NotificationsApi.md#postnotificationdismissv2alpha) | **POST** /api/v2_alpha/notifications/{group_key}/dismiss | Dismiss a single notification group
 [*NotificationsApi*](doc/NotificationsApi.md) | [**postNotificationsRequestsByIdAccept**](doc/NotificationsApi.md#postnotificationsrequestsbyidaccept) | **POST** /api/v1/notifications/requests/{id}/accept | Accept a single notification request
 [*NotificationsApi*](doc/NotificationsApi.md) | [**postNotificationsRequestsByIdDismiss**](doc/NotificationsApi.md#postnotificationsrequestsbyiddismiss) | **POST** /api/v1/notifications/requests/{id}/dismiss | Dismiss a single notification request
 [*OauthApi*](doc/OauthApi.md) | [**getOauthAuthorize**](doc/OauthApi.md#getoauthauthorize) | **GET** /oauth/authorize | Authorize a user
@@ -277,12 +273,12 @@ Class | Method | HTTP request | Description
  - [AdminDimensionData](doc/AdminDimensionData.md)
  - [AdminDomainAllow](doc/AdminDomainAllow.md)
  - [AdminDomainBlock](doc/AdminDomainBlock.md)
- - [AdminDomainblockSeverityEnum](doc/AdminDomainblockSeverityEnum.md)
+ - [AdminDomainBlockSeverityEnum](doc/AdminDomainBlockSeverityEnum.md)
  - [AdminEmailDomainBlock](doc/AdminEmailDomainBlock.md)
  - [AdminEmailDomainBlockHistory](doc/AdminEmailDomainBlockHistory.md)
  - [AdminIp](doc/AdminIp.md)
  - [AdminIpBlock](doc/AdminIpBlock.md)
- - [AdminIpblockSeverityEnum](doc/AdminIpblockSeverityEnum.md)
+ - [AdminIpBlockSeverityEnum](doc/AdminIpBlockSeverityEnum.md)
  - [AdminMeasure](doc/AdminMeasure.md)
  - [AdminMeasureData](doc/AdminMeasureData.md)
  - [AdminReport](doc/AdminReport.md)
@@ -370,7 +366,6 @@ Class | Method | HTTP request | Description
  - [MutedAccountMoved](doc/MutedAccountMoved.md)
  - [Notification](doc/Notification.md)
  - [NotificationGroup](doc/NotificationGroup.md)
- - [NotificationGroupTypeEnum](doc/NotificationGroupTypeEnum.md)
  - [NotificationPolicy](doc/NotificationPolicy.md)
  - [NotificationPolicySummary](doc/NotificationPolicySummary.md)
  - [NotificationRequest](doc/NotificationRequest.md)
@@ -426,6 +421,7 @@ Class | Method | HTTP request | Description
  - [StatusEditPoll](doc/StatusEditPoll.md)
  - [StatusEditPollOptionsInner](doc/StatusEditPollOptionsInner.md)
  - [StatusMention](doc/StatusMention.md)
+ - [StatusQuote](doc/StatusQuote.md)
  - [StatusSource](doc/StatusSource.md)
  - [StatusTag](doc/StatusTag.md)
  - [Suggestion](doc/Suggestion.md)

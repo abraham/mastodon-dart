@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:mastodon/src/model/quote.dart';
+import 'package:mastodon/src/model/status_quote.dart';
 import 'package:mastodon/src/model/scheduled_status.dart';
 import 'package:mastodon/src/model/status.dart';
 import 'package:mastodon/src/model/status_mention.dart';
@@ -222,7 +222,7 @@ class CreateStatus200Response {
   final Poll? poll;
 
   @JsonKey(name: r'quote', required: false, includeIfNull: false)
-  final Quote? quote;
+  final StatusQuote? quote;
 
   @JsonKey(name: r'quote_approval', required: false, includeIfNull: false)
   final QuoteApproval? quoteApproval;
@@ -318,7 +318,7 @@ class CreateStatus200Response {
       muted.hashCode +
       pinned.hashCode +
       poll.hashCode +
-      quote.hashCode +
+      (quote == null ? 0 : quote.hashCode) +
       quoteApproval.hashCode +
       quotesCount.hashCode +
       reblog.hashCode +

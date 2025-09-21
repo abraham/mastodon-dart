@@ -115,7 +115,8 @@ Status _$StatusFromJson(Map<String, dynamic> json) => $checkedCreate(
       ),
       quote: $checkedConvert(
         'quote',
-        (v) => v == null ? null : Quote.fromJson(v as Map<String, dynamic>),
+        (v) =>
+            v == null ? null : StatusQuote.fromJson(v as Map<String, dynamic>),
       ),
       quoteApproval: $checkedConvert(
         'quote_approval',

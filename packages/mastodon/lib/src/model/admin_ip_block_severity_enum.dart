@@ -5,7 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:json_annotation/json_annotation.dart';
 
-enum AdminIpblockSeverityEnum {
+enum AdminIpBlockSeverityEnum {
   @JsonValue(r'sign_up_requires_approval')
   signUpRequiresApproval(r'sign_up_requires_approval'),
   @JsonValue(r'sign_up_block')
@@ -13,7 +13,7 @@ enum AdminIpblockSeverityEnum {
   @JsonValue(r'no_access')
   noAccess(r'no_access');
 
-  const AdminIpblockSeverityEnum(this.value);
+  const AdminIpBlockSeverityEnum(this.value);
 
   final String value;
 

@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:mastodon/src/model/admin_ipblock_severity_enum.dart';
+import 'package:mastodon/src/model/admin_ip_block_severity_enum.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'admin_ip_block.g.dart';
@@ -48,7 +48,7 @@ class AdminIpBlock {
 
   /// The associated policy with this IP block.
   @JsonKey(name: r'severity', required: true, includeIfNull: false)
-  final AdminIpblockSeverityEnum severity;
+  final AdminIpBlockSeverityEnum severity;
 
   /// When the IP block will expire.
   @JsonKey(name: r'expires_at', required: false, includeIfNull: false)

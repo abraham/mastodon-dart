@@ -15,12 +15,12 @@ doc/AdminDimension.md
 doc/AdminDimensionData.md
 doc/AdminDomainAllow.md
 doc/AdminDomainBlock.md
-doc/AdminDomainblockSeverityEnum.md
+doc/AdminDomainBlockSeverityEnum.md
 doc/AdminEmailDomainBlock.md
 doc/AdminEmailDomainBlockHistory.md
 doc/AdminIp.md
 doc/AdminIpBlock.md
-doc/AdminIpblockSeverityEnum.md
+doc/AdminIpBlockSeverityEnum.md
 doc/AdminMeasure.md
 doc/AdminMeasureData.md
 doc/AdminReport.md
@@ -129,7 +129,6 @@ doc/MutedAccountMoved.md
 doc/MutesApi.md
 doc/Notification.md
 doc/NotificationGroup.md
-doc/NotificationGroupTypeEnum.md
 doc/NotificationPolicy.md
 doc/NotificationPolicySummary.md
 doc/NotificationRequest.md
@@ -194,6 +193,7 @@ doc/StatusEdit.md
 doc/StatusEditPoll.md
 doc/StatusEditPollOptionsInner.md
 doc/StatusMention.md
+doc/StatusQuote.md
 doc/StatusSource.md
 doc/StatusTag.md
 doc/StatusesApi.md
@@ -292,12 +292,12 @@ lib/src/model/admin_dimension.dart
 lib/src/model/admin_dimension_data.dart
 lib/src/model/admin_domain_allow.dart
 lib/src/model/admin_domain_block.dart
-lib/src/model/admin_domainblock_severity_enum.dart
+lib/src/model/admin_domain_block_severity_enum.dart
 lib/src/model/admin_email_domain_block.dart
 lib/src/model/admin_email_domain_block_history.dart
 lib/src/model/admin_ip.dart
 lib/src/model/admin_ip_block.dart
-lib/src/model/admin_ipblock_severity_enum.dart
+lib/src/model/admin_ip_block_severity_enum.dart
 lib/src/model/admin_measure.dart
 lib/src/model/admin_measure_data.dart
 lib/src/model/admin_report.dart
@@ -385,7 +385,6 @@ lib/src/model/muted_account.dart
 lib/src/model/muted_account_moved.dart
 lib/src/model/notification.dart
 lib/src/model/notification_group.dart
-lib/src/model/notification_group_type_enum.dart
 lib/src/model/notification_policy.dart
 lib/src/model/notification_policy_summary.dart
 lib/src/model/notification_request.dart
@@ -441,6 +440,7 @@ lib/src/model/status_edit.dart
 lib/src/model/status_edit_poll.dart
 lib/src/model/status_edit_poll_options_inner.dart
 lib/src/model/status_mention.dart
+lib/src/model/status_quote.dart
 lib/src/model/status_source.dart
 lib/src/model/status_tag.dart
 lib/src/model/suggestion.dart
@@ -486,13 +486,13 @@ test/admin_cohort_test.dart
 test/admin_dimension_data_test.dart
 test/admin_dimension_test.dart
 test/admin_domain_allow_test.dart
+test/admin_domain_block_severity_enum_test.dart
 test/admin_domain_block_test.dart
-test/admin_domainblock_severity_enum_test.dart
 test/admin_email_domain_block_history_test.dart
 test/admin_email_domain_block_test.dart
+test/admin_ip_block_severity_enum_test.dart
 test/admin_ip_block_test.dart
 test/admin_ip_test.dart
-test/admin_ipblock_severity_enum_test.dart
 test/admin_measure_data_test.dart
 test/admin_measure_test.dart
 test/admin_report_category_enum_test.dart
@@ -600,7 +600,6 @@ test/muted_account_moved_test.dart
 test/muted_account_test.dart
 test/mutes_api_test.dart
 test/notification_group_test.dart
-test/notification_group_type_enum_test.dart
 test/notification_policy_summary_test.dart
 test/notification_policy_test.dart
 test/notification_request_test.dart
@@ -665,6 +664,7 @@ test/status_edit_poll_options_inner_test.dart
 test/status_edit_poll_test.dart
 test/status_edit_test.dart
 test/status_mention_test.dart
+test/status_quote_test.dart
 test/status_source_test.dart
 test/status_tag_test.dart
 test/status_test.dart

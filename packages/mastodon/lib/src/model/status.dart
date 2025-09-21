@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:mastodon/src/model/quote.dart';
+import 'package:mastodon/src/model/status_quote.dart';
 import 'package:mastodon/src/model/status_mention.dart';
 import 'package:mastodon/src/model/quote_approval.dart';
 import 'package:mastodon/src/model/media_attachment.dart';
@@ -208,7 +208,7 @@ class Status {
   final Poll? poll;
 
   @JsonKey(name: r'quote', required: false, includeIfNull: false)
-  final Quote? quote;
+  final StatusQuote? quote;
 
   @JsonKey(name: r'quote_approval', required: false, includeIfNull: false)
   final QuoteApproval? quoteApproval;

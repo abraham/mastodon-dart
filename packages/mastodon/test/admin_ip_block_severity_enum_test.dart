@@ -1,7 +1,7 @@
 import 'package:test/test.dart';
 import 'package:mastodon/mastodon.dart';
 
-// tests for NotificationGroupTypeEnum
+// tests for AdminIpBlockSeverityEnum
 void main() {
-  group(NotificationGroupTypeEnum, () {});
+  group(AdminIpBlockSeverityEnum, () {});
 }

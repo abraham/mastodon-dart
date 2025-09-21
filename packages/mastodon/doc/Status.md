@@ -35,7 +35,7 @@ Name | Type | Description | Notes
 **muted** | **bool** | If the current token has an authorized user: Have you muted notifications for this status's conversation? | [optional] 
 **pinned** | **bool** | If the current token has an authorized user: Have you pinned this status? Only appears if the status is pinnable. | [optional] 
 **poll** | [**Poll**](Poll.md) |  | [optional] 
-**quote** | [**Quote**](Quote.md) |  | [optional] 
+**quote** | [**StatusQuote**](StatusQuote.md) |  | [optional] 
 **quoteApproval** | [**QuoteApproval**](QuoteApproval.md) |  | [optional] 
 **quotesCount** | **int** | How many accepted quotes this status has. | [optional] 
 **reblog** | [**Status**](Status.md) |  | [optional] 

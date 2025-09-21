@@ -25,7 +25,7 @@ AdminIpBlock _$AdminIpBlockFromJson(Map<String, dynamic> json) =>
           ip: $checkedConvert('ip', (v) => v as String),
           severity: $checkedConvert(
             'severity',
-            (v) => $enumDecode(_$AdminIpblockSeverityEnumEnumMap, v),
+            (v) => $enumDecode(_$AdminIpBlockSeverityEnumEnumMap, v),
           ),
           expiresAt: $checkedConvert(
             'expires_at',
@@ -43,7 +43,7 @@ Map<String, dynamic> _$AdminIpBlockToJson(AdminIpBlock instance) {
     'created_at': instance.createdAt.toIso8601String(),
     'id': instance.id,
     'ip': instance.ip,
-    'severity': _$AdminIpblockSeverityEnumEnumMap[instance.severity]!,
+    'severity': _$AdminIpBlockSeverityEnumEnumMap[instance.severity]!,
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -56,8 +56,8 @@ Map<String, dynamic> _$AdminIpBlockToJson(AdminIpBlock instance) {
   return val;
 }
 
-const _$AdminIpblockSeverityEnumEnumMap = {
-  AdminIpblockSeverityEnum.signUpRequiresApproval: 'sign_up_requires_approval',
-  AdminIpblockSeverityEnum.signUpBlock: 'sign_up_block',
-  AdminIpblockSeverityEnum.noAccess: 'no_access',
+const _$AdminIpBlockSeverityEnumEnumMap = {
+  AdminIpBlockSeverityEnum.signUpRequiresApproval: 'sign_up_requires_approval',
+  AdminIpBlockSeverityEnum.signUpBlock: 'sign_up_block',
+  AdminIpBlockSeverityEnum.noAccess: 'no_access',
 };

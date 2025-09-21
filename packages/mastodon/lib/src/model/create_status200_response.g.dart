@@ -127,7 +127,8 @@ CreateStatus200Response _$CreateStatus200ResponseFromJson(
       ),
       quote: $checkedConvert(
         'quote',
-        (v) => v == null ? null : Quote.fromJson(v as Map<String, dynamic>),
+        (v) =>
+            v == null ? null : StatusQuote.fromJson(v as Map<String, dynamic>),
       ),
       quoteApproval: $checkedConvert(
         'quote_approval',

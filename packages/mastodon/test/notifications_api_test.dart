@@ -87,15 +87,6 @@ void main() {
       // TODO
     });
 
-    // Get a single notification group
-    //
-    // View information about a specific notification group with a given group key.  Version history:  4.3.0-beta.1 - added\\ 4.3.0-beta.2 - deprecated
-    //
-    //Future<GroupedNotificationsResults> getNotificationsByGroupKeyV2Alpha(String groupKey) async
-    test('test getNotificationsByGroupKeyV2Alpha', () async {
-      // TODO
-    });
-
     // Get a single notification request
     //
     // View information about a notification request with a given ID.  Version history:  4.3.0 - added
@@ -132,30 +123,12 @@ void main() {
       // TODO
     });
 
-    // Get the number of unread notifications
-    //
-    // Get the (capped) number of unread notification groups for the current user.
-    //
-    //Future getNotificationsUnreadCountV2Alpha({ String accountId, List<String> excludeTypes, List<String> groupedTypes, int limit, List<String> types }) async
-    test('test getNotificationsUnreadCountV2Alpha', () async {
-      // TODO
-    });
-
     // Get all grouped notifications
     //
     // Return grouped notifications concerning the user. This API returns Link headers containing links to the next/previous page. However, the links can also be constructed dynamically using query params and `id` values.  Version history:  4.3.0 (`mastodon` [API version] 2) - added\\ 4.4.0 - added `admin.sign_up` to grouped notification types
     //
     //Future<GroupedNotificationsResults> getNotificationsV2({ String accountId, List<GetApiV1NotificationsParamTypesEnum> excludeTypes, String expandAccounts, List<GetApiV1NotificationsParamTypesEnum> groupedTypes, bool includeFiltered, int limit, String maxId, String minId, String sinceId, List<GetApiV1NotificationsParamTypesEnum> types }) async
     test('test getNotificationsV2', () async {
-      // TODO
-    });
-
-    // Get all grouped notifications
-    //
-    // Return grouped notifications concerning the user. This API returns Link headers containing links to the next/previous page. However, the links can also be constructed dynamically using query params and `id` values.  Version history:  4.3.0-beta.1 - added\\ 4.3.0-beta.2 - deprecated
-    //
-    //Future<GroupedNotificationsResults> getNotificationsV2Alpha({ String accountId, List<GetApiV1NotificationsParamTypesEnum> excludeTypes, String expandAccounts, List<GetApiV1NotificationsParamTypesEnum> groupedTypes, int limit, String maxId, String minId, String sinceId, List<GetApiV1NotificationsParamTypesEnum> types }) async
-    test('test getNotificationsV2Alpha', () async {
       // TODO
     });
 
@@ -174,15 +147,6 @@ void main() {
     //
     //Future postNotificationDismissV2(String groupKey) async
     test('test postNotificationDismissV2', () async {
-      // TODO
-    });
-
-    // Dismiss a single notification group
-    //
-    // Dismiss a single notification group from the server.  Version history:  4.3.0-beta.1 - added\\ 4.3.0-beta.2 - deprecated
-    //
-    //Future postNotificationDismissV2Alpha(String groupKey) async
-    test('test postNotificationDismissV2Alpha', () async {
       // TODO
     });
 

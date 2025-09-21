@@ -1,4 +1,4 @@
-# mastodon.model.AdminIpblockSeverityEnum
+# mastodon.model.AdminIpBlockSeverityEnum
 
 ## Load the model package
 ```dart

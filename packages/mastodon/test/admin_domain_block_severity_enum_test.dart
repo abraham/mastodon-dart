@@ -1,7 +1,7 @@
 import 'package:test/test.dart';
 import 'package:mastodon/mastodon.dart';
 
-// tests for AdminDomainblockSeverityEnum
+// tests for AdminDomainBlockSeverityEnum
 void main() {
-  group(AdminDomainblockSeverityEnum, () {});
+  group(AdminDomainBlockSeverityEnum, () {});
 }
