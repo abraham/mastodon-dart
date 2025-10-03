@@ -12,7 +12,9 @@ PostStatusReblogRequest _$PostStatusReblogRequestFromJson(
   final val = PostStatusReblogRequest(
     visibility: $checkedConvert(
       'visibility',
-      (v) => $enumDecodeNullable(_$StatusVisibilityEnumEnumMap, v) ?? 'public',
+      (v) =>
+          $enumDecodeNullable(_$StatusVisibilityEnumEnumMap, v) ??
+          StatusVisibilityEnum.public,
     ),
   );
   return val;

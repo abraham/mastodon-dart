@@ -20,7 +20,7 @@ class PostStatusReblogRequest {
 
   /// String (Enumerable, oneOf `public`, `unlisted`, or `private`). Defaults to public.
   @JsonKey(
-    defaultValue: 'public',
+    defaultValue: StatusVisibilityEnum.public,
     name: r'visibility',
     required: false,
     includeIfNull: false,

@@ -139,6 +139,10 @@ void main() async {
           "PostStatusReblogRequest({this.visibility = 'public'});",
           'PostStatusReblogRequest({this.visibility = StatusVisibilityEnum.public});',
         ),
+        Replacement(
+          "defaultValue: 'public',",
+          'defaultValue: StatusVisibilityEnum.public,',
+        ),
       ],
       description:
           "Replace CreateReportRequestAdminReportCategoryEnum._('other') with CreateReportRequestAdminReportCategoryEnum.other",
