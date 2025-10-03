@@ -11,14 +11,13 @@ MediaAttachment _$MediaAttachmentFromJson(Map<String, dynamic> json) =>
       'MediaAttachment',
       json,
       ($checkedConvert) {
-        $checkKeys(json, requiredKeys: const ['id', 'type', 'url']);
+        $checkKeys(json, requiredKeys: const ['id', 'type']);
         final val = MediaAttachment(
           id: $checkedConvert('id', (v) => v as String),
           type: $checkedConvert(
             'type',
             (v) => $enumDecode(_$MediaAttachmentTypeEnumEnumMap, v),
           ),
-          url: $checkedConvert('url', (v) => Uri.parse(v as String)),
           blurhash: $checkedConvert('blurhash', (v) => v as String?),
           description: $checkedConvert('description', (v) => v as String?),
           meta: $checkedConvert(
@@ -35,6 +34,10 @@ MediaAttachment _$MediaAttachmentFromJson(Map<String, dynamic> json) =>
             'remote_url',
             (v) => v == null ? null : Uri.parse(v as String),
           ),
+          url: $checkedConvert(
+            'url',
+            (v) => v == null ? null : Uri.parse(v as String),
+          ),
         );
         return val;
       },
@@ -48,7 +51,6 @@ Map<String, dynamic> _$MediaAttachmentToJson(MediaAttachment instance) {
   final val = <String, dynamic>{
     'id': instance.id,
     'type': _$MediaAttachmentTypeEnumEnumMap[instance.type]!,
-    'url': instance.url.toString(),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -62,6 +64,7 @@ Map<String, dynamic> _$MediaAttachmentToJson(MediaAttachment instance) {
   writeNotNull('meta', instance.meta?.toJson());
   writeNotNull('preview_url', instance.previewUrl?.toString());
   writeNotNull('remote_url', instance.remoteUrl?.toString());
+  writeNotNull('url', instance.url?.toString());
   return val;
 }
 

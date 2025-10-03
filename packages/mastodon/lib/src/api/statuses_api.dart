@@ -31,7 +31,7 @@ class StatusesApi {
   const StatusesApi(this._dio);
 
   /// Post a new status
-  /// Publish a status with the given parameters.  Version history:  0.0.0 - added\\ 2.7.0 - &#x60;scheduled_at&#x60; added\\ 2.8.0 - &#x60;poll&#x60; added 4.5.0 (&#x60;mastodon&#x60; [API version] 7) - &#x60;quoted_status_id&#x60; and &#x60;quote_approval_policy&#x60; added
+  /// Publish a status with the given parameters.  Version history:  0.0.0 - added\\ 2.7.0 - &#x60;scheduled_at&#x60; added\\ 2.8.0 - &#x60;poll&#x60; added\\ 4.5.0 (&#x60;mastodon&#x60; [API version] 7) - &#x60;quoted_status_id&#x60; and &#x60;quote_approval_policy&#x60; added
   ///
   /// Parameters:
   /// * [createStatusRequest] - JSON request body parameters for creating a status. Different types of statuses have different requirements.
@@ -647,7 +647,7 @@ class StatusesApi {
   ///
   /// Parameters:
   /// * [id] - id parameter
-  /// * [limit] - Maximum number of results to return. Defaults to 40 accounts. Max 80 accounts.
+  /// * [limit] - Maximum number of results to return. Defaults to 20 statuses. Max 40 statuses.
   /// * [maxId] - Internal parameter. Use HTTP `Link` header for pagination.
   /// * [sinceId] - Internal parameter. Use HTTP `Link` header for pagination.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -663,7 +663,7 @@ class StatusesApi {
   /// Also see [See quotes of a status Documentation](https://docs.joinmastodon.org/methods/statuses/#quotes)
   Future<Response<List<Status>>> getStatusQuotes({
     required String id,
-    int? limit = 40,
+    int? limit = 20,
     String? maxId,
     String? sinceId,
     CancelToken? cancelToken,

@@ -41,7 +41,7 @@ Method | HTTP request | Description
 
 Post a new status
 
-Publish a status with the given parameters.  Version history:  0.0.0 - added\\ 2.7.0 - `scheduled_at` added\\ 2.8.0 - `poll` added 4.5.0 (`mastodon` [API version] 7) - `quoted_status_id` and `quote_approval_policy` added
+Publish a status with the given parameters.  Version history:  0.0.0 - added\\ 2.7.0 - `scheduled_at` added\\ 2.8.0 - `poll` added\\ 4.5.0 (`mastodon` [API version] 7) - `quoted_status_id` and `quote_approval_policy` added
 
 ### Example
 ```dart
@@ -376,7 +376,7 @@ import 'package:mastodon/api.dart';
 
 final api = Mastodon().getStatusesApi();
 final String id = id_example; // String | id parameter
-final int limit = 56; // int | Maximum number of results to return. Defaults to 40 accounts. Max 80 accounts.
+final int limit = 56; // int | Maximum number of results to return. Defaults to 20 statuses. Max 40 statuses.
 final String maxId = maxId_example; // String | Internal parameter. Use HTTP `Link` header for pagination.
 final String sinceId = sinceId_example; // String | Internal parameter. Use HTTP `Link` header for pagination.
 
@@ -393,7 +393,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| id parameter | 
- **limit** | **int**| Maximum number of results to return. Defaults to 40 accounts. Max 80 accounts. | [optional] [default to 40]
+ **limit** | **int**| Maximum number of results to return. Defaults to 20 statuses. Max 40 statuses. | [optional] [default to 20]
  **maxId** | **String**| Internal parameter. Use HTTP `Link` header for pagination. | [optional] 
  **sinceId** | **String**| Internal parameter. Use HTTP `Link` header for pagination. | [optional] 
 

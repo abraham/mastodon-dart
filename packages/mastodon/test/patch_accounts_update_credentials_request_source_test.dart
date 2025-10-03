@@ -8,7 +8,7 @@ void main() {
   // TODO add properties to the entity
 
   group(PatchAccountsUpdateCredentialsRequestSource, () {
-    // Default post privacy for authored statuses. Can be `public`, `unlisted`, or `private`.
+    // String (Enumerable, oneOf `public`, `unlisted`, or `private`). Default post privacy for authored statuses.
     // StatusVisibilityEnum privacy
     test('to test the property `privacy`', () async {
       // TODO

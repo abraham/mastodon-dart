@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:mastodon/src/model/status_visibility_enum.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'post_status_reblog_request.g.dart';
@@ -15,16 +16,16 @@ part 'post_status_reblog_request.g.dart';
 )
 class PostStatusReblogRequest {
   /// Returns a new [PostStatusReblogRequest] instance.
-  PostStatusReblogRequest({this.visibility = 'public'});
+  PostStatusReblogRequest({this.visibility = StatusVisibilityEnum.public});
 
-  /// Any visibility except `limited` or `direct` (i.e. `public`, `unlisted`, `private`). Defaults to public.
+  /// String (Enumerable, oneOf `public`, `unlisted`, or `private`). Defaults to public.
   @JsonKey(
     defaultValue: 'public',
     name: r'visibility',
     required: false,
     includeIfNull: false,
   )
-  final String? visibility;
+  final StatusVisibilityEnum? visibility;
 
   @override
   bool operator ==(Object other) =>

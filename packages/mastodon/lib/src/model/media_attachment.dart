@@ -23,8 +23,6 @@ class MediaAttachment {
 
     required this.type,
 
-    required this.url,
-
     this.blurhash,
 
     this.description,
@@ -34,6 +32,8 @@ class MediaAttachment {
     this.previewUrl,
 
     this.remoteUrl,
+
+    this.url,
   });
 
   /// The ID of the attachment in the database.
@@ -43,10 +43,6 @@ class MediaAttachment {
   /// The type of the attachment.
   @JsonKey(name: r'type', required: true, includeIfNull: false)
   final MediaAttachmentTypeEnum type;
-
-  /// The location of the original full-size attachment.
-  @JsonKey(name: r'url', required: true, includeIfNull: false)
-  final Uri url;
 
   /// A hash computed by [the BlurHash algorithm](https://github.com/woltapp/blurhash), for generating colorful preview thumbnails when media has not been downloaded yet.
   @JsonKey(name: r'blurhash', required: false, includeIfNull: false)
@@ -67,29 +63,33 @@ class MediaAttachment {
   @JsonKey(name: r'remote_url', required: false, includeIfNull: false)
   final Uri? remoteUrl;
 
+  /// The location of the original full-size attachment.
+  @JsonKey(name: r'url', required: false, includeIfNull: false)
+  final Uri? url;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is MediaAttachment &&
           other.id == id &&
           other.type == type &&
-          other.url == url &&
           other.blurhash == blurhash &&
           other.description == description &&
           other.meta == meta &&
           other.previewUrl == previewUrl &&
-          other.remoteUrl == remoteUrl;
+          other.remoteUrl == remoteUrl &&
+          other.url == url;
 
   @override
   int get hashCode =>
       id.hashCode +
       type.hashCode +
-      url.hashCode +
       (blurhash == null ? 0 : blurhash.hashCode) +
       (description == null ? 0 : description.hashCode) +
       meta.hashCode +
       (previewUrl == null ? 0 : previewUrl.hashCode) +
-      (remoteUrl == null ? 0 : remoteUrl.hashCode);
+      (remoteUrl == null ? 0 : remoteUrl.hashCode) +
+      (url == null ? 0 : url.hashCode);
 
   factory MediaAttachment.fromJson(Map<String, dynamic> json) =>
       _$MediaAttachmentFromJson(json);

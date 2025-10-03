@@ -52,6 +52,11 @@ StatusEdit _$StatusEditFromJson(Map<String, dynamic> json) => $checkedCreate(
             ? null
             : StatusEditPoll.fromJson(v as Map<String, dynamic>),
       ),
+      quote: $checkedConvert(
+        'quote',
+        (v) =>
+            v == null ? null : StatusQuote.fromJson(v as Map<String, dynamic>),
+      ),
     );
     return val;
   },
@@ -82,5 +87,6 @@ Map<String, dynamic> _$StatusEditToJson(StatusEdit instance) {
   }
 
   writeNotNull('poll', instance.poll?.toJson());
+  writeNotNull('quote', instance.quote?.toJson());
   return val;
 }

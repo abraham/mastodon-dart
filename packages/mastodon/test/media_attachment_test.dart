@@ -19,12 +19,6 @@ void main() {
       // TODO
     });
 
-    // The location of the original full-size attachment.
-    // Uri url
-    test('to test the property `url`', () async {
-      // TODO
-    });
-
     // A hash computed by [the BlurHash algorithm](https://github.com/woltapp/blurhash), for generating colorful preview thumbnails when media has not been downloaded yet.
     // String blurhash
     test('to test the property `blurhash`', () async {
@@ -51,6 +45,12 @@ void main() {
     // The location of the full-size original attachment on the remote website.
     // Uri remoteUrl
     test('to test the property `remoteUrl`', () async {
+      // TODO
+    });
+
+    // The location of the original full-size attachment.
+    // Uri url
+    test('to test the property `url`', () async {
       // TODO
     });
   });

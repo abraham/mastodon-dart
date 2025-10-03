@@ -132,6 +132,18 @@ void main() async {
           "Replace CreateReportRequestAdminReportCategoryEnum._('other') with CreateReportRequestAdminReportCategoryEnum.other",
     ),
     Hack(
+      filePath:
+          'packages/mastodon/lib/src/model/post_status_reblog_request.dart',
+      replacements: [
+        Replacement(
+          "PostStatusReblogRequest({this.visibility = 'public'});",
+          'PostStatusReblogRequest({this.visibility = StatusVisibilityEnum.public});',
+        ),
+      ],
+      description:
+          "Replace CreateReportRequestAdminReportCategoryEnum._('other') with CreateReportRequestAdminReportCategoryEnum.other",
+    ),
+    Hack(
       filePath: 'packages/mastodon/lib/mastodon.dart',
       replacements: [
         Replacement(

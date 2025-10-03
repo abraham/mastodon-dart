@@ -10,7 +10,10 @@ PostStatusReblogRequest _$PostStatusReblogRequestFromJson(
   Map<String, dynamic> json,
 ) => $checkedCreate('PostStatusReblogRequest', json, ($checkedConvert) {
   final val = PostStatusReblogRequest(
-    visibility: $checkedConvert('visibility', (v) => v as String? ?? 'public'),
+    visibility: $checkedConvert(
+      'visibility',
+      (v) => $enumDecodeNullable(_$StatusVisibilityEnumEnumMap, v) ?? 'public',
+    ),
   );
   return val;
 });
@@ -26,6 +29,16 @@ Map<String, dynamic> _$PostStatusReblogRequestToJson(
     }
   }
 
-  writeNotNull('visibility', instance.visibility);
+  writeNotNull(
+    'visibility',
+    _$StatusVisibilityEnumEnumMap[instance.visibility],
+  );
   return val;
 }
+
+const _$StatusVisibilityEnumEnumMap = {
+  StatusVisibilityEnum.public: 'public',
+  StatusVisibilityEnum.unlisted: 'unlisted',
+  StatusVisibilityEnum.private: 'private',
+  StatusVisibilityEnum.direct: 'direct',
+};

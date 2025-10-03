@@ -26,7 +26,7 @@ class PatchAccountsUpdateCredentialsRequestSource {
     this.quotePolicy,
   });
 
-  /// Default post privacy for authored statuses. Can be `public`, `unlisted`, or `private`.
+  /// String (Enumerable, oneOf `public`, `unlisted`, or `private`). Default post privacy for authored statuses.
   @JsonKey(name: r'privacy', required: false, includeIfNull: false)
   final StatusVisibilityEnum? privacy;
 

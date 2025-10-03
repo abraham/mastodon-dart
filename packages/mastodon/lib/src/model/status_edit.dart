@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:mastodon/src/model/status_quote.dart';
 import 'package:mastodon/src/model/custom_emoji.dart';
 import 'package:mastodon/src/model/account.dart';
 import 'package:mastodon/src/model/status_edit_poll.dart';
@@ -35,6 +36,8 @@ class StatusEdit {
     required this.spoilerText,
 
     this.poll,
+
+    this.quote,
   });
 
   /// The account that published this revision.
@@ -68,6 +71,9 @@ class StatusEdit {
   @JsonKey(name: r'poll', required: false, includeIfNull: false)
   final StatusEditPoll? poll;
 
+  @JsonKey(name: r'quote', required: false, includeIfNull: false)
+  final StatusQuote? quote;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -79,7 +85,8 @@ class StatusEdit {
           other.mediaAttachments == mediaAttachments &&
           other.sensitive == sensitive &&
           other.spoilerText == spoilerText &&
-          other.poll == poll;
+          other.poll == poll &&
+          other.quote == quote;
 
   @override
   int get hashCode =>
@@ -90,7 +97,8 @@ class StatusEdit {
       mediaAttachments.hashCode +
       sensitive.hashCode +
       spoilerText.hashCode +
-      poll.hashCode;
+      poll.hashCode +
+      (quote == null ? 0 : quote.hashCode);
 
   factory StatusEdit.fromJson(Map<String, dynamic> json) =>
       _$StatusEditFromJson(json);

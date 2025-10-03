@@ -8,7 +8,7 @@ void main() {
   group(StatusesApi, () {
     // Post a new status
     //
-    // Publish a status with the given parameters.  Version history:  0.0.0 - added\\ 2.7.0 - `scheduled_at` added\\ 2.8.0 - `poll` added 4.5.0 (`mastodon` [API version] 7) - `quoted_status_id` and `quote_approval_policy` added
+    // Publish a status with the given parameters.  Version history:  0.0.0 - added\\ 2.7.0 - `scheduled_at` added\\ 2.8.0 - `poll` added\\ 4.5.0 (`mastodon` [API version] 7) - `quoted_status_id` and `quote_approval_policy` added
     //
     //Future<CreateStatus200Response> createStatus(CreateStatusRequest createStatusRequest, { Object idempotencyKey }) async
     test('test createStatus', () async {
