@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **groupKey** | **String** | Group key identifying the grouped notifications. Should be treated as an opaque value. | [optional] 
 **latestPageNotificationAt** | [**DateTime**](DateTime.md) | Date at which the most recent notification from this group within the current page has been created. This is only returned when paginating through notification groups. | [optional] 
 **moderationWarning** | [**AccountWarning**](AccountWarning.md) |  | [optional] 
-**mostRecentNotificationId** | **String** | ID of the most recent notification in the group. | [optional] 
+**mostRecentNotificationId** | **int** | ID of the most recent notification in the group. | [optional] 
 **notificationsCount** | **int** | Total number of individual notifications that are part of this notification group. | [optional] 
 **pageMaxId** | **String** | ID of the newest notification from this group represented within the current page. This is only returned when paginating through notification groups. Useful when polling new notifications. | [optional] 
 **pageMinId** | **String** | ID of the oldest notification from this group represented within the current page. This is only returned when paginating through notification groups. Useful when polling new notifications. | [optional] 

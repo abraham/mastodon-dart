@@ -69,7 +69,7 @@ class NotificationGroup {
     required: false,
     includeIfNull: false,
   )
-  final String? mostRecentNotificationId;
+  final int? mostRecentNotificationId;
 
   /// Total number of individual notifications that are part of this notification group.
   @JsonKey(name: r'notifications_count', required: false, includeIfNull: false)

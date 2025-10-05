@@ -33,7 +33,7 @@ NotificationGroup _$NotificationGroupFromJson(Map<String, dynamic> json) =>
           ),
           mostRecentNotificationId: $checkedConvert(
             'most_recent_notification_id',
-            (v) => v as String?,
+            (v) => (v as num?)?.toInt(),
           ),
           notificationsCount: $checkedConvert(
             'notifications_count',

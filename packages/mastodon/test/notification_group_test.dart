@@ -30,7 +30,7 @@ void main() {
     });
 
     // ID of the most recent notification in the group.
-    // String mostRecentNotificationId
+    // int mostRecentNotificationId
     test('to test the property `mostRecentNotificationId`', () async {
       // TODO
     });
