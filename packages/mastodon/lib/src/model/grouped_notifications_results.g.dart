@@ -21,9 +21,9 @@ GroupedNotificationsResults _$GroupedNotificationsResultsFromJson(
       ),
       notificationGroups: $checkedConvert(
         'notification_groups',
-        (v) => v == null
-            ? null
-            : NotificationGroup.fromJson(v as Map<String, dynamic>),
+        (v) => (v as List<dynamic>?)
+            ?.map((e) => NotificationGroup.fromJson(e as Map<String, dynamic>))
+            .toList(),
       ),
       partialAccounts: $checkedConvert(
         'partial_accounts',
@@ -61,7 +61,10 @@ Map<String, dynamic> _$GroupedNotificationsResultsToJson(
   }
 
   writeNotNull('accounts', instance.accounts?.map((e) => e.toJson()).toList());
-  writeNotNull('notification_groups', instance.notificationGroups?.toJson());
+  writeNotNull(
+    'notification_groups',
+    instance.notificationGroups?.map((e) => e.toJson()).toList(),
+  );
   writeNotNull(
     'partial_accounts',
     instance.partialAccounts?.map((e) => e.toJson()).toList(),

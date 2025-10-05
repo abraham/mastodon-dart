@@ -14,7 +14,8 @@ void main() {
       // TODO
     });
 
-    // NotificationGroup notificationGroups
+    // The grouped notifications themselves.
+    // List<NotificationGroup> notificationGroups
     test('to test the property `notificationGroups`', () async {
       // TODO
     });

@@ -33,8 +33,9 @@ class GroupedNotificationsResults {
   @JsonKey(name: r'accounts', required: false, includeIfNull: false)
   final List<Account>? accounts;
 
+  /// The grouped notifications themselves.
   @JsonKey(name: r'notification_groups', required: false, includeIfNull: false)
-  final NotificationGroup? notificationGroups;
+  final List<NotificationGroup>? notificationGroups;
 
   /// Partial accounts referenced by grouped notifications. Those are only returned when requesting grouped notifications with `expand_accounts=partial_avatars`.
   @JsonKey(name: r'partial_accounts', required: false, includeIfNull: false)
