@@ -19,22 +19,18 @@ class FeaturedTag {
   FeaturedTag({
     required this.id,
 
-    required this.lastStatusAt,
-
     required this.name,
 
     required this.statusesCount,
 
     required this.url,
+
+    this.lastStatusAt,
   });
 
   /// The ID of the featured tag.
   @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
-
-  /// The date of the last authored status containing this hashtag.
-  @JsonKey(name: r'last_status_at', required: true, includeIfNull: false)
-  final DateTime lastStatusAt;
 
   /// The name of the hashtag being featured.
   @JsonKey(name: r'name', required: true, includeIfNull: false)
@@ -48,23 +44,27 @@ class FeaturedTag {
   @JsonKey(name: r'url', required: true, includeIfNull: false)
   final Uri url;
 
+  /// The date of the last authored status containing this hashtag.
+  @JsonKey(name: r'last_status_at', required: false, includeIfNull: false)
+  final DateTime? lastStatusAt;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is FeaturedTag &&
           other.id == id &&
-          other.lastStatusAt == lastStatusAt &&
           other.name == name &&
           other.statusesCount == statusesCount &&
-          other.url == url;
+          other.url == url &&
+          other.lastStatusAt == lastStatusAt;
 
   @override
   int get hashCode =>
       id.hashCode +
-      lastStatusAt.hashCode +
       name.hashCode +
       statusesCount.hashCode +
-      url.hashCode;
+      url.hashCode +
+      (lastStatusAt == null ? 0 : lastStatusAt.hashCode);
 
   factory FeaturedTag.fromJson(Map<String, dynamic> json) =>
       _$FeaturedTagFromJson(json);
