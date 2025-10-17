@@ -1,0 +1,30 @@
+name: Main
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: dart-lang/setup-dart@v1
+
+      - run: dart pub get
+      - run: ./scripts/build
+      - run: git checkout packages/mastodon_generator/lib/mastodon_generator.dart # avoid diff due to generated timestamp
+      - run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "Git changes detected after build"
+            git status
+            exit 1
+          fi
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: dart-lang/setup-dart@v1
+
+      - run: dart pub get
+      - run: ./scripts/analyze
+

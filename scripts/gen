@@ -1,6 +1,0 @@
-#!/bin/bash
-set -e
-
-rm -rf api
-
-dart run build_runner build --delete-conflicting-outputs
