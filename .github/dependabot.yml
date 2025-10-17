@@ -1,0 +1,13 @@
+version: 2
+updates:
+  - package-ecosystem: "pub"
+    directories:
+      - "/"
+      - "/packages/mastodon"
+      - "/packages/mastodon_generator"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
