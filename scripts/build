@@ -1,0 +1,20 @@
+#!/bin/bash
+set -e
+
+cd packages/mastodon_generator
+
+dart run build_runner build --delete-conflicting-outputs
+
+cd ../..
+
+dart format .
+
+dart packages/mastodon_generator/lib/hacks.dart
+
+cd packages/mastodon
+
+dart run build_runner build --delete-conflicting-outputs
+
+cd ../..
+
+dart format .
