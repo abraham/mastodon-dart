@@ -6,5 +6,10 @@ resolution: workspace
 dependencies:
   openapi_generator_annotations: any
 dev_dependencies:
-  openapi_generator: any
+  # openapi_generator: any
+  openapi_generator:
+    git:
+      url: https://github.com/gibahjoe/openapi-generator-dart.git
+      path: openapi-generator
+      ref: 5747abf64ce56896f4837984f240e50140aad6d2
   build_runner: any
