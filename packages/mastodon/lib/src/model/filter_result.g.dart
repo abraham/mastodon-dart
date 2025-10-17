@@ -34,16 +34,9 @@ FilterResult _$FilterResultFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$FilterResultToJson(FilterResult instance) {
-  final val = <String, dynamic>{'filter': instance.filter.toJson()};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('keyword_matches', instance.keywordMatches);
-  writeNotNull('status_matches', instance.statusMatches);
-  return val;
-}
+Map<String, dynamic> _$FilterResultToJson(FilterResult instance) =>
+    <String, dynamic>{
+      'filter': instance.filter.toJson(),
+      'keyword_matches': ?instance.keywordMatches,
+      'status_matches': ?instance.statusMatches,
+    };

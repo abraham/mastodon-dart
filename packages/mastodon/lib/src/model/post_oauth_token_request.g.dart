@@ -44,22 +44,12 @@ PostOauthTokenRequest _$PostOauthTokenRequestFromJson(
 
 Map<String, dynamic> _$PostOauthTokenRequestToJson(
   PostOauthTokenRequest instance,
-) {
-  final val = <String, dynamic>{
-    'client_id': instance.clientId,
-    'client_secret': instance.clientSecret,
-    'code': instance.code,
-    'grant_type': instance.grantType,
-    'redirect_uri': instance.redirectUri,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('code_verifier', instance.codeVerifier);
-  writeNotNull('scope', instance.scope);
-  return val;
-}
+) => <String, dynamic>{
+  'client_id': instance.clientId,
+  'client_secret': instance.clientSecret,
+  'code': instance.code,
+  'grant_type': instance.grantType,
+  'redirect_uri': instance.redirectUri,
+  'code_verifier': ?instance.codeVerifier,
+  'scope': ?instance.scope,
+};

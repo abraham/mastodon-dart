@@ -24,16 +24,7 @@ InstanceThumbnailVersions _$InstanceThumbnailVersionsFromJson(
 
 Map<String, dynamic> _$InstanceThumbnailVersionsToJson(
   InstanceThumbnailVersions instance,
-) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('@1x', instance.at1x?.toString());
-  writeNotNull('@2x', instance.at2x?.toString());
-  return val;
-}
+) => <String, dynamic>{
+  '@1x': ?instance.at1x?.toString(),
+  '@2x': ?instance.at2x?.toString(),
+};

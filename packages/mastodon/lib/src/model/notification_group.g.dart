@@ -71,35 +71,22 @@ NotificationGroup _$NotificationGroupFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$NotificationGroupToJson(NotificationGroup instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('event', instance.event?.toJson());
-  writeNotNull('group_key', instance.groupKey);
-  writeNotNull(
-    'latest_page_notification_at',
-    instance.latestPageNotificationAt?.toIso8601String(),
-  );
-  writeNotNull('moderation_warning', instance.moderationWarning?.toJson());
-  writeNotNull(
-    'most_recent_notification_id',
-    instance.mostRecentNotificationId,
-  );
-  writeNotNull('notifications_count', instance.notificationsCount);
-  writeNotNull('page_max_id', instance.pageMaxId);
-  writeNotNull('page_min_id', instance.pageMinId);
-  writeNotNull('report', instance.report?.toJson());
-  writeNotNull('sample_account_ids', instance.sampleAccountIds);
-  writeNotNull('status_id', instance.statusId);
-  writeNotNull('type', _$NotificationTypeEnumEnumMap[instance.type]);
-  return val;
-}
+Map<String, dynamic> _$NotificationGroupToJson(NotificationGroup instance) =>
+    <String, dynamic>{
+      'event': ?instance.event?.toJson(),
+      'group_key': ?instance.groupKey,
+      'latest_page_notification_at': ?instance.latestPageNotificationAt
+          ?.toIso8601String(),
+      'moderation_warning': ?instance.moderationWarning?.toJson(),
+      'most_recent_notification_id': ?instance.mostRecentNotificationId,
+      'notifications_count': ?instance.notificationsCount,
+      'page_max_id': ?instance.pageMaxId,
+      'page_min_id': ?instance.pageMinId,
+      'report': ?instance.report?.toJson(),
+      'sample_account_ids': ?instance.sampleAccountIds,
+      'status_id': ?instance.statusId,
+      'type': ?_$NotificationTypeEnumEnumMap[instance.type],
+    };
 
 const _$NotificationTypeEnumEnumMap = {
   NotificationTypeEnum.mention: 'mention',

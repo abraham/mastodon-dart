@@ -17,15 +17,4 @@ CreateEmailConfirmationsRequest _$CreateEmailConfirmationsRequestFromJson(
 
 Map<String, dynamic> _$CreateEmailConfirmationsRequestToJson(
   CreateEmailConfirmationsRequest instance,
-) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('email', instance.email);
-  return val;
-}
+) => <String, dynamic>{'email': ?instance.email};

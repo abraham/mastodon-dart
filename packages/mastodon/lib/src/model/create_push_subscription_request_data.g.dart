@@ -27,16 +27,7 @@ CreatePushSubscriptionRequestData _$CreatePushSubscriptionRequestDataFromJson(
 
 Map<String, dynamic> _$CreatePushSubscriptionRequestDataToJson(
   CreatePushSubscriptionRequestData instance,
-) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('alerts', instance.alerts?.toJson());
-  writeNotNull('policy', instance.policy);
-  return val;
-}
+) => <String, dynamic>{
+  'alerts': ?instance.alerts?.toJson(),
+  'policy': ?instance.policy,
+};

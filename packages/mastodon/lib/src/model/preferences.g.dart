@@ -52,30 +52,18 @@ Preferences _$PreferencesFromJson(Map<String, dynamic> json) => $checkedCreate(
   },
 );
 
-Map<String, dynamic> _$PreferencesToJson(Preferences instance) {
-  final val = <String, dynamic>{
-    'posting:default:sensitive': instance.postingColonDefaultColonSensitive,
-    'posting:default:visibility':
-        _$StatusVisibilityEnumEnumMap[instance
-            .postingColonDefaultColonVisibility]!,
-    'reading:expand:media':
-        _$PreferencesReadingExpandMediaEnumEnumMap[instance
-            .readingColonExpandColonMedia]!,
-    'reading:expand:spoilers': instance.readingColonExpandColonSpoilers,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull(
-    'posting:default:language',
-    instance.postingColonDefaultColonLanguage,
-  );
-  return val;
-}
+Map<String, dynamic> _$PreferencesToJson(Preferences instance) =>
+    <String, dynamic>{
+      'posting:default:sensitive': instance.postingColonDefaultColonSensitive,
+      'posting:default:visibility':
+          _$StatusVisibilityEnumEnumMap[instance
+              .postingColonDefaultColonVisibility]!,
+      'reading:expand:media':
+          _$PreferencesReadingExpandMediaEnumEnumMap[instance
+              .readingColonExpandColonMedia]!,
+      'reading:expand:spoilers': instance.readingColonExpandColonSpoilers,
+      'posting:default:language': ?instance.postingColonDefaultColonLanguage,
+    };
 
 const _$StatusVisibilityEnumEnumMap = {
   StatusVisibilityEnum.public: 'public',

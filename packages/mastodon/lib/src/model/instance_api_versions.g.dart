@@ -14,15 +14,6 @@ InstanceApiVersions _$InstanceApiVersionsFromJson(Map<String, dynamic> json) =>
       return val;
     });
 
-Map<String, dynamic> _$InstanceApiVersionsToJson(InstanceApiVersions instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('mastodon', instance.mastodon);
-  return val;
-}
+Map<String, dynamic> _$InstanceApiVersionsToJson(
+  InstanceApiVersions instance,
+) => <String, dynamic>{'mastodon': ?instance.mastodon};

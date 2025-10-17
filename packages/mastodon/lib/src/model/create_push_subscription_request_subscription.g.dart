@@ -29,17 +29,8 @@ _$CreatePushSubscriptionRequestSubscriptionFromJson(
 
 Map<String, dynamic> _$CreatePushSubscriptionRequestSubscriptionToJson(
   CreatePushSubscriptionRequestSubscription instance,
-) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('keys', instance.keys?.toJson());
-  writeNotNull('endpoint', instance.endpoint);
-  writeNotNull('standard', instance.standard);
-  return val;
-}
+) => <String, dynamic>{
+  'keys': ?instance.keys?.toJson(),
+  'endpoint': ?instance.endpoint,
+  'standard': ?instance.standard,
+};

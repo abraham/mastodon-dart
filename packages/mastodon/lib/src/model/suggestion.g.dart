@@ -24,21 +24,13 @@ Suggestion _$SuggestionFromJson(Map<String, dynamic> json) =>
       return val;
     });
 
-Map<String, dynamic> _$SuggestionToJson(Suggestion instance) {
-  final val = <String, dynamic>{'account': instance.account.toJson()};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull(
-    'sources',
-    instance.sources?.map((e) => _$SuggestionSourcesEnumEnumMap[e]!).toList(),
-  );
-  return val;
-}
+Map<String, dynamic> _$SuggestionToJson(Suggestion instance) =>
+    <String, dynamic>{
+      'account': instance.account.toJson(),
+      'sources': ?instance.sources
+          ?.map((e) => _$SuggestionSourcesEnumEnumMap[e]!)
+          .toList(),
+    };
 
 const _$SuggestionSourcesEnumEnumMap = {
   SuggestionSourcesEnum.featured: 'featured',

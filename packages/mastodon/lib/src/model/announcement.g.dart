@@ -90,28 +90,19 @@ Announcement _$AnnouncementFromJson(
   },
 );
 
-Map<String, dynamic> _$AnnouncementToJson(Announcement instance) {
-  final val = <String, dynamic>{
-    'all_day': instance.allDay,
-    'content': instance.content,
-    'emojis': instance.emojis.map((e) => e.toJson()).toList(),
-    'id': instance.id,
-    'mentions': instance.mentions.map((e) => e.toJson()).toList(),
-    'published_at': instance.publishedAt.toIso8601String(),
-    'reactions': instance.reactions.map((e) => e.toJson()).toList(),
-    'statuses': instance.statuses.map((e) => e.toJson()).toList(),
-    'tags': instance.tags.map((e) => e.toJson()).toList(),
-    'updated_at': instance.updatedAt.toIso8601String(),
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('ends_at', instance.endsAt?.toIso8601String());
-  writeNotNull('read', instance.read);
-  writeNotNull('starts_at', instance.startsAt?.toIso8601String());
-  return val;
-}
+Map<String, dynamic> _$AnnouncementToJson(Announcement instance) =>
+    <String, dynamic>{
+      'all_day': instance.allDay,
+      'content': instance.content,
+      'emojis': instance.emojis.map((e) => e.toJson()).toList(),
+      'id': instance.id,
+      'mentions': instance.mentions.map((e) => e.toJson()).toList(),
+      'published_at': instance.publishedAt.toIso8601String(),
+      'reactions': instance.reactions.map((e) => e.toJson()).toList(),
+      'statuses': instance.statuses.map((e) => e.toJson()).toList(),
+      'tags': instance.tags.map((e) => e.toJson()).toList(),
+      'updated_at': instance.updatedAt.toIso8601String(),
+      'ends_at': ?instance.endsAt?.toIso8601String(),
+      'read': ?instance.read,
+      'starts_at': ?instance.startsAt?.toIso8601String(),
+    };

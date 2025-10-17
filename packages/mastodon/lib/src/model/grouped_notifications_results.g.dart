@@ -51,24 +51,13 @@ GroupedNotificationsResults _$GroupedNotificationsResultsFromJson(
 
 Map<String, dynamic> _$GroupedNotificationsResultsToJson(
   GroupedNotificationsResults instance,
-) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('accounts', instance.accounts?.map((e) => e.toJson()).toList());
-  writeNotNull(
-    'notification_groups',
-    instance.notificationGroups?.map((e) => e.toJson()).toList(),
-  );
-  writeNotNull(
-    'partial_accounts',
-    instance.partialAccounts?.map((e) => e.toJson()).toList(),
-  );
-  writeNotNull('statuses', instance.statuses?.map((e) => e.toJson()).toList());
-  return val;
-}
+) => <String, dynamic>{
+  'accounts': ?instance.accounts?.map((e) => e.toJson()).toList(),
+  'notification_groups': ?instance.notificationGroups
+      ?.map((e) => e.toJson())
+      .toList(),
+  'partial_accounts': ?instance.partialAccounts
+      ?.map((e) => e.toJson())
+      .toList(),
+  'statuses': ?instance.statuses?.map((e) => e.toJson()).toList(),
+};

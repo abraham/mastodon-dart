@@ -37,21 +37,12 @@ PartialAccountWithAvatar _$PartialAccountWithAvatarFromJson(
 
 Map<String, dynamic> _$PartialAccountWithAvatarToJson(
   PartialAccountWithAvatar instance,
-) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('acct', instance.acct);
-  writeNotNull('avatar', instance.avatar?.toString());
-  writeNotNull('avatar_static', instance.avatarStatic?.toString());
-  writeNotNull('bot', instance.bot);
-  writeNotNull('id', instance.id);
-  writeNotNull('locked', instance.locked);
-  writeNotNull('url', instance.url?.toString());
-  return val;
-}
+) => <String, dynamic>{
+  'acct': ?instance.acct,
+  'avatar': ?instance.avatar?.toString(),
+  'avatar_static': ?instance.avatarStatic?.toString(),
+  'bot': ?instance.bot,
+  'id': ?instance.id,
+  'locked': ?instance.locked,
+  'url': ?instance.url?.toString(),
+};

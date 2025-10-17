@@ -64,27 +64,18 @@ Notification _$NotificationFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$NotificationToJson(Notification instance) {
-  final val = <String, dynamic>{
-    'account': instance.account.toJson(),
-    'created_at': instance.createdAt.toIso8601String(),
-    'id': instance.id,
-    'type': _$NotificationTypeEnumEnumMap[instance.type]!,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('event', instance.event?.toJson());
-  writeNotNull('group_key', instance.groupKey);
-  writeNotNull('moderation_warning', instance.moderationWarning?.toJson());
-  writeNotNull('report', instance.report?.toJson());
-  writeNotNull('status', instance.status?.toJson());
-  return val;
-}
+Map<String, dynamic> _$NotificationToJson(Notification instance) =>
+    <String, dynamic>{
+      'account': instance.account.toJson(),
+      'created_at': instance.createdAt.toIso8601String(),
+      'id': instance.id,
+      'type': _$NotificationTypeEnumEnumMap[instance.type]!,
+      'event': ?instance.event?.toJson(),
+      'group_key': ?instance.groupKey,
+      'moderation_warning': ?instance.moderationWarning?.toJson(),
+      'report': ?instance.report?.toJson(),
+      'status': ?instance.status?.toJson(),
+    };
 
 const _$NotificationTypeEnumEnumMap = {
   NotificationTypeEnum.mention: 'mention',

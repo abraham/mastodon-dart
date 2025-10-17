@@ -22,18 +22,9 @@ _$GetInstanceActivity200ResponseInnerFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$GetInstanceActivity200ResponseInnerToJson(
   GetInstanceActivity200ResponseInner instance,
-) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('week', instance.week);
-  writeNotNull('statuses', instance.statuses);
-  writeNotNull('logins', instance.logins);
-  writeNotNull('registrations', instance.registrations);
-  return val;
-}
+) => <String, dynamic>{
+  'week': ?instance.week,
+  'statuses': ?instance.statuses,
+  'logins': ?instance.logins,
+  'registrations': ?instance.registrations,
+};

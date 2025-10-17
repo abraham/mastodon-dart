@@ -50,20 +50,12 @@ NotificationPolicy _$NotificationPolicyFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$NotificationPolicyToJson(NotificationPolicy instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('for_limited_accounts', instance.forLimitedAccounts);
-  writeNotNull('for_new_accounts', instance.forNewAccounts);
-  writeNotNull('for_not_followers', instance.forNotFollowers);
-  writeNotNull('for_not_following', instance.forNotFollowing);
-  writeNotNull('for_private_mentions', instance.forPrivateMentions);
-  writeNotNull('summary', instance.summary?.toJson());
-  return val;
-}
+Map<String, dynamic> _$NotificationPolicyToJson(NotificationPolicy instance) =>
+    <String, dynamic>{
+      'for_limited_accounts': ?instance.forLimitedAccounts,
+      'for_new_accounts': ?instance.forNewAccounts,
+      'for_not_followers': ?instance.forNotFollowers,
+      'for_not_following': ?instance.forNotFollowing,
+      'for_private_mentions': ?instance.forPrivateMentions,
+      'summary': ?instance.summary?.toJson(),
+    };

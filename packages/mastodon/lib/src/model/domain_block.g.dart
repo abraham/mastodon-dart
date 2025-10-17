@@ -21,22 +21,13 @@ DomainBlock _$DomainBlockFromJson(Map<String, dynamic> json) =>
       return val;
     });
 
-Map<String, dynamic> _$DomainBlockToJson(DomainBlock instance) {
-  final val = <String, dynamic>{
-    'digest': instance.digest,
-    'domain': instance.domain,
-    'severity': _$DomainBlockSeverityEnumEnumMap[instance.severity]!,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('comment', instance.comment);
-  return val;
-}
+Map<String, dynamic> _$DomainBlockToJson(DomainBlock instance) =>
+    <String, dynamic>{
+      'digest': instance.digest,
+      'domain': instance.domain,
+      'severity': _$DomainBlockSeverityEnumEnumMap[instance.severity]!,
+      'comment': ?instance.comment,
+    };
 
 const _$DomainBlockSeverityEnumEnumMap = {
   DomainBlockSeverityEnum.silence: 'silence',

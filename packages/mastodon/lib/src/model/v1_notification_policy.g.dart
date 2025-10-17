@@ -48,19 +48,10 @@ V1NotificationPolicy _$V1NotificationPolicyFromJson(
 
 Map<String, dynamic> _$V1NotificationPolicyToJson(
   V1NotificationPolicy instance,
-) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('filter_new_accounts', instance.filterNewAccounts);
-  writeNotNull('filter_not_followers', instance.filterNotFollowers);
-  writeNotNull('filter_not_following', instance.filterNotFollowing);
-  writeNotNull('filter_private_mentions', instance.filterPrivateMentions);
-  writeNotNull('summary', instance.summary?.toJson());
-  return val;
-}
+) => <String, dynamic>{
+  'filter_new_accounts': ?instance.filterNewAccounts,
+  'filter_not_followers': ?instance.filterNotFollowers,
+  'filter_not_following': ?instance.filterNotFollowing,
+  'filter_private_mentions': ?instance.filterPrivateMentions,
+  'summary': ?instance.summary?.toJson(),
+};

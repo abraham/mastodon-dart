@@ -27,16 +27,9 @@ CreateMarkerRequest _$CreateMarkerRequestFromJson(Map<String, dynamic> json) =>
       return val;
     });
 
-Map<String, dynamic> _$CreateMarkerRequestToJson(CreateMarkerRequest instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('home', instance.home?.toJson());
-  writeNotNull('notifications', instance.notifications?.toJson());
-  return val;
-}
+Map<String, dynamic> _$CreateMarkerRequestToJson(
+  CreateMarkerRequest instance,
+) => <String, dynamic>{
+  'home': ?instance.home?.toJson(),
+  'notifications': ?instance.notifications?.toJson(),
+};

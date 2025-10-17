@@ -17,15 +17,4 @@ TranslationPollOption _$TranslationPollOptionFromJson(
 
 Map<String, dynamic> _$TranslationPollOptionToJson(
   TranslationPollOption instance,
-) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('title', instance.title);
-  return val;
-}
+) => <String, dynamic>{'title': ?instance.title};

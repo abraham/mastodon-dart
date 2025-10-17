@@ -19,15 +19,8 @@ StatusApplication _$StatusApplicationFromJson(Map<String, dynamic> json) =>
       return val;
     });
 
-Map<String, dynamic> _$StatusApplicationToJson(StatusApplication instance) {
-  final val = <String, dynamic>{'name': instance.name};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('website', instance.website?.toString());
-  return val;
-}
+Map<String, dynamic> _$StatusApplicationToJson(StatusApplication instance) =>
+    <String, dynamic>{
+      'name': instance.name,
+      'website': ?instance.website?.toString(),
+    };

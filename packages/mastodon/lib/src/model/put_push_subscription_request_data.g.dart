@@ -24,15 +24,4 @@ PutPushSubscriptionRequestData _$PutPushSubscriptionRequestDataFromJson(
 
 Map<String, dynamic> _$PutPushSubscriptionRequestDataToJson(
   PutPushSubscriptionRequestData instance,
-) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('alerts', instance.alerts?.toJson());
-  return val;
-}
+) => <String, dynamic>{'alerts': ?instance.alerts?.toJson()};

@@ -66,30 +66,20 @@ ScheduledStatusParams _$ScheduledStatusParamsFromJson(
 
 Map<String, dynamic> _$ScheduledStatusParamsToJson(
   ScheduledStatusParams instance,
-) {
-  final val = <String, dynamic>{
-    'application_id': instance.applicationId,
-    'text': instance.text,
-    'visibility': _$StatusVisibilityEnumEnumMap[instance.visibility]!,
-    'with_rate_limit': instance.withRateLimit,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('idempotency', instance.idempotency);
-  writeNotNull('in_reply_to_id', instance.inReplyToId);
-  writeNotNull('language', instance.language);
-  writeNotNull('media_ids', instance.mediaIds);
-  writeNotNull('poll', instance.poll?.toJson());
-  writeNotNull('scheduled_at', instance.scheduledAt);
-  writeNotNull('sensitive', instance.sensitive);
-  writeNotNull('spoiler_text', instance.spoilerText);
-  return val;
-}
+) => <String, dynamic>{
+  'application_id': instance.applicationId,
+  'text': instance.text,
+  'visibility': _$StatusVisibilityEnumEnumMap[instance.visibility]!,
+  'with_rate_limit': instance.withRateLimit,
+  'idempotency': ?instance.idempotency,
+  'in_reply_to_id': ?instance.inReplyToId,
+  'language': ?instance.language,
+  'media_ids': ?instance.mediaIds,
+  'poll': ?instance.poll?.toJson(),
+  'scheduled_at': ?instance.scheduledAt,
+  'sensitive': ?instance.sensitive,
+  'spoiler_text': ?instance.spoilerText,
+};
 
 const _$StatusVisibilityEnumEnumMap = {
   StatusVisibilityEnum.public: 'public',

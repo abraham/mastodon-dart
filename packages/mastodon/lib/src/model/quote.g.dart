@@ -21,19 +21,10 @@ Quote _$QuoteFromJson(Map<String, dynamic> json) =>
       return val;
     }, fieldKeyMap: const {'quotedStatus': 'quoted_status'});
 
-Map<String, dynamic> _$QuoteToJson(Quote instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('quoted_status', instance.quotedStatus?.toJson());
-  writeNotNull('state', _$QuoteStateEnumEnumMap[instance.state]);
-  return val;
-}
+Map<String, dynamic> _$QuoteToJson(Quote instance) => <String, dynamic>{
+  'quoted_status': ?instance.quotedStatus?.toJson(),
+  'state': ?_$QuoteStateEnumEnumMap[instance.state],
+};
 
 const _$QuoteStateEnumEnumMap = {
   QuoteStateEnum.pending: 'pending',

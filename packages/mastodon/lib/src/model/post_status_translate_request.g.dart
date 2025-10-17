@@ -17,15 +17,4 @@ PostStatusTranslateRequest _$PostStatusTranslateRequestFromJson(
 
 Map<String, dynamic> _$PostStatusTranslateRequestToJson(
   PostStatusTranslateRequest instance,
-) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('lang', instance.lang);
-  return val;
-}
+) => <String, dynamic>{'lang': ?instance.lang};

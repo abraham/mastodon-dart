@@ -55,28 +55,19 @@ AdminDomainBlock _$AdminDomainBlockFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$AdminDomainBlockToJson(AdminDomainBlock instance) {
-  final val = <String, dynamic>{
-    'created_at': instance.createdAt.toIso8601String(),
-    'domain': instance.domain,
-    'id': instance.id,
-    'obfuscate': instance.obfuscate,
-    'reject_media': instance.rejectMedia,
-    'reject_reports': instance.rejectReports,
-    'severity': _$AdminDomainBlockSeverityEnumEnumMap[instance.severity]!,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('digest', instance.digest);
-  writeNotNull('private_comment', instance.privateComment);
-  writeNotNull('public_comment', instance.publicComment);
-  return val;
-}
+Map<String, dynamic> _$AdminDomainBlockToJson(AdminDomainBlock instance) =>
+    <String, dynamic>{
+      'created_at': instance.createdAt.toIso8601String(),
+      'domain': instance.domain,
+      'id': instance.id,
+      'obfuscate': instance.obfuscate,
+      'reject_media': instance.rejectMedia,
+      'reject_reports': instance.rejectReports,
+      'severity': _$AdminDomainBlockSeverityEnumEnumMap[instance.severity]!,
+      'digest': ?instance.digest,
+      'private_comment': ?instance.privateComment,
+      'public_comment': ?instance.publicComment,
+    };
 
 const _$AdminDomainBlockSeverityEnumEnumMap = {
   AdminDomainBlockSeverityEnum.silence: 'silence',

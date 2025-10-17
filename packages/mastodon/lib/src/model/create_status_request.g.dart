@@ -55,32 +55,21 @@ CreateStatusRequest _$CreateStatusRequestFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$CreateStatusRequestToJson(CreateStatusRequest instance) {
-  final val = <String, dynamic>{
-    'status': instance.status,
-    'media_ids': instance.mediaIds,
-    'poll': instance.poll.toJson(),
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('in_reply_to_id', instance.inReplyToId);
-  writeNotNull('language', instance.language);
-  writeNotNull('quote_approval_policy', instance.quoteApprovalPolicy);
-  writeNotNull('quoted_status_id', instance.quotedStatusId);
-  writeNotNull('scheduled_at', instance.scheduledAt?.toIso8601String());
-  writeNotNull('sensitive', instance.sensitive);
-  writeNotNull('spoiler_text', instance.spoilerText);
-  writeNotNull(
-    'visibility',
-    _$StatusVisibilityEnumEnumMap[instance.visibility],
-  );
-  return val;
-}
+Map<String, dynamic> _$CreateStatusRequestToJson(
+  CreateStatusRequest instance,
+) => <String, dynamic>{
+  'status': instance.status,
+  'media_ids': instance.mediaIds,
+  'poll': instance.poll.toJson(),
+  'in_reply_to_id': ?instance.inReplyToId,
+  'language': ?instance.language,
+  'quote_approval_policy': ?instance.quoteApprovalPolicy,
+  'quoted_status_id': ?instance.quotedStatusId,
+  'scheduled_at': ?instance.scheduledAt?.toIso8601String(),
+  'sensitive': ?instance.sensitive,
+  'spoiler_text': ?instance.spoilerText,
+  'visibility': ?_$StatusVisibilityEnumEnumMap[instance.visibility],
+};
 
 const _$StatusVisibilityEnumEnumMap = {
   StatusVisibilityEnum.public: 'public',

@@ -19,15 +19,7 @@ Error _$ErrorFromJson(Map<String, dynamic> json) =>
       return val;
     }, fieldKeyMap: const {'errorDescription': 'error_description'});
 
-Map<String, dynamic> _$ErrorToJson(Error instance) {
-  final val = <String, dynamic>{'error': instance.error};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('error_description', instance.errorDescription);
-  return val;
-}
+Map<String, dynamic> _$ErrorToJson(Error instance) => <String, dynamic>{
+  'error': instance.error,
+  'error_description': ?instance.errorDescription,
+};

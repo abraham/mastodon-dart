@@ -19,15 +19,7 @@ PostFilterKeywordsV2Request _$PostFilterKeywordsV2RequestFromJson(
 
 Map<String, dynamic> _$PostFilterKeywordsV2RequestToJson(
   PostFilterKeywordsV2Request instance,
-) {
-  final val = <String, dynamic>{'keyword': instance.keyword};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('whole_word', instance.wholeWord);
-  return val;
-}
+) => <String, dynamic>{
+  'keyword': instance.keyword,
+  'whole_word': ?instance.wholeWord,
+};

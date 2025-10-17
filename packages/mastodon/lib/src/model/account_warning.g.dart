@@ -46,24 +46,16 @@ AccountWarning _$AccountWarningFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$AccountWarningToJson(AccountWarning instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('action', _$AccountWarningActionEnumEnumMap[instance.action]);
-  writeNotNull('appeal', instance.appeal?.toJson());
-  writeNotNull('created_at', instance.createdAt?.toIso8601String());
-  writeNotNull('id', instance.id);
-  writeNotNull('status_ids', instance.statusIds);
-  writeNotNull('target_account', instance.targetAccount?.toJson());
-  writeNotNull('text', instance.text);
-  return val;
-}
+Map<String, dynamic> _$AccountWarningToJson(AccountWarning instance) =>
+    <String, dynamic>{
+      'action': ?_$AccountWarningActionEnumEnumMap[instance.action],
+      'appeal': ?instance.appeal?.toJson(),
+      'created_at': ?instance.createdAt?.toIso8601String(),
+      'id': ?instance.id,
+      'status_ids': ?instance.statusIds,
+      'target_account': ?instance.targetAccount?.toJson(),
+      'text': ?instance.text,
+    };
 
 const _$AccountWarningActionEnumEnumMap = {
   AccountWarningActionEnum.none: 'none',

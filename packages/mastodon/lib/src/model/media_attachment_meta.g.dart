@@ -19,15 +19,6 @@ MediaAttachmentMeta _$MediaAttachmentMetaFromJson(Map<String, dynamic> json) =>
       return val;
     });
 
-Map<String, dynamic> _$MediaAttachmentMetaToJson(MediaAttachmentMeta instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('focus', instance.focus?.toJson());
-  return val;
-}
+Map<String, dynamic> _$MediaAttachmentMetaToJson(
+  MediaAttachmentMeta instance,
+) => <String, dynamic>{'focus': ?instance.focus?.toJson()};

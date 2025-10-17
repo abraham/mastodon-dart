@@ -45,28 +45,17 @@ CreateFilterV2Request _$CreateFilterV2RequestFromJson(
 
 Map<String, dynamic> _$CreateFilterV2RequestToJson(
   CreateFilterV2Request instance,
-) {
-  final val = <String, dynamic>{
-    'context': instance.context
-        .map((e) => _$FilterContextEnumEnumMap[e]!)
-        .toList(),
-    'title': instance.title,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('expires_in', instance.expiresIn);
-  writeNotNull('filter_action', instance.filterAction);
-  writeNotNull(
-    'keywords_attributes',
-    instance.keywordsAttributes?.map((e) => e.toJson()).toList(),
-  );
-  return val;
-}
+) => <String, dynamic>{
+  'context': instance.context
+      .map((e) => _$FilterContextEnumEnumMap[e]!)
+      .toList(),
+  'title': instance.title,
+  'expires_in': ?instance.expiresIn,
+  'filter_action': ?instance.filterAction,
+  'keywords_attributes': ?instance.keywordsAttributes
+      ?.map((e) => e.toJson())
+      .toList(),
+};
 
 const _$FilterContextEnumEnumMap = {
   FilterContextEnum.home: 'home',

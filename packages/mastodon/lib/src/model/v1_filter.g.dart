@@ -41,26 +41,16 @@ V1Filter _$V1FilterFromJson(Map<String, dynamic> json) => $checkedCreate(
   fieldKeyMap: const {'wholeWord': 'whole_word', 'expiresAt': 'expires_at'},
 );
 
-Map<String, dynamic> _$V1FilterToJson(V1Filter instance) {
-  final val = <String, dynamic>{
-    'context': instance.context
-        .map((e) => _$FilterContextEnumEnumMap[e]!)
-        .toList(),
-    'id': instance.id,
-    'irreversible': instance.irreversible,
-    'phrase': instance.phrase,
-    'whole_word': instance.wholeWord,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('expires_at', instance.expiresAt?.toIso8601String());
-  return val;
-}
+Map<String, dynamic> _$V1FilterToJson(V1Filter instance) => <String, dynamic>{
+  'context': instance.context
+      .map((e) => _$FilterContextEnumEnumMap[e]!)
+      .toList(),
+  'id': instance.id,
+  'irreversible': instance.irreversible,
+  'phrase': instance.phrase,
+  'whole_word': instance.wholeWord,
+  'expires_at': ?instance.expiresAt?.toIso8601String(),
+};
 
 const _$FilterContextEnumEnumMap = {
   FilterContextEnum.home: 'home',

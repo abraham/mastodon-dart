@@ -25,15 +25,4 @@ _$UpdateStatusInteractionPolicyRequestFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$UpdateStatusInteractionPolicyRequestToJson(
   UpdateStatusInteractionPolicyRequest instance,
-) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('quote_approval_policy', instance.quoteApprovalPolicy);
-  return val;
-}
+) => <String, dynamic>{'quote_approval_policy': ?instance.quoteApprovalPolicy};

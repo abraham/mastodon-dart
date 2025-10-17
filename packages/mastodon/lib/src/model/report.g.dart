@@ -64,28 +64,18 @@ Report _$ReportFromJson(Map<String, dynamic> json) => $checkedCreate(
   },
 );
 
-Map<String, dynamic> _$ReportToJson(Report instance) {
-  final val = <String, dynamic>{
-    'action_taken': instance.actionTaken,
-    'category': _$ReportCategoryEnumEnumMap[instance.category]!,
-    'comment': instance.comment,
-    'created_at': instance.createdAt.toIso8601String(),
-    'forwarded': instance.forwarded,
-    'id': instance.id,
-    'target_account': instance.targetAccount.toJson(),
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('action_taken_at', instance.actionTakenAt?.toIso8601String());
-  writeNotNull('rule_ids', instance.ruleIds);
-  writeNotNull('status_ids', instance.statusIds);
-  return val;
-}
+Map<String, dynamic> _$ReportToJson(Report instance) => <String, dynamic>{
+  'action_taken': instance.actionTaken,
+  'category': _$ReportCategoryEnumEnumMap[instance.category]!,
+  'comment': instance.comment,
+  'created_at': instance.createdAt.toIso8601String(),
+  'forwarded': instance.forwarded,
+  'id': instance.id,
+  'target_account': instance.targetAccount.toJson(),
+  'action_taken_at': ?instance.actionTakenAt?.toIso8601String(),
+  'rule_ids': ?instance.ruleIds,
+  'status_ids': ?instance.statusIds,
+};
 
 const _$ReportCategoryEnumEnumMap = {
   ReportCategoryEnum.spam: 'spam',

@@ -81,29 +81,19 @@ Instance _$InstanceFromJson(Map<String, dynamic> json) => $checkedCreate(
   fieldKeyMap: const {'sourceUrl': 'source_url', 'apiVersions': 'api_versions'},
 );
 
-Map<String, dynamic> _$InstanceToJson(Instance instance) {
-  final val = <String, dynamic>{
-    'configuration': instance.configuration.toJson(),
-    'contact': instance.contact.toJson(),
-    'description': instance.description,
-    'domain': instance.domain,
-    'languages': instance.languages,
-    'registrations': instance.registrations.toJson(),
-    'rules': instance.rules.map((e) => e.toJson()).toList(),
-    'source_url': instance.sourceUrl.toString(),
-    'thumbnail': instance.thumbnail.toJson(),
-    'title': instance.title,
-    'usage': instance.usage.toJson(),
-    'version': instance.version,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('api_versions', instance.apiVersions?.toJson());
-  writeNotNull('icon', instance.icon?.map((e) => e.toJson()).toList());
-  return val;
-}
+Map<String, dynamic> _$InstanceToJson(Instance instance) => <String, dynamic>{
+  'configuration': instance.configuration.toJson(),
+  'contact': instance.contact.toJson(),
+  'description': instance.description,
+  'domain': instance.domain,
+  'languages': instance.languages,
+  'registrations': instance.registrations.toJson(),
+  'rules': instance.rules.map((e) => e.toJson()).toList(),
+  'source_url': instance.sourceUrl.toString(),
+  'thumbnail': instance.thumbnail.toJson(),
+  'title': instance.title,
+  'usage': instance.usage.toJson(),
+  'version': instance.version,
+  'api_versions': ?instance.apiVersions?.toJson(),
+  'icon': ?instance.icon?.map((e) => e.toJson()).toList(),
+};

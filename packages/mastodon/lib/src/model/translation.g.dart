@@ -46,24 +46,14 @@ Translation _$TranslationFromJson(Map<String, dynamic> json) => $checkedCreate(
   },
 );
 
-Map<String, dynamic> _$TranslationToJson(Translation instance) {
-  final val = <String, dynamic>{
-    'content': instance.content,
-    'detected_source_language': instance.detectedSourceLanguage,
-    'provider': instance.provider,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull(
-    'media_attachments',
-    instance.mediaAttachments?.map((e) => e.toJson()).toList(),
-  );
-  writeNotNull('poll', instance.poll?.toJson());
-  writeNotNull('spoiler_text', instance.spoilerText);
-  return val;
-}
+Map<String, dynamic> _$TranslationToJson(Translation instance) =>
+    <String, dynamic>{
+      'content': instance.content,
+      'detected_source_language': instance.detectedSourceLanguage,
+      'provider': instance.provider,
+      'media_attachments': ?instance.mediaAttachments
+          ?.map((e) => e.toJson())
+          .toList(),
+      'poll': ?instance.poll?.toJson(),
+      'spoiler_text': ?instance.spoilerText,
+    };

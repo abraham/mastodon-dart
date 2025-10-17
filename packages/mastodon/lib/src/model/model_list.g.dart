@@ -21,22 +21,12 @@ ModelList _$ModelListFromJson(Map<String, dynamic> json) =>
       return val;
     }, fieldKeyMap: const {'repliesPolicy': 'replies_policy'});
 
-Map<String, dynamic> _$ModelListToJson(ModelList instance) {
-  final val = <String, dynamic>{
-    'id': instance.id,
-    'replies_policy': _$ListRepliesPolicyEnumEnumMap[instance.repliesPolicy]!,
-    'title': instance.title,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('exclusive', instance.exclusive);
-  return val;
-}
+Map<String, dynamic> _$ModelListToJson(ModelList instance) => <String, dynamic>{
+  'id': instance.id,
+  'replies_policy': _$ListRepliesPolicyEnumEnumMap[instance.repliesPolicy]!,
+  'title': instance.title,
+  'exclusive': ?instance.exclusive,
+};
 
 const _$ListRepliesPolicyEnumEnumMap = {
   ListRepliesPolicyEnum.followed: 'followed',

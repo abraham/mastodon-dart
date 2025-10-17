@@ -22,15 +22,4 @@ CreateMarkerRequestNotifications _$CreateMarkerRequestNotificationsFromJson(
 
 Map<String, dynamic> _$CreateMarkerRequestNotificationsToJson(
   CreateMarkerRequestNotifications instance,
-) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('last_read_id', instance.lastReadId);
-  return val;
-}
+) => <String, dynamic>{'last_read_id': ?instance.lastReadId};

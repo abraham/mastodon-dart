@@ -29,20 +29,12 @@ StatusQuote _$StatusQuoteFromJson(Map<String, dynamic> json) => $checkedCreate(
   },
 );
 
-Map<String, dynamic> _$StatusQuoteToJson(StatusQuote instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('quoted_status', instance.quotedStatus?.toJson());
-  writeNotNull('state', _$QuoteStateEnumEnumMap[instance.state]);
-  writeNotNull('quoted_status_id', instance.quotedStatusId);
-  return val;
-}
+Map<String, dynamic> _$StatusQuoteToJson(StatusQuote instance) =>
+    <String, dynamic>{
+      'quoted_status': ?instance.quotedStatus?.toJson(),
+      'state': ?_$QuoteStateEnumEnumMap[instance.state],
+      'quoted_status_id': ?instance.quotedStatusId,
+    };
 
 const _$QuoteStateEnumEnumMap = {
   QuoteStateEnum.pending: 'pending',

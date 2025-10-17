@@ -35,21 +35,11 @@ InstanceRegistrations _$InstanceRegistrationsFromJson(
 
 Map<String, dynamic> _$InstanceRegistrationsToJson(
   InstanceRegistrations instance,
-) {
-  final val = <String, dynamic>{
-    'approval_required': instance.approvalRequired,
-    'enabled': instance.enabled,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('message', instance.message);
-  writeNotNull('min_age', instance.minAge);
-  writeNotNull('reason_required', instance.reasonRequired);
-  writeNotNull('url', instance.url?.toString());
-  return val;
-}
+) => <String, dynamic>{
+  'approval_required': instance.approvalRequired,
+  'enabled': instance.enabled,
+  'message': ?instance.message,
+  'min_age': ?instance.minAge,
+  'reason_required': ?instance.reasonRequired,
+  'url': ?instance.url?.toString(),
+};

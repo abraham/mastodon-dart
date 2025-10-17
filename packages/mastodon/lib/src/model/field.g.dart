@@ -20,15 +20,8 @@ Field _$FieldFromJson(Map<String, dynamic> json) =>
       return val;
     }, fieldKeyMap: const {'verifiedAt': 'verified_at'});
 
-Map<String, dynamic> _$FieldToJson(Field instance) {
-  final val = <String, dynamic>{'name': instance.name, 'value': instance.value};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('verified_at', instance.verifiedAt?.toIso8601String());
-  return val;
-}
+Map<String, dynamic> _$FieldToJson(Field instance) => <String, dynamic>{
+  'name': instance.name,
+  'value': instance.value,
+  'verified_at': ?instance.verifiedAt?.toIso8601String(),
+};

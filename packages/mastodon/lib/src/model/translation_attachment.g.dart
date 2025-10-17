@@ -18,16 +18,7 @@ TranslationAttachment _$TranslationAttachmentFromJson(
 
 Map<String, dynamic> _$TranslationAttachmentToJson(
   TranslationAttachment instance,
-) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('description', instance.description);
-  writeNotNull('id', instance.id);
-  return val;
-}
+) => <String, dynamic>{
+  'description': ?instance.description,
+  'id': ?instance.id,
+};

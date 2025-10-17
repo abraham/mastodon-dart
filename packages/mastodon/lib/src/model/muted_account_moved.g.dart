@@ -130,45 +130,36 @@ MutedAccountMoved _$MutedAccountMovedFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$MutedAccountMovedToJson(MutedAccountMoved instance) {
-  final val = <String, dynamic>{
-    'acct': instance.acct,
-    'avatar': instance.avatar.toString(),
-    'avatar_static': instance.avatarStatic.toString(),
-    'bot': instance.bot,
-    'created_at': instance.createdAt.toIso8601String(),
-    'display_name': instance.displayName,
-    'emojis': instance.emojis.map((e) => e.toJson()).toList(),
-    'fields': instance.fields.map((e) => e.toJson()).toList(),
-    'followers_count': instance.followersCount,
-    'following_count': instance.followingCount,
-    'group': instance.group,
-    'header': instance.header.toString(),
-    'header_static': instance.headerStatic.toString(),
-    'id': instance.id,
-    'locked': instance.locked,
-    'note': instance.note,
-    'statuses_count': instance.statusesCount,
-    'username': instance.username,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('discoverable', instance.discoverable);
-  writeNotNull('hide_collections', instance.hideCollections);
-  writeNotNull('indexable', instance.indexable);
-  writeNotNull('last_status_at', instance.lastStatusAt?.toIso8601String());
-  writeNotNull('limited', instance.limited);
-  writeNotNull('memorial', instance.memorial);
-  writeNotNull('moved', instance.moved?.toJson());
-  writeNotNull('noindex', instance.noindex);
-  writeNotNull('roles', instance.roles?.map((e) => e.toJson()).toList());
-  writeNotNull('suspended', instance.suspended);
-  writeNotNull('uri', instance.uri?.toString());
-  writeNotNull('url', instance.url?.toString());
-  return val;
-}
+Map<String, dynamic> _$MutedAccountMovedToJson(MutedAccountMoved instance) =>
+    <String, dynamic>{
+      'acct': instance.acct,
+      'avatar': instance.avatar.toString(),
+      'avatar_static': instance.avatarStatic.toString(),
+      'bot': instance.bot,
+      'created_at': instance.createdAt.toIso8601String(),
+      'display_name': instance.displayName,
+      'emojis': instance.emojis.map((e) => e.toJson()).toList(),
+      'fields': instance.fields.map((e) => e.toJson()).toList(),
+      'followers_count': instance.followersCount,
+      'following_count': instance.followingCount,
+      'group': instance.group,
+      'header': instance.header.toString(),
+      'header_static': instance.headerStatic.toString(),
+      'id': instance.id,
+      'locked': instance.locked,
+      'note': instance.note,
+      'statuses_count': instance.statusesCount,
+      'username': instance.username,
+      'discoverable': ?instance.discoverable,
+      'hide_collections': ?instance.hideCollections,
+      'indexable': ?instance.indexable,
+      'last_status_at': ?instance.lastStatusAt?.toIso8601String(),
+      'limited': ?instance.limited,
+      'memorial': ?instance.memorial,
+      'moved': ?instance.moved?.toJson(),
+      'noindex': ?instance.noindex,
+      'roles': ?instance.roles?.map((e) => e.toJson()).toList(),
+      'suspended': ?instance.suspended,
+      'uri': ?instance.uri?.toString(),
+      'url': ?instance.url?.toString(),
+    };

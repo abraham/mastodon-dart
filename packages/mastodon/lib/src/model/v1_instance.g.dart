@@ -83,31 +83,22 @@ V1Instance _$V1InstanceFromJson(Map<String, dynamic> json) => $checkedCreate(
   },
 );
 
-Map<String, dynamic> _$V1InstanceToJson(V1Instance instance) {
-  final val = <String, dynamic>{
-    'approval_required': instance.approvalRequired,
-    'configuration': instance.configuration.toJson(),
-    'description': instance.description,
-    'email': instance.email,
-    'invites_enabled': instance.invitesEnabled,
-    'languages': instance.languages,
-    'registrations': instance.registrations,
-    'rules': instance.rules.map((e) => e.toJson()).toList(),
-    'short_description': instance.shortDescription,
-    'stats': instance.stats.toJson(),
-    'title': instance.title,
-    'uri': instance.uri,
-    'urls': instance.urls.toJson(),
-    'version': instance.version,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('contact_account', instance.contactAccount?.toJson());
-  writeNotNull('thumbnail', instance.thumbnail?.toString());
-  return val;
-}
+Map<String, dynamic> _$V1InstanceToJson(V1Instance instance) =>
+    <String, dynamic>{
+      'approval_required': instance.approvalRequired,
+      'configuration': instance.configuration.toJson(),
+      'description': instance.description,
+      'email': instance.email,
+      'invites_enabled': instance.invitesEnabled,
+      'languages': instance.languages,
+      'registrations': instance.registrations,
+      'rules': instance.rules.map((e) => e.toJson()).toList(),
+      'short_description': instance.shortDescription,
+      'stats': instance.stats.toJson(),
+      'title': instance.title,
+      'uri': instance.uri,
+      'urls': instance.urls.toJson(),
+      'version': instance.version,
+      'contact_account': ?instance.contactAccount?.toJson(),
+      'thumbnail': ?instance.thumbnail?.toString(),
+    };

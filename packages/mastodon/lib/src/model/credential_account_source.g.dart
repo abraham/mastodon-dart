@@ -67,32 +67,20 @@ CredentialAccountSource _$CredentialAccountSourceFromJson(
 
 Map<String, dynamic> _$CredentialAccountSourceToJson(
   CredentialAccountSource instance,
-) {
-  final val = <String, dynamic>{
-    'fields': instance.fields.map((e) => e.toJson()).toList(),
-    'follow_requests_count': instance.followRequestsCount,
-    'note': instance.note,
-    'privacy': _$StatusVisibilityEnumEnumMap[instance.privacy]!,
-    'sensitive': instance.sensitive,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('attribution_domains', instance.attributionDomains);
-  writeNotNull('discoverable', instance.discoverable);
-  writeNotNull('hide_collections', instance.hideCollections);
-  writeNotNull('indexable', instance.indexable);
-  writeNotNull('language', instance.language);
-  writeNotNull(
-    'quote_policy',
-    _$CredentialAccountSourceQuotePolicyEnumEnumMap[instance.quotePolicy],
-  );
-  return val;
-}
+) => <String, dynamic>{
+  'fields': instance.fields.map((e) => e.toJson()).toList(),
+  'follow_requests_count': instance.followRequestsCount,
+  'note': instance.note,
+  'privacy': _$StatusVisibilityEnumEnumMap[instance.privacy]!,
+  'sensitive': instance.sensitive,
+  'attribution_domains': ?instance.attributionDomains,
+  'discoverable': ?instance.discoverable,
+  'hide_collections': ?instance.hideCollections,
+  'indexable': ?instance.indexable,
+  'language': ?instance.language,
+  'quote_policy':
+      ?_$CredentialAccountSourceQuotePolicyEnumEnumMap[instance.quotePolicy],
+};
 
 const _$StatusVisibilityEnumEnumMap = {
   StatusVisibilityEnum.public: 'public',

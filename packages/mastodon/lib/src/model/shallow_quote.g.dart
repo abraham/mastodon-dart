@@ -21,19 +21,11 @@ ShallowQuote _$ShallowQuoteFromJson(Map<String, dynamic> json) =>
       return val;
     }, fieldKeyMap: const {'quotedStatusId': 'quoted_status_id'});
 
-Map<String, dynamic> _$ShallowQuoteToJson(ShallowQuote instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('quoted_status_id', instance.quotedStatusId);
-  writeNotNull('state', _$QuoteStateEnumEnumMap[instance.state]);
-  return val;
-}
+Map<String, dynamic> _$ShallowQuoteToJson(ShallowQuote instance) =>
+    <String, dynamic>{
+      'quoted_status_id': ?instance.quotedStatusId,
+      'state': ?_$QuoteStateEnumEnumMap[instance.state],
+    };
 
 const _$QuoteStateEnumEnumMap = {
   QuoteStateEnum.pending: 'pending',

@@ -52,27 +52,17 @@ Filter _$FilterFromJson(Map<String, dynamic> json) => $checkedCreate(
   },
 );
 
-Map<String, dynamic> _$FilterToJson(Filter instance) {
-  final val = <String, dynamic>{
-    'context': instance.context
-        .map((e) => _$FilterContextEnumEnumMap[e]!)
-        .toList(),
-    'filter_action': _$FilterFilterActionEnumEnumMap[instance.filterAction]!,
-    'id': instance.id,
-    'title': instance.title,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('expires_at', instance.expiresAt?.toIso8601String());
-  writeNotNull('keywords', instance.keywords?.map((e) => e.toJson()).toList());
-  writeNotNull('statuses', instance.statuses?.map((e) => e.toJson()).toList());
-  return val;
-}
+Map<String, dynamic> _$FilterToJson(Filter instance) => <String, dynamic>{
+  'context': instance.context
+      .map((e) => _$FilterContextEnumEnumMap[e]!)
+      .toList(),
+  'filter_action': _$FilterFilterActionEnumEnumMap[instance.filterAction]!,
+  'id': instance.id,
+  'title': instance.title,
+  'expires_at': ?instance.expiresAt?.toIso8601String(),
+  'keywords': ?instance.keywords?.map((e) => e.toJson()).toList(),
+  'statuses': ?instance.statuses?.map((e) => e.toJson()).toList(),
+};
 
 const _$FilterContextEnumEnumMap = {
   FilterContextEnum.home: 'home',

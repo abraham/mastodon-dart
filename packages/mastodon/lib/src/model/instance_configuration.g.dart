@@ -69,22 +69,12 @@ InstanceConfiguration _$InstanceConfigurationFromJson(
 
 Map<String, dynamic> _$InstanceConfigurationToJson(
   InstanceConfiguration instance,
-) {
-  final val = <String, dynamic>{
-    'accounts': instance.accounts.toJson(),
-    'media_attachments': instance.mediaAttachments.toJson(),
-    'polls': instance.polls.toJson(),
-    'statuses': instance.statuses.toJson(),
-    'translation': instance.translation.toJson(),
-    'urls': instance.urls.toJson(),
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('limited_federation', instance.limitedFederation);
-  return val;
-}
+) => <String, dynamic>{
+  'accounts': instance.accounts.toJson(),
+  'media_attachments': instance.mediaAttachments.toJson(),
+  'polls': instance.polls.toJson(),
+  'statuses': instance.statuses.toJson(),
+  'translation': instance.translation.toJson(),
+  'urls': instance.urls.toJson(),
+  'limited_federation': ?instance.limitedFederation,
+};

@@ -56,26 +56,17 @@ OEmbedResponse _$OEmbedResponseFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$OEmbedResponseToJson(OEmbedResponse instance) {
-  final val = <String, dynamic>{
-    'author_name': instance.authorName,
-    'author_url': instance.authorUrl.toString(),
-    'cache_age': instance.cacheAge,
-    'html': instance.html,
-    'provider_name': instance.providerName,
-    'provider_url': instance.providerUrl.toString(),
-    'title': instance.title,
-    'type': instance.type,
-    'version': instance.version,
-    'width': instance.width,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('height', instance.height);
-  return val;
-}
+Map<String, dynamic> _$OEmbedResponseToJson(OEmbedResponse instance) =>
+    <String, dynamic>{
+      'author_name': instance.authorName,
+      'author_url': instance.authorUrl.toString(),
+      'cache_age': instance.cacheAge,
+      'html': instance.html,
+      'provider_name': instance.providerName,
+      'provider_url': instance.providerUrl.toString(),
+      'title': instance.title,
+      'type': instance.type,
+      'version': instance.version,
+      'width': instance.width,
+      'height': ?instance.height,
+    };

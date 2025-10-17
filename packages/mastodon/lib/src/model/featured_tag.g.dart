@@ -32,20 +32,11 @@ FeaturedTag _$FeaturedTagFromJson(Map<String, dynamic> json) => $checkedCreate(
   },
 );
 
-Map<String, dynamic> _$FeaturedTagToJson(FeaturedTag instance) {
-  final val = <String, dynamic>{
-    'id': instance.id,
-    'name': instance.name,
-    'statuses_count': instance.statusesCount,
-    'url': instance.url.toString(),
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('last_status_at', instance.lastStatusAt?.toIso8601String());
-  return val;
-}
+Map<String, dynamic> _$FeaturedTagToJson(FeaturedTag instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'statuses_count': instance.statusesCount,
+      'url': instance.url.toString(),
+      'last_status_at': ?instance.lastStatusAt?.toIso8601String(),
+    };

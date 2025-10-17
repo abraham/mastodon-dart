@@ -37,24 +37,15 @@ AdminIpBlock _$AdminIpBlockFromJson(Map<String, dynamic> json) =>
       fieldKeyMap: const {'createdAt': 'created_at', 'expiresAt': 'expires_at'},
     );
 
-Map<String, dynamic> _$AdminIpBlockToJson(AdminIpBlock instance) {
-  final val = <String, dynamic>{
-    'comment': instance.comment,
-    'created_at': instance.createdAt.toIso8601String(),
-    'id': instance.id,
-    'ip': instance.ip,
-    'severity': _$AdminIpBlockSeverityEnumEnumMap[instance.severity]!,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('expires_at', instance.expiresAt?.toIso8601String());
-  return val;
-}
+Map<String, dynamic> _$AdminIpBlockToJson(AdminIpBlock instance) =>
+    <String, dynamic>{
+      'comment': instance.comment,
+      'created_at': instance.createdAt.toIso8601String(),
+      'id': instance.id,
+      'ip': instance.ip,
+      'severity': _$AdminIpBlockSeverityEnumEnumMap[instance.severity]!,
+      'expires_at': ?instance.expiresAt?.toIso8601String(),
+    };
 
 const _$AdminIpBlockSeverityEnumEnumMap = {
   AdminIpBlockSeverityEnum.signUpRequiresApproval: 'sign_up_requires_approval',

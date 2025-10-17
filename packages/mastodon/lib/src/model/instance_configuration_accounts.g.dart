@@ -33,15 +33,7 @@ InstanceConfigurationAccounts _$InstanceConfigurationAccountsFromJson(
 
 Map<String, dynamic> _$InstanceConfigurationAccountsToJson(
   InstanceConfigurationAccounts instance,
-) {
-  final val = <String, dynamic>{'max_featured_tags': instance.maxFeaturedTags};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('max_pinned_statuses', instance.maxPinnedStatuses);
-  return val;
-}
+) => <String, dynamic>{
+  'max_featured_tags': instance.maxFeaturedTags,
+  'max_pinned_statuses': ?instance.maxPinnedStatuses,
+};

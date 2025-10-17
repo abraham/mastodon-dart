@@ -22,17 +22,8 @@ PostAccountFollowRequest _$PostAccountFollowRequestFromJson(
 
 Map<String, dynamic> _$PostAccountFollowRequestToJson(
   PostAccountFollowRequest instance,
-) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('languages', instance.languages);
-  writeNotNull('notify', instance.notify);
-  writeNotNull('reblogs', instance.reblogs);
-  return val;
-}
+) => <String, dynamic>{
+  'languages': ?instance.languages,
+  'notify': ?instance.notify,
+  'reblogs': ?instance.reblogs,
+};

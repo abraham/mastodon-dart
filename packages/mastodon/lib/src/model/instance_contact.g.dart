@@ -19,15 +19,8 @@ InstanceContact _$InstanceContactFromJson(Map<String, dynamic> json) =>
       return val;
     });
 
-Map<String, dynamic> _$InstanceContactToJson(InstanceContact instance) {
-  final val = <String, dynamic>{'email': instance.email};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('account', instance.account?.toJson());
-  return val;
-}
+Map<String, dynamic> _$InstanceContactToJson(InstanceContact instance) =>
+    <String, dynamic>{
+      'email': instance.email,
+      'account': ?instance.account?.toJson(),
+    };

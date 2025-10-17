@@ -67,26 +67,17 @@ StatusEdit _$StatusEditFromJson(Map<String, dynamic> json) => $checkedCreate(
   },
 );
 
-Map<String, dynamic> _$StatusEditToJson(StatusEdit instance) {
-  final val = <String, dynamic>{
-    'account': instance.account.toJson(),
-    'content': instance.content,
-    'created_at': instance.createdAt.toIso8601String(),
-    'emojis': instance.emojis.map((e) => e.toJson()).toList(),
-    'media_attachments': instance.mediaAttachments
-        .map((e) => e.toJson())
-        .toList(),
-    'sensitive': instance.sensitive,
-    'spoiler_text': instance.spoilerText,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('poll', instance.poll?.toJson());
-  writeNotNull('quote', instance.quote?.toJson());
-  return val;
-}
+Map<String, dynamic> _$StatusEditToJson(StatusEdit instance) =>
+    <String, dynamic>{
+      'account': instance.account.toJson(),
+      'content': instance.content,
+      'created_at': instance.createdAt.toIso8601String(),
+      'emojis': instance.emojis.map((e) => e.toJson()).toList(),
+      'media_attachments': instance.mediaAttachments
+          .map((e) => e.toJson())
+          .toList(),
+      'sensitive': instance.sensitive,
+      'spoiler_text': instance.spoilerText,
+      'poll': ?instance.poll?.toJson(),
+      'quote': ?instance.quote?.toJson(),
+    };

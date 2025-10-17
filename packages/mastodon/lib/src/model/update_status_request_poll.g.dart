@@ -28,18 +28,9 @@ UpdateStatusRequestPoll _$UpdateStatusRequestPollFromJson(
 
 Map<String, dynamic> _$UpdateStatusRequestPollToJson(
   UpdateStatusRequestPoll instance,
-) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('options', instance.options);
-  writeNotNull('expires_in', instance.expiresIn);
-  writeNotNull('multiple', instance.multiple);
-  writeNotNull('hide_totals', instance.hideTotals);
-  return val;
-}
+) => <String, dynamic>{
+  'options': ?instance.options,
+  'expires_in': ?instance.expiresIn,
+  'multiple': ?instance.multiple,
+  'hide_totals': ?instance.hideTotals,
+};

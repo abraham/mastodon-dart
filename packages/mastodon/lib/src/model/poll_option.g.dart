@@ -16,15 +16,8 @@ PollOption _$PollOptionFromJson(Map<String, dynamic> json) =>
       return val;
     }, fieldKeyMap: const {'votesCount': 'votes_count'});
 
-Map<String, dynamic> _$PollOptionToJson(PollOption instance) {
-  final val = <String, dynamic>{'title': instance.title};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('votes_count', instance.votesCount);
-  return val;
-}
+Map<String, dynamic> _$PollOptionToJson(PollOption instance) =>
+    <String, dynamic>{
+      'title': instance.title,
+      'votes_count': ?instance.votesCount,
+    };

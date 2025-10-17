@@ -25,21 +25,11 @@ Tag _$TagFromJson(Map<String, dynamic> json) =>
       return val;
     });
 
-Map<String, dynamic> _$TagToJson(Tag instance) {
-  final val = <String, dynamic>{
-    'history': instance.history.map((e) => e.toJson()).toList(),
-    'name': instance.name,
-    'url': instance.url.toString(),
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('featuring', instance.featuring);
-  writeNotNull('following', instance.following);
-  writeNotNull('id', instance.id);
-  return val;
-}
+Map<String, dynamic> _$TagToJson(Tag instance) => <String, dynamic>{
+  'history': instance.history.map((e) => e.toJson()).toList(),
+  'name': instance.name,
+  'url': instance.url.toString(),
+  'featuring': ?instance.featuring,
+  'following': ?instance.following,
+  'id': ?instance.id,
+};

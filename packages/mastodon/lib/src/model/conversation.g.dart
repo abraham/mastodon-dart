@@ -26,19 +26,10 @@ Conversation _$ConversationFromJson(Map<String, dynamic> json) =>
       return val;
     }, fieldKeyMap: const {'lastStatus': 'last_status'});
 
-Map<String, dynamic> _$ConversationToJson(Conversation instance) {
-  final val = <String, dynamic>{
-    'accounts': instance.accounts.map((e) => e.toJson()).toList(),
-    'id': instance.id,
-    'unread': instance.unread,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('last_status', instance.lastStatus?.toJson());
-  return val;
-}
+Map<String, dynamic> _$ConversationToJson(Conversation instance) =>
+    <String, dynamic>{
+      'accounts': instance.accounts.map((e) => e.toJson()).toList(),
+      'id': instance.id,
+      'unread': instance.unread,
+      'last_status': ?instance.lastStatus?.toJson(),
+    };

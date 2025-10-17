@@ -79,33 +79,24 @@ AdminAccount _$AdminAccountFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$AdminAccountToJson(AdminAccount instance) {
-  final val = <String, dynamic>{
-    'account': instance.account.toJson(),
-    'approved': instance.approved,
-    'confirmed': instance.confirmed,
-    'created_at': instance.createdAt.toIso8601String(),
-    'disabled': instance.disabled,
-    'email': instance.email,
-    'id': instance.id,
-    'ips': instance.ips.map((e) => e.toJson()).toList(),
-    'locale': instance.locale,
-    'role': instance.role.toJson(),
-    'silenced': instance.silenced,
-    'suspended': instance.suspended,
-    'username': instance.username,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('created_by_application_id', instance.createdByApplicationId);
-  writeNotNull('domain', instance.domain);
-  writeNotNull('invite_request', instance.inviteRequest);
-  writeNotNull('invited_by_account_id', instance.invitedByAccountId);
-  writeNotNull('ip', instance.ip);
-  return val;
-}
+Map<String, dynamic> _$AdminAccountToJson(AdminAccount instance) =>
+    <String, dynamic>{
+      'account': instance.account.toJson(),
+      'approved': instance.approved,
+      'confirmed': instance.confirmed,
+      'created_at': instance.createdAt.toIso8601String(),
+      'disabled': instance.disabled,
+      'email': instance.email,
+      'id': instance.id,
+      'ips': instance.ips.map((e) => e.toJson()).toList(),
+      'locale': instance.locale,
+      'role': instance.role.toJson(),
+      'silenced': instance.silenced,
+      'suspended': instance.suspended,
+      'username': instance.username,
+      'created_by_application_id': ?instance.createdByApplicationId,
+      'domain': ?instance.domain,
+      'invite_request': ?instance.inviteRequest,
+      'invited_by_account_id': ?instance.invitedByAccountId,
+      'ip': ?instance.ip,
+    };

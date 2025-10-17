@@ -18,16 +18,7 @@ PostAccountMuteRequest _$PostAccountMuteRequestFromJson(
 
 Map<String, dynamic> _$PostAccountMuteRequestToJson(
   PostAccountMuteRequest instance,
-) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('duration', instance.duration);
-  writeNotNull('notifications', instance.notifications);
-  return val;
-}
+) => <String, dynamic>{
+  'duration': ?instance.duration,
+  'notifications': ?instance.notifications,
+};

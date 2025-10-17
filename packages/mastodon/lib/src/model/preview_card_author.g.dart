@@ -22,17 +22,9 @@ PreviewCardAuthor _$PreviewCardAuthorFromJson(Map<String, dynamic> json) =>
       return val;
     });
 
-Map<String, dynamic> _$PreviewCardAuthorToJson(PreviewCardAuthor instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('account', instance.account?.toJson());
-  writeNotNull('name', instance.name);
-  writeNotNull('url', instance.url?.toString());
-  return val;
-}
+Map<String, dynamic> _$PreviewCardAuthorToJson(PreviewCardAuthor instance) =>
+    <String, dynamic>{
+      'account': ?instance.account?.toJson(),
+      'name': ?instance.name,
+      'url': ?instance.url?.toString(),
+    };

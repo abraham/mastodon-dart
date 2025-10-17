@@ -46,27 +46,15 @@ RelationshipSeveranceEvent _$RelationshipSeveranceEventFromJson(
 
 Map<String, dynamic> _$RelationshipSeveranceEventToJson(
   RelationshipSeveranceEvent instance,
-) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('created_at', instance.createdAt?.toIso8601String());
-  writeNotNull('followers_count', instance.followersCount);
-  writeNotNull('following_count', instance.followingCount);
-  writeNotNull('id', instance.id);
-  writeNotNull('purged', instance.purged);
-  writeNotNull('target_name', instance.targetName);
-  writeNotNull(
-    'type',
-    _$RelationshipSeveranceEventTypeEnumEnumMap[instance.type],
-  );
-  return val;
-}
+) => <String, dynamic>{
+  'created_at': ?instance.createdAt?.toIso8601String(),
+  'followers_count': ?instance.followersCount,
+  'following_count': ?instance.followingCount,
+  'id': ?instance.id,
+  'purged': ?instance.purged,
+  'target_name': ?instance.targetName,
+  'type': ?_$RelationshipSeveranceEventTypeEnumEnumMap[instance.type],
+};
 
 const _$RelationshipSeveranceEventTypeEnumEnumMap = {
   RelationshipSeveranceEventTypeEnum.domainBlock: 'domain_block',

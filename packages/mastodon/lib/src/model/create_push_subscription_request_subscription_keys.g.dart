@@ -21,16 +21,4 @@ _$CreatePushSubscriptionRequestSubscriptionKeysFromJson(
 
 Map<String, dynamic> _$CreatePushSubscriptionRequestSubscriptionKeysToJson(
   CreatePushSubscriptionRequestSubscriptionKeys instance,
-) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('p256dh', instance.p256dh);
-  writeNotNull('auth', instance.auth);
-  return val;
-}
+) => <String, dynamic>{'p256dh': ?instance.p256dh, 'auth': ?instance.auth};

@@ -35,21 +35,12 @@ AdminMeasure _$AdminMeasureFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$AdminMeasureToJson(AdminMeasure instance) {
-  final val = <String, dynamic>{
-    'data': instance.data.map((e) => e.toJson()).toList(),
-    'key': instance.key,
-    'total': instance.total,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('human_value', instance.humanValue);
-  writeNotNull('previous_total', instance.previousTotal);
-  writeNotNull('unit', instance.unit);
-  return val;
-}
+Map<String, dynamic> _$AdminMeasureToJson(AdminMeasure instance) =>
+    <String, dynamic>{
+      'data': instance.data.map((e) => e.toJson()).toList(),
+      'key': instance.key,
+      'total': instance.total,
+      'human_value': ?instance.humanValue,
+      'previous_total': ?instance.previousTotal,
+      'unit': ?instance.unit,
+    };

@@ -31,19 +31,10 @@ CreateAppRequest _$CreateAppRequestFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$CreateAppRequestToJson(CreateAppRequest instance) {
-  final val = <String, dynamic>{
-    'client_name': instance.clientName,
-    'redirect_uris': instance.redirectUris.map((e) => e.toString()).toList(),
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('scopes', instance.scopes);
-  writeNotNull('website', instance.website);
-  return val;
-}
+Map<String, dynamic> _$CreateAppRequestToJson(CreateAppRequest instance) =>
+    <String, dynamic>{
+      'client_name': instance.clientName,
+      'redirect_uris': instance.redirectUris.map((e) => e.toString()).toList(),
+      'scopes': ?instance.scopes,
+      'website': ?instance.website,
+    };

@@ -47,26 +47,17 @@ MediaAttachment _$MediaAttachmentFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$MediaAttachmentToJson(MediaAttachment instance) {
-  final val = <String, dynamic>{
-    'id': instance.id,
-    'type': _$MediaAttachmentTypeEnumEnumMap[instance.type]!,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('blurhash', instance.blurhash);
-  writeNotNull('description', instance.description);
-  writeNotNull('meta', instance.meta?.toJson());
-  writeNotNull('preview_url', instance.previewUrl?.toString());
-  writeNotNull('remote_url', instance.remoteUrl?.toString());
-  writeNotNull('url', instance.url?.toString());
-  return val;
-}
+Map<String, dynamic> _$MediaAttachmentToJson(MediaAttachment instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'type': _$MediaAttachmentTypeEnumEnumMap[instance.type]!,
+      'blurhash': ?instance.blurhash,
+      'description': ?instance.description,
+      'meta': ?instance.meta?.toJson(),
+      'preview_url': ?instance.previewUrl?.toString(),
+      'remote_url': ?instance.remoteUrl?.toString(),
+      'url': ?instance.url?.toString(),
+    };
 
 const _$MediaAttachmentTypeEnumEnumMap = {
   MediaAttachmentTypeEnum.unknown: 'unknown',

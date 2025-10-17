@@ -42,18 +42,10 @@ InstanceConfigurationUrls _$InstanceConfigurationUrlsFromJson(
 
 Map<String, dynamic> _$InstanceConfigurationUrlsToJson(
   InstanceConfigurationUrls instance,
-) {
-  final val = <String, dynamic>{'streaming': instance.streaming.toString()};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('about', instance.about?.toString());
-  writeNotNull('privacy_policy', instance.privacyPolicy?.toString());
-  writeNotNull('status', instance.status?.toString());
-  writeNotNull('terms_of_service', instance.termsOfService?.toString());
-  return val;
-}
+) => <String, dynamic>{
+  'streaming': instance.streaming.toString(),
+  'about': ?instance.about?.toString(),
+  'privacy_policy': ?instance.privacyPolicy?.toString(),
+  'status': ?instance.status?.toString(),
+  'terms_of_service': ?instance.termsOfService?.toString(),
+};

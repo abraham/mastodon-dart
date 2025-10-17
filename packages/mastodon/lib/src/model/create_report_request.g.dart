@@ -40,22 +40,16 @@ CreateReportRequest _$CreateReportRequestFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$CreateReportRequestToJson(CreateReportRequest instance) {
-  final val = <String, dynamic>{'account_id': instance.accountId};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('category', _$ReportCategoryEnumEnumMap[instance.category]);
-  writeNotNull('comment', instance.comment);
-  writeNotNull('forward', instance.forward);
-  writeNotNull('rule_ids', instance.ruleIds);
-  writeNotNull('status_ids', instance.statusIds);
-  return val;
-}
+Map<String, dynamic> _$CreateReportRequestToJson(
+  CreateReportRequest instance,
+) => <String, dynamic>{
+  'account_id': instance.accountId,
+  'category': ?_$ReportCategoryEnumEnumMap[instance.category],
+  'comment': ?instance.comment,
+  'forward': ?instance.forward,
+  'rule_ids': ?instance.ruleIds,
+  'status_ids': ?instance.statusIds,
+};
 
 const _$ReportCategoryEnumEnumMap = {
   ReportCategoryEnum.spam: 'spam',

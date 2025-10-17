@@ -32,25 +32,17 @@ UpdateFilterRequest _$UpdateFilterRequestFromJson(Map<String, dynamic> json) =>
       fieldKeyMap: const {'expiresIn': 'expires_in', 'wholeWord': 'whole_word'},
     );
 
-Map<String, dynamic> _$UpdateFilterRequestToJson(UpdateFilterRequest instance) {
-  final val = <String, dynamic>{
-    'context': instance.context
-        .map((e) => _$FilterContextEnumEnumMap[e]!)
-        .toList(),
-    'phrase': instance.phrase,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('expires_in', instance.expiresIn);
-  writeNotNull('irreversible', instance.irreversible);
-  writeNotNull('whole_word', instance.wholeWord);
-  return val;
-}
+Map<String, dynamic> _$UpdateFilterRequestToJson(
+  UpdateFilterRequest instance,
+) => <String, dynamic>{
+  'context': instance.context
+      .map((e) => _$FilterContextEnumEnumMap[e]!)
+      .toList(),
+  'phrase': instance.phrase,
+  'expires_in': ?instance.expiresIn,
+  'irreversible': ?instance.irreversible,
+  'whole_word': ?instance.wholeWord,
+};
 
 const _$FilterContextEnumEnumMap = {
   FilterContextEnum.home: 'home',

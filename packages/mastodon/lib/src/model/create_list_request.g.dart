@@ -22,22 +22,12 @@ CreateListRequest _$CreateListRequestFromJson(Map<String, dynamic> json) =>
       return val;
     }, fieldKeyMap: const {'repliesPolicy': 'replies_policy'});
 
-Map<String, dynamic> _$CreateListRequestToJson(CreateListRequest instance) {
-  final val = <String, dynamic>{'title': instance.title};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('exclusive', instance.exclusive);
-  writeNotNull(
-    'replies_policy',
-    _$ListRepliesPolicyEnumEnumMap[instance.repliesPolicy],
-  );
-  return val;
-}
+Map<String, dynamic> _$CreateListRequestToJson(CreateListRequest instance) =>
+    <String, dynamic>{
+      'title': instance.title,
+      'exclusive': ?instance.exclusive,
+      'replies_policy': ?_$ListRepliesPolicyEnumEnumMap[instance.repliesPolicy],
+    };
 
 const _$ListRepliesPolicyEnumEnumMap = {
   ListRepliesPolicyEnum.followed: 'followed',

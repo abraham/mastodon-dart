@@ -46,29 +46,19 @@ PollStatus _$PollStatusFromJson(Map<String, dynamic> json) => $checkedCreate(
   },
 );
 
-Map<String, dynamic> _$PollStatusToJson(PollStatus instance) {
-  final val = <String, dynamic>{'poll': instance.poll.toJson()};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('in_reply_to_id', instance.inReplyToId);
-  writeNotNull('language', instance.language);
-  writeNotNull('quote_approval_policy', instance.quoteApprovalPolicy);
-  writeNotNull('quoted_status_id', instance.quotedStatusId);
-  writeNotNull('scheduled_at', instance.scheduledAt?.toIso8601String());
-  writeNotNull('sensitive', instance.sensitive);
-  writeNotNull('spoiler_text', instance.spoilerText);
-  writeNotNull(
-    'visibility',
-    _$StatusVisibilityEnumEnumMap[instance.visibility],
-  );
-  writeNotNull('status', instance.status);
-  return val;
-}
+Map<String, dynamic> _$PollStatusToJson(PollStatus instance) =>
+    <String, dynamic>{
+      'poll': instance.poll.toJson(),
+      'in_reply_to_id': ?instance.inReplyToId,
+      'language': ?instance.language,
+      'quote_approval_policy': ?instance.quoteApprovalPolicy,
+      'quoted_status_id': ?instance.quotedStatusId,
+      'scheduled_at': ?instance.scheduledAt?.toIso8601String(),
+      'sensitive': ?instance.sensitive,
+      'spoiler_text': ?instance.spoilerText,
+      'visibility': ?_$StatusVisibilityEnumEnumMap[instance.visibility],
+      'status': ?instance.status,
+    };
 
 const _$StatusVisibilityEnumEnumMap = {
   StatusVisibilityEnum.public: 'public',

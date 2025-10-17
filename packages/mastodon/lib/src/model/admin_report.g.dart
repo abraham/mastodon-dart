@@ -91,35 +91,23 @@ AdminReport _$AdminReportFromJson(Map<String, dynamic> json) => $checkedCreate(
   },
 );
 
-Map<String, dynamic> _$AdminReportToJson(AdminReport instance) {
-  final val = <String, dynamic>{
-    'account': instance.account.toJson(),
-    'action_taken': instance.actionTaken,
-    'category': _$ReportCategoryEnumEnumMap[instance.category]!,
-    'comment': instance.comment,
-    'created_at': instance.createdAt.toIso8601String(),
-    'forwarded': instance.forwarded,
-    'id': instance.id,
-    'rules': instance.rules.map((e) => e.toJson()).toList(),
-    'statuses': instance.statuses.map((e) => e.toJson()).toList(),
-    'target_account': instance.targetAccount.toJson(),
-    'updated_at': instance.updatedAt.toIso8601String(),
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('action_taken_at', instance.actionTakenAt?.toIso8601String());
-  writeNotNull(
-    'action_taken_by_account',
-    instance.actionTakenByAccount?.toJson(),
-  );
-  writeNotNull('assigned_account', instance.assignedAccount?.toJson());
-  return val;
-}
+Map<String, dynamic> _$AdminReportToJson(AdminReport instance) =>
+    <String, dynamic>{
+      'account': instance.account.toJson(),
+      'action_taken': instance.actionTaken,
+      'category': _$ReportCategoryEnumEnumMap[instance.category]!,
+      'comment': instance.comment,
+      'created_at': instance.createdAt.toIso8601String(),
+      'forwarded': instance.forwarded,
+      'id': instance.id,
+      'rules': instance.rules.map((e) => e.toJson()).toList(),
+      'statuses': instance.statuses.map((e) => e.toJson()).toList(),
+      'target_account': instance.targetAccount.toJson(),
+      'updated_at': instance.updatedAt.toIso8601String(),
+      'action_taken_at': ?instance.actionTakenAt?.toIso8601String(),
+      'action_taken_by_account': ?instance.actionTakenByAccount?.toJson(),
+      'assigned_account': ?instance.assignedAccount?.toJson(),
+    };
 
 const _$ReportCategoryEnumEnumMap = {
   ReportCategoryEnum.spam: 'spam',

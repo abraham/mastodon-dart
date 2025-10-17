@@ -32,19 +32,7 @@ NotificationPolicySummary _$NotificationPolicySummaryFromJson(
 
 Map<String, dynamic> _$NotificationPolicySummaryToJson(
   NotificationPolicySummary instance,
-) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('pending_requests_count', instance.pendingRequestsCount);
-  writeNotNull(
-    'pending_notifications_count',
-    instance.pendingNotificationsCount,
-  );
-  return val;
-}
+) => <String, dynamic>{
+  'pending_requests_count': ?instance.pendingRequestsCount,
+  'pending_notifications_count': ?instance.pendingNotificationsCount,
+};

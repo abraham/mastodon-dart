@@ -34,20 +34,11 @@ CustomEmoji _$CustomEmojiFromJson(Map<String, dynamic> json) => $checkedCreate(
   },
 );
 
-Map<String, dynamic> _$CustomEmojiToJson(CustomEmoji instance) {
-  final val = <String, dynamic>{
-    'shortcode': instance.shortcode,
-    'static_url': instance.staticUrl.toString(),
-    'url': instance.url.toString(),
-    'visible_in_picker': instance.visibleInPicker,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('category', instance.category);
-  return val;
-}
+Map<String, dynamic> _$CustomEmojiToJson(CustomEmoji instance) =>
+    <String, dynamic>{
+      'shortcode': instance.shortcode,
+      'static_url': instance.staticUrl.toString(),
+      'url': instance.url.toString(),
+      'visible_in_picker': instance.visibleInPicker,
+      'category': ?instance.category,
+    };

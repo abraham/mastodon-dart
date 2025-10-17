@@ -23,16 +23,7 @@ PutPushSubscriptionRequest _$PutPushSubscriptionRequestFromJson(
 
 Map<String, dynamic> _$PutPushSubscriptionRequestToJson(
   PutPushSubscriptionRequest instance,
-) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('data', instance.data?.toJson());
-  writeNotNull('policy', instance.policy);
-  return val;
-}
+) => <String, dynamic>{
+  'data': ?instance.data?.toJson(),
+  'policy': ?instance.policy,
+};

@@ -42,26 +42,17 @@ _$CreatePushSubscriptionRequestDataAlertsFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$CreatePushSubscriptionRequestDataAlertsToJson(
   CreatePushSubscriptionRequestDataAlerts instance,
-) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('mention', instance.mention);
-  writeNotNull('quote', instance.quote);
-  writeNotNull('status', instance.status);
-  writeNotNull('reblog', instance.reblog);
-  writeNotNull('follow', instance.follow);
-  writeNotNull('follow_request', instance.followRequest);
-  writeNotNull('favourite', instance.favourite);
-  writeNotNull('poll', instance.poll);
-  writeNotNull('update', instance.edit);
-  writeNotNull('quoted_update', instance.quotedUpdate);
-  writeNotNull('admin.sign_up', instance.adminPeriodSignUp);
-  writeNotNull('admin.report', instance.adminPeriodReport);
-  return val;
-}
+) => <String, dynamic>{
+  'mention': ?instance.mention,
+  'quote': ?instance.quote,
+  'status': ?instance.status,
+  'reblog': ?instance.reblog,
+  'follow': ?instance.follow,
+  'follow_request': ?instance.followRequest,
+  'favourite': ?instance.favourite,
+  'poll': ?instance.poll,
+  'update': ?instance.edit,
+  'quoted_update': ?instance.quotedUpdate,
+  'admin.sign_up': ?instance.adminPeriodSignUp,
+  'admin.report': ?instance.adminPeriodReport,
+};

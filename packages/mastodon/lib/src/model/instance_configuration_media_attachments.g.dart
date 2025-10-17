@@ -68,22 +68,12 @@ _$InstanceConfigurationMediaAttachmentsFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$InstanceConfigurationMediaAttachmentsToJson(
   InstanceConfigurationMediaAttachments instance,
-) {
-  final val = <String, dynamic>{
-    'image_matrix_limit': instance.imageMatrixLimit,
-    'image_size_limit': instance.imageSizeLimit,
-    'supported_mime_types': instance.supportedMimeTypes,
-    'video_frame_rate_limit': instance.videoFrameRateLimit,
-    'video_matrix_limit': instance.videoMatrixLimit,
-    'video_size_limit': instance.videoSizeLimit,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('description_limit', instance.descriptionLimit);
-  return val;
-}
+) => <String, dynamic>{
+  'image_matrix_limit': instance.imageMatrixLimit,
+  'image_size_limit': instance.imageSizeLimit,
+  'supported_mime_types': instance.supportedMimeTypes,
+  'video_frame_rate_limit': instance.videoFrameRateLimit,
+  'video_matrix_limit': instance.videoMatrixLimit,
+  'video_size_limit': instance.videoSizeLimit,
+  'description_limit': ?instance.descriptionLimit,
+};

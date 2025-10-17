@@ -57,34 +57,18 @@ CredentialApplication _$CredentialApplicationFromJson(
 
 Map<String, dynamic> _$CredentialApplicationToJson(
   CredentialApplication instance,
-) {
-  final val = <String, dynamic>{
-    'client_id': instance.clientId,
-    'client_secret': instance.clientSecret,
-    'id': instance.id,
-    'name': instance.name,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('client_secret_expires_at', instance.clientSecretExpiresAt);
-  writeNotNull('redirect_uri', instance.redirectUri);
-  writeNotNull(
-    'redirect_uris',
-    instance.redirectUris?.map((e) => e.toString()).toList(),
-  );
-  writeNotNull(
-    'scopes',
-    instance.scopes?.map((e) => _$OAuthScopeEnumMap[e]!).toList(),
-  );
-  writeNotNull('vapid_key', instance.vapidKey);
-  writeNotNull('website', instance.website?.toString());
-  return val;
-}
+) => <String, dynamic>{
+  'client_id': instance.clientId,
+  'client_secret': instance.clientSecret,
+  'id': instance.id,
+  'name': instance.name,
+  'client_secret_expires_at': ?instance.clientSecretExpiresAt,
+  'redirect_uri': ?instance.redirectUri,
+  'redirect_uris': ?instance.redirectUris?.map((e) => e.toString()).toList(),
+  'scopes': ?instance.scopes?.map((e) => _$OAuthScopeEnumMap[e]!).toList(),
+  'vapid_key': ?instance.vapidKey,
+  'website': ?instance.website?.toString(),
+};
 
 const _$OAuthScopeEnumMap = {
   OAuthScope.profile: 'profile',

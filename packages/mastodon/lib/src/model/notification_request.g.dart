@@ -46,20 +46,13 @@ NotificationRequest _$NotificationRequestFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$NotificationRequestToJson(NotificationRequest instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('account', instance.account?.toJson());
-  writeNotNull('created_at', instance.createdAt?.toIso8601String());
-  writeNotNull('id', instance.id);
-  writeNotNull('last_status', instance.lastStatus?.toJson());
-  writeNotNull('notifications_count', instance.notificationsCount);
-  writeNotNull('updated_at', instance.updatedAt?.toIso8601String());
-  return val;
-}
+Map<String, dynamic> _$NotificationRequestToJson(
+  NotificationRequest instance,
+) => <String, dynamic>{
+  'account': ?instance.account?.toJson(),
+  'created_at': ?instance.createdAt?.toIso8601String(),
+  'id': ?instance.id,
+  'last_status': ?instance.lastStatus?.toJson(),
+  'notifications_count': ?instance.notificationsCount,
+  'updated_at': ?instance.updatedAt?.toIso8601String(),
+};

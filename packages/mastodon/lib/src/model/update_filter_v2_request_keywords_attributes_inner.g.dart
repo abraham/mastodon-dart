@@ -26,18 +26,9 @@ _$UpdateFilterV2RequestKeywordsAttributesInnerFromJson(
 
 Map<String, dynamic> _$UpdateFilterV2RequestKeywordsAttributesInnerToJson(
   UpdateFilterV2RequestKeywordsAttributesInner instance,
-) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('keyword', instance.keyword);
-  writeNotNull('whole_word', instance.wholeWord);
-  writeNotNull('id', instance.id);
-  writeNotNull('_destroy', instance.destroy);
-  return val;
-}
+) => <String, dynamic>{
+  'keyword': ?instance.keyword,
+  'whole_word': ?instance.wholeWord,
+  'id': ?instance.id,
+  '_destroy': ?instance.destroy,
+};

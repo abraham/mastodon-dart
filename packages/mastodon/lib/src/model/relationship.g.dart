@@ -65,30 +65,21 @@ Relationship _$RelationshipFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$RelationshipToJson(Relationship instance) {
-  final val = <String, dynamic>{
-    'blocked_by': instance.blockedBy,
-    'blocking': instance.blocking,
-    'domain_blocking': instance.domainBlocking,
-    'endorsed': instance.endorsed,
-    'followed_by': instance.followedBy,
-    'following': instance.following,
-    'id': instance.id,
-    'muting': instance.muting,
-    'muting_notifications': instance.mutingNotifications,
-    'note': instance.note,
-    'notifying': instance.notifying,
-    'requested': instance.requested,
-    'requested_by': instance.requestedBy,
-    'showing_reblogs': instance.showingReblogs,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('languages', instance.languages);
-  return val;
-}
+Map<String, dynamic> _$RelationshipToJson(Relationship instance) =>
+    <String, dynamic>{
+      'blocked_by': instance.blockedBy,
+      'blocking': instance.blocking,
+      'domain_blocking': instance.domainBlocking,
+      'endorsed': instance.endorsed,
+      'followed_by': instance.followedBy,
+      'following': instance.following,
+      'id': instance.id,
+      'muting': instance.muting,
+      'muting_notifications': instance.mutingNotifications,
+      'note': instance.note,
+      'notifying': instance.notifying,
+      'requested': instance.requested,
+      'requested_by': instance.requestedBy,
+      'showing_reblogs': instance.showingReblogs,
+      'languages': ?instance.languages,
+    };

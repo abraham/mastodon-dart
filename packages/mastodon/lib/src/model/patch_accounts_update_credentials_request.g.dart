@@ -52,26 +52,17 @@ _$PatchAccountsUpdateCredentialsRequestFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$PatchAccountsUpdateCredentialsRequestToJson(
   PatchAccountsUpdateCredentialsRequest instance,
-) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('attribution_domains', instance.attributionDomains);
-  writeNotNull('avatar', instance.avatar);
-  writeNotNull('bot', instance.bot);
-  writeNotNull('discoverable', instance.discoverable);
-  writeNotNull('display_name', instance.displayName);
-  writeNotNull('fields_attributes', instance.fieldsAttributes);
-  writeNotNull('header', instance.header);
-  writeNotNull('hide_collections', instance.hideCollections);
-  writeNotNull('indexable', instance.indexable);
-  writeNotNull('locked', instance.locked);
-  writeNotNull('note', instance.note);
-  writeNotNull('source', instance.source_?.toJson());
-  return val;
-}
+) => <String, dynamic>{
+  'attribution_domains': ?instance.attributionDomains,
+  'avatar': ?instance.avatar,
+  'bot': ?instance.bot,
+  'discoverable': ?instance.discoverable,
+  'display_name': ?instance.displayName,
+  'fields_attributes': ?instance.fieldsAttributes,
+  'header': ?instance.header,
+  'hide_collections': ?instance.hideCollections,
+  'indexable': ?instance.indexable,
+  'locked': ?instance.locked,
+  'note': ?instance.note,
+  'source': ?instance.source_?.toJson(),
+};

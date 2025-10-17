@@ -39,24 +39,15 @@ _$PutPushSubscriptionRequestDataAlertsFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$PutPushSubscriptionRequestDataAlertsToJson(
   PutPushSubscriptionRequestDataAlerts instance,
-) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('mention', instance.mention);
-  writeNotNull('status', instance.status);
-  writeNotNull('reblog', instance.reblog);
-  writeNotNull('follow', instance.follow);
-  writeNotNull('follow_request', instance.followRequest);
-  writeNotNull('favourite', instance.favourite);
-  writeNotNull('poll', instance.poll);
-  writeNotNull('update', instance.edit);
-  writeNotNull('admin.sign_up', instance.adminPeriodSignUp);
-  writeNotNull('admin.report', instance.adminPeriodReport);
-  return val;
-}
+) => <String, dynamic>{
+  'mention': ?instance.mention,
+  'status': ?instance.status,
+  'reblog': ?instance.reblog,
+  'follow': ?instance.follow,
+  'follow_request': ?instance.followRequest,
+  'favourite': ?instance.favourite,
+  'poll': ?instance.poll,
+  'update': ?instance.edit,
+  'admin.sign_up': ?instance.adminPeriodSignUp,
+  'admin.report': ?instance.adminPeriodReport,
+};

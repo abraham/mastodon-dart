@@ -41,28 +41,17 @@ Application _$ApplicationFromJson(Map<String, dynamic> json) => $checkedCreate(
   },
 );
 
-Map<String, dynamic> _$ApplicationToJson(Application instance) {
-  final val = <String, dynamic>{'id': instance.id, 'name': instance.name};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('redirect_uri', instance.redirectUri);
-  writeNotNull(
-    'redirect_uris',
-    instance.redirectUris?.map((e) => e.toString()).toList(),
-  );
-  writeNotNull(
-    'scopes',
-    instance.scopes?.map((e) => _$OAuthScopeEnumMap[e]!).toList(),
-  );
-  writeNotNull('vapid_key', instance.vapidKey);
-  writeNotNull('website', instance.website?.toString());
-  return val;
-}
+Map<String, dynamic> _$ApplicationToJson(
+  Application instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'name': instance.name,
+  'redirect_uri': ?instance.redirectUri,
+  'redirect_uris': ?instance.redirectUris?.map((e) => e.toString()).toList(),
+  'scopes': ?instance.scopes?.map((e) => _$OAuthScopeEnumMap[e]!).toList(),
+  'vapid_key': ?instance.vapidKey,
+  'website': ?instance.website?.toString(),
+};
 
 const _$OAuthScopeEnumMap = {
   OAuthScope.profile: 'profile',

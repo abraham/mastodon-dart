@@ -29,31 +29,17 @@ QuoteApproval _$QuoteApprovalFromJson(Map<String, dynamic> json) =>
       return val;
     }, fieldKeyMap: const {'currentUser': 'current_user'});
 
-Map<String, dynamic> _$QuoteApprovalToJson(QuoteApproval instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull(
-    'automatic',
-    instance.automatic
-        ?.map((e) => _$QuoteApprovalAutomaticEnumEnumMap[e]!)
-        .toList(),
-  );
-  writeNotNull(
-    'current_user',
-    _$QuoteApprovalCurrentUserEnumEnumMap[instance.currentUser],
-  );
-  writeNotNull(
-    'manual',
-    instance.manual?.map((e) => _$QuoteApprovalManualEnumEnumMap[e]!).toList(),
-  );
-  return val;
-}
+Map<String, dynamic> _$QuoteApprovalToJson(
+  QuoteApproval instance,
+) => <String, dynamic>{
+  'automatic': ?instance.automatic
+      ?.map((e) => _$QuoteApprovalAutomaticEnumEnumMap[e]!)
+      .toList(),
+  'current_user': ?_$QuoteApprovalCurrentUserEnumEnumMap[instance.currentUser],
+  'manual': ?instance.manual
+      ?.map((e) => _$QuoteApprovalManualEnumEnumMap[e]!)
+      .toList(),
+};
 
 const _$QuoteApprovalAutomaticEnumEnumMap = {
   QuoteApprovalAutomaticEnum.public: 'public',

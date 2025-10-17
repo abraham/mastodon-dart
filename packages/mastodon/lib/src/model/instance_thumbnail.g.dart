@@ -22,16 +22,9 @@ InstanceThumbnail _$InstanceThumbnailFromJson(Map<String, dynamic> json) =>
       return val;
     });
 
-Map<String, dynamic> _$InstanceThumbnailToJson(InstanceThumbnail instance) {
-  final val = <String, dynamic>{'url': instance.url.toString()};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('blurhash', instance.blurhash);
-  writeNotNull('versions', instance.versions?.toJson());
-  return val;
-}
+Map<String, dynamic> _$InstanceThumbnailToJson(InstanceThumbnail instance) =>
+    <String, dynamic>{
+      'url': instance.url.toString(),
+      'blurhash': ?instance.blurhash,
+      'versions': ?instance.versions?.toJson(),
+    };

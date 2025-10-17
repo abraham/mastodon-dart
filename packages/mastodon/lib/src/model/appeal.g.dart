@@ -18,19 +18,10 @@ Appeal _$AppealFromJson(Map<String, dynamic> json) =>
       return val;
     });
 
-Map<String, dynamic> _$AppealToJson(Appeal instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('state', _$AppealStateEnumEnumMap[instance.state]);
-  writeNotNull('text', instance.text);
-  return val;
-}
+Map<String, dynamic> _$AppealToJson(Appeal instance) => <String, dynamic>{
+  'state': ?_$AppealStateEnumEnumMap[instance.state],
+  'text': ?instance.text,
+};
 
 const _$AppealStateEnumEnumMap = {
   AppealStateEnum.approved: 'approved',

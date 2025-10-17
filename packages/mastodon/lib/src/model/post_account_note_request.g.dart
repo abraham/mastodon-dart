@@ -17,15 +17,4 @@ PostAccountNoteRequest _$PostAccountNoteRequestFromJson(
 
 Map<String, dynamic> _$PostAccountNoteRequestToJson(
   PostAccountNoteRequest instance,
-) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('comment', instance.comment);
-  return val;
-}
+) => <String, dynamic>{'comment': ?instance.comment};

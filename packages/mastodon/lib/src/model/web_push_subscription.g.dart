@@ -25,20 +25,12 @@ WebPushSubscription _$WebPushSubscriptionFromJson(Map<String, dynamic> json) =>
       return val;
     }, fieldKeyMap: const {'serverKey': 'server_key'});
 
-Map<String, dynamic> _$WebPushSubscriptionToJson(WebPushSubscription instance) {
-  final val = <String, dynamic>{
-    'alerts': instance.alerts.toJson(),
-    'endpoint': instance.endpoint.toString(),
-    'id': instance.id,
-    'server_key': instance.serverKey,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('standard', instance.standard);
-  return val;
-}
+Map<String, dynamic> _$WebPushSubscriptionToJson(
+  WebPushSubscription instance,
+) => <String, dynamic>{
+  'alerts': instance.alerts.toJson(),
+  'endpoint': instance.endpoint.toString(),
+  'id': instance.id,
+  'server_key': instance.serverKey,
+  'standard': ?instance.standard,
+};

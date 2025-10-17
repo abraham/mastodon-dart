@@ -70,33 +70,24 @@ PreviewCard _$PreviewCardFromJson(Map<String, dynamic> json) => $checkedCreate(
   },
 );
 
-Map<String, dynamic> _$PreviewCardToJson(PreviewCard instance) {
-  final val = <String, dynamic>{
-    'description': instance.description,
-    'embed_url': instance.embedUrl.toString(),
-    'height': instance.height,
-    'html': instance.html,
-    'provider_name': instance.providerName,
-    'provider_url': instance.providerUrl.toString(),
-    'title': instance.title,
-    'type': _$TrendsLinkTypeEnumEnumMap[instance.type]!,
-    'url': instance.url.toString(),
-    'width': instance.width,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('author_name', instance.authorName);
-  writeNotNull('author_url', instance.authorUrl?.toString());
-  writeNotNull('authors', instance.authors?.map((e) => e.toJson()).toList());
-  writeNotNull('blurhash', instance.blurhash);
-  writeNotNull('image', instance.image?.toString());
-  return val;
-}
+Map<String, dynamic> _$PreviewCardToJson(PreviewCard instance) =>
+    <String, dynamic>{
+      'description': instance.description,
+      'embed_url': instance.embedUrl.toString(),
+      'height': instance.height,
+      'html': instance.html,
+      'provider_name': instance.providerName,
+      'provider_url': instance.providerUrl.toString(),
+      'title': instance.title,
+      'type': _$TrendsLinkTypeEnumEnumMap[instance.type]!,
+      'url': instance.url.toString(),
+      'width': instance.width,
+      'author_name': ?instance.authorName,
+      'author_url': ?instance.authorUrl?.toString(),
+      'authors': ?instance.authors?.map((e) => e.toJson()).toList(),
+      'blurhash': ?instance.blurhash,
+      'image': ?instance.image?.toString(),
+    };
 
 const _$TrendsLinkTypeEnumEnumMap = {
   TrendsLinkTypeEnum.link: 'link',

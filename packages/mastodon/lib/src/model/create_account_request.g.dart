@@ -36,22 +36,12 @@ CreateAccountRequest _$CreateAccountRequestFromJson(
 
 Map<String, dynamic> _$CreateAccountRequestToJson(
   CreateAccountRequest instance,
-) {
-  final val = <String, dynamic>{
-    'agreement': instance.agreement,
-    'email': instance.email,
-    'locale': instance.locale,
-    'password': instance.password,
-    'username': instance.username,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('date_of_birth', instance.dateOfBirth?.toIso8601String());
-  writeNotNull('reason', instance.reason);
-  return val;
-}
+) => <String, dynamic>{
+  'agreement': instance.agreement,
+  'email': instance.email,
+  'locale': instance.locale,
+  'password': instance.password,
+  'username': instance.username,
+  'date_of_birth': ?instance.dateOfBirth?.toIso8601String(),
+  'reason': ?instance.reason,
+};

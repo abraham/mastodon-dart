@@ -168,56 +168,46 @@ CreateStatus200Response _$CreateStatus200ResponseFromJson(
 
 Map<String, dynamic> _$CreateStatus200ResponseToJson(
   CreateStatus200Response instance,
-) {
-  final val = <String, dynamic>{
-    'account': instance.account.toJson(),
-    'content': instance.content,
-    'created_at': instance.createdAt.toIso8601String(),
-    'emojis': instance.emojis.map((e) => e.toJson()).toList(),
-    'favourites_count': instance.favouritesCount,
-    'id': instance.id,
-    'media_attachments': instance.mediaAttachments
-        .map((e) => e.toJson())
-        .toList(),
-    'mentions': instance.mentions.map((e) => e.toJson()).toList(),
-    'reblogs_count': instance.reblogsCount,
-    'replies_count': instance.repliesCount,
-    'sensitive': instance.sensitive,
-    'spoiler_text': instance.spoilerText,
-    'tags': instance.tags.map((e) => e.toJson()).toList(),
-    'uri': instance.uri,
-    'visibility': _$StatusVisibilityEnumEnumMap[instance.visibility]!,
-    'params': instance.params.toJson(),
-    'scheduled_at': instance.scheduledAt.toIso8601String(),
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('application', instance.application?.toJson());
-  writeNotNull('bookmarked', instance.bookmarked);
-  writeNotNull('card', instance.card?.toJson());
-  writeNotNull('edited_at', instance.editedAt?.toIso8601String());
-  writeNotNull('favourited', instance.favourited);
-  writeNotNull('filtered', instance.filtered?.map((e) => e.toJson()).toList());
-  writeNotNull('in_reply_to_account_id', instance.inReplyToAccountId);
-  writeNotNull('in_reply_to_id', instance.inReplyToId);
-  writeNotNull('language', instance.language);
-  writeNotNull('muted', instance.muted);
-  writeNotNull('pinned', instance.pinned);
-  writeNotNull('poll', instance.poll?.toJson());
-  writeNotNull('quote', instance.quote?.toJson());
-  writeNotNull('quote_approval', instance.quoteApproval?.toJson());
-  writeNotNull('quotes_count', instance.quotesCount);
-  writeNotNull('reblog', instance.reblog?.toJson());
-  writeNotNull('reblogged', instance.reblogged);
-  writeNotNull('text', instance.text);
-  writeNotNull('url', instance.url?.toString());
-  return val;
-}
+) => <String, dynamic>{
+  'account': instance.account.toJson(),
+  'content': instance.content,
+  'created_at': instance.createdAt.toIso8601String(),
+  'emojis': instance.emojis.map((e) => e.toJson()).toList(),
+  'favourites_count': instance.favouritesCount,
+  'id': instance.id,
+  'media_attachments': instance.mediaAttachments
+      .map((e) => e.toJson())
+      .toList(),
+  'mentions': instance.mentions.map((e) => e.toJson()).toList(),
+  'reblogs_count': instance.reblogsCount,
+  'replies_count': instance.repliesCount,
+  'sensitive': instance.sensitive,
+  'spoiler_text': instance.spoilerText,
+  'tags': instance.tags.map((e) => e.toJson()).toList(),
+  'uri': instance.uri,
+  'visibility': _$StatusVisibilityEnumEnumMap[instance.visibility]!,
+  'params': instance.params.toJson(),
+  'scheduled_at': instance.scheduledAt.toIso8601String(),
+  'application': ?instance.application?.toJson(),
+  'bookmarked': ?instance.bookmarked,
+  'card': ?instance.card?.toJson(),
+  'edited_at': ?instance.editedAt?.toIso8601String(),
+  'favourited': ?instance.favourited,
+  'filtered': ?instance.filtered?.map((e) => e.toJson()).toList(),
+  'in_reply_to_account_id': ?instance.inReplyToAccountId,
+  'in_reply_to_id': ?instance.inReplyToId,
+  'language': ?instance.language,
+  'muted': ?instance.muted,
+  'pinned': ?instance.pinned,
+  'poll': ?instance.poll?.toJson(),
+  'quote': ?instance.quote?.toJson(),
+  'quote_approval': ?instance.quoteApproval?.toJson(),
+  'quotes_count': ?instance.quotesCount,
+  'reblog': ?instance.reblog?.toJson(),
+  'reblogged': ?instance.reblogged,
+  'text': ?instance.text,
+  'url': ?instance.url?.toString(),
+};
 
 const _$StatusVisibilityEnumEnumMap = {
   StatusVisibilityEnum.public: 'public',

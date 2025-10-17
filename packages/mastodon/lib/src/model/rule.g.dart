@@ -18,16 +18,9 @@ Rule _$RuleFromJson(Map<String, dynamic> json) =>
       return val;
     });
 
-Map<String, dynamic> _$RuleToJson(Rule instance) {
-  final val = <String, dynamic>{'id': instance.id, 'text': instance.text};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('hint', instance.hint);
-  writeNotNull('translations', instance.translations);
-  return val;
-}
+Map<String, dynamic> _$RuleToJson(Rule instance) => <String, dynamic>{
+  'id': instance.id,
+  'text': instance.text,
+  'hint': ?instance.hint,
+  'translations': ?instance.translations,
+};

@@ -25,17 +25,10 @@ Reaction _$ReactionFromJson(Map<String, dynamic> json) =>
       return val;
     }, fieldKeyMap: const {'staticUrl': 'static_url'});
 
-Map<String, dynamic> _$ReactionToJson(Reaction instance) {
-  final val = <String, dynamic>{'count': instance.count, 'name': instance.name};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('me', instance.me);
-  writeNotNull('static_url', instance.staticUrl?.toString());
-  writeNotNull('url', instance.url?.toString());
-  return val;
-}
+Map<String, dynamic> _$ReactionToJson(Reaction instance) => <String, dynamic>{
+  'count': instance.count,
+  'name': instance.name,
+  'me': ?instance.me,
+  'static_url': ?instance.staticUrl?.toString(),
+  'url': ?instance.url?.toString(),
+};

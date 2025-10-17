@@ -25,15 +25,6 @@ UpdateScheduledStatusRequest _$UpdateScheduledStatusRequestFromJson(
 
 Map<String, dynamic> _$UpdateScheduledStatusRequestToJson(
   UpdateScheduledStatusRequest instance,
-) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('scheduled_at', instance.scheduledAt?.toIso8601String());
-  return val;
-}
+) => <String, dynamic>{
+  'scheduled_at': ?instance.scheduledAt?.toIso8601String(),
+};

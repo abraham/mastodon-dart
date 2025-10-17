@@ -29,21 +29,12 @@ _$PatchAccountsUpdateCredentialsRequestSourceFromJson(
 
 Map<String, dynamic> _$PatchAccountsUpdateCredentialsRequestSourceToJson(
   PatchAccountsUpdateCredentialsRequestSource instance,
-) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('privacy', _$StatusVisibilityEnumEnumMap[instance.privacy]);
-  writeNotNull('sensitive', instance.sensitive);
-  writeNotNull('language', instance.language);
-  writeNotNull('quote_policy', instance.quotePolicy);
-  return val;
-}
+) => <String, dynamic>{
+  'privacy': ?_$StatusVisibilityEnumEnumMap[instance.privacy],
+  'sensitive': ?instance.sensitive,
+  'language': ?instance.language,
+  'quote_policy': ?instance.quotePolicy,
+};
 
 const _$StatusVisibilityEnumEnumMap = {
   StatusVisibilityEnum.public: 'public',

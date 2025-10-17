@@ -59,25 +59,15 @@ Poll _$PollFromJson(Map<String, dynamic> json) => $checkedCreate(
   },
 );
 
-Map<String, dynamic> _$PollToJson(Poll instance) {
-  final val = <String, dynamic>{
-    'emojis': instance.emojis.map((e) => e.toJson()).toList(),
-    'expired': instance.expired,
-    'id': instance.id,
-    'multiple': instance.multiple,
-    'options': instance.options.map((e) => e.toJson()).toList(),
-    'votes_count': instance.votesCount,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('expires_at', instance.expiresAt?.toIso8601String());
-  writeNotNull('own_votes', instance.ownVotes);
-  writeNotNull('voted', instance.voted);
-  writeNotNull('voters_count', instance.votersCount);
-  return val;
-}
+Map<String, dynamic> _$PollToJson(Poll instance) => <String, dynamic>{
+  'emojis': instance.emojis.map((e) => e.toJson()).toList(),
+  'expired': instance.expired,
+  'id': instance.id,
+  'multiple': instance.multiple,
+  'options': instance.options.map((e) => e.toJson()).toList(),
+  'votes_count': instance.votesCount,
+  'expires_at': ?instance.expiresAt?.toIso8601String(),
+  'own_votes': ?instance.ownVotes,
+  'voted': ?instance.voted,
+  'voters_count': ?instance.votersCount,
+};

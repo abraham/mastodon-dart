@@ -24,20 +24,11 @@ AdminDimensionData _$AdminDimensionDataFromJson(Map<String, dynamic> json) =>
       fieldKeyMap: const {'humanKey': 'human_key', 'humanValue': 'human_value'},
     );
 
-Map<String, dynamic> _$AdminDimensionDataToJson(AdminDimensionData instance) {
-  final val = <String, dynamic>{
-    'human_key': instance.humanKey,
-    'key': instance.key,
-    'value': instance.value,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('human_value', instance.humanValue);
-  writeNotNull('unit', instance.unit);
-  return val;
-}
+Map<String, dynamic> _$AdminDimensionDataToJson(AdminDimensionData instance) =>
+    <String, dynamic>{
+      'human_key': instance.humanKey,
+      'key': instance.key,
+      'value': instance.value,
+      'human_value': ?instance.humanValue,
+      'unit': ?instance.unit,
+    };

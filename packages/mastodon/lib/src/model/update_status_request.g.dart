@@ -46,25 +46,16 @@ UpdateStatusRequest _$UpdateStatusRequestFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$UpdateStatusRequestToJson(UpdateStatusRequest instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('language', instance.language);
-  writeNotNull(
-    'media_attributes[]',
-    instance.mediaAttributesLeftSquareBracketRightSquareBracket,
-  );
-  writeNotNull('media_ids', instance.mediaIds);
-  writeNotNull('poll', instance.poll?.toJson());
-  writeNotNull('quote_approval_policy', instance.quoteApprovalPolicy);
-  writeNotNull('sensitive', instance.sensitive);
-  writeNotNull('spoiler_text', instance.spoilerText);
-  writeNotNull('status', instance.status);
-  return val;
-}
+Map<String, dynamic> _$UpdateStatusRequestToJson(
+  UpdateStatusRequest instance,
+) => <String, dynamic>{
+  'language': ?instance.language,
+  'media_attributes[]':
+      ?instance.mediaAttributesLeftSquareBracketRightSquareBracket,
+  'media_ids': ?instance.mediaIds,
+  'poll': ?instance.poll?.toJson(),
+  'quote_approval_policy': ?instance.quoteApprovalPolicy,
+  'sensitive': ?instance.sensitive,
+  'spoiler_text': ?instance.spoilerText,
+  'status': ?instance.status,
+};

@@ -31,18 +31,10 @@ TermsOfService _$TermsOfServiceFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$TermsOfServiceToJson(TermsOfService instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('content', instance.content);
-  writeNotNull('effective', instance.effective);
-  writeNotNull('effective_date', instance.effectiveDate?.toIso8601String());
-  writeNotNull('succeeded_by', instance.succeededBy?.toIso8601String());
-  return val;
-}
+Map<String, dynamic> _$TermsOfServiceToJson(TermsOfService instance) =>
+    <String, dynamic>{
+      'content': ?instance.content,
+      'effective': ?instance.effective,
+      'effective_date': ?instance.effectiveDate?.toIso8601String(),
+      'succeeded_by': ?instance.succeededBy?.toIso8601String(),
+    };
