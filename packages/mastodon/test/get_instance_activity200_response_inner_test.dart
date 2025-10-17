@@ -4,7 +4,7 @@ import 'package:mastodon/mastodon.dart';
 // tests for GetInstanceActivity200ResponseInner
 void main() {
   final GetInstanceActivity200ResponseInner?
-      instance = /* GetInstanceActivity200ResponseInner(...) */ null;
+  instance = /* GetInstanceActivity200ResponseInner(...) */ null;
   // TODO add properties to the entity
 
   group(GetInstanceActivity200ResponseInner, () {

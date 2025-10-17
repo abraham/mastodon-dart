@@ -15,16 +15,10 @@ part 'instance_usage_users.g.dart';
 )
 class InstanceUsageUsers {
   /// Returns a new [InstanceUsageUsers] instance.
-  InstanceUsageUsers({
-    required this.activeMonth,
-  });
+  InstanceUsageUsers({required this.activeMonth});
 
-  /// The number of active users in the past 4 weeks. This is set to zero for servers with `configuration[limited_federation]`.
-  @JsonKey(
-    name: r'active_month',
-    required: true,
-    includeIfNull: false,
-  )
+  /// The number of active users in the past 4 weeks. This is set to zero for server with `configuration[limited_federation]`.
+  @JsonKey(name: r'active_month', required: true, includeIfNull: false)
   final int activeMonth;
 
   @override

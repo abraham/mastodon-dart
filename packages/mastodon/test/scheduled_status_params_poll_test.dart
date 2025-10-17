@@ -4,7 +4,7 @@ import 'package:mastodon/mastodon.dart';
 // tests for ScheduledStatusParamsPoll
 void main() {
   final ScheduledStatusParamsPoll?
-      instance = /* ScheduledStatusParamsPoll(...) */ null;
+  instance = /* ScheduledStatusParamsPoll(...) */ null;
   // TODO add properties to the entity
 
   group(ScheduledStatusParamsPoll, () {

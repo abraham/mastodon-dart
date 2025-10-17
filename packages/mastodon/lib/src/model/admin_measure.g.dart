@@ -11,17 +11,16 @@ AdminMeasure _$AdminMeasureFromJson(Map<String, dynamic> json) =>
       'AdminMeasure',
       json,
       ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['data', 'key', 'total'],
-        );
+        $checkKeys(json, requiredKeys: const ['data', 'key', 'total']);
         final val = AdminMeasure(
           data: $checkedConvert(
-              'data',
-              (v) => (v as List<dynamic>)
-                  .map((e) =>
-                      AdminMeasureData.fromJson(e as Map<String, dynamic>))
-                  .toList()),
+            'data',
+            (v) => (v as List<dynamic>)
+                .map(
+                  (e) => AdminMeasureData.fromJson(e as Map<String, dynamic>),
+                )
+                .toList(),
+          ),
           key: $checkedConvert('key', (v) => v as String),
           total: $checkedConvert('total', (v) => v as String),
           humanValue: $checkedConvert('human_value', (v) => v as String?),
@@ -32,7 +31,7 @@ AdminMeasure _$AdminMeasureFromJson(Map<String, dynamic> json) =>
       },
       fieldKeyMap: const {
         'humanValue': 'human_value',
-        'previousTotal': 'previous_total'
+        'previousTotal': 'previous_total',
       },
     );
 
@@ -41,7 +40,7 @@ Map<String, dynamic> _$AdminMeasureToJson(AdminMeasure instance) =>
       'data': instance.data.map((e) => e.toJson()).toList(),
       'key': instance.key,
       'total': instance.total,
-      if (instance.humanValue case final value?) 'human_value': value,
-      if (instance.previousTotal case final value?) 'previous_total': value,
-      if (instance.unit case final value?) 'unit': value,
+      'human_value': ?instance.humanValue,
+      'previous_total': ?instance.previousTotal,
+      'unit': ?instance.unit,
     };

@@ -11,43 +11,52 @@ MediaAttachment _$MediaAttachmentFromJson(Map<String, dynamic> json) =>
       'MediaAttachment',
       json,
       ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['id', 'meta', 'type', 'url'],
-        );
+        $checkKeys(json, requiredKeys: const ['id', 'type']);
         final val = MediaAttachment(
           id: $checkedConvert('id', (v) => v as String),
-          meta: $checkedConvert('meta',
-              (v) => MediaAttachmentMeta.fromJson(v as Map<String, dynamic>)),
           type: $checkedConvert(
-              'type', (v) => $enumDecode(_$MediaAttachmentTypeEnumEnumMap, v)),
-          url: $checkedConvert('url', (v) => Uri.parse(v as String)),
+            'type',
+            (v) => $enumDecode(_$MediaAttachmentTypeEnumEnumMap, v),
+          ),
           blurhash: $checkedConvert('blurhash', (v) => v as String?),
           description: $checkedConvert('description', (v) => v as String?),
+          meta: $checkedConvert(
+            'meta',
+            (v) => v == null
+                ? null
+                : MediaAttachmentMeta.fromJson(v as Map<String, dynamic>),
+          ),
           previewUrl: $checkedConvert(
-              'preview_url', (v) => v == null ? null : Uri.parse(v as String)),
+            'preview_url',
+            (v) => v == null ? null : Uri.parse(v as String),
+          ),
           remoteUrl: $checkedConvert(
-              'remote_url', (v) => v == null ? null : Uri.parse(v as String)),
+            'remote_url',
+            (v) => v == null ? null : Uri.parse(v as String),
+          ),
+          url: $checkedConvert(
+            'url',
+            (v) => v == null ? null : Uri.parse(v as String),
+          ),
         );
         return val;
       },
       fieldKeyMap: const {
         'previewUrl': 'preview_url',
-        'remoteUrl': 'remote_url'
+        'remoteUrl': 'remote_url',
       },
     );
 
 Map<String, dynamic> _$MediaAttachmentToJson(MediaAttachment instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'meta': instance.meta.toJson(),
       'type': _$MediaAttachmentTypeEnumEnumMap[instance.type]!,
-      'url': instance.url.toString(),
-      if (instance.blurhash case final value?) 'blurhash': value,
-      if (instance.description case final value?) 'description': value,
-      if (instance.previewUrl?.toString() case final value?)
-        'preview_url': value,
-      if (instance.remoteUrl?.toString() case final value?) 'remote_url': value,
+      'blurhash': ?instance.blurhash,
+      'description': ?instance.description,
+      'meta': ?instance.meta?.toJson(),
+      'preview_url': ?instance.previewUrl?.toString(),
+      'remote_url': ?instance.remoteUrl?.toString(),
+      'url': ?instance.url?.toString(),
     };
 
 const _$MediaAttachmentTypeEnumEnumMap = {

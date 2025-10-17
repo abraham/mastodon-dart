@@ -17,23 +17,12 @@ part 'create_marker_request.g.dart';
 )
 class CreateMarkerRequest {
   /// Returns a new [CreateMarkerRequest] instance.
-  CreateMarkerRequest({
-    this.home,
-    this.notifications,
-  });
+  CreateMarkerRequest({this.home, this.notifications});
 
-  @JsonKey(
-    name: r'home',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'home', required: false, includeIfNull: false)
   final CreateMarkerRequestHome? home;
 
-  @JsonKey(
-    name: r'notifications',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'notifications', required: false, includeIfNull: false)
   final CreateMarkerRequestNotifications? notifications;
 
   @override

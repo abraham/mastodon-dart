@@ -4,11 +4,11 @@ import 'package:mastodon/mastodon.dart';
 // tests for PatchAccountsUpdateCredentialsRequest
 void main() {
   final PatchAccountsUpdateCredentialsRequest?
-      instance = /* PatchAccountsUpdateCredentialsRequest(...) */ null;
+  instance = /* PatchAccountsUpdateCredentialsRequest(...) */ null;
   // TODO add properties to the entity
 
   group(PatchAccountsUpdateCredentialsRequest, () {
-    // Domains of websites allowed to credit the account.
+    // Domains of websites allowed to credit the account. Maximum of 10 domains.
     // List<String> attributionDomains
     test('to test the property `attributionDomains`', () async {
       // TODO

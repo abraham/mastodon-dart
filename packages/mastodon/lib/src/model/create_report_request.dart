@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:mastodon/src/model/report_category_enum.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'create_report_request.g.dart';
@@ -17,36 +18,33 @@ class CreateReportRequest {
   /// Returns a new [CreateReportRequest] instance.
   CreateReportRequest({
     required this.accountId,
-    this.category = CreateReportRequestCategoryEnum.other,
+
+    this.category = ReportCategoryEnum.other,
+
     this.comment,
+
     this.forward = false,
+
     this.ruleIds,
+
     this.statusIds,
   });
 
   /// ID of the account to report.
-  @JsonKey(
-    name: r'account_id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'account_id', required: true, includeIfNull: false)
   final String accountId;
 
   /// Specify if the report is due to `spam`, `legal` (illegal content), `violation` of enumerated instance rules, or some `other` reason. Defaults to `other`. Will be set to `violation` if `rule_ids[]` is provided (regardless of any category value you provide).
   @JsonKey(
-    defaultValue: CreateReportRequestCategoryEnum.other,
+    defaultValue: ReportCategoryEnum.other,
     name: r'category',
     required: false,
     includeIfNull: false,
   )
-  final CreateReportRequestCategoryEnum? category;
+  final ReportCategoryEnum? category;
 
   /// The reason for the report. Default maximum of 1000 characters.
-  @JsonKey(
-    name: r'comment',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'comment', required: false, includeIfNull: false)
   final String? comment;
 
   /// If the account is remote, should the report be forwarded to the remote admin? Defaults to false.
@@ -59,19 +57,11 @@ class CreateReportRequest {
   final bool? forward;
 
   /// For `violation` category reports, specify the ID of the exact rules broken. Rules and their IDs are available via [GET /api/v1/instance/rules] and [GET /api/v1/instance]. See [Handling and sorting IDs] for more information.
-  @JsonKey(
-    name: r'rule_ids',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'rule_ids', required: false, includeIfNull: false)
   final List<String>? ruleIds;
 
   /// You can attach statuses to the report to provide additional context.
-  @JsonKey(
-    name: r'status_ids',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'status_ids', required: false, includeIfNull: false)
   final List<String>? statusIds;
 
   @override
@@ -103,30 +93,4 @@ class CreateReportRequest {
   String toString() {
     return toJson().toString();
   }
-}
-
-/// Specify if the report is due to `spam`, `legal` (illegal content), `violation` of enumerated instance rules, or some `other` reason. Defaults to `other`. Will be set to `violation` if `rule_ids[]` is provided (regardless of any category value you provide).
-enum CreateReportRequestCategoryEnum {
-  /// Specify if the report is due to `spam`, `legal` (illegal content), `violation` of enumerated instance rules, or some `other` reason. Defaults to `other`. Will be set to `violation` if `rule_ids[]` is provided (regardless of any category value you provide).
-  @JsonValue(r'spam')
-  spam(r'spam'),
-
-  /// Specify if the report is due to `spam`, `legal` (illegal content), `violation` of enumerated instance rules, or some `other` reason. Defaults to `other`. Will be set to `violation` if `rule_ids[]` is provided (regardless of any category value you provide).
-  @JsonValue(r'legal')
-  legal(r'legal'),
-
-  /// Specify if the report is due to `spam`, `legal` (illegal content), `violation` of enumerated instance rules, or some `other` reason. Defaults to `other`. Will be set to `violation` if `rule_ids[]` is provided (regardless of any category value you provide).
-  @JsonValue(r'violation')
-  violation(r'violation'),
-
-  /// Specify if the report is due to `spam`, `legal` (illegal content), `violation` of enumerated instance rules, or some `other` reason. Defaults to `other`. Will be set to `violation` if `rule_ids[]` is provided (regardless of any category value you provide).
-  @JsonValue(r'other')
-  other(r'other');
-
-  const CreateReportRequestCategoryEnum(this.value);
-
-  final String value;
-
-  @override
-  String toString() => value;
 }

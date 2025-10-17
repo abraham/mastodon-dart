@@ -11,20 +11,20 @@ UpdateFilterRequest _$UpdateFilterRequestFromJson(Map<String, dynamic> json) =>
       'UpdateFilterRequest',
       json,
       ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['context', 'phrase'],
-        );
+        $checkKeys(json, requiredKeys: const ['context', 'phrase']);
         final val = UpdateFilterRequest(
           context: $checkedConvert(
-              'context',
-              (v) => (v as List<dynamic>)
-                  .map((e) => $enumDecode(_$FilterContextEnumMap, e))
-                  .toList()),
+            'context',
+            (v) => (v as List<dynamic>)
+                .map((e) => $enumDecode(_$FilterContextEnumEnumMap, e))
+                .toList(),
+          ),
           phrase: $checkedConvert('phrase', (v) => v as String),
           expiresIn: $checkedConvert('expires_in', (v) => (v as num?)?.toInt()),
-          irreversible:
-              $checkedConvert('irreversible', (v) => v as bool? ?? false),
+          irreversible: $checkedConvert(
+            'irreversible',
+            (v) => v as bool? ?? false,
+          ),
           wholeWord: $checkedConvert('whole_word', (v) => v as bool? ?? false),
         );
         return val;
@@ -33,20 +33,21 @@ UpdateFilterRequest _$UpdateFilterRequestFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$UpdateFilterRequestToJson(
-        UpdateFilterRequest instance) =>
-    <String, dynamic>{
-      'context':
-          instance.context.map((e) => _$FilterContextEnumMap[e]!).toList(),
-      'phrase': instance.phrase,
-      if (instance.expiresIn case final value?) 'expires_in': value,
-      if (instance.irreversible case final value?) 'irreversible': value,
-      if (instance.wholeWord case final value?) 'whole_word': value,
-    };
+  UpdateFilterRequest instance,
+) => <String, dynamic>{
+  'context': instance.context
+      .map((e) => _$FilterContextEnumEnumMap[e]!)
+      .toList(),
+  'phrase': instance.phrase,
+  'expires_in': ?instance.expiresIn,
+  'irreversible': ?instance.irreversible,
+  'whole_word': ?instance.wholeWord,
+};
 
-const _$FilterContextEnumMap = {
-  FilterContext.account: 'account',
-  FilterContext.home: 'home',
-  FilterContext.notifications: 'notifications',
-  FilterContext.public: 'public',
-  FilterContext.thread: 'thread',
+const _$FilterContextEnumEnumMap = {
+  FilterContextEnum.home: 'home',
+  FilterContextEnum.notifications: 'notifications',
+  FilterContextEnum.public: 'public',
+  FilterContextEnum.thread: 'thread',
+  FilterContextEnum.account: 'account',
 };

@@ -17,8 +17,11 @@ class InstanceConfigurationPolls {
   /// Returns a new [InstanceConfigurationPolls] instance.
   InstanceConfigurationPolls({
     required this.maxCharactersPerOption,
+
     required this.maxExpiration,
+
     required this.maxOptions,
+
     required this.minExpiration,
   });
 
@@ -31,27 +34,15 @@ class InstanceConfigurationPolls {
   final int maxCharactersPerOption;
 
   /// The longest allowed poll duration, in seconds.
-  @JsonKey(
-    name: r'max_expiration',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'max_expiration', required: true, includeIfNull: false)
   final int maxExpiration;
 
   /// Each poll is allowed to have up to this many options.
-  @JsonKey(
-    name: r'max_options',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'max_options', required: true, includeIfNull: false)
   final int maxOptions;
 
   /// The shortest allowed poll duration, in seconds.
-  @JsonKey(
-    name: r'min_expiration',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'min_expiration', required: true, includeIfNull: false)
   final int minExpiration;
 
   @override

@@ -11,51 +11,50 @@ AccountWarning _$AccountWarningFromJson(Map<String, dynamic> json) =>
       'AccountWarning',
       json,
       ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const [
-            'action',
-            'created_at',
-            'id',
-            'target_account',
-            'text'
-          ],
-        );
         final val = AccountWarning(
-          action: $checkedConvert('action',
-              (v) => $enumDecode(_$AccountWarningActionEnumEnumMap, v)),
-          createdAt:
-              $checkedConvert('created_at', (v) => DateTime.parse(v as String)),
-          id: $checkedConvert('id', (v) => v as String),
-          targetAccount: $checkedConvert('target_account',
-              (v) => Account.fromJson(v as Map<String, dynamic>)),
-          text: $checkedConvert('text', (v) => v as String),
+          action: $checkedConvert(
+            'action',
+            (v) => $enumDecodeNullable(_$AccountWarningActionEnumEnumMap, v),
+          ),
           appeal: $checkedConvert(
-              'appeal',
-              (v) => v == null
-                  ? null
-                  : Appeal.fromJson(v as Map<String, dynamic>)),
-          statusIds: $checkedConvert('status_ids',
-              (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
+            'appeal',
+            (v) =>
+                v == null ? null : Appeal.fromJson(v as Map<String, dynamic>),
+          ),
+          createdAt: $checkedConvert(
+            'created_at',
+            (v) => v == null ? null : DateTime.parse(v as String),
+          ),
+          id: $checkedConvert('id', (v) => v as String?),
+          statusIds: $checkedConvert(
+            'status_ids',
+            (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+          ),
+          targetAccount: $checkedConvert(
+            'target_account',
+            (v) =>
+                v == null ? null : Account.fromJson(v as Map<String, dynamic>),
+          ),
+          text: $checkedConvert('text', (v) => v as String?),
         );
         return val;
       },
       fieldKeyMap: const {
         'createdAt': 'created_at',
+        'statusIds': 'status_ids',
         'targetAccount': 'target_account',
-        'statusIds': 'status_ids'
       },
     );
 
 Map<String, dynamic> _$AccountWarningToJson(AccountWarning instance) =>
     <String, dynamic>{
-      'action': _$AccountWarningActionEnumEnumMap[instance.action]!,
-      'created_at': instance.createdAt.toIso8601String(),
-      'id': instance.id,
-      'target_account': instance.targetAccount.toJson(),
-      'text': instance.text,
-      if (instance.appeal?.toJson() case final value?) 'appeal': value,
-      if (instance.statusIds case final value?) 'status_ids': value,
+      'action': ?_$AccountWarningActionEnumEnumMap[instance.action],
+      'appeal': ?instance.appeal?.toJson(),
+      'created_at': ?instance.createdAt?.toIso8601String(),
+      'id': ?instance.id,
+      'status_ids': ?instance.statusIds,
+      'target_account': ?instance.targetAccount?.toJson(),
+      'text': ?instance.text,
     };
 
 const _$AccountWarningActionEnumEnumMap = {

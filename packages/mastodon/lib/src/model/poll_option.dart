@@ -15,25 +15,14 @@ part 'poll_option.g.dart';
 )
 class PollOption {
   /// Returns a new [PollOption] instance.
-  PollOption({
-    required this.title,
-    this.votesCount,
-  });
+  PollOption({required this.title, this.votesCount});
 
   /// The text value of the poll option.
-  @JsonKey(
-    name: r'title',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'title', required: true, includeIfNull: false)
   final String title;
 
   /// The total number of received votes for this option.
-  @JsonKey(
-    name: r'votes_count',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'votes_count', required: false, includeIfNull: false)
   final int? votesCount;
 
   @override

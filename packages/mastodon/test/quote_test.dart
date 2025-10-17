@@ -7,14 +7,14 @@ void main() {
   // TODO add properties to the entity
 
   group(Quote, () {
-    // The state of the quote.
-    // StateEnum state
-    test('to test the property `state`', () async {
+    // Status quotedStatus
+    test('to test the property `quotedStatus`', () async {
       // TODO
     });
 
-    // Status quotedStatus
-    test('to test the property `quotedStatus`', () async {
+    // The state of the quote.
+    // QuoteStateEnum state
+    test('to test the property `state`', () async {
       // TODO
     });
   });

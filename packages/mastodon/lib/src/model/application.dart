@@ -19,70 +19,48 @@ class Application {
   /// Returns a new [Application] instance.
   Application({
     required this.id,
+
     required this.name,
-    required this.redirectUri,
-    required this.redirectUris,
-    required this.scopes,
-    required this.vapidKey,
+
+    this.redirectUri,
+
+    this.redirectUris,
+
+    this.scopes,
+
+    this.vapidKey,
+
     this.website,
   });
 
   /// The numeric ID of the application.
-  @JsonKey(
-    name: r'id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
   /// The name of the application.
-  @JsonKey(
-    name: r'name',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'name', required: true, includeIfNull: false)
   final String name;
 
-  /// The registered redirection URI(s) for the application.
+  /// The registered redirection URI(s) for the application stored as a single string. Multiple URIs are separated by whitespace characters. May contain `\\n` characters when multiple redirect URIs are registered.
   @Deprecated('redirectUri has been deprecated')
-  @JsonKey(
-    name: r'redirect_uri',
-    required: true,
-    includeIfNull: false,
-  )
-  final String redirectUri;
+  @JsonKey(name: r'redirect_uri', required: false, includeIfNull: false)
+  final String? redirectUri;
 
   /// The registered redirection URI(s) for the application.
-  @JsonKey(
-    name: r'redirect_uris',
-    required: true,
-    includeIfNull: false,
-  )
-  final List<Uri> redirectUris;
+  @JsonKey(name: r'redirect_uris', required: false, includeIfNull: false)
+  final List<Uri>? redirectUris;
 
   /// Array of OAuth scopes
-  @JsonKey(
-    name: r'scopes',
-    required: true,
-    includeIfNull: false,
-  )
-  final List<OAuthScope> scopes;
+  @JsonKey(name: r'scopes', required: false, includeIfNull: false)
+  final List<OAuthScope>? scopes;
 
   /// Used for Push Streaming API. Returned with [POST /api/v1/apps]({{< relref \"methods/apps#create\" >}}). Equivalent to [WebPushSubscription#server_key]({{< relref \"entities/WebPushSubscription#server_key\" >}}) and [Instance#vapid_public_key]({{< relref \"entities/Instance#vapid_public_key\" >}})
   @Deprecated('vapidKey has been deprecated')
-  @JsonKey(
-    name: r'vapid_key',
-    required: true,
-    includeIfNull: false,
-  )
-  final String vapidKey;
+  @JsonKey(name: r'vapid_key', required: false, includeIfNull: false)
+  final String? vapidKey;
 
   /// The website associated with the application.
-  @JsonKey(
-    name: r'website',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'website', required: false, includeIfNull: false)
   final Uri? website;
 
   @override
@@ -101,10 +79,10 @@ class Application {
   int get hashCode =>
       id.hashCode +
       name.hashCode +
-      redirectUri.hashCode +
-      redirectUris.hashCode +
+      (redirectUri == null ? 0 : redirectUri.hashCode) +
+      (redirectUris == null ? 0 : redirectUris.hashCode) +
       scopes.hashCode +
-      vapidKey.hashCode +
+      (vapidKey == null ? 0 : vapidKey.hashCode) +
       (website == null ? 0 : website.hashCode);
 
   factory Application.fromJson(Map<String, dynamic> json) =>

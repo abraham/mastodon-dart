@@ -18,104 +18,70 @@ class OEmbedResponse {
   /// Returns a new [OEmbedResponse] instance.
   OEmbedResponse({
     required this.authorName,
+
     required this.authorUrl,
+
     required this.cacheAge,
+
     required this.html,
+
     required this.providerName,
+
     required this.providerUrl,
+
     required this.title,
+
     required this.type,
+
     required this.version,
+
     required this.width,
+
     this.height,
   });
 
   /// author_name field
-  @JsonKey(
-    name: r'author_name',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'author_name', required: true, includeIfNull: false)
   final String authorName;
 
   /// author_url field
-  @JsonKey(
-    name: r'author_url',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'author_url', required: true, includeIfNull: false)
   final Uri authorUrl;
 
   /// cache_age field
-  @JsonKey(
-    name: r'cache_age',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'cache_age', required: true, includeIfNull: false)
   final int cacheAge;
 
   /// html field
-  @JsonKey(
-    name: r'html',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'html', required: true, includeIfNull: false)
   final String html;
 
   /// provider_name field
-  @JsonKey(
-    name: r'provider_name',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'provider_name', required: true, includeIfNull: false)
   final String providerName;
 
   /// provider_url field
-  @JsonKey(
-    name: r'provider_url',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'provider_url', required: true, includeIfNull: false)
   final Uri providerUrl;
 
   /// title field
-  @JsonKey(
-    name: r'title',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'title', required: true, includeIfNull: false)
   final String title;
 
   /// type field
-  @JsonKey(
-    name: r'type',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'type', required: true, includeIfNull: false)
   final String type;
 
   /// version field
-  @JsonKey(
-    name: r'version',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'version', required: true, includeIfNull: false)
   final String version;
 
   /// width field
-  @JsonKey(
-    name: r'width',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'width', required: true, includeIfNull: false)
   final int width;
 
   /// height field
-  @JsonKey(
-    name: r'height',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'height', required: false, includeIfNull: false)
   final String? height;
 
   @override

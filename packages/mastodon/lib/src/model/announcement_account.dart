@@ -18,41 +18,28 @@ class AnnouncementAccount {
   /// Returns a new [AnnouncementAccount] instance.
   AnnouncementAccount({
     required this.acct,
+
     required this.id,
+
     required this.url,
+
     required this.username,
   });
 
   /// The webfinger acct: URI of the mentioned user. Equivalent to `username` for local users, or `username@domain` for remote users.
-  @JsonKey(
-    name: r'acct',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'acct', required: true, includeIfNull: false)
   final String acct;
 
   /// The account ID of the mentioned user.
-  @JsonKey(
-    name: r'id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
   /// The location of the mentioned user's profile.
-  @JsonKey(
-    name: r'url',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'url', required: true, includeIfNull: false)
   final Uri url;
 
   /// The username of the mentioned user.
-  @JsonKey(
-    name: r'username',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'username', required: true, includeIfNull: false)
   final String username;
 
   @override

@@ -4,7 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:mastodon/src/model/account.dart';
-import 'package:mastodon/src/model/category_enum.dart';
+import 'package:mastodon/src/model/report_category_enum.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'report.g.dart';
@@ -19,95 +19,64 @@ class Report {
   /// Returns a new [Report] instance.
   Report({
     required this.actionTaken,
+
     required this.category,
+
     required this.comment,
+
     required this.createdAt,
+
     required this.forwarded,
+
     required this.id,
+
     required this.targetAccount,
+
     this.actionTakenAt,
+
     this.ruleIds,
+
     this.statusIds,
   });
 
   /// Whether an action was taken yet.
-  @JsonKey(
-    name: r'action_taken',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'action_taken', required: true, includeIfNull: false)
   final bool actionTaken;
 
   /// The generic reason for the report.
-  @JsonKey(
-    name: r'category',
-    required: true,
-    includeIfNull: false,
-  )
-  final CategoryEnum category;
+  @JsonKey(name: r'category', required: true, includeIfNull: false)
+  final ReportCategoryEnum category;
 
   /// The reason for the report.
-  @JsonKey(
-    name: r'comment',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'comment', required: true, includeIfNull: false)
   final String comment;
 
   /// When the report was created.
-  @JsonKey(
-    name: r'created_at',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'created_at', required: true, includeIfNull: false)
   final DateTime createdAt;
 
   /// Whether the report was forwarded to a remote domain.
-  @JsonKey(
-    name: r'forwarded',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'forwarded', required: true, includeIfNull: false)
   final bool forwarded;
 
   /// The ID of the report in the database.
-  @JsonKey(
-    name: r'id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
   /// The account that was reported.
-  @JsonKey(
-    name: r'target_account',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'target_account', required: true, includeIfNull: false)
   final Account targetAccount;
 
   /// When an action was taken against the report.
-  @JsonKey(
-    name: r'action_taken_at',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'action_taken_at', required: false, includeIfNull: false)
   final DateTime? actionTakenAt;
 
   /// IDs of the rules that have been cited as a violation by this report.
-  @JsonKey(
-    name: r'rule_ids',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'rule_ids', required: false, includeIfNull: false)
   final List<String>? ruleIds;
 
   /// IDs of statuses that have been attached to this report for additional context.
-  @JsonKey(
-    name: r'status_ids',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'status_ids', required: false, includeIfNull: false)
   final List<String>? statusIds;
 
   @override

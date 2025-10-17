@@ -15,17 +15,11 @@ part 'instance_api_versions.g.dart';
 )
 class InstanceApiVersions {
   /// Returns a new [InstanceApiVersions] instance.
-  InstanceApiVersions({
-    required this.mastodon,
-  });
+  InstanceApiVersions({this.mastodon});
 
-  /// API version number that this server implements. Starting from Mastodon v4.3.0, API changes will come with a version number, which clients can check against this value.
-  @JsonKey(
-    name: r'mastodon',
-    required: true,
-    includeIfNull: false,
-  )
-  final int mastodon;
+  /// API version number that increments with substantial API changes. Clients can use this value to determine API compatibility rather than parsing complex version strings like \"4.4+hometown-123\" from forks or nightly builds. This number increases independently of the human-readable version number.
+  @JsonKey(name: r'mastodon', required: false, includeIfNull: false)
+  final int? mastodon;
 
   @override
   bool operator ==(Object other) =>
@@ -33,7 +27,7 @@ class InstanceApiVersions {
       other is InstanceApiVersions && other.mastodon == mastodon;
 
   @override
-  int get hashCode => mastodon.hashCode;
+  int get hashCode => (mastodon == null ? 0 : mastodon.hashCode);
 
   factory InstanceApiVersions.fromJson(Map<String, dynamic> json) =>
       _$InstanceApiVersionsFromJson(json);

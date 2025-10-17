@@ -19,12 +19,6 @@ void main() {
       // TODO
     });
 
-    // When the client secret key will expire. Presently this always returns `0` indicating that OAuth Clients do not expire.
-    // int clientSecretExpiresAt
-    test('to test the property `clientSecretExpiresAt`', () async {
-      // TODO
-    });
-
     // The numeric ID of the application.
     // String id
     test('to test the property `id`', () async {
@@ -37,7 +31,13 @@ void main() {
       // TODO
     });
 
-    // The registered redirection URI(s) for the application.
+    // When the client secret key will expire. Presently this always returns `0` indicating that OAuth Clients do not expire.
+    // int clientSecretExpiresAt
+    test('to test the property `clientSecretExpiresAt`', () async {
+      // TODO
+    });
+
+    // The registered redirection URI(s) for the application stored as a single string. Multiple URIs are separated by whitespace characters. May contain `\\n` characters when multiple redirect URIs are registered.
     // String redirectUri
     test('to test the property `redirectUri`', () async {
       // TODO

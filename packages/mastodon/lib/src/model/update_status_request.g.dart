@@ -14,16 +14,23 @@ UpdateStatusRequest _$UpdateStatusRequestFromJson(Map<String, dynamic> json) =>
         final val = UpdateStatusRequest(
           language: $checkedConvert('language', (v) => v as String?),
           mediaAttributesLeftSquareBracketRightSquareBracket: $checkedConvert(
-              'media_attributes[]',
-              (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
-          mediaIds: $checkedConvert('media_ids',
-              (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
+            'media_attributes[]',
+            (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+          ),
+          mediaIds: $checkedConvert(
+            'media_ids',
+            (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+          ),
           poll: $checkedConvert(
-              'poll',
-              (v) => v == null
-                  ? null
-                  : UpdateStatusRequestPoll.fromJson(
-                      v as Map<String, dynamic>)),
+            'poll',
+            (v) => v == null
+                ? null
+                : UpdateStatusRequestPoll.fromJson(v as Map<String, dynamic>),
+          ),
+          quoteApprovalPolicy: $checkedConvert(
+            'quote_approval_policy',
+            (v) => v as String?,
+          ),
           sensitive: $checkedConvert('sensitive', (v) => v as bool?),
           spoilerText: $checkedConvert('spoiler_text', (v) => v as String?),
           status: $checkedConvert('status', (v) => v as String?),
@@ -34,20 +41,21 @@ UpdateStatusRequest _$UpdateStatusRequestFromJson(Map<String, dynamic> json) =>
         'mediaAttributesLeftSquareBracketRightSquareBracket':
             'media_attributes[]',
         'mediaIds': 'media_ids',
-        'spoilerText': 'spoiler_text'
+        'quoteApprovalPolicy': 'quote_approval_policy',
+        'spoilerText': 'spoiler_text',
       },
     );
 
 Map<String, dynamic> _$UpdateStatusRequestToJson(
-        UpdateStatusRequest instance) =>
-    <String, dynamic>{
-      if (instance.language case final value?) 'language': value,
-      if (instance.mediaAttributesLeftSquareBracketRightSquareBracket
-          case final value?)
-        'media_attributes[]': value,
-      if (instance.mediaIds case final value?) 'media_ids': value,
-      if (instance.poll?.toJson() case final value?) 'poll': value,
-      if (instance.sensitive case final value?) 'sensitive': value,
-      if (instance.spoilerText case final value?) 'spoiler_text': value,
-      if (instance.status case final value?) 'status': value,
-    };
+  UpdateStatusRequest instance,
+) => <String, dynamic>{
+  'language': ?instance.language,
+  'media_attributes[]':
+      ?instance.mediaAttributesLeftSquareBracketRightSquareBracket,
+  'media_ids': ?instance.mediaIds,
+  'poll': ?instance.poll?.toJson(),
+  'quote_approval_policy': ?instance.quoteApprovalPolicy,
+  'sensitive': ?instance.sensitive,
+  'spoiler_text': ?instance.spoilerText,
+  'status': ?instance.status,
+};

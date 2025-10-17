@@ -7,11 +7,6 @@ void main() {
   // TODO add properties to the entity
 
   group(Instance, () {
-    // InstanceApiVersions apiVersions
-    test('to test the property `apiVersions`', () async {
-      // TODO
-    });
-
     // InstanceConfiguration configuration
     test('to test the property `configuration`', () async {
       // TODO
@@ -28,15 +23,9 @@ void main() {
       // TODO
     });
 
-    // The WebFinger domain name of the instance.
+    // The WebFinger domain name of the server.
     // String domain
     test('to test the property `domain`', () async {
-      // TODO
-    });
-
-    // The list of available size variants for this instance configured icon.
-    // List<InstanceIcon> icon
-    test('to test the property `icon`', () async {
       // TODO
     });
 
@@ -57,7 +46,7 @@ void main() {
       // TODO
     });
 
-    // The URL for the source code of the software running on this instance, in keeping with AGPL license requirements.
+    // The URL for the source code of the software running on this server, per the AGPL license requirements.
     // Uri sourceUrl
     test('to test the property `sourceUrl`', () async {
       // TODO
@@ -79,9 +68,20 @@ void main() {
       // TODO
     });
 
-    // The version of Mastodon installed on the instance.
+    // The version of Mastodon installed on the server.
     // String version
     test('to test the property `version`', () async {
+      // TODO
+    });
+
+    // InstanceApiVersions apiVersions
+    test('to test the property `apiVersions`', () async {
+      // TODO
+    });
+
+    // The list of available size variants for this server's configured icon.
+    // List<InstanceIcon> icon
+    test('to test the property `icon`', () async {
       // TODO
     });
   });

@@ -6,30 +6,34 @@
 import 'package:json_annotation/json_annotation.dart';
 
 enum NotificationTypeEnum {
-  @JsonValue(r'admin.report')
-  adminPeriodReport(r'admin.report'),
-  @JsonValue(r'admin.sign_up')
-  adminPeriodSignUp(r'admin.sign_up'),
-  @JsonValue(r'favourite')
-  favourite(r'favourite'),
+  @JsonValue(r'mention')
+  mention(r'mention'),
+  @JsonValue(r'status')
+  status(r'status'),
+  @JsonValue(r'reblog')
+  reblog(r'reblog'),
   @JsonValue(r'follow')
   follow(r'follow'),
   @JsonValue(r'follow_request')
   followRequest(r'follow_request'),
-  @JsonValue(r'mention')
-  mention(r'mention'),
-  @JsonValue(r'moderation_warning')
-  moderationWarning(r'moderation_warning'),
+  @JsonValue(r'favourite')
+  favourite(r'favourite'),
   @JsonValue(r'poll')
   poll(r'poll'),
-  @JsonValue(r'reblog')
-  reblog(r'reblog'),
+  @JsonValue(r'update')
+  edit(r'update'),
+  @JsonValue(r'admin.sign_up')
+  adminPeriodSignUp(r'admin.sign_up'),
+  @JsonValue(r'admin.report')
+  adminPeriodReport(r'admin.report'),
   @JsonValue(r'severed_relationships')
   severedRelationships(r'severed_relationships'),
-  @JsonValue(r'status')
-  status(r'status'),
-  @JsonValue(r'update')
-  edit(r'update');
+  @JsonValue(r'moderation_warning')
+  moderationWarning(r'moderation_warning'),
+  @JsonValue(r'quote')
+  quote(r'quote'),
+  @JsonValue(r'quoted_update')
+  quotedUpdate(r'quoted_update');
 
   const NotificationTypeEnum(this.value);
 

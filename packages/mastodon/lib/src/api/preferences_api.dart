@@ -18,7 +18,7 @@ class PreferencesApi {
   const PreferencesApi(this._dio);
 
   /// View user preferences
-  /// Preferences defined by the user in their account settings.  Version history:  2.8.0 - added
+  /// Preferences defined by the user in their account settings.  Version history:  2.8.0 - added\\ 4.5.0 (&#x60;mastodon&#x60; [API version] 7) - added &#x60;posting:default:quoted_policy&#x60;
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -43,15 +43,10 @@ class PreferencesApi {
     final _path = r'/api/v1/preferences';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },

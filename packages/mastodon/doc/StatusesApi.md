@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**getStatusContext**](StatusesApi.md#getstatuscontext) | **GET** /api/v1/statuses/{id}/context | Get parent and child statuses in context
 [**getStatusFavouritedBy**](StatusesApi.md#getstatusfavouritedby) | **GET** /api/v1/statuses/{id}/favourited_by | See who favourited a status
 [**getStatusHistory**](StatusesApi.md#getstatushistory) | **GET** /api/v1/statuses/{id}/history | View edit history of a status
+[**getStatusQuotes**](StatusesApi.md#getstatusquotes) | **GET** /api/v1/statuses/{id}/quotes | See quotes of a status
 [**getStatusRebloggedBy**](StatusesApi.md#getstatusrebloggedby) | **GET** /api/v1/statuses/{id}/reblogged_by | See who boosted a status
 [**getStatusSource**](StatusesApi.md#getstatussource) | **GET** /api/v1/statuses/{id}/source | View status source
 [**getStatuses**](StatusesApi.md#getstatuses) | **GET** /api/v1/statuses | View multiple statuses
@@ -30,7 +31,9 @@ Method | HTTP request | Description
 [**postStatusUnmute**](StatusesApi.md#poststatusunmute) | **POST** /api/v1/statuses/{id}/unmute | Unmute a conversation
 [**postStatusUnpin**](StatusesApi.md#poststatusunpin) | **POST** /api/v1/statuses/{id}/unpin | Unpin status from profile
 [**postStatusUnreblog**](StatusesApi.md#poststatusunreblog) | **POST** /api/v1/statuses/{id}/unreblog | Undo boost of a status
+[**postStatusesByIdQuotesByQuotingStatusIdRevoke**](StatusesApi.md#poststatusesbyidquotesbyquotingstatusidrevoke) | **POST** /api/v1/statuses/{id}/quotes/{quoting_status_id}/revoke | Revoke a quote post
 [**updateStatus**](StatusesApi.md#updatestatus) | **PUT** /api/v1/statuses/{id} | Edit a status
+[**updateStatusInteractionPolicy**](StatusesApi.md#updatestatusinteractionpolicy) | **PUT** /api/v1/statuses/{id}/interaction_policy | Edit a status&#39; interaction policies
 
 
 # **createStatus**
@@ -38,7 +41,7 @@ Method | HTTP request | Description
 
 Post a new status
 
-Publish a status with the given parameters.  Version history:  0.0.0 - added\\ 2.7.0 - `scheduled_at` added\\ 2.8.0 - `poll` added
+Publish a status with the given parameters.  Version history:  0.0.0 - added\\ 2.7.0 - `scheduled_at` added\\ 2.8.0 - `poll` added\\ 4.5.0 (`mastodon` [API version] 7) - `quoted_status_id` and `quote_approval_policy` added
 
 ### Example
 ```dart
@@ -346,6 +349,57 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**List&lt;StatusEdit&gt;**](StatusEdit.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getStatusQuotes**
+> List<Status> getStatusQuotes(id, limit, maxId, sinceId)
+
+See quotes of a status
+
+View quotes of a status you have posted.  Version history:  4.5.0 (`mastodon` [API version] 7) - added
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = Mastodon().getStatusesApi();
+final String id = id_example; // String | id parameter
+final int limit = 56; // int | Maximum number of results to return. Defaults to 20 statuses. Max 40 statuses.
+final String maxId = maxId_example; // String | Internal parameter. Use HTTP `Link` header for pagination.
+final String sinceId = sinceId_example; // String | Internal parameter. Use HTTP `Link` header for pagination.
+
+try {
+    final response = api.getStatusQuotes(id, limit, maxId, sinceId);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling StatusesApi->getStatusQuotes: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| id parameter | 
+ **limit** | **int**| Maximum number of results to return. Defaults to 20 statuses. Max 40 statuses. | [optional] [default to 20]
+ **maxId** | **String**| Internal parameter. Use HTTP `Link` header for pagination. | [optional] 
+ **sinceId** | **String**| Internal parameter. Use HTTP `Link` header for pagination. | [optional] 
+
+### Return type
+
+[**List&lt;Status&gt;**](Status.md)
 
 ### Authorization
 
@@ -998,12 +1052,59 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **postStatusesByIdQuotesByQuotingStatusIdRevoke**
+> Status postStatusesByIdQuotesByQuotingStatusIdRevoke(id, quotingStatusId)
+
+Revoke a quote post
+
+Revoke quote authorization of status `quoting_status_id`, detaching status `id`.  Version history:  4.5.0 (`mastodon` [API version] 7) - added
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = Mastodon().getStatusesApi();
+final String id = id_example; // String | id parameter
+final String quotingStatusId = quotingStatusId_example; // String | quoting_status_id parameter
+
+try {
+    final response = api.postStatusesByIdQuotesByQuotingStatusIdRevoke(id, quotingStatusId);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling StatusesApi->postStatusesByIdQuotesByQuotingStatusIdRevoke: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| id parameter | 
+ **quotingStatusId** | **String**| quoting_status_id parameter | 
+
+### Return type
+
+[**Status**](Status.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **updateStatus**
 > Status updateStatus(id, updateStatusRequest)
 
 Edit a status
 
-Edit a given status to change its text, sensitivity, media attachments, or poll. Note that editing a poll’s options or changing whether it is multiple choice will reset the votes.  Version history:  3.5.0 - added\\ 4.0.0 - add `language`
+Edit a given status to change its text, sensitivity, media attachments, or poll. Note that editing a poll’s options or changing whether it is multiple choice will reset the votes.  Version history:  3.5.0 - added\\ 4.0.0 - add `language`\\ 4.5.0 (`mastodon` [API version] 7) - add `quote_approval_policy`
 
 ### Example
 ```dart
@@ -1029,6 +1130,53 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| id parameter | 
  **updateStatusRequest** | [**UpdateStatusRequest**](UpdateStatusRequest.md)| JSON request body parameters | [optional] 
+
+### Return type
+
+[**Status**](Status.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **updateStatusInteractionPolicy**
+> Status updateStatusInteractionPolicy(id, updateStatusInteractionPolicyRequest)
+
+Edit a status' interaction policies
+
+Edit a given status to change its interaction policies. Currently, this means changing its quote approval policy.  Version history:  4.5.0 (`mastodon` [API version] 7) - added
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = Mastodon().getStatusesApi();
+final String id = id_example; // String | id parameter
+final UpdateStatusInteractionPolicyRequest updateStatusInteractionPolicyRequest = ; // UpdateStatusInteractionPolicyRequest | JSON request body parameters
+
+try {
+    final response = api.updateStatusInteractionPolicy(id, updateStatusInteractionPolicyRequest);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling StatusesApi->updateStatusInteractionPolicy: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| id parameter | 
+ **updateStatusInteractionPolicyRequest** | [**UpdateStatusInteractionPolicyRequest**](UpdateStatusInteractionPolicyRequest.md)| JSON request body parameters | [optional] 
 
 ### Return type
 

@@ -18,25 +18,20 @@ class CreateAppRequest {
   /// Returns a new [CreateAppRequest] instance.
   CreateAppRequest({
     required this.clientName,
+
     required this.redirectUris,
+
     this.scopes = 'read',
+
     this.website,
   });
 
   /// A name for your application
-  @JsonKey(
-    name: r'client_name',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'client_name', required: true, includeIfNull: false)
   final String clientName;
 
   /// Where the user should be redirected after authorization. To display the authorization code to the user instead of redirecting to a web page, use `urn:ietf:wg:oauth:2.0:oob` in this parameter.
-  @JsonKey(
-    name: r'redirect_uris',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'redirect_uris', required: true, includeIfNull: false)
   final List<Uri> redirectUris;
 
   /// Space separated list of scopes. If none is provided, defaults to `read`. See [OAuth Scopes] for a list of possible scopes.
@@ -49,11 +44,7 @@ class CreateAppRequest {
   final String? scopes;
 
   /// A URL to the homepage of your app
-  @JsonKey(
-    name: r'website',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'website', required: false, includeIfNull: false)
   final String? website;
 
   @override

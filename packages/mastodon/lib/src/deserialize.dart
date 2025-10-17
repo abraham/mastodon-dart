@@ -1,4 +1,5 @@
 import 'package:mastodon/src/model/account.dart';
+import 'package:mastodon/src/model/account_role.dart';
 import 'package:mastodon/src/model/account_warning.dart';
 import 'package:mastodon/src/model/admin_account.dart';
 import 'package:mastodon/src/model/admin_canonical_email_block.dart';
@@ -38,6 +39,7 @@ import 'package:mastodon/src/model/create_marker_request_home.dart';
 import 'package:mastodon/src/model/create_marker_request_notifications.dart';
 import 'package:mastodon/src/model/create_push_subscription_request.dart';
 import 'package:mastodon/src/model/create_push_subscription_request_data.dart';
+import 'package:mastodon/src/model/create_push_subscription_request_data_alerts.dart';
 import 'package:mastodon/src/model/create_push_subscription_request_subscription.dart';
 import 'package:mastodon/src/model/create_push_subscription_request_subscription_keys.dart';
 import 'package:mastodon/src/model/create_report_request.dart';
@@ -118,6 +120,7 @@ import 'package:mastodon/src/model/put_push_subscription_request.dart';
 import 'package:mastodon/src/model/put_push_subscription_request_data.dart';
 import 'package:mastodon/src/model/put_push_subscription_request_data_alerts.dart';
 import 'package:mastodon/src/model/quote.dart';
+import 'package:mastodon/src/model/quote_approval.dart';
 import 'package:mastodon/src/model/reaction.dart';
 import 'package:mastodon/src/model/relationship.dart';
 import 'package:mastodon/src/model/relationship_severance_event.dart';
@@ -135,6 +138,7 @@ import 'package:mastodon/src/model/status_edit.dart';
 import 'package:mastodon/src/model/status_edit_poll.dart';
 import 'package:mastodon/src/model/status_edit_poll_options_inner.dart';
 import 'package:mastodon/src/model/status_mention.dart';
+import 'package:mastodon/src/model/status_quote.dart';
 import 'package:mastodon/src/model/status_source.dart';
 import 'package:mastodon/src/model/status_tag.dart';
 import 'package:mastodon/src/model/suggestion.dart';
@@ -153,6 +157,7 @@ import 'package:mastodon/src/model/update_filter_request.dart';
 import 'package:mastodon/src/model/update_filter_v2_request.dart';
 import 'package:mastodon/src/model/update_filter_v2_request_keywords_attributes_inner.dart';
 import 'package:mastodon/src/model/update_scheduled_status_request.dart';
+import 'package:mastodon/src/model/update_status_interaction_policy_request.dart';
 import 'package:mastodon/src/model/update_status_request.dart';
 import 'package:mastodon/src/model/update_status_request_poll.dart';
 import 'package:mastodon/src/model/v1_filter.dart';
@@ -172,8 +177,11 @@ final _regList = RegExp(r'^List<(.*)>$');
 final _regSet = RegExp(r'^Set<(.*)>$');
 final _regMap = RegExp(r'^Map<String,(.*)>$');
 
-ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
-    {bool growable = true}) {
+ReturnType deserialize<ReturnType, BaseType>(
+  dynamic value,
+  String targetType, {
+  bool growable = true,
+}) {
   switch (targetType) {
     case 'String':
       return '$value' as ReturnType;
@@ -189,9 +197,12 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
       return (value is double ? value : double.parse('$value')) as ReturnType;
     case 'Account':
       return Account.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'AccountRole':
+      return AccountRole.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'AccountWarning':
       return AccountWarning.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'AccountWarningActionEnum':
     case 'AdminAccount':
       return AdminAccount.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'AdminCanonicalEmailBlock':
@@ -199,6 +210,7 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
           as ReturnType;
     case 'AdminCohort':
       return AdminCohort.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'AdminCohortFrequencyEnum':
     case 'AdminDimension':
       return AdminDimension.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -211,16 +223,20 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
     case 'AdminDomainBlock':
       return AdminDomainBlock.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'AdminDomainBlockSeverityEnum':
     case 'AdminEmailDomainBlock':
       return AdminEmailDomainBlock.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'AdminEmailDomainBlockHistory':
       return AdminEmailDomainBlockHistory.fromJson(
-          value as Map<String, dynamic>) as ReturnType;
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'AdminIp':
       return AdminIp.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'AdminIpBlock':
       return AdminIpBlock.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'AdminIpBlockSeverityEnum':
     case 'AdminMeasure':
       return AdminMeasure.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'AdminMeasureData':
@@ -240,11 +256,11 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
           as ReturnType;
     case 'Appeal':
       return Appeal.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'AppealStateEnum':
     case 'Application':
       return Application.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'BaseStatus':
       return BaseStatus.fromJson(value as Map<String, dynamic>) as ReturnType;
-    case 'CategoryEnum':
     case 'CohortData':
       return CohortData.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'Context':
@@ -262,7 +278,9 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
           as ReturnType;
     case 'CreateEmailConfirmationsRequest':
       return CreateEmailConfirmationsRequest.fromJson(
-          value as Map<String, dynamic>) as ReturnType;
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'CreateFeaturedTagRequest':
       return CreateFeaturedTagRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -274,7 +292,9 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
           as ReturnType;
     case 'CreateFilterV2RequestKeywordsAttributesInner':
       return CreateFilterV2RequestKeywordsAttributesInner.fromJson(
-          value as Map<String, dynamic>) as ReturnType;
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'CreateListRequest':
       return CreateListRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -286,19 +306,34 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
           as ReturnType;
     case 'CreateMarkerRequestNotifications':
       return CreateMarkerRequestNotifications.fromJson(
-          value as Map<String, dynamic>) as ReturnType;
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'CreatePushSubscriptionRequest':
       return CreatePushSubscriptionRequest.fromJson(
-          value as Map<String, dynamic>) as ReturnType;
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'CreatePushSubscriptionRequestData':
       return CreatePushSubscriptionRequestData.fromJson(
-          value as Map<String, dynamic>) as ReturnType;
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
+    case 'CreatePushSubscriptionRequestDataAlerts':
+      return CreatePushSubscriptionRequestDataAlerts.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'CreatePushSubscriptionRequestSubscription':
       return CreatePushSubscriptionRequestSubscription.fromJson(
-          value as Map<String, dynamic>) as ReturnType;
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'CreatePushSubscriptionRequestSubscriptionKeys':
       return CreatePushSubscriptionRequestSubscriptionKeys.fromJson(
-          value as Map<String, dynamic>) as ReturnType;
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'CreateReportRequest':
       return CreateReportRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -314,6 +349,7 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
     case 'CredentialAccountSource':
       return CredentialAccountSource.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'CredentialAccountSourceQuotePolicyEnum':
     case 'CredentialApplication':
       return CredentialApplication.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -327,9 +363,12 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
           as ReturnType;
     case 'DiscoverOauthServerConfigurationResponse':
       return DiscoverOauthServerConfigurationResponse.fromJson(
-          value as Map<String, dynamic>) as ReturnType;
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'DomainBlock':
       return DomainBlock.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'DomainBlockSeverityEnum':
     case 'Error':
       return Error.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'ExtendedDescription':
@@ -344,7 +383,8 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
       return Field.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'Filter':
       return Filter.fromJson(value as Map<String, dynamic>) as ReturnType;
-    case 'FilterContext':
+    case 'FilterContextEnum':
+    case 'FilterFilterActionEnum':
     case 'FilterKeyword':
       return FilterKeyword.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -354,7 +394,9 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
       return FilterStatus.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'GetInstanceActivity200ResponseInner':
       return GetInstanceActivity200ResponseInner.fromJson(
-          value as Map<String, dynamic>) as ReturnType;
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'GroupedNotificationsResults':
       return GroupedNotificationsResults.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -371,19 +413,27 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
           as ReturnType;
     case 'InstanceConfigurationAccounts':
       return InstanceConfigurationAccounts.fromJson(
-          value as Map<String, dynamic>) as ReturnType;
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'InstanceConfigurationMediaAttachments':
       return InstanceConfigurationMediaAttachments.fromJson(
-          value as Map<String, dynamic>) as ReturnType;
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'InstanceConfigurationPolls':
       return InstanceConfigurationPolls.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'InstanceConfigurationStatuses':
       return InstanceConfigurationStatuses.fromJson(
-          value as Map<String, dynamic>) as ReturnType;
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'InstanceConfigurationTranslation':
       return InstanceConfigurationTranslation.fromJson(
-          value as Map<String, dynamic>) as ReturnType;
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'InstanceConfigurationUrls':
       return InstanceConfigurationUrls.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -407,6 +457,7 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
     case 'InstanceUsageUsers':
       return InstanceUsageUsers.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'ListRepliesPolicyEnum':
     case 'Marker':
       return Marker.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'MediaAttachment':
@@ -418,6 +469,7 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
     case 'MediaAttachmentMetaFocus':
       return MediaAttachmentMetaFocus.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'MediaAttachmentTypeEnum':
     case 'MediaStatus':
       return MediaStatus.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'ModelList':
@@ -451,11 +503,14 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
           as ReturnType;
     case 'PatchAccountsUpdateCredentialsRequest':
       return PatchAccountsUpdateCredentialsRequest.fromJson(
-          value as Map<String, dynamic>) as ReturnType;
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'PatchAccountsUpdateCredentialsRequestSource':
       return PatchAccountsUpdateCredentialsRequestSource.fromJson(
-          value as Map<String, dynamic>) as ReturnType;
-    case 'PolicyEnum':
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'Poll':
       return Poll.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'PollOption':
@@ -497,12 +552,12 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
           as ReturnType;
     case 'Preferences':
       return Preferences.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'PreferencesReadingExpandMediaEnum':
     case 'PreviewCard':
       return PreviewCard.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'PreviewCardAuthor':
       return PreviewCardAuthor.fromJson(value as Map<String, dynamic>)
           as ReturnType;
-    case 'PreviewTypeEnum':
     case 'PrivacyPolicy':
       return PrivacyPolicy.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -511,12 +566,21 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
           as ReturnType;
     case 'PutPushSubscriptionRequestData':
       return PutPushSubscriptionRequestData.fromJson(
-          value as Map<String, dynamic>) as ReturnType;
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'PutPushSubscriptionRequestDataAlerts':
       return PutPushSubscriptionRequestDataAlerts.fromJson(
-          value as Map<String, dynamic>) as ReturnType;
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'Quote':
       return Quote.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'QuoteApproval':
+      return QuoteApproval.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'QuoteApprovalCurrentUserEnum':
+    case 'QuoteStateEnum':
     case 'Reaction':
       return Reaction.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'Relationship':
@@ -524,8 +588,10 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
     case 'RelationshipSeveranceEvent':
       return RelationshipSeveranceEvent.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'RelationshipSeveranceEventTypeEnum':
     case 'Report':
       return Report.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'ReportCategoryEnum':
     case 'Role':
       return Role.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'Rule':
@@ -543,7 +609,6 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
       return Search.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'ShallowQuote':
       return ShallowQuote.fromJson(value as Map<String, dynamic>) as ReturnType;
-    case 'StateEnum':
     case 'Status':
       return Status.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'StatusApplication':
@@ -560,10 +625,13 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
     case 'StatusMention':
       return StatusMention.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'StatusQuote':
+      return StatusQuote.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'StatusSource':
       return StatusSource.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'StatusTag':
       return StatusTag.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'StatusVisibilityEnum':
     case 'Suggestion':
       return Suggestion.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'Tag':
@@ -593,7 +661,7 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
     case 'TrendsLinkHistoryInner':
       return TrendsLinkHistoryInner.fromJson(value as Map<String, dynamic>)
           as ReturnType;
-    case 'TypesEnum':
+    case 'TrendsLinkTypeEnum':
     case 'UpdateFilterRequest':
       return UpdateFilterRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -602,10 +670,19 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
           as ReturnType;
     case 'UpdateFilterV2RequestKeywordsAttributesInner':
       return UpdateFilterV2RequestKeywordsAttributesInner.fromJson(
-          value as Map<String, dynamic>) as ReturnType;
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'UpdateScheduledStatusRequest':
       return UpdateScheduledStatusRequest.fromJson(
-          value as Map<String, dynamic>) as ReturnType;
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
+    case 'UpdateStatusInteractionPolicyRequest':
+      return UpdateStatusInteractionPolicyRequest.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'UpdateStatusRequest':
       return UpdateStatusRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -621,10 +698,14 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
           as ReturnType;
     case 'V1InstanceConfigurationAccounts':
       return V1InstanceConfigurationAccounts.fromJson(
-          value as Map<String, dynamic>) as ReturnType;
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'V1InstanceConfigurationMediaAttachments':
       return V1InstanceConfigurationMediaAttachments.fromJson(
-          value as Map<String, dynamic>) as ReturnType;
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'V1InstanceStats':
       return V1InstanceStats.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -639,8 +720,9 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
           as ReturnType;
     case 'ValidationErrorDetailsValueInner':
       return ValidationErrorDetailsValueInner.fromJson(
-          value as Map<String, dynamic>) as ReturnType;
-    case 'VisibilityEnum':
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'WebPushSubscription':
       return WebPushSubscription.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -653,27 +735,42 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
       if (value is List && (match = _regList.firstMatch(targetType)) != null) {
         targetType = match![1]!; // ignore: parameter_assignments
         return value
-            .map<BaseType>((dynamic v) => deserialize<BaseType, BaseType>(
-                v, targetType,
-                growable: growable))
-            .toList(growable: growable) as ReturnType;
+                .map<BaseType>(
+                  (dynamic v) => deserialize<BaseType, BaseType>(
+                    v,
+                    targetType,
+                    growable: growable,
+                  ),
+                )
+                .toList(growable: growable)
+            as ReturnType;
       }
       if (value is Set && (match = _regSet.firstMatch(targetType)) != null) {
         targetType = match![1]!; // ignore: parameter_assignments
         return value
-            .map<BaseType>((dynamic v) => deserialize<BaseType, BaseType>(
-                v, targetType,
-                growable: growable))
-            .toSet() as ReturnType;
+                .map<BaseType>(
+                  (dynamic v) => deserialize<BaseType, BaseType>(
+                    v,
+                    targetType,
+                    growable: growable,
+                  ),
+                )
+                .toSet()
+            as ReturnType;
       }
       if (value is Map && (match = _regMap.firstMatch(targetType)) != null) {
         targetType = match![1]!.trim(); // ignore: parameter_assignments
         return Map<String, BaseType>.fromIterables(
-          value.keys as Iterable<String>,
-          value.values.map((dynamic v) => deserialize<BaseType, BaseType>(
-              v, targetType,
-              growable: growable)),
-        ) as ReturnType;
+              value.keys as Iterable<String>,
+              value.values.map(
+                (dynamic v) => deserialize<BaseType, BaseType>(
+                  v,
+                  targetType,
+                  growable: growable,
+                ),
+              ),
+            )
+            as ReturnType;
       }
       break;
   }

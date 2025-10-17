@@ -17,23 +17,16 @@ class ValidationErrorDetailsValueInner {
   /// Returns a new [ValidationErrorDetailsValueInner] instance.
   ValidationErrorDetailsValueInner({
     required this.error,
+
     required this.description,
   });
 
   /// The error code (e.g., ERR_BLANK, ERR_INVALID).
-  @JsonKey(
-    name: r'error',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'error', required: true, includeIfNull: false)
   final String error;
 
   /// Human-readable description of the error.
-  @JsonKey(
-    name: r'description',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'description', required: true, includeIfNull: false)
   final String description;
 
   @override
@@ -47,8 +40,8 @@ class ValidationErrorDetailsValueInner {
   int get hashCode => error.hashCode + description.hashCode;
 
   factory ValidationErrorDetailsValueInner.fromJson(
-          Map<String, dynamic> json) =>
-      _$ValidationErrorDetailsValueInnerFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$ValidationErrorDetailsValueInnerFromJson(json);
 
   Map<String, dynamic> toJson() =>
       _$ValidationErrorDetailsValueInnerToJson(this);

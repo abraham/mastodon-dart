@@ -73,7 +73,7 @@ void main() {
     //
     // Notifications concerning the user. This API returns Link headers containing links to the next/previous page. However, the links can also be constructed dynamically using query params and `id` values.  Version history:  0.0.0 - added\\ 2.6.0 - added `min_id`\\ 2.9.0 - added `account_id`\\ 3.1.0 - added `follow_request` type\\ 3.3.0 - added `status` type; both `min_id` and `max_id` can be used at the same time now\\ 3.5.0 - added `types`; add `update` and `admin.sign_up` types\\ 4.0.0 - added `admin.report` type\\ 4.1.0 - notification limit changed from 15 (max 30) to 40 (max 80)\\ 4.3.0 - added `include_filtered` parameter
     //
-    //Future<List<Notification>> getNotifications({ String accountId, List<TypesEnum> excludeTypes, bool includeFiltered, int limit, String maxId, String minId, String sinceId, List<TypesEnum> types }) async
+    //Future<List<Notification>> getNotifications({ String accountId, List<NotificationTypeEnum> excludeTypes, bool includeFiltered, int limit, String maxId, String minId, String sinceId, List<NotificationTypeEnum> types }) async
     test('test getNotifications', () async {
       // TODO
     });
@@ -84,15 +84,6 @@ void main() {
     //
     //Future<GroupedNotificationsResults> getNotificationsByGroupKeyV2(String groupKey) async
     test('test getNotificationsByGroupKeyV2', () async {
-      // TODO
-    });
-
-    // Get a single notification group
-    //
-    // View information about a specific notification group with a given group key.  Version history:  4.3.0-beta.1 - added\\ 4.3.0-beta.2 - deprecated
-    //
-    //Future<GroupedNotificationsResults> getNotificationsByGroupKeyV2Alpha(String groupKey) async
-    test('test getNotificationsByGroupKeyV2Alpha', () async {
       // TODO
     });
 
@@ -132,30 +123,12 @@ void main() {
       // TODO
     });
 
-    // Get the number of unread notifications
-    //
-    // Get the (capped) number of unread notification groups for the current user.
-    //
-    //Future getNotificationsUnreadCountV2Alpha({ String accountId, List<String> excludeTypes, List<String> groupedTypes, int limit, List<String> types }) async
-    test('test getNotificationsUnreadCountV2Alpha', () async {
-      // TODO
-    });
-
     // Get all grouped notifications
     //
     // Return grouped notifications concerning the user. This API returns Link headers containing links to the next/previous page. However, the links can also be constructed dynamically using query params and `id` values.  Version history:  4.3.0 (`mastodon` [API version] 2) - added\\ 4.4.0 - added `admin.sign_up` to grouped notification types
     //
-    //Future<GroupedNotificationsResults> getNotificationsV2({ String accountId, List<TypesEnum> excludeTypes, String expandAccounts, List<TypesEnum> groupedTypes, bool includeFiltered, int limit, String maxId, String minId, String sinceId, List<TypesEnum> types }) async
+    //Future<GroupedNotificationsResults> getNotificationsV2({ String accountId, List<NotificationTypeEnum> excludeTypes, String expandAccounts, List<NotificationTypeEnum> groupedTypes, bool includeFiltered, int limit, String maxId, String minId, String sinceId, List<NotificationTypeEnum> types }) async
     test('test getNotificationsV2', () async {
-      // TODO
-    });
-
-    // Get all grouped notifications
-    //
-    // Return grouped notifications concerning the user. This API returns Link headers containing links to the next/previous page. However, the links can also be constructed dynamically using query params and `id` values.  Version history:  4.3.0-beta.1 - added\\ 4.3.0-beta.2 - deprecated
-    //
-    //Future<GroupedNotificationsResults> getNotificationsV2Alpha({ String accountId, List<TypesEnum> excludeTypes, String expandAccounts, List<TypesEnum> groupedTypes, int limit, String maxId, String minId, String sinceId, List<TypesEnum> types }) async
-    test('test getNotificationsV2Alpha', () async {
       // TODO
     });
 
@@ -174,15 +147,6 @@ void main() {
     //
     //Future postNotificationDismissV2(String groupKey) async
     test('test postNotificationDismissV2', () async {
-      // TODO
-    });
-
-    // Dismiss a single notification group
-    //
-    // Dismiss a single notification group from the server.  Version history:  4.3.0-beta.1 - added\\ 4.3.0-beta.2 - deprecated
-    //
-    //Future postNotificationDismissV2Alpha(String groupKey) async
-    test('test postNotificationDismissV2Alpha', () async {
       // TODO
     });
 

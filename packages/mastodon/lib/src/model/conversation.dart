@@ -19,40 +19,27 @@ class Conversation {
   /// Returns a new [Conversation] instance.
   Conversation({
     required this.accounts,
+
     required this.id,
+
     required this.unread,
+
     this.lastStatus,
   });
 
   /// Participants in the conversation.
-  @JsonKey(
-    name: r'accounts',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'accounts', required: true, includeIfNull: false)
   final List<Account> accounts;
 
   /// The ID of the conversation in the database.
-  @JsonKey(
-    name: r'id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
   /// Is the conversation currently marked as unread?
-  @JsonKey(
-    name: r'unread',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'unread', required: true, includeIfNull: false)
   final bool unread;
 
-  @JsonKey(
-    name: r'last_status',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'last_status', required: false, includeIfNull: false)
   final Status? lastStatus;
 
   @override

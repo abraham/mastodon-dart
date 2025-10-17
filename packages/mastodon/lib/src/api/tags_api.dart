@@ -43,19 +43,18 @@ class TagsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path =
-        r'/api/v1/tags/{name}'.replaceAll('{' r'name' '}', name.toString());
+    final _path = r'/api/v1/tags/{name}'.replaceAll(
+      '{'
+      r'name'
+      '}',
+      name.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -124,19 +123,18 @@ class TagsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path =
-        r'/api/v1/tags/{id}/feature'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/tags/{id}/feature'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -205,19 +203,18 @@ class TagsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/tags/{name}/follow'
-        .replaceAll('{' r'name' '}', name.toString());
+    final _path = r'/api/v1/tags/{name}/follow'.replaceAll(
+      '{'
+      r'name'
+      '}',
+      name.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -286,19 +283,18 @@ class TagsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path =
-        r'/api/v1/tags/{id}/unfeature'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/tags/{id}/unfeature'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -367,19 +363,18 @@ class TagsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/tags/{name}/unfollow'
-        .replaceAll('{' r'name' '}', name.toString());
+    final _path = r'/api/v1/tags/{name}/unfollow'.replaceAll(
+      '{'
+      r'name'
+      '}',
+      name.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },

@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:mastodon/src/model/policy_enum.dart';
+import 'package:mastodon/src/model/list_replies_policy_enum.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'create_list_request.g.dart';
@@ -18,34 +18,28 @@ class CreateListRequest {
   /// Returns a new [CreateListRequest] instance.
   CreateListRequest({
     required this.title,
+
     this.exclusive,
-    this.repliesPolicy = PolicyEnum.list,
+
+    this.repliesPolicy = ListRepliesPolicyEnum.list,
   });
 
   /// The title of the list to be created.
-  @JsonKey(
-    name: r'title',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'title', required: true, includeIfNull: false)
   final String title;
 
   /// Whether members of this list need to get removed from the “Home” feed.
-  @JsonKey(
-    name: r'exclusive',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'exclusive', required: false, includeIfNull: false)
   final bool? exclusive;
 
   /// One of `followed`, `list`, or `none`. Defaults to `list`.
   @JsonKey(
-    defaultValue: PolicyEnum.list,
+    defaultValue: ListRepliesPolicyEnum.list,
     name: r'replies_policy',
     required: false,
     includeIfNull: false,
   )
-  final PolicyEnum? repliesPolicy;
+  final ListRepliesPolicyEnum? repliesPolicy;
 
   @override
   bool operator ==(Object other) =>

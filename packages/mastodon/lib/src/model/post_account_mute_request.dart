@@ -15,10 +15,7 @@ part 'post_account_mute_request.g.dart';
 )
 class PostAccountMuteRequest {
   /// Returns a new [PostAccountMuteRequest] instance.
-  PostAccountMuteRequest({
-    this.duration = 0,
-    this.notifications = true,
-  });
+  PostAccountMuteRequest({this.duration = 0, this.notifications = true});
 
   /// How long the mute should last, in seconds. Defaults to 0 (indefinite).
   @JsonKey(

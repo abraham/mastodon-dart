@@ -53,5 +53,10 @@ void main() {
     test('to test the property `poll`', () async {
       // TODO
     });
+
+    // StatusQuote quote
+    test('to test the property `quote`', () async {
+      // TODO
+    });
   });
 }

@@ -21,37 +21,24 @@ class V1InstanceConfiguration {
   /// Returns a new [V1InstanceConfiguration] instance.
   V1InstanceConfiguration({
     required this.accounts,
+
     required this.mediaAttachments,
+
     required this.polls,
+
     required this.statuses,
   });
 
-  @JsonKey(
-    name: r'accounts',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'accounts', required: true, includeIfNull: false)
   final V1InstanceConfigurationAccounts accounts;
 
-  @JsonKey(
-    name: r'media_attachments',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'media_attachments', required: true, includeIfNull: false)
   final V1InstanceConfigurationMediaAttachments mediaAttachments;
 
-  @JsonKey(
-    name: r'polls',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'polls', required: true, includeIfNull: false)
   final InstanceConfigurationPolls polls;
 
-  @JsonKey(
-    name: r'statuses',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'statuses', required: true, includeIfNull: false)
   final InstanceConfigurationStatuses statuses;
 
   @override

@@ -3,9 +3,10 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:mastodon/src/model/filter_context.dart';
+import 'package:mastodon/src/model/filter_filter_action_enum.dart';
 import 'package:mastodon/src/model/filter_keyword.dart';
 import 'package:mastodon/src/model/filter_status.dart';
+import 'package:mastodon/src/model/filter_context_enum.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'filter.g.dart';
@@ -20,68 +21,46 @@ class Filter {
   /// Returns a new [Filter] instance.
   Filter({
     required this.context,
+
     required this.filterAction,
+
     required this.id,
+
     required this.title,
+
     this.expiresAt,
+
     this.keywords,
+
     this.statuses,
   });
 
   /// The contexts in which the filter should be applied.
-  @JsonKey(
-    name: r'context',
-    required: true,
-    includeIfNull: false,
-  )
-  final List<FilterContext> context;
+  @JsonKey(name: r'context', required: true, includeIfNull: false)
+  final List<FilterContextEnum> context;
 
   /// The action to be taken when a status matches this filter.
-  @JsonKey(
-    name: r'filter_action',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'filter_action', required: true, includeIfNull: false)
   final FilterFilterActionEnum filterAction;
 
   /// The ID of the Filter in the database.
-  @JsonKey(
-    name: r'id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
   /// A title given by the user to name the filter.
-  @JsonKey(
-    name: r'title',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'title', required: true, includeIfNull: false)
   final String title;
 
   /// When the filter should no longer be applied.
-  @JsonKey(
-    name: r'expires_at',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'expires_at', required: false, includeIfNull: false)
   final DateTime? expiresAt;
 
   /// The keywords grouped under this filter. Omitted when part of a [FilterResult]({{< relref \"entities/FilterResult\" >}}).
-  @JsonKey(
-    name: r'keywords',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'keywords', required: false, includeIfNull: false)
   final List<FilterKeyword>? keywords;
 
   /// The statuses grouped under this filter. Omitted when part of a [FilterResult]({{< relref \"entities/FilterResult\" >}}).
-  @JsonKey(
-    name: r'statuses',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'statuses', required: false, includeIfNull: false)
   final List<FilterStatus>? statuses;
 
   @override
@@ -114,26 +93,4 @@ class Filter {
   String toString() {
     return toJson().toString();
   }
-}
-
-/// The action to be taken when a status matches this filter.
-enum FilterFilterActionEnum {
-  /// The action to be taken when a status matches this filter.
-  @JsonValue(r'warn')
-  warn(r'warn'),
-
-  /// The action to be taken when a status matches this filter.
-  @JsonValue(r'hide')
-  hide_(r'hide'),
-
-  /// The action to be taken when a status matches this filter.
-  @JsonValue(r'blur')
-  blur(r'blur');
-
-  const FilterFilterActionEnum(this.value);
-
-  final String value;
-
-  @override
-  String toString() => value;
 }

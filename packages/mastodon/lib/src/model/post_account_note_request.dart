@@ -15,16 +15,10 @@ part 'post_account_note_request.g.dart';
 )
 class PostAccountNoteRequest {
   /// Returns a new [PostAccountNoteRequest] instance.
-  PostAccountNoteRequest({
-    this.comment,
-  });
+  PostAccountNoteRequest({this.comment});
 
   /// The comment to be set on that user. Provide an empty string or leave out this parameter to clear the currently set note.
-  @JsonKey(
-    name: r'comment',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'comment', required: false, includeIfNull: false)
   final String? comment;
 
   @override

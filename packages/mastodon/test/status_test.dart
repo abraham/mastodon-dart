@@ -92,7 +92,7 @@ void main() {
     });
 
     // Visibility of this status.
-    // VisibilityEnum visibility
+    // StatusVisibilityEnum visibility
     test('to test the property `visibility`', () async {
       // TODO
     });
@@ -163,6 +163,22 @@ void main() {
 
     // Poll poll
     test('to test the property `poll`', () async {
+      // TODO
+    });
+
+    // StatusQuote quote
+    test('to test the property `quote`', () async {
+      // TODO
+    });
+
+    // QuoteApproval quoteApproval
+    test('to test the property `quoteApproval`', () async {
+      // TODO
+    });
+
+    // How many accepted quotes this status has.
+    // int quotesCount
+    test('to test the property `quotesCount`', () async {
       // TODO
     });
 

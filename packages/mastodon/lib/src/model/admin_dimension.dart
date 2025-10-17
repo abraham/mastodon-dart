@@ -16,25 +16,14 @@ part 'admin_dimension.g.dart';
 )
 class AdminDimension {
   /// Returns a new [AdminDimension] instance.
-  AdminDimension({
-    required this.data,
-    required this.key,
-  });
+  AdminDimension({required this.data, required this.key});
 
   /// The data available for the requested dimension.
-  @JsonKey(
-    name: r'data',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'data', required: true, includeIfNull: false)
   final List<AdminDimensionData> data;
 
   /// The unique keystring for the requested dimension.
-  @JsonKey(
-    name: r'key',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'key', required: true, includeIfNull: false)
   final String key;
 
   @override

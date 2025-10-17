@@ -7,24 +7,6 @@ void main() {
   // TODO add properties to the entity
 
   group(TrendsLink, () {
-    // The author of the original resource. Deprecated since 4.3.0, clients should use `authors` instead.
-    // String authorName
-    test('to test the property `authorName`', () async {
-      // TODO
-    });
-
-    // A link to the author of the original resource. Deprecated since 4.3.0, clients should use `authors` instead.
-    // Uri authorUrl
-    test('to test the property `authorUrl`', () async {
-      // TODO
-    });
-
-    // Fediverse account of the authors of the original resource.
-    // List<PreviewCardAuthor> authors
-    test('to test the property `authors`', () async {
-      // TODO
-    });
-
     // Description of preview.
     // String description
     test('to test the property `description`', () async {
@@ -74,7 +56,7 @@ void main() {
     });
 
     // The type of the preview card.
-    // PreviewTypeEnum type
+    // TrendsLinkTypeEnum type
     test('to test the property `type`', () async {
       // TODO
     });
@@ -88,6 +70,24 @@ void main() {
     // Width of preview, in pixels.
     // int width
     test('to test the property `width`', () async {
+      // TODO
+    });
+
+    // The author of the original resource. Deprecated since 4.3.0, clients should use `authors` instead.
+    // String authorName
+    test('to test the property `authorName`', () async {
+      // TODO
+    });
+
+    // A link to the author of the original resource. Deprecated since 4.3.0, clients should use `authors` instead.
+    // Uri authorUrl
+    test('to test the property `authorUrl`', () async {
+      // TODO
+    });
+
+    // Fediverse account of the authors of the original resource.
+    // List<PreviewCardAuthor> authors
+    test('to test the property `authors`', () async {
       // TODO
     });
 

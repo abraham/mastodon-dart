@@ -4,7 +4,7 @@ import 'package:mastodon/mastodon.dart';
 // tests for DeleteListAccountsRequest
 void main() {
   final DeleteListAccountsRequest?
-      instance = /* DeleteListAccountsRequest(...) */ null;
+  instance = /* DeleteListAccountsRequest(...) */ null;
   // TODO add properties to the entity
 
   group(DeleteListAccountsRequest, () {

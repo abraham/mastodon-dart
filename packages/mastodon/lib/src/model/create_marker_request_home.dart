@@ -15,16 +15,10 @@ part 'create_marker_request_home.g.dart';
 )
 class CreateMarkerRequestHome {
   /// Returns a new [CreateMarkerRequestHome] instance.
-  CreateMarkerRequestHome({
-    this.lastReadId,
-  });
+  CreateMarkerRequestHome({this.lastReadId});
 
   /// ID of the last status read in the home timeline.
-  @JsonKey(
-    name: r'last_read_id',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'last_read_id', required: false, includeIfNull: false)
   final String? lastReadId;
 
   @override

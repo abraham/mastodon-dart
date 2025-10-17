@@ -4,11 +4,11 @@ import 'package:mastodon/mastodon.dart';
 // tests for CreatePushSubscriptionRequestData
 void main() {
   final CreatePushSubscriptionRequestData?
-      instance = /* CreatePushSubscriptionRequestData(...) */ null;
+  instance = /* CreatePushSubscriptionRequestData(...) */ null;
   // TODO add properties to the entity
 
   group(CreatePushSubscriptionRequestData, () {
-    // PutPushSubscriptionRequestDataAlerts alerts
+    // CreatePushSubscriptionRequestDataAlerts alerts
     test('to test the property `alerts`', () async {
       // TODO
     });

@@ -7,38 +7,14 @@ void main() {
   // TODO add properties to the entity
 
   group(NotificationGroup, () {
+    // RelationshipSeveranceEvent event
+    test('to test the property `event`', () async {
+      // TODO
+    });
+
     // Group key identifying the grouped notifications. Should be treated as an opaque value.
     // String groupKey
     test('to test the property `groupKey`', () async {
-      // TODO
-    });
-
-    // ID of the most recent notification in the group.
-    // String mostRecentNotificationId
-    test('to test the property `mostRecentNotificationId`', () async {
-      // TODO
-    });
-
-    // Total number of individual notifications that are part of this notification group.
-    // int notificationsCount
-    test('to test the property `notificationsCount`', () async {
-      // TODO
-    });
-
-    // IDs of some of the accounts who most recently triggered notifications in this group.
-    // List<String> sampleAccountIds
-    test('to test the property `sampleAccountIds`', () async {
-      // TODO
-    });
-
-    // The type of event that resulted in the notifications in this group.
-    // NotificationTypeEnum type
-    test('to test the property `type`', () async {
-      // TODO
-    });
-
-    // RelationshipSeveranceEvent event
-    test('to test the property `event`', () async {
       // TODO
     });
 
@@ -50,6 +26,18 @@ void main() {
 
     // AccountWarning moderationWarning
     test('to test the property `moderationWarning`', () async {
+      // TODO
+    });
+
+    // ID of the most recent notification in the group.
+    // int mostRecentNotificationId
+    test('to test the property `mostRecentNotificationId`', () async {
+      // TODO
+    });
+
+    // Total number of individual notifications that are part of this notification group.
+    // int notificationsCount
+    test('to test the property `notificationsCount`', () async {
       // TODO
     });
 
@@ -70,9 +58,21 @@ void main() {
       // TODO
     });
 
-    // ID of the [Status]({{< relref \"entities/Status\" >}}) that was the object of the notification. Attached when `type` of the notification is `favourite`, `reblog`, `status`, `mention`, `poll`, or `update`.
+    // IDs of some of the accounts who most recently triggered notifications in this group.
+    // List<String> sampleAccountIds
+    test('to test the property `sampleAccountIds`', () async {
+      // TODO
+    });
+
+    // ID of the [Status]({{< relref \"entities/Status\" >}}) that was the object of the notification. Attached when `type` of the notification is `favourite`, `reblog`, `status`, `mention`, `poll`, `update`, `quote` or `quoted_update`. In the case of `quoted_update`, your quote of the edited status is attached, not the status that was edited.
     // String statusId
     test('to test the property `statusId`', () async {
+      // TODO
+    });
+
+    // The type of event that resulted in the notifications in this group.
+    // NotificationTypeEnum type
+    test('to test the property `type`', () async {
       // TODO
     });
   });

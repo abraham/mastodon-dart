@@ -51,15 +51,10 @@ class FollowRequestsApi {
     final _path = r'/api/v1/follow_requests';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -87,8 +82,11 @@ class FollowRequestsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<Account>, Account>(rawData, 'List<Account>',
-              growable: true);
+          : deserialize<List<Account>, Account>(
+              rawData,
+              'List<Account>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -136,19 +134,18 @@ class FollowRequestsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/follow_requests/{account_id}/authorize'
-        .replaceAll('{' r'account_id' '}', accountId.toString());
+    final _path = r'/api/v1/follow_requests/{account_id}/authorize'.replaceAll(
+      '{'
+      r'account_id'
+      '}',
+      accountId.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -169,8 +166,11 @@ class FollowRequestsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<Relationship, Relationship>(rawData, 'Relationship',
-              growable: true);
+          : deserialize<Relationship, Relationship>(
+              rawData,
+              'Relationship',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -218,19 +218,18 @@ class FollowRequestsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/follow_requests/{account_id}/reject'
-        .replaceAll('{' r'account_id' '}', accountId.toString());
+    final _path = r'/api/v1/follow_requests/{account_id}/reject'.replaceAll(
+      '{'
+      r'account_id'
+      '}',
+      accountId.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -251,8 +250,11 @@ class FollowRequestsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<Relationship, Relationship>(rawData, 'Relationship',
-              growable: true);
+          : deserialize<Relationship, Relationship>(
+              rawData,
+              'Relationship',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

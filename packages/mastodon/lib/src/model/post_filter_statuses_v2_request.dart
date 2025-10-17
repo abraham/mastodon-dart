@@ -15,16 +15,10 @@ part 'post_filter_statuses_v2_request.g.dart';
 )
 class PostFilterStatusesV2Request {
   /// Returns a new [PostFilterStatusesV2Request] instance.
-  PostFilterStatusesV2Request({
-    required this.statusId,
-  });
+  PostFilterStatusesV2Request({required this.statusId});
 
   /// The status ID to be added to the filter group.
-  @JsonKey(
-    name: r'status_id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'status_id', required: true, includeIfNull: false)
   final String statusId;
 
   @override

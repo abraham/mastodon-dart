@@ -4,7 +4,7 @@ import 'package:mastodon/mastodon.dart';
 // tests for WebPushSubscriptionAlerts
 void main() {
   final WebPushSubscriptionAlerts?
-      instance = /* WebPushSubscriptionAlerts(...) */ null;
+  instance = /* WebPushSubscriptionAlerts(...) */ null;
   // TODO add properties to the entity
 
   group(WebPushSubscriptionAlerts, () {

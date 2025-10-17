@@ -15,16 +15,10 @@ part 'create_featured_tag_request.g.dart';
 )
 class CreateFeaturedTagRequest {
   /// Returns a new [CreateFeaturedTagRequest] instance.
-  CreateFeaturedTagRequest({
-    required this.name,
-  });
+  CreateFeaturedTagRequest({required this.name});
 
   /// The hashtag to be featured, without the hash sign.
-  @JsonKey(
-    name: r'name',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'name', required: true, includeIfNull: false)
   final String name;
 
   @override

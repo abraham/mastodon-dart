@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **applicationId** | **int** | Internal ID of the Application that posted the status. Provided for historical compatibility only and can be ignored. | 
 **text** | **String** | Text to be used as status content. | 
-**visibility** | **String** | The visibility that the status will have once it is posted. | 
+**visibility** | [**StatusVisibilityEnum**](StatusVisibilityEnum.md) | The visibility that the status will have once it is posted. | 
 **withRateLimit** | **bool** | Whether status creation is subject to rate limiting. Provided for historical compatibility only and can be ignored. | 
 **idempotency** | **String** | Idempotency key to prevent duplicate statuses. | [optional] 
 **inReplyToId** | **int** | ID of the Status that will be replied to. | [optional] 

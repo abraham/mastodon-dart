@@ -17,32 +17,22 @@ class V1InstanceStats {
   /// Returns a new [V1InstanceStats] instance.
   V1InstanceStats({
     required this.domainCount,
+
     required this.statusCount,
+
     required this.userCount,
   });
 
   /// Total domains discovered by this instance.
-  @JsonKey(
-    name: r'domain_count',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'domain_count', required: true, includeIfNull: false)
   final int domainCount;
 
   /// Total statuses on this instance.
-  @JsonKey(
-    name: r'status_count',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'status_count', required: true, includeIfNull: false)
   final int statusCount;
 
   /// Total users on this instance.
-  @JsonKey(
-    name: r'user_count',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'user_count', required: true, includeIfNull: false)
   final int userCount;
 
   @override

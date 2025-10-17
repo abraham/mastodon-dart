@@ -15,16 +15,10 @@ part 'create_email_confirmations_request.g.dart';
 )
 class CreateEmailConfirmationsRequest {
   /// Returns a new [CreateEmailConfirmationsRequest] instance.
-  CreateEmailConfirmationsRequest({
-    this.email,
-  });
+  CreateEmailConfirmationsRequest({this.email});
 
   /// If provided, updates the unconfirmed user's email before resending the confirmation email.
-  @JsonKey(
-    name: r'email',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'email', required: false, includeIfNull: false)
   final String? email;
 
   @override

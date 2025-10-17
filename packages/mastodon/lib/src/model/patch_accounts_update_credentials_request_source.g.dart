@@ -7,38 +7,38 @@ part of 'patch_accounts_update_credentials_request_source.dart';
 // **************************************************************************
 
 PatchAccountsUpdateCredentialsRequestSource
-    _$PatchAccountsUpdateCredentialsRequestSourceFromJson(
-            Map<String, dynamic> json) =>
-        $checkedCreate(
-          'PatchAccountsUpdateCredentialsRequestSource',
-          json,
-          ($checkedConvert) {
-            final val = PatchAccountsUpdateCredentialsRequestSource(
-              privacy: $checkedConvert(
-                  'privacy',
-                  (v) => $enumDecodeNullable(
-                      _$PatchAccountsUpdateCredentialsRequestSourcePrivacyEnumEnumMap,
-                      v)),
-              sensitive: $checkedConvert('sensitive', (v) => v as bool?),
-              language: $checkedConvert('language', (v) => v as String?),
-            );
-            return val;
-          },
-        );
+_$PatchAccountsUpdateCredentialsRequestSourceFromJson(
+  Map<String, dynamic> json,
+) => $checkedCreate(
+  'PatchAccountsUpdateCredentialsRequestSource',
+  json,
+  ($checkedConvert) {
+    final val = PatchAccountsUpdateCredentialsRequestSource(
+      privacy: $checkedConvert(
+        'privacy',
+        (v) => $enumDecodeNullable(_$StatusVisibilityEnumEnumMap, v),
+      ),
+      sensitive: $checkedConvert('sensitive', (v) => v as bool?),
+      language: $checkedConvert('language', (v) => v as String?),
+      quotePolicy: $checkedConvert('quote_policy', (v) => v as String?),
+    );
+    return val;
+  },
+  fieldKeyMap: const {'quotePolicy': 'quote_policy'},
+);
 
 Map<String, dynamic> _$PatchAccountsUpdateCredentialsRequestSourceToJson(
-        PatchAccountsUpdateCredentialsRequestSource instance) =>
-    <String, dynamic>{
-      if (_$PatchAccountsUpdateCredentialsRequestSourcePrivacyEnumEnumMap[
-              instance.privacy]
-          case final value?)
-        'privacy': value,
-      if (instance.sensitive case final value?) 'sensitive': value,
-      if (instance.language case final value?) 'language': value,
-    };
+  PatchAccountsUpdateCredentialsRequestSource instance,
+) => <String, dynamic>{
+  'privacy': ?_$StatusVisibilityEnumEnumMap[instance.privacy],
+  'sensitive': ?instance.sensitive,
+  'language': ?instance.language,
+  'quote_policy': ?instance.quotePolicy,
+};
 
-const _$PatchAccountsUpdateCredentialsRequestSourcePrivacyEnumEnumMap = {
-  PatchAccountsUpdateCredentialsRequestSourcePrivacyEnum.public: 'public',
-  PatchAccountsUpdateCredentialsRequestSourcePrivacyEnum.unlisted: 'unlisted',
-  PatchAccountsUpdateCredentialsRequestSourcePrivacyEnum.private: 'private',
+const _$StatusVisibilityEnumEnumMap = {
+  StatusVisibilityEnum.public: 'public',
+  StatusVisibilityEnum.unlisted: 'unlisted',
+  StatusVisibilityEnum.private: 'private',
+  StatusVisibilityEnum.direct: 'direct',
 };

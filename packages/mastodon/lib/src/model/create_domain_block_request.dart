@@ -15,16 +15,10 @@ part 'create_domain_block_request.g.dart';
 )
 class CreateDomainBlockRequest {
   /// Returns a new [CreateDomainBlockRequest] instance.
-  CreateDomainBlockRequest({
-    required this.domain,
-  });
+  CreateDomainBlockRequest({required this.domain});
 
   /// Domain to block.
-  @JsonKey(
-    name: r'domain',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'domain', required: true, includeIfNull: false)
   final String domain;
 
   @override

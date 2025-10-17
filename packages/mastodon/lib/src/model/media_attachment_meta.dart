@@ -16,15 +16,9 @@ part 'media_attachment_meta.g.dart';
 )
 class MediaAttachmentMeta {
   /// Returns a new [MediaAttachmentMeta] instance.
-  MediaAttachmentMeta({
-    this.focus,
-  });
+  MediaAttachmentMeta({this.focus});
 
-  @JsonKey(
-    name: r'focus',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'focus', required: false, includeIfNull: false)
   final MediaAttachmentMetaFocus? focus;
 
   @override

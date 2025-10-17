@@ -17,32 +17,22 @@ class AdminDomainAllow {
   /// Returns a new [AdminDomainAllow] instance.
   AdminDomainAllow({
     required this.createdAt,
+
     required this.domain,
+
     required this.id,
   });
 
   /// When the domain was allowed to federate.
-  @JsonKey(
-    name: r'created_at',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'created_at', required: true, includeIfNull: false)
   final DateTime createdAt;
 
   /// The domain that is allowed to federate.
-  @JsonKey(
-    name: r'domain',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'domain', required: true, includeIfNull: false)
   final String domain;
 
   /// The ID of the DomainAllow in the database.
-  @JsonKey(
-    name: r'id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
   @override

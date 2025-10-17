@@ -15,25 +15,14 @@ part 'admin_measure_data.g.dart';
 )
 class AdminMeasureData {
   /// Returns a new [AdminMeasureData] instance.
-  AdminMeasureData({
-    required this.date,
-    required this.value,
-  });
+  AdminMeasureData({required this.date, required this.value});
 
   /// The requested day or midnight on the requested day in the time period.
-  @JsonKey(
-    name: r'date',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'date', required: true, includeIfNull: false)
   final DateTime date;
 
   /// The numeric value for the requested measure.
-  @JsonKey(
-    name: r'value',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'value', required: true, includeIfNull: false)
   final String value;
 
   @override

@@ -15,16 +15,10 @@ part 'v1_instance_configuration_accounts.g.dart';
 )
 class V1InstanceConfigurationAccounts {
   /// Returns a new [V1InstanceConfigurationAccounts] instance.
-  V1InstanceConfigurationAccounts({
-    required this.maxFeaturedTags,
-  });
+  V1InstanceConfigurationAccounts({required this.maxFeaturedTags});
 
   /// The maximum number of featured tags allowed for each account.
-  @JsonKey(
-    name: r'max_featured_tags',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'max_featured_tags', required: true, includeIfNull: false)
   final int maxFeaturedTags;
 
   @override

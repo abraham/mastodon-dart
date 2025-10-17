@@ -7,23 +7,16 @@ part of 'instance_usage.dart';
 // **************************************************************************
 
 InstanceUsage _$InstanceUsageFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'InstanceUsage',
-      json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['users'],
-        );
-        final val = InstanceUsage(
-          users: $checkedConvert('users',
-              (v) => InstanceUsageUsers.fromJson(v as Map<String, dynamic>)),
-        );
-        return val;
-      },
-    );
+    $checkedCreate('InstanceUsage', json, ($checkedConvert) {
+      $checkKeys(json, requiredKeys: const ['users']);
+      final val = InstanceUsage(
+        users: $checkedConvert(
+          'users',
+          (v) => InstanceUsageUsers.fromJson(v as Map<String, dynamic>),
+        ),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$InstanceUsageToJson(InstanceUsage instance) =>
-    <String, dynamic>{
-      'users': instance.users.toJson(),
-    };
+    <String, dynamic>{'users': instance.users.toJson()};

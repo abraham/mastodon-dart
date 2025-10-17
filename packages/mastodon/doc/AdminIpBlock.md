@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **createdAt** | [**DateTime**](DateTime.md) | When the IP block was created. | 
 **id** | **String** | The ID of the DomainBlock in the database. | 
 **ip** | **String** | The IP address range that is not allowed to federate. | 
-**severity** | **String** | The associated policy with this IP block. | 
+**severity** | [**AdminIpBlockSeverityEnum**](AdminIpBlockSeverityEnum.md) | The associated policy with this IP block. | 
 **expiresAt** | [**DateTime**](DateTime.md) | When the IP block will expire. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

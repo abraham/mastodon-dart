@@ -13,20 +13,9 @@ void main() {
       // TODO
     });
 
-    // MediaAttachmentMeta meta
-    test('to test the property `meta`', () async {
-      // TODO
-    });
-
     // The type of the attachment.
-    // String type
+    // MediaAttachmentTypeEnum type
     test('to test the property `type`', () async {
-      // TODO
-    });
-
-    // The location of the original full-size attachment.
-    // Uri url
-    test('to test the property `url`', () async {
       // TODO
     });
 
@@ -42,6 +31,11 @@ void main() {
       // TODO
     });
 
+    // MediaAttachmentMeta meta
+    test('to test the property `meta`', () async {
+      // TODO
+    });
+
     // The location of a scaled-down preview of the attachment.
     // Uri previewUrl
     test('to test the property `previewUrl`', () async {
@@ -51,6 +45,12 @@ void main() {
     // The location of the full-size original attachment on the remote website.
     // Uri remoteUrl
     test('to test the property `remoteUrl`', () async {
+      // TODO
+    });
+
+    // The location of the original full-size attachment.
+    // Uri url
+    test('to test the property `url`', () async {
       // TODO
     });
   });

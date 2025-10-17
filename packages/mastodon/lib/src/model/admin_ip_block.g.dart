@@ -17,14 +17,20 @@ AdminIpBlock _$AdminIpBlockFromJson(Map<String, dynamic> json) =>
         );
         final val = AdminIpBlock(
           comment: $checkedConvert('comment', (v) => v as String),
-          createdAt:
-              $checkedConvert('created_at', (v) => DateTime.parse(v as String)),
+          createdAt: $checkedConvert(
+            'created_at',
+            (v) => DateTime.parse(v as String),
+          ),
           id: $checkedConvert('id', (v) => v as String),
           ip: $checkedConvert('ip', (v) => v as String),
-          severity: $checkedConvert('severity',
-              (v) => $enumDecode(_$AdminIpBlockSeverityEnumEnumMap, v)),
-          expiresAt: $checkedConvert('expires_at',
-              (v) => v == null ? null : DateTime.parse(v as String)),
+          severity: $checkedConvert(
+            'severity',
+            (v) => $enumDecode(_$AdminIpBlockSeverityEnumEnumMap, v),
+          ),
+          expiresAt: $checkedConvert(
+            'expires_at',
+            (v) => v == null ? null : DateTime.parse(v as String),
+          ),
         );
         return val;
       },
@@ -38,8 +44,7 @@ Map<String, dynamic> _$AdminIpBlockToJson(AdminIpBlock instance) =>
       'id': instance.id,
       'ip': instance.ip,
       'severity': _$AdminIpBlockSeverityEnumEnumMap[instance.severity]!,
-      if (instance.expiresAt?.toIso8601String() case final value?)
-        'expires_at': value,
+      'expires_at': ?instance.expiresAt?.toIso8601String(),
     };
 
 const _$AdminIpBlockSeverityEnumEnumMap = {

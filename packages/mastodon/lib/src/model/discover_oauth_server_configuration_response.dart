@@ -19,17 +19,29 @@ class DiscoverOauthServerConfigurationResponse {
   /// Returns a new [DiscoverOauthServerConfigurationResponse] instance.
   DiscoverOauthServerConfigurationResponse({
     required this.appRegistrationEndpoint,
+
     required this.authorizationEndpoint,
+
     required this.codeChallengeMethodsSupported,
+
     required this.grantTypesSupported,
+
     required this.issuer,
+
     required this.responseModesSupported,
+
     required this.responseTypesSupported,
+
     required this.revocationEndpoint,
+
     required this.scopesSupported,
+
     required this.serviceDocumentation,
+
     required this.tokenEndpoint,
+
     required this.tokenEndpointAuthMethodsSupported,
+
     required this.userinfoEndpoint,
   });
 
@@ -58,19 +70,11 @@ class DiscoverOauthServerConfigurationResponse {
   final List<String> codeChallengeMethodsSupported;
 
   /// Array of grant_types_supported
-  @JsonKey(
-    name: r'grant_types_supported',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'grant_types_supported', required: true, includeIfNull: false)
   final List<String> grantTypesSupported;
 
   /// issuer field
-  @JsonKey(
-    name: r'issuer',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'issuer', required: true, includeIfNull: false)
   final Uri issuer;
 
   /// Array of response_modes_supported
@@ -90,35 +94,19 @@ class DiscoverOauthServerConfigurationResponse {
   final List<String> responseTypesSupported;
 
   /// revocation_endpoint field
-  @JsonKey(
-    name: r'revocation_endpoint',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'revocation_endpoint', required: true, includeIfNull: false)
   final Uri revocationEndpoint;
 
   /// Array of OAuth scopes
-  @JsonKey(
-    name: r'scopes_supported',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'scopes_supported', required: true, includeIfNull: false)
   final List<OAuthScope> scopesSupported;
 
   /// service_documentation field
-  @JsonKey(
-    name: r'service_documentation',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'service_documentation', required: true, includeIfNull: false)
   final Uri serviceDocumentation;
 
   /// token_endpoint field
-  @JsonKey(
-    name: r'token_endpoint',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'token_endpoint', required: true, includeIfNull: false)
   final Uri tokenEndpoint;
 
   /// Array of token_endpoint_auth_methods_supported
@@ -130,11 +118,7 @@ class DiscoverOauthServerConfigurationResponse {
   final List<String> tokenEndpointAuthMethodsSupported;
 
   /// userinfo_endpoint field
-  @JsonKey(
-    name: r'userinfo_endpoint',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'userinfo_endpoint', required: true, includeIfNull: false)
   final Uri userinfoEndpoint;
 
   @override
@@ -174,8 +158,8 @@ class DiscoverOauthServerConfigurationResponse {
       userinfoEndpoint.hashCode;
 
   factory DiscoverOauthServerConfigurationResponse.fromJson(
-          Map<String, dynamic> json) =>
-      _$DiscoverOauthServerConfigurationResponseFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$DiscoverOauthServerConfigurationResponseFromJson(json);
 
   Map<String, dynamic> toJson() =>
       _$DiscoverOauthServerConfigurationResponseToJson(this);

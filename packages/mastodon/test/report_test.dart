@@ -14,7 +14,7 @@ void main() {
     });
 
     // The generic reason for the report.
-    // CategoryEnum category
+    // ReportCategoryEnum category
     test('to test the property `category`', () async {
       // TODO
     });

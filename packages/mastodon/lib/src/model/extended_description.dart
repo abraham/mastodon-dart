@@ -15,25 +15,14 @@ part 'extended_description.g.dart';
 )
 class ExtendedDescription {
   /// Returns a new [ExtendedDescription] instance.
-  ExtendedDescription({
-    required this.content,
-    required this.updatedAt,
-  });
+  ExtendedDescription({required this.content, required this.updatedAt});
 
   /// The rendered HTML content of the extended description.
-  @JsonKey(
-    name: r'content',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'content', required: true, includeIfNull: false)
   final String content;
 
   /// A timestamp of when the extended description was last updated.
-  @JsonKey(
-    name: r'updated_at',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'updated_at', required: true, includeIfNull: false)
   final DateTime updatedAt;
 
   @override

@@ -4,7 +4,7 @@ import 'package:mastodon/mastodon.dart';
 // tests for StatusEditPollOptionsInner
 void main() {
   final StatusEditPollOptionsInner?
-      instance = /* StatusEditPollOptionsInner(...) */ null;
+  instance = /* StatusEditPollOptionsInner(...) */ null;
   // TODO add properties to the entity
 
   group(StatusEditPollOptionsInner, () {

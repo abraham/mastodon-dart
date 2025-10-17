@@ -19,95 +19,64 @@ class Poll {
   /// Returns a new [Poll] instance.
   Poll({
     required this.emojis,
+
     required this.expired,
+
     required this.id,
+
     required this.multiple,
+
     required this.options,
+
     required this.votesCount,
+
     this.expiresAt,
+
     this.ownVotes,
+
     this.voted,
+
     this.votersCount,
   });
 
   /// Custom emoji to be used for rendering poll options.
-  @JsonKey(
-    name: r'emojis',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'emojis', required: true, includeIfNull: false)
   final List<CustomEmoji> emojis;
 
   /// Is the poll currently expired?
-  @JsonKey(
-    name: r'expired',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'expired', required: true, includeIfNull: false)
   final bool expired;
 
   /// The ID of the poll in the database.
-  @JsonKey(
-    name: r'id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
   /// Does the poll allow multiple-choice answers?
-  @JsonKey(
-    name: r'multiple',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'multiple', required: true, includeIfNull: false)
   final bool multiple;
 
   /// Possible answers for the poll.
-  @JsonKey(
-    name: r'options',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'options', required: true, includeIfNull: false)
   final List<PollOption> options;
 
   /// How many votes have been received.
-  @JsonKey(
-    name: r'votes_count',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'votes_count', required: true, includeIfNull: false)
   final int votesCount;
 
   /// When the poll ends.
-  @JsonKey(
-    name: r'expires_at',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'expires_at', required: false, includeIfNull: false)
   final DateTime? expiresAt;
 
   /// When called with a user token, which options has the authorized user chosen? Contains an array of index values for `options`.
-  @JsonKey(
-    name: r'own_votes',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'own_votes', required: false, includeIfNull: false)
   final List<int>? ownVotes;
 
   /// When called with a user token, has the authorized user voted?
-  @JsonKey(
-    name: r'voted',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'voted', required: false, includeIfNull: false)
   final bool? voted;
 
   /// How many unique accounts have voted on a multiple-choice poll.
-  @JsonKey(
-    name: r'voters_count',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'voters_count', required: false, includeIfNull: false)
   final int? votersCount;
 
   @override

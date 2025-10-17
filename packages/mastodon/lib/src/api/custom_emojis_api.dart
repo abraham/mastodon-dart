@@ -44,13 +44,8 @@ class CustomEmojisApi {
     final _path = r'/api/v1/custom_emojis';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -69,8 +64,10 @@ class CustomEmojisApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<CustomEmoji>, CustomEmoji>(
-              rawData, 'List<CustomEmoji>',
-              growable: true);
+              rawData,
+              'List<CustomEmoji>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

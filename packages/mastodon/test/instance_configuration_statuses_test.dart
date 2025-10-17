@@ -4,7 +4,7 @@ import 'package:mastodon/mastodon.dart';
 // tests for InstanceConfigurationStatuses
 void main() {
   final InstanceConfigurationStatuses?
-      instance = /* InstanceConfigurationStatuses(...) */ null;
+  instance = /* InstanceConfigurationStatuses(...) */ null;
   // TODO add properties to the entity
 
   group(InstanceConfigurationStatuses, () {

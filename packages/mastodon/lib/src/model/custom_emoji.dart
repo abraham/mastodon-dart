@@ -18,50 +18,34 @@ class CustomEmoji {
   /// Returns a new [CustomEmoji] instance.
   CustomEmoji({
     required this.shortcode,
+
     required this.staticUrl,
+
     required this.url,
+
     required this.visibleInPicker,
+
     this.category,
   });
 
   /// The name of the custom emoji.
-  @JsonKey(
-    name: r'shortcode',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'shortcode', required: true, includeIfNull: false)
   final String shortcode;
 
   /// A link to a static copy of the custom emoji.
-  @JsonKey(
-    name: r'static_url',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'static_url', required: true, includeIfNull: false)
   final Uri staticUrl;
 
   /// A link to the custom emoji.
-  @JsonKey(
-    name: r'url',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'url', required: true, includeIfNull: false)
   final Uri url;
 
   /// Whether this Emoji should be visible in the picker or unlisted.
-  @JsonKey(
-    name: r'visible_in_picker',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'visible_in_picker', required: true, includeIfNull: false)
   final bool visibleInPicker;
 
   /// Used for sorting custom emoji in the picker.
-  @JsonKey(
-    name: r'category',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'category', required: false, includeIfNull: false)
   final String? category;
 
   @override

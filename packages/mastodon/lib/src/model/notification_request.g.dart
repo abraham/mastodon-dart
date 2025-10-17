@@ -11,49 +11,48 @@ NotificationRequest _$NotificationRequestFromJson(Map<String, dynamic> json) =>
       'NotificationRequest',
       json,
       ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const [
-            'account',
-            'created_at',
-            'id',
-            'notifications_count',
-            'updated_at'
-          ],
-        );
         final val = NotificationRequest(
           account: $checkedConvert(
-              'account', (v) => Account.fromJson(v as Map<String, dynamic>)),
-          createdAt:
-              $checkedConvert('created_at', (v) => DateTime.parse(v as String)),
-          id: $checkedConvert('id', (v) => v as String),
-          notificationsCount:
-              $checkedConvert('notifications_count', (v) => v as String),
-          updatedAt:
-              $checkedConvert('updated_at', (v) => DateTime.parse(v as String)),
+            'account',
+            (v) =>
+                v == null ? null : Account.fromJson(v as Map<String, dynamic>),
+          ),
+          createdAt: $checkedConvert(
+            'created_at',
+            (v) => v == null ? null : DateTime.parse(v as String),
+          ),
+          id: $checkedConvert('id', (v) => v as String?),
           lastStatus: $checkedConvert(
-              'last_status',
-              (v) => v == null
-                  ? null
-                  : Status.fromJson(v as Map<String, dynamic>)),
+            'last_status',
+            (v) =>
+                v == null ? null : Status.fromJson(v as Map<String, dynamic>),
+          ),
+          notificationsCount: $checkedConvert(
+            'notifications_count',
+            (v) => v as String?,
+          ),
+          updatedAt: $checkedConvert(
+            'updated_at',
+            (v) => v == null ? null : DateTime.parse(v as String),
+          ),
         );
         return val;
       },
       fieldKeyMap: const {
         'createdAt': 'created_at',
+        'lastStatus': 'last_status',
         'notificationsCount': 'notifications_count',
         'updatedAt': 'updated_at',
-        'lastStatus': 'last_status'
       },
     );
 
 Map<String, dynamic> _$NotificationRequestToJson(
-        NotificationRequest instance) =>
-    <String, dynamic>{
-      'account': instance.account.toJson(),
-      'created_at': instance.createdAt.toIso8601String(),
-      'id': instance.id,
-      'notifications_count': instance.notificationsCount,
-      'updated_at': instance.updatedAt.toIso8601String(),
-      if (instance.lastStatus?.toJson() case final value?) 'last_status': value,
-    };
+  NotificationRequest instance,
+) => <String, dynamic>{
+  'account': ?instance.account?.toJson(),
+  'created_at': ?instance.createdAt?.toIso8601String(),
+  'id': ?instance.id,
+  'last_status': ?instance.lastStatus?.toJson(),
+  'notifications_count': ?instance.notificationsCount,
+  'updated_at': ?instance.updatedAt?.toIso8601String(),
+};

@@ -43,19 +43,18 @@ class ConversationsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path =
-        r'/api/v1/conversations/{id}'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/conversations/{id}'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -107,15 +106,10 @@ class ConversationsApi {
     final _path = r'/api/v1/conversations';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -145,8 +139,10 @@ class ConversationsApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<Conversation>, Conversation>(
-              rawData, 'List<Conversation>',
-              growable: true);
+              rawData,
+              'List<Conversation>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -194,19 +190,18 @@ class ConversationsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/conversations/{id}/read'
-        .replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/conversations/{id}/read'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -227,8 +222,11 @@ class ConversationsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<Conversation, Conversation>(rawData, 'Conversation',
-              growable: true);
+          : deserialize<Conversation, Conversation>(
+              rawData,
+              'Conversation',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

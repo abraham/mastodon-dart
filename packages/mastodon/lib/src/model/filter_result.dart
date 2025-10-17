@@ -16,34 +16,18 @@ part 'filter_result.g.dart';
 )
 class FilterResult {
   /// Returns a new [FilterResult] instance.
-  FilterResult({
-    required this.filter,
-    this.keywordMatches,
-    this.statusMatches,
-  });
+  FilterResult({required this.filter, this.keywordMatches, this.statusMatches});
 
   /// The filter that was matched.
-  @JsonKey(
-    name: r'filter',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'filter', required: true, includeIfNull: false)
   final Filter filter;
 
   /// The keyword within the filter that was matched.
-  @JsonKey(
-    name: r'keyword_matches',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'keyword_matches', required: false, includeIfNull: false)
   final List<String>? keywordMatches;
 
   /// The status ID within the filter that was matched.
-  @JsonKey(
-    name: r'status_matches',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'status_matches', required: false, includeIfNull: false)
   final List<String>? statusMatches;
 
   @override

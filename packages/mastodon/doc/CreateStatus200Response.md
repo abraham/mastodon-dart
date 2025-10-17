@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **spoilerText** | **String** | Subject or summary line, below which status content is collapsed until expanded. | 
 **tags** | [**List&lt;StatusTag&gt;**](StatusTag.md) | Hashtags used within the status content. | 
 **uri** | **String** | URI of the status used for federation. | 
-**visibility** | [**VisibilityEnum**](VisibilityEnum.md) | Visibility of this status. | 
+**visibility** | [**StatusVisibilityEnum**](StatusVisibilityEnum.md) | Visibility of this status. | 
 **params** | [**ScheduledStatusParams**](ScheduledStatusParams.md) |  | 
 **scheduledAt** | [**DateTime**](DateTime.md) | The timestamp for when the status will be posted. | 
 **application** | [**StatusApplication**](StatusApplication.md) |  | [optional] 
@@ -37,6 +37,9 @@ Name | Type | Description | Notes
 **muted** | **bool** | If the current token has an authorized user: Have you muted notifications for this status's conversation? | [optional] 
 **pinned** | **bool** | If the current token has an authorized user: Have you pinned this status? Only appears if the status is pinnable. | [optional] 
 **poll** | [**Poll**](Poll.md) |  | [optional] 
+**quote** | [**StatusQuote**](StatusQuote.md) |  | [optional] 
+**quoteApproval** | [**QuoteApproval**](QuoteApproval.md) |  | [optional] 
+**quotesCount** | **int** | How many accepted quotes this status has. | [optional] 
 **reblog** | [**Status**](Status.md) |  | [optional] 
 **reblogged** | **bool** | If the current token has an authorized user: Have you boosted this status? | [optional] 
 **text** | **String** | Plain-text source of a status. Returned instead of `content` when status is deleted, so the user may redraft from the source text without the client having to reverse-engineer the original text from the HTML content. | [optional] 

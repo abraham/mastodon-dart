@@ -17,46 +17,32 @@ part 'preview_card_author.g.dart';
 )
 class PreviewCardAuthor {
   /// Returns a new [PreviewCardAuthor] instance.
-  PreviewCardAuthor({
-    required this.name,
-    required this.url,
-    this.account,
-  });
+  PreviewCardAuthor({this.account, this.name, this.url});
+
+  @JsonKey(name: r'account', required: false, includeIfNull: false)
+  final Account? account;
 
   /// The original resource author's name. Replaces the deprecated `author_name` attribute of the preview card.
-  @JsonKey(
-    name: r'name',
-    required: true,
-    includeIfNull: false,
-  )
-  final String name;
+  @JsonKey(name: r'name', required: false, includeIfNull: false)
+  final String? name;
 
   /// A link to the author of the original resource. Replaces the deprecated `author_url` attribute of the preview card.
-  @JsonKey(
-    name: r'url',
-    required: true,
-    includeIfNull: false,
-  )
-  final Uri url;
-
-  @JsonKey(
-    name: r'account',
-    required: false,
-    includeIfNull: false,
-  )
-  final Account? account;
+  @JsonKey(name: r'url', required: false, includeIfNull: false)
+  final Uri? url;
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is PreviewCardAuthor &&
+          other.account == account &&
           other.name == name &&
-          other.url == url &&
-          other.account == account;
+          other.url == url;
 
   @override
   int get hashCode =>
-      name.hashCode + url.hashCode + (account == null ? 0 : account.hashCode);
+      (account == null ? 0 : account.hashCode) +
+      (name == null ? 0 : name.hashCode) +
+      (url == null ? 0 : url.hashCode);
 
   factory PreviewCardAuthor.fromJson(Map<String, dynamic> json) =>
       _$PreviewCardAuthorFromJson(json);

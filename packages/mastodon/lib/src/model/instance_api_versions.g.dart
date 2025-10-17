@@ -7,23 +7,13 @@ part of 'instance_api_versions.dart';
 // **************************************************************************
 
 InstanceApiVersions _$InstanceApiVersionsFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'InstanceApiVersions',
-      json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['mastodon'],
-        );
-        final val = InstanceApiVersions(
-          mastodon: $checkedConvert('mastodon', (v) => (v as num).toInt()),
-        );
-        return val;
-      },
-    );
+    $checkedCreate('InstanceApiVersions', json, ($checkedConvert) {
+      final val = InstanceApiVersions(
+        mastodon: $checkedConvert('mastodon', (v) => (v as num?)?.toInt()),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$InstanceApiVersionsToJson(
-        InstanceApiVersions instance) =>
-    <String, dynamic>{
-      'mastodon': instance.mastodon,
-    };
+  InstanceApiVersions instance,
+) => <String, dynamic>{'mastodon': ?instance.mastodon};

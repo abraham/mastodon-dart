@@ -19,12 +19,6 @@ void main() {
       // TODO
     });
 
-    // Group key shared by similar notifications, to be used in the grouped notifications feature. Should be considered opaque, but ungrouped notifications can be assumed to have a `group_key` of the form `ungrouped-{notification_id}`.
-    // String groupKey
-    test('to test the property `groupKey`', () async {
-      // TODO
-    });
-
     // The id of the notification in the database.
     // String id
     test('to test the property `id`', () async {
@@ -39,6 +33,12 @@ void main() {
 
     // RelationshipSeveranceEvent event
     test('to test the property `event`', () async {
+      // TODO
+    });
+
+    // Group key shared by similar notifications, to be used in the grouped notifications feature. Should be considered opaque, but ungrouped notifications can be assumed to have a `group_key` of the form `ungrouped-{notification_id}`.
+    // String groupKey
+    test('to test the property `groupKey`', () async {
       // TODO
     });
 

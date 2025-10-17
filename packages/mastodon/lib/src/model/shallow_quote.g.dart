@@ -7,36 +7,31 @@ part of 'shallow_quote.dart';
 // **************************************************************************
 
 ShallowQuote _$ShallowQuoteFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'ShallowQuote',
-      json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['state'],
-        );
-        final val = ShallowQuote(
-          state: $checkedConvert(
-              'state', (v) => $enumDecode(_$StateEnumEnumMap, v)),
-          quotedStatusId:
-              $checkedConvert('quoted_status_id', (v) => v as String?),
-        );
-        return val;
-      },
-      fieldKeyMap: const {'quotedStatusId': 'quoted_status_id'},
-    );
+    $checkedCreate('ShallowQuote', json, ($checkedConvert) {
+      final val = ShallowQuote(
+        quotedStatusId: $checkedConvert(
+          'quoted_status_id',
+          (v) => v as String?,
+        ),
+        state: $checkedConvert(
+          'state',
+          (v) => $enumDecodeNullable(_$QuoteStateEnumEnumMap, v),
+        ),
+      );
+      return val;
+    }, fieldKeyMap: const {'quotedStatusId': 'quoted_status_id'});
 
 Map<String, dynamic> _$ShallowQuoteToJson(ShallowQuote instance) =>
     <String, dynamic>{
-      'state': _$StateEnumEnumMap[instance.state]!,
-      if (instance.quotedStatusId case final value?) 'quoted_status_id': value,
+      'quoted_status_id': ?instance.quotedStatusId,
+      'state': ?_$QuoteStateEnumEnumMap[instance.state],
     };
 
-const _$StateEnumEnumMap = {
-  StateEnum.accepted: 'accepted',
-  StateEnum.deleted: 'deleted',
-  StateEnum.pending: 'pending',
-  StateEnum.rejected: 'rejected',
-  StateEnum.revoked: 'revoked',
-  StateEnum.unauthorized: 'unauthorized',
+const _$QuoteStateEnumEnumMap = {
+  QuoteStateEnum.pending: 'pending',
+  QuoteStateEnum.accepted: 'accepted',
+  QuoteStateEnum.rejected: 'rejected',
+  QuoteStateEnum.revoked: 'revoked',
+  QuoteStateEnum.deleted: 'deleted',
+  QuoteStateEnum.unauthorized: 'unauthorized',
 };

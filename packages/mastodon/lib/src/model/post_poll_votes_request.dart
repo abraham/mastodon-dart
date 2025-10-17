@@ -15,16 +15,10 @@ part 'post_poll_votes_request.g.dart';
 )
 class PostPollVotesRequest {
   /// Returns a new [PostPollVotesRequest] instance.
-  PostPollVotesRequest({
-    required this.choices,
-  });
+  PostPollVotesRequest({required this.choices});
 
   /// Provide your own votes as an index for each option (starting from 0).
-  @JsonKey(
-    name: r'choices',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'choices', required: true, includeIfNull: false)
   final List<int> choices;
 
   @override

@@ -17,32 +17,22 @@ class Marker {
   /// Returns a new [Marker] instance.
   Marker({
     required this.lastReadId,
+
     required this.updatedAt,
+
     required this.version,
   });
 
   /// The ID of the most recently viewed entity.
-  @JsonKey(
-    name: r'last_read_id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'last_read_id', required: true, includeIfNull: false)
   final String lastReadId;
 
   /// The timestamp of when the marker was set.
-  @JsonKey(
-    name: r'updated_at',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'updated_at', required: true, includeIfNull: false)
   final DateTime updatedAt;
 
   /// An incrementing counter, used for locking to prevent write conflicts.
-  @JsonKey(
-    name: r'version',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'version', required: true, includeIfNull: false)
   final int version;
 
   @override

@@ -20,7 +20,7 @@ void main() {
     });
 
     // The visibility that the status will have once it is posted.
-    // String visibility
+    // StatusVisibilityEnum visibility
     test('to test the property `visibility`', () async {
       // TODO
     });

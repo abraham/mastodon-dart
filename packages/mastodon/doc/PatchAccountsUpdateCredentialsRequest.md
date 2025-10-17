@@ -8,7 +8,7 @@ import 'package:mastodon/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**attributionDomains** | **List&lt;String&gt;** | Domains of websites allowed to credit the account. | [optional] 
+**attributionDomains** | **List&lt;String&gt;** | Domains of websites allowed to credit the account. Maximum of 10 domains. | [optional] 
 **avatar** | **String** | Avatar image encoded using `multipart/form-data` | [optional] 
 **bot** | **bool** | Whether the account has a bot flag. | [optional] 
 **discoverable** | **bool** | Whether the account should be shown in the profile directory. | [optional] 

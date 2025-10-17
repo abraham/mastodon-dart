@@ -16,24 +16,13 @@ part 'instance_contact.g.dart';
 )
 class InstanceContact {
   /// Returns a new [InstanceContact] instance.
-  InstanceContact({
-    required this.email,
-    this.account,
-  });
+  InstanceContact({required this.email, this.account});
 
   /// An email address that can be messaged regarding inquiries or issues.
-  @JsonKey(
-    name: r'email',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'email', required: true, includeIfNull: false)
   final String email;
 
-  @JsonKey(
-    name: r'account',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'account', required: false, includeIfNull: false)
   final Account? account;
 
   @override

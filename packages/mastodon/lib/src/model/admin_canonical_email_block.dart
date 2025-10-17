@@ -17,23 +17,16 @@ class AdminCanonicalEmailBlock {
   /// Returns a new [AdminCanonicalEmailBlock] instance.
   AdminCanonicalEmailBlock({
     required this.canonicalEmailHash,
+
     required this.id,
   });
 
   /// The SHA256 hash of the canonical email address.
-  @JsonKey(
-    name: r'canonical_email_hash',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'canonical_email_hash', required: true, includeIfNull: false)
   final String canonicalEmailHash;
 
   /// The ID of the email block in the database.
-  @JsonKey(
-    name: r'id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
   @override

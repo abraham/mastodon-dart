@@ -48,15 +48,10 @@ class FeaturedTagsApi {
     final _path = r'/api/v1/featured_tags';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -70,10 +65,7 @@ class FeaturedTagsApi {
       _bodyData = jsonEncode(createFeaturedTagRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -95,8 +87,11 @@ class FeaturedTagsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<FeaturedTag, FeaturedTag>(rawData, 'FeaturedTag',
-              growable: true);
+          : deserialize<FeaturedTag, FeaturedTag>(
+              rawData,
+              'FeaturedTag',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -144,19 +139,18 @@ class FeaturedTagsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path =
-        r'/api/v1/featured_tags/{id}'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/featured_tags/{id}'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -200,15 +194,10 @@ class FeaturedTagsApi {
     final _path = r'/api/v1/featured_tags/suggestions';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -278,15 +267,10 @@ class FeaturedTagsApi {
     final _path = r'/api/v1/featured_tags';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -308,8 +292,10 @@ class FeaturedTagsApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<FeaturedTag>, FeaturedTag>(
-              rawData, 'List<FeaturedTag>',
-              growable: true);
+              rawData,
+              'List<FeaturedTag>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

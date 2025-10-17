@@ -56,15 +56,10 @@ class FiltersApi {
     final _path = r'/api/v1/filters';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -78,10 +73,7 @@ class FiltersApi {
       _bodyData = jsonEncode(createFilterRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -103,8 +95,11 @@ class FiltersApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<V1Filter, V1Filter>(rawData, 'V1Filter',
-              growable: true);
+          : deserialize<V1Filter, V1Filter>(
+              rawData,
+              'V1Filter',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -155,15 +150,10 @@ class FiltersApi {
     final _path = r'/api/v2/filters';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -177,10 +167,7 @@ class FiltersApi {
       _bodyData = jsonEncode(createFilterV2Request);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -251,19 +238,18 @@ class FiltersApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path =
-        r'/api/v1/filters/{id}'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/filters/{id}'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -306,19 +292,18 @@ class FiltersApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path =
-        r'/api/v2/filters/{id}'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v2/filters/{id}'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -361,19 +346,18 @@ class FiltersApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v2/filters/keywords/{id}'
-        .replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v2/filters/keywords/{id}'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -416,19 +400,18 @@ class FiltersApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v2/filters/statuses/{id}'
-        .replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v2/filters/statuses/{id}'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -449,8 +432,11 @@ class FiltersApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<FilterStatus, FilterStatus>(rawData, 'FilterStatus',
-              growable: true);
+          : deserialize<FilterStatus, FilterStatus>(
+              rawData,
+              'FilterStatus',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -499,19 +485,18 @@ class FiltersApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path =
-        r'/api/v1/filters/{id}'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/filters/{id}'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -532,8 +517,11 @@ class FiltersApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<V1Filter, V1Filter>(rawData, 'V1Filter',
-              growable: true);
+          : deserialize<V1Filter, V1Filter>(
+              rawData,
+              'V1Filter',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -581,19 +569,18 @@ class FiltersApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v2/filters/{filter_id}/keywords'
-        .replaceAll('{' r'filter_id' '}', filterId.toString());
+    final _path = r'/api/v2/filters/{filter_id}/keywords'.replaceAll(
+      '{'
+      r'filter_id'
+      '}',
+      filterId.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -615,8 +602,10 @@ class FiltersApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<FilterKeyword>, FilterKeyword>(
-              rawData, 'List<FilterKeyword>',
-              growable: true);
+              rawData,
+              'List<FilterKeyword>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -664,19 +653,18 @@ class FiltersApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v2/filters/{filter_id}/statuses'
-        .replaceAll('{' r'filter_id' '}', filterId.toString());
+    final _path = r'/api/v2/filters/{filter_id}/statuses'.replaceAll(
+      '{'
+      r'filter_id'
+      '}',
+      filterId.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -698,8 +686,10 @@ class FiltersApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<FilterStatus>, FilterStatus>(
-              rawData, 'List<FilterStatus>',
-              growable: true);
+              rawData,
+              'List<FilterStatus>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -747,19 +737,18 @@ class FiltersApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path =
-        r'/api/v2/filters/{id}'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v2/filters/{id}'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -830,15 +819,10 @@ class FiltersApi {
     final _path = r'/api/v1/filters';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -859,8 +843,11 @@ class FiltersApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<V1Filter, V1Filter>(rawData, 'V1Filter',
-              growable: true);
+          : deserialize<V1Filter, V1Filter>(
+              rawData,
+              'V1Filter',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -908,19 +895,18 @@ class FiltersApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v2/filters/keywords/{id}'
-        .replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v2/filters/keywords/{id}'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -941,8 +927,11 @@ class FiltersApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<FilterKeyword, FilterKeyword>(rawData, 'FilterKeyword',
-              growable: true);
+          : deserialize<FilterKeyword, FilterKeyword>(
+              rawData,
+              'FilterKeyword',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -990,19 +979,18 @@ class FiltersApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v2/filters/statuses/{id}'
-        .replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v2/filters/statuses/{id}'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -1023,8 +1011,11 @@ class FiltersApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<FilterStatus, FilterStatus>(rawData, 'FilterStatus',
-              growable: true);
+          : deserialize<FilterStatus, FilterStatus>(
+              rawData,
+              'FilterStatus',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1073,15 +1064,10 @@ class FiltersApi {
     final _path = r'/api/v2/filters';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -1102,8 +1088,11 @@ class FiltersApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<Filter>, Filter>(rawData, 'List<Filter>',
-              growable: true);
+          : deserialize<List<Filter>, Filter>(
+              rawData,
+              'List<Filter>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1153,19 +1142,18 @@ class FiltersApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v2/filters/{filter_id}/keywords'
-        .replaceAll('{' r'filter_id' '}', filterId.toString());
+    final _path = r'/api/v2/filters/{filter_id}/keywords'.replaceAll(
+      '{'
+      r'filter_id'
+      '}',
+      filterId.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -1179,10 +1167,7 @@ class FiltersApi {
       _bodyData = jsonEncode(postFilterKeywordsV2Request);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1204,8 +1189,11 @@ class FiltersApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<FilterKeyword, FilterKeyword>(rawData, 'FilterKeyword',
-              growable: true);
+          : deserialize<FilterKeyword, FilterKeyword>(
+              rawData,
+              'FilterKeyword',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1255,19 +1243,18 @@ class FiltersApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v2/filters/{filter_id}/statuses'
-        .replaceAll('{' r'filter_id' '}', filterId.toString());
+    final _path = r'/api/v2/filters/{filter_id}/statuses'.replaceAll(
+      '{'
+      r'filter_id'
+      '}',
+      filterId.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -1281,10 +1268,7 @@ class FiltersApi {
       _bodyData = jsonEncode(postFilterStatusesV2Request);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1306,8 +1290,11 @@ class FiltersApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<FilterStatus, FilterStatus>(rawData, 'FilterStatus',
-              growable: true);
+          : deserialize<FilterStatus, FilterStatus>(
+              rawData,
+              'FilterStatus',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1358,19 +1345,18 @@ class FiltersApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path =
-        r'/api/v1/filters/{id}'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/filters/{id}'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -1384,10 +1370,7 @@ class FiltersApi {
       _bodyData = jsonEncode(updateFilterRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1409,8 +1392,11 @@ class FiltersApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<V1Filter, V1Filter>(rawData, 'V1Filter',
-              growable: true);
+          : deserialize<V1Filter, V1Filter>(
+              rawData,
+              'V1Filter',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1460,19 +1446,18 @@ class FiltersApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path =
-        r'/api/v2/filters/{id}'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v2/filters/{id}'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -1486,10 +1471,7 @@ class FiltersApi {
       _bodyData = jsonEncode(updateFilterV2Request);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1561,19 +1543,18 @@ class FiltersApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v2/filters/keywords/{id}'
-        .replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v2/filters/keywords/{id}'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -1587,10 +1568,7 @@ class FiltersApi {
       _bodyData = jsonEncode(postFilterKeywordsV2Request);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1612,8 +1590,11 @@ class FiltersApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<FilterKeyword, FilterKeyword>(rawData, 'FilterKeyword',
-              growable: true);
+          : deserialize<FilterKeyword, FilterKeyword>(
+              rawData,
+              'FilterKeyword',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

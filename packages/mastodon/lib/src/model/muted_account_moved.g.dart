@@ -31,59 +31,89 @@ MutedAccountMoved _$MutedAccountMovedFromJson(Map<String, dynamic> json) =>
             'locked',
             'note',
             'statuses_count',
-            'uri',
-            'url',
-            'username'
+            'username',
           ],
         );
         final val = MutedAccountMoved(
           acct: $checkedConvert('acct', (v) => v as String),
           avatar: $checkedConvert('avatar', (v) => Uri.parse(v as String)),
-          avatarStatic:
-              $checkedConvert('avatar_static', (v) => Uri.parse(v as String)),
+          avatarStatic: $checkedConvert(
+            'avatar_static',
+            (v) => Uri.parse(v as String),
+          ),
           bot: $checkedConvert('bot', (v) => v as bool),
-          createdAt:
-              $checkedConvert('created_at', (v) => DateTime.parse(v as String)),
+          createdAt: $checkedConvert(
+            'created_at',
+            (v) => DateTime.parse(v as String),
+          ),
           displayName: $checkedConvert('display_name', (v) => v as String),
           emojis: $checkedConvert(
-              'emojis',
-              (v) => (v as List<dynamic>)
-                  .map((e) => CustomEmoji.fromJson(e as Map<String, dynamic>))
-                  .toList()),
+            'emojis',
+            (v) => (v as List<dynamic>)
+                .map((e) => CustomEmoji.fromJson(e as Map<String, dynamic>))
+                .toList(),
+          ),
           fields: $checkedConvert(
-              'fields',
-              (v) => (v as List<dynamic>)
-                  .map((e) => Field.fromJson(e as Map<String, dynamic>))
-                  .toList()),
-          followersCount:
-              $checkedConvert('followers_count', (v) => (v as num).toInt()),
-          followingCount:
-              $checkedConvert('following_count', (v) => (v as num).toInt()),
+            'fields',
+            (v) => (v as List<dynamic>)
+                .map((e) => Field.fromJson(e as Map<String, dynamic>))
+                .toList(),
+          ),
+          followersCount: $checkedConvert(
+            'followers_count',
+            (v) => (v as num).toInt(),
+          ),
+          followingCount: $checkedConvert(
+            'following_count',
+            (v) => (v as num).toInt(),
+          ),
           group: $checkedConvert('group', (v) => v as bool),
           header: $checkedConvert('header', (v) => Uri.parse(v as String)),
-          headerStatic:
-              $checkedConvert('header_static', (v) => Uri.parse(v as String)),
+          headerStatic: $checkedConvert(
+            'header_static',
+            (v) => Uri.parse(v as String),
+          ),
           id: $checkedConvert('id', (v) => v as String),
           locked: $checkedConvert('locked', (v) => v as bool),
           note: $checkedConvert('note', (v) => v as String),
-          statusesCount:
-              $checkedConvert('statuses_count', (v) => (v as num).toInt()),
-          uri: $checkedConvert('uri', (v) => Uri.parse(v as String)),
-          url: $checkedConvert('url', (v) => Uri.parse(v as String)),
+          statusesCount: $checkedConvert(
+            'statuses_count',
+            (v) => (v as num).toInt(),
+          ),
           username: $checkedConvert('username', (v) => v as String),
           discoverable: $checkedConvert('discoverable', (v) => v as bool?),
-          hideCollections:
-              $checkedConvert('hide_collections', (v) => v as bool?),
-          lastStatusAt: $checkedConvert('last_status_at',
-              (v) => v == null ? null : DateTime.parse(v as String)),
+          hideCollections: $checkedConvert(
+            'hide_collections',
+            (v) => v as bool?,
+          ),
+          indexable: $checkedConvert('indexable', (v) => v as bool?),
+          lastStatusAt: $checkedConvert(
+            'last_status_at',
+            (v) => v == null ? null : DateTime.parse(v as String),
+          ),
           limited: $checkedConvert('limited', (v) => v as bool?),
+          memorial: $checkedConvert('memorial', (v) => v as bool?),
           moved: $checkedConvert(
-              'moved',
-              (v) => v == null
-                  ? null
-                  : Account.fromJson(v as Map<String, dynamic>)),
+            'moved',
+            (v) =>
+                v == null ? null : Account.fromJson(v as Map<String, dynamic>),
+          ),
           noindex: $checkedConvert('noindex', (v) => v as bool?),
+          roles: $checkedConvert(
+            'roles',
+            (v) => (v as List<dynamic>?)
+                ?.map((e) => AccountRole.fromJson(e as Map<String, dynamic>))
+                .toList(),
+          ),
           suspended: $checkedConvert('suspended', (v) => v as bool?),
+          uri: $checkedConvert(
+            'uri',
+            (v) => v == null ? null : Uri.parse(v as String),
+          ),
+          url: $checkedConvert(
+            'url',
+            (v) => v == null ? null : Uri.parse(v as String),
+          ),
         );
         return val;
       },
@@ -96,7 +126,7 @@ MutedAccountMoved _$MutedAccountMovedFromJson(Map<String, dynamic> json) =>
         'headerStatic': 'header_static',
         'statusesCount': 'statuses_count',
         'hideCollections': 'hide_collections',
-        'lastStatusAt': 'last_status_at'
+        'lastStatusAt': 'last_status_at',
       },
     );
 
@@ -119,15 +149,17 @@ Map<String, dynamic> _$MutedAccountMovedToJson(MutedAccountMoved instance) =>
       'locked': instance.locked,
       'note': instance.note,
       'statuses_count': instance.statusesCount,
-      'uri': instance.uri.toString(),
-      'url': instance.url.toString(),
       'username': instance.username,
-      if (instance.discoverable case final value?) 'discoverable': value,
-      if (instance.hideCollections case final value?) 'hide_collections': value,
-      if (instance.lastStatusAt?.toIso8601String() case final value?)
-        'last_status_at': value,
-      if (instance.limited case final value?) 'limited': value,
-      if (instance.moved?.toJson() case final value?) 'moved': value,
-      if (instance.noindex case final value?) 'noindex': value,
-      if (instance.suspended case final value?) 'suspended': value,
+      'discoverable': ?instance.discoverable,
+      'hide_collections': ?instance.hideCollections,
+      'indexable': ?instance.indexable,
+      'last_status_at': ?instance.lastStatusAt?.toIso8601String(),
+      'limited': ?instance.limited,
+      'memorial': ?instance.memorial,
+      'moved': ?instance.moved?.toJson(),
+      'noindex': ?instance.noindex,
+      'roles': ?instance.roles?.map((e) => e.toJson()).toList(),
+      'suspended': ?instance.suspended,
+      'uri': ?instance.uri?.toString(),
+      'url': ?instance.url?.toString(),
     };

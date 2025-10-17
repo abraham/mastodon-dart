@@ -13,12 +13,6 @@ void main() {
       // TODO
     });
 
-    // The date of the last authored status containing this hashtag.
-    // DateTime lastStatusAt
-    test('to test the property `lastStatusAt`', () async {
-      // TODO
-    });
-
     // The name of the hashtag being featured.
     // String name
     test('to test the property `name`', () async {
@@ -34,6 +28,12 @@ void main() {
     // A link to all statuses by a user that contain this hashtag.
     // Uri url
     test('to test the property `url`', () async {
+      // TODO
+    });
+
+    // The date of the last authored status containing this hashtag.
+    // DateTime lastStatusAt
+    test('to test the property `lastStatusAt`', () async {
       // TODO
     });
   });

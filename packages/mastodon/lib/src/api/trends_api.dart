@@ -50,13 +50,8 @@ class TrendsApi {
     final _path = r'/api/v1/trends/links';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -81,8 +76,10 @@ class TrendsApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<TrendsLink>, TrendsLink>(
-              rawData, 'List<TrendsLink>',
-              growable: true);
+              rawData,
+              'List<TrendsLink>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -135,13 +132,8 @@ class TrendsApi {
     final _path = r'/api/v1/trends/statuses';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -165,8 +157,11 @@ class TrendsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<Status>, Status>(rawData, 'List<Status>',
-              growable: true);
+          : deserialize<List<Status>, Status>(
+              rawData,
+              'List<Status>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -219,13 +214,8 @@ class TrendsApi {
     final _path = r'/api/v1/trends/tags';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 

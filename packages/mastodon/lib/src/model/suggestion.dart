@@ -16,26 +16,15 @@ part 'suggestion.g.dart';
 )
 class Suggestion {
   /// Returns a new [Suggestion] instance.
-  Suggestion({
-    required this.account,
-    required this.sources,
-  });
+  Suggestion({required this.account, this.sources});
 
   /// The account being recommended to follow.
-  @JsonKey(
-    name: r'account',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'account', required: true, includeIfNull: false)
   final Account account;
 
   /// A list of reasons this account is being suggested. This replaces `source`
-  @JsonKey(
-    name: r'sources',
-    required: true,
-    includeIfNull: false,
-  )
-  final List<SuggestionSourcesEnum> sources;
+  @JsonKey(name: r'sources', required: false, includeIfNull: false)
+  final List<SuggestionSourcesEnum>? sources;
 
   @override
   bool operator ==(Object other) =>
@@ -45,7 +34,8 @@ class Suggestion {
           other.sources == sources;
 
   @override
-  int get hashCode => account.hashCode + sources.hashCode;
+  int get hashCode =>
+      account.hashCode + (sources == null ? 0 : sources.hashCode);
 
   factory Suggestion.fromJson(Map<String, dynamic> json) =>
       _$SuggestionFromJson(json);

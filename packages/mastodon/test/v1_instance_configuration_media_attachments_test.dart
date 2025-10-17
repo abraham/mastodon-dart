@@ -4,7 +4,7 @@ import 'package:mastodon/mastodon.dart';
 // tests for V1InstanceConfigurationMediaAttachments
 void main() {
   final V1InstanceConfigurationMediaAttachments?
-      instance = /* V1InstanceConfigurationMediaAttachments(...) */ null;
+  instance = /* V1InstanceConfigurationMediaAttachments(...) */ null;
   // TODO add properties to the entity
 
   group(V1InstanceConfigurationMediaAttachments, () {

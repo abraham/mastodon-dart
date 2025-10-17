@@ -15,25 +15,14 @@ part 'admin_ip.g.dart';
 )
 class AdminIp {
   /// Returns a new [AdminIp] instance.
-  AdminIp({
-    required this.ip,
-    required this.usedAt,
-  });
+  AdminIp({required this.ip, required this.usedAt});
 
   /// The IP address.
-  @JsonKey(
-    name: r'ip',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'ip', required: true, includeIfNull: false)
   final String ip;
 
   /// The timestamp of when the IP address was last used for this account.
-  @JsonKey(
-    name: r'used_at',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'used_at', required: true, includeIfNull: false)
   final DateTime usedAt;
 
   @override

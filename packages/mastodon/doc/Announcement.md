@@ -13,7 +13,6 @@ Name | Type | Description | Notes
 **emojis** | [**List&lt;CustomEmoji&gt;**](CustomEmoji.md) | Custom emoji used in the announcement text. | 
 **id** | **String** | The ID of the announcement in the database. | 
 **mentions** | [**List&lt;AnnouncementAccount&gt;**](AnnouncementAccount.md) | Accounts mentioned in the announcement text. | 
-**published** | **bool** | Whether the announcement is currently active. | 
 **publishedAt** | [**DateTime**](DateTime.md) | When the announcement was published. | 
 **reactions** | [**List&lt;Reaction&gt;**](Reaction.md) | Emoji reactions attached to the announcement. | 
 **statuses** | [**List&lt;AnnouncementStatus&gt;**](AnnouncementStatus.md) | Statuses linked in the announcement text. | 

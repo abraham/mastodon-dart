@@ -7,24 +7,13 @@ part of 'instance_icon.dart';
 // **************************************************************************
 
 InstanceIcon _$InstanceIconFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'InstanceIcon',
-      json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['size', 'src'],
-        );
-        final val = InstanceIcon(
-          size: $checkedConvert('size', (v) => v as String),
-          src: $checkedConvert('src', (v) => v as String),
-        );
-        return val;
-      },
-    );
+    $checkedCreate('InstanceIcon', json, ($checkedConvert) {
+      final val = InstanceIcon(
+        size: $checkedConvert('size', (v) => v as String?),
+        src: $checkedConvert('src', (v) => v as String?),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$InstanceIconToJson(InstanceIcon instance) =>
-    <String, dynamic>{
-      'size': instance.size,
-      'src': instance.src,
-    };
+    <String, dynamic>{'size': ?instance.size, 'src': ?instance.src};

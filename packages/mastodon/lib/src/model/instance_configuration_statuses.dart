@@ -17,7 +17,9 @@ class InstanceConfigurationStatuses {
   /// Returns a new [InstanceConfigurationStatuses] instance.
   InstanceConfigurationStatuses({
     required this.charactersReservedPerUrl,
+
     required this.maxCharacters,
+
     required this.maxMediaAttachments,
   });
 
@@ -30,19 +32,11 @@ class InstanceConfigurationStatuses {
   final int charactersReservedPerUrl;
 
   /// The maximum number of allowed characters per status.
-  @JsonKey(
-    name: r'max_characters',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'max_characters', required: true, includeIfNull: false)
   final int maxCharacters;
 
   /// The maximum number of media attachments that can be added to a status.
-  @JsonKey(
-    name: r'max_media_attachments',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'max_media_attachments', required: true, includeIfNull: false)
   final int maxMediaAttachments;
 
   @override

@@ -16,24 +16,13 @@ part 'put_push_subscription_request.g.dart';
 )
 class PutPushSubscriptionRequest {
   /// Returns a new [PutPushSubscriptionRequest] instance.
-  PutPushSubscriptionRequest({
-    this.data,
-    this.policy,
-  });
+  PutPushSubscriptionRequest({this.data, this.policy});
 
-  @JsonKey(
-    name: r'data',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'data', required: false, includeIfNull: false)
   final PutPushSubscriptionRequestData? data;
 
   /// Specify whether to receive push notifications from `all`, `followed`, `follower`, or `none` users.
-  @JsonKey(
-    name: r'policy',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'policy', required: false, includeIfNull: false)
   final String? policy;
 
   @override

@@ -4,6 +4,8 @@
 
 // ignore_for_file: unused_element
 import 'package:mastodon/src/model/field.dart';
+import 'package:mastodon/src/model/status_visibility_enum.dart';
+import 'package:mastodon/src/model/credential_account_source_quote_policy_enum.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'credential_account_source.g.dart';
@@ -17,92 +19,102 @@ part 'credential_account_source.g.dart';
 class CredentialAccountSource {
   /// Returns a new [CredentialAccountSource] instance.
   CredentialAccountSource({
-    required this.attributionDomains,
     required this.fields,
+
     required this.followRequestsCount,
+
     required this.note,
+
     required this.privacy,
+
     required this.sensitive,
+
+    this.attributionDomains,
+
+    this.discoverable,
+
+    this.hideCollections,
+
+    this.indexable,
+
     this.language,
+
+    this.quotePolicy,
   });
 
-  /// Domains of websites allowed to credit the account.
-  @JsonKey(
-    name: r'attribution_domains',
-    required: true,
-    includeIfNull: false,
-  )
-  final List<String> attributionDomains;
-
   /// Metadata about the account.
-  @JsonKey(
-    name: r'fields',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'fields', required: true, includeIfNull: false)
   final List<Field> fields;
 
   /// The number of pending follow requests.
-  @JsonKey(
-    name: r'follow_requests_count',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'follow_requests_count', required: true, includeIfNull: false)
   final int followRequestsCount;
 
-  /// Profile bio, in plain-text instead of in HTML.
-  @JsonKey(
-    name: r'note',
-    required: true,
-    includeIfNull: false,
-  )
+  /// Profile bio, in plain text instead of HTML.
+  @JsonKey(name: r'note', required: true, includeIfNull: false)
   final String note;
 
   /// The default post privacy to be used for new statuses.
-  @JsonKey(
-    name: r'privacy',
-    required: true,
-    includeIfNull: false,
-  )
-  final CredentialAccountSourcePrivacyEnum privacy;
+  @JsonKey(name: r'privacy', required: true, includeIfNull: false)
+  final StatusVisibilityEnum privacy;
 
   /// Whether new statuses should be marked sensitive by default.
-  @JsonKey(
-    name: r'sensitive',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'sensitive', required: true, includeIfNull: false)
   final bool sensitive;
 
+  /// Domains of websites allowed to credit the account.
+  @JsonKey(name: r'attribution_domains', required: false, includeIfNull: false)
+  final List<String>? attributionDomains;
+
+  /// Whether the account has opted into discovery features such as the profile directory.
+  @JsonKey(name: r'discoverable', required: false, includeIfNull: false)
+  final bool? discoverable;
+
+  /// Whether the user hides the contents of their follows and followers collections.
+  @JsonKey(name: r'hide_collections', required: false, includeIfNull: false)
+  final bool? hideCollections;
+
+  /// Whether public posts should be searchable to anyone.
+  @JsonKey(name: r'indexable', required: false, includeIfNull: false)
+  final bool? indexable;
+
   /// The default posting language for new statuses.
-  @JsonKey(
-    name: r'language',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'language', required: false, includeIfNull: false)
   final String? language;
+
+  /// The default quote policy to be used for new statuses.
+  @JsonKey(name: r'quote_policy', required: false, includeIfNull: false)
+  final CredentialAccountSourceQuotePolicyEnum? quotePolicy;
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is CredentialAccountSource &&
-          other.attributionDomains == attributionDomains &&
           other.fields == fields &&
           other.followRequestsCount == followRequestsCount &&
           other.note == note &&
           other.privacy == privacy &&
           other.sensitive == sensitive &&
-          other.language == language;
+          other.attributionDomains == attributionDomains &&
+          other.discoverable == discoverable &&
+          other.hideCollections == hideCollections &&
+          other.indexable == indexable &&
+          other.language == language &&
+          other.quotePolicy == quotePolicy;
 
   @override
   int get hashCode =>
-      attributionDomains.hashCode +
       fields.hashCode +
       followRequestsCount.hashCode +
       note.hashCode +
       privacy.hashCode +
       sensitive.hashCode +
-      (language == null ? 0 : language.hashCode);
+      (attributionDomains == null ? 0 : attributionDomains.hashCode) +
+      (discoverable == null ? 0 : discoverable.hashCode) +
+      (hideCollections == null ? 0 : hideCollections.hashCode) +
+      (indexable == null ? 0 : indexable.hashCode) +
+      (language == null ? 0 : language.hashCode) +
+      quotePolicy.hashCode;
 
   factory CredentialAccountSource.fromJson(Map<String, dynamic> json) =>
       _$CredentialAccountSourceFromJson(json);
@@ -113,30 +125,4 @@ class CredentialAccountSource {
   String toString() {
     return toJson().toString();
   }
-}
-
-/// The default post privacy to be used for new statuses.
-enum CredentialAccountSourcePrivacyEnum {
-  /// The default post privacy to be used for new statuses.
-  @JsonValue(r'public')
-  public(r'public'),
-
-  /// The default post privacy to be used for new statuses.
-  @JsonValue(r'unlisted')
-  unlisted(r'unlisted'),
-
-  /// The default post privacy to be used for new statuses.
-  @JsonValue(r'private')
-  private(r'private'),
-
-  /// The default post privacy to be used for new statuses.
-  @JsonValue(r'direct')
-  direct(r'direct');
-
-  const CredentialAccountSourcePrivacyEnum(this.value);
-
-  final String value;
-
-  @override
-  String toString() => value;
 }

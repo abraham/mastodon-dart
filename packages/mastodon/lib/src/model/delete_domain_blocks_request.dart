@@ -15,16 +15,10 @@ part 'delete_domain_blocks_request.g.dart';
 )
 class DeleteDomainBlocksRequest {
   /// Returns a new [DeleteDomainBlocksRequest] instance.
-  DeleteDomainBlocksRequest({
-    required this.domain,
-  });
+  DeleteDomainBlocksRequest({required this.domain});
 
   /// Domain to unblock.
-  @JsonKey(
-    name: r'domain',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'domain', required: true, includeIfNull: false)
   final String domain;
 
   @override

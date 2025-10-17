@@ -7,63 +7,90 @@ part of 'credential_account_source.dart';
 // **************************************************************************
 
 CredentialAccountSource _$CredentialAccountSourceFromJson(
-        Map<String, dynamic> json) =>
-    $checkedCreate(
-      'CredentialAccountSource',
+  Map<String, dynamic> json,
+) => $checkedCreate(
+  'CredentialAccountSource',
+  json,
+  ($checkedConvert) {
+    $checkKeys(
       json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const [
-            'attribution_domains',
-            'fields',
-            'follow_requests_count',
-            'note',
-            'privacy',
-            'sensitive'
-          ],
-        );
-        final val = CredentialAccountSource(
-          attributionDomains: $checkedConvert('attribution_domains',
-              (v) => (v as List<dynamic>).map((e) => e as String).toList()),
-          fields: $checkedConvert(
-              'fields',
-              (v) => (v as List<dynamic>)
-                  .map((e) => Field.fromJson(e as Map<String, dynamic>))
-                  .toList()),
-          followRequestsCount: $checkedConvert(
-              'follow_requests_count', (v) => (v as num).toInt()),
-          note: $checkedConvert('note', (v) => v as String),
-          privacy: $checkedConvert(
-              'privacy',
-              (v) =>
-                  $enumDecode(_$CredentialAccountSourcePrivacyEnumEnumMap, v)),
-          sensitive: $checkedConvert('sensitive', (v) => v as bool),
-          language: $checkedConvert('language', (v) => v as String?),
-        );
-        return val;
-      },
-      fieldKeyMap: const {
-        'attributionDomains': 'attribution_domains',
-        'followRequestsCount': 'follow_requests_count'
-      },
+      requiredKeys: const [
+        'fields',
+        'follow_requests_count',
+        'note',
+        'privacy',
+        'sensitive',
+      ],
     );
+    final val = CredentialAccountSource(
+      fields: $checkedConvert(
+        'fields',
+        (v) => (v as List<dynamic>)
+            .map((e) => Field.fromJson(e as Map<String, dynamic>))
+            .toList(),
+      ),
+      followRequestsCount: $checkedConvert(
+        'follow_requests_count',
+        (v) => (v as num).toInt(),
+      ),
+      note: $checkedConvert('note', (v) => v as String),
+      privacy: $checkedConvert(
+        'privacy',
+        (v) => $enumDecode(_$StatusVisibilityEnumEnumMap, v),
+      ),
+      sensitive: $checkedConvert('sensitive', (v) => v as bool),
+      attributionDomains: $checkedConvert(
+        'attribution_domains',
+        (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+      ),
+      discoverable: $checkedConvert('discoverable', (v) => v as bool?),
+      hideCollections: $checkedConvert('hide_collections', (v) => v as bool?),
+      indexable: $checkedConvert('indexable', (v) => v as bool?),
+      language: $checkedConvert('language', (v) => v as String?),
+      quotePolicy: $checkedConvert(
+        'quote_policy',
+        (v) => $enumDecodeNullable(
+          _$CredentialAccountSourceQuotePolicyEnumEnumMap,
+          v,
+        ),
+      ),
+    );
+    return val;
+  },
+  fieldKeyMap: const {
+    'followRequestsCount': 'follow_requests_count',
+    'attributionDomains': 'attribution_domains',
+    'hideCollections': 'hide_collections',
+    'quotePolicy': 'quote_policy',
+  },
+);
 
 Map<String, dynamic> _$CredentialAccountSourceToJson(
-        CredentialAccountSource instance) =>
-    <String, dynamic>{
-      'attribution_domains': instance.attributionDomains,
-      'fields': instance.fields.map((e) => e.toJson()).toList(),
-      'follow_requests_count': instance.followRequestsCount,
-      'note': instance.note,
-      'privacy': _$CredentialAccountSourcePrivacyEnumEnumMap[instance.privacy]!,
-      'sensitive': instance.sensitive,
-      if (instance.language case final value?) 'language': value,
-    };
+  CredentialAccountSource instance,
+) => <String, dynamic>{
+  'fields': instance.fields.map((e) => e.toJson()).toList(),
+  'follow_requests_count': instance.followRequestsCount,
+  'note': instance.note,
+  'privacy': _$StatusVisibilityEnumEnumMap[instance.privacy]!,
+  'sensitive': instance.sensitive,
+  'attribution_domains': ?instance.attributionDomains,
+  'discoverable': ?instance.discoverable,
+  'hide_collections': ?instance.hideCollections,
+  'indexable': ?instance.indexable,
+  'language': ?instance.language,
+  'quote_policy':
+      ?_$CredentialAccountSourceQuotePolicyEnumEnumMap[instance.quotePolicy],
+};
 
-const _$CredentialAccountSourcePrivacyEnumEnumMap = {
-  CredentialAccountSourcePrivacyEnum.public: 'public',
-  CredentialAccountSourcePrivacyEnum.unlisted: 'unlisted',
-  CredentialAccountSourcePrivacyEnum.private: 'private',
-  CredentialAccountSourcePrivacyEnum.direct: 'direct',
+const _$StatusVisibilityEnumEnumMap = {
+  StatusVisibilityEnum.public: 'public',
+  StatusVisibilityEnum.unlisted: 'unlisted',
+  StatusVisibilityEnum.private: 'private',
+  StatusVisibilityEnum.direct: 'direct',
+};
+
+const _$CredentialAccountSourceQuotePolicyEnumEnumMap = {
+  CredentialAccountSourceQuotePolicyEnum.public: 'public',
+  CredentialAccountSourceQuotePolicyEnum.followers: 'followers',
+  CredentialAccountSourceQuotePolicyEnum.nobody: 'nobody',
 };

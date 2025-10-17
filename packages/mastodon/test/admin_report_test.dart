@@ -20,7 +20,7 @@ void main() {
     });
 
     // The category under which the report is classified.
-    // CategoryEnum category
+    // ReportCategoryEnum category
     test('to test the property `category`', () async {
       // TODO
     });

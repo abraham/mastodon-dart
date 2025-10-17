@@ -3,8 +3,8 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:mastodon/src/model/quote_state_enum.dart';
 import 'package:mastodon/src/model/status.dart';
-import 'package:mastodon/src/model/state_enum.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'quote.g.dart';
@@ -17,36 +17,25 @@ part 'quote.g.dart';
 )
 class Quote {
   /// Returns a new [Quote] instance.
-  Quote({
-    required this.state,
-    this.quotedStatus,
-  });
+  Quote({this.quotedStatus, this.state});
+
+  @JsonKey(name: r'quoted_status', required: false, includeIfNull: false)
+  final Status? quotedStatus;
 
   /// The state of the quote.
-  @JsonKey(
-    name: r'state',
-    required: true,
-    includeIfNull: false,
-  )
-  final StateEnum state;
-
-  @JsonKey(
-    name: r'quoted_status',
-    required: false,
-    includeIfNull: false,
-  )
-  final Status? quotedStatus;
+  @JsonKey(name: r'state', required: false, includeIfNull: false)
+  final QuoteStateEnum? state;
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is Quote &&
-          other.state == state &&
-          other.quotedStatus == quotedStatus;
+          other.quotedStatus == quotedStatus &&
+          other.state == state;
 
   @override
   int get hashCode =>
-      state.hashCode + (quotedStatus == null ? 0 : quotedStatus.hashCode);
+      (quotedStatus == null ? 0 : quotedStatus.hashCode) + state.hashCode;
 
   factory Quote.fromJson(Map<String, dynamic> json) => _$QuoteFromJson(json);
 

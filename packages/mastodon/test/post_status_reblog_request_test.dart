@@ -8,8 +8,8 @@ void main() {
   // TODO add properties to the entity
 
   group(PostStatusReblogRequest, () {
-    // Any visibility except `limited` or `direct` (i.e. `public`, `unlisted`, `private`). Defaults to public.
-    // String visibility (default value: 'public')
+    // String (Enumerable, oneOf `public`, `unlisted`, or `private`). Defaults to public.
+    // StatusVisibilityEnum visibility (default value: 'public')
     test('to test the property `visibility`', () async {
       // TODO
     });

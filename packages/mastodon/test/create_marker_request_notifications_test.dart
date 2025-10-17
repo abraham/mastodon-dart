@@ -4,7 +4,7 @@ import 'package:mastodon/mastodon.dart';
 // tests for CreateMarkerRequestNotifications
 void main() {
   final CreateMarkerRequestNotifications?
-      instance = /* CreateMarkerRequestNotifications(...) */ null;
+  instance = /* CreateMarkerRequestNotifications(...) */ null;
   // TODO add properties to the entity
 
   group(CreateMarkerRequestNotifications, () {

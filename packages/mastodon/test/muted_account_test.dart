@@ -25,7 +25,7 @@ void main() {
       // TODO
     });
 
-    // Indicates that the account may perform automated actions, may not be monitored, or identifies as a robot.
+    // Indicates that the account may perform automated actions, may not be monitored, or identifies as a robot. This is determined by the account's `actor_type` being set to 'Application' or 'Service'.
     // bool bot
     test('to test the property `bot`', () async {
       // TODO
@@ -109,18 +109,6 @@ void main() {
       // TODO
     });
 
-    // The user's ActivityPub actor identifier.
-    // Uri uri
-    test('to test the property `uri`', () async {
-      // TODO
-    });
-
-    // The location of the user's profile page.
-    // Uri url
-    test('to test the property `url`', () async {
-      // TODO
-    });
-
     // The username of the account, not including domain.
     // String username
     test('to test the property `username`', () async {
@@ -139,6 +127,12 @@ void main() {
       // TODO
     });
 
+    // Whether the account allows indexing by search engines.
+    // bool indexable
+    test('to test the property `indexable`', () async {
+      // TODO
+    });
+
     // When the most recent status was posted.
     // DateTime lastStatusAt
     test('to test the property `lastStatusAt`', () async {
@@ -148,6 +142,12 @@ void main() {
     // An extra attribute returned only when an account is silenced. If true, indicates that the account should be hidden behind a warning screen.
     // bool limited
     test('to test the property `limited`', () async {
+      // TODO
+    });
+
+    // An extra attribute returned only when an account is memorialized (when `memorial` is true).
+    // bool memorial
+    test('to test the property `memorial`', () async {
       // TODO
     });
 
@@ -168,9 +168,27 @@ void main() {
       // TODO
     });
 
+    // An array of roles assigned to the user that are publicly visible (highlighted roles only), if the account is local. Will be an empty array if no roles are highlighted or if the account is remote.
+    // List<AccountRole> roles
+    test('to test the property `roles`', () async {
+      // TODO
+    });
+
     // An extra attribute returned only when an account is suspended.
     // bool suspended
     test('to test the property `suspended`', () async {
+      // TODO
+    });
+
+    // The user's ActivityPub actor identifier (used for federation).
+    // Uri uri
+    test('to test the property `uri`', () async {
+      // TODO
+    });
+
+    // The location of the user's profile page (web interface URL).
+    // Uri url
+    test('to test the property `url`', () async {
       // TODO
     });
   });

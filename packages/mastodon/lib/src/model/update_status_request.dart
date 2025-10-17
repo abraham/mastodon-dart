@@ -18,67 +18,55 @@ class UpdateStatusRequest {
   /// Returns a new [UpdateStatusRequest] instance.
   UpdateStatusRequest({
     this.language,
+
     this.mediaAttributesLeftSquareBracketRightSquareBracket,
+
     this.mediaIds,
+
     this.poll,
+
+    this.quoteApprovalPolicy,
+
     this.sensitive,
+
     this.spoilerText,
+
     this.status,
   });
 
   /// ISO 639-1 language code for the status.
-  @JsonKey(
-    name: r'language',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'language', required: false, includeIfNull: false)
   final String? language;
 
   /// Each array includes id, description, and focus.
-  @JsonKey(
-    name: r'media_attributes[]',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'media_attributes[]', required: false, includeIfNull: false)
   final List<String>? mediaAttributesLeftSquareBracketRightSquareBracket;
 
   /// Include Attachment IDs to be attached as media. If provided, `status` becomes optional, and `poll` cannot be used.
-  @JsonKey(
-    name: r'media_ids',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'media_ids', required: false, includeIfNull: false)
   final List<String>? mediaIds;
 
-  @JsonKey(
-    name: r'poll',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'poll', required: false, includeIfNull: false)
   final UpdateStatusRequestPoll? poll;
 
-  /// Whether the status should be marked as sensitive.
+  /// String (Enumerable, oneOf). Sets who is allowed to quote the status. Ignored if `visibility` is `private` or `direct`, in which case the policy will always be set to `nobody`. Changing the policy does not invalidate past quotes.
   @JsonKey(
-    name: r'sensitive',
+    name: r'quote_approval_policy',
     required: false,
     includeIfNull: false,
   )
+  final String? quoteApprovalPolicy;
+
+  /// Whether the status should be marked as sensitive.
+  @JsonKey(name: r'sensitive', required: false, includeIfNull: false)
   final bool? sensitive;
 
   /// The plain text subject or content warning of the status.
-  @JsonKey(
-    name: r'spoiler_text',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'spoiler_text', required: false, includeIfNull: false)
   final String? spoilerText;
 
   /// The plain text content of the status.
-  @JsonKey(
-    name: r'status',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'status', required: false, includeIfNull: false)
   final String? status;
 
   @override
@@ -90,6 +78,7 @@ class UpdateStatusRequest {
               mediaAttributesLeftSquareBracketRightSquareBracket &&
           other.mediaIds == mediaIds &&
           other.poll == poll &&
+          other.quoteApprovalPolicy == quoteApprovalPolicy &&
           other.sensitive == sensitive &&
           other.spoilerText == spoilerText &&
           other.status == status;
@@ -100,6 +89,7 @@ class UpdateStatusRequest {
       mediaAttributesLeftSquareBracketRightSquareBracket.hashCode +
       mediaIds.hashCode +
       poll.hashCode +
+      quoteApprovalPolicy.hashCode +
       sensitive.hashCode +
       spoilerText.hashCode +
       status.hashCode;

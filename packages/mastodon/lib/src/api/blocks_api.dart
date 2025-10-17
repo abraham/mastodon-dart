@@ -52,15 +52,10 @@ class BlocksApi {
     final _path = r'/api/v1/blocks';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -89,8 +84,11 @@ class BlocksApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<Account>, Account>(rawData, 'List<Account>',
-              growable: true);
+          : deserialize<List<Account>, Account>(
+              rawData,
+              'List<Account>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

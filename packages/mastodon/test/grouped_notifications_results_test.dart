@@ -4,7 +4,7 @@ import 'package:mastodon/mastodon.dart';
 // tests for GroupedNotificationsResults
 void main() {
   final GroupedNotificationsResults?
-      instance = /* GroupedNotificationsResults(...) */ null;
+  instance = /* GroupedNotificationsResults(...) */ null;
   // TODO add properties to the entity
 
   group(GroupedNotificationsResults, () {
@@ -15,20 +15,20 @@ void main() {
     });
 
     // The grouped notifications themselves.
-    // NotificationGroup notificationGroups
+    // List<NotificationGroup> notificationGroups
     test('to test the property `notificationGroups`', () async {
-      // TODO
-    });
-
-    // Statuses referenced by grouped notifications.
-    // List<Status> statuses
-    test('to test the property `statuses`', () async {
       // TODO
     });
 
     // Partial accounts referenced by grouped notifications. Those are only returned when requesting grouped notifications with `expand_accounts=partial_avatars`.
     // List<PartialAccountWithAvatar> partialAccounts
     test('to test the property `partialAccounts`', () async {
+      // TODO
+    });
+
+    // Statuses referenced by grouped notifications.
+    // List<Status> statuses
+    test('to test the property `statuses`', () async {
       // TODO
     });
   });

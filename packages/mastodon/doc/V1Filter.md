@@ -8,7 +8,7 @@ import 'package:mastodon/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**context** | [**List&lt;FilterContext&gt;**](FilterContext.md) | The contexts in which the filter should be applied. | 
+**context** | [**List&lt;FilterContextEnum&gt;**](FilterContextEnum.md) | The contexts in which the filter should be applied. | 
 **id** | **String** | The ID of the filter in the database. | 
 **irreversible** | **bool** | Should matching entities in home and notifications be dropped by the server? See [implementation guidelines for filters]({{< relref \"api/guidelines#filters\" >}}). | 
 **phrase** | **String** | The text to be filtered. | 

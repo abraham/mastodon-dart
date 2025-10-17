@@ -7,20 +7,14 @@ part of 'post_account_note_request.dart';
 // **************************************************************************
 
 PostAccountNoteRequest _$PostAccountNoteRequestFromJson(
-        Map<String, dynamic> json) =>
-    $checkedCreate(
-      'PostAccountNoteRequest',
-      json,
-      ($checkedConvert) {
-        final val = PostAccountNoteRequest(
-          comment: $checkedConvert('comment', (v) => v as String?),
-        );
-        return val;
-      },
-    );
+  Map<String, dynamic> json,
+) => $checkedCreate('PostAccountNoteRequest', json, ($checkedConvert) {
+  final val = PostAccountNoteRequest(
+    comment: $checkedConvert('comment', (v) => v as String?),
+  );
+  return val;
+});
 
 Map<String, dynamic> _$PostAccountNoteRequestToJson(
-        PostAccountNoteRequest instance) =>
-    <String, dynamic>{
-      if (instance.comment case final value?) 'comment': value,
-    };
+  PostAccountNoteRequest instance,
+) => <String, dynamic>{'comment': ?instance.comment};

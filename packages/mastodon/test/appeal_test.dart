@@ -8,7 +8,7 @@ void main() {
 
   group(Appeal, () {
     // State of the appeal.
-    // String state
+    // AppealStateEnum state
     test('to test the property `state`', () async {
       // TODO
     });

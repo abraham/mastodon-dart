@@ -17,41 +17,28 @@ class GetInstanceActivity200ResponseInner {
   /// Returns a new [GetInstanceActivity200ResponseInner] instance.
   GetInstanceActivity200ResponseInner({
     this.week,
+
     this.statuses,
+
     this.logins,
+
     this.registrations,
   });
 
   /// Midnight at the first day of the week.
-  @JsonKey(
-    name: r'week',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'week', required: false, includeIfNull: false)
   final String? week;
 
   /// The number of Statuses created since the week began.
-  @JsonKey(
-    name: r'statuses',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'statuses', required: false, includeIfNull: false)
   final String? statuses;
 
   /// The number of user logins since the week began.
-  @JsonKey(
-    name: r'logins',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'logins', required: false, includeIfNull: false)
   final String? logins;
 
   /// The number of user registrations since the week began.
-  @JsonKey(
-    name: r'registrations',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'registrations', required: false, includeIfNull: false)
   final String? registrations;
 
   @override
@@ -71,8 +58,8 @@ class GetInstanceActivity200ResponseInner {
       registrations.hashCode;
 
   factory GetInstanceActivity200ResponseInner.fromJson(
-          Map<String, dynamic> json) =>
-      _$GetInstanceActivity200ResponseInnerFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$GetInstanceActivity200ResponseInnerFromJson(json);
 
   Map<String, dynamic> toJson() =>
       _$GetInstanceActivity200ResponseInnerToJson(this);

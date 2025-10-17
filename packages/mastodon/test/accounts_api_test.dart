@@ -123,6 +123,15 @@ void main() {
       // TODO
     });
 
+    // Find familiar followers
+    //
+    // Obtain a list of all accounts that follow a given account, filtered for accounts you follow.  Version history:  3.5.0 - added
+    //
+    //Future<List<FamiliarFollowers>> getAccountsFamiliarFollowers({ List<String> id }) async
+    test('test getAccountsFamiliarFollowers', () async {
+      // TODO
+    });
+
     // Verify account credentials
     //
     // Test to make sure that the user token works.  Version history:  0.0.0 - added\\ 4.3.0 - added `profile` scope
@@ -132,18 +141,9 @@ void main() {
       // TODO
     });
 
-    // Find familiar followers
-    //
-    // Obtain a list of all accounts that follow a given account, filtered for accounts you follow.  Version history:  3.5.0 - added
-    //
-    //Future<List<FamiliarFollowers>> getFamiliarFollowers({ List<String> id }) async
-    test('test getFamiliarFollowers', () async {
-      // TODO
-    });
-
     // Update account credentials
     //
-    // Update the user's display and preferences.  Version history:  1.1.1 - added\\ 2.3.0 - added `locked` parameter\\ 2.4.0 - added `source[privacy,sensitive]` parameters\\ 2.4.2 - added `source[language]` parameter\\ 2.7.0 - added `discoverable` parameter\\ 4.1.0 - added `hide_collections` parameter\\ 4.2.0 - added `indexable` parameter\\ 4.4.0 (`mastodon` [API version] 3) - added `attribution_domains` parameter
+    // Update the user's display and preferences.  Version history:  1.1.1 - added\\ 2.3.0 - added `locked` parameter\\ 2.4.0 - added `source[privacy,sensitive]` parameters\\ 2.4.2 - added `source[language]` parameter\\ 2.7.0 - added `discoverable` parameter\\ 4.1.0 - added `hide_collections` parameter\\ 4.2.0 - added `indexable` parameter\\ 4.4.0 (`mastodon` [API version] 3) - added `attribution_domains` parameter\\ 4.5.0 (`mastodon` [API version] 7) - added `quote_policy` parameter
     //
     //Future<CredentialAccount> patchAccountsUpdateCredentials({ PatchAccountsUpdateCredentialsRequest patchAccountsUpdateCredentialsRequest }) async
     test('test patchAccountsUpdateCredentials', () async {
@@ -152,7 +152,7 @@ void main() {
 
     // Block account
     //
-    // Block the given account. Clients should filter statuses from this account if received (e.g. due to a boost in the Home timeline)  Version history:  0.0.0 - added\\ 3.5.0 - deprecated `follow` scope. now additionally accepts `write`
+    // [Blocks]({{< relref \"user/moderating#block\">}}) the given account.  Version history:  0.0.0 - added\\ 3.5.0 - deprecated `follow` scope. now additionally accepts `write`
     //
     //Future<Relationship> postAccountBlock(String id) async
     test('test postAccountBlock', () async {

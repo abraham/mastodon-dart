@@ -15,25 +15,14 @@ part 'privacy_policy.g.dart';
 )
 class PrivacyPolicy {
   /// Returns a new [PrivacyPolicy] instance.
-  PrivacyPolicy({
-    required this.content,
-    required this.updatedAt,
-  });
+  PrivacyPolicy({required this.content, required this.updatedAt});
 
   /// The rendered HTML content of the privacy policy.
-  @JsonKey(
-    name: r'content',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'content', required: true, includeIfNull: false)
   final String content;
 
   /// A timestamp of when the privacy policy was last updated.
-  @JsonKey(
-    name: r'updated_at',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'updated_at', required: true, includeIfNull: false)
   final DateTime updatedAt;
 
   @override

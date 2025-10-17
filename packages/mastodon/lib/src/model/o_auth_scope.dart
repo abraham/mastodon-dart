@@ -186,7 +186,8 @@ enum OAuthScope {
   /// OAuth scope for API access
   @JsonValue(r'admin:write:canonical_email_blocks')
   adminColonWriteColonCanonicalEmailBlocks(
-      r'admin:write:canonical_email_blocks');
+    r'admin:write:canonical_email_blocks',
+  );
 
   const OAuthScope(this.value);
 

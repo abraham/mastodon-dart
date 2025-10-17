@@ -16,36 +16,40 @@ part 'notification_policy_summary.g.dart';
 class NotificationPolicySummary {
   /// Returns a new [NotificationPolicySummary] instance.
   NotificationPolicySummary({
-    required this.pendingNotificationsCount,
-    required this.pendingRequestsCount,
-  });
+    this.pendingRequestsCount,
 
-  /// Number of total non-dismissed filtered notifications. May be inaccurate.
-  @JsonKey(
-    name: r'pending_notifications_count',
-    required: true,
-    includeIfNull: false,
-  )
-  final int pendingNotificationsCount;
+    this.pendingNotificationsCount,
+  });
 
   /// Number of different accounts from which the user has non-dismissed filtered notifications. Capped at 100.
   @JsonKey(
     name: r'pending_requests_count',
-    required: true,
+    required: false,
     includeIfNull: false,
   )
-  final int pendingRequestsCount;
+  final int? pendingRequestsCount;
+
+  /// Number of total non-dismissed filtered notifications. May be inaccurate.
+  @JsonKey(
+    name: r'pending_notifications_count',
+    required: false,
+    includeIfNull: false,
+  )
+  final int? pendingNotificationsCount;
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is NotificationPolicySummary &&
-          other.pendingNotificationsCount == pendingNotificationsCount &&
-          other.pendingRequestsCount == pendingRequestsCount;
+          other.pendingRequestsCount == pendingRequestsCount &&
+          other.pendingNotificationsCount == pendingNotificationsCount;
 
   @override
   int get hashCode =>
-      pendingNotificationsCount.hashCode + pendingRequestsCount.hashCode;
+      (pendingRequestsCount == null ? 0 : pendingRequestsCount.hashCode) +
+      (pendingNotificationsCount == null
+          ? 0
+          : pendingNotificationsCount.hashCode);
 
   factory NotificationPolicySummary.fromJson(Map<String, dynamic> json) =>
       _$NotificationPolicySummaryFromJson(json);

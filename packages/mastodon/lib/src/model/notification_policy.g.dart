@@ -11,32 +11,33 @@ NotificationPolicy _$NotificationPolicyFromJson(Map<String, dynamic> json) =>
       'NotificationPolicy',
       json,
       ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const [
-            'for_limited_accounts',
-            'for_new_accounts',
-            'for_not_followers',
-            'for_not_following',
-            'for_private_mentions',
-            'summary'
-          ],
-        );
         final val = NotificationPolicy(
-          forLimitedAccounts:
-              $checkedConvert('for_limited_accounts', (v) => v as String),
-          forNewAccounts:
-              $checkedConvert('for_new_accounts', (v) => v as String),
-          forNotFollowers:
-              $checkedConvert('for_not_followers', (v) => v as String),
-          forNotFollowing:
-              $checkedConvert('for_not_following', (v) => v as String),
-          forPrivateMentions:
-              $checkedConvert('for_private_mentions', (v) => v as String),
+          forLimitedAccounts: $checkedConvert(
+            'for_limited_accounts',
+            (v) => v as String?,
+          ),
+          forNewAccounts: $checkedConvert(
+            'for_new_accounts',
+            (v) => v as String?,
+          ),
+          forNotFollowers: $checkedConvert(
+            'for_not_followers',
+            (v) => v as String?,
+          ),
+          forNotFollowing: $checkedConvert(
+            'for_not_following',
+            (v) => v as String?,
+          ),
+          forPrivateMentions: $checkedConvert(
+            'for_private_mentions',
+            (v) => v as String?,
+          ),
           summary: $checkedConvert(
-              'summary',
-              (v) => NotificationPolicySummary.fromJson(
-                  v as Map<String, dynamic>)),
+            'summary',
+            (v) => v == null
+                ? null
+                : NotificationPolicySummary.fromJson(v as Map<String, dynamic>),
+          ),
         );
         return val;
       },
@@ -45,16 +46,16 @@ NotificationPolicy _$NotificationPolicyFromJson(Map<String, dynamic> json) =>
         'forNewAccounts': 'for_new_accounts',
         'forNotFollowers': 'for_not_followers',
         'forNotFollowing': 'for_not_following',
-        'forPrivateMentions': 'for_private_mentions'
+        'forPrivateMentions': 'for_private_mentions',
       },
     );
 
 Map<String, dynamic> _$NotificationPolicyToJson(NotificationPolicy instance) =>
     <String, dynamic>{
-      'for_limited_accounts': instance.forLimitedAccounts,
-      'for_new_accounts': instance.forNewAccounts,
-      'for_not_followers': instance.forNotFollowers,
-      'for_not_following': instance.forNotFollowing,
-      'for_private_mentions': instance.forPrivateMentions,
-      'summary': instance.summary.toJson(),
+      'for_limited_accounts': ?instance.forLimitedAccounts,
+      'for_new_accounts': ?instance.forNewAccounts,
+      'for_not_followers': ?instance.forNotFollowers,
+      'for_not_following': ?instance.forNotFollowing,
+      'for_private_mentions': ?instance.forPrivateMentions,
+      'summary': ?instance.summary?.toJson(),
     };

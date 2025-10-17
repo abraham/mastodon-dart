@@ -15,25 +15,14 @@ part 'filter_status.g.dart';
 )
 class FilterStatus {
   /// Returns a new [FilterStatus] instance.
-  FilterStatus({
-    required this.id,
-    required this.statusId,
-  });
+  FilterStatus({required this.id, required this.statusId});
 
   /// The ID of the FilterStatus in the database.
-  @JsonKey(
-    name: r'id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
   /// The ID of the Status that will be filtered.
-  @JsonKey(
-    name: r'status_id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'status_id', required: true, includeIfNull: false)
   final String statusId;
 
   @override

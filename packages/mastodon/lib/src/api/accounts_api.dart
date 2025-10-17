@@ -59,15 +59,10 @@ class AccountsApi {
     final _path = r'/api/v1/accounts';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2ClientCredentials',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2ClientCredentials'},
         ],
         ...?extra,
       },
@@ -81,10 +76,7 @@ class AccountsApi {
       _bodyData = jsonEncode(createAccountRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -154,17 +146,16 @@ class AccountsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path =
-        r'/api/v1/accounts/{id}'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/accounts/{id}'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -236,17 +227,16 @@ class AccountsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/accounts/{id}/endorsements'
-        .replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/accounts/{id}/endorsements'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -319,17 +309,16 @@ class AccountsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/accounts/{id}/featured_tags'
-        .replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/accounts/{id}/featured_tags'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -348,8 +337,10 @@ class AccountsApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<FeaturedTag>, FeaturedTag>(
-              rawData, 'List<FeaturedTag>',
-              growable: true);
+              rawData,
+              'List<FeaturedTag>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -405,17 +396,16 @@ class AccountsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/accounts/{id}/followers'
-        .replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/accounts/{id}/followers'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -441,8 +431,11 @@ class AccountsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<Account>, Account>(rawData, 'List<Account>',
-              growable: true);
+          : deserialize<List<Account>, Account>(
+              rawData,
+              'List<Account>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -498,17 +491,16 @@ class AccountsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/accounts/{id}/following'
-        .replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/accounts/{id}/following'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -534,8 +526,11 @@ class AccountsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<Account>, Account>(rawData, 'List<Account>',
-              growable: true);
+          : deserialize<List<Account>, Account>(
+              rawData,
+              'List<Account>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -584,19 +579,18 @@ class AccountsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/accounts/{id}/identity_proofs'
-        .replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/accounts/{id}/identity_proofs'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -618,8 +612,10 @@ class AccountsApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<IdentityProof>, IdentityProof>(
-              rawData, 'List<IdentityProof>',
-              growable: true);
+              rawData,
+              'List<IdentityProof>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -667,19 +663,18 @@ class AccountsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path =
-        r'/api/v1/accounts/{id}/lists'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/accounts/{id}/lists'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -700,8 +695,11 @@ class AccountsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<ModelList>, ModelList>(rawData, 'List<ModelList>',
-              growable: true);
+          : deserialize<List<ModelList>, ModelList>(
+              rawData,
+              'List<ModelList>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -752,19 +750,12 @@ class AccountsApi {
     final _path = r'/api/v1/accounts/lookup';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-      r'acct': acct,
-    };
+    final _queryParameters = <String, dynamic>{r'acct': acct};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -834,15 +825,10 @@ class AccountsApi {
     final _path = r'/api/v1/accounts/relationships';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -870,8 +856,10 @@ class AccountsApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<Relationship>, Relationship>(
-              rawData, 'List<Relationship>',
-              growable: true);
+              rawData,
+              'List<Relationship>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -930,15 +918,10 @@ class AccountsApi {
     final _path = r'/api/v1/accounts/search';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -968,8 +951,11 @@ class AccountsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<Account>, Account>(rawData, 'List<Account>',
-              growable: true);
+          : deserialize<List<Account>, Account>(
+              rawData,
+              'List<Account>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1035,19 +1021,18 @@ class AccountsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/accounts/{id}/statuses'
-        .replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/accounts/{id}/statuses'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -1081,8 +1066,11 @@ class AccountsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<Status>, Status>(rawData, 'List<Status>',
-              growable: true);
+          : deserialize<List<Status>, Status>(
+              rawData,
+              'List<Status>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1133,19 +1121,12 @@ class AccountsApi {
     final _path = r'/api/v1/accounts';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-      if (id != null) r'id': id,
-    };
+    final _queryParameters = <String, dynamic>{if (id != null) r'id': id};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -1162,8 +1143,11 @@ class AccountsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<Account>, Account>(rawData, 'List<Account>',
-              growable: true);
+          : deserialize<List<Account>, Account>(
+              rawData,
+              'List<Account>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1175,6 +1159,88 @@ class AccountsApi {
     }
 
     return Response<List<Account>>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// Find familiar followers
+  /// Obtain a list of all accounts that follow a given account, filtered for accounts you follow.  Version history:  3.5.0 - added
+  ///
+  /// Parameters:
+  /// * [id] - Find familiar followers for the provided account IDs.
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [List<FamiliarFollowers>] as data
+  /// Throws [DioException] if API call or serialization fails
+  /// Official Mastodon API documentation
+  /// Also see [Find familiar followers Documentation](https://docs.joinmastodon.org/methods/accounts/#familiar_followers)
+  Future<Response<List<FamiliarFollowers>>> getAccountsFamiliarFollowers({
+    List<String>? id,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/api/v1/accounts/familiar_followers';
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {'type': 'oauth2', 'name': 'OAuth2'},
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _queryParameters = <String, dynamic>{if (id != null) r'id': id};
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      queryParameters: _queryParameters,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    List<FamiliarFollowers>? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<FamiliarFollowers>, FamiliarFollowers>(
+              rawData,
+              'List<FamiliarFollowers>',
+              growable: true,
+            );
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<List<FamiliarFollowers>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -1212,15 +1278,10 @@ class AccountsApi {
     final _path = r'/api/v1/accounts/verify_credentials';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -1242,8 +1303,10 @@ class AccountsApi {
       _responseData = rawData == null
           ? null
           : deserialize<CredentialAccount, CredentialAccount>(
-              rawData, 'CredentialAccount',
-              growable: true);
+              rawData,
+              'CredentialAccount',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1266,95 +1329,8 @@ class AccountsApi {
     );
   }
 
-  /// Find familiar followers
-  /// Obtain a list of all accounts that follow a given account, filtered for accounts you follow.  Version history:  3.5.0 - added
-  ///
-  /// Parameters:
-  /// * [id] - Find familiar followers for the provided account IDs.
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future] containing a [Response] with a [List<FamiliarFollowers>] as data
-  /// Throws [DioException] if API call or serialization fails
-  /// Official Mastodon API documentation
-  /// Also see [Find familiar followers Documentation](https://docs.joinmastodon.org/methods/accounts/#familiar_followers)
-  Future<Response<List<FamiliarFollowers>>> getFamiliarFollowers({
-    List<String>? id,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/api/v1/accounts/familiar_followers';
-    final _options = Options(
-      method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
-
-    final _queryParameters = <String, dynamic>{
-      if (id != null) r'id': id,
-    };
-
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      queryParameters: _queryParameters,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    List<FamiliarFollowers>? _responseData;
-
-    try {
-      final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<List<FamiliarFollowers>, FamiliarFollowers>(
-              rawData, 'List<FamiliarFollowers>',
-              growable: true);
-    } catch (error, stackTrace) {
-      throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    return Response<List<FamiliarFollowers>>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
-  }
-
   /// Update account credentials
-  /// Update the user&#39;s display and preferences.  Version history:  1.1.1 - added\\ 2.3.0 - added &#x60;locked&#x60; parameter\\ 2.4.0 - added &#x60;source[privacy,sensitive]&#x60; parameters\\ 2.4.2 - added &#x60;source[language]&#x60; parameter\\ 2.7.0 - added &#x60;discoverable&#x60; parameter\\ 4.1.0 - added &#x60;hide_collections&#x60; parameter\\ 4.2.0 - added &#x60;indexable&#x60; parameter\\ 4.4.0 (&#x60;mastodon&#x60; [API version] 3) - added &#x60;attribution_domains&#x60; parameter
+  /// Update the user&#39;s display and preferences.  Version history:  1.1.1 - added\\ 2.3.0 - added &#x60;locked&#x60; parameter\\ 2.4.0 - added &#x60;source[privacy,sensitive]&#x60; parameters\\ 2.4.2 - added &#x60;source[language]&#x60; parameter\\ 2.7.0 - added &#x60;discoverable&#x60; parameter\\ 4.1.0 - added &#x60;hide_collections&#x60; parameter\\ 4.2.0 - added &#x60;indexable&#x60; parameter\\ 4.4.0 (&#x60;mastodon&#x60; [API version] 3) - added &#x60;attribution_domains&#x60; parameter\\ 4.5.0 (&#x60;mastodon&#x60; [API version] 7) - added &#x60;quote_policy&#x60; parameter
   ///
   /// Parameters:
   /// * [patchAccountsUpdateCredentialsRequest] - JSON request body parameters
@@ -1371,7 +1347,7 @@ class AccountsApi {
   /// Also see [Update account credentials Documentation](https://docs.joinmastodon.org/methods/accounts/#update_credentials)
   Future<Response<CredentialAccount>> patchAccountsUpdateCredentials({
     PatchAccountsUpdateCredentialsRequest?
-        patchAccountsUpdateCredentialsRequest,
+    patchAccountsUpdateCredentialsRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -1382,15 +1358,10 @@ class AccountsApi {
     final _path = r'/api/v1/accounts/update_credentials';
     final _options = Options(
       method: r'PATCH',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -1404,10 +1375,7 @@ class AccountsApi {
       _bodyData = jsonEncode(patchAccountsUpdateCredentialsRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1430,8 +1398,10 @@ class AccountsApi {
       _responseData = rawData == null
           ? null
           : deserialize<CredentialAccount, CredentialAccount>(
-              rawData, 'CredentialAccount',
-              growable: true);
+              rawData,
+              'CredentialAccount',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1455,7 +1425,7 @@ class AccountsApi {
   }
 
   /// Block account
-  /// Block the given account. Clients should filter statuses from this account if received (e.g. due to a boost in the Home timeline)  Version history:  0.0.0 - added\\ 3.5.0 - deprecated &#x60;follow&#x60; scope. now additionally accepts &#x60;write&#x60;
+  /// [Blocks]({{&lt; relref \&quot;user/moderating#block\&quot;&gt;}}) the given account.  Version history:  0.0.0 - added\\ 3.5.0 - deprecated &#x60;follow&#x60; scope. now additionally accepts &#x60;write&#x60;
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -1479,19 +1449,18 @@ class AccountsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path =
-        r'/api/v1/accounts/{id}/block'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/accounts/{id}/block'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -1512,8 +1481,11 @@ class AccountsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<Relationship, Relationship>(rawData, 'Relationship',
-              growable: true);
+          : deserialize<Relationship, Relationship>(
+              rawData,
+              'Relationship',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1561,19 +1533,18 @@ class AccountsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/accounts/{id}/endorse'
-        .replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/accounts/{id}/endorse'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -1594,8 +1565,11 @@ class AccountsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<Relationship, Relationship>(rawData, 'Relationship',
-              growable: true);
+          : deserialize<Relationship, Relationship>(
+              rawData,
+              'Relationship',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1645,19 +1619,18 @@ class AccountsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/accounts/{id}/follow'
-        .replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/accounts/{id}/follow'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -1671,10 +1644,7 @@ class AccountsApi {
       _bodyData = jsonEncode(postAccountFollowRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1696,8 +1666,11 @@ class AccountsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<Relationship, Relationship>(rawData, 'Relationship',
-              growable: true);
+          : deserialize<Relationship, Relationship>(
+              rawData,
+              'Relationship',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1747,19 +1720,18 @@ class AccountsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path =
-        r'/api/v1/accounts/{id}/mute'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/accounts/{id}/mute'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -1773,10 +1745,7 @@ class AccountsApi {
       _bodyData = jsonEncode(postAccountMuteRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1798,8 +1767,11 @@ class AccountsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<Relationship, Relationship>(rawData, 'Relationship',
-              growable: true);
+          : deserialize<Relationship, Relationship>(
+              rawData,
+              'Relationship',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1849,19 +1821,18 @@ class AccountsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path =
-        r'/api/v1/accounts/{id}/note'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/accounts/{id}/note'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -1875,10 +1846,7 @@ class AccountsApi {
       _bodyData = jsonEncode(postAccountNoteRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1900,8 +1868,11 @@ class AccountsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<Relationship, Relationship>(rawData, 'Relationship',
-              growable: true);
+          : deserialize<Relationship, Relationship>(
+              rawData,
+              'Relationship',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1950,19 +1921,18 @@ class AccountsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path =
-        r'/api/v1/accounts/{id}/pin'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/accounts/{id}/pin'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -1983,8 +1953,11 @@ class AccountsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<Relationship, Relationship>(rawData, 'Relationship',
-              growable: true);
+          : deserialize<Relationship, Relationship>(
+              rawData,
+              'Relationship',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2032,19 +2005,18 @@ class AccountsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/accounts/{id}/remove_from_followers'
-        .replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/accounts/{id}/remove_from_followers'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -2065,8 +2037,11 @@ class AccountsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<Relationship, Relationship>(rawData, 'Relationship',
-              growable: true);
+          : deserialize<Relationship, Relationship>(
+              rawData,
+              'Relationship',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2114,19 +2089,18 @@ class AccountsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/accounts/{id}/unblock'
-        .replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/accounts/{id}/unblock'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -2147,8 +2121,11 @@ class AccountsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<Relationship, Relationship>(rawData, 'Relationship',
-              growable: true);
+          : deserialize<Relationship, Relationship>(
+              rawData,
+              'Relationship',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2196,19 +2173,18 @@ class AccountsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/accounts/{id}/unendorse'
-        .replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/accounts/{id}/unendorse'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -2229,8 +2205,11 @@ class AccountsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<Relationship, Relationship>(rawData, 'Relationship',
-              growable: true);
+          : deserialize<Relationship, Relationship>(
+              rawData,
+              'Relationship',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2278,19 +2257,18 @@ class AccountsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/accounts/{id}/unfollow'
-        .replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/accounts/{id}/unfollow'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -2311,8 +2289,11 @@ class AccountsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<Relationship, Relationship>(rawData, 'Relationship',
-              growable: true);
+          : deserialize<Relationship, Relationship>(
+              rawData,
+              'Relationship',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2360,19 +2341,18 @@ class AccountsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/accounts/{id}/unmute'
-        .replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/accounts/{id}/unmute'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -2393,8 +2373,11 @@ class AccountsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<Relationship, Relationship>(rawData, 'Relationship',
-              growable: true);
+          : deserialize<Relationship, Relationship>(
+              rawData,
+              'Relationship',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2443,19 +2426,18 @@ class AccountsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path =
-        r'/api/v1/accounts/{id}/unpin'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/accounts/{id}/unpin'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -2476,8 +2458,11 @@ class AccountsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<Relationship, Relationship>(rawData, 'Relationship',
-              growable: true);
+          : deserialize<Relationship, Relationship>(
+              rawData,
+              'Relationship',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

@@ -46,19 +46,24 @@ class AnnouncementsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/api/v1/announcements/{id}/reactions/{name}'
-        .replaceAll('{' r'id' '}', id.toString())
-        .replaceAll('{' r'name' '}', name.toString());
+        .replaceAll(
+          '{'
+          r'id'
+          '}',
+          id.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'name'
+          '}',
+          name.toString(),
+        );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -102,15 +107,10 @@ class AnnouncementsApi {
     final _path = r'/api/v1/announcements';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -132,8 +132,10 @@ class AnnouncementsApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<Announcement>, Announcement>(
-              rawData, 'List<Announcement>',
-              growable: true);
+              rawData,
+              'List<Announcement>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -181,19 +183,18 @@ class AnnouncementsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/announcements/{id}/dismiss'
-        .replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/announcements/{id}/dismiss'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -239,19 +240,24 @@ class AnnouncementsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/api/v1/announcements/{id}/reactions/{name}'
-        .replaceAll('{' r'id' '}', id.toString())
-        .replaceAll('{' r'name' '}', name.toString());
+        .replaceAll(
+          '{'
+          r'id'
+          '}',
+          id.toString(),
+        )
+        .replaceAll(
+          '{'
+          r'name'
+          '}',
+          name.toString(),
+        );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },

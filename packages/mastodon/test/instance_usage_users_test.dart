@@ -7,7 +7,7 @@ void main() {
   // TODO add properties to the entity
 
   group(InstanceUsageUsers, () {
-    // The number of active users in the past 4 weeks. This is set to zero for servers with `configuration[limited_federation]`.
+    // The number of active users in the past 4 weeks. This is set to zero for server with `configuration[limited_federation]`.
     // int activeMonth
     test('to test the property `activeMonth`', () async {
       // TODO

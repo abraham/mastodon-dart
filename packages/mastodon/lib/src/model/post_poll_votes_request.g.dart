@@ -7,27 +7,18 @@ part of 'post_poll_votes_request.dart';
 // **************************************************************************
 
 PostPollVotesRequest _$PostPollVotesRequestFromJson(
-        Map<String, dynamic> json) =>
-    $checkedCreate(
-      'PostPollVotesRequest',
-      json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['choices'],
-        );
-        final val = PostPollVotesRequest(
-          choices: $checkedConvert(
-              'choices',
-              (v) =>
-                  (v as List<dynamic>).map((e) => (e as num).toInt()).toList()),
-        );
-        return val;
-      },
-    );
+  Map<String, dynamic> json,
+) => $checkedCreate('PostPollVotesRequest', json, ($checkedConvert) {
+  $checkKeys(json, requiredKeys: const ['choices']);
+  final val = PostPollVotesRequest(
+    choices: $checkedConvert(
+      'choices',
+      (v) => (v as List<dynamic>).map((e) => (e as num).toInt()).toList(),
+    ),
+  );
+  return val;
+});
 
 Map<String, dynamic> _$PostPollVotesRequestToJson(
-        PostPollVotesRequest instance) =>
-    <String, dynamic>{
-      'choices': instance.choices,
-    };
+  PostPollVotesRequest instance,
+) => <String, dynamic>{'choices': instance.choices};

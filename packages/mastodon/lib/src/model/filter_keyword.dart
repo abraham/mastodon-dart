@@ -17,32 +17,22 @@ class FilterKeyword {
   /// Returns a new [FilterKeyword] instance.
   FilterKeyword({
     required this.id,
+
     required this.keyword,
+
     required this.wholeWord,
   });
 
   /// The ID of the FilterKeyword in the database.
-  @JsonKey(
-    name: r'id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
   /// The phrase to be matched against.
-  @JsonKey(
-    name: r'keyword',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'keyword', required: true, includeIfNull: false)
   final String keyword;
 
   /// Should the filter consider word boundaries? See [implementation guidelines for filters]({{< relref \"api/guidelines#filters\" >}}).
-  @JsonKey(
-    name: r'whole_word',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'whole_word', required: true, includeIfNull: false)
   final bool wholeWord;
 
   @override

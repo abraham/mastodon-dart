@@ -21,7 +21,7 @@ class PushApi {
   const PushApi(this._dio);
 
   /// Subscribe to push notifications
-  /// Add a Web Push API subscription to receive notifications. Each access token can have one push subscription. If you create a new subscription, the old subscription is deleted.  Version history:  2.4.0 - added\\ 3.3.0 - added &#x60;data[alerts][status]&#x60;\\ 3.4.0 - added &#x60;data[policy]&#x60;\\ 3.5.0 - added &#x60;data[alerts][update]&#x60; and &#x60;data[alerts][admin.sign_up]&#x60;\\ 4.0.0 - added &#x60;data[alerts][admin.report]&#x60;\\ 4.3.0 - added stricter request parameter validation, invalid endpoint URLs and subscription keys will now result in an error, previously these would be accepted, but silently fail.\\ 4.4.0 - added &#x60;subscription[standard]&#x60;
+  /// Add a Web Push API subscription to receive notifications. Each access token can have one push subscription. If you create a new subscription, the old subscription is deleted.  Version history:  2.4.0 - added\\ 3.3.0 - added &#x60;data[alerts][status]&#x60;\\ 3.4.0 - added &#x60;data[policy]&#x60;\\ 3.5.0 - added &#x60;data[alerts][update]&#x60; and &#x60;data[alerts][admin.sign_up]&#x60;\\ 4.0.0 - added &#x60;data[alerts][admin.report]&#x60;\\ 4.3.0 - added stricter request parameter validation, invalid endpoint URLs and subscription keys will now result in an error, previously these would be accepted, but silently fail.\\ 4.4.0 - added &#x60;subscription[standard]&#x60;\\ 4.5.0 (&#x60;mastodon&#x60; [API version] 7)- added &#x60;data[alerts][quote]&#x60; and &#x60;data[alerts][quoted_update]&#x60;
   ///
   /// Parameters:
   /// * [createPushSubscriptionRequest] - JSON request body parameters
@@ -48,15 +48,10 @@ class PushApi {
     final _path = r'/api/v1/push/subscription';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -70,10 +65,7 @@ class PushApi {
       _bodyData = jsonEncode(createPushSubscriptionRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -96,8 +88,10 @@ class PushApi {
       _responseData = rawData == null
           ? null
           : deserialize<WebPushSubscription, WebPushSubscription>(
-              rawData, 'WebPushSubscription',
-              growable: true);
+              rawData,
+              'WebPushSubscription',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -146,15 +140,10 @@ class PushApi {
     final _path = r'/api/v1/push/subscription';
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -198,15 +187,10 @@ class PushApi {
     final _path = r'/api/v1/push/subscription';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -228,8 +212,10 @@ class PushApi {
       _responseData = rawData == null
           ? null
           : deserialize<WebPushSubscription, WebPushSubscription>(
-              rawData, 'WebPushSubscription',
-              growable: true);
+              rawData,
+              'WebPushSubscription',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -280,15 +266,10 @@ class PushApi {
     final _path = r'/api/v1/push/subscription';
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -302,10 +283,7 @@ class PushApi {
       _bodyData = jsonEncode(putPushSubscriptionRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -328,8 +306,10 @@ class PushApi {
       _responseData = rawData == null
           ? null
           : deserialize<WebPushSubscription, WebPushSubscription>(
-              rawData, 'WebPushSubscription',
-              growable: true);
+              rawData,
+              'WebPushSubscription',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

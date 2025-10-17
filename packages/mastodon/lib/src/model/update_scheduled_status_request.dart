@@ -15,16 +15,10 @@ part 'update_scheduled_status_request.g.dart';
 )
 class UpdateScheduledStatusRequest {
   /// Returns a new [UpdateScheduledStatusRequest] instance.
-  UpdateScheduledStatusRequest({
-    this.scheduledAt,
-  });
+  UpdateScheduledStatusRequest({this.scheduledAt});
 
   /// [Datetime] at which the status will be published. Must be at least 5 minutes into the future.
-  @JsonKey(
-    name: r'scheduled_at',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'scheduled_at', required: false, includeIfNull: false)
   final DateTime? scheduledAt;
 
   @override

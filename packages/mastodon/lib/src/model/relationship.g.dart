@@ -27,7 +27,7 @@ Relationship _$RelationshipFromJson(Map<String, dynamic> json) =>
             'notifying',
             'requested',
             'requested_by',
-            'showing_reblogs'
+            'showing_reblogs',
           ],
         );
         final val = Relationship(
@@ -39,15 +39,19 @@ Relationship _$RelationshipFromJson(Map<String, dynamic> json) =>
           following: $checkedConvert('following', (v) => v as bool),
           id: $checkedConvert('id', (v) => v as String),
           muting: $checkedConvert('muting', (v) => v as bool),
-          mutingNotifications:
-              $checkedConvert('muting_notifications', (v) => v as bool),
+          mutingNotifications: $checkedConvert(
+            'muting_notifications',
+            (v) => v as bool,
+          ),
           note: $checkedConvert('note', (v) => v as String),
           notifying: $checkedConvert('notifying', (v) => v as bool),
           requested: $checkedConvert('requested', (v) => v as bool),
           requestedBy: $checkedConvert('requested_by', (v) => v as bool),
           showingReblogs: $checkedConvert('showing_reblogs', (v) => v as bool),
-          languages: $checkedConvert('languages',
-              (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
+          languages: $checkedConvert(
+            'languages',
+            (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+          ),
         );
         return val;
       },
@@ -57,7 +61,7 @@ Relationship _$RelationshipFromJson(Map<String, dynamic> json) =>
         'followedBy': 'followed_by',
         'mutingNotifications': 'muting_notifications',
         'requestedBy': 'requested_by',
-        'showingReblogs': 'showing_reblogs'
+        'showingReblogs': 'showing_reblogs',
       },
     );
 
@@ -77,5 +81,5 @@ Map<String, dynamic> _$RelationshipToJson(Relationship instance) =>
       'requested': instance.requested,
       'requested_by': instance.requestedBy,
       'showing_reblogs': instance.showingReblogs,
-      if (instance.languages case final value?) 'languages': value,
+      'languages': ?instance.languages,
     };

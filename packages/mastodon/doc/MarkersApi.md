@@ -72,7 +72,7 @@ import 'package:mastodon/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = Mastodon().getMarkersApi();
-final List<String> timeline = ; // List<String> | Specify the timeline(s) for which markers should be fetched. Possible values: `home`, `notifications`. If not provided, an empty object will be returned.
+final List<FilterContextEnum> timeline = ; // List<FilterContextEnum> | Specify the timeline(s) for which markers should be fetched. Possible values: `home`, `notifications`. If not provided, an empty object will be returned.
 
 try {
     final response = api.getMarkers(timeline);
@@ -86,7 +86,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **timeline** | [**List&lt;String&gt;**](String.md)| Specify the timeline(s) for which markers should be fetched. Possible values: `home`, `notifications`. If not provided, an empty object will be returned. | [optional] 
+ **timeline** | [**List&lt;FilterContextEnum&gt;**](FilterContextEnum.md)| Specify the timeline(s) for which markers should be fetched. Possible values: `home`, `notifications`. If not provided, an empty object will be returned. | [optional] 
 
 ### Return type
 

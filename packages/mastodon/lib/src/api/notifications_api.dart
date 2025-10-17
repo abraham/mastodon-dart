@@ -15,7 +15,7 @@ import 'package:mastodon/src/model/grouped_notifications_results.dart';
 import 'package:mastodon/src/model/notification.dart';
 import 'package:mastodon/src/model/notification_policy.dart';
 import 'package:mastodon/src/model/notification_request.dart';
-import 'package:mastodon/src/model/types_enum.dart';
+import 'package:mastodon/src/model/notification_type_enum.dart';
 import 'package:mastodon/src/model/validation_error.dart';
 
 class NotificationsApi {
@@ -49,15 +49,10 @@ class NotificationsApi {
     final _path = r'/api/v1/notifications/clear';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -101,15 +96,10 @@ class NotificationsApi {
     final _path = r'/api/v1/notifications/requests/accept';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -153,15 +143,10 @@ class NotificationsApi {
     final _path = r'/api/v1/notifications/requests/dismiss';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -204,19 +189,18 @@ class NotificationsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path =
-        r'/api/v1/notifications/{id}'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/notifications/{id}'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -237,8 +221,11 @@ class NotificationsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<Notification, Notification>(rawData, 'Notification',
-              growable: true);
+          : deserialize<Notification, Notification>(
+              rawData,
+              'Notification',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -286,19 +273,18 @@ class NotificationsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v2/notifications/{group_key}/accounts'
-        .replaceAll('{' r'group_key' '}', groupKey.toString());
+    final _path = r'/api/v2/notifications/{group_key}/accounts'.replaceAll(
+      '{'
+      r'group_key'
+      '}',
+      groupKey.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -319,8 +305,11 @@ class NotificationsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<Account>, Account>(rawData, 'List<Account>',
-              growable: true);
+          : deserialize<List<Account>, Account>(
+              rawData,
+              'List<Account>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -369,15 +358,10 @@ class NotificationsApi {
     final _path = r'/api/v2/notifications/policy';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -399,8 +383,10 @@ class NotificationsApi {
       _responseData = rawData == null
           ? null
           : deserialize<NotificationPolicy, NotificationPolicy>(
-              rawData, 'NotificationPolicy',
-              growable: true);
+              rawData,
+              'NotificationPolicy',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -457,15 +443,10 @@ class NotificationsApi {
     final _path = r'/api/v1/notifications/requests';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -495,8 +476,10 @@ class NotificationsApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<NotificationRequest>, NotificationRequest>(
-              rawData, 'List<NotificationRequest>',
-              growable: true);
+              rawData,
+              'List<NotificationRequest>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -544,13 +527,13 @@ class NotificationsApi {
   /// Also see [Get all notifications Documentation](https://docs.joinmastodon.org/methods/notifications/#get)
   Future<Response<List<Notification>>> getNotifications({
     String? accountId,
-    List<TypesEnum>? excludeTypes,
+    List<NotificationTypeEnum>? excludeTypes,
     bool? includeFiltered = false,
     int? limit = 40,
     String? maxId,
     String? minId,
     String? sinceId,
-    List<TypesEnum>? types,
+    List<NotificationTypeEnum>? types,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -561,15 +544,10 @@ class NotificationsApi {
     final _path = r'/api/v1/notifications';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -603,8 +581,10 @@ class NotificationsApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<Notification>, Notification>(
-              rawData, 'List<Notification>',
-              growable: true);
+              rawData,
+              'List<Notification>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -652,19 +632,18 @@ class NotificationsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v2/notifications/{group_key}'
-        .replaceAll('{' r'group_key' '}', groupKey.toString());
+    final _path = r'/api/v2/notifications/{group_key}'.replaceAll(
+      '{'
+      r'group_key'
+      '}',
+      groupKey.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -685,95 +664,10 @@ class NotificationsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<GroupedNotificationsResults,
-                  GroupedNotificationsResults>(
-              rawData, 'GroupedNotificationsResults',
-              growable: true);
-    } catch (error, stackTrace) {
-      throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    return Response<GroupedNotificationsResults>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
-  }
-
-  /// Get a single notification group
-  /// View information about a specific notification group with a given group key.  Version history:  4.3.0-beta.1 - added\\ 4.3.0-beta.2 - deprecated
-  ///
-  /// Parameters:
-  /// * [groupKey] - group_key parameter
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future] containing a [Response] with a [GroupedNotificationsResults] as data
-  /// Throws [DioException] if API call or serialization fails
-  /// Official Mastodon API documentation
-  /// Also see [Get a single notification group Documentation](https://docs.joinmastodon.org/methods/notifications_alpha/#get-notification-group)
-  Future<Response<GroupedNotificationsResults>>
-      getNotificationsByGroupKeyV2Alpha({
-    required String groupKey,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/api/v2_alpha/notifications/{group_key}'
-        .replaceAll('{' r'group_key' '}', groupKey.toString());
-    final _options = Options(
-      method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
-
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    GroupedNotificationsResults? _responseData;
-
-    try {
-      final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<GroupedNotificationsResults,
-                  GroupedNotificationsResults>(
-              rawData, 'GroupedNotificationsResults',
-              growable: true);
+          : deserialize<
+              GroupedNotificationsResults,
+              GroupedNotificationsResults
+            >(rawData, 'GroupedNotificationsResults', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -821,19 +715,18 @@ class NotificationsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/notifications/requests/{id}'
-        .replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/notifications/requests/{id}'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -855,8 +748,10 @@ class NotificationsApi {
       _responseData = rawData == null
           ? null
           : deserialize<NotificationRequest, NotificationRequest>(
-              rawData, 'NotificationRequest',
-              growable: true);
+              rawData,
+              'NotificationRequest',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -905,15 +800,10 @@ class NotificationsApi {
     final _path = r'/api/v1/notifications/requests/merged';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -965,15 +855,10 @@ class NotificationsApi {
     final _path = r'/api/v1/notifications/unread_count';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -1035,86 +920,10 @@ class NotificationsApi {
     final _path = r'/api/v2/notifications/unread_count';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
-
-    final _queryParameters = <String, dynamic>{
-      if (accountId != null) r'account_id': accountId,
-      if (excludeTypes != null) r'exclude_types': excludeTypes,
-      if (groupedTypes != null) r'grouped_types': groupedTypes,
-      if (limit != null) r'limit': limit,
-      if (types != null) r'types': types,
-    };
-
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      queryParameters: _queryParameters,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    return _response;
-  }
-
-  /// Get the number of unread notifications
-  /// Get the (capped) number of unread notification groups for the current user.
-  ///
-  /// Parameters:
-  /// * [accountId] - Only count unread notifications received from the specified account.
-  /// * [excludeTypes] - Types of notifications that should not count towards unread notifications.
-  /// * [groupedTypes] - Restrict which notification types can be grouped. Use this if there are notification types for which your client does not support grouping. If omitted, the server will group notifications of all types it supports (currently, `favourite` and `reblog`). If you do not want any notification grouping, use [GET `/api/v1/notifications/unread_count`] instead.
-  /// * [limit] - Maximum number of results to return. Defaults to 100 notifications. Max 1000 notifications.
-  /// * [types] - Types of notifications that should count towards unread notifications.
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future]
-  /// Throws [DioException] if API call or serialization fails
-  /// Official Mastodon API documentation
-  /// Also see [Get the number of unread notifications Documentation](https://docs.joinmastodon.org/methods/notifications_alpha/#unread-group-count)
-  Future<Response<void>> getNotificationsUnreadCountV2Alpha({
-    String? accountId,
-    List<String>? excludeTypes,
-    List<String>? groupedTypes,
-    int? limit = 100,
-    List<String>? types,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/api/v2_alpha/notifications/unread_count';
-    final _options = Options(
-      method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -1168,15 +977,15 @@ class NotificationsApi {
   /// Also see [Get all grouped notifications Documentation](https://docs.joinmastodon.org/methods/grouped_notifications/#get-grouped)
   Future<Response<GroupedNotificationsResults>> getNotificationsV2({
     String? accountId,
-    List<TypesEnum>? excludeTypes,
+    List<NotificationTypeEnum>? excludeTypes,
     String? expandAccounts,
-    List<TypesEnum>? groupedTypes,
+    List<NotificationTypeEnum>? groupedTypes,
     bool? includeFiltered = false,
     int? limit = 40,
     String? maxId,
     String? minId,
     String? sinceId,
-    List<TypesEnum>? types,
+    List<NotificationTypeEnum>? types,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -1187,15 +996,10 @@ class NotificationsApi {
     final _path = r'/api/v2/notifications';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -1230,122 +1034,10 @@ class NotificationsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<GroupedNotificationsResults,
-                  GroupedNotificationsResults>(
-              rawData, 'GroupedNotificationsResults',
-              growable: true);
-    } catch (error, stackTrace) {
-      throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    return Response<GroupedNotificationsResults>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
-  }
-
-  /// Get all grouped notifications
-  /// Return grouped notifications concerning the user. This API returns Link headers containing links to the next/previous page. However, the links can also be constructed dynamically using query params and &#x60;id&#x60; values.  Version history:  4.3.0-beta.1 - added\\ 4.3.0-beta.2 - deprecated
-  ///
-  /// Parameters:
-  /// * [accountId] - Return only notifications received from the specified account.
-  /// * [excludeTypes] - Types to exclude from the results.
-  /// * [expandAccounts] - One of `full` (default) or `partial_avatars`. When set to `partial_avatars`, some accounts will not be rendered in full in the returned `accounts` list but will be instead returned in stripped-down form in the `partial_accounts` list. The most recent account in a notification group is always rendered in full in the `accounts` attribute.
-  /// * [groupedTypes] - Restrict which notification types can be grouped. Use this if there are notification types for which your client does not support grouping. If omitted, the server will group notifications of all types it supports (currently, `favourite` and `reblog`). If you do not want any notification grouping, use [GET `/api/v1/notifications`] instead.
-  /// * [limit] - Maximum number of results to return. Defaults to 40 notifications. Max 80 notification groups.
-  /// * [maxId] - All results returned will be about notifications strictly older than this notification ID. In effect, sets an upper bound on results.
-  /// * [minId] - Returns results about notifications immediately newer than this notification ID. In effect, sets a cursor at this ID and paginates forward.
-  /// * [sinceId] - All results returned will be about notifications strictly newer than this notification ID. In effect, sets a lower bound on results.
-  /// * [types] - Types to include in the result.
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future] containing a [Response] with a [GroupedNotificationsResults] as data
-  /// Throws [DioException] if API call or serialization fails
-  /// Official Mastodon API documentation
-  /// Also see [Get all grouped notifications Documentation](https://docs.joinmastodon.org/methods/notifications_alpha/#get-grouped)
-  Future<Response<GroupedNotificationsResults>> getNotificationsV2Alpha({
-    String? accountId,
-    List<TypesEnum>? excludeTypes,
-    String? expandAccounts,
-    List<TypesEnum>? groupedTypes,
-    int? limit = 40,
-    String? maxId,
-    String? minId,
-    String? sinceId,
-    List<TypesEnum>? types,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/api/v2_alpha/notifications';
-    final _options = Options(
-      method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
-
-    final _queryParameters = <String, dynamic>{
-      if (accountId != null) r'account_id': accountId,
-      if (excludeTypes != null) r'exclude_types': excludeTypes,
-      if (expandAccounts != null) r'expand_accounts': expandAccounts,
-      if (groupedTypes != null) r'grouped_types': groupedTypes,
-      if (limit != null) r'limit': limit,
-      if (maxId != null) r'max_id': maxId,
-      if (minId != null) r'min_id': minId,
-      if (sinceId != null) r'since_id': sinceId,
-      if (types != null) r'types': types,
-    };
-
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      queryParameters: _queryParameters,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    GroupedNotificationsResults? _responseData;
-
-    try {
-      final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<GroupedNotificationsResults,
-                  GroupedNotificationsResults>(
-              rawData, 'GroupedNotificationsResults',
-              growable: true);
+          : deserialize<
+              GroupedNotificationsResults,
+              GroupedNotificationsResults
+            >(rawData, 'GroupedNotificationsResults', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1393,19 +1085,18 @@ class NotificationsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/notifications/{id}/dismiss'
-        .replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/notifications/{id}/dismiss'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -1448,74 +1139,18 @@ class NotificationsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v2/notifications/{group_key}/dismiss'
-        .replaceAll('{' r'group_key' '}', groupKey.toString());
+    final _path = r'/api/v2/notifications/{group_key}/dismiss'.replaceAll(
+      '{'
+      r'group_key'
+      '}',
+      groupKey.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
-
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    return _response;
-  }
-
-  /// Dismiss a single notification group
-  /// Dismiss a single notification group from the server.  Version history:  4.3.0-beta.1 - added\\ 4.3.0-beta.2 - deprecated
-  ///
-  /// Parameters:
-  /// * [groupKey] - group_key parameter
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future]
-  /// Throws [DioException] if API call or serialization fails
-  /// Official Mastodon API documentation
-  /// Also see [Dismiss a single notification group Documentation](https://docs.joinmastodon.org/methods/notifications_alpha/#dismiss-group)
-  Future<Response<void>> postNotificationDismissV2Alpha({
-    required String groupKey,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/api/v2_alpha/notifications/{group_key}/dismiss'
-        .replaceAll('{' r'group_key' '}', groupKey.toString());
-    final _options = Options(
-      method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -1558,19 +1193,18 @@ class NotificationsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/notifications/requests/{id}/accept'
-        .replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/notifications/requests/{id}/accept'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -1613,19 +1247,18 @@ class NotificationsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/v1/notifications/requests/{id}/dismiss'
-        .replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/v1/notifications/requests/{id}/dismiss'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },

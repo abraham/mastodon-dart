@@ -7,73 +7,68 @@ part of 'credential_application.dart';
 // **************************************************************************
 
 CredentialApplication _$CredentialApplicationFromJson(
-        Map<String, dynamic> json) =>
-    $checkedCreate(
-      'CredentialApplication',
+  Map<String, dynamic> json,
+) => $checkedCreate(
+  'CredentialApplication',
+  json,
+  ($checkedConvert) {
+    $checkKeys(
       json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const [
-            'client_id',
-            'client_secret',
-            'client_secret_expires_at',
-            'id',
-            'name',
-            'redirect_uri',
-            'redirect_uris',
-            'scopes',
-            'vapid_key'
-          ],
-        );
-        final val = CredentialApplication(
-          clientId: $checkedConvert('client_id', (v) => v as String),
-          clientSecret: $checkedConvert('client_secret', (v) => v as String),
-          clientSecretExpiresAt: $checkedConvert(
-              'client_secret_expires_at', (v) => (v as num).toInt()),
-          id: $checkedConvert('id', (v) => v as String),
-          name: $checkedConvert('name', (v) => v as String),
-          redirectUri: $checkedConvert('redirect_uri', (v) => v as String),
-          redirectUris: $checkedConvert(
-              'redirect_uris',
-              (v) => (v as List<dynamic>)
-                  .map((e) => Uri.parse(e as String))
-                  .toList()),
-          scopes: $checkedConvert(
-              'scopes',
-              (v) => (v as List<dynamic>)
-                  .map((e) => $enumDecode(_$OAuthScopeEnumMap, e))
-                  .toList()),
-          vapidKey: $checkedConvert('vapid_key', (v) => v as String),
-          website: $checkedConvert(
-              'website', (v) => v == null ? null : Uri.parse(v as String)),
-        );
-        return val;
-      },
-      fieldKeyMap: const {
-        'clientId': 'client_id',
-        'clientSecret': 'client_secret',
-        'clientSecretExpiresAt': 'client_secret_expires_at',
-        'redirectUri': 'redirect_uri',
-        'redirectUris': 'redirect_uris',
-        'vapidKey': 'vapid_key'
-      },
+      requiredKeys: const ['client_id', 'client_secret', 'id', 'name'],
     );
+    final val = CredentialApplication(
+      clientId: $checkedConvert('client_id', (v) => v as String),
+      clientSecret: $checkedConvert('client_secret', (v) => v as String),
+      id: $checkedConvert('id', (v) => v as String),
+      name: $checkedConvert('name', (v) => v as String),
+      clientSecretExpiresAt: $checkedConvert(
+        'client_secret_expires_at',
+        (v) => (v as num?)?.toInt(),
+      ),
+      redirectUri: $checkedConvert('redirect_uri', (v) => v as String?),
+      redirectUris: $checkedConvert(
+        'redirect_uris',
+        (v) =>
+            (v as List<dynamic>?)?.map((e) => Uri.parse(e as String)).toList(),
+      ),
+      scopes: $checkedConvert(
+        'scopes',
+        (v) => (v as List<dynamic>?)
+            ?.map((e) => $enumDecode(_$OAuthScopeEnumMap, e))
+            .toList(),
+      ),
+      vapidKey: $checkedConvert('vapid_key', (v) => v as String?),
+      website: $checkedConvert(
+        'website',
+        (v) => v == null ? null : Uri.parse(v as String),
+      ),
+    );
+    return val;
+  },
+  fieldKeyMap: const {
+    'clientId': 'client_id',
+    'clientSecret': 'client_secret',
+    'clientSecretExpiresAt': 'client_secret_expires_at',
+    'redirectUri': 'redirect_uri',
+    'redirectUris': 'redirect_uris',
+    'vapidKey': 'vapid_key',
+  },
+);
 
 Map<String, dynamic> _$CredentialApplicationToJson(
-        CredentialApplication instance) =>
-    <String, dynamic>{
-      'client_id': instance.clientId,
-      'client_secret': instance.clientSecret,
-      'client_secret_expires_at': instance.clientSecretExpiresAt,
-      'id': instance.id,
-      'name': instance.name,
-      'redirect_uri': instance.redirectUri,
-      'redirect_uris': instance.redirectUris.map((e) => e.toString()).toList(),
-      'scopes': instance.scopes.map((e) => _$OAuthScopeEnumMap[e]!).toList(),
-      'vapid_key': instance.vapidKey,
-      if (instance.website?.toString() case final value?) 'website': value,
-    };
+  CredentialApplication instance,
+) => <String, dynamic>{
+  'client_id': instance.clientId,
+  'client_secret': instance.clientSecret,
+  'id': instance.id,
+  'name': instance.name,
+  'client_secret_expires_at': ?instance.clientSecretExpiresAt,
+  'redirect_uri': ?instance.redirectUri,
+  'redirect_uris': ?instance.redirectUris?.map((e) => e.toString()).toList(),
+  'scopes': ?instance.scopes?.map((e) => _$OAuthScopeEnumMap[e]!).toList(),
+  'vapid_key': ?instance.vapidKey,
+  'website': ?instance.website?.toString(),
+};
 
 const _$OAuthScopeEnumMap = {
   OAuthScope.profile: 'profile',

@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 Create an application
 
-Create a new application to obtain OAuth2 credentials.  Version history:  0.0.0 - added\\ 2.7.2 - now returns `vapid_key`\\ 4.3.0 - deprecated `vapid_key`, please see [api/v2/instance]\\ 4.3.0 - added support for multiple `redirect_uris` in Form data parameters\\ 4.3.0 - added `redirect_uris` response property\\ 4.3.0 - deprecated `redirect_uri` response property, since this can be a non-URI if multiple `redirect_uris` are registered, use `redirect_uris` instead\\ 4.3.0 - changed entity type from [Application] to [CredentialApplication]
+Create a new application to obtain OAuth2 credentials.  Version history:  0.0.0 - added\\ 2.7.2 - now returns `vapid_key`\\ 4.3.0 - deprecated `vapid_key`, please see [api/v2/instance]\\ 4.3.0 - added support for multiple `redirect_uris` in Form data parameters\\ 4.3.0 - added `redirect_uris` response property\\ 4.3.0 - deprecated `redirect_uri` response property, since this can be a non-URI if multiple `redirect_uris` are registered, use `redirect_uris` instead\\ 4.3.0 - changed entity type from [Application] to [CredentialApplication]\\ 4.4.0 - added `client_secret_expires_at`
 
 ### Example
 ```dart

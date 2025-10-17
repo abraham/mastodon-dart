@@ -17,95 +17,64 @@ class WebPushSubscriptionAlerts {
   /// Returns a new [WebPushSubscriptionAlerts] instance.
   WebPushSubscriptionAlerts({
     required this.adminPeriodReport,
+
     required this.adminPeriodSignUp,
+
     required this.favourite,
+
     required this.follow,
+
     required this.followRequest,
+
     required this.mention,
+
     required this.poll,
+
     required this.reblog,
+
     required this.status,
+
     required this.edit,
   });
 
   /// Receive a push notification when a new report has been filed?
-  @JsonKey(
-    name: r'admin.report',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'admin.report', required: true, includeIfNull: false)
   final bool adminPeriodReport;
 
   /// Receive a push notification when a new user has signed up?
-  @JsonKey(
-    name: r'admin.sign_up',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'admin.sign_up', required: true, includeIfNull: false)
   final bool adminPeriodSignUp;
 
   /// Receive a push notification when a status you created has been favourited by someone else?
-  @JsonKey(
-    name: r'favourite',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'favourite', required: true, includeIfNull: false)
   final bool favourite;
 
   /// Receive a push notification when someone has followed you?
-  @JsonKey(
-    name: r'follow',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'follow', required: true, includeIfNull: false)
   final bool follow;
 
   /// Receive a push notification when someone has requested to followed you?
-  @JsonKey(
-    name: r'follow_request',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'follow_request', required: true, includeIfNull: false)
   final bool followRequest;
 
   /// Receive a push notification when someone else has mentioned you in a status?
-  @JsonKey(
-    name: r'mention',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'mention', required: true, includeIfNull: false)
   final bool mention;
 
   /// Receive a push notification when a poll you voted in or created has ended?
-  @JsonKey(
-    name: r'poll',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'poll', required: true, includeIfNull: false)
   final bool poll;
 
   /// Receive a push notification when a status you created has been boosted by someone else?
-  @JsonKey(
-    name: r'reblog',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'reblog', required: true, includeIfNull: false)
   final bool reblog;
 
   /// Receive a push notification when a subscribed account posts a status?
-  @JsonKey(
-    name: r'status',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'status', required: true, includeIfNull: false)
   final bool status;
 
   /// Receive a push notification when a status you interacted with has been edited?
-  @JsonKey(
-    name: r'update',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'update', required: true, includeIfNull: false)
   final bool edit;
 
   @override

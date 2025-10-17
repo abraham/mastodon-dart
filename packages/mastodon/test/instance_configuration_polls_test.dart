@@ -4,7 +4,7 @@ import 'package:mastodon/mastodon.dart';
 // tests for InstanceConfigurationPolls
 void main() {
   final InstanceConfigurationPolls?
-      instance = /* InstanceConfigurationPolls(...) */ null;
+  instance = /* InstanceConfigurationPolls(...) */ null;
   // TODO add properties to the entity
 
   group(InstanceConfigurationPolls, () {

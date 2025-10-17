@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **sensitive** | **bool** | Whether the status was marked sensitive at this revision. | 
 **spoilerText** | **String** | The content of the subject or content warning at this revision. | 
 **poll** | [**StatusEditPoll**](StatusEditPoll.md) |  | [optional] 
+**quote** | [**StatusQuote**](StatusQuote.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

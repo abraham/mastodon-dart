@@ -16,25 +16,14 @@ part 'status_tag.g.dart';
 )
 class StatusTag {
   /// Returns a new [StatusTag] instance.
-  StatusTag({
-    required this.name,
-    required this.url,
-  });
+  StatusTag({required this.name, required this.url});
 
   /// The value of the hashtag after the # sign.
-  @JsonKey(
-    name: r'name',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'name', required: true, includeIfNull: false)
   final String name;
 
   /// A link to the hashtag on the instance.
-  @JsonKey(
-    name: r'url',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'url', required: true, includeIfNull: false)
   final Uri url;
 
   @override

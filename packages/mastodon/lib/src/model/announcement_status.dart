@@ -16,25 +16,14 @@ part 'announcement_status.g.dart';
 )
 class AnnouncementStatus {
   /// Returns a new [AnnouncementStatus] instance.
-  AnnouncementStatus({
-    required this.id,
-    required this.url,
-  });
+  AnnouncementStatus({required this.id, required this.url});
 
   /// The ID of an attached Status in the database.
-  @JsonKey(
-    name: r'id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
   /// The URL of an attached Status.
-  @JsonKey(
-    name: r'url',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'url', required: true, includeIfNull: false)
   final Uri url;
 
   @override

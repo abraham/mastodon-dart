@@ -17,32 +17,22 @@ class TrendsLinkHistoryInner {
   /// Returns a new [TrendsLinkHistoryInner] instance.
   TrendsLinkHistoryInner({
     required this.accounts,
+
     required this.day,
+
     required this.uses,
   });
 
   /// The counted accounts using the link within that day.
-  @JsonKey(
-    name: r'accounts',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'accounts', required: true, includeIfNull: false)
   final String accounts;
 
   /// UNIX timestamp on midnight of the given day.
-  @JsonKey(
-    name: r'day',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'day', required: true, includeIfNull: false)
   final String day;
 
   /// The counted statuses using the link within that day.
-  @JsonKey(
-    name: r'uses',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'uses', required: true, includeIfNull: false)
   final String uses;
 
   @override

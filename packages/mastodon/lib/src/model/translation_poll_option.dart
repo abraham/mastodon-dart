@@ -15,17 +15,11 @@ part 'translation_poll_option.g.dart';
 )
 class TranslationPollOption {
   /// Returns a new [TranslationPollOption] instance.
-  TranslationPollOption({
-    required this.title,
-  });
+  TranslationPollOption({this.title});
 
   /// The translated title of the poll option.
-  @JsonKey(
-    name: r'title',
-    required: true,
-    includeIfNull: false,
-  )
-  final String title;
+  @JsonKey(name: r'title', required: false, includeIfNull: false)
+  final String? title;
 
   @override
   bool operator ==(Object other) =>
@@ -33,7 +27,7 @@ class TranslationPollOption {
       other is TranslationPollOption && other.title == title;
 
   @override
-  int get hashCode => title.hashCode;
+  int get hashCode => (title == null ? 0 : title.hashCode);
 
   factory TranslationPollOption.fromJson(Map<String, dynamic> json) =>
       _$TranslationPollOptionFromJson(json);

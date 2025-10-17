@@ -15,25 +15,14 @@ part 'post_filter_keywords_v2_request.g.dart';
 )
 class PostFilterKeywordsV2Request {
   /// Returns a new [PostFilterKeywordsV2Request] instance.
-  PostFilterKeywordsV2Request({
-    required this.keyword,
-    this.wholeWord,
-  });
+  PostFilterKeywordsV2Request({required this.keyword, this.wholeWord});
 
   /// The keyword to be added to the filter group.
-  @JsonKey(
-    name: r'keyword',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'keyword', required: true, includeIfNull: false)
   final String keyword;
 
   /// Whether the keyword should consider word boundaries.
-  @JsonKey(
-    name: r'whole_word',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'whole_word', required: false, includeIfNull: false)
   final bool? wholeWord;
 
   @override

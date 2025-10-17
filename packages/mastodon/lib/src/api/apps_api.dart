@@ -21,7 +21,7 @@ class AppsApi {
   const AppsApi(this._dio);
 
   /// Create an application
-  /// Create a new application to obtain OAuth2 credentials.  Version history:  0.0.0 - added\\ 2.7.2 - now returns &#x60;vapid_key&#x60;\\ 4.3.0 - deprecated &#x60;vapid_key&#x60;, please see [api/v2/instance]\\ 4.3.0 - added support for multiple &#x60;redirect_uris&#x60; in Form data parameters\\ 4.3.0 - added &#x60;redirect_uris&#x60; response property\\ 4.3.0 - deprecated &#x60;redirect_uri&#x60; response property, since this can be a non-URI if multiple &#x60;redirect_uris&#x60; are registered, use &#x60;redirect_uris&#x60; instead\\ 4.3.0 - changed entity type from [Application] to [CredentialApplication]
+  /// Create a new application to obtain OAuth2 credentials.  Version history:  0.0.0 - added\\ 2.7.2 - now returns &#x60;vapid_key&#x60;\\ 4.3.0 - deprecated &#x60;vapid_key&#x60;, please see [api/v2/instance]\\ 4.3.0 - added support for multiple &#x60;redirect_uris&#x60; in Form data parameters\\ 4.3.0 - added &#x60;redirect_uris&#x60; response property\\ 4.3.0 - deprecated &#x60;redirect_uri&#x60; response property, since this can be a non-URI if multiple &#x60;redirect_uris&#x60; are registered, use &#x60;redirect_uris&#x60; instead\\ 4.3.0 - changed entity type from [Application] to [CredentialApplication]\\ 4.4.0 - added &#x60;client_secret_expires_at&#x60;
   ///
   /// Parameters:
   /// * [createAppRequest] - JSON request body parameters
@@ -48,13 +48,8 @@ class AppsApi {
     final _path = r'/api/v1/apps';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       contentType: 'application/json',
       validateStatus: validateStatus,
     );
@@ -65,10 +60,7 @@ class AppsApi {
       _bodyData = jsonEncode(createAppRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -91,8 +83,10 @@ class AppsApi {
       _responseData = rawData == null
           ? null
           : deserialize<CredentialApplication, CredentialApplication>(
-              rawData, 'CredentialApplication',
-              growable: true);
+              rawData,
+              'CredentialApplication',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -141,15 +135,10 @@ class AppsApi {
     final _path = r'/api/v1/apps/verify_credentials';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2ClientCredentials',
-          },
+          {'type': 'oauth2', 'name': 'OAuth2ClientCredentials'},
         ],
         ...?extra,
       },
@@ -170,8 +159,11 @@ class AppsApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<Application, Application>(rawData, 'Application',
-              growable: true);
+          : deserialize<Application, Application>(
+              rawData,
+              'Application',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

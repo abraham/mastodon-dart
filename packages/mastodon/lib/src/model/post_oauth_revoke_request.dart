@@ -17,32 +17,22 @@ class PostOauthRevokeRequest {
   /// Returns a new [PostOauthRevokeRequest] instance.
   PostOauthRevokeRequest({
     required this.clientId,
+
     required this.clientSecret,
+
     required this.token,
   });
 
   /// The client ID, obtained during app registration.
-  @JsonKey(
-    name: r'client_id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'client_id', required: true, includeIfNull: false)
   final String clientId;
 
   /// The client secret, obtained during app registration.
-  @JsonKey(
-    name: r'client_secret',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'client_secret', required: true, includeIfNull: false)
   final String clientSecret;
 
   /// The previously obtained token, to be invalidated.
-  @JsonKey(
-    name: r'token',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'token', required: true, includeIfNull: false)
   final String token;
 
   @override

@@ -15,16 +15,10 @@ part 'status_edit_poll_options_inner.g.dart';
 )
 class StatusEditPollOptionsInner {
   /// Returns a new [StatusEditPollOptionsInner] instance.
-  StatusEditPollOptionsInner({
-    required this.title,
-  });
+  StatusEditPollOptionsInner({required this.title});
 
   /// The text for a poll option.
-  @JsonKey(
-    name: r'title',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'title', required: true, includeIfNull: false)
   final String title;
 
   @override
