@@ -10,6 +10,7 @@ import 'package:mastodon/src/auth/oauth.dart';
 import 'package:mastodon/src/api/accounts_api.dart';
 import 'package:mastodon/src/api/announcements_api.dart';
 import 'package:mastodon/src/api/apps_api.dart';
+import 'package:mastodon/src/api/async_refreshes_api.dart';
 import 'package:mastodon/src/api/blocks_api.dart';
 import 'package:mastodon/src/api/bookmarks_api.dart';
 import 'package:mastodon/src/api/conversations_api.dart';
@@ -131,6 +132,12 @@ class Mastodon {
   /// by doing that all interceptors will not be executed
   AppsApi getAppsApi() {
     return AppsApi(dio);
+  }
+
+  /// Get AsyncRefreshesApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  AsyncRefreshesApi getAsyncRefreshesApi() {
+    return AsyncRefreshesApi(dio);
   }
 
   /// Get BlocksApi instance, base route and serializer can be overridden by a given but be careful,

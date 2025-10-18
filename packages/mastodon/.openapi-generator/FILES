@@ -33,6 +33,9 @@ doc/Appeal.md
 doc/AppealStateEnum.md
 doc/Application.md
 doc/AppsApi.md
+doc/AsyncRefresh.md
+doc/AsyncRefreshStatusEnum.md
+doc/AsyncRefreshesApi.md
 doc/BaseStatus.md
 doc/BlocksApi.md
 doc/BookmarksApi.md
@@ -239,6 +242,7 @@ lib/src/api.dart
 lib/src/api/accounts_api.dart
 lib/src/api/announcements_api.dart
 lib/src/api/apps_api.dart
+lib/src/api/async_refreshes_api.dart
 lib/src/api/blocks_api.dart
 lib/src/api/bookmarks_api.dart
 lib/src/api/conversations_api.dart
@@ -308,6 +312,8 @@ lib/src/model/announcement_status.dart
 lib/src/model/appeal.dart
 lib/src/model/appeal_state_enum.dart
 lib/src/model/application.dart
+lib/src/model/async_refresh.dart
+lib/src/model/async_refresh_status_enum.dart
 lib/src/model/base_status.dart
 lib/src/model/cohort_data.dart
 lib/src/model/context.dart
@@ -505,6 +511,9 @@ test/appeal_state_enum_test.dart
 test/appeal_test.dart
 test/application_test.dart
 test/apps_api_test.dart
+test/async_refresh_status_enum_test.dart
+test/async_refresh_test.dart
+test/async_refreshes_api_test.dart
 test/base_status_test.dart
 test/blocks_api_test.dart
 test/bookmarks_api_test.dart
