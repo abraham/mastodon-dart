@@ -35,7 +35,7 @@ Name | Type | Description | Notes
 **moved** | [**MutedAccountMoved**](MutedAccountMoved.md) |  | [optional] 
 **muteExpiresAt** | [**DateTime**](DateTime.md) | When a timed mute will expire, if applicable. | [optional] 
 **noindex** | **bool** | Whether the local user has opted out of being indexed by search engines. | [optional] 
-**roles** | [**List&lt;AccountRole&gt;**](AccountRole.md) | An array of roles assigned to the user that are publicly visible (highlighted roles only), if the account is local. Will be an empty array if no roles are highlighted or if the account is remote. | [optional] 
+**roles** | [**List&lt;AccountRole&gt;**](AccountRole.md) | An array of roles assigned to the user that are publicly visible (highlighted roles only), if the account is local. Will be an empty array if no roles are highlighted or null if the account is remote. | [optional] 
 **suspended** | **bool** | An extra attribute returned only when an account is suspended. | [optional] 
 **uri** | [**Uri**](Uri.md) | The user's ActivityPub actor identifier (used for federation). | [optional] 
 **url** | [**Uri**](Uri.md) | The location of the user's profile page (web interface URL). | [optional] 

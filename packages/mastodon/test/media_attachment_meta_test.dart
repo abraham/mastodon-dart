@@ -7,6 +7,16 @@ void main() {
   // TODO add properties to the entity
 
   group(MediaAttachmentMeta, () {
+    // MetaDetails small
+    test('to test the property `small`', () async {
+      // TODO
+    });
+
+    // MetaDetails original
+    test('to test the property `original`', () async {
+      // TODO
+    });
+
     // MediaAttachmentMetaFocus focus
     test('to test the property `focus`', () async {
       // TODO

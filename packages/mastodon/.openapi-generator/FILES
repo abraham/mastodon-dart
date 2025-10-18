@@ -125,6 +125,7 @@ doc/MediaAttachmentMeta.md
 doc/MediaAttachmentMetaFocus.md
 doc/MediaAttachmentTypeEnum.md
 doc/MediaStatus.md
+doc/MetaDetails.md
 doc/ModelList.md
 doc/MutedAccount.md
 doc/MutedAccountMoved.md
@@ -385,6 +386,7 @@ lib/src/model/media_attachment_meta.dart
 lib/src/model/media_attachment_meta_focus.dart
 lib/src/model/media_attachment_type_enum.dart
 lib/src/model/media_status.dart
+lib/src/model/meta_details.dart
 lib/src/model/model_list.dart
 lib/src/model/muted_account.dart
 lib/src/model/muted_account_moved.dart
@@ -603,6 +605,7 @@ test/media_attachment_meta_test.dart
 test/media_attachment_test.dart
 test/media_attachment_type_enum_test.dart
 test/media_status_test.dart
+test/meta_details_test.dart
 test/model_list_test.dart
 test/muted_account_moved_test.dart
 test/muted_account_test.dart

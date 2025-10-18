@@ -168,7 +168,7 @@ void main() {
       // TODO
     });
 
-    // An array of roles assigned to the user that are publicly visible (highlighted roles only), if the account is local. Will be an empty array if no roles are highlighted or if the account is remote.
+    // An array of roles assigned to the user that are publicly visible (highlighted roles only), if the account is local. Will be an empty array if no roles are highlighted or null if the account is remote.
     // List<AccountRole> roles
     test('to test the property `roles`', () async {
       // TODO

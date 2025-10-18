@@ -149,6 +149,7 @@ export 'package:mastodon/src/model/media_attachment_meta.dart';
 export 'package:mastodon/src/model/media_attachment_meta_focus.dart';
 export 'package:mastodon/src/model/media_attachment_type_enum.dart';
 export 'package:mastodon/src/model/media_status.dart';
+export 'package:mastodon/src/model/meta_details.dart';
 export 'package:mastodon/src/model/model_list.dart';
 export 'package:mastodon/src/model/muted_account.dart';
 export 'package:mastodon/src/model/muted_account_moved.dart';
