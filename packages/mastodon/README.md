@@ -208,7 +208,6 @@ Class | Method | HTTP request | Description
 [*StatusesApi*](doc/StatusesApi.md) | [**createStatus**](doc/StatusesApi.md#createstatus) | **POST** /api/v1/statuses | Post a new status
 [*StatusesApi*](doc/StatusesApi.md) | [**deleteStatus**](doc/StatusesApi.md#deletestatus) | **DELETE** /api/v1/statuses/{id} | Delete a status
 [*StatusesApi*](doc/StatusesApi.md) | [**getStatus**](doc/StatusesApi.md#getstatus) | **GET** /api/v1/statuses/{id} | View a single status
-[*StatusesApi*](doc/StatusesApi.md) | [**getStatusCard**](doc/StatusesApi.md#getstatuscard) | **GET** /api/v1/statuses/{id}/card | Fetch preview card
 [*StatusesApi*](doc/StatusesApi.md) | [**getStatusContext**](doc/StatusesApi.md#getstatuscontext) | **GET** /api/v1/statuses/{id}/context | Get parent and child statuses in context
 [*StatusesApi*](doc/StatusesApi.md) | [**getStatusFavouritedBy**](doc/StatusesApi.md#getstatusfavouritedby) | **GET** /api/v1/statuses/{id}/favourited_by | See who favourited a status
 [*StatusesApi*](doc/StatusesApi.md) | [**getStatusHistory**](doc/StatusesApi.md#getstatushistory) | **GET** /api/v1/statuses/{id}/history | View edit history of a status
@@ -363,6 +362,7 @@ Class | Method | HTTP request | Description
  - [MediaAttachmentMetaFocus](doc/MediaAttachmentMetaFocus.md)
  - [MediaAttachmentTypeEnum](doc/MediaAttachmentTypeEnum.md)
  - [MediaStatus](doc/MediaStatus.md)
+ - [MetaDetails](doc/MetaDetails.md)
  - [ModelList](doc/ModelList.md)
  - [MutedAccount](doc/MutedAccount.md)
  - [MutedAccountMoved](doc/MutedAccountMoved.md)

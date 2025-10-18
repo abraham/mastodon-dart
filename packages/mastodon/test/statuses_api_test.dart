@@ -33,15 +33,6 @@ void main() {
       // TODO
     });
 
-    // Fetch preview card
-    //
-    // Version history:  0.0.0 - added\\ 2.6.0 - deprecated in favor of card property inlined on Status entity\\ 3.0.0 - removed
-    //
-    //Future<PreviewCard> getStatusCard(String id) async
-    test('test getStatusCard', () async {
-      // TODO
-    });
-
     // Get parent and child statuses in context
     //
     // View statuses above and below this status in the thread.  Version history:  0.0.0 - added\\ 4.0.0 - limit unauthenticated requests

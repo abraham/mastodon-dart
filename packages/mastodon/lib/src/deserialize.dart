@@ -87,6 +87,7 @@ import 'package:mastodon/src/model/media_attachment.dart';
 import 'package:mastodon/src/model/media_attachment_meta.dart';
 import 'package:mastodon/src/model/media_attachment_meta_focus.dart';
 import 'package:mastodon/src/model/media_status.dart';
+import 'package:mastodon/src/model/meta_details.dart';
 import 'package:mastodon/src/model/model_list.dart';
 import 'package:mastodon/src/model/muted_account.dart';
 import 'package:mastodon/src/model/muted_account_moved.dart';
@@ -476,6 +477,8 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'MediaAttachmentTypeEnum':
     case 'MediaStatus':
       return MediaStatus.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'MetaDetails':
+      return MetaDetails.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'ModelList':
       return ModelList.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'MutedAccount':

@@ -12,7 +12,6 @@ Method | HTTP request | Description
 [**createStatus**](StatusesApi.md#createstatus) | **POST** /api/v1/statuses | Post a new status
 [**deleteStatus**](StatusesApi.md#deletestatus) | **DELETE** /api/v1/statuses/{id} | Delete a status
 [**getStatus**](StatusesApi.md#getstatus) | **GET** /api/v1/statuses/{id} | View a single status
-[**getStatusCard**](StatusesApi.md#getstatuscard) | **GET** /api/v1/statuses/{id}/card | Fetch preview card
 [**getStatusContext**](StatusesApi.md#getstatuscontext) | **GET** /api/v1/statuses/{id}/context | Get parent and child statuses in context
 [**getStatusFavouritedBy**](StatusesApi.md#getstatusfavouritedby) | **GET** /api/v1/statuses/{id}/favourited_by | See who favourited a status
 [**getStatusHistory**](StatusesApi.md#getstatushistory) | **GET** /api/v1/statuses/{id}/history | View edit history of a status
@@ -163,51 +162,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Status**](Status.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **getStatusCard**
-> PreviewCard getStatusCard(id)
-
-Fetch preview card
-
-Version history:  0.0.0 - added\\ 2.6.0 - deprecated in favor of card property inlined on Status entity\\ 3.0.0 - removed
-
-### Example
-```dart
-import 'package:mastodon/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = Mastodon().getStatusesApi();
-final String id = id_example; // String | id parameter
-
-try {
-    final response = api.getStatusCard(id);
-    print(response);
-} catch on DioException (e) {
-    print('Exception when calling StatusesApi->getStatusCard: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| id parameter | 
-
-### Return type
-
-[**PreviewCard**](PreviewCard.md)
 
 ### Authorization
 
