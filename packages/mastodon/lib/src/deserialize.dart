@@ -21,6 +21,7 @@ import 'package:mastodon/src/model/announcement_account.dart';
 import 'package:mastodon/src/model/announcement_status.dart';
 import 'package:mastodon/src/model/appeal.dart';
 import 'package:mastodon/src/model/application.dart';
+import 'package:mastodon/src/model/async_refresh.dart';
 import 'package:mastodon/src/model/base_status.dart';
 import 'package:mastodon/src/model/cohort_data.dart';
 import 'package:mastodon/src/model/context.dart';
@@ -259,6 +260,9 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'AppealStateEnum':
     case 'Application':
       return Application.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'AsyncRefresh':
+      return AsyncRefresh.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'AsyncRefreshStatusEnum':
     case 'BaseStatus':
       return BaseStatus.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'CohortData':
