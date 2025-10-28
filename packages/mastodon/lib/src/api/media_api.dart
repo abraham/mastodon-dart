@@ -419,7 +419,13 @@ class MediaApi {
 
     dynamic _bodyData;
 
-    try {} catch (error, stackTrace) {
+    try {
+      _bodyData = FormData.fromMap({
+        'thumbnail': thumbnail,
+        'description': description,
+        'focus': focus,
+      });
+    } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
