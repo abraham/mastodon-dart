@@ -183,8 +183,13 @@ void main() async {
           "try {\n_bodyData = FormData.fromMap({ 'file': file, 'thumbnail': thumbnail, 'description': description, 'focus': focus });\n} catch (error, stackTrace) {",
           [69, 167],
         ),
+        Replacement(
+          "try {} catch (error, stackTrace) {",
+          "try {\n_bodyData = FormData.fromMap({ 'thumbnail': thumbnail, 'description': description, 'focus': focus });\n} catch (error, stackTrace) {",
+          [408],
+        ),
       ],
-      description: "Replace CreateStatus200Response import",
+      description: "Fix Media API FormData construction",
     ),
     Hack(
       filePath: 'packages/mastodon/lib/src/api/accounts_api.dart',
