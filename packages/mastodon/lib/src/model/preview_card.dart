@@ -95,8 +95,19 @@ class PreviewCard {
   final String? authorName;
 
   /// A link to the author of the original resource. Deprecated since 4.3.0, clients should use `authors` instead.
-  @JsonKey(name: r'author_url', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'author_url',
+    required: false,
+    includeIfNull: false,
+    fromJson: _parseAuthorUrl,
+  )
   final Uri? authorUrl;
+  static Uri? _parseAuthorUrl(String? value) {
+    if (value == null) {
+      return null;
+    }
+    return Uri.tryParse(value);
+  }
 
   /// Fediverse account of the authors of the original resource.
   @JsonKey(name: r'authors', required: false, includeIfNull: false)

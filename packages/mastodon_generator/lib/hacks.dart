@@ -263,25 +263,34 @@ void main() async {
       ],
       description: "Fix List types",
     ),
-    // Hack(
-    //   filePath: 'packages/mastodon/lib/src/model/announcement.dart',
-    //   replacements: [
-    //     Replacement(
-    //       "required this.published,",
-    //       "this.published,",
-    //     ),
-    //     Replacement(
-    //       "final bool published;",
-    //       "final bool? published;",
-    //     ),
-    //     Replacement(
-    //       "required: true,",
-    //       "required: false,",
-    //       [83],
-    //     ),
-    //   ],
-    //   description: "Make published optional in Announcement",
-    // ),
+    Hack(
+      filePath: 'packages/mastodon/lib/src/model/preview_card.dart',
+      replacements: [
+        Replacement(
+          "@JsonKey(name: r'author_url', required: false, includeIfNull: false)",
+          "@JsonKey(name: r'author_url', required: false, includeIfNull: false, fromJson: _parseAuthorUrl)",
+        ),
+        Replacement(
+          "final Uri? authorUrl;",
+          "final Uri? authorUrl;static Uri? _parseAuthorUrl(String? value) {if (value == null) {return null;}return Uri.tryParse(value);}",
+        ),
+      ],
+      description: "Workaround invalid author_url",
+    ),
+    Hack(
+      filePath: 'packages/mastodon/lib/src/model/preview_card_author.dart',
+      replacements: [
+        Replacement(
+          "@JsonKey(name: r'url', required: false, includeIfNull: false)",
+          "@JsonKey(name: r'url', required: false, includeIfNull: false, fromJson: _parseAuthorUrl)",
+        ),
+        Replacement(
+          "final Uri? url;",
+          "final Uri? url;static Uri? _parseAuthorUrl(String? value) {if (value == null) {return null;}return Uri.tryParse(value);}",
+        ),
+      ],
+      description: "Workaround invalid author url",
+    ),
   ];
 
   for (final hack in hacks) {
