@@ -17,20 +17,16 @@ part 'instance_configuration_urls.g.dart';
 class InstanceConfigurationUrls {
   /// Returns a new [InstanceConfigurationUrls] instance.
   InstanceConfigurationUrls({
-    required this.streaming,
-
     this.about,
 
     this.privacyPolicy,
 
     this.status,
 
+    this.streaming,
+
     this.termsOfService,
   });
-
-  /// The Websockets URL for connecting to the streaming API.
-  @JsonKey(name: r'streaming', required: true, includeIfNull: false)
-  final Uri streaming;
 
   /// The URL of the server's about page.
   @JsonKey(name: r'about', required: false, includeIfNull: false)
@@ -44,6 +40,10 @@ class InstanceConfigurationUrls {
   @JsonKey(name: r'status', required: false, includeIfNull: false)
   final Uri? status;
 
+  /// The Websockets URL for connecting to the streaming API.
+  @JsonKey(name: r'streaming', required: false, includeIfNull: false)
+  final Uri? streaming;
+
   /// The URL of the server's current terms of service, if any.
   @JsonKey(name: r'terms_of_service', required: false, includeIfNull: false)
   final Uri? termsOfService;
@@ -52,18 +52,18 @@ class InstanceConfigurationUrls {
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is InstanceConfigurationUrls &&
-          other.streaming == streaming &&
           other.about == about &&
           other.privacyPolicy == privacyPolicy &&
           other.status == status &&
+          other.streaming == streaming &&
           other.termsOfService == termsOfService;
 
   @override
   int get hashCode =>
-      streaming.hashCode +
       (about == null ? 0 : about.hashCode) +
       (privacyPolicy == null ? 0 : privacyPolicy.hashCode) +
       (status == null ? 0 : status.hashCode) +
+      (streaming == null ? 0 : streaming.hashCode) +
       (termsOfService == null ? 0 : termsOfService.hashCode);
 
   factory InstanceConfigurationUrls.fromJson(Map<String, dynamic> json) =>
