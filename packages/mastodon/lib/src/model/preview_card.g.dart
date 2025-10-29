@@ -45,7 +45,7 @@ PreviewCard _$PreviewCardFromJson(Map<String, dynamic> json) => $checkedCreate(
       authorName: $checkedConvert('author_name', (v) => v as String?),
       authorUrl: $checkedConvert(
         'author_url',
-        (v) => v == null ? null : Uri.parse(v as String),
+        (v) => PreviewCard._parseAuthorUrl(v as String?),
       ),
       authors: $checkedConvert(
         'authors',

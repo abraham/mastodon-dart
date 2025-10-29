@@ -27,8 +27,19 @@ class PreviewCardAuthor {
   final String? name;
 
   /// A link to the author of the original resource. Replaces the deprecated `author_url` attribute of the preview card.
-  @JsonKey(name: r'url', required: false, includeIfNull: false)
+  @JsonKey(
+    name: r'url',
+    required: false,
+    includeIfNull: false,
+    fromJson: _parseAuthorUrl,
+  )
   final Uri? url;
+  static Uri? _parseAuthorUrl(String? value) {
+    if (value == null) {
+      return null;
+    }
+    return Uri.tryParse(value);
+  }
 
   @override
   bool operator ==(Object other) =>
