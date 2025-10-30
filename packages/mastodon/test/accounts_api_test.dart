@@ -28,7 +28,7 @@ void main() {
     //
     // Accounts that the user is currently featuring on their profile.  Version history:  4.4.0 - added
     //
-    //Future<Account> getAccountEndorsements(String id, { int limit, String maxId, String sinceId }) async
+    //Future<List<Account>> getAccountEndorsements(String id, { int limit, String maxId, String sinceId }) async
     test('test getAccountEndorsements', () async {
       // TODO
     });

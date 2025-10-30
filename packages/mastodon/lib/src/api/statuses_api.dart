@@ -296,7 +296,7 @@ class StatusesApi {
   }
 
   /// Get parent and child statuses in context
-  /// View statuses above and below this status in the thread.  Version history:  0.0.0 - added\\ 4.0.0 - limit unauthenticated requests
+  /// View statuses above and below this status in the thread.  Version history:  0.0.0 - added\\ 4.0.0 - limit unauthenticated requests\\ 4.5.0 - added experimental &#x60;Mastodon-Async-Refresh&#x60; header
   ///
   /// Parameters:
   /// * [id] - id parameter

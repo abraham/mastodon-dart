@@ -12,13 +12,13 @@ void main() {
       // TODO
     });
 
-    // The state of the quote.
+    // The state of the quote. Unknown values should be treated as `unauthorized`.
     // QuoteStateEnum state
     test('to test the property `state`', () async {
       // TODO
     });
 
-    // The identifier of the status being quoted, if the quote has been accepted. This will be `null`, unless the `state` attribute is `accepted`.
+    // The identifier of the status being quoted. This will be `null`, unless the `state` attribute is one of `accepted`, `blocked_account`, `blocked_domain` or `muted_account`.
     // String quotedStatusId
     test('to test the property `quotedStatusId`', () async {
       // TODO

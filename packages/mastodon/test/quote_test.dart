@@ -12,7 +12,7 @@ void main() {
       // TODO
     });
 
-    // The state of the quote.
+    // The state of the quote. Unknown values should be treated as `unauthorized`.
     // QuoteStateEnum state
     test('to test the property `state`', () async {
       // TODO

@@ -43,4 +43,7 @@ const _$QuoteStateEnumEnumMap = {
   QuoteStateEnum.revoked: 'revoked',
   QuoteStateEnum.deleted: 'deleted',
   QuoteStateEnum.unauthorized: 'unauthorized',
+  QuoteStateEnum.blockedAccount: 'blocked_account',
+  QuoteStateEnum.blockedDomain: 'blocked_domain',
+  QuoteStateEnum.mutedAccount: 'muted_account',
 };

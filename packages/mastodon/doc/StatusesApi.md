@@ -179,7 +179,7 @@ Name | Type | Description  | Notes
 
 Get parent and child statuses in context
 
-View statuses above and below this status in the thread.  Version history:  0.0.0 - added\\ 4.0.0 - limit unauthenticated requests
+View statuses above and below this status in the thread.  Version history:  0.0.0 - added\\ 4.0.0 - limit unauthenticated requests\\ 4.5.0 - added experimental `Mastodon-Async-Refresh` header
 
 ### Example
 ```dart

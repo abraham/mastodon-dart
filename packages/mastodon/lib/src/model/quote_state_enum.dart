@@ -17,7 +17,13 @@ enum QuoteStateEnum {
   @JsonValue(r'deleted')
   deleted(r'deleted'),
   @JsonValue(r'unauthorized')
-  unauthorized(r'unauthorized');
+  unauthorized(r'unauthorized'),
+  @JsonValue(r'blocked_account')
+  blockedAccount(r'blocked_account'),
+  @JsonValue(r'blocked_domain')
+  blockedDomain(r'blocked_domain'),
+  @JsonValue(r'muted_account')
+  mutedAccount(r'muted_account');
 
   const QuoteStateEnum(this.value);
 

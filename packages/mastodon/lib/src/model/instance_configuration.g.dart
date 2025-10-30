@@ -58,12 +58,21 @@ InstanceConfiguration _$InstanceConfigurationFromJson(
         'limited_federation',
         (v) => v as bool?,
       ),
+      timelineAccess: $checkedConvert(
+        'timeline_access',
+        (v) => v == null
+            ? null
+            : InstanceConfigurationTimelineAccess.fromJson(
+                v as Map<String, dynamic>,
+              ),
+      ),
     );
     return val;
   },
   fieldKeyMap: const {
     'mediaAttachments': 'media_attachments',
     'limitedFederation': 'limited_federation',
+    'timelineAccess': 'timeline_access',
   },
 );
 
@@ -77,4 +86,5 @@ Map<String, dynamic> _$InstanceConfigurationToJson(
   'translation': instance.translation.toJson(),
   'urls': instance.urls.toJson(),
   'limited_federation': ?instance.limitedFederation,
+  'timeline_access': ?instance.timelineAccess?.toJson(),
 };
