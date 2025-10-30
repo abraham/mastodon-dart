@@ -42,5 +42,10 @@ void main() {
     test('to test the property `limitedFederation`', () async {
       // TODO
     });
+
+    // InstanceConfigurationTimelineAccess timelineAccess
+    test('to test the property `timelineAccess`', () async {
+      // TODO
+    });
   });
 }

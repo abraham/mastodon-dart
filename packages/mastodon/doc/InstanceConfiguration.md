@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **translation** | [**InstanceConfigurationTranslation**](InstanceConfigurationTranslation.md) |  | 
 **urls** | [**InstanceConfigurationUrls**](InstanceConfigurationUrls.md) |  | 
 **limitedFederation** | **bool** | Whether federation is limited to explicitly allowed domains. | [optional] 
+**timelineAccess** | [**InstanceConfigurationTimelineAccess**](InstanceConfigurationTimelineAccess.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

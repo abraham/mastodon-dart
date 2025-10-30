@@ -211,11 +211,11 @@ class AccountsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [Account] as data
+  /// Returns a [Future] containing a [Response] with a [List<Account>] as data
   /// Throws [DioException] if API call or serialization fails
   /// Official Mastodon API documentation
   /// Also see [Get featured accounts Documentation](https://docs.joinmastodon.org/methods/accounts/#endorsements)
-  Future<Response<Account>> getAccountEndorsements({
+  Future<Response<List<Account>>> getAccountEndorsements({
     required String id,
     int? limit = 40,
     String? maxId,
@@ -255,13 +255,17 @@ class AccountsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Account? _responseData;
+    List<Account>? _responseData;
 
     try {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<Account, Account>(rawData, 'Account', growable: true);
+          : deserialize<List<Account>, Account>(
+              rawData,
+              'List<Account>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -272,7 +276,7 @@ class AccountsApi {
       );
     }
 
-    return Response<Account>(
+    return Response<List<Account>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

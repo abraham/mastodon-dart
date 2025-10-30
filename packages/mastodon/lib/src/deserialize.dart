@@ -73,6 +73,10 @@ import 'package:mastodon/src/model/instance_configuration_accounts.dart';
 import 'package:mastodon/src/model/instance_configuration_media_attachments.dart';
 import 'package:mastodon/src/model/instance_configuration_polls.dart';
 import 'package:mastodon/src/model/instance_configuration_statuses.dart';
+import 'package:mastodon/src/model/instance_configuration_timeline_access.dart';
+import 'package:mastodon/src/model/instance_configuration_timeline_access_hashtag_feeds.dart';
+import 'package:mastodon/src/model/instance_configuration_timeline_access_live_feeds.dart';
+import 'package:mastodon/src/model/instance_configuration_timeline_access_trending_link_feeds.dart';
 import 'package:mastodon/src/model/instance_configuration_translation.dart';
 import 'package:mastodon/src/model/instance_configuration_urls.dart';
 import 'package:mastodon/src/model/instance_contact.dart';
@@ -431,6 +435,26 @@ ReturnType deserialize<ReturnType, BaseType>(
           as ReturnType;
     case 'InstanceConfigurationStatuses':
       return InstanceConfigurationStatuses.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
+    case 'InstanceConfigurationTimelineAccess':
+      return InstanceConfigurationTimelineAccess.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
+    case 'InstanceConfigurationTimelineAccessHashtagFeeds':
+      return InstanceConfigurationTimelineAccessHashtagFeeds.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
+    case 'InstanceConfigurationTimelineAccessLiveFeeds':
+      return InstanceConfigurationTimelineAccessLiveFeeds.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
+    case 'InstanceConfigurationTimelineAccessTrendingLinkFeeds':
+      return InstanceConfigurationTimelineAccessTrendingLinkFeeds.fromJson(
             value as Map<String, dynamic>,
           )
           as ReturnType;

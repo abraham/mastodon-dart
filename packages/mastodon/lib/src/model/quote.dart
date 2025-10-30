@@ -22,7 +22,7 @@ class Quote {
   @JsonKey(name: r'quoted_status', required: false, includeIfNull: false)
   final Status? quotedStatus;
 
-  /// The state of the quote.
+  /// The state of the quote. Unknown values should be treated as `unauthorized`.
   @JsonKey(name: r'state', required: false, includeIfNull: false)
   final QuoteStateEnum? state;
 

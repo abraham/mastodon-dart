@@ -1,4 +1,4 @@
-// Openapi Generator last run: : 2025-10-28T11:54:07.301126
+// Openapi Generator last run: : 2025-10-29T20:36:53.714743
 import 'package:openapi_generator_annotations/openapi_generator_annotations.dart';
 
 @Openapi(

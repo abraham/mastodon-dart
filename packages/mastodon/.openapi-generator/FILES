@@ -106,6 +106,10 @@ doc/InstanceConfigurationAccounts.md
 doc/InstanceConfigurationMediaAttachments.md
 doc/InstanceConfigurationPolls.md
 doc/InstanceConfigurationStatuses.md
+doc/InstanceConfigurationTimelineAccess.md
+doc/InstanceConfigurationTimelineAccessHashtagFeeds.md
+doc/InstanceConfigurationTimelineAccessLiveFeeds.md
+doc/InstanceConfigurationTimelineAccessTrendingLinkFeeds.md
 doc/InstanceConfigurationTranslation.md
 doc/InstanceConfigurationUrls.md
 doc/InstanceContact.md
@@ -370,6 +374,10 @@ lib/src/model/instance_configuration_accounts.dart
 lib/src/model/instance_configuration_media_attachments.dart
 lib/src/model/instance_configuration_polls.dart
 lib/src/model/instance_configuration_statuses.dart
+lib/src/model/instance_configuration_timeline_access.dart
+lib/src/model/instance_configuration_timeline_access_hashtag_feeds.dart
+lib/src/model/instance_configuration_timeline_access_live_feeds.dart
+lib/src/model/instance_configuration_timeline_access_trending_link_feeds.dart
 lib/src/model/instance_configuration_translation.dart
 lib/src/model/instance_configuration_urls.dart
 lib/src/model/instance_contact.dart
@@ -585,6 +593,10 @@ test/instance_configuration_media_attachments_test.dart
 test/instance_configuration_polls_test.dart
 test/instance_configuration_statuses_test.dart
 test/instance_configuration_test.dart
+test/instance_configuration_timeline_access_hashtag_feeds_test.dart
+test/instance_configuration_timeline_access_live_feeds_test.dart
+test/instance_configuration_timeline_access_test.dart
+test/instance_configuration_timeline_access_trending_link_feeds_test.dart
 test/instance_configuration_translation_test.dart
 test/instance_configuration_urls_test.dart
 test/instance_contact_test.dart

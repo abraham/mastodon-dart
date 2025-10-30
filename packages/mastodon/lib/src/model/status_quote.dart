@@ -24,11 +24,11 @@ class StatusQuote {
   @JsonKey(name: r'quoted_status', required: false, includeIfNull: false)
   final Status? quotedStatus;
 
-  /// The state of the quote.
+  /// The state of the quote. Unknown values should be treated as `unauthorized`.
   @JsonKey(name: r'state', required: false, includeIfNull: false)
   final QuoteStateEnum? state;
 
-  /// The identifier of the status being quoted, if the quote has been accepted. This will be `null`, unless the `state` attribute is `accepted`.
+  /// The identifier of the status being quoted. This will be `null`, unless the `state` attribute is one of `accepted`, `blocked_account`, `blocked_domain` or `muted_account`.
   @JsonKey(name: r'quoted_status_id', required: false, includeIfNull: false)
   final String? quotedStatusId;
 
