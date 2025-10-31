@@ -6,10 +6,12 @@
 import 'package:mastodon/src/model/role.dart';
 import 'package:mastodon/src/model/admin_ip.dart';
 import 'package:mastodon/src/model/account.dart';
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'admin_account.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,

@@ -6,10 +6,12 @@
 import 'package:mastodon/src/model/status.dart';
 import 'package:mastodon/src/model/tag.dart';
 import 'package:mastodon/src/model/account.dart';
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'search.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,

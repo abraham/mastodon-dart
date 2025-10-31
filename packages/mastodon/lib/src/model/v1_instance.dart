@@ -9,10 +9,12 @@ import 'package:mastodon/src/model/v1_instance_configuration.dart';
 import 'package:mastodon/src/model/account.dart';
 import 'package:mastodon/src/model/v1_instance_urls.dart';
 import 'dart:core';
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'v1_instance.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,

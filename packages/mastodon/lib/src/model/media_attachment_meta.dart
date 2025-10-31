@@ -5,10 +5,12 @@
 // ignore_for_file: unused_element
 import 'package:mastodon/src/model/media_attachment_meta_focus.dart';
 import 'package:mastodon/src/model/meta_details.dart';
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'media_attachment_meta.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,

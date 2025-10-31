@@ -8,10 +8,12 @@ import 'package:mastodon/src/model/custom_emoji.dart';
 import 'package:mastodon/src/model/account.dart';
 import 'package:mastodon/src/model/status_edit_poll.dart';
 import 'package:mastodon/src/model/media_attachment.dart';
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'status_edit.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,

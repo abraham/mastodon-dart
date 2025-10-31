@@ -3,6 +3,131 @@
 part of 'account_warning.dart';
 
 // **************************************************************************
+// CopyWithGenerator
+// **************************************************************************
+
+abstract class _$AccountWarningCWProxy {
+  AccountWarning action(AccountWarningActionEnum? action);
+
+  AccountWarning appeal(Appeal? appeal);
+
+  AccountWarning createdAt(DateTime? createdAt);
+
+  AccountWarning id(String? id);
+
+  AccountWarning statusIds(List<String>? statusIds);
+
+  AccountWarning targetAccount(Account? targetAccount);
+
+  AccountWarning text(String? text);
+
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `AccountWarning(...).copyWith.fieldName(value)`.
+  ///
+  /// Example:
+  /// ```dart
+  /// AccountWarning(...).copyWith(id: 12, name: "My name")
+  /// ```
+  AccountWarning call({
+    AccountWarningActionEnum? action,
+    Appeal? appeal,
+    DateTime? createdAt,
+    String? id,
+    List<String>? statusIds,
+    Account? targetAccount,
+    String? text,
+  });
+}
+
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfAccountWarning.copyWith(...)` or call `instanceOfAccountWarning.copyWith.fieldName(value)` for a single field.
+class _$AccountWarningCWProxyImpl implements _$AccountWarningCWProxy {
+  const _$AccountWarningCWProxyImpl(this._value);
+
+  final AccountWarning _value;
+
+  @override
+  AccountWarning action(AccountWarningActionEnum? action) =>
+      call(action: action);
+
+  @override
+  AccountWarning appeal(Appeal? appeal) => call(appeal: appeal);
+
+  @override
+  AccountWarning createdAt(DateTime? createdAt) => call(createdAt: createdAt);
+
+  @override
+  AccountWarning id(String? id) => call(id: id);
+
+  @override
+  AccountWarning statusIds(List<String>? statusIds) =>
+      call(statusIds: statusIds);
+
+  @override
+  AccountWarning targetAccount(Account? targetAccount) =>
+      call(targetAccount: targetAccount);
+
+  @override
+  AccountWarning text(String? text) => call(text: text);
+
+  @override
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `AccountWarning(...).copyWith.fieldName(value)`.
+  ///
+  /// Example:
+  /// ```dart
+  /// AccountWarning(...).copyWith(id: 12, name: "My name")
+  /// ```
+  AccountWarning call({
+    Object? action = const $CopyWithPlaceholder(),
+    Object? appeal = const $CopyWithPlaceholder(),
+    Object? createdAt = const $CopyWithPlaceholder(),
+    Object? id = const $CopyWithPlaceholder(),
+    Object? statusIds = const $CopyWithPlaceholder(),
+    Object? targetAccount = const $CopyWithPlaceholder(),
+    Object? text = const $CopyWithPlaceholder(),
+  }) {
+    return AccountWarning(
+      action: action == const $CopyWithPlaceholder()
+          ? _value.action
+          // ignore: cast_nullable_to_non_nullable
+          : action as AccountWarningActionEnum?,
+      appeal: appeal == const $CopyWithPlaceholder()
+          ? _value.appeal
+          // ignore: cast_nullable_to_non_nullable
+          : appeal as Appeal?,
+      createdAt: createdAt == const $CopyWithPlaceholder()
+          ? _value.createdAt
+          // ignore: cast_nullable_to_non_nullable
+          : createdAt as DateTime?,
+      id: id == const $CopyWithPlaceholder()
+          ? _value.id
+          // ignore: cast_nullable_to_non_nullable
+          : id as String?,
+      statusIds: statusIds == const $CopyWithPlaceholder()
+          ? _value.statusIds
+          // ignore: cast_nullable_to_non_nullable
+          : statusIds as List<String>?,
+      targetAccount: targetAccount == const $CopyWithPlaceholder()
+          ? _value.targetAccount
+          // ignore: cast_nullable_to_non_nullable
+          : targetAccount as Account?,
+      text: text == const $CopyWithPlaceholder()
+          ? _value.text
+          // ignore: cast_nullable_to_non_nullable
+          : text as String?,
+    );
+  }
+}
+
+extension $AccountWarningCopyWith on AccountWarning {
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfAccountWarning.copyWith(...)` or `instanceOfAccountWarning.copyWith.fieldName(...)`.
+  // ignore: library_private_types_in_public_api
+  _$AccountWarningCWProxy get copyWith => _$AccountWarningCWProxyImpl(this);
+}
+
+// **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 

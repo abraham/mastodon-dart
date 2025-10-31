@@ -3,6 +3,107 @@
 part of 'grouped_notifications_results.dart';
 
 // **************************************************************************
+// CopyWithGenerator
+// **************************************************************************
+
+abstract class _$GroupedNotificationsResultsCWProxy {
+  GroupedNotificationsResults accounts(List<Account>? accounts);
+
+  GroupedNotificationsResults notificationGroups(
+    List<NotificationGroup>? notificationGroups,
+  );
+
+  GroupedNotificationsResults partialAccounts(
+    List<PartialAccountWithAvatar>? partialAccounts,
+  );
+
+  GroupedNotificationsResults statuses(List<Status>? statuses);
+
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `GroupedNotificationsResults(...).copyWith.fieldName(value)`.
+  ///
+  /// Example:
+  /// ```dart
+  /// GroupedNotificationsResults(...).copyWith(id: 12, name: "My name")
+  /// ```
+  GroupedNotificationsResults call({
+    List<Account>? accounts,
+    List<NotificationGroup>? notificationGroups,
+    List<PartialAccountWithAvatar>? partialAccounts,
+    List<Status>? statuses,
+  });
+}
+
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfGroupedNotificationsResults.copyWith(...)` or call `instanceOfGroupedNotificationsResults.copyWith.fieldName(value)` for a single field.
+class _$GroupedNotificationsResultsCWProxyImpl
+    implements _$GroupedNotificationsResultsCWProxy {
+  const _$GroupedNotificationsResultsCWProxyImpl(this._value);
+
+  final GroupedNotificationsResults _value;
+
+  @override
+  GroupedNotificationsResults accounts(List<Account>? accounts) =>
+      call(accounts: accounts);
+
+  @override
+  GroupedNotificationsResults notificationGroups(
+    List<NotificationGroup>? notificationGroups,
+  ) => call(notificationGroups: notificationGroups);
+
+  @override
+  GroupedNotificationsResults partialAccounts(
+    List<PartialAccountWithAvatar>? partialAccounts,
+  ) => call(partialAccounts: partialAccounts);
+
+  @override
+  GroupedNotificationsResults statuses(List<Status>? statuses) =>
+      call(statuses: statuses);
+
+  @override
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `GroupedNotificationsResults(...).copyWith.fieldName(value)`.
+  ///
+  /// Example:
+  /// ```dart
+  /// GroupedNotificationsResults(...).copyWith(id: 12, name: "My name")
+  /// ```
+  GroupedNotificationsResults call({
+    Object? accounts = const $CopyWithPlaceholder(),
+    Object? notificationGroups = const $CopyWithPlaceholder(),
+    Object? partialAccounts = const $CopyWithPlaceholder(),
+    Object? statuses = const $CopyWithPlaceholder(),
+  }) {
+    return GroupedNotificationsResults(
+      accounts: accounts == const $CopyWithPlaceholder()
+          ? _value.accounts
+          // ignore: cast_nullable_to_non_nullable
+          : accounts as List<Account>?,
+      notificationGroups: notificationGroups == const $CopyWithPlaceholder()
+          ? _value.notificationGroups
+          // ignore: cast_nullable_to_non_nullable
+          : notificationGroups as List<NotificationGroup>?,
+      partialAccounts: partialAccounts == const $CopyWithPlaceholder()
+          ? _value.partialAccounts
+          // ignore: cast_nullable_to_non_nullable
+          : partialAccounts as List<PartialAccountWithAvatar>?,
+      statuses: statuses == const $CopyWithPlaceholder()
+          ? _value.statuses
+          // ignore: cast_nullable_to_non_nullable
+          : statuses as List<Status>?,
+    );
+  }
+}
+
+extension $GroupedNotificationsResultsCopyWith on GroupedNotificationsResults {
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfGroupedNotificationsResults.copyWith(...)` or `instanceOfGroupedNotificationsResults.copyWith.fieldName(...)`.
+  // ignore: library_private_types_in_public_api
+  _$GroupedNotificationsResultsCWProxy get copyWith =>
+      _$GroupedNotificationsResultsCWProxyImpl(this);
+}
+
+// **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 

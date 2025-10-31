@@ -3,6 +3,268 @@
 part of 'discover_oauth_server_configuration_response.dart';
 
 // **************************************************************************
+// CopyWithGenerator
+// **************************************************************************
+
+abstract class _$DiscoverOauthServerConfigurationResponseCWProxy {
+  DiscoverOauthServerConfigurationResponse appRegistrationEndpoint(
+    Uri appRegistrationEndpoint,
+  );
+
+  DiscoverOauthServerConfigurationResponse authorizationEndpoint(
+    Uri authorizationEndpoint,
+  );
+
+  DiscoverOauthServerConfigurationResponse codeChallengeMethodsSupported(
+    List<String> codeChallengeMethodsSupported,
+  );
+
+  DiscoverOauthServerConfigurationResponse grantTypesSupported(
+    List<String> grantTypesSupported,
+  );
+
+  DiscoverOauthServerConfigurationResponse issuer(Uri issuer);
+
+  DiscoverOauthServerConfigurationResponse responseModesSupported(
+    List<String> responseModesSupported,
+  );
+
+  DiscoverOauthServerConfigurationResponse responseTypesSupported(
+    List<String> responseTypesSupported,
+  );
+
+  DiscoverOauthServerConfigurationResponse revocationEndpoint(
+    Uri revocationEndpoint,
+  );
+
+  DiscoverOauthServerConfigurationResponse scopesSupported(
+    List<OAuthScope> scopesSupported,
+  );
+
+  DiscoverOauthServerConfigurationResponse serviceDocumentation(
+    Uri serviceDocumentation,
+  );
+
+  DiscoverOauthServerConfigurationResponse tokenEndpoint(Uri tokenEndpoint);
+
+  DiscoverOauthServerConfigurationResponse tokenEndpointAuthMethodsSupported(
+    List<String> tokenEndpointAuthMethodsSupported,
+  );
+
+  DiscoverOauthServerConfigurationResponse userinfoEndpoint(
+    Uri userinfoEndpoint,
+  );
+
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `DiscoverOauthServerConfigurationResponse(...).copyWith.fieldName(value)`.
+  ///
+  /// Example:
+  /// ```dart
+  /// DiscoverOauthServerConfigurationResponse(...).copyWith(id: 12, name: "My name")
+  /// ```
+  DiscoverOauthServerConfigurationResponse call({
+    Uri appRegistrationEndpoint,
+    Uri authorizationEndpoint,
+    List<String> codeChallengeMethodsSupported,
+    List<String> grantTypesSupported,
+    Uri issuer,
+    List<String> responseModesSupported,
+    List<String> responseTypesSupported,
+    Uri revocationEndpoint,
+    List<OAuthScope> scopesSupported,
+    Uri serviceDocumentation,
+    Uri tokenEndpoint,
+    List<String> tokenEndpointAuthMethodsSupported,
+    Uri userinfoEndpoint,
+  });
+}
+
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfDiscoverOauthServerConfigurationResponse.copyWith(...)` or call `instanceOfDiscoverOauthServerConfigurationResponse.copyWith.fieldName(value)` for a single field.
+class _$DiscoverOauthServerConfigurationResponseCWProxyImpl
+    implements _$DiscoverOauthServerConfigurationResponseCWProxy {
+  const _$DiscoverOauthServerConfigurationResponseCWProxyImpl(this._value);
+
+  final DiscoverOauthServerConfigurationResponse _value;
+
+  @override
+  DiscoverOauthServerConfigurationResponse appRegistrationEndpoint(
+    Uri appRegistrationEndpoint,
+  ) => call(appRegistrationEndpoint: appRegistrationEndpoint);
+
+  @override
+  DiscoverOauthServerConfigurationResponse authorizationEndpoint(
+    Uri authorizationEndpoint,
+  ) => call(authorizationEndpoint: authorizationEndpoint);
+
+  @override
+  DiscoverOauthServerConfigurationResponse codeChallengeMethodsSupported(
+    List<String> codeChallengeMethodsSupported,
+  ) => call(codeChallengeMethodsSupported: codeChallengeMethodsSupported);
+
+  @override
+  DiscoverOauthServerConfigurationResponse grantTypesSupported(
+    List<String> grantTypesSupported,
+  ) => call(grantTypesSupported: grantTypesSupported);
+
+  @override
+  DiscoverOauthServerConfigurationResponse issuer(Uri issuer) =>
+      call(issuer: issuer);
+
+  @override
+  DiscoverOauthServerConfigurationResponse responseModesSupported(
+    List<String> responseModesSupported,
+  ) => call(responseModesSupported: responseModesSupported);
+
+  @override
+  DiscoverOauthServerConfigurationResponse responseTypesSupported(
+    List<String> responseTypesSupported,
+  ) => call(responseTypesSupported: responseTypesSupported);
+
+  @override
+  DiscoverOauthServerConfigurationResponse revocationEndpoint(
+    Uri revocationEndpoint,
+  ) => call(revocationEndpoint: revocationEndpoint);
+
+  @override
+  DiscoverOauthServerConfigurationResponse scopesSupported(
+    List<OAuthScope> scopesSupported,
+  ) => call(scopesSupported: scopesSupported);
+
+  @override
+  DiscoverOauthServerConfigurationResponse serviceDocumentation(
+    Uri serviceDocumentation,
+  ) => call(serviceDocumentation: serviceDocumentation);
+
+  @override
+  DiscoverOauthServerConfigurationResponse tokenEndpoint(Uri tokenEndpoint) =>
+      call(tokenEndpoint: tokenEndpoint);
+
+  @override
+  DiscoverOauthServerConfigurationResponse tokenEndpointAuthMethodsSupported(
+    List<String> tokenEndpointAuthMethodsSupported,
+  ) => call(
+    tokenEndpointAuthMethodsSupported: tokenEndpointAuthMethodsSupported,
+  );
+
+  @override
+  DiscoverOauthServerConfigurationResponse userinfoEndpoint(
+    Uri userinfoEndpoint,
+  ) => call(userinfoEndpoint: userinfoEndpoint);
+
+  @override
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `DiscoverOauthServerConfigurationResponse(...).copyWith.fieldName(value)`.
+  ///
+  /// Example:
+  /// ```dart
+  /// DiscoverOauthServerConfigurationResponse(...).copyWith(id: 12, name: "My name")
+  /// ```
+  DiscoverOauthServerConfigurationResponse call({
+    Object? appRegistrationEndpoint = const $CopyWithPlaceholder(),
+    Object? authorizationEndpoint = const $CopyWithPlaceholder(),
+    Object? codeChallengeMethodsSupported = const $CopyWithPlaceholder(),
+    Object? grantTypesSupported = const $CopyWithPlaceholder(),
+    Object? issuer = const $CopyWithPlaceholder(),
+    Object? responseModesSupported = const $CopyWithPlaceholder(),
+    Object? responseTypesSupported = const $CopyWithPlaceholder(),
+    Object? revocationEndpoint = const $CopyWithPlaceholder(),
+    Object? scopesSupported = const $CopyWithPlaceholder(),
+    Object? serviceDocumentation = const $CopyWithPlaceholder(),
+    Object? tokenEndpoint = const $CopyWithPlaceholder(),
+    Object? tokenEndpointAuthMethodsSupported = const $CopyWithPlaceholder(),
+    Object? userinfoEndpoint = const $CopyWithPlaceholder(),
+  }) {
+    return DiscoverOauthServerConfigurationResponse(
+      appRegistrationEndpoint:
+          appRegistrationEndpoint == const $CopyWithPlaceholder() ||
+              appRegistrationEndpoint == null
+          ? _value.appRegistrationEndpoint
+          // ignore: cast_nullable_to_non_nullable
+          : appRegistrationEndpoint as Uri,
+      authorizationEndpoint:
+          authorizationEndpoint == const $CopyWithPlaceholder() ||
+              authorizationEndpoint == null
+          ? _value.authorizationEndpoint
+          // ignore: cast_nullable_to_non_nullable
+          : authorizationEndpoint as Uri,
+      codeChallengeMethodsSupported:
+          codeChallengeMethodsSupported == const $CopyWithPlaceholder() ||
+              codeChallengeMethodsSupported == null
+          ? _value.codeChallengeMethodsSupported
+          // ignore: cast_nullable_to_non_nullable
+          : codeChallengeMethodsSupported as List<String>,
+      grantTypesSupported:
+          grantTypesSupported == const $CopyWithPlaceholder() ||
+              grantTypesSupported == null
+          ? _value.grantTypesSupported
+          // ignore: cast_nullable_to_non_nullable
+          : grantTypesSupported as List<String>,
+      issuer: issuer == const $CopyWithPlaceholder() || issuer == null
+          ? _value.issuer
+          // ignore: cast_nullable_to_non_nullable
+          : issuer as Uri,
+      responseModesSupported:
+          responseModesSupported == const $CopyWithPlaceholder() ||
+              responseModesSupported == null
+          ? _value.responseModesSupported
+          // ignore: cast_nullable_to_non_nullable
+          : responseModesSupported as List<String>,
+      responseTypesSupported:
+          responseTypesSupported == const $CopyWithPlaceholder() ||
+              responseTypesSupported == null
+          ? _value.responseTypesSupported
+          // ignore: cast_nullable_to_non_nullable
+          : responseTypesSupported as List<String>,
+      revocationEndpoint:
+          revocationEndpoint == const $CopyWithPlaceholder() ||
+              revocationEndpoint == null
+          ? _value.revocationEndpoint
+          // ignore: cast_nullable_to_non_nullable
+          : revocationEndpoint as Uri,
+      scopesSupported:
+          scopesSupported == const $CopyWithPlaceholder() ||
+              scopesSupported == null
+          ? _value.scopesSupported
+          // ignore: cast_nullable_to_non_nullable
+          : scopesSupported as List<OAuthScope>,
+      serviceDocumentation:
+          serviceDocumentation == const $CopyWithPlaceholder() ||
+              serviceDocumentation == null
+          ? _value.serviceDocumentation
+          // ignore: cast_nullable_to_non_nullable
+          : serviceDocumentation as Uri,
+      tokenEndpoint:
+          tokenEndpoint == const $CopyWithPlaceholder() || tokenEndpoint == null
+          ? _value.tokenEndpoint
+          // ignore: cast_nullable_to_non_nullable
+          : tokenEndpoint as Uri,
+      tokenEndpointAuthMethodsSupported:
+          tokenEndpointAuthMethodsSupported == const $CopyWithPlaceholder() ||
+              tokenEndpointAuthMethodsSupported == null
+          ? _value.tokenEndpointAuthMethodsSupported
+          // ignore: cast_nullable_to_non_nullable
+          : tokenEndpointAuthMethodsSupported as List<String>,
+      userinfoEndpoint:
+          userinfoEndpoint == const $CopyWithPlaceholder() ||
+              userinfoEndpoint == null
+          ? _value.userinfoEndpoint
+          // ignore: cast_nullable_to_non_nullable
+          : userinfoEndpoint as Uri,
+    );
+  }
+}
+
+extension $DiscoverOauthServerConfigurationResponseCopyWith
+    on DiscoverOauthServerConfigurationResponse {
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfDiscoverOauthServerConfigurationResponse.copyWith(...)` or `instanceOfDiscoverOauthServerConfigurationResponse.copyWith.fieldName(...)`.
+  // ignore: library_private_types_in_public_api
+  _$DiscoverOauthServerConfigurationResponseCWProxy get copyWith =>
+      _$DiscoverOauthServerConfigurationResponseCWProxyImpl(this);
+}
+
+// **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 

@@ -3,6 +3,86 @@
 part of 'status_quote.dart';
 
 // **************************************************************************
+// CopyWithGenerator
+// **************************************************************************
+
+abstract class _$StatusQuoteCWProxy {
+  StatusQuote quotedStatus(Status? quotedStatus);
+
+  StatusQuote state(QuoteStateEnum? state);
+
+  StatusQuote quotedStatusId(String? quotedStatusId);
+
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `StatusQuote(...).copyWith.fieldName(value)`.
+  ///
+  /// Example:
+  /// ```dart
+  /// StatusQuote(...).copyWith(id: 12, name: "My name")
+  /// ```
+  StatusQuote call({
+    Status? quotedStatus,
+    QuoteStateEnum? state,
+    String? quotedStatusId,
+  });
+}
+
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfStatusQuote.copyWith(...)` or call `instanceOfStatusQuote.copyWith.fieldName(value)` for a single field.
+class _$StatusQuoteCWProxyImpl implements _$StatusQuoteCWProxy {
+  const _$StatusQuoteCWProxyImpl(this._value);
+
+  final StatusQuote _value;
+
+  @override
+  StatusQuote quotedStatus(Status? quotedStatus) =>
+      call(quotedStatus: quotedStatus);
+
+  @override
+  StatusQuote state(QuoteStateEnum? state) => call(state: state);
+
+  @override
+  StatusQuote quotedStatusId(String? quotedStatusId) =>
+      call(quotedStatusId: quotedStatusId);
+
+  @override
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `StatusQuote(...).copyWith.fieldName(value)`.
+  ///
+  /// Example:
+  /// ```dart
+  /// StatusQuote(...).copyWith(id: 12, name: "My name")
+  /// ```
+  StatusQuote call({
+    Object? quotedStatus = const $CopyWithPlaceholder(),
+    Object? state = const $CopyWithPlaceholder(),
+    Object? quotedStatusId = const $CopyWithPlaceholder(),
+  }) {
+    return StatusQuote(
+      quotedStatus: quotedStatus == const $CopyWithPlaceholder()
+          ? _value.quotedStatus
+          // ignore: cast_nullable_to_non_nullable
+          : quotedStatus as Status?,
+      state: state == const $CopyWithPlaceholder()
+          ? _value.state
+          // ignore: cast_nullable_to_non_nullable
+          : state as QuoteStateEnum?,
+      quotedStatusId: quotedStatusId == const $CopyWithPlaceholder()
+          ? _value.quotedStatusId
+          // ignore: cast_nullable_to_non_nullable
+          : quotedStatusId as String?,
+    );
+  }
+}
+
+extension $StatusQuoteCopyWith on StatusQuote {
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfStatusQuote.copyWith(...)` or `instanceOfStatusQuote.copyWith.fieldName(...)`.
+  // ignore: library_private_types_in_public_api
+  _$StatusQuoteCWProxy get copyWith => _$StatusQuoteCWProxyImpl(this);
+}
+
+// **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 

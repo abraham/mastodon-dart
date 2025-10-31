@@ -3,6 +3,151 @@
 part of 'notification.dart';
 
 // **************************************************************************
+// CopyWithGenerator
+// **************************************************************************
+
+abstract class _$NotificationCWProxy {
+  Notification account(Account account);
+
+  Notification createdAt(DateTime createdAt);
+
+  Notification id(String id);
+
+  Notification type(NotificationTypeEnum type);
+
+  Notification event(RelationshipSeveranceEvent? event);
+
+  Notification groupKey(String? groupKey);
+
+  Notification moderationWarning(AccountWarning? moderationWarning);
+
+  Notification report(Report? report);
+
+  Notification status(Status? status);
+
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Notification(...).copyWith.fieldName(value)`.
+  ///
+  /// Example:
+  /// ```dart
+  /// Notification(...).copyWith(id: 12, name: "My name")
+  /// ```
+  Notification call({
+    Account account,
+    DateTime createdAt,
+    String id,
+    NotificationTypeEnum type,
+    RelationshipSeveranceEvent? event,
+    String? groupKey,
+    AccountWarning? moderationWarning,
+    Report? report,
+    Status? status,
+  });
+}
+
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfNotification.copyWith(...)` or call `instanceOfNotification.copyWith.fieldName(value)` for a single field.
+class _$NotificationCWProxyImpl implements _$NotificationCWProxy {
+  const _$NotificationCWProxyImpl(this._value);
+
+  final Notification _value;
+
+  @override
+  Notification account(Account account) => call(account: account);
+
+  @override
+  Notification createdAt(DateTime createdAt) => call(createdAt: createdAt);
+
+  @override
+  Notification id(String id) => call(id: id);
+
+  @override
+  Notification type(NotificationTypeEnum type) => call(type: type);
+
+  @override
+  Notification event(RelationshipSeveranceEvent? event) => call(event: event);
+
+  @override
+  Notification groupKey(String? groupKey) => call(groupKey: groupKey);
+
+  @override
+  Notification moderationWarning(AccountWarning? moderationWarning) =>
+      call(moderationWarning: moderationWarning);
+
+  @override
+  Notification report(Report? report) => call(report: report);
+
+  @override
+  Notification status(Status? status) => call(status: status);
+
+  @override
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Notification(...).copyWith.fieldName(value)`.
+  ///
+  /// Example:
+  /// ```dart
+  /// Notification(...).copyWith(id: 12, name: "My name")
+  /// ```
+  Notification call({
+    Object? account = const $CopyWithPlaceholder(),
+    Object? createdAt = const $CopyWithPlaceholder(),
+    Object? id = const $CopyWithPlaceholder(),
+    Object? type = const $CopyWithPlaceholder(),
+    Object? event = const $CopyWithPlaceholder(),
+    Object? groupKey = const $CopyWithPlaceholder(),
+    Object? moderationWarning = const $CopyWithPlaceholder(),
+    Object? report = const $CopyWithPlaceholder(),
+    Object? status = const $CopyWithPlaceholder(),
+  }) {
+    return Notification(
+      account: account == const $CopyWithPlaceholder() || account == null
+          ? _value.account
+          // ignore: cast_nullable_to_non_nullable
+          : account as Account,
+      createdAt: createdAt == const $CopyWithPlaceholder() || createdAt == null
+          ? _value.createdAt
+          // ignore: cast_nullable_to_non_nullable
+          : createdAt as DateTime,
+      id: id == const $CopyWithPlaceholder() || id == null
+          ? _value.id
+          // ignore: cast_nullable_to_non_nullable
+          : id as String,
+      type: type == const $CopyWithPlaceholder() || type == null
+          ? _value.type
+          // ignore: cast_nullable_to_non_nullable
+          : type as NotificationTypeEnum,
+      event: event == const $CopyWithPlaceholder()
+          ? _value.event
+          // ignore: cast_nullable_to_non_nullable
+          : event as RelationshipSeveranceEvent?,
+      groupKey: groupKey == const $CopyWithPlaceholder()
+          ? _value.groupKey
+          // ignore: cast_nullable_to_non_nullable
+          : groupKey as String?,
+      moderationWarning: moderationWarning == const $CopyWithPlaceholder()
+          ? _value.moderationWarning
+          // ignore: cast_nullable_to_non_nullable
+          : moderationWarning as AccountWarning?,
+      report: report == const $CopyWithPlaceholder()
+          ? _value.report
+          // ignore: cast_nullable_to_non_nullable
+          : report as Report?,
+      status: status == const $CopyWithPlaceholder()
+          ? _value.status
+          // ignore: cast_nullable_to_non_nullable
+          : status as Status?,
+    );
+  }
+}
+
+extension $NotificationCopyWith on Notification {
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfNotification.copyWith(...)` or `instanceOfNotification.copyWith.fieldName(...)`.
+  // ignore: library_private_types_in_public_api
+  _$NotificationCWProxy get copyWith => _$NotificationCWProxyImpl(this);
+}
+
+// **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 

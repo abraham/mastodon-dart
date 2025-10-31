@@ -3,6 +3,206 @@
 part of 'scheduled_status_params.dart';
 
 // **************************************************************************
+// CopyWithGenerator
+// **************************************************************************
+
+abstract class _$ScheduledStatusParamsCWProxy {
+  ScheduledStatusParams applicationId(
+    @Deprecated('applicationId has been deprecated') int applicationId,
+  );
+
+  ScheduledStatusParams text(String text);
+
+  ScheduledStatusParams visibility(StatusVisibilityEnum visibility);
+
+  ScheduledStatusParams withRateLimit(
+    @Deprecated('withRateLimit has been deprecated') bool withRateLimit,
+  );
+
+  ScheduledStatusParams idempotency(String? idempotency);
+
+  ScheduledStatusParams inReplyToId(int? inReplyToId);
+
+  ScheduledStatusParams language(String? language);
+
+  ScheduledStatusParams mediaIds(List<String>? mediaIds);
+
+  ScheduledStatusParams poll(ScheduledStatusParamsPoll? poll);
+
+  ScheduledStatusParams scheduledAt(String? scheduledAt);
+
+  ScheduledStatusParams sensitive(bool? sensitive);
+
+  ScheduledStatusParams spoilerText(String? spoilerText);
+
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ScheduledStatusParams(...).copyWith.fieldName(value)`.
+  ///
+  /// Example:
+  /// ```dart
+  /// ScheduledStatusParams(...).copyWith(id: 12, name: "My name")
+  /// ```
+  ScheduledStatusParams call({
+    @Deprecated('applicationId has been deprecated') int applicationId,
+    String text,
+    StatusVisibilityEnum visibility,
+    @Deprecated('withRateLimit has been deprecated') bool withRateLimit,
+    String? idempotency,
+    int? inReplyToId,
+    String? language,
+    List<String>? mediaIds,
+    ScheduledStatusParamsPoll? poll,
+    String? scheduledAt,
+    bool? sensitive,
+    String? spoilerText,
+  });
+}
+
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfScheduledStatusParams.copyWith(...)` or call `instanceOfScheduledStatusParams.copyWith.fieldName(value)` for a single field.
+class _$ScheduledStatusParamsCWProxyImpl
+    implements _$ScheduledStatusParamsCWProxy {
+  const _$ScheduledStatusParamsCWProxyImpl(this._value);
+
+  final ScheduledStatusParams _value;
+
+  @override
+  ScheduledStatusParams applicationId(
+    @Deprecated('applicationId has been deprecated') int applicationId,
+  ) => call(applicationId: applicationId);
+
+  @override
+  ScheduledStatusParams text(String text) => call(text: text);
+
+  @override
+  ScheduledStatusParams visibility(StatusVisibilityEnum visibility) =>
+      call(visibility: visibility);
+
+  @override
+  ScheduledStatusParams withRateLimit(
+    @Deprecated('withRateLimit has been deprecated') bool withRateLimit,
+  ) => call(withRateLimit: withRateLimit);
+
+  @override
+  ScheduledStatusParams idempotency(String? idempotency) =>
+      call(idempotency: idempotency);
+
+  @override
+  ScheduledStatusParams inReplyToId(int? inReplyToId) =>
+      call(inReplyToId: inReplyToId);
+
+  @override
+  ScheduledStatusParams language(String? language) => call(language: language);
+
+  @override
+  ScheduledStatusParams mediaIds(List<String>? mediaIds) =>
+      call(mediaIds: mediaIds);
+
+  @override
+  ScheduledStatusParams poll(ScheduledStatusParamsPoll? poll) =>
+      call(poll: poll);
+
+  @override
+  ScheduledStatusParams scheduledAt(String? scheduledAt) =>
+      call(scheduledAt: scheduledAt);
+
+  @override
+  ScheduledStatusParams sensitive(bool? sensitive) =>
+      call(sensitive: sensitive);
+
+  @override
+  ScheduledStatusParams spoilerText(String? spoilerText) =>
+      call(spoilerText: spoilerText);
+
+  @override
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ScheduledStatusParams(...).copyWith.fieldName(value)`.
+  ///
+  /// Example:
+  /// ```dart
+  /// ScheduledStatusParams(...).copyWith(id: 12, name: "My name")
+  /// ```
+  ScheduledStatusParams call({
+    @Deprecated('applicationId has been deprecated')
+    Object? applicationId = const $CopyWithPlaceholder(),
+    Object? text = const $CopyWithPlaceholder(),
+    Object? visibility = const $CopyWithPlaceholder(),
+    @Deprecated('withRateLimit has been deprecated')
+    Object? withRateLimit = const $CopyWithPlaceholder(),
+    Object? idempotency = const $CopyWithPlaceholder(),
+    Object? inReplyToId = const $CopyWithPlaceholder(),
+    Object? language = const $CopyWithPlaceholder(),
+    Object? mediaIds = const $CopyWithPlaceholder(),
+    Object? poll = const $CopyWithPlaceholder(),
+    Object? scheduledAt = const $CopyWithPlaceholder(),
+    Object? sensitive = const $CopyWithPlaceholder(),
+    Object? spoilerText = const $CopyWithPlaceholder(),
+  }) {
+    return ScheduledStatusParams(
+      applicationId:
+          applicationId == const $CopyWithPlaceholder() || applicationId == null
+          ? _value.applicationId
+          // ignore: cast_nullable_to_non_nullable
+          : applicationId as int,
+      text: text == const $CopyWithPlaceholder() || text == null
+          ? _value.text
+          // ignore: cast_nullable_to_non_nullable
+          : text as String,
+      visibility:
+          visibility == const $CopyWithPlaceholder() || visibility == null
+          ? _value.visibility
+          // ignore: cast_nullable_to_non_nullable
+          : visibility as StatusVisibilityEnum,
+      withRateLimit:
+          withRateLimit == const $CopyWithPlaceholder() || withRateLimit == null
+          ? _value.withRateLimit
+          // ignore: cast_nullable_to_non_nullable
+          : withRateLimit as bool,
+      idempotency: idempotency == const $CopyWithPlaceholder()
+          ? _value.idempotency
+          // ignore: cast_nullable_to_non_nullable
+          : idempotency as String?,
+      inReplyToId: inReplyToId == const $CopyWithPlaceholder()
+          ? _value.inReplyToId
+          // ignore: cast_nullable_to_non_nullable
+          : inReplyToId as int?,
+      language: language == const $CopyWithPlaceholder()
+          ? _value.language
+          // ignore: cast_nullable_to_non_nullable
+          : language as String?,
+      mediaIds: mediaIds == const $CopyWithPlaceholder()
+          ? _value.mediaIds
+          // ignore: cast_nullable_to_non_nullable
+          : mediaIds as List<String>?,
+      poll: poll == const $CopyWithPlaceholder()
+          ? _value.poll
+          // ignore: cast_nullable_to_non_nullable
+          : poll as ScheduledStatusParamsPoll?,
+      scheduledAt: scheduledAt == const $CopyWithPlaceholder()
+          ? _value.scheduledAt
+          // ignore: cast_nullable_to_non_nullable
+          : scheduledAt as String?,
+      sensitive: sensitive == const $CopyWithPlaceholder()
+          ? _value.sensitive
+          // ignore: cast_nullable_to_non_nullable
+          : sensitive as bool?,
+      spoilerText: spoilerText == const $CopyWithPlaceholder()
+          ? _value.spoilerText
+          // ignore: cast_nullable_to_non_nullable
+          : spoilerText as String?,
+    );
+  }
+}
+
+extension $ScheduledStatusParamsCopyWith on ScheduledStatusParams {
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfScheduledStatusParams.copyWith(...)` or `instanceOfScheduledStatusParams.copyWith.fieldName(...)`.
+  // ignore: library_private_types_in_public_api
+  _$ScheduledStatusParamsCWProxy get copyWith =>
+      _$ScheduledStatusParamsCWProxyImpl(this);
+}
+
+// **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 

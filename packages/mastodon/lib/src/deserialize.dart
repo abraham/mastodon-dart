@@ -94,7 +94,6 @@ import 'package:mastodon/src/model/media_status.dart';
 import 'package:mastodon/src/model/meta_details.dart';
 import 'package:mastodon/src/model/model_list.dart';
 import 'package:mastodon/src/model/muted_account.dart';
-import 'package:mastodon/src/model/muted_account_moved.dart';
 import 'package:mastodon/src/model/notification.dart';
 import 'package:mastodon/src/model/notification_group.dart';
 import 'package:mastodon/src/model/notification_policy.dart';
@@ -507,9 +506,6 @@ ReturnType deserialize<ReturnType, BaseType>(
       return ModelList.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'MutedAccount':
       return MutedAccount.fromJson(value as Map<String, dynamic>) as ReturnType;
-    case 'MutedAccountMoved':
-      return MutedAccountMoved.fromJson(value as Map<String, dynamic>)
-          as ReturnType;
     case 'Notification':
       return Notification.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'NotificationGroup':

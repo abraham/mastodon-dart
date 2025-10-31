@@ -151,7 +151,7 @@ void main() {
       // TODO
     });
 
-    // MutedAccountMoved moved
+    // Account moved
     test('to test the property `moved`', () async {
       // TODO
     });

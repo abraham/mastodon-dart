@@ -9,10 +9,12 @@ import 'package:mastodon/src/model/account_warning.dart';
 import 'package:mastodon/src/model/account.dart';
 import 'package:mastodon/src/model/relationship_severance_event.dart';
 import 'package:mastodon/src/model/notification_type_enum.dart';
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'notification.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,

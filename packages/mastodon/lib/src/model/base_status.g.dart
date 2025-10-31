@@ -3,6 +3,143 @@
 part of 'base_status.dart';
 
 // **************************************************************************
+// CopyWithGenerator
+// **************************************************************************
+
+abstract class _$BaseStatusCWProxy {
+  BaseStatus inReplyToId(String? inReplyToId);
+
+  BaseStatus language(String? language);
+
+  BaseStatus quoteApprovalPolicy(String? quoteApprovalPolicy);
+
+  BaseStatus quotedStatusId(String? quotedStatusId);
+
+  BaseStatus scheduledAt(DateTime? scheduledAt);
+
+  BaseStatus sensitive(bool? sensitive);
+
+  BaseStatus spoilerText(String? spoilerText);
+
+  BaseStatus visibility(StatusVisibilityEnum? visibility);
+
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `BaseStatus(...).copyWith.fieldName(value)`.
+  ///
+  /// Example:
+  /// ```dart
+  /// BaseStatus(...).copyWith(id: 12, name: "My name")
+  /// ```
+  BaseStatus call({
+    String? inReplyToId,
+    String? language,
+    String? quoteApprovalPolicy,
+    String? quotedStatusId,
+    DateTime? scheduledAt,
+    bool? sensitive,
+    String? spoilerText,
+    StatusVisibilityEnum? visibility,
+  });
+}
+
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfBaseStatus.copyWith(...)` or call `instanceOfBaseStatus.copyWith.fieldName(value)` for a single field.
+class _$BaseStatusCWProxyImpl implements _$BaseStatusCWProxy {
+  const _$BaseStatusCWProxyImpl(this._value);
+
+  final BaseStatus _value;
+
+  @override
+  BaseStatus inReplyToId(String? inReplyToId) => call(inReplyToId: inReplyToId);
+
+  @override
+  BaseStatus language(String? language) => call(language: language);
+
+  @override
+  BaseStatus quoteApprovalPolicy(String? quoteApprovalPolicy) =>
+      call(quoteApprovalPolicy: quoteApprovalPolicy);
+
+  @override
+  BaseStatus quotedStatusId(String? quotedStatusId) =>
+      call(quotedStatusId: quotedStatusId);
+
+  @override
+  BaseStatus scheduledAt(DateTime? scheduledAt) =>
+      call(scheduledAt: scheduledAt);
+
+  @override
+  BaseStatus sensitive(bool? sensitive) => call(sensitive: sensitive);
+
+  @override
+  BaseStatus spoilerText(String? spoilerText) => call(spoilerText: spoilerText);
+
+  @override
+  BaseStatus visibility(StatusVisibilityEnum? visibility) =>
+      call(visibility: visibility);
+
+  @override
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `BaseStatus(...).copyWith.fieldName(value)`.
+  ///
+  /// Example:
+  /// ```dart
+  /// BaseStatus(...).copyWith(id: 12, name: "My name")
+  /// ```
+  BaseStatus call({
+    Object? inReplyToId = const $CopyWithPlaceholder(),
+    Object? language = const $CopyWithPlaceholder(),
+    Object? quoteApprovalPolicy = const $CopyWithPlaceholder(),
+    Object? quotedStatusId = const $CopyWithPlaceholder(),
+    Object? scheduledAt = const $CopyWithPlaceholder(),
+    Object? sensitive = const $CopyWithPlaceholder(),
+    Object? spoilerText = const $CopyWithPlaceholder(),
+    Object? visibility = const $CopyWithPlaceholder(),
+  }) {
+    return BaseStatus(
+      inReplyToId: inReplyToId == const $CopyWithPlaceholder()
+          ? _value.inReplyToId
+          // ignore: cast_nullable_to_non_nullable
+          : inReplyToId as String?,
+      language: language == const $CopyWithPlaceholder()
+          ? _value.language
+          // ignore: cast_nullable_to_non_nullable
+          : language as String?,
+      quoteApprovalPolicy: quoteApprovalPolicy == const $CopyWithPlaceholder()
+          ? _value.quoteApprovalPolicy
+          // ignore: cast_nullable_to_non_nullable
+          : quoteApprovalPolicy as String?,
+      quotedStatusId: quotedStatusId == const $CopyWithPlaceholder()
+          ? _value.quotedStatusId
+          // ignore: cast_nullable_to_non_nullable
+          : quotedStatusId as String?,
+      scheduledAt: scheduledAt == const $CopyWithPlaceholder()
+          ? _value.scheduledAt
+          // ignore: cast_nullable_to_non_nullable
+          : scheduledAt as DateTime?,
+      sensitive: sensitive == const $CopyWithPlaceholder()
+          ? _value.sensitive
+          // ignore: cast_nullable_to_non_nullable
+          : sensitive as bool?,
+      spoilerText: spoilerText == const $CopyWithPlaceholder()
+          ? _value.spoilerText
+          // ignore: cast_nullable_to_non_nullable
+          : spoilerText as String?,
+      visibility: visibility == const $CopyWithPlaceholder()
+          ? _value.visibility
+          // ignore: cast_nullable_to_non_nullable
+          : visibility as StatusVisibilityEnum?,
+    );
+  }
+}
+
+extension $BaseStatusCopyWith on BaseStatus {
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfBaseStatus.copyWith(...)` or `instanceOfBaseStatus.copyWith.fieldName(...)`.
+  // ignore: library_private_types_in_public_api
+  _$BaseStatusCWProxy get copyWith => _$BaseStatusCWProxyImpl(this);
+}
+
+// **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 

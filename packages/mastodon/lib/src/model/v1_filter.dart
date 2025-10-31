@@ -4,10 +4,12 @@
 
 // ignore_for_file: unused_element
 import 'package:mastodon/src/model/filter_context_enum.dart';
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'v1_filter.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,

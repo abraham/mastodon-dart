@@ -3,6 +3,179 @@
 part of 'credential_application.dart';
 
 // **************************************************************************
+// CopyWithGenerator
+// **************************************************************************
+
+abstract class _$CredentialApplicationCWProxy {
+  CredentialApplication clientId(String clientId);
+
+  CredentialApplication clientSecret(String clientSecret);
+
+  CredentialApplication id(String id);
+
+  CredentialApplication name(String name);
+
+  CredentialApplication clientSecretExpiresAt(int? clientSecretExpiresAt);
+
+  CredentialApplication redirectUri(
+    @Deprecated('redirectUri has been deprecated') String? redirectUri,
+  );
+
+  CredentialApplication redirectUris(List<Uri>? redirectUris);
+
+  CredentialApplication scopes(List<OAuthScope>? scopes);
+
+  CredentialApplication vapidKey(
+    @Deprecated('vapidKey has been deprecated') String? vapidKey,
+  );
+
+  CredentialApplication website(Uri? website);
+
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CredentialApplication(...).copyWith.fieldName(value)`.
+  ///
+  /// Example:
+  /// ```dart
+  /// CredentialApplication(...).copyWith(id: 12, name: "My name")
+  /// ```
+  CredentialApplication call({
+    String clientId,
+    String clientSecret,
+    String id,
+    String name,
+    int? clientSecretExpiresAt,
+    @Deprecated('redirectUri has been deprecated') String? redirectUri,
+    List<Uri>? redirectUris,
+    List<OAuthScope>? scopes,
+    @Deprecated('vapidKey has been deprecated') String? vapidKey,
+    Uri? website,
+  });
+}
+
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfCredentialApplication.copyWith(...)` or call `instanceOfCredentialApplication.copyWith.fieldName(value)` for a single field.
+class _$CredentialApplicationCWProxyImpl
+    implements _$CredentialApplicationCWProxy {
+  const _$CredentialApplicationCWProxyImpl(this._value);
+
+  final CredentialApplication _value;
+
+  @override
+  CredentialApplication clientId(String clientId) => call(clientId: clientId);
+
+  @override
+  CredentialApplication clientSecret(String clientSecret) =>
+      call(clientSecret: clientSecret);
+
+  @override
+  CredentialApplication id(String id) => call(id: id);
+
+  @override
+  CredentialApplication name(String name) => call(name: name);
+
+  @override
+  CredentialApplication clientSecretExpiresAt(int? clientSecretExpiresAt) =>
+      call(clientSecretExpiresAt: clientSecretExpiresAt);
+
+  @override
+  CredentialApplication redirectUri(
+    @Deprecated('redirectUri has been deprecated') String? redirectUri,
+  ) => call(redirectUri: redirectUri);
+
+  @override
+  CredentialApplication redirectUris(List<Uri>? redirectUris) =>
+      call(redirectUris: redirectUris);
+
+  @override
+  CredentialApplication scopes(List<OAuthScope>? scopes) =>
+      call(scopes: scopes);
+
+  @override
+  CredentialApplication vapidKey(
+    @Deprecated('vapidKey has been deprecated') String? vapidKey,
+  ) => call(vapidKey: vapidKey);
+
+  @override
+  CredentialApplication website(Uri? website) => call(website: website);
+
+  @override
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CredentialApplication(...).copyWith.fieldName(value)`.
+  ///
+  /// Example:
+  /// ```dart
+  /// CredentialApplication(...).copyWith(id: 12, name: "My name")
+  /// ```
+  CredentialApplication call({
+    Object? clientId = const $CopyWithPlaceholder(),
+    Object? clientSecret = const $CopyWithPlaceholder(),
+    Object? id = const $CopyWithPlaceholder(),
+    Object? name = const $CopyWithPlaceholder(),
+    Object? clientSecretExpiresAt = const $CopyWithPlaceholder(),
+    @Deprecated('redirectUri has been deprecated')
+    Object? redirectUri = const $CopyWithPlaceholder(),
+    Object? redirectUris = const $CopyWithPlaceholder(),
+    Object? scopes = const $CopyWithPlaceholder(),
+    @Deprecated('vapidKey has been deprecated')
+    Object? vapidKey = const $CopyWithPlaceholder(),
+    Object? website = const $CopyWithPlaceholder(),
+  }) {
+    return CredentialApplication(
+      clientId: clientId == const $CopyWithPlaceholder() || clientId == null
+          ? _value.clientId
+          // ignore: cast_nullable_to_non_nullable
+          : clientId as String,
+      clientSecret:
+          clientSecret == const $CopyWithPlaceholder() || clientSecret == null
+          ? _value.clientSecret
+          // ignore: cast_nullable_to_non_nullable
+          : clientSecret as String,
+      id: id == const $CopyWithPlaceholder() || id == null
+          ? _value.id
+          // ignore: cast_nullable_to_non_nullable
+          : id as String,
+      name: name == const $CopyWithPlaceholder() || name == null
+          ? _value.name
+          // ignore: cast_nullable_to_non_nullable
+          : name as String,
+      clientSecretExpiresAt:
+          clientSecretExpiresAt == const $CopyWithPlaceholder()
+          ? _value.clientSecretExpiresAt
+          // ignore: cast_nullable_to_non_nullable
+          : clientSecretExpiresAt as int?,
+      redirectUri: redirectUri == const $CopyWithPlaceholder()
+          ? _value.redirectUri
+          // ignore: cast_nullable_to_non_nullable
+          : redirectUri as String?,
+      redirectUris: redirectUris == const $CopyWithPlaceholder()
+          ? _value.redirectUris
+          // ignore: cast_nullable_to_non_nullable
+          : redirectUris as List<Uri>?,
+      scopes: scopes == const $CopyWithPlaceholder()
+          ? _value.scopes
+          // ignore: cast_nullable_to_non_nullable
+          : scopes as List<OAuthScope>?,
+      vapidKey: vapidKey == const $CopyWithPlaceholder()
+          ? _value.vapidKey
+          // ignore: cast_nullable_to_non_nullable
+          : vapidKey as String?,
+      website: website == const $CopyWithPlaceholder()
+          ? _value.website
+          // ignore: cast_nullable_to_non_nullable
+          : website as Uri?,
+    );
+  }
+}
+
+extension $CredentialApplicationCopyWith on CredentialApplication {
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfCredentialApplication.copyWith(...)` or `instanceOfCredentialApplication.copyWith.fieldName(...)`.
+  // ignore: library_private_types_in_public_api
+  _$CredentialApplicationCWProxy get copyWith =>
+      _$CredentialApplicationCWProxyImpl(this);
+}
+
+// **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 

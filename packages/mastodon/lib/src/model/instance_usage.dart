@@ -4,10 +4,12 @@
 
 // ignore_for_file: unused_element
 import 'package:mastodon/src/model/instance_usage_users.dart';
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'instance_usage.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,

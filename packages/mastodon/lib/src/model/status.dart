@@ -16,10 +16,12 @@ import 'package:mastodon/src/model/account.dart';
 import 'package:mastodon/src/model/filter_result.dart';
 import 'package:mastodon/src/model/status_tag.dart';
 import 'dart:core';
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'status.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,

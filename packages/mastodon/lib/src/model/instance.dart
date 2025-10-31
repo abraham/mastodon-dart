@@ -12,10 +12,12 @@ import 'package:mastodon/src/model/instance_thumbnail.dart';
 import 'package:mastodon/src/model/instance_api_versions.dart';
 import 'package:mastodon/src/model/instance_contact.dart';
 import 'dart:core';
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'instance.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,

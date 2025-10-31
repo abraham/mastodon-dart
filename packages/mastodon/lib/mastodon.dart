@@ -156,7 +156,6 @@ export 'package:mastodon/src/model/media_status.dart';
 export 'package:mastodon/src/model/meta_details.dart';
 export 'package:mastodon/src/model/model_list.dart';
 export 'package:mastodon/src/model/muted_account.dart';
-export 'package:mastodon/src/model/muted_account_moved.dart';
 export 'package:mastodon/src/model/notification.dart';
 export 'package:mastodon/src/model/notification_group.dart';
 export 'package:mastodon/src/model/notification_policy.dart';

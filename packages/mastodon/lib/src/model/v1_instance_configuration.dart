@@ -7,10 +7,12 @@ import 'package:mastodon/src/model/instance_configuration_statuses.dart';
 import 'package:mastodon/src/model/v1_instance_configuration_accounts.dart';
 import 'package:mastodon/src/model/instance_configuration_polls.dart';
 import 'package:mastodon/src/model/v1_instance_configuration_media_attachments.dart';
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'v1_instance_configuration.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,

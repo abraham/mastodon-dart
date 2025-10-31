@@ -3,6 +3,109 @@
 part of 'update_filter_request.dart';
 
 // **************************************************************************
+// CopyWithGenerator
+// **************************************************************************
+
+abstract class _$UpdateFilterRequestCWProxy {
+  UpdateFilterRequest context(List<FilterContextEnum> context);
+
+  UpdateFilterRequest phrase(String phrase);
+
+  UpdateFilterRequest expiresIn(int? expiresIn);
+
+  UpdateFilterRequest irreversible(bool? irreversible);
+
+  UpdateFilterRequest wholeWord(bool? wholeWord);
+
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `UpdateFilterRequest(...).copyWith.fieldName(value)`.
+  ///
+  /// Example:
+  /// ```dart
+  /// UpdateFilterRequest(...).copyWith(id: 12, name: "My name")
+  /// ```
+  UpdateFilterRequest call({
+    List<FilterContextEnum> context,
+    String phrase,
+    int? expiresIn,
+    bool? irreversible,
+    bool? wholeWord,
+  });
+}
+
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfUpdateFilterRequest.copyWith(...)` or call `instanceOfUpdateFilterRequest.copyWith.fieldName(value)` for a single field.
+class _$UpdateFilterRequestCWProxyImpl implements _$UpdateFilterRequestCWProxy {
+  const _$UpdateFilterRequestCWProxyImpl(this._value);
+
+  final UpdateFilterRequest _value;
+
+  @override
+  UpdateFilterRequest context(List<FilterContextEnum> context) =>
+      call(context: context);
+
+  @override
+  UpdateFilterRequest phrase(String phrase) => call(phrase: phrase);
+
+  @override
+  UpdateFilterRequest expiresIn(int? expiresIn) => call(expiresIn: expiresIn);
+
+  @override
+  UpdateFilterRequest irreversible(bool? irreversible) =>
+      call(irreversible: irreversible);
+
+  @override
+  UpdateFilterRequest wholeWord(bool? wholeWord) => call(wholeWord: wholeWord);
+
+  @override
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `UpdateFilterRequest(...).copyWith.fieldName(value)`.
+  ///
+  /// Example:
+  /// ```dart
+  /// UpdateFilterRequest(...).copyWith(id: 12, name: "My name")
+  /// ```
+  UpdateFilterRequest call({
+    Object? context = const $CopyWithPlaceholder(),
+    Object? phrase = const $CopyWithPlaceholder(),
+    Object? expiresIn = const $CopyWithPlaceholder(),
+    Object? irreversible = const $CopyWithPlaceholder(),
+    Object? wholeWord = const $CopyWithPlaceholder(),
+  }) {
+    return UpdateFilterRequest(
+      context: context == const $CopyWithPlaceholder() || context == null
+          ? _value.context
+          // ignore: cast_nullable_to_non_nullable
+          : context as List<FilterContextEnum>,
+      phrase: phrase == const $CopyWithPlaceholder() || phrase == null
+          ? _value.phrase
+          // ignore: cast_nullable_to_non_nullable
+          : phrase as String,
+      expiresIn: expiresIn == const $CopyWithPlaceholder()
+          ? _value.expiresIn
+          // ignore: cast_nullable_to_non_nullable
+          : expiresIn as int?,
+      irreversible: irreversible == const $CopyWithPlaceholder()
+          ? _value.irreversible
+          // ignore: cast_nullable_to_non_nullable
+          : irreversible as bool?,
+      wholeWord: wholeWord == const $CopyWithPlaceholder()
+          ? _value.wholeWord
+          // ignore: cast_nullable_to_non_nullable
+          : wholeWord as bool?,
+    );
+  }
+}
+
+extension $UpdateFilterRequestCopyWith on UpdateFilterRequest {
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfUpdateFilterRequest.copyWith(...)` or `instanceOfUpdateFilterRequest.copyWith.fieldName(...)`.
+  // ignore: library_private_types_in_public_api
+  _$UpdateFilterRequestCWProxy get copyWith =>
+      _$UpdateFilterRequestCWProxyImpl(this);
+}
+
+// **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
