@@ -6,10 +6,12 @@
 import 'package:mastodon/src/model/instance_configuration_timeline_access_trending_link_feeds.dart';
 import 'package:mastodon/src/model/instance_configuration_timeline_access_hashtag_feeds.dart';
 import 'package:mastodon/src/model/instance_configuration_timeline_access_live_feeds.dart';
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'instance_configuration_timeline_access.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,

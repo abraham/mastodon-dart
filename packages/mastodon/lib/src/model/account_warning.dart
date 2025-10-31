@@ -6,10 +6,12 @@
 import 'package:mastodon/src/model/appeal.dart';
 import 'package:mastodon/src/model/account.dart';
 import 'package:mastodon/src/model/account_warning_action_enum.dart';
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'account_warning.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,

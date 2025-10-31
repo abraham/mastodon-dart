@@ -4,10 +4,12 @@
 
 // ignore_for_file: unused_element
 import 'dart:core';
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'instance_thumbnail_versions.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,

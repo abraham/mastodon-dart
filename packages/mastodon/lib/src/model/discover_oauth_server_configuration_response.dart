@@ -5,10 +5,12 @@
 // ignore_for_file: unused_element
 import 'package:mastodon/src/model/o_auth_scope.dart';
 import 'dart:core';
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'discover_oauth_server_configuration_response.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,

@@ -19,10 +19,12 @@ import 'package:mastodon/src/model/filter_result.dart';
 import 'package:mastodon/src/model/status_tag.dart';
 import 'package:mastodon/src/model/scheduled_status_params.dart';
 import 'dart:core';
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'create_status200_response.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,

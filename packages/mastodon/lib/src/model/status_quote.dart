@@ -7,10 +7,12 @@ import 'package:mastodon/src/model/quote.dart';
 import 'package:mastodon/src/model/quote_state_enum.dart';
 import 'package:mastodon/src/model/status.dart';
 import 'package:mastodon/src/model/shallow_quote.dart';
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'status_quote.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,

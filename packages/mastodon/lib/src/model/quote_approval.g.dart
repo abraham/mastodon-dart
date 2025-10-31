@@ -3,6 +3,87 @@
 part of 'quote_approval.dart';
 
 // **************************************************************************
+// CopyWithGenerator
+// **************************************************************************
+
+abstract class _$QuoteApprovalCWProxy {
+  QuoteApproval automatic(List<QuoteApprovalAutomaticEnum>? automatic);
+
+  QuoteApproval currentUser(QuoteApprovalCurrentUserEnum? currentUser);
+
+  QuoteApproval manual(List<QuoteApprovalManualEnum>? manual);
+
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `QuoteApproval(...).copyWith.fieldName(value)`.
+  ///
+  /// Example:
+  /// ```dart
+  /// QuoteApproval(...).copyWith(id: 12, name: "My name")
+  /// ```
+  QuoteApproval call({
+    List<QuoteApprovalAutomaticEnum>? automatic,
+    QuoteApprovalCurrentUserEnum? currentUser,
+    List<QuoteApprovalManualEnum>? manual,
+  });
+}
+
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfQuoteApproval.copyWith(...)` or call `instanceOfQuoteApproval.copyWith.fieldName(value)` for a single field.
+class _$QuoteApprovalCWProxyImpl implements _$QuoteApprovalCWProxy {
+  const _$QuoteApprovalCWProxyImpl(this._value);
+
+  final QuoteApproval _value;
+
+  @override
+  QuoteApproval automatic(List<QuoteApprovalAutomaticEnum>? automatic) =>
+      call(automatic: automatic);
+
+  @override
+  QuoteApproval currentUser(QuoteApprovalCurrentUserEnum? currentUser) =>
+      call(currentUser: currentUser);
+
+  @override
+  QuoteApproval manual(List<QuoteApprovalManualEnum>? manual) =>
+      call(manual: manual);
+
+  @override
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `QuoteApproval(...).copyWith.fieldName(value)`.
+  ///
+  /// Example:
+  /// ```dart
+  /// QuoteApproval(...).copyWith(id: 12, name: "My name")
+  /// ```
+  QuoteApproval call({
+    Object? automatic = const $CopyWithPlaceholder(),
+    Object? currentUser = const $CopyWithPlaceholder(),
+    Object? manual = const $CopyWithPlaceholder(),
+  }) {
+    return QuoteApproval(
+      automatic: automatic == const $CopyWithPlaceholder()
+          ? _value.automatic
+          // ignore: cast_nullable_to_non_nullable
+          : automatic as List<QuoteApprovalAutomaticEnum>?,
+      currentUser: currentUser == const $CopyWithPlaceholder()
+          ? _value.currentUser
+          // ignore: cast_nullable_to_non_nullable
+          : currentUser as QuoteApprovalCurrentUserEnum?,
+      manual: manual == const $CopyWithPlaceholder()
+          ? _value.manual
+          // ignore: cast_nullable_to_non_nullable
+          : manual as List<QuoteApprovalManualEnum>?,
+    );
+  }
+}
+
+extension $QuoteApprovalCopyWith on QuoteApproval {
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfQuoteApproval.copyWith(...)` or `instanceOfQuoteApproval.copyWith.fieldName(...)`.
+  // ignore: library_private_types_in_public_api
+  _$QuoteApprovalCWProxy get copyWith => _$QuoteApprovalCWProxyImpl(this);
+}
+
+// **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 

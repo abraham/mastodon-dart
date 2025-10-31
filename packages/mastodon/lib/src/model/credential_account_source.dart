@@ -6,10 +6,12 @@
 import 'package:mastodon/src/model/field.dart';
 import 'package:mastodon/src/model/status_visibility_enum.dart';
 import 'package:mastodon/src/model/credential_account_source_quote_policy_enum.dart';
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'credential_account_source.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,

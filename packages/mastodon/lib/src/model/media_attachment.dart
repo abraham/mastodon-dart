@@ -6,10 +6,12 @@
 import 'package:mastodon/src/model/media_attachment_type_enum.dart';
 import 'package:mastodon/src/model/media_attachment_meta.dart';
 import 'dart:core';
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'media_attachment.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,

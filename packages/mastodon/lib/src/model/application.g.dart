@@ -3,6 +3,139 @@
 part of 'application.dart';
 
 // **************************************************************************
+// CopyWithGenerator
+// **************************************************************************
+
+abstract class _$ApplicationCWProxy {
+  Application id(String id);
+
+  Application name(String name);
+
+  Application redirectUri(
+    @Deprecated('redirectUri has been deprecated') String? redirectUri,
+  );
+
+  Application redirectUris(List<Uri>? redirectUris);
+
+  Application scopes(List<OAuthScope>? scopes);
+
+  Application vapidKey(
+    @Deprecated('vapidKey has been deprecated') String? vapidKey,
+  );
+
+  Application website(Uri? website);
+
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Application(...).copyWith.fieldName(value)`.
+  ///
+  /// Example:
+  /// ```dart
+  /// Application(...).copyWith(id: 12, name: "My name")
+  /// ```
+  Application call({
+    String id,
+    String name,
+    @Deprecated('redirectUri has been deprecated') String? redirectUri,
+    List<Uri>? redirectUris,
+    List<OAuthScope>? scopes,
+    @Deprecated('vapidKey has been deprecated') String? vapidKey,
+    Uri? website,
+  });
+}
+
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfApplication.copyWith(...)` or call `instanceOfApplication.copyWith.fieldName(value)` for a single field.
+class _$ApplicationCWProxyImpl implements _$ApplicationCWProxy {
+  const _$ApplicationCWProxyImpl(this._value);
+
+  final Application _value;
+
+  @override
+  Application id(String id) => call(id: id);
+
+  @override
+  Application name(String name) => call(name: name);
+
+  @override
+  Application redirectUri(
+    @Deprecated('redirectUri has been deprecated') String? redirectUri,
+  ) => call(redirectUri: redirectUri);
+
+  @override
+  Application redirectUris(List<Uri>? redirectUris) =>
+      call(redirectUris: redirectUris);
+
+  @override
+  Application scopes(List<OAuthScope>? scopes) => call(scopes: scopes);
+
+  @override
+  Application vapidKey(
+    @Deprecated('vapidKey has been deprecated') String? vapidKey,
+  ) => call(vapidKey: vapidKey);
+
+  @override
+  Application website(Uri? website) => call(website: website);
+
+  @override
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Application(...).copyWith.fieldName(value)`.
+  ///
+  /// Example:
+  /// ```dart
+  /// Application(...).copyWith(id: 12, name: "My name")
+  /// ```
+  Application call({
+    Object? id = const $CopyWithPlaceholder(),
+    Object? name = const $CopyWithPlaceholder(),
+    @Deprecated('redirectUri has been deprecated')
+    Object? redirectUri = const $CopyWithPlaceholder(),
+    Object? redirectUris = const $CopyWithPlaceholder(),
+    Object? scopes = const $CopyWithPlaceholder(),
+    @Deprecated('vapidKey has been deprecated')
+    Object? vapidKey = const $CopyWithPlaceholder(),
+    Object? website = const $CopyWithPlaceholder(),
+  }) {
+    return Application(
+      id: id == const $CopyWithPlaceholder() || id == null
+          ? _value.id
+          // ignore: cast_nullable_to_non_nullable
+          : id as String,
+      name: name == const $CopyWithPlaceholder() || name == null
+          ? _value.name
+          // ignore: cast_nullable_to_non_nullable
+          : name as String,
+      redirectUri: redirectUri == const $CopyWithPlaceholder()
+          ? _value.redirectUri
+          // ignore: cast_nullable_to_non_nullable
+          : redirectUri as String?,
+      redirectUris: redirectUris == const $CopyWithPlaceholder()
+          ? _value.redirectUris
+          // ignore: cast_nullable_to_non_nullable
+          : redirectUris as List<Uri>?,
+      scopes: scopes == const $CopyWithPlaceholder()
+          ? _value.scopes
+          // ignore: cast_nullable_to_non_nullable
+          : scopes as List<OAuthScope>?,
+      vapidKey: vapidKey == const $CopyWithPlaceholder()
+          ? _value.vapidKey
+          // ignore: cast_nullable_to_non_nullable
+          : vapidKey as String?,
+      website: website == const $CopyWithPlaceholder()
+          ? _value.website
+          // ignore: cast_nullable_to_non_nullable
+          : website as Uri?,
+    );
+  }
+}
+
+extension $ApplicationCopyWith on Application {
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfApplication.copyWith(...)` or `instanceOfApplication.copyWith.fieldName(...)`.
+  // ignore: library_private_types_in_public_api
+  _$ApplicationCWProxy get copyWith => _$ApplicationCWProxyImpl(this);
+}
+
+// **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 

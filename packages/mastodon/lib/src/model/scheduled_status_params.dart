@@ -5,10 +5,12 @@
 // ignore_for_file: unused_element
 import 'package:mastodon/src/model/status_visibility_enum.dart';
 import 'package:mastodon/src/model/scheduled_status_params_poll.dart';
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'scheduled_status_params.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,

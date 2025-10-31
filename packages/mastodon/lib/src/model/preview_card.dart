@@ -6,10 +6,12 @@
 import 'package:mastodon/src/model/trends_link_type_enum.dart';
 import 'package:mastodon/src/model/preview_card_author.dart';
 import 'dart:core';
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'preview_card.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,

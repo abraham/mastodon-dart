@@ -4,10 +4,12 @@
 
 // ignore_for_file: unused_element
 import 'package:mastodon/src/model/create_push_subscription_request_data_alerts.dart';
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'create_push_subscription_request_data.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,

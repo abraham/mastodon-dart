@@ -5,10 +5,12 @@
 // ignore_for_file: unused_element
 import 'package:mastodon/src/model/account.dart';
 import 'package:mastodon/src/model/report_category_enum.dart';
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'report.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,

@@ -7,10 +7,12 @@ import 'package:mastodon/src/model/status.dart';
 import 'package:mastodon/src/model/notification_group.dart';
 import 'package:mastodon/src/model/account.dart';
 import 'package:mastodon/src/model/partial_account_with_avatar.dart';
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'grouped_notifications_results.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,

@@ -5,10 +5,12 @@
 // ignore_for_file: unused_element
 import 'package:mastodon/src/model/preferences_reading_expand_media_enum.dart';
 import 'package:mastodon/src/model/status_visibility_enum.dart';
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'preferences.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,

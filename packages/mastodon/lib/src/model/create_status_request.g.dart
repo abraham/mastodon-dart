@@ -3,6 +3,180 @@
 part of 'create_status_request.dart';
 
 // **************************************************************************
+// CopyWithGenerator
+// **************************************************************************
+
+abstract class _$CreateStatusRequestCWProxy {
+  CreateStatusRequest status(String status);
+
+  CreateStatusRequest mediaIds(List<String> mediaIds);
+
+  CreateStatusRequest poll(UpdateStatusRequestPoll poll);
+
+  CreateStatusRequest inReplyToId(String? inReplyToId);
+
+  CreateStatusRequest language(String? language);
+
+  CreateStatusRequest quoteApprovalPolicy(String? quoteApprovalPolicy);
+
+  CreateStatusRequest quotedStatusId(String? quotedStatusId);
+
+  CreateStatusRequest scheduledAt(DateTime? scheduledAt);
+
+  CreateStatusRequest sensitive(bool? sensitive);
+
+  CreateStatusRequest spoilerText(String? spoilerText);
+
+  CreateStatusRequest visibility(StatusVisibilityEnum? visibility);
+
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CreateStatusRequest(...).copyWith.fieldName(value)`.
+  ///
+  /// Example:
+  /// ```dart
+  /// CreateStatusRequest(...).copyWith(id: 12, name: "My name")
+  /// ```
+  CreateStatusRequest call({
+    String status,
+    List<String> mediaIds,
+    UpdateStatusRequestPoll poll,
+    String? inReplyToId,
+    String? language,
+    String? quoteApprovalPolicy,
+    String? quotedStatusId,
+    DateTime? scheduledAt,
+    bool? sensitive,
+    String? spoilerText,
+    StatusVisibilityEnum? visibility,
+  });
+}
+
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfCreateStatusRequest.copyWith(...)` or call `instanceOfCreateStatusRequest.copyWith.fieldName(value)` for a single field.
+class _$CreateStatusRequestCWProxyImpl implements _$CreateStatusRequestCWProxy {
+  const _$CreateStatusRequestCWProxyImpl(this._value);
+
+  final CreateStatusRequest _value;
+
+  @override
+  CreateStatusRequest status(String status) => call(status: status);
+
+  @override
+  CreateStatusRequest mediaIds(List<String> mediaIds) =>
+      call(mediaIds: mediaIds);
+
+  @override
+  CreateStatusRequest poll(UpdateStatusRequestPoll poll) => call(poll: poll);
+
+  @override
+  CreateStatusRequest inReplyToId(String? inReplyToId) =>
+      call(inReplyToId: inReplyToId);
+
+  @override
+  CreateStatusRequest language(String? language) => call(language: language);
+
+  @override
+  CreateStatusRequest quoteApprovalPolicy(String? quoteApprovalPolicy) =>
+      call(quoteApprovalPolicy: quoteApprovalPolicy);
+
+  @override
+  CreateStatusRequest quotedStatusId(String? quotedStatusId) =>
+      call(quotedStatusId: quotedStatusId);
+
+  @override
+  CreateStatusRequest scheduledAt(DateTime? scheduledAt) =>
+      call(scheduledAt: scheduledAt);
+
+  @override
+  CreateStatusRequest sensitive(bool? sensitive) => call(sensitive: sensitive);
+
+  @override
+  CreateStatusRequest spoilerText(String? spoilerText) =>
+      call(spoilerText: spoilerText);
+
+  @override
+  CreateStatusRequest visibility(StatusVisibilityEnum? visibility) =>
+      call(visibility: visibility);
+
+  @override
+  /// Creates a new instance with the provided field values.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CreateStatusRequest(...).copyWith.fieldName(value)`.
+  ///
+  /// Example:
+  /// ```dart
+  /// CreateStatusRequest(...).copyWith(id: 12, name: "My name")
+  /// ```
+  CreateStatusRequest call({
+    Object? status = const $CopyWithPlaceholder(),
+    Object? mediaIds = const $CopyWithPlaceholder(),
+    Object? poll = const $CopyWithPlaceholder(),
+    Object? inReplyToId = const $CopyWithPlaceholder(),
+    Object? language = const $CopyWithPlaceholder(),
+    Object? quoteApprovalPolicy = const $CopyWithPlaceholder(),
+    Object? quotedStatusId = const $CopyWithPlaceholder(),
+    Object? scheduledAt = const $CopyWithPlaceholder(),
+    Object? sensitive = const $CopyWithPlaceholder(),
+    Object? spoilerText = const $CopyWithPlaceholder(),
+    Object? visibility = const $CopyWithPlaceholder(),
+  }) {
+    return CreateStatusRequest(
+      status: status == const $CopyWithPlaceholder() || status == null
+          ? _value.status
+          // ignore: cast_nullable_to_non_nullable
+          : status as String,
+      mediaIds: mediaIds == const $CopyWithPlaceholder() || mediaIds == null
+          ? _value.mediaIds
+          // ignore: cast_nullable_to_non_nullable
+          : mediaIds as List<String>,
+      poll: poll == const $CopyWithPlaceholder() || poll == null
+          ? _value.poll
+          // ignore: cast_nullable_to_non_nullable
+          : poll as UpdateStatusRequestPoll,
+      inReplyToId: inReplyToId == const $CopyWithPlaceholder()
+          ? _value.inReplyToId
+          // ignore: cast_nullable_to_non_nullable
+          : inReplyToId as String?,
+      language: language == const $CopyWithPlaceholder()
+          ? _value.language
+          // ignore: cast_nullable_to_non_nullable
+          : language as String?,
+      quoteApprovalPolicy: quoteApprovalPolicy == const $CopyWithPlaceholder()
+          ? _value.quoteApprovalPolicy
+          // ignore: cast_nullable_to_non_nullable
+          : quoteApprovalPolicy as String?,
+      quotedStatusId: quotedStatusId == const $CopyWithPlaceholder()
+          ? _value.quotedStatusId
+          // ignore: cast_nullable_to_non_nullable
+          : quotedStatusId as String?,
+      scheduledAt: scheduledAt == const $CopyWithPlaceholder()
+          ? _value.scheduledAt
+          // ignore: cast_nullable_to_non_nullable
+          : scheduledAt as DateTime?,
+      sensitive: sensitive == const $CopyWithPlaceholder()
+          ? _value.sensitive
+          // ignore: cast_nullable_to_non_nullable
+          : sensitive as bool?,
+      spoilerText: spoilerText == const $CopyWithPlaceholder()
+          ? _value.spoilerText
+          // ignore: cast_nullable_to_non_nullable
+          : spoilerText as String?,
+      visibility: visibility == const $CopyWithPlaceholder()
+          ? _value.visibility
+          // ignore: cast_nullable_to_non_nullable
+          : visibility as StatusVisibilityEnum?,
+    );
+  }
+}
+
+extension $CreateStatusRequestCopyWith on CreateStatusRequest {
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfCreateStatusRequest.copyWith(...)` or `instanceOfCreateStatusRequest.copyWith.fieldName(...)`.
+  // ignore: library_private_types_in_public_api
+  _$CreateStatusRequestCWProxy get copyWith =>
+      _$CreateStatusRequestCWProxyImpl(this);
+}
+
+// **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
