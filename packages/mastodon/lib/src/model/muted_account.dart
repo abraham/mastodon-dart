@@ -5,7 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:mastodon/src/model/field.dart';
 import 'package:mastodon/src/model/custom_emoji.dart';
-import 'package:mastodon/src/model/muted_account_moved.dart';
+import 'package:mastodon/src/model/account.dart';
 import 'package:mastodon/src/model/account_role.dart';
 import 'dart:core';
 import 'package:json_annotation/json_annotation.dart';
@@ -181,7 +181,7 @@ class MutedAccount {
   final bool? memorial;
 
   @JsonKey(name: r'moved', required: false, includeIfNull: false)
-  final MutedAccountMoved? moved;
+  final Account? moved;
 
   /// When a timed mute will expire, if applicable.
   @JsonKey(name: r'mute_expires_at', required: false, includeIfNull: false)

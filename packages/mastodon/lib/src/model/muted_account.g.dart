@@ -95,9 +95,8 @@ MutedAccount _$MutedAccountFromJson(Map<String, dynamic> json) =>
           memorial: $checkedConvert('memorial', (v) => v as bool?),
           moved: $checkedConvert(
             'moved',
-            (v) => v == null
-                ? null
-                : MutedAccountMoved.fromJson(v as Map<String, dynamic>),
+            (v) =>
+                v == null ? null : Account.fromJson(v as Map<String, dynamic>),
           ),
           muteExpiresAt: $checkedConvert(
             'mute_expires_at',

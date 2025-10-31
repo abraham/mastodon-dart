@@ -132,7 +132,6 @@ doc/MediaStatus.md
 doc/MetaDetails.md
 doc/ModelList.md
 doc/MutedAccount.md
-doc/MutedAccountMoved.md
 doc/MutesApi.md
 doc/Notification.md
 doc/NotificationGroup.md
@@ -397,7 +396,6 @@ lib/src/model/media_status.dart
 lib/src/model/meta_details.dart
 lib/src/model/model_list.dart
 lib/src/model/muted_account.dart
-lib/src/model/muted_account_moved.dart
 lib/src/model/notification.dart
 lib/src/model/notification_group.dart
 lib/src/model/notification_policy.dart
@@ -619,7 +617,6 @@ test/media_attachment_type_enum_test.dart
 test/media_status_test.dart
 test/meta_details_test.dart
 test/model_list_test.dart
-test/muted_account_moved_test.dart
 test/muted_account_test.dart
 test/mutes_api_test.dart
 test/notification_group_test.dart
