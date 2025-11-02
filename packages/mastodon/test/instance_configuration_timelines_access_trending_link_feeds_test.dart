@@ -1,14 +1,14 @@
 import 'package:test/test.dart';
 import 'package:mastodon/mastodon.dart';
 
-// tests for InstanceConfigurationTimelineAccessTrendingLinkFeeds
+// tests for InstanceConfigurationTimelinesAccessTrendingLinkFeeds
 void main() {
-  final InstanceConfigurationTimelineAccessTrendingLinkFeeds?
-  instance = /* InstanceConfigurationTimelineAccessTrendingLinkFeeds(...) */
+  final InstanceConfigurationTimelinesAccessTrendingLinkFeeds?
+  instance = /* InstanceConfigurationTimelinesAccessTrendingLinkFeeds(...) */
       null;
   // TODO add properties to the entity
 
-  group(InstanceConfigurationTimelineAccessTrendingLinkFeeds, () {
+  group(InstanceConfigurationTimelinesAccessTrendingLinkFeeds, () {
     // Access restrictions for local posts in the trending link feeds.
     // String local
     test('to test the property `local`', () async {

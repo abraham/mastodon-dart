@@ -7,11 +7,11 @@ part of 'preview_card_author.dart';
 // **************************************************************************
 
 abstract class _$PreviewCardAuthorCWProxy {
-  PreviewCardAuthor account(Account? account);
-
-  PreviewCardAuthor name(String? name);
+  PreviewCardAuthor name(String name);
 
   PreviewCardAuthor url(Uri? url);
+
+  PreviewCardAuthor account(Account? account);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PreviewCardAuthor(...).copyWith.fieldName(value)`.
@@ -20,7 +20,7 @@ abstract class _$PreviewCardAuthorCWProxy {
   /// ```dart
   /// PreviewCardAuthor(...).copyWith(id: 12, name: "My name")
   /// ```
-  PreviewCardAuthor call({Account? account, String? name, Uri? url});
+  PreviewCardAuthor call({String name, Uri? url, Account? account});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -31,13 +31,13 @@ class _$PreviewCardAuthorCWProxyImpl implements _$PreviewCardAuthorCWProxy {
   final PreviewCardAuthor _value;
 
   @override
-  PreviewCardAuthor account(Account? account) => call(account: account);
-
-  @override
-  PreviewCardAuthor name(String? name) => call(name: name);
+  PreviewCardAuthor name(String name) => call(name: name);
 
   @override
   PreviewCardAuthor url(Uri? url) => call(url: url);
+
+  @override
+  PreviewCardAuthor account(Account? account) => call(account: account);
 
   @override
   /// Creates a new instance with the provided field values.
@@ -48,23 +48,23 @@ class _$PreviewCardAuthorCWProxyImpl implements _$PreviewCardAuthorCWProxy {
   /// PreviewCardAuthor(...).copyWith(id: 12, name: "My name")
   /// ```
   PreviewCardAuthor call({
-    Object? account = const $CopyWithPlaceholder(),
     Object? name = const $CopyWithPlaceholder(),
     Object? url = const $CopyWithPlaceholder(),
+    Object? account = const $CopyWithPlaceholder(),
   }) {
     return PreviewCardAuthor(
-      account: account == const $CopyWithPlaceholder()
-          ? _value.account
-          // ignore: cast_nullable_to_non_nullable
-          : account as Account?,
-      name: name == const $CopyWithPlaceholder()
+      name: name == const $CopyWithPlaceholder() || name == null
           ? _value.name
           // ignore: cast_nullable_to_non_nullable
-          : name as String?,
+          : name as String,
       url: url == const $CopyWithPlaceholder()
           ? _value.url
           // ignore: cast_nullable_to_non_nullable
           : url as Uri?,
+      account: account == const $CopyWithPlaceholder()
+          ? _value.account
+          // ignore: cast_nullable_to_non_nullable
+          : account as Account?,
     );
   }
 }
@@ -83,15 +83,16 @@ extension $PreviewCardAuthorCopyWith on PreviewCardAuthor {
 
 PreviewCardAuthor _$PreviewCardAuthorFromJson(Map<String, dynamic> json) =>
     $checkedCreate('PreviewCardAuthor', json, ($checkedConvert) {
+      $checkKeys(json, requiredKeys: const ['name']);
       final val = PreviewCardAuthor(
+        name: $checkedConvert('name', (v) => v as String),
+        url: $checkedConvert(
+          'url',
+          (v) => PreviewCardAuthor._parseAuthorUrl(v as String),
+        ),
         account: $checkedConvert(
           'account',
           (v) => v == null ? null : Account.fromJson(v as Map<String, dynamic>),
-        ),
-        name: $checkedConvert('name', (v) => v as String?),
-        url: $checkedConvert(
-          'url',
-          (v) => PreviewCardAuthor._parseAuthorUrl(v as String?),
         ),
       );
       return val;
@@ -99,7 +100,7 @@ PreviewCardAuthor _$PreviewCardAuthorFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$PreviewCardAuthorToJson(PreviewCardAuthor instance) =>
     <String, dynamic>{
-      'account': ?instance.account?.toJson(),
-      'name': ?instance.name,
+      'name': instance.name,
       'url': ?instance.url?.toString(),
+      'account': ?instance.account?.toJson(),
     };

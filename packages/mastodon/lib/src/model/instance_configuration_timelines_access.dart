@@ -3,13 +3,13 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:mastodon/src/model/instance_configuration_timeline_access_trending_link_feeds.dart';
-import 'package:mastodon/src/model/instance_configuration_timeline_access_hashtag_feeds.dart';
-import 'package:mastodon/src/model/instance_configuration_timeline_access_live_feeds.dart';
+import 'package:mastodon/src/model/instance_configuration_timelines_access_trending_link_feeds.dart';
+import 'package:mastodon/src/model/instance_configuration_timelines_access_hashtag_feeds.dart';
+import 'package:mastodon/src/model/instance_configuration_timelines_access_live_feeds.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-part 'instance_configuration_timeline_access.g.dart';
+part 'instance_configuration_timelines_access.g.dart';
 
 @CopyWith()
 @JsonSerializable(
@@ -18,9 +18,9 @@ part 'instance_configuration_timeline_access.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class InstanceConfigurationTimelineAccess {
-  /// Returns a new [InstanceConfigurationTimelineAccess] instance.
-  InstanceConfigurationTimelineAccess({
+class InstanceConfigurationTimelinesAccess {
+  /// Returns a new [InstanceConfigurationTimelinesAccess] instance.
+  InstanceConfigurationTimelinesAccess({
     this.liveFeeds,
 
     this.hashtagFeeds,
@@ -29,18 +29,19 @@ class InstanceConfigurationTimelineAccess {
   });
 
   @JsonKey(name: r'live_feeds', required: false, includeIfNull: false)
-  final InstanceConfigurationTimelineAccessLiveFeeds? liveFeeds;
+  final InstanceConfigurationTimelinesAccessLiveFeeds? liveFeeds;
 
   @JsonKey(name: r'hashtag_feeds', required: false, includeIfNull: false)
-  final InstanceConfigurationTimelineAccessHashtagFeeds? hashtagFeeds;
+  final InstanceConfigurationTimelinesAccessHashtagFeeds? hashtagFeeds;
 
   @JsonKey(name: r'trending_link_feeds', required: false, includeIfNull: false)
-  final InstanceConfigurationTimelineAccessTrendingLinkFeeds? trendingLinkFeeds;
+  final InstanceConfigurationTimelinesAccessTrendingLinkFeeds?
+  trendingLinkFeeds;
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is InstanceConfigurationTimelineAccess &&
+      other is InstanceConfigurationTimelinesAccess &&
           other.liveFeeds == liveFeeds &&
           other.hashtagFeeds == hashtagFeeds &&
           other.trendingLinkFeeds == trendingLinkFeeds;
@@ -49,12 +50,12 @@ class InstanceConfigurationTimelineAccess {
   int get hashCode =>
       liveFeeds.hashCode + hashtagFeeds.hashCode + trendingLinkFeeds.hashCode;
 
-  factory InstanceConfigurationTimelineAccess.fromJson(
+  factory InstanceConfigurationTimelinesAccess.fromJson(
     Map<String, dynamic> json,
-  ) => _$InstanceConfigurationTimelineAccessFromJson(json);
+  ) => _$InstanceConfigurationTimelinesAccessFromJson(json);
 
   Map<String, dynamic> toJson() =>
-      _$InstanceConfigurationTimelineAccessToJson(this);
+      _$InstanceConfigurationTimelinesAccessToJson(this);
 
   @override
   String toString() {

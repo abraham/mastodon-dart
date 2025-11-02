@@ -7,11 +7,11 @@ part of 'terms_of_service.dart';
 // **************************************************************************
 
 abstract class _$TermsOfServiceCWProxy {
-  TermsOfService content(String? content);
+  TermsOfService content(String content);
 
-  TermsOfService effective(bool? effective);
+  TermsOfService effective(bool effective);
 
-  TermsOfService effectiveDate(DateTime? effectiveDate);
+  TermsOfService effectiveDate(DateTime effectiveDate);
 
   TermsOfService succeededBy(DateTime? succeededBy);
 
@@ -23,9 +23,9 @@ abstract class _$TermsOfServiceCWProxy {
   /// TermsOfService(...).copyWith(id: 12, name: "My name")
   /// ```
   TermsOfService call({
-    String? content,
-    bool? effective,
-    DateTime? effectiveDate,
+    String content,
+    bool effective,
+    DateTime effectiveDate,
     DateTime? succeededBy,
   });
 }
@@ -38,13 +38,13 @@ class _$TermsOfServiceCWProxyImpl implements _$TermsOfServiceCWProxy {
   final TermsOfService _value;
 
   @override
-  TermsOfService content(String? content) => call(content: content);
+  TermsOfService content(String content) => call(content: content);
 
   @override
-  TermsOfService effective(bool? effective) => call(effective: effective);
+  TermsOfService effective(bool effective) => call(effective: effective);
 
   @override
-  TermsOfService effectiveDate(DateTime? effectiveDate) =>
+  TermsOfService effectiveDate(DateTime effectiveDate) =>
       call(effectiveDate: effectiveDate);
 
   @override
@@ -66,18 +66,19 @@ class _$TermsOfServiceCWProxyImpl implements _$TermsOfServiceCWProxy {
     Object? succeededBy = const $CopyWithPlaceholder(),
   }) {
     return TermsOfService(
-      content: content == const $CopyWithPlaceholder()
+      content: content == const $CopyWithPlaceholder() || content == null
           ? _value.content
           // ignore: cast_nullable_to_non_nullable
-          : content as String?,
-      effective: effective == const $CopyWithPlaceholder()
+          : content as String,
+      effective: effective == const $CopyWithPlaceholder() || effective == null
           ? _value.effective
           // ignore: cast_nullable_to_non_nullable
-          : effective as bool?,
-      effectiveDate: effectiveDate == const $CopyWithPlaceholder()
+          : effective as bool,
+      effectiveDate:
+          effectiveDate == const $CopyWithPlaceholder() || effectiveDate == null
           ? _value.effectiveDate
           // ignore: cast_nullable_to_non_nullable
-          : effectiveDate as DateTime?,
+          : effectiveDate as DateTime,
       succeededBy: succeededBy == const $CopyWithPlaceholder()
           ? _value.succeededBy
           // ignore: cast_nullable_to_non_nullable
@@ -102,12 +103,16 @@ TermsOfService _$TermsOfServiceFromJson(Map<String, dynamic> json) =>
       'TermsOfService',
       json,
       ($checkedConvert) {
+        $checkKeys(
+          json,
+          requiredKeys: const ['content', 'effective', 'effective_date'],
+        );
         final val = TermsOfService(
-          content: $checkedConvert('content', (v) => v as String?),
-          effective: $checkedConvert('effective', (v) => v as bool?),
+          content: $checkedConvert('content', (v) => v as String),
+          effective: $checkedConvert('effective', (v) => v as bool),
           effectiveDate: $checkedConvert(
             'effective_date',
-            (v) => v == null ? null : DateTime.parse(v as String),
+            (v) => DateTime.parse(v as String),
           ),
           succeededBy: $checkedConvert(
             'succeeded_by',
@@ -124,8 +129,8 @@ TermsOfService _$TermsOfServiceFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$TermsOfServiceToJson(TermsOfService instance) =>
     <String, dynamic>{
-      'content': ?instance.content,
-      'effective': ?instance.effective,
-      'effective_date': ?instance.effectiveDate?.toIso8601String(),
+      'content': instance.content,
+      'effective': instance.effective,
+      'effective_date': instance.effectiveDate.toIso8601String(),
       'succeeded_by': ?instance.succeededBy?.toIso8601String(),
     };

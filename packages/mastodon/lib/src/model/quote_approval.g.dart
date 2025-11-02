@@ -7,11 +7,11 @@ part of 'quote_approval.dart';
 // **************************************************************************
 
 abstract class _$QuoteApprovalCWProxy {
-  QuoteApproval automatic(List<QuoteApprovalAutomaticEnum>? automatic);
+  QuoteApproval automatic(List<QuoteApprovalAutomaticEnum> automatic);
 
-  QuoteApproval currentUser(QuoteApprovalCurrentUserEnum? currentUser);
+  QuoteApproval currentUser(QuoteApprovalCurrentUserEnum currentUser);
 
-  QuoteApproval manual(List<QuoteApprovalManualEnum>? manual);
+  QuoteApproval manual(List<QuoteApprovalAutomaticEnum> manual);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `QuoteApproval(...).copyWith.fieldName(value)`.
@@ -21,9 +21,9 @@ abstract class _$QuoteApprovalCWProxy {
   /// QuoteApproval(...).copyWith(id: 12, name: "My name")
   /// ```
   QuoteApproval call({
-    List<QuoteApprovalAutomaticEnum>? automatic,
-    QuoteApprovalCurrentUserEnum? currentUser,
-    List<QuoteApprovalManualEnum>? manual,
+    List<QuoteApprovalAutomaticEnum> automatic,
+    QuoteApprovalCurrentUserEnum currentUser,
+    List<QuoteApprovalAutomaticEnum> manual,
   });
 }
 
@@ -35,15 +35,15 @@ class _$QuoteApprovalCWProxyImpl implements _$QuoteApprovalCWProxy {
   final QuoteApproval _value;
 
   @override
-  QuoteApproval automatic(List<QuoteApprovalAutomaticEnum>? automatic) =>
+  QuoteApproval automatic(List<QuoteApprovalAutomaticEnum> automatic) =>
       call(automatic: automatic);
 
   @override
-  QuoteApproval currentUser(QuoteApprovalCurrentUserEnum? currentUser) =>
+  QuoteApproval currentUser(QuoteApprovalCurrentUserEnum currentUser) =>
       call(currentUser: currentUser);
 
   @override
-  QuoteApproval manual(List<QuoteApprovalManualEnum>? manual) =>
+  QuoteApproval manual(List<QuoteApprovalAutomaticEnum> manual) =>
       call(manual: manual);
 
   @override
@@ -60,18 +60,19 @@ class _$QuoteApprovalCWProxyImpl implements _$QuoteApprovalCWProxy {
     Object? manual = const $CopyWithPlaceholder(),
   }) {
     return QuoteApproval(
-      automatic: automatic == const $CopyWithPlaceholder()
+      automatic: automatic == const $CopyWithPlaceholder() || automatic == null
           ? _value.automatic
           // ignore: cast_nullable_to_non_nullable
-          : automatic as List<QuoteApprovalAutomaticEnum>?,
-      currentUser: currentUser == const $CopyWithPlaceholder()
+          : automatic as List<QuoteApprovalAutomaticEnum>,
+      currentUser:
+          currentUser == const $CopyWithPlaceholder() || currentUser == null
           ? _value.currentUser
           // ignore: cast_nullable_to_non_nullable
-          : currentUser as QuoteApprovalCurrentUserEnum?,
-      manual: manual == const $CopyWithPlaceholder()
+          : currentUser as QuoteApprovalCurrentUserEnum,
+      manual: manual == const $CopyWithPlaceholder() || manual == null
           ? _value.manual
           // ignore: cast_nullable_to_non_nullable
-          : manual as List<QuoteApprovalManualEnum>?,
+          : manual as List<QuoteApprovalAutomaticEnum>,
     );
   }
 }
@@ -89,21 +90,25 @@ extension $QuoteApprovalCopyWith on QuoteApproval {
 
 QuoteApproval _$QuoteApprovalFromJson(Map<String, dynamic> json) =>
     $checkedCreate('QuoteApproval', json, ($checkedConvert) {
+      $checkKeys(
+        json,
+        requiredKeys: const ['automatic', 'current_user', 'manual'],
+      );
       final val = QuoteApproval(
         automatic: $checkedConvert(
           'automatic',
-          (v) => (v as List<dynamic>?)
-              ?.map((e) => $enumDecode(_$QuoteApprovalAutomaticEnumEnumMap, e))
+          (v) => (v as List<dynamic>)
+              .map((e) => $enumDecode(_$QuoteApprovalAutomaticEnumEnumMap, e))
               .toList(),
         ),
         currentUser: $checkedConvert(
           'current_user',
-          (v) => $enumDecodeNullable(_$QuoteApprovalCurrentUserEnumEnumMap, v),
+          (v) => $enumDecode(_$QuoteApprovalCurrentUserEnumEnumMap, v),
         ),
         manual: $checkedConvert(
           'manual',
-          (v) => (v as List<dynamic>?)
-              ?.map((e) => $enumDecode(_$QuoteApprovalManualEnumEnumMap, e))
+          (v) => (v as List<dynamic>)
+              .map((e) => $enumDecode(_$QuoteApprovalAutomaticEnumEnumMap, e))
               .toList(),
         ),
       );
@@ -113,12 +118,12 @@ QuoteApproval _$QuoteApprovalFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$QuoteApprovalToJson(
   QuoteApproval instance,
 ) => <String, dynamic>{
-  'automatic': ?instance.automatic
-      ?.map((e) => _$QuoteApprovalAutomaticEnumEnumMap[e]!)
+  'automatic': instance.automatic
+      .map((e) => _$QuoteApprovalAutomaticEnumEnumMap[e]!)
       .toList(),
-  'current_user': ?_$QuoteApprovalCurrentUserEnumEnumMap[instance.currentUser],
-  'manual': ?instance.manual
-      ?.map((e) => _$QuoteApprovalManualEnumEnumMap[e]!)
+  'current_user': _$QuoteApprovalCurrentUserEnumEnumMap[instance.currentUser]!,
+  'manual': instance.manual
+      .map((e) => _$QuoteApprovalAutomaticEnumEnumMap[e]!)
       .toList(),
 };
 
@@ -134,11 +139,4 @@ const _$QuoteApprovalCurrentUserEnumEnumMap = {
   QuoteApprovalCurrentUserEnum.manual: 'manual',
   QuoteApprovalCurrentUserEnum.denied: 'denied',
   QuoteApprovalCurrentUserEnum.unknown: 'unknown',
-};
-
-const _$QuoteApprovalManualEnumEnumMap = {
-  QuoteApprovalManualEnum.public: 'public',
-  QuoteApprovalManualEnum.followers: 'followers',
-  QuoteApprovalManualEnum.following: 'following',
-  QuoteApprovalManualEnum.unsupportedPolicy: 'unsupported_policy',
 };

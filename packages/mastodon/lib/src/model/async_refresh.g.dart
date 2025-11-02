@@ -7,11 +7,11 @@ part of 'async_refresh.dart';
 // **************************************************************************
 
 abstract class _$AsyncRefreshCWProxy {
-  AsyncRefresh id(String? id);
+  AsyncRefresh id(String id);
+
+  AsyncRefresh status(AsyncRefreshStatusEnum status);
 
   AsyncRefresh resultCount(int? resultCount);
-
-  AsyncRefresh status(AsyncRefreshStatusEnum? status);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `AsyncRefresh(...).copyWith.fieldName(value)`.
@@ -21,9 +21,9 @@ abstract class _$AsyncRefreshCWProxy {
   /// AsyncRefresh(...).copyWith(id: 12, name: "My name")
   /// ```
   AsyncRefresh call({
-    String? id,
+    String id,
+    AsyncRefreshStatusEnum status,
     int? resultCount,
-    AsyncRefreshStatusEnum? status,
   });
 }
 
@@ -35,13 +35,13 @@ class _$AsyncRefreshCWProxyImpl implements _$AsyncRefreshCWProxy {
   final AsyncRefresh _value;
 
   @override
-  AsyncRefresh id(String? id) => call(id: id);
+  AsyncRefresh id(String id) => call(id: id);
+
+  @override
+  AsyncRefresh status(AsyncRefreshStatusEnum status) => call(status: status);
 
   @override
   AsyncRefresh resultCount(int? resultCount) => call(resultCount: resultCount);
-
-  @override
-  AsyncRefresh status(AsyncRefreshStatusEnum? status) => call(status: status);
 
   @override
   /// Creates a new instance with the provided field values.
@@ -53,22 +53,22 @@ class _$AsyncRefreshCWProxyImpl implements _$AsyncRefreshCWProxy {
   /// ```
   AsyncRefresh call({
     Object? id = const $CopyWithPlaceholder(),
-    Object? resultCount = const $CopyWithPlaceholder(),
     Object? status = const $CopyWithPlaceholder(),
+    Object? resultCount = const $CopyWithPlaceholder(),
   }) {
     return AsyncRefresh(
-      id: id == const $CopyWithPlaceholder()
+      id: id == const $CopyWithPlaceholder() || id == null
           ? _value.id
           // ignore: cast_nullable_to_non_nullable
-          : id as String?,
+          : id as String,
+      status: status == const $CopyWithPlaceholder() || status == null
+          ? _value.status
+          // ignore: cast_nullable_to_non_nullable
+          : status as AsyncRefreshStatusEnum,
       resultCount: resultCount == const $CopyWithPlaceholder()
           ? _value.resultCount
           // ignore: cast_nullable_to_non_nullable
           : resultCount as int?,
-      status: status == const $CopyWithPlaceholder()
-          ? _value.status
-          // ignore: cast_nullable_to_non_nullable
-          : status as AsyncRefreshStatusEnum?,
     );
   }
 }
@@ -86,15 +86,16 @@ extension $AsyncRefreshCopyWith on AsyncRefresh {
 
 AsyncRefresh _$AsyncRefreshFromJson(Map<String, dynamic> json) =>
     $checkedCreate('AsyncRefresh', json, ($checkedConvert) {
+      $checkKeys(json, requiredKeys: const ['id', 'status']);
       final val = AsyncRefresh(
-        id: $checkedConvert('id', (v) => v as String?),
+        id: $checkedConvert('id', (v) => v as String),
+        status: $checkedConvert(
+          'status',
+          (v) => $enumDecode(_$AsyncRefreshStatusEnumEnumMap, v),
+        ),
         resultCount: $checkedConvert(
           'result_count',
           (v) => (v as num?)?.toInt(),
-        ),
-        status: $checkedConvert(
-          'status',
-          (v) => $enumDecodeNullable(_$AsyncRefreshStatusEnumEnumMap, v),
         ),
       );
       return val;
@@ -102,9 +103,9 @@ AsyncRefresh _$AsyncRefreshFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$AsyncRefreshToJson(AsyncRefresh instance) =>
     <String, dynamic>{
-      'id': ?instance.id,
+      'id': instance.id,
+      'status': _$AsyncRefreshStatusEnumEnumMap[instance.status]!,
       'result_count': ?instance.resultCount,
-      'status': ?_$AsyncRefreshStatusEnumEnumMap[instance.status],
     };
 
 const _$AsyncRefreshStatusEnumEnumMap = {

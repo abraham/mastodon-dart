@@ -6,10 +6,10 @@
 import 'package:mastodon/src/model/instance_configuration_statuses.dart';
 import 'package:mastodon/src/model/instance_configuration_urls.dart';
 import 'package:mastodon/src/model/instance_configuration_media_attachments.dart';
-import 'package:mastodon/src/model/instance_configuration_timeline_access.dart';
 import 'package:mastodon/src/model/instance_configuration_translation.dart';
 import 'package:mastodon/src/model/instance_configuration_accounts.dart';
 import 'package:mastodon/src/model/instance_configuration_polls.dart';
+import 'package:mastodon/src/model/instance_configuration_timelines_access.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -39,7 +39,7 @@ class InstanceConfiguration {
 
     this.limitedFederation,
 
-    this.timelineAccess,
+    this.timelinesAccess,
   });
 
   @JsonKey(name: r'accounts', required: true, includeIfNull: false)
@@ -64,8 +64,8 @@ class InstanceConfiguration {
   @JsonKey(name: r'limited_federation', required: false, includeIfNull: false)
   final bool? limitedFederation;
 
-  @JsonKey(name: r'timeline_access', required: false, includeIfNull: false)
-  final InstanceConfigurationTimelineAccess? timelineAccess;
+  @JsonKey(name: r'timelines_access', required: false, includeIfNull: false)
+  final InstanceConfigurationTimelinesAccess? timelinesAccess;
 
   @override
   bool operator ==(Object other) =>
@@ -78,7 +78,7 @@ class InstanceConfiguration {
           other.translation == translation &&
           other.urls == urls &&
           other.limitedFederation == limitedFederation &&
-          other.timelineAccess == timelineAccess;
+          other.timelinesAccess == timelinesAccess;
 
   @override
   int get hashCode =>
@@ -89,7 +89,7 @@ class InstanceConfiguration {
       translation.hashCode +
       urls.hashCode +
       (limitedFederation == null ? 0 : limitedFederation.hashCode) +
-      timelineAccess.hashCode;
+      timelinesAccess.hashCode;
 
   factory InstanceConfiguration.fromJson(Map<String, dynamic> json) =>
       _$InstanceConfigurationFromJson(json);

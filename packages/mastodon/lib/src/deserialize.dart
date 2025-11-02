@@ -73,10 +73,10 @@ import 'package:mastodon/src/model/instance_configuration_accounts.dart';
 import 'package:mastodon/src/model/instance_configuration_media_attachments.dart';
 import 'package:mastodon/src/model/instance_configuration_polls.dart';
 import 'package:mastodon/src/model/instance_configuration_statuses.dart';
-import 'package:mastodon/src/model/instance_configuration_timeline_access.dart';
-import 'package:mastodon/src/model/instance_configuration_timeline_access_hashtag_feeds.dart';
-import 'package:mastodon/src/model/instance_configuration_timeline_access_live_feeds.dart';
-import 'package:mastodon/src/model/instance_configuration_timeline_access_trending_link_feeds.dart';
+import 'package:mastodon/src/model/instance_configuration_timelines_access.dart';
+import 'package:mastodon/src/model/instance_configuration_timelines_access_hashtag_feeds.dart';
+import 'package:mastodon/src/model/instance_configuration_timelines_access_live_feeds.dart';
+import 'package:mastodon/src/model/instance_configuration_timelines_access_trending_link_feeds.dart';
 import 'package:mastodon/src/model/instance_configuration_translation.dart';
 import 'package:mastodon/src/model/instance_configuration_urls.dart';
 import 'package:mastodon/src/model/instance_contact.dart';
@@ -437,23 +437,23 @@ ReturnType deserialize<ReturnType, BaseType>(
             value as Map<String, dynamic>,
           )
           as ReturnType;
-    case 'InstanceConfigurationTimelineAccess':
-      return InstanceConfigurationTimelineAccess.fromJson(
+    case 'InstanceConfigurationTimelinesAccess':
+      return InstanceConfigurationTimelinesAccess.fromJson(
             value as Map<String, dynamic>,
           )
           as ReturnType;
-    case 'InstanceConfigurationTimelineAccessHashtagFeeds':
-      return InstanceConfigurationTimelineAccessHashtagFeeds.fromJson(
+    case 'InstanceConfigurationTimelinesAccessHashtagFeeds':
+      return InstanceConfigurationTimelinesAccessHashtagFeeds.fromJson(
             value as Map<String, dynamic>,
           )
           as ReturnType;
-    case 'InstanceConfigurationTimelineAccessLiveFeeds':
-      return InstanceConfigurationTimelineAccessLiveFeeds.fromJson(
+    case 'InstanceConfigurationTimelinesAccessLiveFeeds':
+      return InstanceConfigurationTimelinesAccessLiveFeeds.fromJson(
             value as Map<String, dynamic>,
           )
           as ReturnType;
-    case 'InstanceConfigurationTimelineAccessTrendingLinkFeeds':
-      return InstanceConfigurationTimelineAccessTrendingLinkFeeds.fromJson(
+    case 'InstanceConfigurationTimelinesAccessTrendingLinkFeeds':
+      return InstanceConfigurationTimelinesAccessTrendingLinkFeeds.fromJson(
             value as Map<String, dynamic>,
           )
           as ReturnType;
@@ -606,6 +606,7 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'QuoteApproval':
       return QuoteApproval.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'QuoteApprovalAutomaticEnum':
     case 'QuoteApprovalCurrentUserEnum':
     case 'QuoteStateEnum':
     case 'Reaction':

@@ -17,15 +17,15 @@ part 'instance_icon.g.dart';
 )
 class InstanceIcon {
   /// Returns a new [InstanceIcon] instance.
-  InstanceIcon({this.size, this.src});
+  InstanceIcon({required this.size, required this.src});
 
   /// The size of this icon.
-  @JsonKey(name: r'size', required: false, includeIfNull: false)
-  final String? size;
+  @JsonKey(name: r'size', required: true, includeIfNull: false)
+  final String size;
 
   /// The URL of this icon.
-  @JsonKey(name: r'src', required: false, includeIfNull: false)
-  final String? src;
+  @JsonKey(name: r'src', required: true, includeIfNull: false)
+  final String src;
 
   @override
   bool operator ==(Object other) =>
@@ -33,8 +33,7 @@ class InstanceIcon {
       other is InstanceIcon && other.size == size && other.src == src;
 
   @override
-  int get hashCode =>
-      (size == null ? 0 : size.hashCode) + (src == null ? 0 : src.hashCode);
+  int get hashCode => size.hashCode + src.hashCode;
 
   factory InstanceIcon.fromJson(Map<String, dynamic> json) =>
       _$InstanceIconFromJson(json);

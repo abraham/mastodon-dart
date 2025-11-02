@@ -7,9 +7,9 @@ part of 'appeal.dart';
 // **************************************************************************
 
 abstract class _$AppealCWProxy {
-  Appeal state(AppealStateEnum? state);
+  Appeal state(AppealStateEnum state);
 
-  Appeal text(String? text);
+  Appeal text(String text);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Appeal(...).copyWith.fieldName(value)`.
@@ -18,7 +18,7 @@ abstract class _$AppealCWProxy {
   /// ```dart
   /// Appeal(...).copyWith(id: 12, name: "My name")
   /// ```
-  Appeal call({AppealStateEnum? state, String? text});
+  Appeal call({AppealStateEnum state, String text});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -29,10 +29,10 @@ class _$AppealCWProxyImpl implements _$AppealCWProxy {
   final Appeal _value;
 
   @override
-  Appeal state(AppealStateEnum? state) => call(state: state);
+  Appeal state(AppealStateEnum state) => call(state: state);
 
   @override
-  Appeal text(String? text) => call(text: text);
+  Appeal text(String text) => call(text: text);
 
   @override
   /// Creates a new instance with the provided field values.
@@ -47,14 +47,14 @@ class _$AppealCWProxyImpl implements _$AppealCWProxy {
     Object? text = const $CopyWithPlaceholder(),
   }) {
     return Appeal(
-      state: state == const $CopyWithPlaceholder()
+      state: state == const $CopyWithPlaceholder() || state == null
           ? _value.state
           // ignore: cast_nullable_to_non_nullable
-          : state as AppealStateEnum?,
-      text: text == const $CopyWithPlaceholder()
+          : state as AppealStateEnum,
+      text: text == const $CopyWithPlaceholder() || text == null
           ? _value.text
           // ignore: cast_nullable_to_non_nullable
-          : text as String?,
+          : text as String,
     );
   }
 }
@@ -72,19 +72,20 @@ extension $AppealCopyWith on Appeal {
 
 Appeal _$AppealFromJson(Map<String, dynamic> json) =>
     $checkedCreate('Appeal', json, ($checkedConvert) {
+      $checkKeys(json, requiredKeys: const ['state', 'text']);
       final val = Appeal(
         state: $checkedConvert(
           'state',
-          (v) => $enumDecodeNullable(_$AppealStateEnumEnumMap, v),
+          (v) => $enumDecode(_$AppealStateEnumEnumMap, v),
         ),
-        text: $checkedConvert('text', (v) => v as String?),
+        text: $checkedConvert('text', (v) => v as String),
       );
       return val;
     });
 
 Map<String, dynamic> _$AppealToJson(Appeal instance) => <String, dynamic>{
-  'state': ?_$AppealStateEnumEnumMap[instance.state],
-  'text': ?instance.text,
+  'state': _$AppealStateEnumEnumMap[instance.state]!,
+  'text': instance.text,
 };
 
 const _$AppealStateEnumEnumMap = {

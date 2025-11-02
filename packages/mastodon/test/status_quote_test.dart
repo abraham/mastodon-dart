@@ -7,14 +7,14 @@ void main() {
   // TODO add properties to the entity
 
   group(StatusQuote, () {
-    // Status quotedStatus
-    test('to test the property `quotedStatus`', () async {
-      // TODO
-    });
-
     // The state of the quote. Unknown values should be treated as `unauthorized`.
     // QuoteStateEnum state
     test('to test the property `state`', () async {
+      // TODO
+    });
+
+    // Status quotedStatus
+    test('to test the property `quotedStatus`', () async {
       // TODO
     });
 

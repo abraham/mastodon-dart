@@ -25,8 +25,8 @@ abstract class _$InstanceConfigurationCWProxy {
 
   InstanceConfiguration limitedFederation(bool? limitedFederation);
 
-  InstanceConfiguration timelineAccess(
-    InstanceConfigurationTimelineAccess? timelineAccess,
+  InstanceConfiguration timelinesAccess(
+    InstanceConfigurationTimelinesAccess? timelinesAccess,
   );
 
   /// Creates a new instance with the provided field values.
@@ -44,7 +44,7 @@ abstract class _$InstanceConfigurationCWProxy {
     InstanceConfigurationTranslation translation,
     InstanceConfigurationUrls urls,
     bool? limitedFederation,
-    InstanceConfigurationTimelineAccess? timelineAccess,
+    InstanceConfigurationTimelinesAccess? timelinesAccess,
   });
 }
 
@@ -87,9 +87,9 @@ class _$InstanceConfigurationCWProxyImpl
       call(limitedFederation: limitedFederation);
 
   @override
-  InstanceConfiguration timelineAccess(
-    InstanceConfigurationTimelineAccess? timelineAccess,
-  ) => call(timelineAccess: timelineAccess);
+  InstanceConfiguration timelinesAccess(
+    InstanceConfigurationTimelinesAccess? timelinesAccess,
+  ) => call(timelinesAccess: timelinesAccess);
 
   @override
   /// Creates a new instance with the provided field values.
@@ -107,7 +107,7 @@ class _$InstanceConfigurationCWProxyImpl
     Object? translation = const $CopyWithPlaceholder(),
     Object? urls = const $CopyWithPlaceholder(),
     Object? limitedFederation = const $CopyWithPlaceholder(),
-    Object? timelineAccess = const $CopyWithPlaceholder(),
+    Object? timelinesAccess = const $CopyWithPlaceholder(),
   }) {
     return InstanceConfiguration(
       accounts: accounts == const $CopyWithPlaceholder() || accounts == null
@@ -141,10 +141,10 @@ class _$InstanceConfigurationCWProxyImpl
           ? _value.limitedFederation
           // ignore: cast_nullable_to_non_nullable
           : limitedFederation as bool?,
-      timelineAccess: timelineAccess == const $CopyWithPlaceholder()
-          ? _value.timelineAccess
+      timelinesAccess: timelinesAccess == const $CopyWithPlaceholder()
+          ? _value.timelinesAccess
           // ignore: cast_nullable_to_non_nullable
-          : timelineAccess as InstanceConfigurationTimelineAccess?,
+          : timelinesAccess as InstanceConfigurationTimelinesAccess?,
     );
   }
 }
@@ -213,11 +213,11 @@ InstanceConfiguration _$InstanceConfigurationFromJson(
         'limited_federation',
         (v) => v as bool?,
       ),
-      timelineAccess: $checkedConvert(
-        'timeline_access',
+      timelinesAccess: $checkedConvert(
+        'timelines_access',
         (v) => v == null
             ? null
-            : InstanceConfigurationTimelineAccess.fromJson(
+            : InstanceConfigurationTimelinesAccess.fromJson(
                 v as Map<String, dynamic>,
               ),
       ),
@@ -227,7 +227,7 @@ InstanceConfiguration _$InstanceConfigurationFromJson(
   fieldKeyMap: const {
     'mediaAttachments': 'media_attachments',
     'limitedFederation': 'limited_federation',
-    'timelineAccess': 'timeline_access',
+    'timelinesAccess': 'timelines_access',
   },
 );
 
@@ -241,5 +241,5 @@ Map<String, dynamic> _$InstanceConfigurationToJson(
   'translation': instance.translation.toJson(),
   'urls': instance.urls.toJson(),
   'limited_federation': ?instance.limitedFederation,
-  'timeline_access': ?instance.timelineAccess?.toJson(),
+  'timelines_access': ?instance.timelinesAccess?.toJson(),
 };

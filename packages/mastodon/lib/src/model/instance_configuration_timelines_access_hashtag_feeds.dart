@@ -6,7 +6,7 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-part 'instance_configuration_timeline_access_hashtag_feeds.g.dart';
+part 'instance_configuration_timelines_access_hashtag_feeds.g.dart';
 
 @CopyWith()
 @JsonSerializable(
@@ -15,22 +15,22 @@ part 'instance_configuration_timeline_access_hashtag_feeds.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class InstanceConfigurationTimelineAccessHashtagFeeds {
-  /// Returns a new [InstanceConfigurationTimelineAccessHashtagFeeds] instance.
-  InstanceConfigurationTimelineAccessHashtagFeeds({this.local, this.remote});
+class InstanceConfigurationTimelinesAccessHashtagFeeds {
+  /// Returns a new [InstanceConfigurationTimelinesAccessHashtagFeeds] instance.
+  InstanceConfigurationTimelinesAccessHashtagFeeds({this.local, this.remote});
 
   /// Access restrictions for local posts in hashtag feeds.
   @JsonKey(name: r'local', required: false, includeIfNull: false)
-  final InstanceConfigurationTimelineAccessHashtagFeedsLocalEnum? local;
+  final InstanceConfigurationTimelinesAccessHashtagFeedsLocalEnum? local;
 
   /// Access restrictions for remote posts in hashtag feeds.
   @JsonKey(name: r'remote', required: false, includeIfNull: false)
-  final InstanceConfigurationTimelineAccessHashtagFeedsRemoteEnum? remote;
+  final InstanceConfigurationTimelinesAccessHashtagFeedsRemoteEnum? remote;
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is InstanceConfigurationTimelineAccessHashtagFeeds &&
+      other is InstanceConfigurationTimelinesAccessHashtagFeeds &&
           other.local == local &&
           other.remote == remote;
 
@@ -39,12 +39,12 @@ class InstanceConfigurationTimelineAccessHashtagFeeds {
       (local == null ? 0 : local.hashCode) +
       (remote == null ? 0 : remote.hashCode);
 
-  factory InstanceConfigurationTimelineAccessHashtagFeeds.fromJson(
+  factory InstanceConfigurationTimelinesAccessHashtagFeeds.fromJson(
     Map<String, dynamic> json,
-  ) => _$InstanceConfigurationTimelineAccessHashtagFeedsFromJson(json);
+  ) => _$InstanceConfigurationTimelinesAccessHashtagFeedsFromJson(json);
 
   Map<String, dynamic> toJson() =>
-      _$InstanceConfigurationTimelineAccessHashtagFeedsToJson(this);
+      _$InstanceConfigurationTimelinesAccessHashtagFeedsToJson(this);
 
   @override
   String toString() {
@@ -53,7 +53,7 @@ class InstanceConfigurationTimelineAccessHashtagFeeds {
 }
 
 /// Access restrictions for local posts in hashtag feeds.
-enum InstanceConfigurationTimelineAccessHashtagFeedsLocalEnum {
+enum InstanceConfigurationTimelinesAccessHashtagFeedsLocalEnum {
   /// Access restrictions for local posts in hashtag feeds.
   @JsonValue(r'public')
   public(r'public'),
@@ -66,7 +66,7 @@ enum InstanceConfigurationTimelineAccessHashtagFeedsLocalEnum {
   @JsonValue(r'disabled')
   disabled(r'disabled');
 
-  const InstanceConfigurationTimelineAccessHashtagFeedsLocalEnum(this.value);
+  const InstanceConfigurationTimelinesAccessHashtagFeedsLocalEnum(this.value);
 
   final String value;
 
@@ -75,7 +75,7 @@ enum InstanceConfigurationTimelineAccessHashtagFeedsLocalEnum {
 }
 
 /// Access restrictions for remote posts in hashtag feeds.
-enum InstanceConfigurationTimelineAccessHashtagFeedsRemoteEnum {
+enum InstanceConfigurationTimelinesAccessHashtagFeedsRemoteEnum {
   /// Access restrictions for remote posts in hashtag feeds.
   @JsonValue(r'public')
   public(r'public'),
@@ -88,7 +88,7 @@ enum InstanceConfigurationTimelineAccessHashtagFeedsRemoteEnum {
   @JsonValue(r'disabled')
   disabled(r'disabled');
 
-  const InstanceConfigurationTimelineAccessHashtagFeedsRemoteEnum(this.value);
+  const InstanceConfigurationTimelinesAccessHashtagFeedsRemoteEnum(this.value);
 
   final String value;
 

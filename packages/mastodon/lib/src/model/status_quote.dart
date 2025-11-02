@@ -21,14 +21,14 @@ part 'status_quote.g.dart';
 )
 class StatusQuote {
   /// Returns a new [StatusQuote] instance.
-  StatusQuote({this.quotedStatus, this.state, this.quotedStatusId});
+  StatusQuote({required this.state, this.quotedStatus, this.quotedStatusId});
+
+  /// The state of the quote. Unknown values should be treated as `unauthorized`.
+  @JsonKey(name: r'state', required: true, includeIfNull: false)
+  final QuoteStateEnum state;
 
   @JsonKey(name: r'quoted_status', required: false, includeIfNull: false)
   final Status? quotedStatus;
-
-  /// The state of the quote. Unknown values should be treated as `unauthorized`.
-  @JsonKey(name: r'state', required: false, includeIfNull: false)
-  final QuoteStateEnum? state;
 
   /// The identifier of the status being quoted. This will be `null`, unless the `state` attribute is one of `accepted`, `blocked_account`, `blocked_domain` or `muted_account`.
   @JsonKey(name: r'quoted_status_id', required: false, includeIfNull: false)
@@ -38,13 +38,13 @@ class StatusQuote {
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is StatusQuote &&
-          other.quotedStatus == quotedStatus &&
           other.state == state &&
+          other.quotedStatus == quotedStatus &&
           other.quotedStatusId == quotedStatusId;
 
   @override
   int get hashCode =>
-      quotedStatus.hashCode + state.hashCode + quotedStatusId.hashCode;
+      state.hashCode + quotedStatus.hashCode + quotedStatusId.hashCode;
 
   factory StatusQuote.fromJson(Map<String, dynamic> json) =>
       _$StatusQuoteFromJson(json);

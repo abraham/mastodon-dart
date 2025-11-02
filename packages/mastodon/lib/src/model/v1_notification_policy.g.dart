@@ -7,15 +7,15 @@ part of 'v1_notification_policy.dart';
 // **************************************************************************
 
 abstract class _$V1NotificationPolicyCWProxy {
-  V1NotificationPolicy filterNewAccounts(bool? filterNewAccounts);
+  V1NotificationPolicy filterNewAccounts(bool filterNewAccounts);
 
-  V1NotificationPolicy filterNotFollowers(bool? filterNotFollowers);
+  V1NotificationPolicy filterNotFollowers(bool filterNotFollowers);
 
-  V1NotificationPolicy filterNotFollowing(bool? filterNotFollowing);
+  V1NotificationPolicy filterNotFollowing(bool filterNotFollowing);
 
-  V1NotificationPolicy filterPrivateMentions(bool? filterPrivateMentions);
+  V1NotificationPolicy filterPrivateMentions(bool filterPrivateMentions);
 
-  V1NotificationPolicy summary(NotificationPolicySummary? summary);
+  V1NotificationPolicy summary(NotificationPolicySummary summary);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `V1NotificationPolicy(...).copyWith.fieldName(value)`.
@@ -25,11 +25,11 @@ abstract class _$V1NotificationPolicyCWProxy {
   /// V1NotificationPolicy(...).copyWith(id: 12, name: "My name")
   /// ```
   V1NotificationPolicy call({
-    bool? filterNewAccounts,
-    bool? filterNotFollowers,
-    bool? filterNotFollowing,
-    bool? filterPrivateMentions,
-    NotificationPolicySummary? summary,
+    bool filterNewAccounts,
+    bool filterNotFollowers,
+    bool filterNotFollowing,
+    bool filterPrivateMentions,
+    NotificationPolicySummary summary,
   });
 }
 
@@ -42,23 +42,23 @@ class _$V1NotificationPolicyCWProxyImpl
   final V1NotificationPolicy _value;
 
   @override
-  V1NotificationPolicy filterNewAccounts(bool? filterNewAccounts) =>
+  V1NotificationPolicy filterNewAccounts(bool filterNewAccounts) =>
       call(filterNewAccounts: filterNewAccounts);
 
   @override
-  V1NotificationPolicy filterNotFollowers(bool? filterNotFollowers) =>
+  V1NotificationPolicy filterNotFollowers(bool filterNotFollowers) =>
       call(filterNotFollowers: filterNotFollowers);
 
   @override
-  V1NotificationPolicy filterNotFollowing(bool? filterNotFollowing) =>
+  V1NotificationPolicy filterNotFollowing(bool filterNotFollowing) =>
       call(filterNotFollowing: filterNotFollowing);
 
   @override
-  V1NotificationPolicy filterPrivateMentions(bool? filterPrivateMentions) =>
+  V1NotificationPolicy filterPrivateMentions(bool filterPrivateMentions) =>
       call(filterPrivateMentions: filterPrivateMentions);
 
   @override
-  V1NotificationPolicy summary(NotificationPolicySummary? summary) =>
+  V1NotificationPolicy summary(NotificationPolicySummary summary) =>
       call(summary: summary);
 
   @override
@@ -77,27 +77,34 @@ class _$V1NotificationPolicyCWProxyImpl
     Object? summary = const $CopyWithPlaceholder(),
   }) {
     return V1NotificationPolicy(
-      filterNewAccounts: filterNewAccounts == const $CopyWithPlaceholder()
+      filterNewAccounts:
+          filterNewAccounts == const $CopyWithPlaceholder() ||
+              filterNewAccounts == null
           ? _value.filterNewAccounts
           // ignore: cast_nullable_to_non_nullable
-          : filterNewAccounts as bool?,
-      filterNotFollowers: filterNotFollowers == const $CopyWithPlaceholder()
+          : filterNewAccounts as bool,
+      filterNotFollowers:
+          filterNotFollowers == const $CopyWithPlaceholder() ||
+              filterNotFollowers == null
           ? _value.filterNotFollowers
           // ignore: cast_nullable_to_non_nullable
-          : filterNotFollowers as bool?,
-      filterNotFollowing: filterNotFollowing == const $CopyWithPlaceholder()
+          : filterNotFollowers as bool,
+      filterNotFollowing:
+          filterNotFollowing == const $CopyWithPlaceholder() ||
+              filterNotFollowing == null
           ? _value.filterNotFollowing
           // ignore: cast_nullable_to_non_nullable
-          : filterNotFollowing as bool?,
+          : filterNotFollowing as bool,
       filterPrivateMentions:
-          filterPrivateMentions == const $CopyWithPlaceholder()
+          filterPrivateMentions == const $CopyWithPlaceholder() ||
+              filterPrivateMentions == null
           ? _value.filterPrivateMentions
           // ignore: cast_nullable_to_non_nullable
-          : filterPrivateMentions as bool?,
-      summary: summary == const $CopyWithPlaceholder()
+          : filterPrivateMentions as bool,
+      summary: summary == const $CopyWithPlaceholder() || summary == null
           ? _value.summary
           // ignore: cast_nullable_to_non_nullable
-          : summary as NotificationPolicySummary?,
+          : summary as NotificationPolicySummary,
     );
   }
 }
@@ -120,28 +127,36 @@ V1NotificationPolicy _$V1NotificationPolicyFromJson(
   'V1NotificationPolicy',
   json,
   ($checkedConvert) {
+    $checkKeys(
+      json,
+      requiredKeys: const [
+        'filter_new_accounts',
+        'filter_not_followers',
+        'filter_not_following',
+        'filter_private_mentions',
+        'summary',
+      ],
+    );
     final val = V1NotificationPolicy(
       filterNewAccounts: $checkedConvert(
         'filter_new_accounts',
-        (v) => v as bool?,
+        (v) => v as bool,
       ),
       filterNotFollowers: $checkedConvert(
         'filter_not_followers',
-        (v) => v as bool?,
+        (v) => v as bool,
       ),
       filterNotFollowing: $checkedConvert(
         'filter_not_following',
-        (v) => v as bool?,
+        (v) => v as bool,
       ),
       filterPrivateMentions: $checkedConvert(
         'filter_private_mentions',
-        (v) => v as bool?,
+        (v) => v as bool,
       ),
       summary: $checkedConvert(
         'summary',
-        (v) => v == null
-            ? null
-            : NotificationPolicySummary.fromJson(v as Map<String, dynamic>),
+        (v) => NotificationPolicySummary.fromJson(v as Map<String, dynamic>),
       ),
     );
     return val;
@@ -157,9 +172,9 @@ V1NotificationPolicy _$V1NotificationPolicyFromJson(
 Map<String, dynamic> _$V1NotificationPolicyToJson(
   V1NotificationPolicy instance,
 ) => <String, dynamic>{
-  'filter_new_accounts': ?instance.filterNewAccounts,
-  'filter_not_followers': ?instance.filterNotFollowers,
-  'filter_not_following': ?instance.filterNotFollowing,
-  'filter_private_mentions': ?instance.filterPrivateMentions,
-  'summary': ?instance.summary?.toJson(),
+  'filter_new_accounts': instance.filterNewAccounts,
+  'filter_not_followers': instance.filterNotFollowers,
+  'filter_not_following': instance.filterNotFollowing,
+  'filter_private_mentions': instance.filterPrivateMentions,
+  'summary': instance.summary.toJson(),
 };

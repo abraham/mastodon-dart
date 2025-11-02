@@ -7,17 +7,17 @@ part of 'notification_policy.dart';
 // **************************************************************************
 
 abstract class _$NotificationPolicyCWProxy {
-  NotificationPolicy forLimitedAccounts(String? forLimitedAccounts);
+  NotificationPolicy forLimitedAccounts(String forLimitedAccounts);
 
-  NotificationPolicy forNewAccounts(String? forNewAccounts);
+  NotificationPolicy forNewAccounts(String forNewAccounts);
 
-  NotificationPolicy forNotFollowers(String? forNotFollowers);
+  NotificationPolicy forNotFollowers(String forNotFollowers);
 
-  NotificationPolicy forNotFollowing(String? forNotFollowing);
+  NotificationPolicy forNotFollowing(String forNotFollowing);
 
-  NotificationPolicy forPrivateMentions(String? forPrivateMentions);
+  NotificationPolicy forPrivateMentions(String forPrivateMentions);
 
-  NotificationPolicy summary(NotificationPolicySummary? summary);
+  NotificationPolicy summary(NotificationPolicySummary summary);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `NotificationPolicy(...).copyWith.fieldName(value)`.
@@ -27,12 +27,12 @@ abstract class _$NotificationPolicyCWProxy {
   /// NotificationPolicy(...).copyWith(id: 12, name: "My name")
   /// ```
   NotificationPolicy call({
-    String? forLimitedAccounts,
-    String? forNewAccounts,
-    String? forNotFollowers,
-    String? forNotFollowing,
-    String? forPrivateMentions,
-    NotificationPolicySummary? summary,
+    String forLimitedAccounts,
+    String forNewAccounts,
+    String forNotFollowers,
+    String forNotFollowing,
+    String forPrivateMentions,
+    NotificationPolicySummary summary,
   });
 }
 
@@ -44,27 +44,27 @@ class _$NotificationPolicyCWProxyImpl implements _$NotificationPolicyCWProxy {
   final NotificationPolicy _value;
 
   @override
-  NotificationPolicy forLimitedAccounts(String? forLimitedAccounts) =>
+  NotificationPolicy forLimitedAccounts(String forLimitedAccounts) =>
       call(forLimitedAccounts: forLimitedAccounts);
 
   @override
-  NotificationPolicy forNewAccounts(String? forNewAccounts) =>
+  NotificationPolicy forNewAccounts(String forNewAccounts) =>
       call(forNewAccounts: forNewAccounts);
 
   @override
-  NotificationPolicy forNotFollowers(String? forNotFollowers) =>
+  NotificationPolicy forNotFollowers(String forNotFollowers) =>
       call(forNotFollowers: forNotFollowers);
 
   @override
-  NotificationPolicy forNotFollowing(String? forNotFollowing) =>
+  NotificationPolicy forNotFollowing(String forNotFollowing) =>
       call(forNotFollowing: forNotFollowing);
 
   @override
-  NotificationPolicy forPrivateMentions(String? forPrivateMentions) =>
+  NotificationPolicy forPrivateMentions(String forPrivateMentions) =>
       call(forPrivateMentions: forPrivateMentions);
 
   @override
-  NotificationPolicy summary(NotificationPolicySummary? summary) =>
+  NotificationPolicy summary(NotificationPolicySummary summary) =>
       call(summary: summary);
 
   @override
@@ -84,30 +84,40 @@ class _$NotificationPolicyCWProxyImpl implements _$NotificationPolicyCWProxy {
     Object? summary = const $CopyWithPlaceholder(),
   }) {
     return NotificationPolicy(
-      forLimitedAccounts: forLimitedAccounts == const $CopyWithPlaceholder()
+      forLimitedAccounts:
+          forLimitedAccounts == const $CopyWithPlaceholder() ||
+              forLimitedAccounts == null
           ? _value.forLimitedAccounts
           // ignore: cast_nullable_to_non_nullable
-          : forLimitedAccounts as String?,
-      forNewAccounts: forNewAccounts == const $CopyWithPlaceholder()
+          : forLimitedAccounts as String,
+      forNewAccounts:
+          forNewAccounts == const $CopyWithPlaceholder() ||
+              forNewAccounts == null
           ? _value.forNewAccounts
           // ignore: cast_nullable_to_non_nullable
-          : forNewAccounts as String?,
-      forNotFollowers: forNotFollowers == const $CopyWithPlaceholder()
+          : forNewAccounts as String,
+      forNotFollowers:
+          forNotFollowers == const $CopyWithPlaceholder() ||
+              forNotFollowers == null
           ? _value.forNotFollowers
           // ignore: cast_nullable_to_non_nullable
-          : forNotFollowers as String?,
-      forNotFollowing: forNotFollowing == const $CopyWithPlaceholder()
+          : forNotFollowers as String,
+      forNotFollowing:
+          forNotFollowing == const $CopyWithPlaceholder() ||
+              forNotFollowing == null
           ? _value.forNotFollowing
           // ignore: cast_nullable_to_non_nullable
-          : forNotFollowing as String?,
-      forPrivateMentions: forPrivateMentions == const $CopyWithPlaceholder()
+          : forNotFollowing as String,
+      forPrivateMentions:
+          forPrivateMentions == const $CopyWithPlaceholder() ||
+              forPrivateMentions == null
           ? _value.forPrivateMentions
           // ignore: cast_nullable_to_non_nullable
-          : forPrivateMentions as String?,
-      summary: summary == const $CopyWithPlaceholder()
+          : forPrivateMentions as String,
+      summary: summary == const $CopyWithPlaceholder() || summary == null
           ? _value.summary
           // ignore: cast_nullable_to_non_nullable
-          : summary as NotificationPolicySummary?,
+          : summary as NotificationPolicySummary,
     );
   }
 }
@@ -124,56 +134,57 @@ extension $NotificationPolicyCopyWith on NotificationPolicy {
 // JsonSerializableGenerator
 // **************************************************************************
 
-NotificationPolicy _$NotificationPolicyFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'NotificationPolicy',
+NotificationPolicy _$NotificationPolicyFromJson(
+  Map<String, dynamic> json,
+) => $checkedCreate(
+  'NotificationPolicy',
+  json,
+  ($checkedConvert) {
+    $checkKeys(
       json,
-      ($checkedConvert) {
-        final val = NotificationPolicy(
-          forLimitedAccounts: $checkedConvert(
-            'for_limited_accounts',
-            (v) => v as String?,
-          ),
-          forNewAccounts: $checkedConvert(
-            'for_new_accounts',
-            (v) => v as String?,
-          ),
-          forNotFollowers: $checkedConvert(
-            'for_not_followers',
-            (v) => v as String?,
-          ),
-          forNotFollowing: $checkedConvert(
-            'for_not_following',
-            (v) => v as String?,
-          ),
-          forPrivateMentions: $checkedConvert(
-            'for_private_mentions',
-            (v) => v as String?,
-          ),
-          summary: $checkedConvert(
-            'summary',
-            (v) => v == null
-                ? null
-                : NotificationPolicySummary.fromJson(v as Map<String, dynamic>),
-          ),
-        );
-        return val;
-      },
-      fieldKeyMap: const {
-        'forLimitedAccounts': 'for_limited_accounts',
-        'forNewAccounts': 'for_new_accounts',
-        'forNotFollowers': 'for_not_followers',
-        'forNotFollowing': 'for_not_following',
-        'forPrivateMentions': 'for_private_mentions',
-      },
+      requiredKeys: const [
+        'for_limited_accounts',
+        'for_new_accounts',
+        'for_not_followers',
+        'for_not_following',
+        'for_private_mentions',
+        'summary',
+      ],
     );
+    final val = NotificationPolicy(
+      forLimitedAccounts: $checkedConvert(
+        'for_limited_accounts',
+        (v) => v as String,
+      ),
+      forNewAccounts: $checkedConvert('for_new_accounts', (v) => v as String),
+      forNotFollowers: $checkedConvert('for_not_followers', (v) => v as String),
+      forNotFollowing: $checkedConvert('for_not_following', (v) => v as String),
+      forPrivateMentions: $checkedConvert(
+        'for_private_mentions',
+        (v) => v as String,
+      ),
+      summary: $checkedConvert(
+        'summary',
+        (v) => NotificationPolicySummary.fromJson(v as Map<String, dynamic>),
+      ),
+    );
+    return val;
+  },
+  fieldKeyMap: const {
+    'forLimitedAccounts': 'for_limited_accounts',
+    'forNewAccounts': 'for_new_accounts',
+    'forNotFollowers': 'for_not_followers',
+    'forNotFollowing': 'for_not_following',
+    'forPrivateMentions': 'for_private_mentions',
+  },
+);
 
 Map<String, dynamic> _$NotificationPolicyToJson(NotificationPolicy instance) =>
     <String, dynamic>{
-      'for_limited_accounts': ?instance.forLimitedAccounts,
-      'for_new_accounts': ?instance.forNewAccounts,
-      'for_not_followers': ?instance.forNotFollowers,
-      'for_not_following': ?instance.forNotFollowing,
-      'for_private_mentions': ?instance.forPrivateMentions,
-      'summary': ?instance.summary?.toJson(),
+      'for_limited_accounts': instance.forLimitedAccounts,
+      'for_new_accounts': instance.forNewAccounts,
+      'for_not_followers': instance.forNotFollowers,
+      'for_not_following': instance.forNotFollowing,
+      'for_private_mentions': instance.forPrivateMentions,
+      'summary': instance.summary.toJson(),
     };

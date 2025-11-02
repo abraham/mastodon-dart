@@ -7,9 +7,9 @@ part of 'status_quote.dart';
 // **************************************************************************
 
 abstract class _$StatusQuoteCWProxy {
-  StatusQuote quotedStatus(Status? quotedStatus);
+  StatusQuote state(QuoteStateEnum state);
 
-  StatusQuote state(QuoteStateEnum? state);
+  StatusQuote quotedStatus(Status? quotedStatus);
 
   StatusQuote quotedStatusId(String? quotedStatusId);
 
@@ -21,8 +21,8 @@ abstract class _$StatusQuoteCWProxy {
   /// StatusQuote(...).copyWith(id: 12, name: "My name")
   /// ```
   StatusQuote call({
+    QuoteStateEnum state,
     Status? quotedStatus,
-    QuoteStateEnum? state,
     String? quotedStatusId,
   });
 }
@@ -35,11 +35,11 @@ class _$StatusQuoteCWProxyImpl implements _$StatusQuoteCWProxy {
   final StatusQuote _value;
 
   @override
-  StatusQuote quotedStatus(Status? quotedStatus) =>
-      call(quotedStatus: quotedStatus);
+  StatusQuote state(QuoteStateEnum state) => call(state: state);
 
   @override
-  StatusQuote state(QuoteStateEnum? state) => call(state: state);
+  StatusQuote quotedStatus(Status? quotedStatus) =>
+      call(quotedStatus: quotedStatus);
 
   @override
   StatusQuote quotedStatusId(String? quotedStatusId) =>
@@ -54,19 +54,19 @@ class _$StatusQuoteCWProxyImpl implements _$StatusQuoteCWProxy {
   /// StatusQuote(...).copyWith(id: 12, name: "My name")
   /// ```
   StatusQuote call({
-    Object? quotedStatus = const $CopyWithPlaceholder(),
     Object? state = const $CopyWithPlaceholder(),
+    Object? quotedStatus = const $CopyWithPlaceholder(),
     Object? quotedStatusId = const $CopyWithPlaceholder(),
   }) {
     return StatusQuote(
+      state: state == const $CopyWithPlaceholder() || state == null
+          ? _value.state
+          // ignore: cast_nullable_to_non_nullable
+          : state as QuoteStateEnum,
       quotedStatus: quotedStatus == const $CopyWithPlaceholder()
           ? _value.quotedStatus
           // ignore: cast_nullable_to_non_nullable
           : quotedStatus as Status?,
-      state: state == const $CopyWithPlaceholder()
-          ? _value.state
-          // ignore: cast_nullable_to_non_nullable
-          : state as QuoteStateEnum?,
       quotedStatusId: quotedStatusId == const $CopyWithPlaceholder()
           ? _value.quotedStatusId
           // ignore: cast_nullable_to_non_nullable
@@ -90,14 +90,15 @@ StatusQuote _$StatusQuoteFromJson(Map<String, dynamic> json) => $checkedCreate(
   'StatusQuote',
   json,
   ($checkedConvert) {
+    $checkKeys(json, requiredKeys: const ['state']);
     final val = StatusQuote(
+      state: $checkedConvert(
+        'state',
+        (v) => $enumDecode(_$QuoteStateEnumEnumMap, v),
+      ),
       quotedStatus: $checkedConvert(
         'quoted_status',
         (v) => v == null ? null : Status.fromJson(v as Map<String, dynamic>),
-      ),
-      state: $checkedConvert(
-        'state',
-        (v) => $enumDecodeNullable(_$QuoteStateEnumEnumMap, v),
       ),
       quotedStatusId: $checkedConvert('quoted_status_id', (v) => v as String?),
     );
@@ -111,8 +112,8 @@ StatusQuote _$StatusQuoteFromJson(Map<String, dynamic> json) => $checkedCreate(
 
 Map<String, dynamic> _$StatusQuoteToJson(StatusQuote instance) =>
     <String, dynamic>{
+      'state': _$QuoteStateEnumEnumMap[instance.state]!,
       'quoted_status': ?instance.quotedStatus?.toJson(),
-      'state': ?_$QuoteStateEnumEnumMap[instance.state],
       'quoted_status_id': ?instance.quotedStatusId,
     };
 

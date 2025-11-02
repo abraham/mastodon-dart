@@ -20,15 +20,15 @@ void main() {
       // TODO
     });
 
-    // Partial accounts referenced by grouped notifications. Those are only returned when requesting grouped notifications with `expand_accounts=partial_avatars`.
-    // List<PartialAccountWithAvatar> partialAccounts
-    test('to test the property `partialAccounts`', () async {
-      // TODO
-    });
-
     // Statuses referenced by grouped notifications.
     // List<Status> statuses
     test('to test the property `statuses`', () async {
+      // TODO
+    });
+
+    // Partial accounts referenced by grouped notifications. Those are only returned when requesting grouped notifications with `expand_accounts=partial_avatars`.
+    // List<PartialAccountWithAvatar> partialAccounts
+    test('to test the property `partialAccounts`', () async {
       // TODO
     });
   });

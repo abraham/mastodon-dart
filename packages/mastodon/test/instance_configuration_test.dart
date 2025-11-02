@@ -43,8 +43,8 @@ void main() {
       // TODO
     });
 
-    // InstanceConfigurationTimelineAccess timelineAccess
-    test('to test the property `timelineAccess`', () async {
+    // InstanceConfigurationTimelinesAccess timelinesAccess
+    test('to test the property `timelinesAccess`', () async {
       // TODO
     });
   });

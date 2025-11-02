@@ -7,9 +7,9 @@ part of 'instance_icon.dart';
 // **************************************************************************
 
 abstract class _$InstanceIconCWProxy {
-  InstanceIcon size(String? size);
+  InstanceIcon size(String size);
 
-  InstanceIcon src(String? src);
+  InstanceIcon src(String src);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `InstanceIcon(...).copyWith.fieldName(value)`.
@@ -18,7 +18,7 @@ abstract class _$InstanceIconCWProxy {
   /// ```dart
   /// InstanceIcon(...).copyWith(id: 12, name: "My name")
   /// ```
-  InstanceIcon call({String? size, String? src});
+  InstanceIcon call({String size, String src});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -29,10 +29,10 @@ class _$InstanceIconCWProxyImpl implements _$InstanceIconCWProxy {
   final InstanceIcon _value;
 
   @override
-  InstanceIcon size(String? size) => call(size: size);
+  InstanceIcon size(String size) => call(size: size);
 
   @override
-  InstanceIcon src(String? src) => call(src: src);
+  InstanceIcon src(String src) => call(src: src);
 
   @override
   /// Creates a new instance with the provided field values.
@@ -47,14 +47,14 @@ class _$InstanceIconCWProxyImpl implements _$InstanceIconCWProxy {
     Object? src = const $CopyWithPlaceholder(),
   }) {
     return InstanceIcon(
-      size: size == const $CopyWithPlaceholder()
+      size: size == const $CopyWithPlaceholder() || size == null
           ? _value.size
           // ignore: cast_nullable_to_non_nullable
-          : size as String?,
-      src: src == const $CopyWithPlaceholder()
+          : size as String,
+      src: src == const $CopyWithPlaceholder() || src == null
           ? _value.src
           // ignore: cast_nullable_to_non_nullable
-          : src as String?,
+          : src as String,
     );
   }
 }
@@ -72,12 +72,13 @@ extension $InstanceIconCopyWith on InstanceIcon {
 
 InstanceIcon _$InstanceIconFromJson(Map<String, dynamic> json) =>
     $checkedCreate('InstanceIcon', json, ($checkedConvert) {
+      $checkKeys(json, requiredKeys: const ['size', 'src']);
       final val = InstanceIcon(
-        size: $checkedConvert('size', (v) => v as String?),
-        src: $checkedConvert('src', (v) => v as String?),
+        size: $checkedConvert('size', (v) => v as String),
+        src: $checkedConvert('src', (v) => v as String),
       );
       return val;
     });
 
 Map<String, dynamic> _$InstanceIconToJson(InstanceIcon instance) =>
-    <String, dynamic>{'size': ?instance.size, 'src': ?instance.src};
+    <String, dynamic>{'size': instance.size, 'src': instance.src};
