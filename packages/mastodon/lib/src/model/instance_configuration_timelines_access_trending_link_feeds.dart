@@ -6,7 +6,7 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-part 'instance_configuration_timeline_access_trending_link_feeds.g.dart';
+part 'instance_configuration_timelines_access_trending_link_feeds.g.dart';
 
 @CopyWith()
 @JsonSerializable(
@@ -15,9 +15,9 @@ part 'instance_configuration_timeline_access_trending_link_feeds.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class InstanceConfigurationTimelineAccessTrendingLinkFeeds {
-  /// Returns a new [InstanceConfigurationTimelineAccessTrendingLinkFeeds] instance.
-  InstanceConfigurationTimelineAccessTrendingLinkFeeds({
+class InstanceConfigurationTimelinesAccessTrendingLinkFeeds {
+  /// Returns a new [InstanceConfigurationTimelinesAccessTrendingLinkFeeds] instance.
+  InstanceConfigurationTimelinesAccessTrendingLinkFeeds({
     this.local,
 
     this.remote,
@@ -25,16 +25,16 @@ class InstanceConfigurationTimelineAccessTrendingLinkFeeds {
 
   /// Access restrictions for local posts in the trending link feeds.
   @JsonKey(name: r'local', required: false, includeIfNull: false)
-  final InstanceConfigurationTimelineAccessTrendingLinkFeedsLocalEnum? local;
+  final InstanceConfigurationTimelinesAccessTrendingLinkFeedsLocalEnum? local;
 
   /// Access restrictions for remote posts in trending link feeds.
   @JsonKey(name: r'remote', required: false, includeIfNull: false)
-  final InstanceConfigurationTimelineAccessTrendingLinkFeedsRemoteEnum? remote;
+  final InstanceConfigurationTimelinesAccessTrendingLinkFeedsRemoteEnum? remote;
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is InstanceConfigurationTimelineAccessTrendingLinkFeeds &&
+      other is InstanceConfigurationTimelinesAccessTrendingLinkFeeds &&
           other.local == local &&
           other.remote == remote;
 
@@ -43,12 +43,12 @@ class InstanceConfigurationTimelineAccessTrendingLinkFeeds {
       (local == null ? 0 : local.hashCode) +
       (remote == null ? 0 : remote.hashCode);
 
-  factory InstanceConfigurationTimelineAccessTrendingLinkFeeds.fromJson(
+  factory InstanceConfigurationTimelinesAccessTrendingLinkFeeds.fromJson(
     Map<String, dynamic> json,
-  ) => _$InstanceConfigurationTimelineAccessTrendingLinkFeedsFromJson(json);
+  ) => _$InstanceConfigurationTimelinesAccessTrendingLinkFeedsFromJson(json);
 
   Map<String, dynamic> toJson() =>
-      _$InstanceConfigurationTimelineAccessTrendingLinkFeedsToJson(this);
+      _$InstanceConfigurationTimelinesAccessTrendingLinkFeedsToJson(this);
 
   @override
   String toString() {
@@ -57,7 +57,7 @@ class InstanceConfigurationTimelineAccessTrendingLinkFeeds {
 }
 
 /// Access restrictions for local posts in the trending link feeds.
-enum InstanceConfigurationTimelineAccessTrendingLinkFeedsLocalEnum {
+enum InstanceConfigurationTimelinesAccessTrendingLinkFeedsLocalEnum {
   /// Access restrictions for local posts in the trending link feeds.
   @JsonValue(r'public')
   public(r'public'),
@@ -70,7 +70,7 @@ enum InstanceConfigurationTimelineAccessTrendingLinkFeedsLocalEnum {
   @JsonValue(r'disabled')
   disabled(r'disabled');
 
-  const InstanceConfigurationTimelineAccessTrendingLinkFeedsLocalEnum(
+  const InstanceConfigurationTimelinesAccessTrendingLinkFeedsLocalEnum(
     this.value,
   );
 
@@ -81,7 +81,7 @@ enum InstanceConfigurationTimelineAccessTrendingLinkFeedsLocalEnum {
 }
 
 /// Access restrictions for remote posts in trending link feeds.
-enum InstanceConfigurationTimelineAccessTrendingLinkFeedsRemoteEnum {
+enum InstanceConfigurationTimelinesAccessTrendingLinkFeedsRemoteEnum {
   /// Access restrictions for remote posts in trending link feeds.
   @JsonValue(r'public')
   public(r'public'),
@@ -94,7 +94,7 @@ enum InstanceConfigurationTimelineAccessTrendingLinkFeedsRemoteEnum {
   @JsonValue(r'disabled')
   disabled(r'disabled');
 
-  const InstanceConfigurationTimelineAccessTrendingLinkFeedsRemoteEnum(
+  const InstanceConfigurationTimelinesAccessTrendingLinkFeedsRemoteEnum(
     this.value,
   );
 

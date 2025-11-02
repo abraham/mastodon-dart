@@ -7,7 +7,7 @@ part of 'translation_poll_option.dart';
 // **************************************************************************
 
 abstract class _$TranslationPollOptionCWProxy {
-  TranslationPollOption title(String? title);
+  TranslationPollOption title(String title);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `TranslationPollOption(...).copyWith.fieldName(value)`.
@@ -16,7 +16,7 @@ abstract class _$TranslationPollOptionCWProxy {
   /// ```dart
   /// TranslationPollOption(...).copyWith(id: 12, name: "My name")
   /// ```
-  TranslationPollOption call({String? title});
+  TranslationPollOption call({String title});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -28,7 +28,7 @@ class _$TranslationPollOptionCWProxyImpl
   final TranslationPollOption _value;
 
   @override
-  TranslationPollOption title(String? title) => call(title: title);
+  TranslationPollOption title(String title) => call(title: title);
 
   @override
   /// Creates a new instance with the provided field values.
@@ -40,10 +40,10 @@ class _$TranslationPollOptionCWProxyImpl
   /// ```
   TranslationPollOption call({Object? title = const $CopyWithPlaceholder()}) {
     return TranslationPollOption(
-      title: title == const $CopyWithPlaceholder()
+      title: title == const $CopyWithPlaceholder() || title == null
           ? _value.title
           // ignore: cast_nullable_to_non_nullable
-          : title as String?,
+          : title as String,
     );
   }
 }
@@ -63,12 +63,13 @@ extension $TranslationPollOptionCopyWith on TranslationPollOption {
 TranslationPollOption _$TranslationPollOptionFromJson(
   Map<String, dynamic> json,
 ) => $checkedCreate('TranslationPollOption', json, ($checkedConvert) {
+  $checkKeys(json, requiredKeys: const ['title']);
   final val = TranslationPollOption(
-    title: $checkedConvert('title', (v) => v as String?),
+    title: $checkedConvert('title', (v) => v as String),
   );
   return val;
 });
 
 Map<String, dynamic> _$TranslationPollOptionToJson(
   TranslationPollOption instance,
-) => <String, dynamic>{'title': ?instance.title};
+) => <String, dynamic>{'title': instance.title};

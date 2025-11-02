@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 
 View link timeline
 
-View public statuses containing a link to the specified currently-trending article. This only lists statuses from people who have opted in to discoverability features.  Version history:  4.3.0 - added
+View public statuses containing a link to the specified currently-trending article. This only lists statuses from people who have opted in to discoverability features.  Version history:  4.3.0 - added\\ 4.5.0 - add [access control settings]
 
 ### Example
 ```dart
@@ -177,7 +177,7 @@ Name | Type | Description  | Notes
 
 View public timeline
 
-View public statuses.  Version history:  0.0.0 - added\\ 2.3.0 - added `only_media`\\ 2.6.0 - add `min_id`\\ 3.0.0 - auth is required if public preview is disabled\\ 3.1.4 - added `remote`\\ 3.3.0 - both `min_id` and `max_id` can be used at the same time now
+View public statuses.  Version history:  0.0.0 - added\\ 2.3.0 - added `only_media`\\ 2.6.0 - add `min_id`\\ 3.0.0 - auth is required if public preview is disabled\\ 3.1.4 - added `remote`\\ 3.3.0 - both `min_id` and `max_id` can be used at the same time now\\ 4.5.0 - add [access control settings]
 
 ### Example
 ```dart
@@ -287,7 +287,7 @@ Name | Type | Description  | Notes
 
 View hashtag timeline
 
-View public statuses containing the given hashtag.  Version history:  0.0.0 - added\\ 2.3.0 - added `only_media`\\ 2.6.0 - add `min_id`\\ 2.7.0 - add `any[]`, `all[]`, `none[]` for additional tags\\ 3.0.0 - auth is required if public preview is disabled\\ 3.3.0 - both `min_id` and `max_id` can be used at the same time now. add `remote`
+View public statuses containing the given hashtag.  Version history:  0.0.0 - added\\ 2.3.0 - added `only_media`\\ 2.6.0 - add `min_id`\\ 2.7.0 - add `any[]`, `all[]`, `none[]` for additional tags\\ 3.0.0 - auth is required if public preview is disabled\\ 3.3.0 - both `min_id` and `max_id` can be used at the same time now. add `remote`\\ 4.5.0 - add [access control settings]
 
 ### Example
 ```dart

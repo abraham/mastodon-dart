@@ -281,12 +281,12 @@ void main() async {
       filePath: 'packages/mastodon/lib/src/model/preview_card_author.dart',
       replacements: [
         Replacement(
-          "@JsonKey(name: r'url', required: false, includeIfNull: false)",
+          "@JsonKey(name: r'url', required: true, includeIfNull: false)",
           "@JsonKey(name: r'url', required: false, includeIfNull: false, fromJson: _parseAuthorUrl)",
         ),
         Replacement(
-          "final Uri? url;",
-          "final Uri? url;static Uri? _parseAuthorUrl(String? value) {if (value == null) {return null;}return Uri.tryParse(value);}",
+          "final Uri url;",
+          "final Uri? url;static Uri? _parseAuthorUrl(String value) {if (value.isEmpty) {return null;}return Uri.tryParse(value);}",
         ),
       ],
       description: "Workaround invalid author url",

@@ -7,6 +7,7 @@ void main() {
   // TODO add properties to the entity
 
   group(NotificationRequest, () {
+    // The account that performed the action that generated the filtered notifications.
     // Account account
     test('to test the property `account`', () async {
       // TODO
@@ -24,11 +25,6 @@ void main() {
       // TODO
     });
 
-    // Status lastStatus
-    test('to test the property `lastStatus`', () async {
-      // TODO
-    });
-
     // How many of this account's notifications were filtered.
     // String notificationsCount
     test('to test the property `notificationsCount`', () async {
@@ -38,6 +34,11 @@ void main() {
     // The timestamp of when the notification request was last updated.
     // DateTime updatedAt
     test('to test the property `updatedAt`', () async {
+      // TODO
+    });
+
+    // Status lastStatus
+    test('to test the property `lastStatus`', () async {
       // TODO
     });
   });

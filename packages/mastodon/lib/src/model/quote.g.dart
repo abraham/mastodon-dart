@@ -7,9 +7,9 @@ part of 'quote.dart';
 // **************************************************************************
 
 abstract class _$QuoteCWProxy {
-  Quote quotedStatus(Status? quotedStatus);
+  Quote state(QuoteStateEnum state);
 
-  Quote state(QuoteStateEnum? state);
+  Quote quotedStatus(Status? quotedStatus);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Quote(...).copyWith.fieldName(value)`.
@@ -18,7 +18,7 @@ abstract class _$QuoteCWProxy {
   /// ```dart
   /// Quote(...).copyWith(id: 12, name: "My name")
   /// ```
-  Quote call({Status? quotedStatus, QuoteStateEnum? state});
+  Quote call({QuoteStateEnum state, Status? quotedStatus});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -29,10 +29,10 @@ class _$QuoteCWProxyImpl implements _$QuoteCWProxy {
   final Quote _value;
 
   @override
-  Quote quotedStatus(Status? quotedStatus) => call(quotedStatus: quotedStatus);
+  Quote state(QuoteStateEnum state) => call(state: state);
 
   @override
-  Quote state(QuoteStateEnum? state) => call(state: state);
+  Quote quotedStatus(Status? quotedStatus) => call(quotedStatus: quotedStatus);
 
   @override
   /// Creates a new instance with the provided field values.
@@ -43,18 +43,18 @@ class _$QuoteCWProxyImpl implements _$QuoteCWProxy {
   /// Quote(...).copyWith(id: 12, name: "My name")
   /// ```
   Quote call({
-    Object? quotedStatus = const $CopyWithPlaceholder(),
     Object? state = const $CopyWithPlaceholder(),
+    Object? quotedStatus = const $CopyWithPlaceholder(),
   }) {
     return Quote(
+      state: state == const $CopyWithPlaceholder() || state == null
+          ? _value.state
+          // ignore: cast_nullable_to_non_nullable
+          : state as QuoteStateEnum,
       quotedStatus: quotedStatus == const $CopyWithPlaceholder()
           ? _value.quotedStatus
           // ignore: cast_nullable_to_non_nullable
           : quotedStatus as Status?,
-      state: state == const $CopyWithPlaceholder()
-          ? _value.state
-          // ignore: cast_nullable_to_non_nullable
-          : state as QuoteStateEnum?,
     );
   }
 }
@@ -72,22 +72,23 @@ extension $QuoteCopyWith on Quote {
 
 Quote _$QuoteFromJson(Map<String, dynamic> json) =>
     $checkedCreate('Quote', json, ($checkedConvert) {
+      $checkKeys(json, requiredKeys: const ['state']);
       final val = Quote(
+        state: $checkedConvert(
+          'state',
+          (v) => $enumDecode(_$QuoteStateEnumEnumMap, v),
+        ),
         quotedStatus: $checkedConvert(
           'quoted_status',
           (v) => v == null ? null : Status.fromJson(v as Map<String, dynamic>),
-        ),
-        state: $checkedConvert(
-          'state',
-          (v) => $enumDecodeNullable(_$QuoteStateEnumEnumMap, v),
         ),
       );
       return val;
     }, fieldKeyMap: const {'quotedStatus': 'quoted_status'});
 
 Map<String, dynamic> _$QuoteToJson(Quote instance) => <String, dynamic>{
+  'state': _$QuoteStateEnumEnumMap[instance.state]!,
   'quoted_status': ?instance.quotedStatus?.toJson(),
-  'state': ?_$QuoteStateEnumEnumMap[instance.state],
 };
 
 const _$QuoteStateEnumEnumMap = {

@@ -1,13 +1,13 @@
 import 'package:test/test.dart';
 import 'package:mastodon/mastodon.dart';
 
-// tests for InstanceConfigurationTimelineAccessHashtagFeeds
+// tests for InstanceConfigurationTimelinesAccessHashtagFeeds
 void main() {
-  final InstanceConfigurationTimelineAccessHashtagFeeds?
-  instance = /* InstanceConfigurationTimelineAccessHashtagFeeds(...) */ null;
+  final InstanceConfigurationTimelinesAccessHashtagFeeds?
+  instance = /* InstanceConfigurationTimelinesAccessHashtagFeeds(...) */ null;
   // TODO add properties to the entity
 
-  group(InstanceConfigurationTimelineAccessHashtagFeeds, () {
+  group(InstanceConfigurationTimelinesAccessHashtagFeeds, () {
     // Access restrictions for local posts in hashtag feeds.
     // String local
     test('to test the property `local`', () async {

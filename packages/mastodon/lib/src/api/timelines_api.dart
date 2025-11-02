@@ -206,7 +206,7 @@ class TimelinesApi {
   }
 
   /// View link timeline
-  /// View public statuses containing a link to the specified currently-trending article. This only lists statuses from people who have opted in to discoverability features.  Version history:  4.3.0 - added
+  /// View public statuses containing a link to the specified currently-trending article. This only lists statuses from people who have opted in to discoverability features.  Version history:  4.3.0 - added\\ 4.5.0 - add [access control settings]
   ///
   /// Parameters:
   /// * [url] - The URL of the trending article.
@@ -302,7 +302,7 @@ class TimelinesApi {
   }
 
   /// View public timeline
-  /// View public statuses.  Version history:  0.0.0 - added\\ 2.3.0 - added &#x60;only_media&#x60;\\ 2.6.0 - add &#x60;min_id&#x60;\\ 3.0.0 - auth is required if public preview is disabled\\ 3.1.4 - added &#x60;remote&#x60;\\ 3.3.0 - both &#x60;min_id&#x60; and &#x60;max_id&#x60; can be used at the same time now
+  /// View public statuses.  Version history:  0.0.0 - added\\ 2.3.0 - added &#x60;only_media&#x60;\\ 2.6.0 - add &#x60;min_id&#x60;\\ 3.0.0 - auth is required if public preview is disabled\\ 3.1.4 - added &#x60;remote&#x60;\\ 3.3.0 - both &#x60;min_id&#x60; and &#x60;max_id&#x60; can be used at the same time now\\ 4.5.0 - add [access control settings]
   ///
   /// Parameters:
   /// * [limit] - Maximum number of results to return. Defaults to 20 statuses. Max 40 statuses.
@@ -504,7 +504,7 @@ class TimelinesApi {
   }
 
   /// View hashtag timeline
-  /// View public statuses containing the given hashtag.  Version history:  0.0.0 - added\\ 2.3.0 - added &#x60;only_media&#x60;\\ 2.6.0 - add &#x60;min_id&#x60;\\ 2.7.0 - add &#x60;any[]&#x60;, &#x60;all[]&#x60;, &#x60;none[]&#x60; for additional tags\\ 3.0.0 - auth is required if public preview is disabled\\ 3.3.0 - both &#x60;min_id&#x60; and &#x60;max_id&#x60; can be used at the same time now. add &#x60;remote&#x60;
+  /// View public statuses containing the given hashtag.  Version history:  0.0.0 - added\\ 2.3.0 - added &#x60;only_media&#x60;\\ 2.6.0 - add &#x60;min_id&#x60;\\ 2.7.0 - add &#x60;any[]&#x60;, &#x60;all[]&#x60;, &#x60;none[]&#x60; for additional tags\\ 3.0.0 - auth is required if public preview is disabled\\ 3.3.0 - both &#x60;min_id&#x60; and &#x60;max_id&#x60; can be used at the same time now. add &#x60;remote&#x60;\\ 4.5.0 - add [access control settings]
   ///
   /// Parameters:
   /// * [hashtag] - hashtag parameter

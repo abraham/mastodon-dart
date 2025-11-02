@@ -7,9 +7,9 @@ part of 'shallow_quote.dart';
 // **************************************************************************
 
 abstract class _$ShallowQuoteCWProxy {
-  ShallowQuote quotedStatusId(String? quotedStatusId);
+  ShallowQuote state(QuoteStateEnum state);
 
-  ShallowQuote state(QuoteStateEnum? state);
+  ShallowQuote quotedStatusId(String? quotedStatusId);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ShallowQuote(...).copyWith.fieldName(value)`.
@@ -18,7 +18,7 @@ abstract class _$ShallowQuoteCWProxy {
   /// ```dart
   /// ShallowQuote(...).copyWith(id: 12, name: "My name")
   /// ```
-  ShallowQuote call({String? quotedStatusId, QuoteStateEnum? state});
+  ShallowQuote call({QuoteStateEnum state, String? quotedStatusId});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -29,11 +29,11 @@ class _$ShallowQuoteCWProxyImpl implements _$ShallowQuoteCWProxy {
   final ShallowQuote _value;
 
   @override
-  ShallowQuote quotedStatusId(String? quotedStatusId) =>
-      call(quotedStatusId: quotedStatusId);
+  ShallowQuote state(QuoteStateEnum state) => call(state: state);
 
   @override
-  ShallowQuote state(QuoteStateEnum? state) => call(state: state);
+  ShallowQuote quotedStatusId(String? quotedStatusId) =>
+      call(quotedStatusId: quotedStatusId);
 
   @override
   /// Creates a new instance with the provided field values.
@@ -44,18 +44,18 @@ class _$ShallowQuoteCWProxyImpl implements _$ShallowQuoteCWProxy {
   /// ShallowQuote(...).copyWith(id: 12, name: "My name")
   /// ```
   ShallowQuote call({
-    Object? quotedStatusId = const $CopyWithPlaceholder(),
     Object? state = const $CopyWithPlaceholder(),
+    Object? quotedStatusId = const $CopyWithPlaceholder(),
   }) {
     return ShallowQuote(
+      state: state == const $CopyWithPlaceholder() || state == null
+          ? _value.state
+          // ignore: cast_nullable_to_non_nullable
+          : state as QuoteStateEnum,
       quotedStatusId: quotedStatusId == const $CopyWithPlaceholder()
           ? _value.quotedStatusId
           // ignore: cast_nullable_to_non_nullable
           : quotedStatusId as String?,
-      state: state == const $CopyWithPlaceholder()
-          ? _value.state
-          // ignore: cast_nullable_to_non_nullable
-          : state as QuoteStateEnum?,
     );
   }
 }
@@ -73,14 +73,15 @@ extension $ShallowQuoteCopyWith on ShallowQuote {
 
 ShallowQuote _$ShallowQuoteFromJson(Map<String, dynamic> json) =>
     $checkedCreate('ShallowQuote', json, ($checkedConvert) {
+      $checkKeys(json, requiredKeys: const ['state']);
       final val = ShallowQuote(
+        state: $checkedConvert(
+          'state',
+          (v) => $enumDecode(_$QuoteStateEnumEnumMap, v),
+        ),
         quotedStatusId: $checkedConvert(
           'quoted_status_id',
           (v) => v as String?,
-        ),
-        state: $checkedConvert(
-          'state',
-          (v) => $enumDecodeNullable(_$QuoteStateEnumEnumMap, v),
         ),
       );
       return val;
@@ -88,8 +89,8 @@ ShallowQuote _$ShallowQuoteFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$ShallowQuoteToJson(ShallowQuote instance) =>
     <String, dynamic>{
+      'state': _$QuoteStateEnumEnumMap[instance.state]!,
       'quoted_status_id': ?instance.quotedStatusId,
-      'state': ?_$QuoteStateEnumEnumMap[instance.state],
     };
 
 const _$QuoteStateEnumEnumMap = {

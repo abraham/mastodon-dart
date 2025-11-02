@@ -7,19 +7,19 @@ part of 'account_warning.dart';
 // **************************************************************************
 
 abstract class _$AccountWarningCWProxy {
-  AccountWarning action(AccountWarningActionEnum? action);
+  AccountWarning action(AccountWarningActionEnum action);
+
+  AccountWarning createdAt(DateTime createdAt);
+
+  AccountWarning id(String id);
+
+  AccountWarning targetAccount(Account targetAccount);
+
+  AccountWarning text(String text);
 
   AccountWarning appeal(Appeal? appeal);
 
-  AccountWarning createdAt(DateTime? createdAt);
-
-  AccountWarning id(String? id);
-
   AccountWarning statusIds(List<String>? statusIds);
-
-  AccountWarning targetAccount(Account? targetAccount);
-
-  AccountWarning text(String? text);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `AccountWarning(...).copyWith.fieldName(value)`.
@@ -29,13 +29,13 @@ abstract class _$AccountWarningCWProxy {
   /// AccountWarning(...).copyWith(id: 12, name: "My name")
   /// ```
   AccountWarning call({
-    AccountWarningActionEnum? action,
+    AccountWarningActionEnum action,
+    DateTime createdAt,
+    String id,
+    Account targetAccount,
+    String text,
     Appeal? appeal,
-    DateTime? createdAt,
-    String? id,
     List<String>? statusIds,
-    Account? targetAccount,
-    String? text,
   });
 }
 
@@ -47,28 +47,28 @@ class _$AccountWarningCWProxyImpl implements _$AccountWarningCWProxy {
   final AccountWarning _value;
 
   @override
-  AccountWarning action(AccountWarningActionEnum? action) =>
+  AccountWarning action(AccountWarningActionEnum action) =>
       call(action: action);
+
+  @override
+  AccountWarning createdAt(DateTime createdAt) => call(createdAt: createdAt);
+
+  @override
+  AccountWarning id(String id) => call(id: id);
+
+  @override
+  AccountWarning targetAccount(Account targetAccount) =>
+      call(targetAccount: targetAccount);
+
+  @override
+  AccountWarning text(String text) => call(text: text);
 
   @override
   AccountWarning appeal(Appeal? appeal) => call(appeal: appeal);
 
   @override
-  AccountWarning createdAt(DateTime? createdAt) => call(createdAt: createdAt);
-
-  @override
-  AccountWarning id(String? id) => call(id: id);
-
-  @override
   AccountWarning statusIds(List<String>? statusIds) =>
       call(statusIds: statusIds);
-
-  @override
-  AccountWarning targetAccount(Account? targetAccount) =>
-      call(targetAccount: targetAccount);
-
-  @override
-  AccountWarning text(String? text) => call(text: text);
 
   @override
   /// Creates a new instance with the provided field values.
@@ -80,42 +80,43 @@ class _$AccountWarningCWProxyImpl implements _$AccountWarningCWProxy {
   /// ```
   AccountWarning call({
     Object? action = const $CopyWithPlaceholder(),
-    Object? appeal = const $CopyWithPlaceholder(),
     Object? createdAt = const $CopyWithPlaceholder(),
     Object? id = const $CopyWithPlaceholder(),
-    Object? statusIds = const $CopyWithPlaceholder(),
     Object? targetAccount = const $CopyWithPlaceholder(),
     Object? text = const $CopyWithPlaceholder(),
+    Object? appeal = const $CopyWithPlaceholder(),
+    Object? statusIds = const $CopyWithPlaceholder(),
   }) {
     return AccountWarning(
-      action: action == const $CopyWithPlaceholder()
+      action: action == const $CopyWithPlaceholder() || action == null
           ? _value.action
           // ignore: cast_nullable_to_non_nullable
-          : action as AccountWarningActionEnum?,
+          : action as AccountWarningActionEnum,
+      createdAt: createdAt == const $CopyWithPlaceholder() || createdAt == null
+          ? _value.createdAt
+          // ignore: cast_nullable_to_non_nullable
+          : createdAt as DateTime,
+      id: id == const $CopyWithPlaceholder() || id == null
+          ? _value.id
+          // ignore: cast_nullable_to_non_nullable
+          : id as String,
+      targetAccount:
+          targetAccount == const $CopyWithPlaceholder() || targetAccount == null
+          ? _value.targetAccount
+          // ignore: cast_nullable_to_non_nullable
+          : targetAccount as Account,
+      text: text == const $CopyWithPlaceholder() || text == null
+          ? _value.text
+          // ignore: cast_nullable_to_non_nullable
+          : text as String,
       appeal: appeal == const $CopyWithPlaceholder()
           ? _value.appeal
           // ignore: cast_nullable_to_non_nullable
           : appeal as Appeal?,
-      createdAt: createdAt == const $CopyWithPlaceholder()
-          ? _value.createdAt
-          // ignore: cast_nullable_to_non_nullable
-          : createdAt as DateTime?,
-      id: id == const $CopyWithPlaceholder()
-          ? _value.id
-          // ignore: cast_nullable_to_non_nullable
-          : id as String?,
       statusIds: statusIds == const $CopyWithPlaceholder()
           ? _value.statusIds
           // ignore: cast_nullable_to_non_nullable
           : statusIds as List<String>?,
-      targetAccount: targetAccount == const $CopyWithPlaceholder()
-          ? _value.targetAccount
-          // ignore: cast_nullable_to_non_nullable
-          : targetAccount as Account?,
-      text: text == const $CopyWithPlaceholder()
-          ? _value.text
-          // ignore: cast_nullable_to_non_nullable
-          : text as String?,
     );
   }
 }
@@ -136,50 +137,59 @@ AccountWarning _$AccountWarningFromJson(Map<String, dynamic> json) =>
       'AccountWarning',
       json,
       ($checkedConvert) {
+        $checkKeys(
+          json,
+          requiredKeys: const [
+            'action',
+            'created_at',
+            'id',
+            'target_account',
+            'text',
+          ],
+        );
         final val = AccountWarning(
           action: $checkedConvert(
             'action',
-            (v) => $enumDecodeNullable(_$AccountWarningActionEnumEnumMap, v),
+            (v) => $enumDecode(_$AccountWarningActionEnumEnumMap, v),
           ),
+          createdAt: $checkedConvert(
+            'created_at',
+            (v) => DateTime.parse(v as String),
+          ),
+          id: $checkedConvert('id', (v) => v as String),
+          targetAccount: $checkedConvert(
+            'target_account',
+            (v) => Account.fromJson(v as Map<String, dynamic>),
+          ),
+          text: $checkedConvert('text', (v) => v as String),
           appeal: $checkedConvert(
             'appeal',
             (v) =>
                 v == null ? null : Appeal.fromJson(v as Map<String, dynamic>),
           ),
-          createdAt: $checkedConvert(
-            'created_at',
-            (v) => v == null ? null : DateTime.parse(v as String),
-          ),
-          id: $checkedConvert('id', (v) => v as String?),
           statusIds: $checkedConvert(
             'status_ids',
             (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
           ),
-          targetAccount: $checkedConvert(
-            'target_account',
-            (v) =>
-                v == null ? null : Account.fromJson(v as Map<String, dynamic>),
-          ),
-          text: $checkedConvert('text', (v) => v as String?),
         );
         return val;
       },
       fieldKeyMap: const {
         'createdAt': 'created_at',
-        'statusIds': 'status_ids',
         'targetAccount': 'target_account',
+        'statusIds': 'status_ids',
       },
     );
 
 Map<String, dynamic> _$AccountWarningToJson(AccountWarning instance) =>
     <String, dynamic>{
-      'action': ?_$AccountWarningActionEnumEnumMap[instance.action],
+      'action': _$AccountWarningActionEnumEnumMap[instance.action]!,
+      'created_at': instance.createdAt.toIso8601String(),
+      'id': instance.id,
+      'target_account': instance.targetAccount.toJson(),
+      'text': instance.text,
       'appeal': ?instance.appeal?.toJson(),
-      'created_at': ?instance.createdAt?.toIso8601String(),
-      'id': ?instance.id,
       'status_ids': ?instance.statusIds,
-      'target_account': ?instance.targetAccount?.toJson(),
-      'text': ?instance.text,
     };
 
 const _$AccountWarningActionEnumEnumMap = {

@@ -19,39 +19,39 @@ part 'v1_notification_policy.g.dart';
 class V1NotificationPolicy {
   /// Returns a new [V1NotificationPolicy] instance.
   V1NotificationPolicy({
-    this.filterNewAccounts,
+    required this.filterNewAccounts,
 
-    this.filterNotFollowers,
+    required this.filterNotFollowers,
 
-    this.filterNotFollowing,
+    required this.filterNotFollowing,
 
-    this.filterPrivateMentions,
+    required this.filterPrivateMentions,
 
-    this.summary,
+    required this.summary,
   });
 
   /// Whether to filter notifications from accounts created in the past 30 days.
-  @JsonKey(name: r'filter_new_accounts', required: false, includeIfNull: false)
-  final bool? filterNewAccounts;
+  @JsonKey(name: r'filter_new_accounts', required: true, includeIfNull: false)
+  final bool filterNewAccounts;
 
   /// Whether to filter notifications from accounts that are not following the user.
-  @JsonKey(name: r'filter_not_followers', required: false, includeIfNull: false)
-  final bool? filterNotFollowers;
+  @JsonKey(name: r'filter_not_followers', required: true, includeIfNull: false)
+  final bool filterNotFollowers;
 
   /// Whether to filter notifications from accounts the user is not following.
-  @JsonKey(name: r'filter_not_following', required: false, includeIfNull: false)
-  final bool? filterNotFollowing;
+  @JsonKey(name: r'filter_not_following', required: true, includeIfNull: false)
+  final bool filterNotFollowing;
 
   /// Whether to filter notifications from private mentions. Replies to private mentions initiated by the user, as well as accounts the user follows, are never filtered.
   @JsonKey(
     name: r'filter_private_mentions',
-    required: false,
+    required: true,
     includeIfNull: false,
   )
-  final bool? filterPrivateMentions;
+  final bool filterPrivateMentions;
 
-  @JsonKey(name: r'summary', required: false, includeIfNull: false)
-  final NotificationPolicySummary? summary;
+  @JsonKey(name: r'summary', required: true, includeIfNull: false)
+  final NotificationPolicySummary summary;
 
   @override
   bool operator ==(Object other) =>
@@ -65,10 +65,10 @@ class V1NotificationPolicy {
 
   @override
   int get hashCode =>
-      (filterNewAccounts == null ? 0 : filterNewAccounts.hashCode) +
-      (filterNotFollowers == null ? 0 : filterNotFollowers.hashCode) +
-      (filterNotFollowing == null ? 0 : filterNotFollowing.hashCode) +
-      (filterPrivateMentions == null ? 0 : filterPrivateMentions.hashCode) +
+      filterNewAccounts.hashCode +
+      filterNotFollowers.hashCode +
+      filterNotFollowing.hashCode +
+      filterPrivateMentions.hashCode +
       summary.hashCode;
 
   factory V1NotificationPolicy.fromJson(Map<String, dynamic> json) =>

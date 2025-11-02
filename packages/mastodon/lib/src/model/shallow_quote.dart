@@ -18,26 +18,26 @@ part 'shallow_quote.g.dart';
 )
 class ShallowQuote {
   /// Returns a new [ShallowQuote] instance.
-  ShallowQuote({this.quotedStatusId, this.state});
+  ShallowQuote({required this.state, this.quotedStatusId});
+
+  /// The state of the quote. Unknown values should be treated as `unauthorized`.
+  @JsonKey(name: r'state', required: true, includeIfNull: false)
+  final QuoteStateEnum state;
 
   /// The identifier of the status being quoted. This will be `null`, unless the `state` attribute is one of `accepted`, `blocked_account`, `blocked_domain` or `muted_account`.
   @JsonKey(name: r'quoted_status_id', required: false, includeIfNull: false)
   final String? quotedStatusId;
 
-  /// The state of the quote. Unknown values should be treated as `unauthorized`.
-  @JsonKey(name: r'state', required: false, includeIfNull: false)
-  final QuoteStateEnum? state;
-
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is ShallowQuote &&
-          other.quotedStatusId == quotedStatusId &&
-          other.state == state;
+          other.state == state &&
+          other.quotedStatusId == quotedStatusId;
 
   @override
   int get hashCode =>
-      (quotedStatusId == null ? 0 : quotedStatusId.hashCode) + state.hashCode;
+      state.hashCode + (quotedStatusId == null ? 0 : quotedStatusId.hashCode);
 
   factory ShallowQuote.fromJson(Map<String, dynamic> json) =>
       _$ShallowQuoteFromJson(json);

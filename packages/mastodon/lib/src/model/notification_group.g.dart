@@ -7,9 +7,17 @@ part of 'notification_group.dart';
 // **************************************************************************
 
 abstract class _$NotificationGroupCWProxy {
-  NotificationGroup event(RelationshipSeveranceEvent? event);
+  NotificationGroup groupKey(String groupKey);
 
-  NotificationGroup groupKey(String? groupKey);
+  NotificationGroup mostRecentNotificationId(int mostRecentNotificationId);
+
+  NotificationGroup notificationsCount(int notificationsCount);
+
+  NotificationGroup sampleAccountIds(List<String> sampleAccountIds);
+
+  NotificationGroup type(NotificationTypeEnum type);
+
+  NotificationGroup event(RelationshipSeveranceEvent? event);
 
   NotificationGroup latestPageNotificationAt(
     DateTime? latestPageNotificationAt,
@@ -17,21 +25,13 @@ abstract class _$NotificationGroupCWProxy {
 
   NotificationGroup moderationWarning(AccountWarning? moderationWarning);
 
-  NotificationGroup mostRecentNotificationId(int? mostRecentNotificationId);
-
-  NotificationGroup notificationsCount(int? notificationsCount);
-
   NotificationGroup pageMaxId(String? pageMaxId);
 
   NotificationGroup pageMinId(String? pageMinId);
 
   NotificationGroup report(Report? report);
 
-  NotificationGroup sampleAccountIds(List<String>? sampleAccountIds);
-
   NotificationGroup statusId(String? statusId);
-
-  NotificationGroup type(NotificationTypeEnum? type);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `NotificationGroup(...).copyWith.fieldName(value)`.
@@ -41,18 +41,18 @@ abstract class _$NotificationGroupCWProxy {
   /// NotificationGroup(...).copyWith(id: 12, name: "My name")
   /// ```
   NotificationGroup call({
+    String groupKey,
+    int mostRecentNotificationId,
+    int notificationsCount,
+    List<String> sampleAccountIds,
+    NotificationTypeEnum type,
     RelationshipSeveranceEvent? event,
-    String? groupKey,
     DateTime? latestPageNotificationAt,
     AccountWarning? moderationWarning,
-    int? mostRecentNotificationId,
-    int? notificationsCount,
     String? pageMaxId,
     String? pageMinId,
     Report? report,
-    List<String>? sampleAccountIds,
     String? statusId,
-    NotificationTypeEnum? type,
   });
 }
 
@@ -64,11 +64,26 @@ class _$NotificationGroupCWProxyImpl implements _$NotificationGroupCWProxy {
   final NotificationGroup _value;
 
   @override
-  NotificationGroup event(RelationshipSeveranceEvent? event) =>
-      call(event: event);
+  NotificationGroup groupKey(String groupKey) => call(groupKey: groupKey);
 
   @override
-  NotificationGroup groupKey(String? groupKey) => call(groupKey: groupKey);
+  NotificationGroup mostRecentNotificationId(int mostRecentNotificationId) =>
+      call(mostRecentNotificationId: mostRecentNotificationId);
+
+  @override
+  NotificationGroup notificationsCount(int notificationsCount) =>
+      call(notificationsCount: notificationsCount);
+
+  @override
+  NotificationGroup sampleAccountIds(List<String> sampleAccountIds) =>
+      call(sampleAccountIds: sampleAccountIds);
+
+  @override
+  NotificationGroup type(NotificationTypeEnum type) => call(type: type);
+
+  @override
+  NotificationGroup event(RelationshipSeveranceEvent? event) =>
+      call(event: event);
 
   @override
   NotificationGroup latestPageNotificationAt(
@@ -80,14 +95,6 @@ class _$NotificationGroupCWProxyImpl implements _$NotificationGroupCWProxy {
       call(moderationWarning: moderationWarning);
 
   @override
-  NotificationGroup mostRecentNotificationId(int? mostRecentNotificationId) =>
-      call(mostRecentNotificationId: mostRecentNotificationId);
-
-  @override
-  NotificationGroup notificationsCount(int? notificationsCount) =>
-      call(notificationsCount: notificationsCount);
-
-  @override
   NotificationGroup pageMaxId(String? pageMaxId) => call(pageMaxId: pageMaxId);
 
   @override
@@ -97,14 +104,7 @@ class _$NotificationGroupCWProxyImpl implements _$NotificationGroupCWProxy {
   NotificationGroup report(Report? report) => call(report: report);
 
   @override
-  NotificationGroup sampleAccountIds(List<String>? sampleAccountIds) =>
-      call(sampleAccountIds: sampleAccountIds);
-
-  @override
   NotificationGroup statusId(String? statusId) => call(statusId: statusId);
-
-  @override
-  NotificationGroup type(NotificationTypeEnum? type) => call(type: type);
 
   @override
   /// Creates a new instance with the provided field values.
@@ -115,28 +115,50 @@ class _$NotificationGroupCWProxyImpl implements _$NotificationGroupCWProxy {
   /// NotificationGroup(...).copyWith(id: 12, name: "My name")
   /// ```
   NotificationGroup call({
-    Object? event = const $CopyWithPlaceholder(),
     Object? groupKey = const $CopyWithPlaceholder(),
-    Object? latestPageNotificationAt = const $CopyWithPlaceholder(),
-    Object? moderationWarning = const $CopyWithPlaceholder(),
     Object? mostRecentNotificationId = const $CopyWithPlaceholder(),
     Object? notificationsCount = const $CopyWithPlaceholder(),
+    Object? sampleAccountIds = const $CopyWithPlaceholder(),
+    Object? type = const $CopyWithPlaceholder(),
+    Object? event = const $CopyWithPlaceholder(),
+    Object? latestPageNotificationAt = const $CopyWithPlaceholder(),
+    Object? moderationWarning = const $CopyWithPlaceholder(),
     Object? pageMaxId = const $CopyWithPlaceholder(),
     Object? pageMinId = const $CopyWithPlaceholder(),
     Object? report = const $CopyWithPlaceholder(),
-    Object? sampleAccountIds = const $CopyWithPlaceholder(),
     Object? statusId = const $CopyWithPlaceholder(),
-    Object? type = const $CopyWithPlaceholder(),
   }) {
     return NotificationGroup(
+      groupKey: groupKey == const $CopyWithPlaceholder() || groupKey == null
+          ? _value.groupKey
+          // ignore: cast_nullable_to_non_nullable
+          : groupKey as String,
+      mostRecentNotificationId:
+          mostRecentNotificationId == const $CopyWithPlaceholder() ||
+              mostRecentNotificationId == null
+          ? _value.mostRecentNotificationId
+          // ignore: cast_nullable_to_non_nullable
+          : mostRecentNotificationId as int,
+      notificationsCount:
+          notificationsCount == const $CopyWithPlaceholder() ||
+              notificationsCount == null
+          ? _value.notificationsCount
+          // ignore: cast_nullable_to_non_nullable
+          : notificationsCount as int,
+      sampleAccountIds:
+          sampleAccountIds == const $CopyWithPlaceholder() ||
+              sampleAccountIds == null
+          ? _value.sampleAccountIds
+          // ignore: cast_nullable_to_non_nullable
+          : sampleAccountIds as List<String>,
+      type: type == const $CopyWithPlaceholder() || type == null
+          ? _value.type
+          // ignore: cast_nullable_to_non_nullable
+          : type as NotificationTypeEnum,
       event: event == const $CopyWithPlaceholder()
           ? _value.event
           // ignore: cast_nullable_to_non_nullable
           : event as RelationshipSeveranceEvent?,
-      groupKey: groupKey == const $CopyWithPlaceholder()
-          ? _value.groupKey
-          // ignore: cast_nullable_to_non_nullable
-          : groupKey as String?,
       latestPageNotificationAt:
           latestPageNotificationAt == const $CopyWithPlaceholder()
           ? _value.latestPageNotificationAt
@@ -146,15 +168,6 @@ class _$NotificationGroupCWProxyImpl implements _$NotificationGroupCWProxy {
           ? _value.moderationWarning
           // ignore: cast_nullable_to_non_nullable
           : moderationWarning as AccountWarning?,
-      mostRecentNotificationId:
-          mostRecentNotificationId == const $CopyWithPlaceholder()
-          ? _value.mostRecentNotificationId
-          // ignore: cast_nullable_to_non_nullable
-          : mostRecentNotificationId as int?,
-      notificationsCount: notificationsCount == const $CopyWithPlaceholder()
-          ? _value.notificationsCount
-          // ignore: cast_nullable_to_non_nullable
-          : notificationsCount as int?,
       pageMaxId: pageMaxId == const $CopyWithPlaceholder()
           ? _value.pageMaxId
           // ignore: cast_nullable_to_non_nullable
@@ -167,18 +180,10 @@ class _$NotificationGroupCWProxyImpl implements _$NotificationGroupCWProxy {
           ? _value.report
           // ignore: cast_nullable_to_non_nullable
           : report as Report?,
-      sampleAccountIds: sampleAccountIds == const $CopyWithPlaceholder()
-          ? _value.sampleAccountIds
-          // ignore: cast_nullable_to_non_nullable
-          : sampleAccountIds as List<String>?,
       statusId: statusId == const $CopyWithPlaceholder()
           ? _value.statusId
           // ignore: cast_nullable_to_non_nullable
           : statusId as String?,
-      type: type == const $CopyWithPlaceholder()
-          ? _value.type
-          // ignore: cast_nullable_to_non_nullable
-          : type as NotificationTypeEnum?,
     );
   }
 }
@@ -200,7 +205,34 @@ NotificationGroup _$NotificationGroupFromJson(Map<String, dynamic> json) =>
       'NotificationGroup',
       json,
       ($checkedConvert) {
+        $checkKeys(
+          json,
+          requiredKeys: const [
+            'group_key',
+            'most_recent_notification_id',
+            'notifications_count',
+            'sample_account_ids',
+            'type',
+          ],
+        );
         final val = NotificationGroup(
+          groupKey: $checkedConvert('group_key', (v) => v as String),
+          mostRecentNotificationId: $checkedConvert(
+            'most_recent_notification_id',
+            (v) => (v as num).toInt(),
+          ),
+          notificationsCount: $checkedConvert(
+            'notifications_count',
+            (v) => (v as num).toInt(),
+          ),
+          sampleAccountIds: $checkedConvert(
+            'sample_account_ids',
+            (v) => (v as List<dynamic>).map((e) => e as String).toList(),
+          ),
+          type: $checkedConvert(
+            'type',
+            (v) => $enumDecode(_$NotificationTypeEnumEnumMap, v),
+          ),
           event: $checkedConvert(
             'event',
             (v) => v == null
@@ -209,7 +241,6 @@ NotificationGroup _$NotificationGroupFromJson(Map<String, dynamic> json) =>
                     v as Map<String, dynamic>,
                   ),
           ),
-          groupKey: $checkedConvert('group_key', (v) => v as String?),
           latestPageNotificationAt: $checkedConvert(
             'latest_page_notification_at',
             (v) => v == null ? null : DateTime.parse(v as String),
@@ -220,14 +251,6 @@ NotificationGroup _$NotificationGroupFromJson(Map<String, dynamic> json) =>
                 ? null
                 : AccountWarning.fromJson(v as Map<String, dynamic>),
           ),
-          mostRecentNotificationId: $checkedConvert(
-            'most_recent_notification_id',
-            (v) => (v as num?)?.toInt(),
-          ),
-          notificationsCount: $checkedConvert(
-            'notifications_count',
-            (v) => (v as num?)?.toInt(),
-          ),
           pageMaxId: $checkedConvert('page_max_id', (v) => v as String?),
           pageMinId: $checkedConvert('page_min_id', (v) => v as String?),
           report: $checkedConvert(
@@ -235,46 +258,38 @@ NotificationGroup _$NotificationGroupFromJson(Map<String, dynamic> json) =>
             (v) =>
                 v == null ? null : Report.fromJson(v as Map<String, dynamic>),
           ),
-          sampleAccountIds: $checkedConvert(
-            'sample_account_ids',
-            (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
-          ),
           statusId: $checkedConvert('status_id', (v) => v as String?),
-          type: $checkedConvert(
-            'type',
-            (v) => $enumDecodeNullable(_$NotificationTypeEnumEnumMap, v),
-          ),
         );
         return val;
       },
       fieldKeyMap: const {
         'groupKey': 'group_key',
-        'latestPageNotificationAt': 'latest_page_notification_at',
-        'moderationWarning': 'moderation_warning',
         'mostRecentNotificationId': 'most_recent_notification_id',
         'notificationsCount': 'notifications_count',
+        'sampleAccountIds': 'sample_account_ids',
+        'latestPageNotificationAt': 'latest_page_notification_at',
+        'moderationWarning': 'moderation_warning',
         'pageMaxId': 'page_max_id',
         'pageMinId': 'page_min_id',
-        'sampleAccountIds': 'sample_account_ids',
         'statusId': 'status_id',
       },
     );
 
 Map<String, dynamic> _$NotificationGroupToJson(NotificationGroup instance) =>
     <String, dynamic>{
+      'group_key': instance.groupKey,
+      'most_recent_notification_id': instance.mostRecentNotificationId,
+      'notifications_count': instance.notificationsCount,
+      'sample_account_ids': instance.sampleAccountIds,
+      'type': _$NotificationTypeEnumEnumMap[instance.type]!,
       'event': ?instance.event?.toJson(),
-      'group_key': ?instance.groupKey,
       'latest_page_notification_at': ?instance.latestPageNotificationAt
           ?.toIso8601String(),
       'moderation_warning': ?instance.moderationWarning?.toJson(),
-      'most_recent_notification_id': ?instance.mostRecentNotificationId,
-      'notifications_count': ?instance.notificationsCount,
       'page_max_id': ?instance.pageMaxId,
       'page_min_id': ?instance.pageMinId,
       'report': ?instance.report?.toJson(),
-      'sample_account_ids': ?instance.sampleAccountIds,
       'status_id': ?instance.statusId,
-      'type': ?_$NotificationTypeEnumEnumMap[instance.type],
     };
 
 const _$NotificationTypeEnumEnumMap = {

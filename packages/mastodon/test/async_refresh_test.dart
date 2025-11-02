@@ -13,15 +13,15 @@ void main() {
       // TODO
     });
 
-    // Optional number of results already created/fetched as part of this async refresh.
-    // int resultCount
-    test('to test the property `resultCount`', () async {
-      // TODO
-    });
-
     // Status of the async refresh.
     // AsyncRefreshStatusEnum status
     test('to test the property `status`', () async {
+      // TODO
+    });
+
+    // Optional number of results already created/fetched as part of this async refresh.
+    // int resultCount
+    test('to test the property `resultCount`', () async {
       // TODO
     });
   });

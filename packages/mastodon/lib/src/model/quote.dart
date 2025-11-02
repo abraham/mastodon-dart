@@ -19,25 +19,25 @@ part 'quote.g.dart';
 )
 class Quote {
   /// Returns a new [Quote] instance.
-  Quote({this.quotedStatus, this.state});
+  Quote({required this.state, this.quotedStatus});
+
+  /// The state of the quote. Unknown values should be treated as `unauthorized`.
+  @JsonKey(name: r'state', required: true, includeIfNull: false)
+  final QuoteStateEnum state;
 
   @JsonKey(name: r'quoted_status', required: false, includeIfNull: false)
   final Status? quotedStatus;
-
-  /// The state of the quote. Unknown values should be treated as `unauthorized`.
-  @JsonKey(name: r'state', required: false, includeIfNull: false)
-  final QuoteStateEnum? state;
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is Quote &&
-          other.quotedStatus == quotedStatus &&
-          other.state == state;
+          other.state == state &&
+          other.quotedStatus == quotedStatus;
 
   @override
   int get hashCode =>
-      (quotedStatus == null ? 0 : quotedStatus.hashCode) + state.hashCode;
+      state.hashCode + (quotedStatus == null ? 0 : quotedStatus.hashCode);
 
   factory Quote.fromJson(Map<String, dynamic> json) => _$QuoteFromJson(json);
 

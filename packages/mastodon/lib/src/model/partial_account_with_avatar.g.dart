@@ -7,19 +7,19 @@ part of 'partial_account_with_avatar.dart';
 // **************************************************************************
 
 abstract class _$PartialAccountWithAvatarCWProxy {
-  PartialAccountWithAvatar acct(String? acct);
+  PartialAccountWithAvatar acct(String acct);
 
-  PartialAccountWithAvatar avatar(Uri? avatar);
+  PartialAccountWithAvatar avatar(Uri avatar);
 
-  PartialAccountWithAvatar avatarStatic(Uri? avatarStatic);
+  PartialAccountWithAvatar avatarStatic(Uri avatarStatic);
 
-  PartialAccountWithAvatar bot(bool? bot);
+  PartialAccountWithAvatar bot(bool bot);
 
-  PartialAccountWithAvatar id(String? id);
+  PartialAccountWithAvatar id(String id);
 
-  PartialAccountWithAvatar locked(bool? locked);
+  PartialAccountWithAvatar locked(bool locked);
 
-  PartialAccountWithAvatar url(Uri? url);
+  PartialAccountWithAvatar url(Uri url);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PartialAccountWithAvatar(...).copyWith.fieldName(value)`.
@@ -29,13 +29,13 @@ abstract class _$PartialAccountWithAvatarCWProxy {
   /// PartialAccountWithAvatar(...).copyWith(id: 12, name: "My name")
   /// ```
   PartialAccountWithAvatar call({
-    String? acct,
-    Uri? avatar,
-    Uri? avatarStatic,
-    bool? bot,
-    String? id,
-    bool? locked,
-    Uri? url,
+    String acct,
+    Uri avatar,
+    Uri avatarStatic,
+    bool bot,
+    String id,
+    bool locked,
+    Uri url,
   });
 }
 
@@ -48,26 +48,26 @@ class _$PartialAccountWithAvatarCWProxyImpl
   final PartialAccountWithAvatar _value;
 
   @override
-  PartialAccountWithAvatar acct(String? acct) => call(acct: acct);
+  PartialAccountWithAvatar acct(String acct) => call(acct: acct);
 
   @override
-  PartialAccountWithAvatar avatar(Uri? avatar) => call(avatar: avatar);
+  PartialAccountWithAvatar avatar(Uri avatar) => call(avatar: avatar);
 
   @override
-  PartialAccountWithAvatar avatarStatic(Uri? avatarStatic) =>
+  PartialAccountWithAvatar avatarStatic(Uri avatarStatic) =>
       call(avatarStatic: avatarStatic);
 
   @override
-  PartialAccountWithAvatar bot(bool? bot) => call(bot: bot);
+  PartialAccountWithAvatar bot(bool bot) => call(bot: bot);
 
   @override
-  PartialAccountWithAvatar id(String? id) => call(id: id);
+  PartialAccountWithAvatar id(String id) => call(id: id);
 
   @override
-  PartialAccountWithAvatar locked(bool? locked) => call(locked: locked);
+  PartialAccountWithAvatar locked(bool locked) => call(locked: locked);
 
   @override
-  PartialAccountWithAvatar url(Uri? url) => call(url: url);
+  PartialAccountWithAvatar url(Uri url) => call(url: url);
 
   @override
   /// Creates a new instance with the provided field values.
@@ -87,34 +87,35 @@ class _$PartialAccountWithAvatarCWProxyImpl
     Object? url = const $CopyWithPlaceholder(),
   }) {
     return PartialAccountWithAvatar(
-      acct: acct == const $CopyWithPlaceholder()
+      acct: acct == const $CopyWithPlaceholder() || acct == null
           ? _value.acct
           // ignore: cast_nullable_to_non_nullable
-          : acct as String?,
-      avatar: avatar == const $CopyWithPlaceholder()
+          : acct as String,
+      avatar: avatar == const $CopyWithPlaceholder() || avatar == null
           ? _value.avatar
           // ignore: cast_nullable_to_non_nullable
-          : avatar as Uri?,
-      avatarStatic: avatarStatic == const $CopyWithPlaceholder()
+          : avatar as Uri,
+      avatarStatic:
+          avatarStatic == const $CopyWithPlaceholder() || avatarStatic == null
           ? _value.avatarStatic
           // ignore: cast_nullable_to_non_nullable
-          : avatarStatic as Uri?,
-      bot: bot == const $CopyWithPlaceholder()
+          : avatarStatic as Uri,
+      bot: bot == const $CopyWithPlaceholder() || bot == null
           ? _value.bot
           // ignore: cast_nullable_to_non_nullable
-          : bot as bool?,
-      id: id == const $CopyWithPlaceholder()
+          : bot as bool,
+      id: id == const $CopyWithPlaceholder() || id == null
           ? _value.id
           // ignore: cast_nullable_to_non_nullable
-          : id as String?,
-      locked: locked == const $CopyWithPlaceholder()
+          : id as String,
+      locked: locked == const $CopyWithPlaceholder() || locked == null
           ? _value.locked
           // ignore: cast_nullable_to_non_nullable
-          : locked as bool?,
-      url: url == const $CopyWithPlaceholder()
+          : locked as bool,
+      url: url == const $CopyWithPlaceholder() || url == null
           ? _value.url
           // ignore: cast_nullable_to_non_nullable
-          : url as Uri?,
+          : url as Uri,
     );
   }
 }
@@ -137,23 +138,29 @@ PartialAccountWithAvatar _$PartialAccountWithAvatarFromJson(
   'PartialAccountWithAvatar',
   json,
   ($checkedConvert) {
-    final val = PartialAccountWithAvatar(
-      acct: $checkedConvert('acct', (v) => v as String?),
-      avatar: $checkedConvert(
+    $checkKeys(
+      json,
+      requiredKeys: const [
+        'acct',
         'avatar',
-        (v) => v == null ? null : Uri.parse(v as String),
-      ),
+        'avatar_static',
+        'bot',
+        'id',
+        'locked',
+        'url',
+      ],
+    );
+    final val = PartialAccountWithAvatar(
+      acct: $checkedConvert('acct', (v) => v as String),
+      avatar: $checkedConvert('avatar', (v) => Uri.parse(v as String)),
       avatarStatic: $checkedConvert(
         'avatar_static',
-        (v) => v == null ? null : Uri.parse(v as String),
+        (v) => Uri.parse(v as String),
       ),
-      bot: $checkedConvert('bot', (v) => v as bool?),
-      id: $checkedConvert('id', (v) => v as String?),
-      locked: $checkedConvert('locked', (v) => v as bool?),
-      url: $checkedConvert(
-        'url',
-        (v) => v == null ? null : Uri.parse(v as String),
-      ),
+      bot: $checkedConvert('bot', (v) => v as bool),
+      id: $checkedConvert('id', (v) => v as String),
+      locked: $checkedConvert('locked', (v) => v as bool),
+      url: $checkedConvert('url', (v) => Uri.parse(v as String)),
     );
     return val;
   },
@@ -163,11 +170,11 @@ PartialAccountWithAvatar _$PartialAccountWithAvatarFromJson(
 Map<String, dynamic> _$PartialAccountWithAvatarToJson(
   PartialAccountWithAvatar instance,
 ) => <String, dynamic>{
-  'acct': ?instance.acct,
-  'avatar': ?instance.avatar?.toString(),
-  'avatar_static': ?instance.avatarStatic?.toString(),
-  'bot': ?instance.bot,
-  'id': ?instance.id,
-  'locked': ?instance.locked,
-  'url': ?instance.url?.toString(),
+  'acct': instance.acct,
+  'avatar': instance.avatar.toString(),
+  'avatar_static': instance.avatarStatic.toString(),
+  'bot': instance.bot,
+  'id': instance.id,
+  'locked': instance.locked,
+  'url': instance.url.toString(),
 };
