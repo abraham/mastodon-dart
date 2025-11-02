@@ -10,7 +10,6 @@ import 'package:mastodon/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
 import 'package:mastodon/src/model/create_report_request.dart';
-import 'package:mastodon/src/model/error.dart';
 import 'package:mastodon/src/model/report.dart';
 
 class ReportsApi {

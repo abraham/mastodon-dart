@@ -9,11 +9,9 @@ import 'dart:convert';
 import 'package:mastodon/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:mastodon/src/model/error.dart';
 import 'package:mastodon/src/model/post_oauth_revoke_request.dart';
 import 'package:mastodon/src/model/post_oauth_token_request.dart';
 import 'package:mastodon/src/model/token.dart';
-import 'package:mastodon/src/model/validation_error.dart';
 
 class OauthApi {
   final Dio _dio;

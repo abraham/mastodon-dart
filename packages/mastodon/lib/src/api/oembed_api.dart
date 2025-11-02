@@ -9,9 +9,7 @@ import 'dart:convert';
 import 'package:mastodon/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:mastodon/src/model/error.dart';
 import 'package:mastodon/src/model/o_embed_response.dart';
-import 'package:mastodon/src/model/validation_error.dart';
 
 class OembedApi {
   final Dio _dio;

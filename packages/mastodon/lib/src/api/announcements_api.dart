@@ -10,8 +10,6 @@ import 'package:mastodon/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
 import 'package:mastodon/src/model/announcement.dart';
-import 'package:mastodon/src/model/error.dart';
-import 'package:mastodon/src/model/validation_error.dart';
 
 class AnnouncementsApi {
   final Dio _dio;

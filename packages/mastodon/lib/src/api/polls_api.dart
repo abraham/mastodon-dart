@@ -9,10 +9,8 @@ import 'dart:convert';
 import 'package:mastodon/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:mastodon/src/model/error.dart';
 import 'package:mastodon/src/model/poll.dart';
 import 'package:mastodon/src/model/post_poll_votes_request.dart';
-import 'package:mastodon/src/model/validation_error.dart';
 
 class PollsApi {
   final Dio _dio;

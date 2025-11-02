@@ -10,8 +10,6 @@ import 'package:mastodon/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
 import 'package:mastodon/src/model/discover_oauth_server_configuration_response.dart';
-import 'package:mastodon/src/model/error.dart';
-import 'package:mastodon/src/model/validation_error.dart';
 
 class WellKnownApi {
   final Dio _dio;

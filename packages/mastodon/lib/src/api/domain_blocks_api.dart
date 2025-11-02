@@ -11,8 +11,6 @@ import 'package:dio/dio.dart';
 
 import 'package:mastodon/src/model/create_domain_block_request.dart';
 import 'package:mastodon/src/model/delete_domain_blocks_request.dart';
-import 'package:mastodon/src/model/error.dart';
-import 'package:mastodon/src/model/validation_error.dart';
 
 class DomainBlocksApi {
   final Dio _dio;

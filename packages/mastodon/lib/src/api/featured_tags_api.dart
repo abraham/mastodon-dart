@@ -10,10 +10,8 @@ import 'package:mastodon/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
 import 'package:mastodon/src/model/create_featured_tag_request.dart';
-import 'package:mastodon/src/model/error.dart';
 import 'package:mastodon/src/model/featured_tag.dart';
 import 'package:mastodon/src/model/tag.dart';
-import 'package:mastodon/src/model/validation_error.dart';
 
 class FeaturedTagsApi {
   final Dio _dio;

@@ -11,7 +11,6 @@ import 'package:dio/dio.dart';
 
 import 'package:mastodon/src/model/create_filter_request.dart';
 import 'package:mastodon/src/model/create_filter_v2_request.dart';
-import 'package:mastodon/src/model/error.dart';
 import 'package:mastodon/src/model/filter.dart';
 import 'package:mastodon/src/model/filter_keyword.dart';
 import 'package:mastodon/src/model/filter_status.dart';
@@ -20,7 +19,6 @@ import 'package:mastodon/src/model/post_filter_statuses_v2_request.dart';
 import 'package:mastodon/src/model/update_filter_request.dart';
 import 'package:mastodon/src/model/update_filter_v2_request.dart';
 import 'package:mastodon/src/model/v1_filter.dart';
-import 'package:mastodon/src/model/validation_error.dart';
 
 class FiltersApi {
   final Dio _dio;

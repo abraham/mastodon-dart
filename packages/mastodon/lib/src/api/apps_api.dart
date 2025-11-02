@@ -12,8 +12,6 @@ import 'package:dio/dio.dart';
 import 'package:mastodon/src/model/application.dart';
 import 'package:mastodon/src/model/create_app_request.dart';
 import 'package:mastodon/src/model/credential_application.dart';
-import 'package:mastodon/src/model/error.dart';
-import 'package:mastodon/src/model/validation_error.dart';
 
 class AppsApi {
   final Dio _dio;

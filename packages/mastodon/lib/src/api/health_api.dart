@@ -6,11 +6,7 @@ import 'dart:async';
 
 // ignore: unused_import
 import 'dart:convert';
-import 'package:mastodon/src/deserialize.dart';
 import 'package:dio/dio.dart';
-
-import 'package:mastodon/src/model/error.dart';
-import 'package:mastodon/src/model/validation_error.dart';
 
 class HealthApi {
   final Dio _dio;

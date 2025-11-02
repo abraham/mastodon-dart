@@ -10,7 +10,6 @@ import 'package:mastodon/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
 import 'package:mastodon/src/model/domain_block.dart';
-import 'package:mastodon/src/model/error.dart';
 import 'package:mastodon/src/model/extended_description.dart';
 import 'package:mastodon/src/model/get_instance_activity200_response_inner.dart';
 import 'package:mastodon/src/model/instance.dart';
@@ -18,7 +17,6 @@ import 'package:mastodon/src/model/privacy_policy.dart';
 import 'package:mastodon/src/model/rule.dart';
 import 'package:mastodon/src/model/terms_of_service.dart';
 import 'package:mastodon/src/model/v1_instance.dart';
-import 'package:mastodon/src/model/validation_error.dart';
 
 class InstanceApi {
   final Dio _dio;
