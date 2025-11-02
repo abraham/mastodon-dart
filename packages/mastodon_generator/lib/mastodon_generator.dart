@@ -1,4 +1,4 @@
-// Openapi Generator last run: : 2025-11-02T11:50:53.624879
+// Openapi Generator last run: : 2025-11-02T15:57:45.125799
 import 'package:openapi_generator_annotations/openapi_generator_annotations.dart';
 
 @Openapi(
@@ -7,7 +7,7 @@ import 'package:openapi_generator_annotations/openapi_generator_annotations.dart
     pubDescription:
         'Mastodon API client generated from the unofficial OpenAPI specification.',
     pubHomepage: 'https://github.com/abraham/mastodon-dart',
-    pubVersion: '1.0.0-alpha.1',
+    pubVersion: '1.0.0-alpha.3',
     pubAuthor: 'Abraham Williams',
     serializationLibrary: DioSerializationLibrary.jsonSerializable,
   ),

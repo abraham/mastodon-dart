@@ -3,11 +3,8 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:mastodon/src/model/text_status.dart';
 import 'package:mastodon/src/model/update_status_request_poll.dart';
-import 'package:mastodon/src/model/poll_status.dart';
 import 'package:mastodon/src/model/status_visibility_enum.dart';
-import 'package:mastodon/src/model/media_status.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 

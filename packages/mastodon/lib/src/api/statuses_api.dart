@@ -13,7 +13,6 @@ import 'package:mastodon/create_status200_response.dart';
 import 'package:mastodon/create_status_request.dart';
 import 'package:mastodon/src/model/account.dart';
 import 'package:mastodon/src/model/context.dart';
-import 'package:mastodon/src/model/error.dart';
 import 'package:mastodon/src/model/post_status_reblog_request.dart';
 import 'package:mastodon/src/model/post_status_translate_request.dart';
 import 'package:mastodon/src/model/status.dart';
@@ -22,7 +21,6 @@ import 'package:mastodon/src/model/status_source.dart';
 import 'package:mastodon/src/model/translation.dart';
 import 'package:mastodon/src/model/update_status_interaction_policy_request.dart';
 import 'package:mastodon/src/model/update_status_request.dart';
-import 'package:mastodon/src/model/validation_error.dart';
 
 class StatusesApi {
   final Dio _dio;

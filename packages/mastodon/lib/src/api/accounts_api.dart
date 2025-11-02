@@ -13,7 +13,6 @@ import 'package:mastodon/src/model/account.dart';
 import 'package:mastodon/src/model/model_list.dart';
 import 'package:mastodon/src/model/create_account_request.dart';
 import 'package:mastodon/src/model/credential_account.dart';
-import 'package:mastodon/src/model/error.dart';
 import 'package:mastodon/src/model/familiar_followers.dart';
 import 'package:mastodon/src/model/featured_tag.dart';
 import 'package:mastodon/src/model/identity_proof.dart';
@@ -24,7 +23,6 @@ import 'package:mastodon/src/model/post_account_note_request.dart';
 import 'package:mastodon/src/model/relationship.dart';
 import 'package:mastodon/src/model/status.dart';
 import 'package:mastodon/src/model/token.dart';
-import 'package:mastodon/src/model/validation_error.dart';
 
 class AccountsApi {
   final Dio _dio;

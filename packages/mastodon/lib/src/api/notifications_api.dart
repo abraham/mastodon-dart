@@ -10,13 +10,11 @@ import 'package:mastodon/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
 import 'package:mastodon/src/model/account.dart';
-import 'package:mastodon/src/model/error.dart';
 import 'package:mastodon/src/model/grouped_notifications_results.dart';
 import 'package:mastodon/src/model/notification.dart';
 import 'package:mastodon/src/model/notification_policy.dart';
 import 'package:mastodon/src/model/notification_request.dart';
 import 'package:mastodon/src/model/notification_type_enum.dart';
-import 'package:mastodon/src/model/validation_error.dart';
 
 class NotificationsApi {
   final Dio _dio;

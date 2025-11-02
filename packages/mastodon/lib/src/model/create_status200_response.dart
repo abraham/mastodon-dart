@@ -4,7 +4,6 @@
 
 // ignore_for_file: unused_element
 import 'package:mastodon/src/model/status_quote.dart';
-import 'package:mastodon/src/model/scheduled_status.dart';
 import 'package:mastodon/src/model/status.dart';
 import 'package:mastodon/src/model/status_mention.dart';
 import 'package:mastodon/src/model/quote_approval.dart';

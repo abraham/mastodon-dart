@@ -13,9 +13,7 @@ import 'package:mastodon/src/model/account.dart';
 import 'package:mastodon/src/model/model_list.dart';
 import 'package:mastodon/src/model/create_list_request.dart';
 import 'package:mastodon/src/model/delete_list_accounts_request.dart';
-import 'package:mastodon/src/model/error.dart';
 import 'package:mastodon/src/model/post_list_accounts_request.dart';
-import 'package:mastodon/src/model/validation_error.dart';
 
 class ListsApi {
   final Dio _dio;

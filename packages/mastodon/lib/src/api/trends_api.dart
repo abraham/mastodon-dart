@@ -9,11 +9,9 @@ import 'dart:convert';
 import 'package:mastodon/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:mastodon/src/model/error.dart';
 import 'package:mastodon/src/model/status.dart';
 import 'package:mastodon/src/model/tag.dart';
 import 'package:mastodon/src/model/trends_link.dart';
-import 'package:mastodon/src/model/validation_error.dart';
 
 class TrendsApi {
   final Dio _dio;
