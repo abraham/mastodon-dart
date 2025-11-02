@@ -27,19 +27,20 @@ jobs:
         with:
           fetch-depth: 0
 
-      # - name: Set up Dart
-      #   uses: dart-lang/setup-dart@v1
-      #   with:
-      #     sdk: stable
+      - name: Set up Dart
+        uses: dart-lang/setup-dart@v1
+        with:
+          sdk: stable
+
+      - run: dart pub get
 
       - name: Bump version
         id: bump
         run: |
-          cd packages/mastodon
-          PUBSPEC_FILE="pubspec.yaml"
+          GENERATOR_FILE="packages/mastodon_generator/lib/mastodon_generator.dart"
 
-          # Extract current version
-          CURRENT_VERSION=$(grep '^version:' $PUBSPEC_FILE | sed 's/version: //')
+          # Extract current version from mastodon_generator.dart
+          CURRENT_VERSION=$(grep "pubVersion:" $GENERATOR_FILE | sed "s/.*pubVersion: '\([^']*\)'.*/\1/")
           echo "Current version: $CURRENT_VERSION"
 
           # Parse version components
@@ -99,20 +100,15 @@ jobs:
 
           echo "New version: $NEW_VERSION"
 
-          # Update pubspec.yaml
-          sed -i "s/^version: .*/version: ${NEW_VERSION}/" $PUBSPEC_FILE
+          # Update mastodon_generator.dart pubVersion
+          sed -i "s/pubVersion: '[^']*'/pubVersion: '${NEW_VERSION}'/" $GENERATOR_FILE
 
           # Set outputs
           echo "old_version=$CURRENT_VERSION" >> $GITHUB_OUTPUT
           echo "new_version=$NEW_VERSION" >> $GITHUB_OUTPUT
 
-      # - name: Commit changes
-      #   run: |
-      #     git config --local user.email "github-actions[bot]@users.noreply.github.com"
-      #     git config --local user.name "github-actions[bot]"
-      #     git add packages/mastodon/pubspec.yaml
-      #     git commit -m "chore: bump version to ${{ steps.bump.outputs.new_version }}"
-      #     git push
+      - name: Build
+        run: ./scripts/build
 
       - uses: peter-evans/create-pull-request@v7
         id: pull
@@ -121,12 +117,12 @@ jobs:
           branch: version
           commit-message: Bump version to ${{ steps.bump.outputs.new_version }}
           title: Bump version to ${{ steps.bump.outputs.new_version }}
-          add-paths: packages/mastodon/pubspec.yaml
+          add-paths: .
 
-      - uses: peter-evans/enable-pull-request-automerge@v3
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          pull-request-number: ${{ steps.pull.outputs.pull-request-number }}
+      # - uses: peter-evans/enable-pull-request-automerge@v3
+      #   with:
+      #     token: ${{ secrets.GITHUB_TOKEN }}
+      #     pull-request-number: ${{ steps.pull.outputs.pull-request-number }}
 
       - name: Create summary
         run: |
