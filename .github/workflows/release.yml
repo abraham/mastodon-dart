@@ -104,7 +104,7 @@ jobs:
           sed -i "s/pubVersion: '[^']*'/pubVersion: '${NEW_VERSION}'/" $GENERATOR_FILE
 
           # Update mastodon/pubspec.yaml version
-          PUBSPEC_FILE="../mastodon/pubspec.yaml"
+          PUBSPEC_FILE="packages/mastodon/pubspec.yaml"
           sed -i "s/^version: .*/version: ${NEW_VERSION}/" $PUBSPEC_FILE
 
           # Set outputs
