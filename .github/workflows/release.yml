@@ -121,7 +121,7 @@ jobs:
           branch: version
           commit-message: Bump version to ${{ steps.bump.outputs.new_version }}
           title: Bump version to ${{ steps.bump.outputs.new_version }}
-          add-paths: pubspec.yaml
+          add-paths: packages/mastodon/pubspec.yaml
 
       - uses: peter-evans/enable-pull-request-automerge@v3
         with:
