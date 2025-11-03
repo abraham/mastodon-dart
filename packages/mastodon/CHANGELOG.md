@@ -1,5 +1,5 @@
-# Changelog
+## v1.0.0-alpha.5
 
-## 1.0.0-alpha.3
+**Features**
 
-- Initial alpha release
+- Initial release
