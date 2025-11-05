@@ -10,7 +10,7 @@ void main() {
     //
     // Save current position in timeline.  Version history:  3.0.0 - added
     //
-    //Future<Marker> createMarker({ CreateMarkerRequest createMarkerRequest }) async
+    //Future<Map<String, Marker>> createMarker({ CreateMarkerRequest createMarkerRequest }) async
     test('test createMarker', () async {
       // TODO
     });
@@ -19,7 +19,7 @@ void main() {
     //
     // Get current positions in timelines.  Version history:  3.0.0 - added
     //
-    //Future<Marker> getMarkers({ List<FilterContextEnum> timeline }) async
+    //Future<Map<String, Marker>> getMarkers({ List<FilterContextEnum> timeline }) async
     test('test getMarkers', () async {
       // TODO
     });

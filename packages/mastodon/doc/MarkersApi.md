@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **createMarker**
-> Marker createMarker(createMarkerRequest)
+> Map<String, Marker> createMarker(createMarkerRequest)
 
 Save your position in a timeline
 
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Marker**](Marker.md)
+[**Map&lt;String, Marker&gt;**](Marker.md)
 
 ### Authorization
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getMarkers**
-> Marker getMarkers(timeline)
+> Map<String, Marker> getMarkers(timeline)
 
 Get saved timeline positions
 
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Marker**](Marker.md)
+[**Map&lt;String, Marker&gt;**](Marker.md)
 
 ### Authorization
 
