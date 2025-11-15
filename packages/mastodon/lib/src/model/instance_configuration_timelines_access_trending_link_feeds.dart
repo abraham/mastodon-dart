@@ -64,11 +64,7 @@ enum InstanceConfigurationTimelinesAccessTrendingLinkFeedsLocalEnum {
 
   /// Access restrictions for local posts in the trending link feeds.
   @JsonValue(r'authenticated')
-  authenticated(r'authenticated'),
-
-  /// Access restrictions for local posts in the trending link feeds.
-  @JsonValue(r'disabled')
-  disabled(r'disabled');
+  authenticated(r'authenticated');
 
   const InstanceConfigurationTimelinesAccessTrendingLinkFeedsLocalEnum(
     this.value,

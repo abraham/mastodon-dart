@@ -60,11 +60,7 @@ enum InstanceConfigurationTimelinesAccessHashtagFeedsLocalEnum {
 
   /// Access restrictions for local posts in hashtag feeds.
   @JsonValue(r'authenticated')
-  authenticated(r'authenticated'),
-
-  /// Access restrictions for local posts in hashtag feeds.
-  @JsonValue(r'disabled')
-  disabled(r'disabled');
+  authenticated(r'authenticated');
 
   const InstanceConfigurationTimelinesAccessHashtagFeedsLocalEnum(this.value);
 

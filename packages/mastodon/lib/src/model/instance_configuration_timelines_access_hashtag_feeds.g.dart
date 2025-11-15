@@ -127,8 +127,6 @@ const _$InstanceConfigurationTimelinesAccessHashtagFeedsLocalEnumEnumMap = {
   InstanceConfigurationTimelinesAccessHashtagFeedsLocalEnum.public: 'public',
   InstanceConfigurationTimelinesAccessHashtagFeedsLocalEnum.authenticated:
       'authenticated',
-  InstanceConfigurationTimelinesAccessHashtagFeedsLocalEnum.disabled:
-      'disabled',
 };
 
 const _$InstanceConfigurationTimelinesAccessHashtagFeedsRemoteEnumEnumMap = {
