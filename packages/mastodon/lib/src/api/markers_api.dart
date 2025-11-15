@@ -30,11 +30,11 @@ class MarkersApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [Marker] as data
+  /// Returns a [Future] containing a [Response] with a [Map<String, Marker>] as data
   /// Throws [DioException] if API call or serialization fails
   /// Official Mastodon API documentation
   /// Also see [Save your position in a timeline Documentation](https://docs.joinmastodon.org/methods/markers/#create)
-  Future<Response<Marker>> createMarker({
+  Future<Response<Map<String, Marker>>> createMarker({
     CreateMarkerRequest? createMarkerRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -79,13 +79,17 @@ class MarkersApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Marker? _responseData;
+    Map<String, Marker>? _responseData;
 
     try {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<Marker, Marker>(rawData, 'Marker', growable: true);
+          : deserialize<Map<String, Marker>, Marker>(
+              rawData,
+              'Map<String, Marker>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -96,7 +100,7 @@ class MarkersApi {
       );
     }
 
-    return Response<Marker>(
+    return Response<Map<String, Marker>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -120,11 +124,11 @@ class MarkersApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [Marker] as data
+  /// Returns a [Future] containing a [Response] with a [Map<String, Marker>] as data
   /// Throws [DioException] if API call or serialization fails
   /// Official Mastodon API documentation
   /// Also see [Get saved timeline positions Documentation](https://docs.joinmastodon.org/methods/markers/#get)
-  Future<Response<Marker>> getMarkers({
+  Future<Response<Map<String, Marker>>> getMarkers({
     List<FilterContextEnum>? timeline,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -159,13 +163,17 @@ class MarkersApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Marker? _responseData;
+    Map<String, Marker>? _responseData;
 
     try {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<Marker, Marker>(rawData, 'Marker', growable: true);
+          : deserialize<Map<String, Marker>, Marker>(
+              rawData,
+              'Map<String, Marker>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -176,7 +184,7 @@ class MarkersApi {
       );
     }
 
-    return Response<Marker>(
+    return Response<Map<String, Marker>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

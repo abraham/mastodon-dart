@@ -132,8 +132,6 @@ const _$InstanceConfigurationTimelinesAccessTrendingLinkFeedsLocalEnumEnumMap =
       InstanceConfigurationTimelinesAccessTrendingLinkFeedsLocalEnum
               .authenticated:
           'authenticated',
-      InstanceConfigurationTimelinesAccessTrendingLinkFeedsLocalEnum.disabled:
-          'disabled',
     };
 
 const _$InstanceConfigurationTimelinesAccessTrendingLinkFeedsRemoteEnumEnumMap =
