@@ -143,7 +143,7 @@ void main() {
 
     // Translate a status
     //
-    // Translate the status content into some language.  Version history:  4.0.0 - added
+    // Translate the status content into some language. Only statuses with Public and Unlisted visibility can be translated.  Version history:  4.0.0 - added
     //
     //Future<Translation> postStatusTranslate(String id, { PostStatusTranslateRequest postStatusTranslateRequest }) async
     test('test postStatusTranslate', () async {
