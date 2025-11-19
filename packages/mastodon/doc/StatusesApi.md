@@ -739,7 +739,7 @@ Name | Type | Description  | Notes
 
 Translate a status
 
-Translate the status content into some language.  Version history:  4.0.0 - added
+Translate the status content into some language. Only statuses with Public and Unlisted visibility can be translated.  Version history:  4.0.0 - added
 
 ### Example
 ```dart
