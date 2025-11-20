@@ -9,7 +9,7 @@ environment:
 resolution: workspace
 
 dependencies:
-  dio: ^5.0.0
+  dio: ^5.2.0
   copy_with_extension: ^10.0.0
   json_annotation: ^4.0.0
 
