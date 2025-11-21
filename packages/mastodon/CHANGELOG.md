@@ -1,3 +1,9 @@
+## Unreleased
+
+**Features**
+
+- Update json_annotation minimum version
+
 ## v1.0.0-alpha.7
 
 **Features**
