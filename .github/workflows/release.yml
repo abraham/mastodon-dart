@@ -111,6 +111,14 @@ jobs:
           echo "old_version=$CURRENT_VERSION" >> $GITHUB_OUTPUT
           echo "new_version=$NEW_VERSION" >> $GITHUB_OUTPUT
 
+      - name: Update CHANGELOG
+        run: |
+          CHANGELOG_FILE="packages/mastodon/CHANGELOG.md"
+          NEW_VERSION="${{ steps.bump.outputs.new_version }}"
+
+          # Replace "## Unreleased" with "## v{NEW_VERSION}" and add new Unreleased section
+          sed -i "s/## Unreleased/## Unreleased\n\n## v${NEW_VERSION}/" "$CHANGELOG_FILE"
+
       - name: Build
         run: ./scripts/build
 
