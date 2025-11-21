@@ -1,5 +1,9 @@
 ## Unreleased
 
+**Features**
+
+- Cleaned up workspace lint
+
 ## v1.0.0-alpha.8
 
 **Features**

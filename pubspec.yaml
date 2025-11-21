@@ -1,7 +1,10 @@
-name: _
+name: mastodon_workspace
 publish_to: none
 environment:
   sdk: ^3.9.0
 workspace:
   - packages/mastodon_generator
   - packages/mastodon
+
+dev_dependencies:
+  lints: ^6.0.0
