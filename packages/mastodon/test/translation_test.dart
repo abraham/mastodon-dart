@@ -19,6 +19,12 @@ void main() {
       // TODO
     });
 
+    // The resulting language the text was translated into.
+    // String language
+    test('to test the property `language`', () async {
+      // TODO
+    });
+
     // The service that provided the machine translation.
     // String provider
     test('to test the property `provider`', () async {

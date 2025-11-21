@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **content** | **String** | HTML-encoded translated content of the status. | 
 **detectedSourceLanguage** | **String** | The language of the source text, as auto-detected by the machine translation provider. | 
+**language** | **String** | The resulting language the text was translated into. | 
 **provider** | **String** | The service that provided the machine translation. | 
 **mediaAttachments** | [**List&lt;TranslationAttachment&gt;**](TranslationAttachment.md) | The translated media descriptions of the status. | [optional] 
 **poll** | [**TranslationPoll**](TranslationPoll.md) |  | [optional] 

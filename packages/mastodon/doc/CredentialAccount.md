@@ -8,7 +8,7 @@ import 'package:mastodon/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**acct** | **String** | The Webfinger account URI. Equal to `username` for local users, or `username@domain` for remote users. | 
+**acct** | **String** | The WebFinger account URI. Equal to `username` for local users, or `username@domain` for remote users. | 
 **avatar** | [**Uri**](Uri.md) | An image icon that is shown next to statuses and in the profile. | 
 **avatarStatic** | [**Uri**](Uri.md) | A static version of the avatar. Equal to `avatar` if its value is a static image; different if `avatar` is an animated GIF. | 
 **bot** | **bool** | Indicates that the account may perform automated actions, may not be monitored, or identifies as a robot. This is determined by the account's `actor_type` being set to 'Application' or 'Service'. | 

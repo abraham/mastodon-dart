@@ -418,21 +418,21 @@ const _$OAuthScopeEnumMap = {
   OAuthScope.writeColonReports: 'write:reports',
   OAuthScope.writeColonStatuses: 'write:statuses',
   OAuthScope.adminColonReadColonAccounts: 'admin:read:accounts',
-  OAuthScope.adminColonReadColonReports: 'admin:read:reports',
-  OAuthScope.adminColonReadColonDomainAllows: 'admin:read:domain_allows',
-  OAuthScope.adminColonReadColonDomainBlocks: 'admin:read:domain_blocks',
-  OAuthScope.adminColonReadColonIpBlocks: 'admin:read:ip_blocks',
-  OAuthScope.adminColonReadColonEmailDomainBlocks:
-      'admin:read:email_domain_blocks',
   OAuthScope.adminColonReadColonCanonicalEmailBlocks:
       'admin:read:canonical_email_blocks',
+  OAuthScope.adminColonReadColonDomainAllows: 'admin:read:domain_allows',
+  OAuthScope.adminColonReadColonDomainBlocks: 'admin:read:domain_blocks',
+  OAuthScope.adminColonReadColonEmailDomainBlocks:
+      'admin:read:email_domain_blocks',
+  OAuthScope.adminColonReadColonIpBlocks: 'admin:read:ip_blocks',
+  OAuthScope.adminColonReadColonReports: 'admin:read:reports',
   OAuthScope.adminColonWriteColonAccounts: 'admin:write:accounts',
-  OAuthScope.adminColonWriteColonReports: 'admin:write:reports',
-  OAuthScope.adminColonWriteColonDomainAllows: 'admin:write:domain_allows',
-  OAuthScope.adminColonWriteColonDomainBlocks: 'admin:write:domain_blocks',
-  OAuthScope.adminColonWriteColonIpBlocks: 'admin:write:ip_blocks',
-  OAuthScope.adminColonWriteColonEmailDomainBlocks:
-      'admin:write:email_domain_blocks',
   OAuthScope.adminColonWriteColonCanonicalEmailBlocks:
       'admin:write:canonical_email_blocks',
+  OAuthScope.adminColonWriteColonDomainAllows: 'admin:write:domain_allows',
+  OAuthScope.adminColonWriteColonDomainBlocks: 'admin:write:domain_blocks',
+  OAuthScope.adminColonWriteColonEmailDomainBlocks:
+      'admin:write:email_domain_blocks',
+  OAuthScope.adminColonWriteColonIpBlocks: 'admin:write:ip_blocks',
+  OAuthScope.adminColonWriteColonReports: 'admin:write:reports',
 };

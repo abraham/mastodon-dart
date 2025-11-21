@@ -17,15 +17,15 @@ part 'media_attachment_meta_focus.g.dart';
 )
 class MediaAttachmentMetaFocus {
   /// Returns a new [MediaAttachmentMetaFocus] instance.
-  MediaAttachmentMetaFocus({required this.x, required this.y});
+  MediaAttachmentMetaFocus({this.x, this.y});
 
   /// Horizontal focal point
-  @JsonKey(name: r'x', required: true, includeIfNull: false)
-  final num x;
+  @JsonKey(name: r'x', required: false, includeIfNull: false)
+  final num? x;
 
   /// Vertical focal point
-  @JsonKey(name: r'y', required: true, includeIfNull: false)
-  final num y;
+  @JsonKey(name: r'y', required: false, includeIfNull: false)
+  final num? y;
 
   @override
   bool operator ==(Object other) =>
@@ -33,7 +33,8 @@ class MediaAttachmentMetaFocus {
       other is MediaAttachmentMetaFocus && other.x == x && other.y == y;
 
   @override
-  int get hashCode => x.hashCode + y.hashCode;
+  int get hashCode =>
+      (x == null ? 0 : x.hashCode) + (y == null ? 0 : y.hashCode);
 
   factory MediaAttachmentMetaFocus.fromJson(Map<String, dynamic> json) =>
       _$MediaAttachmentMetaFocusFromJson(json);

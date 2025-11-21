@@ -724,11 +724,11 @@ class AccountsApi {
     );
   }
 
-  /// Lookup account ID from Webfinger address
+  /// Lookup account ID from WebFinger address
   /// Quickly lookup a username to see if it is available, skipping WebFinger resolution.  Version history:  3.4.0 - added
   ///
   /// Parameters:
-  /// * [acct] - The username or Webfinger address to lookup.
+  /// * [acct] - The username or WebFinger address to lookup.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -739,7 +739,7 @@ class AccountsApi {
   /// Returns a [Future] containing a [Response] with a [Account] as data
   /// Throws [DioException] if API call or serialization fails
   /// Official Mastodon API documentation
-  /// Also see [Lookup account ID from Webfinger address Documentation](https://docs.joinmastodon.org/methods/accounts/#lookup)
+  /// Also see [Lookup account ID from WebFinger address Documentation](https://docs.joinmastodon.org/methods/accounts/#lookup)
   Future<Response<Account>> getAccountLookup({
     required String acct,
     CancelToken? cancelToken,
@@ -753,7 +753,12 @@ class AccountsApi {
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{...?headers},
-      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {'type': 'oauth2', 'name': 'OAuth2'},
+        ],
+        ...?extra,
+      },
       validateStatus: validateStatus,
     );
 

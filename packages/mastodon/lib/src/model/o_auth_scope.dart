@@ -136,8 +136,8 @@ enum OAuthScope {
   adminColonReadColonAccounts(r'admin:read:accounts'),
 
   /// OAuth scope for API access
-  @JsonValue(r'admin:read:reports')
-  adminColonReadColonReports(r'admin:read:reports'),
+  @JsonValue(r'admin:read:canonical_email_blocks')
+  adminColonReadColonCanonicalEmailBlocks(r'admin:read:canonical_email_blocks'),
 
   /// OAuth scope for API access
   @JsonValue(r'admin:read:domain_allows')
@@ -148,24 +148,26 @@ enum OAuthScope {
   adminColonReadColonDomainBlocks(r'admin:read:domain_blocks'),
 
   /// OAuth scope for API access
-  @JsonValue(r'admin:read:ip_blocks')
-  adminColonReadColonIpBlocks(r'admin:read:ip_blocks'),
-
-  /// OAuth scope for API access
   @JsonValue(r'admin:read:email_domain_blocks')
   adminColonReadColonEmailDomainBlocks(r'admin:read:email_domain_blocks'),
 
   /// OAuth scope for API access
-  @JsonValue(r'admin:read:canonical_email_blocks')
-  adminColonReadColonCanonicalEmailBlocks(r'admin:read:canonical_email_blocks'),
+  @JsonValue(r'admin:read:ip_blocks')
+  adminColonReadColonIpBlocks(r'admin:read:ip_blocks'),
+
+  /// OAuth scope for API access
+  @JsonValue(r'admin:read:reports')
+  adminColonReadColonReports(r'admin:read:reports'),
 
   /// OAuth scope for API access
   @JsonValue(r'admin:write:accounts')
   adminColonWriteColonAccounts(r'admin:write:accounts'),
 
   /// OAuth scope for API access
-  @JsonValue(r'admin:write:reports')
-  adminColonWriteColonReports(r'admin:write:reports'),
+  @JsonValue(r'admin:write:canonical_email_blocks')
+  adminColonWriteColonCanonicalEmailBlocks(
+    r'admin:write:canonical_email_blocks',
+  ),
 
   /// OAuth scope for API access
   @JsonValue(r'admin:write:domain_allows')
@@ -176,18 +178,16 @@ enum OAuthScope {
   adminColonWriteColonDomainBlocks(r'admin:write:domain_blocks'),
 
   /// OAuth scope for API access
-  @JsonValue(r'admin:write:ip_blocks')
-  adminColonWriteColonIpBlocks(r'admin:write:ip_blocks'),
-
-  /// OAuth scope for API access
   @JsonValue(r'admin:write:email_domain_blocks')
   adminColonWriteColonEmailDomainBlocks(r'admin:write:email_domain_blocks'),
 
   /// OAuth scope for API access
-  @JsonValue(r'admin:write:canonical_email_blocks')
-  adminColonWriteColonCanonicalEmailBlocks(
-    r'admin:write:canonical_email_blocks',
-  );
+  @JsonValue(r'admin:write:ip_blocks')
+  adminColonWriteColonIpBlocks(r'admin:write:ip_blocks'),
+
+  /// OAuth scope for API access
+  @JsonValue(r'admin:write:reports')
+  adminColonWriteColonReports(r'admin:write:reports');
 
   const OAuthScope(this.value);
 

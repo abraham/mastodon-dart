@@ -67,6 +67,12 @@ void main() {
       // TODO
     });
 
+    // Whether the account is currently marked sensitive.
+    // bool sensitized
+    test('to test the property `sensitized`', () async {
+      // TODO
+    });
+
     // Whether the account is currently silenced.
     // bool silenced
     test('to test the property `silenced`', () async {

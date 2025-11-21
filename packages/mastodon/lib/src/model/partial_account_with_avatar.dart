@@ -34,7 +34,7 @@ class PartialAccountWithAvatar {
     required this.url,
   });
 
-  /// The Webfinger account URI. Equal to `username` for local users, or `username@domain` for remote users.
+  /// The WebFinger account URI. Equal to `username` for local users, or `username@domain` for remote users.
   @JsonKey(name: r'acct', required: true, includeIfNull: false)
   final String acct;
 

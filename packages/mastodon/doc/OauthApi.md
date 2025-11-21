@@ -35,7 +35,7 @@ final String codeChallengeMethod = codeChallengeMethod_example; // String | Must
 final bool forceLogin = true; // bool | Forces the user to re-login, which is necessary for authorizing with multiple accounts from the same instance.
 final String lang = lang_example; // String | The ISO 639-1 two-letter language code to use while rendering the authorization form.
 final String scope = scope_example; // String | List of requested [OAuth scopes], separated by spaces (or by pluses, if using query parameters). Must be a subset of `scopes` declared during app registration. If not provided, defaults to `read`.
-final String state = state_example; // String | Arbitrary value to passthrough to your server when the user authorizes or rejects the authorization request.
+final String state = state_example; // String | Arbitrary value to pass through to your server when the user authorizes or rejects the authorization request.
 
 try {
     api.getOauthAuthorize(clientId, redirectUri, responseType, codeChallenge, codeChallengeMethod, forceLogin, lang, scope, state);
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
  **forceLogin** | **bool**| Forces the user to re-login, which is necessary for authorizing with multiple accounts from the same instance. | [optional] 
  **lang** | **String**| The ISO 639-1 two-letter language code to use while rendering the authorization form. | [optional] 
  **scope** | **String**| List of requested [OAuth scopes], separated by spaces (or by pluses, if using query parameters). Must be a subset of `scopes` declared during app registration. If not provided, defaults to `read`. | [optional] [default to 'read']
- **state** | **String**| Arbitrary value to passthrough to your server when the user authorizes or rejects the authorization request. | [optional] 
+ **state** | **String**| Arbitrary value to pass through to your server when the user authorizes or rejects the authorization request. | [optional] 
 
 ### Return type
 
