@@ -27,6 +27,8 @@ abstract class _$AdminAccountCWProxy {
 
   AdminAccount role(Role role);
 
+  AdminAccount sensitized(bool sensitized);
+
   AdminAccount silenced(bool silenced);
 
   AdminAccount suspended(bool suspended);
@@ -61,6 +63,7 @@ abstract class _$AdminAccountCWProxy {
     List<AdminIp> ips,
     String locale,
     Role role,
+    bool sensitized,
     bool silenced,
     bool suspended,
     String username,
@@ -110,6 +113,9 @@ class _$AdminAccountCWProxyImpl implements _$AdminAccountCWProxy {
   AdminAccount role(Role role) => call(role: role);
 
   @override
+  AdminAccount sensitized(bool sensitized) => call(sensitized: sensitized);
+
+  @override
   AdminAccount silenced(bool silenced) => call(silenced: silenced);
 
   @override
@@ -155,6 +161,7 @@ class _$AdminAccountCWProxyImpl implements _$AdminAccountCWProxy {
     Object? ips = const $CopyWithPlaceholder(),
     Object? locale = const $CopyWithPlaceholder(),
     Object? role = const $CopyWithPlaceholder(),
+    Object? sensitized = const $CopyWithPlaceholder(),
     Object? silenced = const $CopyWithPlaceholder(),
     Object? suspended = const $CopyWithPlaceholder(),
     Object? username = const $CopyWithPlaceholder(),
@@ -205,6 +212,11 @@ class _$AdminAccountCWProxyImpl implements _$AdminAccountCWProxy {
           ? _value.role
           // ignore: cast_nullable_to_non_nullable
           : role as Role,
+      sensitized:
+          sensitized == const $CopyWithPlaceholder() || sensitized == null
+          ? _value.sensitized
+          // ignore: cast_nullable_to_non_nullable
+          : sensitized as bool,
       silenced: silenced == const $CopyWithPlaceholder() || silenced == null
           ? _value.silenced
           // ignore: cast_nullable_to_non_nullable
@@ -271,6 +283,7 @@ AdminAccount _$AdminAccountFromJson(Map<String, dynamic> json) =>
             'ips',
             'locale',
             'role',
+            'sensitized',
             'silenced',
             'suspended',
             'username',
@@ -301,6 +314,7 @@ AdminAccount _$AdminAccountFromJson(Map<String, dynamic> json) =>
             'role',
             (v) => Role.fromJson(v as Map<String, dynamic>),
           ),
+          sensitized: $checkedConvert('sensitized', (v) => v as bool),
           silenced: $checkedConvert('silenced', (v) => v as bool),
           suspended: $checkedConvert('suspended', (v) => v as bool),
           username: $checkedConvert('username', (v) => v as String),
@@ -338,6 +352,7 @@ Map<String, dynamic> _$AdminAccountToJson(AdminAccount instance) =>
       'ips': instance.ips.map((e) => e.toJson()).toList(),
       'locale': instance.locale,
       'role': instance.role.toJson(),
+      'sensitized': instance.sensitized,
       'silenced': instance.silenced,
       'suspended': instance.suspended,
       'username': instance.username,

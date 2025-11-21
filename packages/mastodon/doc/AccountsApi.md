@@ -17,7 +17,7 @@ Method | HTTP request | Description
 [**getAccountFollowing**](AccountsApi.md#getaccountfollowing) | **GET** /api/v1/accounts/{id}/following | Get account&#39;s following
 [**getAccountIdentityProofs**](AccountsApi.md#getaccountidentityproofs) | **GET** /api/v1/accounts/{id}/identity_proofs | Identity proofs
 [**getAccountLists**](AccountsApi.md#getaccountlists) | **GET** /api/v1/accounts/{id}/lists | Get lists containing this account
-[**getAccountLookup**](AccountsApi.md#getaccountlookup) | **GET** /api/v1/accounts/lookup | Lookup account ID from Webfinger address
+[**getAccountLookup**](AccountsApi.md#getaccountlookup) | **GET** /api/v1/accounts/lookup | Lookup account ID from WebFinger address
 [**getAccountRelationships**](AccountsApi.md#getaccountrelationships) | **GET** /api/v1/accounts/relationships | Check relationships to other accounts
 [**getAccountSearch**](AccountsApi.md#getaccountsearch) | **GET** /api/v1/accounts/search | Search for matching accounts
 [**getAccountStatuses**](AccountsApi.md#getaccountstatuses) | **GET** /api/v1/accounts/{id}/statuses | Get account&#39;s statuses
@@ -414,16 +414,18 @@ Name | Type | Description  | Notes
 # **getAccountLookup**
 > Account getAccountLookup(acct)
 
-Lookup account ID from Webfinger address
+Lookup account ID from WebFinger address
 
 Quickly lookup a username to see if it is available, skipping WebFinger resolution.  Version history:  3.4.0 - added
 
 ### Example
 ```dart
 import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = Mastodon().getAccountsApi();
-final String acct = acct_example; // String | The username or Webfinger address to lookup.
+final String acct = acct_example; // String | The username or WebFinger address to lookup.
 
 try {
     final response = api.getAccountLookup(acct);
@@ -437,7 +439,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **acct** | **String**| The username or Webfinger address to lookup. | 
+ **acct** | **String**| The username or WebFinger address to lookup. | 
 
 ### Return type
 
@@ -445,7 +447,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 

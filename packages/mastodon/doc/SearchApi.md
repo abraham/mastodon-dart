@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 Perform a search
 
-Perform a search for content in accounts, statuses and hashtags with the given parameters.  Version history:  2.4.1 - added, limit hardcoded to 5\\ 2.8.0 - add `type`, `limit`, `offset`, `min_id`, `max_id`, `account_id`\\ 3.0.0 - add `exclude_unreviewed` param\\ 3.3.0 - `min_id` and `max_id` can be used together\\ 4.0.0 - no longer requires a user token. Without a valid user token, you cannot use the `resolve` or `offset` parameters.
+Perform a search for content in accounts, statuses and hashtags with the given parameters. Note that the availability of results depends on the specific backend search configuration of the server being queried. By default, accounts and hashtags are always searchable, while statuses depend on an ElasticSearch backend being present.  Version history:  2.4.1 - added, limit hardcoded to 5\\ 2.8.0 - add `type`, `limit`, `offset`, `min_id`, `max_id`, `account_id`\\ 3.0.0 - add `exclude_unreviewed` param\\ 3.3.0 - `min_id` and `max_id` can be used together\\ 4.0.0 - no longer requires a user token. Without a valid user token, you cannot use the `resolve` or `offset` parameters.
 
 ### Example
 ```dart
@@ -33,7 +33,7 @@ final bool following = true; // bool | Only include accounts that the user is fo
 final int limit = 56; // int | Maximum number of results to return, per type. Defaults to 20 results per category. Max 40 results per category.
 final String maxId = maxId_example; // String | All results returned will be lesser than this ID. In effect, sets an upper bound on results.
 final String minId = minId_example; // String | Returns results immediately newer than this ID. In effect, sets a cursor at this ID and paginates forward.
-final int offset = 56; // int | Skip the first n results.
+final int offset = 56; // int | Skip the first n results. Only applies when `type` is also present (ignored otherwise).
 final bool resolve = true; // bool | Only relevant if `type` includes `accounts` or if `query` is a HTTPS URL. In the first case, if `true` and (a) the search query is for a remote account (e.g., `someaccount@someother.server`) and (b) the local server does not know about the account, [WebFinger] is used to try and resolve the account at `someother.server`. This provides the best recall at higher latency. If `false`, only accounts the server knows about are returned. In the second case, if `true`, resolving the URL and returning the matching status is attempted. If `false`, this resolving logic is circumvented and a regular search is performed instead.
 final String type = type_example; // String | Specify whether to search for only `accounts`, `hashtags`, `statuses`
 
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
  **limit** | **int**| Maximum number of results to return, per type. Defaults to 20 results per category. Max 40 results per category. | [optional] [default to 20]
  **maxId** | **String**| All results returned will be lesser than this ID. In effect, sets an upper bound on results. | [optional] 
  **minId** | **String**| Returns results immediately newer than this ID. In effect, sets a cursor at this ID and paginates forward. | [optional] 
- **offset** | **int**| Skip the first n results. | [optional] 
+ **offset** | **int**| Skip the first n results. Only applies when `type` is also present (ignored otherwise). | [optional] 
  **resolve** | **bool**| Only relevant if `type` includes `accounts` or if `query` is a HTTPS URL. In the first case, if `true` and (a) the search query is for a remote account (e.g., `someaccount@someother.server`) and (b) the local server does not know about the account, [WebFinger] is used to try and resolve the account at `someother.server`. This provides the best recall at higher latency. If `false`, only accounts the server knows about are returned. In the second case, if `true`, resolving the URL and returning the matching status is attempted. If `false`, this resolving logic is circumvented and a regular search is performed instead. | [optional] 
  **type** | **String**| Specify whether to search for only `accounts`, `hashtags`, `statuses` | [optional] 
 

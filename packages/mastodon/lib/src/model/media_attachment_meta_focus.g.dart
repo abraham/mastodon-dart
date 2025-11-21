@@ -7,9 +7,9 @@ part of 'media_attachment_meta_focus.dart';
 // **************************************************************************
 
 abstract class _$MediaAttachmentMetaFocusCWProxy {
-  MediaAttachmentMetaFocus x(num x);
+  MediaAttachmentMetaFocus x(num? x);
 
-  MediaAttachmentMetaFocus y(num y);
+  MediaAttachmentMetaFocus y(num? y);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `MediaAttachmentMetaFocus(...).copyWith.fieldName(value)`.
@@ -18,7 +18,7 @@ abstract class _$MediaAttachmentMetaFocusCWProxy {
   /// ```dart
   /// MediaAttachmentMetaFocus(...).copyWith(id: 12, name: "My name")
   /// ```
-  MediaAttachmentMetaFocus call({num x, num y});
+  MediaAttachmentMetaFocus call({num? x, num? y});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -30,10 +30,10 @@ class _$MediaAttachmentMetaFocusCWProxyImpl
   final MediaAttachmentMetaFocus _value;
 
   @override
-  MediaAttachmentMetaFocus x(num x) => call(x: x);
+  MediaAttachmentMetaFocus x(num? x) => call(x: x);
 
   @override
-  MediaAttachmentMetaFocus y(num y) => call(y: y);
+  MediaAttachmentMetaFocus y(num? y) => call(y: y);
 
   @override
   /// Creates a new instance with the provided field values.
@@ -48,14 +48,14 @@ class _$MediaAttachmentMetaFocusCWProxyImpl
     Object? y = const $CopyWithPlaceholder(),
   }) {
     return MediaAttachmentMetaFocus(
-      x: x == const $CopyWithPlaceholder() || x == null
+      x: x == const $CopyWithPlaceholder()
           ? _value.x
           // ignore: cast_nullable_to_non_nullable
-          : x as num,
-      y: y == const $CopyWithPlaceholder() || y == null
+          : x as num?,
+      y: y == const $CopyWithPlaceholder()
           ? _value.y
           // ignore: cast_nullable_to_non_nullable
-          : y as num,
+          : y as num?,
     );
   }
 }
@@ -75,14 +75,13 @@ extension $MediaAttachmentMetaFocusCopyWith on MediaAttachmentMetaFocus {
 MediaAttachmentMetaFocus _$MediaAttachmentMetaFocusFromJson(
   Map<String, dynamic> json,
 ) => $checkedCreate('MediaAttachmentMetaFocus', json, ($checkedConvert) {
-  $checkKeys(json, requiredKeys: const ['x', 'y']);
   final val = MediaAttachmentMetaFocus(
-    x: $checkedConvert('x', (v) => v as num),
-    y: $checkedConvert('y', (v) => v as num),
+    x: $checkedConvert('x', (v) => v as num?),
+    y: $checkedConvert('y', (v) => v as num?),
   );
   return val;
 });
 
 Map<String, dynamic> _$MediaAttachmentMetaFocusToJson(
   MediaAttachmentMetaFocus instance,
-) => <String, dynamic>{'x': instance.x, 'y': instance.y};
+) => <String, dynamic>{'x': ?instance.x, 'y': ?instance.y};

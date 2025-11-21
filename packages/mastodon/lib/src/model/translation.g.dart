@@ -11,6 +11,8 @@ abstract class _$TranslationCWProxy {
 
   Translation detectedSourceLanguage(String detectedSourceLanguage);
 
+  Translation language(String language);
+
   Translation provider(String provider);
 
   Translation mediaAttachments(List<TranslationAttachment>? mediaAttachments);
@@ -29,6 +31,7 @@ abstract class _$TranslationCWProxy {
   Translation call({
     String content,
     String detectedSourceLanguage,
+    String language,
     String provider,
     List<TranslationAttachment>? mediaAttachments,
     TranslationPoll? poll,
@@ -49,6 +52,9 @@ class _$TranslationCWProxyImpl implements _$TranslationCWProxy {
   @override
   Translation detectedSourceLanguage(String detectedSourceLanguage) =>
       call(detectedSourceLanguage: detectedSourceLanguage);
+
+  @override
+  Translation language(String language) => call(language: language);
 
   @override
   Translation provider(String provider) => call(provider: provider);
@@ -75,6 +81,7 @@ class _$TranslationCWProxyImpl implements _$TranslationCWProxy {
   Translation call({
     Object? content = const $CopyWithPlaceholder(),
     Object? detectedSourceLanguage = const $CopyWithPlaceholder(),
+    Object? language = const $CopyWithPlaceholder(),
     Object? provider = const $CopyWithPlaceholder(),
     Object? mediaAttachments = const $CopyWithPlaceholder(),
     Object? poll = const $CopyWithPlaceholder(),
@@ -91,6 +98,10 @@ class _$TranslationCWProxyImpl implements _$TranslationCWProxy {
           ? _value.detectedSourceLanguage
           // ignore: cast_nullable_to_non_nullable
           : detectedSourceLanguage as String,
+      language: language == const $CopyWithPlaceholder() || language == null
+          ? _value.language
+          // ignore: cast_nullable_to_non_nullable
+          : language as String,
       provider: provider == const $CopyWithPlaceholder() || provider == null
           ? _value.provider
           // ignore: cast_nullable_to_non_nullable
@@ -128,7 +139,12 @@ Translation _$TranslationFromJson(Map<String, dynamic> json) => $checkedCreate(
   ($checkedConvert) {
     $checkKeys(
       json,
-      requiredKeys: const ['content', 'detected_source_language', 'provider'],
+      requiredKeys: const [
+        'content',
+        'detected_source_language',
+        'language',
+        'provider',
+      ],
     );
     final val = Translation(
       content: $checkedConvert('content', (v) => v as String),
@@ -136,6 +152,7 @@ Translation _$TranslationFromJson(Map<String, dynamic> json) => $checkedCreate(
         'detected_source_language',
         (v) => v as String,
       ),
+      language: $checkedConvert('language', (v) => v as String),
       provider: $checkedConvert('provider', (v) => v as String),
       mediaAttachments: $checkedConvert(
         'media_attachments',
@@ -166,6 +183,7 @@ Map<String, dynamic> _$TranslationToJson(Translation instance) =>
     <String, dynamic>{
       'content': instance.content,
       'detected_source_language': instance.detectedSourceLanguage,
+      'language': instance.language,
       'provider': instance.provider,
       'media_attachments': ?instance.mediaAttachments
           ?.map((e) => e.toJson())

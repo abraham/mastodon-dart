@@ -30,7 +30,7 @@ class OauthApi {
   /// * [forceLogin] - Forces the user to re-login, which is necessary for authorizing with multiple accounts from the same instance.
   /// * [lang] - The ISO 639-1 two-letter language code to use while rendering the authorization form.
   /// * [scope] - List of requested [OAuth scopes], separated by spaces (or by pluses, if using query parameters). Must be a subset of `scopes` declared during app registration. If not provided, defaults to `read`.
-  /// * [state] - Arbitrary value to passthrough to your server when the user authorizes or rejects the authorization request.
+  /// * [state] - Arbitrary value to pass through to your server when the user authorizes or rejects the authorization request.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request

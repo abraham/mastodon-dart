@@ -78,7 +78,7 @@ void main() {
       // TODO
     });
 
-    // Lookup account ID from Webfinger address
+    // Lookup account ID from WebFinger address
     //
     // Quickly lookup a username to see if it is available, skipping WebFinger resolution.  Version history:  3.4.0 - added
     //

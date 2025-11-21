@@ -17,7 +17,7 @@ class SearchApi {
   const SearchApi(this._dio);
 
   /// Perform a search
-  /// Perform a search for content in accounts, statuses and hashtags with the given parameters.  Version history:  2.4.1 - added, limit hardcoded to 5\\ 2.8.0 - add &#x60;type&#x60;, &#x60;limit&#x60;, &#x60;offset&#x60;, &#x60;min_id&#x60;, &#x60;max_id&#x60;, &#x60;account_id&#x60;\\ 3.0.0 - add &#x60;exclude_unreviewed&#x60; param\\ 3.3.0 - &#x60;min_id&#x60; and &#x60;max_id&#x60; can be used together\\ 4.0.0 - no longer requires a user token. Without a valid user token, you cannot use the &#x60;resolve&#x60; or &#x60;offset&#x60; parameters.
+  /// Perform a search for content in accounts, statuses and hashtags with the given parameters. Note that the availability of results depends on the specific backend search configuration of the server being queried. By default, accounts and hashtags are always searchable, while statuses depend on an ElasticSearch backend being present.  Version history:  2.4.1 - added, limit hardcoded to 5\\ 2.8.0 - add &#x60;type&#x60;, &#x60;limit&#x60;, &#x60;offset&#x60;, &#x60;min_id&#x60;, &#x60;max_id&#x60;, &#x60;account_id&#x60;\\ 3.0.0 - add &#x60;exclude_unreviewed&#x60; param\\ 3.3.0 - &#x60;min_id&#x60; and &#x60;max_id&#x60; can be used together\\ 4.0.0 - no longer requires a user token. Without a valid user token, you cannot use the &#x60;resolve&#x60; or &#x60;offset&#x60; parameters.
   ///
   /// Parameters:
   /// * [q] - The search query.
@@ -27,7 +27,7 @@ class SearchApi {
   /// * [limit] - Maximum number of results to return, per type. Defaults to 20 results per category. Max 40 results per category.
   /// * [maxId] - All results returned will be lesser than this ID. In effect, sets an upper bound on results.
   /// * [minId] - Returns results immediately newer than this ID. In effect, sets a cursor at this ID and paginates forward.
-  /// * [offset] - Skip the first n results.
+  /// * [offset] - Skip the first n results. Only applies when `type` is also present (ignored otherwise).
   /// * [resolve] - Only relevant if `type` includes `accounts` or if `query` is a HTTPS URL. In the first case, if `true` and (a) the search query is for a remote account (e.g., `someaccount@someother.server`) and (b) the local server does not know about the account, [WebFinger] is used to try and resolve the account at `someother.server`. This provides the best recall at higher latency. If `false`, only accounts the server knows about are returned. In the second case, if `true`, resolving the URL and returning the matching status is attempted. If `false`, this resolving logic is circumvented and a regular search is performed instead.
   /// * [type] - Specify whether to search for only `accounts`, `hashtags`, `statuses`
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation

@@ -7,7 +7,7 @@ void main() {
   // TODO add properties to the entity
 
   group(CredentialAccount, () {
-    // The Webfinger account URI. Equal to `username` for local users, or `username@domain` for remote users.
+    // The WebFinger account URI. Equal to `username` for local users, or `username@domain` for remote users.
     // String acct
     test('to test the property `acct`', () async {
       // TODO

@@ -24,6 +24,8 @@ class Translation {
 
     required this.detectedSourceLanguage,
 
+    required this.language,
+
     required this.provider,
 
     this.mediaAttachments,
@@ -44,6 +46,10 @@ class Translation {
     includeIfNull: false,
   )
   final String detectedSourceLanguage;
+
+  /// The resulting language the text was translated into.
+  @JsonKey(name: r'language', required: true, includeIfNull: false)
+  final String language;
 
   /// The service that provided the machine translation.
   @JsonKey(name: r'provider', required: true, includeIfNull: false)
@@ -66,6 +72,7 @@ class Translation {
       other is Translation &&
           other.content == content &&
           other.detectedSourceLanguage == detectedSourceLanguage &&
+          other.language == language &&
           other.provider == provider &&
           other.mediaAttachments == mediaAttachments &&
           other.poll == poll &&
@@ -75,6 +82,7 @@ class Translation {
   int get hashCode =>
       content.hashCode +
       detectedSourceLanguage.hashCode +
+      language.hashCode +
       provider.hashCode +
       (mediaAttachments == null ? 0 : mediaAttachments.hashCode) +
       (poll == null ? 0 : poll.hashCode) +

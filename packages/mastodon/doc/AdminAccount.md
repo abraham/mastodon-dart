@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **ips** | [**List&lt;AdminIp&gt;**](AdminIp.md) | All known IP addresses associated with this account. | 
 **locale** | **String** | The locale of the account. | 
 **role** | [**Role**](Role.md) | The current role of the account. | 
+**sensitized** | **bool** | Whether the account is currently marked sensitive. | 
 **silenced** | **bool** | Whether the account is currently silenced. | 
 **suspended** | **bool** | Whether the account is currently suspended. | 
 **username** | **String** | The username of the account. | 

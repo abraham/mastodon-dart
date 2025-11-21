@@ -1058,7 +1058,7 @@ Name | Type | Description  | Notes
 
 Edit a status
 
-Edit a given status to change its text, sensitivity, media attachments, or poll. Note that editing a poll’s options or changing whether it is multiple choice will reset the votes.  Version history:  3.5.0 - added\\ 4.0.0 - add `language`\\ 4.5.0 (`mastodon` [API version] 7) - add `quote_approval_policy`
+Edit a given status to change its text, sensitivity, media attachments, or poll. Notes:  Version history:  3.5.0 - added\\ 4.0.0 - add `language`\\ 4.5.0 (`mastodon` [API version] 7) - add `quote_approval_policy`
 
 ### Example
 ```dart

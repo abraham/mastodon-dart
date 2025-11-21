@@ -41,6 +41,8 @@ class AdminAccount {
 
     required this.role,
 
+    required this.sensitized,
+
     required this.silenced,
 
     required this.suspended,
@@ -98,6 +100,10 @@ class AdminAccount {
   @JsonKey(name: r'role', required: true, includeIfNull: false)
   final Role role;
 
+  /// Whether the account is currently marked sensitive.
+  @JsonKey(name: r'sensitized', required: true, includeIfNull: false)
+  final bool sensitized;
+
   /// Whether the account is currently silenced.
   @JsonKey(name: r'silenced', required: true, includeIfNull: false)
   final bool silenced;
@@ -152,6 +158,7 @@ class AdminAccount {
           other.ips == ips &&
           other.locale == locale &&
           other.role == role &&
+          other.sensitized == sensitized &&
           other.silenced == silenced &&
           other.suspended == suspended &&
           other.username == username &&
@@ -173,6 +180,7 @@ class AdminAccount {
       ips.hashCode +
       locale.hashCode +
       role.hashCode +
+      sensitized.hashCode +
       silenced.hashCode +
       suspended.hashCode +
       username.hashCode +
