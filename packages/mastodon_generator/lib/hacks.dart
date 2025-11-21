@@ -27,7 +27,7 @@ class Hack {
     final file = File(filePath);
 
     if (!await file.exists()) {
-      print('Error: ${filePath} not found');
+      print('Error: $filePath not found');
       exit(1);
     }
 
