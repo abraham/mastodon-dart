@@ -1,5 +1,12 @@
 ## Unreleased
 
+## v1.0.0-alpha.12
+
+**Features**
+
+- Updated spec [131d4cd...a58a477](https://github.com/mastodon/documentation/compare/131d4cddf6487a63023e701ba4101e6fb483019f...a58a4775a9e78dee42c0edea50de200b2d70d00c)
+- Update Async Refresh to use user credentials
+
 ## v1.0.0-alpha.11
 
 **Features**
