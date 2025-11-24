@@ -1,5 +1,7 @@
 ## Unreleased
 
+## v1.0.0-alpha.12
+
 ## v1.0.0-alpha.11
 
 **Features**
