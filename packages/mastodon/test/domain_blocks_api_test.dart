@@ -8,7 +8,7 @@ void main() {
   group(DomainBlocksApi, () {
     // Block a domain
     //
-    // Block a domain to:
+    // Block a domain to change interactions with that domain's server:
     //
     //Future createDomainBlock(CreateDomainBlockRequest createDomainBlockRequest) async
     test('test createDomainBlock', () async {

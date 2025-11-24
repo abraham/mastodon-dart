@@ -39,7 +39,7 @@ class CreateFilterV2Request {
   @JsonKey(name: r'title', required: true, includeIfNull: false)
   final String title;
 
-  /// How many seconds from now should the filter expire?
+  /// How many seconds from now should the filter expire? Defaults to never expire.
   @JsonKey(name: r'expires_in', required: false, includeIfNull: false)
   final int? expiresIn;
 

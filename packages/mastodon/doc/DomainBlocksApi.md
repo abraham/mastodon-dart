@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 Block a domain
 
-Block a domain to:
+Block a domain to change interactions with that domain's server:
 
 ### Example
 ```dart

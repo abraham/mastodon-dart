@@ -19,7 +19,7 @@ void main() {
       // TODO
     });
 
-    // How many seconds from now should the filter expire?
+    // How many seconds from now should the filter expire? Defaults to never expire.
     // int expiresIn
     test('to test the property `expiresIn`', () async {
       // TODO

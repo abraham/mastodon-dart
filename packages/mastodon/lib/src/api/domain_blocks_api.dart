@@ -18,7 +18,7 @@ class DomainBlocksApi {
   const DomainBlocksApi(this._dio);
 
   /// Block a domain
-  /// Block a domain to:
+  /// Block a domain to change interactions with that domain&#39;s server:
   ///
   /// Parameters:
   /// * [createDomainBlockRequest] - JSON request body parameters
