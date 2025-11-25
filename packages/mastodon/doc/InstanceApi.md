@@ -112,6 +112,8 @@ Obtain a list of domains that have been blocked.  Version history:  4.0.0 - adde
 import 'package:mastodon/api.dart';
 // TODO Configure OAuth2 access token for authorization: OAuth2
 //defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = Mastodon().getInstanceApi();
 
@@ -132,7 +134,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 

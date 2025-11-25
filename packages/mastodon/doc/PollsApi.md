@@ -25,6 +25,8 @@ View a poll attached to a status.  Version history:  2.8.0 - added
 import 'package:mastodon/api.dart';
 // TODO Configure OAuth2 access token for authorization: OAuth2
 //defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = Mastodon().getPollsApi();
 final String id = id_example; // String | id parameter
@@ -49,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -68,6 +70,8 @@ Vote on a poll attached to a status.  Version history:  2.8.0 - added
 ### Example
 ```dart
 import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
 // TODO Configure OAuth2 access token for authorization: OAuth2
 //defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
@@ -96,7 +100,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 

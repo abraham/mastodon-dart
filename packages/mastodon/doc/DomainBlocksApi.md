@@ -26,6 +26,8 @@ Block a domain to change interactions with that domain's server:
 import 'package:mastodon/api.dart';
 // TODO Configure OAuth2 access token for authorization: OAuth2
 //defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = Mastodon().getDomainBlocksApi();
 final CreateDomainBlockRequest createDomainBlockRequest = ; // CreateDomainBlockRequest | JSON request body parameters
@@ -49,7 +51,7 @@ void (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -68,6 +70,8 @@ Remove a domain block, if it exists in the user's array of blocked domains.  Ver
 ### Example
 ```dart
 import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
 // TODO Configure OAuth2 access token for authorization: OAuth2
 //defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
@@ -93,7 +97,7 @@ void (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -112,6 +116,8 @@ View domains the user has blocked.
 ### Example
 ```dart
 import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
 // TODO Configure OAuth2 access token for authorization: OAuth2
 //defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
@@ -144,7 +150,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 

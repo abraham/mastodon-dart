@@ -53,6 +53,7 @@ class AsyncRefreshesApi {
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {'type': 'oauth2', 'name': 'OAuth2'},
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },

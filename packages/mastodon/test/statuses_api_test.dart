@@ -62,7 +62,7 @@ void main() {
 
     // See quotes of a status
     //
-    // View quotes of a status you have posted.  Version history:  4.5.0 (`mastodon` [API version] 7) - added
+    // View quotes of a status.  Version history:  4.5.0 (`mastodon` [API version] 7) - added
     //
     //Future<List<Status>> getStatusQuotes(String id, { int limit, String maxId, String sinceId }) async
     test('test getStatusQuotes', () async {

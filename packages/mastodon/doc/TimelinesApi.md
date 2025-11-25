@@ -29,6 +29,8 @@ View statuses with a \"direct\" privacy, from your account or in your notificati
 import 'package:mastodon/api.dart';
 // TODO Configure OAuth2 access token for authorization: OAuth2
 //defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = Mastodon().getTimelinesApi();
 final int limit = 56; // int | Maximum number of results to return. Defaults to 20 statuses. Max 40 statuses.
@@ -59,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -78,6 +80,8 @@ View statuses from followed users and hashtags.  Version history:  0.0.0 - added
 ### Example
 ```dart
 import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
 // TODO Configure OAuth2 access token for authorization: OAuth2
 //defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
@@ -110,7 +114,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -129,8 +133,10 @@ View public statuses containing a link to the specified currently-trending artic
 ### Example
 ```dart
 import 'package:mastodon/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2ClientCredentials
-//defaultApiClient.getAuthentication<OAuth>('OAuth2ClientCredentials').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = Mastodon().getTimelinesApi();
 final String url = url_example; // String | The URL of the trending article.
@@ -163,7 +169,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2ClientCredentials](../README.md#OAuth2ClientCredentials)
+[OAuth2](../README.md#OAuth2), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -182,8 +188,10 @@ View public statuses.  Version history:  0.0.0 - added\\ 2.3.0 - added `only_med
 ### Example
 ```dart
 import 'package:mastodon/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2ClientCredentials
-//defaultApiClient.getAuthentication<OAuth>('OAuth2ClientCredentials').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = Mastodon().getTimelinesApi();
 final int limit = 56; // int | Maximum number of results to return. Defaults to 20 statuses. Max 40 statuses.
@@ -220,7 +228,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2ClientCredentials](../README.md#OAuth2ClientCredentials)
+[OAuth2](../README.md#OAuth2), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -239,6 +247,8 @@ View statuses in the given list timeline.  Version history:  2.1.0 - added\\ 2.6
 ### Example
 ```dart
 import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
 // TODO Configure OAuth2 access token for authorization: OAuth2
 //defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
@@ -273,7 +283,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -292,8 +302,10 @@ View public statuses containing the given hashtag.  Version history:  0.0.0 - ad
 ### Example
 ```dart
 import 'package:mastodon/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2ClientCredentials
-//defaultApiClient.getAuthentication<OAuth>('OAuth2ClientCredentials').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = Mastodon().getTimelinesApi();
 final String hashtag = hashtag_example; // String | hashtag parameter
@@ -338,7 +350,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2ClientCredentials](../README.md#OAuth2ClientCredentials)
+[OAuth2](../README.md#OAuth2), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 

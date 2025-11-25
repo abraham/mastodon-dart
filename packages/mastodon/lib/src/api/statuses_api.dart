@@ -64,6 +64,7 @@ class StatusesApi {
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {'type': 'oauth2', 'name': 'OAuth2'},
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -165,6 +166,7 @@ class StatusesApi {
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {'type': 'oauth2', 'name': 'OAuth2'},
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -250,6 +252,7 @@ class StatusesApi {
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {'type': 'oauth2', 'name': 'OAuth2'},
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -329,6 +332,7 @@ class StatusesApi {
       headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
+          {'type': 'oauth2', 'name': 'OAuth2'},
           {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
@@ -415,6 +419,7 @@ class StatusesApi {
       headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
+          {'type': 'oauth2', 'name': 'OAuth2'},
           {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
@@ -507,6 +512,7 @@ class StatusesApi {
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {'type': 'oauth2', 'name': 'OAuth2'},
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -555,7 +561,7 @@ class StatusesApi {
   }
 
   /// See quotes of a status
-  /// View quotes of a status you have posted.  Version history:  4.5.0 (&#x60;mastodon&#x60; [API version] 7) - added
+  /// View quotes of a status.  Version history:  4.5.0 (&#x60;mastodon&#x60; [API version] 7) - added
   ///
   /// Parameters:
   /// * [id] - id parameter
@@ -596,6 +602,7 @@ class StatusesApi {
       headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
+          {'type': 'oauth2', 'name': 'OAuth2'},
           {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
@@ -694,6 +701,7 @@ class StatusesApi {
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {'type': 'oauth2', 'name': 'OAuth2'},
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -784,7 +792,8 @@ class StatusesApi {
       headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {'type': 'oauth2', 'name': 'OAuth2ClientCredentials'},
+          {'type': 'oauth2', 'name': 'OAuth2'},
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -863,6 +872,7 @@ class StatusesApi {
       headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
+          {'type': 'oauth2', 'name': 'OAuth2'},
           {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
@@ -951,6 +961,7 @@ class StatusesApi {
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {'type': 'oauth2', 'name': 'OAuth2'},
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -1030,6 +1041,7 @@ class StatusesApi {
       headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
+          {'type': 'oauth2', 'name': 'OAuth2'},
           {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
@@ -1111,6 +1123,7 @@ class StatusesApi {
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {'type': 'oauth2', 'name': 'OAuth2'},
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -1190,6 +1203,7 @@ class StatusesApi {
       headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
+          {'type': 'oauth2', 'name': 'OAuth2'},
           {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
@@ -1272,6 +1286,7 @@ class StatusesApi {
       headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
+          {'type': 'oauth2', 'name': 'OAuth2'},
           {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
@@ -1369,7 +1384,8 @@ class StatusesApi {
       headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {'type': 'oauth2', 'name': 'OAuth2ClientCredentials'},
+          {'type': 'oauth2', 'name': 'OAuth2'},
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -1469,6 +1485,7 @@ class StatusesApi {
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {'type': 'oauth2', 'name': 'OAuth2'},
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -1548,6 +1565,7 @@ class StatusesApi {
       headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
+          {'type': 'oauth2', 'name': 'OAuth2'},
           {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
@@ -1629,6 +1647,7 @@ class StatusesApi {
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {'type': 'oauth2', 'name': 'OAuth2'},
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -1709,6 +1728,7 @@ class StatusesApi {
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {'type': 'oauth2', 'name': 'OAuth2'},
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -1788,6 +1808,7 @@ class StatusesApi {
       headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
+          {'type': 'oauth2', 'name': 'OAuth2'},
           {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
@@ -1878,6 +1899,7 @@ class StatusesApi {
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {'type': 'oauth2', 'name': 'OAuth2'},
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -1959,6 +1981,7 @@ class StatusesApi {
       headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
+          {'type': 'oauth2', 'name': 'OAuth2'},
           {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
@@ -2056,6 +2079,7 @@ class StatusesApi {
       headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
+          {'type': 'oauth2', 'name': 'OAuth2'},
           {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
