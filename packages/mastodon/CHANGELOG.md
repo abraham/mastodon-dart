@@ -2,6 +2,10 @@
 
 ## v1.0.0-beta.2
 
+**Features**
+
+- Limit app token scopes
+
 ## v1.0.0-beta.1
 
 **Features**
