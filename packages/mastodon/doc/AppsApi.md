@@ -66,8 +66,10 @@ Confirm that the app's OAuth2 credentials work.  Version history:  2.0.0 - added
 ### Example
 ```dart
 import 'package:mastodon/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2ClientCredentials
-//defaultApiClient.getAuthentication<OAuth>('OAuth2ClientCredentials').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = Mastodon().getAppsApi();
 
@@ -88,7 +90,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[OAuth2ClientCredentials](../README.md#OAuth2ClientCredentials)
+[OAuth2](../README.md#OAuth2), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 

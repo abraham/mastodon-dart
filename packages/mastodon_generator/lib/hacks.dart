@@ -181,12 +181,12 @@ void main() async {
         Replacement(
           "try {} catch (error, stackTrace) {",
           "try {\n_bodyData = FormData.fromMap({ 'file': file, 'thumbnail': thumbnail, 'description': description, 'focus': focus });\n} catch (error, stackTrace) {",
-          [69, 167],
+          [70, 169],
         ),
         Replacement(
           "try {} catch (error, stackTrace) {",
           "try {\n_bodyData = FormData.fromMap({ 'thumbnail': thumbnail, 'description': description, 'focus': focus });\n} catch (error, stackTrace) {",
-          [408],
+          [413],
         ),
       ],
       description: "Fix Media API FormData construction",

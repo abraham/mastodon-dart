@@ -54,6 +54,7 @@ class PollsApi {
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {'type': 'oauth2', 'name': 'OAuth2'},
+          {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,
       },
@@ -135,6 +136,7 @@ class PollsApi {
       headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
+          {'type': 'oauth2', 'name': 'OAuth2'},
           {'type': 'oauth2', 'name': 'OAuth2'},
         ],
         ...?extra,

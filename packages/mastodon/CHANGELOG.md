@@ -1,5 +1,10 @@
 ## Unreleased
 
+**Features**
+
+- Updated spec [a58a477...9740b2a](https://github.com/mastodon/documentation/compare/a58a4775a9e78dee42c0edea50de200b2d70d00c...9740b2a386267ec66e064146516b820803657e5f)
+- Merge Oauth2 and OAuth2ClientCredentials security schemes together
+
 ## v1.0.0-alpha.12
 
 **Features**
