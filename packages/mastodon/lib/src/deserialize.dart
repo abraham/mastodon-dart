@@ -22,10 +22,12 @@ import 'package:mastodon/src/model/announcement_status.dart';
 import 'package:mastodon/src/model/appeal.dart';
 import 'package:mastodon/src/model/application.dart';
 import 'package:mastodon/src/model/async_refresh.dart';
+import 'package:mastodon/src/model/async_refresh_response.dart';
 import 'package:mastodon/src/model/base_status.dart';
 import 'package:mastodon/src/model/cohort_data.dart';
 import 'package:mastodon/src/model/context.dart';
 import 'package:mastodon/src/model/conversation.dart';
+import 'package:mastodon/src/model/count_response.dart';
 import 'package:mastodon/src/model/create_account_request.dart';
 import 'package:mastodon/src/model/create_app_request.dart';
 import 'package:mastodon/src/model/create_domain_block_request.dart';
@@ -63,10 +65,7 @@ import 'package:mastodon/src/model/filter.dart';
 import 'package:mastodon/src/model/filter_keyword.dart';
 import 'package:mastodon/src/model/filter_result.dart';
 import 'package:mastodon/src/model/filter_status.dart';
-import 'package:mastodon/src/model/get_async_refresh_v1_alpha200_response.dart';
 import 'package:mastodon/src/model/get_instance_activity200_response_inner.dart';
-import 'package:mastodon/src/model/get_notifications_requests_merged200_response.dart';
-import 'package:mastodon/src/model/get_notifications_unread_count200_response.dart';
 import 'package:mastodon/src/model/grouped_notifications_results.dart';
 import 'package:mastodon/src/model/identity_proof.dart';
 import 'package:mastodon/src/model/instance.dart';
@@ -94,6 +93,7 @@ import 'package:mastodon/src/model/media_attachment.dart';
 import 'package:mastodon/src/model/media_attachment_meta.dart';
 import 'package:mastodon/src/model/media_attachment_meta_focus.dart';
 import 'package:mastodon/src/model/media_status.dart';
+import 'package:mastodon/src/model/merged_response.dart';
 import 'package:mastodon/src/model/meta_details.dart';
 import 'package:mastodon/src/model/model_list.dart';
 import 'package:mastodon/src/model/muted_account.dart';
@@ -269,6 +269,9 @@ ReturnType deserialize<ReturnType, BaseType>(
       return Application.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'AsyncRefresh':
       return AsyncRefresh.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'AsyncRefreshResponse':
+      return AsyncRefreshResponse.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'AsyncRefreshStatusEnum':
     case 'BaseStatus':
       return BaseStatus.fromJson(value as Map<String, dynamic>) as ReturnType;
@@ -278,6 +281,9 @@ ReturnType deserialize<ReturnType, BaseType>(
       return Context.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'Conversation':
       return Conversation.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'CountResponse':
+      return CountResponse.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'CreateAccountRequest':
       return CreateAccountRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -403,23 +409,8 @@ ReturnType deserialize<ReturnType, BaseType>(
       return FilterResult.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'FilterStatus':
       return FilterStatus.fromJson(value as Map<String, dynamic>) as ReturnType;
-    case 'GetAsyncRefreshV1Alpha200Response':
-      return GetAsyncRefreshV1Alpha200Response.fromJson(
-            value as Map<String, dynamic>,
-          )
-          as ReturnType;
     case 'GetInstanceActivity200ResponseInner':
       return GetInstanceActivity200ResponseInner.fromJson(
-            value as Map<String, dynamic>,
-          )
-          as ReturnType;
-    case 'GetNotificationsRequestsMerged200Response':
-      return GetNotificationsRequestsMerged200Response.fromJson(
-            value as Map<String, dynamic>,
-          )
-          as ReturnType;
-    case 'GetNotificationsUnreadCount200Response':
-      return GetNotificationsUnreadCount200Response.fromJson(
             value as Map<String, dynamic>,
           )
           as ReturnType;
@@ -518,6 +509,9 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'MediaAttachmentTypeEnum':
     case 'MediaStatus':
       return MediaStatus.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'MergedResponse':
+      return MergedResponse.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'MetaDetails':
       return MetaDetails.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'ModelList':

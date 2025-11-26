@@ -1,13 +1,12 @@
 import 'package:test/test.dart';
 import 'package:mastodon/mastodon.dart';
 
-// tests for GetNotificationsUnreadCount200Response
+// tests for CountResponse
 void main() {
-  final GetNotificationsUnreadCount200Response?
-  instance = /* GetNotificationsUnreadCount200Response(...) */ null;
+  final CountResponse? instance = /* CountResponse(...) */ null;
   // TODO add properties to the entity
 
-  group(GetNotificationsUnreadCount200Response, () {
+  group(CountResponse, () {
     // int count
     test('to test the property `count`', () async {
       // TODO

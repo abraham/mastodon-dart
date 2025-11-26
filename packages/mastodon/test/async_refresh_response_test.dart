@@ -1,13 +1,12 @@
 import 'package:test/test.dart';
 import 'package:mastodon/mastodon.dart';
 
-// tests for GetAsyncRefreshV1Alpha200Response
+// tests for AsyncRefreshResponse
 void main() {
-  final GetAsyncRefreshV1Alpha200Response?
-  instance = /* GetAsyncRefreshV1Alpha200Response(...) */ null;
+  final AsyncRefreshResponse? instance = /* AsyncRefreshResponse(...) */ null;
   // TODO add properties to the entity
 
-  group(GetAsyncRefreshV1Alpha200Response, () {
+  group(AsyncRefreshResponse, () {
     // AsyncRefresh asyncRefresh
     test('to test the property `asyncRefresh`', () async {
       // TODO
