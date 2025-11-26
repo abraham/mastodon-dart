@@ -2,6 +2,10 @@
 
 ## v1.0.0-beta.3
 
+**Features**
+
+- Improved handling of endpoints that return hashes
+
 ## v1.0.0-beta.2
 
 **Features**
