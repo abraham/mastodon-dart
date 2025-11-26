@@ -1,5 +1,11 @@
 ## Unreleased
 
+## v1.0.0-beta.4
+
+**Features**
+
+- Improved response class names
+
 ## v1.0.0-beta.3
 
 **Features**
