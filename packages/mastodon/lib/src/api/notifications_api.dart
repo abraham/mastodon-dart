@@ -10,9 +10,9 @@ import 'package:mastodon/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
 import 'package:mastodon/src/model/account.dart';
-import 'package:mastodon/src/model/get_notifications_requests_merged200_response.dart';
-import 'package:mastodon/src/model/get_notifications_unread_count200_response.dart';
+import 'package:mastodon/src/model/count_response.dart';
 import 'package:mastodon/src/model/grouped_notifications_results.dart';
+import 'package:mastodon/src/model/merged_response.dart';
 import 'package:mastodon/src/model/notification.dart';
 import 'package:mastodon/src/model/notification_policy.dart';
 import 'package:mastodon/src/model/notification_request.dart';
@@ -795,12 +795,11 @@ class NotificationsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [GetNotificationsRequestsMerged200Response] as data
+  /// Returns a [Future] containing a [Response] with a [MergedResponse] as data
   /// Throws [DioException] if API call or serialization fails
   /// Official Mastodon API documentation
   /// Also see [Check if accepted notification requests have been merged Documentation](https://docs.joinmastodon.org/methods/notifications/#requests-merged)
-  Future<Response<GetNotificationsRequestsMerged200Response>>
-  getNotificationsRequestsMerged({
+  Future<Response<MergedResponse>> getNotificationsRequestsMerged({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -830,18 +829,15 @@ class NotificationsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    GetNotificationsRequestsMerged200Response? _responseData;
+    MergedResponse? _responseData;
 
     try {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<
-              GetNotificationsRequestsMerged200Response,
-              GetNotificationsRequestsMerged200Response
-            >(
+          : deserialize<MergedResponse, MergedResponse>(
               rawData,
-              'GetNotificationsRequestsMerged200Response',
+              'MergedResponse',
               growable: true,
             );
     } catch (error, stackTrace) {
@@ -854,7 +850,7 @@ class NotificationsApi {
       );
     }
 
-    return Response<GetNotificationsRequestsMerged200Response>(
+    return Response<MergedResponse>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -881,12 +877,11 @@ class NotificationsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [GetNotificationsUnreadCount200Response] as data
+  /// Returns a [Future] containing a [Response] with a [CountResponse] as data
   /// Throws [DioException] if API call or serialization fails
   /// Official Mastodon API documentation
   /// Also see [Get the number of unread notifications Documentation](https://docs.joinmastodon.org/methods/notifications/#unread-count)
-  Future<Response<GetNotificationsUnreadCount200Response>>
-  getNotificationsUnreadCount({
+  Future<Response<CountResponse>> getNotificationsUnreadCount({
     String? accountId,
     List<String>? excludeTypes,
     int? limit = 100,
@@ -928,18 +923,15 @@ class NotificationsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    GetNotificationsUnreadCount200Response? _responseData;
+    CountResponse? _responseData;
 
     try {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<
-              GetNotificationsUnreadCount200Response,
-              GetNotificationsUnreadCount200Response
-            >(
+          : deserialize<CountResponse, CountResponse>(
               rawData,
-              'GetNotificationsUnreadCount200Response',
+              'CountResponse',
               growable: true,
             );
     } catch (error, stackTrace) {
@@ -952,7 +944,7 @@ class NotificationsApi {
       );
     }
 
-    return Response<GetNotificationsUnreadCount200Response>(
+    return Response<CountResponse>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -980,12 +972,11 @@ class NotificationsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [GetNotificationsUnreadCount200Response] as data
+  /// Returns a [Future] containing a [Response] with a [CountResponse] as data
   /// Throws [DioException] if API call or serialization fails
   /// Official Mastodon API documentation
   /// Also see [Get the number of unread notifications Documentation](https://docs.joinmastodon.org/methods/grouped_notifications/#unread-group-count)
-  Future<Response<GetNotificationsUnreadCount200Response>>
-  getNotificationsUnreadCountV2({
+  Future<Response<CountResponse>> getNotificationsUnreadCountV2({
     String? accountId,
     List<String>? excludeTypes,
     List<String>? groupedTypes,
@@ -1029,18 +1020,15 @@ class NotificationsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    GetNotificationsUnreadCount200Response? _responseData;
+    CountResponse? _responseData;
 
     try {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<
-              GetNotificationsUnreadCount200Response,
-              GetNotificationsUnreadCount200Response
-            >(
+          : deserialize<CountResponse, CountResponse>(
               rawData,
-              'GetNotificationsUnreadCount200Response',
+              'CountResponse',
               growable: true,
             );
     } catch (error, stackTrace) {
@@ -1053,7 +1041,7 @@ class NotificationsApi {
       );
     }
 
-    return Response<GetNotificationsUnreadCount200Response>(
+    return Response<CountResponse>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

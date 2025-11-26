@@ -501,7 +501,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getNotificationsRequestsMerged**
-> GetNotificationsRequestsMerged200Response getNotificationsRequestsMerged()
+> MergedResponse getNotificationsRequestsMerged()
 
 Check if accepted notification requests have been merged
 
@@ -530,7 +530,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**GetNotificationsRequestsMerged200Response**](GetNotificationsRequestsMerged200Response.md)
+[**MergedResponse**](MergedResponse.md)
 
 ### Authorization
 
@@ -544,7 +544,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getNotificationsUnreadCount**
-> GetNotificationsUnreadCount200Response getNotificationsUnreadCount(accountId, excludeTypes, limit, types)
+> CountResponse getNotificationsUnreadCount(accountId, excludeTypes, limit, types)
 
 Get the number of unread notifications
 
@@ -583,7 +583,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetNotificationsUnreadCount200Response**](GetNotificationsUnreadCount200Response.md)
+[**CountResponse**](CountResponse.md)
 
 ### Authorization
 
@@ -597,7 +597,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getNotificationsUnreadCountV2**
-> GetNotificationsUnreadCount200Response getNotificationsUnreadCountV2(accountId, excludeTypes, groupedTypes, limit, types)
+> CountResponse getNotificationsUnreadCountV2(accountId, excludeTypes, groupedTypes, limit, types)
 
 Get the number of unread notifications
 
@@ -638,7 +638,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetNotificationsUnreadCount200Response**](GetNotificationsUnreadCount200Response.md)
+[**CountResponse**](CountResponse.md)
 
 ### Authorization
 

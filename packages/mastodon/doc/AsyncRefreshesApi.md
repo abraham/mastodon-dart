@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **getAsyncRefreshV1Alpha**
-> GetAsyncRefreshV1Alpha200Response getAsyncRefreshV1Alpha(id)
+> AsyncRefreshResponse getAsyncRefreshV1Alpha(id)
 
 Get Status of Async Refresh
 
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetAsyncRefreshV1Alpha200Response**](GetAsyncRefreshV1Alpha200Response.md)
+[**AsyncRefreshResponse**](AsyncRefreshResponse.md)
 
 ### Authorization
 

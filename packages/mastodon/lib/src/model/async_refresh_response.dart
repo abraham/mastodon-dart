@@ -7,7 +7,7 @@ import 'package:mastodon/src/model/async_refresh.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-part 'get_async_refresh_v1_alpha200_response.g.dart';
+part 'async_refresh_response.g.dart';
 
 @CopyWith()
 @JsonSerializable(
@@ -16,9 +16,9 @@ part 'get_async_refresh_v1_alpha200_response.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class GetAsyncRefreshV1Alpha200Response {
-  /// Returns a new [GetAsyncRefreshV1Alpha200Response] instance.
-  GetAsyncRefreshV1Alpha200Response({required this.asyncRefresh});
+class AsyncRefreshResponse {
+  /// Returns a new [AsyncRefreshResponse] instance.
+  AsyncRefreshResponse({required this.asyncRefresh});
 
   @JsonKey(name: r'async_refresh', required: true, includeIfNull: false)
   final AsyncRefresh asyncRefresh;
@@ -26,18 +26,15 @@ class GetAsyncRefreshV1Alpha200Response {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is GetAsyncRefreshV1Alpha200Response &&
-          other.asyncRefresh == asyncRefresh;
+      other is AsyncRefreshResponse && other.asyncRefresh == asyncRefresh;
 
   @override
   int get hashCode => asyncRefresh.hashCode;
 
-  factory GetAsyncRefreshV1Alpha200Response.fromJson(
-    Map<String, dynamic> json,
-  ) => _$GetAsyncRefreshV1Alpha200ResponseFromJson(json);
+  factory AsyncRefreshResponse.fromJson(Map<String, dynamic> json) =>
+      _$AsyncRefreshResponseFromJson(json);
 
-  Map<String, dynamic> toJson() =>
-      _$GetAsyncRefreshV1Alpha200ResponseToJson(this);
+  Map<String, dynamic> toJson() => _$AsyncRefreshResponseToJson(this);
 
   @override
   String toString() {

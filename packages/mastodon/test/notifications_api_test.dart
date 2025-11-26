@@ -100,7 +100,7 @@ void main() {
     //
     // Check whether accepted notification requests have been merged.  Version history:  4.3.0 - added
     //
-    //Future<GetNotificationsRequestsMerged200Response> getNotificationsRequestsMerged() async
+    //Future<MergedResponse> getNotificationsRequestsMerged() async
     test('test getNotificationsRequestsMerged', () async {
       // TODO
     });
@@ -109,7 +109,7 @@ void main() {
     //
     // Get the (capped) number of unread notifications for the current user.
     //
-    //Future<GetNotificationsUnreadCount200Response> getNotificationsUnreadCount({ String accountId, List<String> excludeTypes, int limit, List<String> types }) async
+    //Future<CountResponse> getNotificationsUnreadCount({ String accountId, List<String> excludeTypes, int limit, List<String> types }) async
     test('test getNotificationsUnreadCount', () async {
       // TODO
     });
@@ -118,7 +118,7 @@ void main() {
     //
     // Get the (capped) number of unread notification groups for the current user.
     //
-    //Future<GetNotificationsUnreadCount200Response> getNotificationsUnreadCountV2({ String accountId, List<String> excludeTypes, List<String> groupedTypes, int limit, List<String> types }) async
+    //Future<CountResponse> getNotificationsUnreadCountV2({ String accountId, List<String> excludeTypes, List<String> groupedTypes, int limit, List<String> types }) async
     test('test getNotificationsUnreadCountV2', () async {
       // TODO
     });

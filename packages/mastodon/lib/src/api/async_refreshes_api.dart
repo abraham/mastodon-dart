@@ -9,7 +9,7 @@ import 'dart:convert';
 import 'package:mastodon/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:mastodon/src/model/get_async_refresh_v1_alpha200_response.dart';
+import 'package:mastodon/src/model/async_refresh_response.dart';
 
 class AsyncRefreshesApi {
   final Dio _dio;
@@ -28,11 +28,11 @@ class AsyncRefreshesApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [GetAsyncRefreshV1Alpha200Response] as data
+  /// Returns a [Future] containing a [Response] with a [AsyncRefreshResponse] as data
   /// Throws [DioException] if API call or serialization fails
   /// Official Mastodon API documentation
   /// Also see [Get Status of Async Refresh Documentation](https://docs.joinmastodon.org/methods/async_refreshes/#show)
-  Future<Response<GetAsyncRefreshV1Alpha200Response>> getAsyncRefreshV1Alpha({
+  Future<Response<AsyncRefreshResponse>> getAsyncRefreshV1Alpha({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -68,16 +68,17 @@ class AsyncRefreshesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    GetAsyncRefreshV1Alpha200Response? _responseData;
+    AsyncRefreshResponse? _responseData;
 
     try {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<
-              GetAsyncRefreshV1Alpha200Response,
-              GetAsyncRefreshV1Alpha200Response
-            >(rawData, 'GetAsyncRefreshV1Alpha200Response', growable: true);
+          : deserialize<AsyncRefreshResponse, AsyncRefreshResponse>(
+              rawData,
+              'AsyncRefreshResponse',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -88,7 +89,7 @@ class AsyncRefreshesApi {
       );
     }
 
-    return Response<GetAsyncRefreshV1Alpha200Response>(
+    return Response<AsyncRefreshResponse>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
