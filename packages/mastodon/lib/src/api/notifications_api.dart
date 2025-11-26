@@ -10,6 +10,8 @@ import 'package:mastodon/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
 import 'package:mastodon/src/model/account.dart';
+import 'package:mastodon/src/model/get_notifications_requests_merged200_response.dart';
+import 'package:mastodon/src/model/get_notifications_unread_count200_response.dart';
 import 'package:mastodon/src/model/grouped_notifications_results.dart';
 import 'package:mastodon/src/model/notification.dart';
 import 'package:mastodon/src/model/notification_policy.dart';
@@ -793,11 +795,12 @@ class NotificationsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future]
+  /// Returns a [Future] containing a [Response] with a [GetNotificationsRequestsMerged200Response] as data
   /// Throws [DioException] if API call or serialization fails
   /// Official Mastodon API documentation
   /// Also see [Check if accepted notification requests have been merged Documentation](https://docs.joinmastodon.org/methods/notifications/#requests-merged)
-  Future<Response<void>> getNotificationsRequestsMerged({
+  Future<Response<GetNotificationsRequestsMerged200Response>>
+  getNotificationsRequestsMerged({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -827,7 +830,40 @@ class NotificationsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    return _response;
+    GetNotificationsRequestsMerged200Response? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<
+              GetNotificationsRequestsMerged200Response,
+              GetNotificationsRequestsMerged200Response
+            >(
+              rawData,
+              'GetNotificationsRequestsMerged200Response',
+              growable: true,
+            );
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<GetNotificationsRequestsMerged200Response>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
   /// Get the number of unread notifications
@@ -845,11 +881,12 @@ class NotificationsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future]
+  /// Returns a [Future] containing a [Response] with a [GetNotificationsUnreadCount200Response] as data
   /// Throws [DioException] if API call or serialization fails
   /// Official Mastodon API documentation
   /// Also see [Get the number of unread notifications Documentation](https://docs.joinmastodon.org/methods/notifications/#unread-count)
-  Future<Response<void>> getNotificationsUnreadCount({
+  Future<Response<GetNotificationsUnreadCount200Response>>
+  getNotificationsUnreadCount({
     String? accountId,
     List<String>? excludeTypes,
     int? limit = 100,
@@ -891,7 +928,40 @@ class NotificationsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    return _response;
+    GetNotificationsUnreadCount200Response? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<
+              GetNotificationsUnreadCount200Response,
+              GetNotificationsUnreadCount200Response
+            >(
+              rawData,
+              'GetNotificationsUnreadCount200Response',
+              growable: true,
+            );
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<GetNotificationsUnreadCount200Response>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
   /// Get the number of unread notifications
@@ -910,11 +980,12 @@ class NotificationsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future]
+  /// Returns a [Future] containing a [Response] with a [GetNotificationsUnreadCount200Response] as data
   /// Throws [DioException] if API call or serialization fails
   /// Official Mastodon API documentation
   /// Also see [Get the number of unread notifications Documentation](https://docs.joinmastodon.org/methods/grouped_notifications/#unread-group-count)
-  Future<Response<void>> getNotificationsUnreadCountV2({
+  Future<Response<GetNotificationsUnreadCount200Response>>
+  getNotificationsUnreadCountV2({
     String? accountId,
     List<String>? excludeTypes,
     List<String>? groupedTypes,
@@ -958,7 +1029,40 @@ class NotificationsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    return _response;
+    GetNotificationsUnreadCount200Response? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<
+              GetNotificationsUnreadCount200Response,
+              GetNotificationsUnreadCount200Response
+            >(
+              rawData,
+              'GetNotificationsUnreadCount200Response',
+              growable: true,
+            );
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<GetNotificationsUnreadCount200Response>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
   /// Get all grouped notifications

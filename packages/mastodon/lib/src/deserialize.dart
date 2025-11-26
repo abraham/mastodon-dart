@@ -63,7 +63,10 @@ import 'package:mastodon/src/model/filter.dart';
 import 'package:mastodon/src/model/filter_keyword.dart';
 import 'package:mastodon/src/model/filter_result.dart';
 import 'package:mastodon/src/model/filter_status.dart';
+import 'package:mastodon/src/model/get_async_refresh_v1_alpha200_response.dart';
 import 'package:mastodon/src/model/get_instance_activity200_response_inner.dart';
+import 'package:mastodon/src/model/get_notifications_requests_merged200_response.dart';
+import 'package:mastodon/src/model/get_notifications_unread_count200_response.dart';
 import 'package:mastodon/src/model/grouped_notifications_results.dart';
 import 'package:mastodon/src/model/identity_proof.dart';
 import 'package:mastodon/src/model/instance.dart';
@@ -400,8 +403,23 @@ ReturnType deserialize<ReturnType, BaseType>(
       return FilterResult.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'FilterStatus':
       return FilterStatus.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'GetAsyncRefreshV1Alpha200Response':
+      return GetAsyncRefreshV1Alpha200Response.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'GetInstanceActivity200ResponseInner':
       return GetInstanceActivity200ResponseInner.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
+    case 'GetNotificationsRequestsMerged200Response':
+      return GetNotificationsRequestsMerged200Response.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
+    case 'GetNotificationsUnreadCount200Response':
+      return GetNotificationsUnreadCount200Response.fromJson(
             value as Map<String, dynamic>,
           )
           as ReturnType;

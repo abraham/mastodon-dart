@@ -9,7 +9,7 @@ import 'dart:convert';
 import 'package:mastodon/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:mastodon/src/model/async_refresh.dart';
+import 'package:mastodon/src/model/get_async_refresh_v1_alpha200_response.dart';
 
 class AsyncRefreshesApi {
   final Dio _dio;
@@ -28,11 +28,11 @@ class AsyncRefreshesApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [AsyncRefresh] as data
+  /// Returns a [Future] containing a [Response] with a [GetAsyncRefreshV1Alpha200Response] as data
   /// Throws [DioException] if API call or serialization fails
   /// Official Mastodon API documentation
   /// Also see [Get Status of Async Refresh Documentation](https://docs.joinmastodon.org/methods/async_refreshes/#show)
-  Future<Response<AsyncRefresh>> getAsyncRefreshV1Alpha({
+  Future<Response<GetAsyncRefreshV1Alpha200Response>> getAsyncRefreshV1Alpha({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -68,17 +68,16 @@ class AsyncRefreshesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    AsyncRefresh? _responseData;
+    GetAsyncRefreshV1Alpha200Response? _responseData;
 
     try {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<AsyncRefresh, AsyncRefresh>(
-              rawData,
-              'AsyncRefresh',
-              growable: true,
-            );
+          : deserialize<
+              GetAsyncRefreshV1Alpha200Response,
+              GetAsyncRefreshV1Alpha200Response
+            >(rawData, 'GetAsyncRefreshV1Alpha200Response', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -89,7 +88,7 @@ class AsyncRefreshesApi {
       );
     }
 
-    return Response<AsyncRefresh>(
+    return Response<GetAsyncRefreshV1Alpha200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

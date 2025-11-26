@@ -501,7 +501,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getNotificationsRequestsMerged**
-> getNotificationsRequestsMerged()
+> GetNotificationsRequestsMerged200Response getNotificationsRequestsMerged()
 
 Check if accepted notification requests have been merged
 
@@ -518,7 +518,8 @@ import 'package:mastodon/api.dart';
 final api = Mastodon().getNotificationsApi();
 
 try {
-    api.getNotificationsRequestsMerged();
+    final response = api.getNotificationsRequestsMerged();
+    print(response);
 } catch on DioException (e) {
     print('Exception when calling NotificationsApi->getNotificationsRequestsMerged: $e\n');
 }
@@ -529,7 +530,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-void (empty response body)
+[**GetNotificationsRequestsMerged200Response**](GetNotificationsRequestsMerged200Response.md)
 
 ### Authorization
 
@@ -543,7 +544,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getNotificationsUnreadCount**
-> getNotificationsUnreadCount(accountId, excludeTypes, limit, types)
+> GetNotificationsUnreadCount200Response getNotificationsUnreadCount(accountId, excludeTypes, limit, types)
 
 Get the number of unread notifications
 
@@ -564,7 +565,8 @@ final int limit = 56; // int | Maximum number of results to return. Defaults to 
 final List<String> types = ; // List<String> | Types of notifications that should count towards unread notifications.
 
 try {
-    api.getNotificationsUnreadCount(accountId, excludeTypes, limit, types);
+    final response = api.getNotificationsUnreadCount(accountId, excludeTypes, limit, types);
+    print(response);
 } catch on DioException (e) {
     print('Exception when calling NotificationsApi->getNotificationsUnreadCount: $e\n');
 }
@@ -581,7 +583,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**GetNotificationsUnreadCount200Response**](GetNotificationsUnreadCount200Response.md)
 
 ### Authorization
 
@@ -595,7 +597,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getNotificationsUnreadCountV2**
-> getNotificationsUnreadCountV2(accountId, excludeTypes, groupedTypes, limit, types)
+> GetNotificationsUnreadCount200Response getNotificationsUnreadCountV2(accountId, excludeTypes, groupedTypes, limit, types)
 
 Get the number of unread notifications
 
@@ -617,7 +619,8 @@ final int limit = 56; // int | Maximum number of results to return. Defaults to 
 final List<String> types = ; // List<String> | Types of notifications that should count towards unread notifications.
 
 try {
-    api.getNotificationsUnreadCountV2(accountId, excludeTypes, groupedTypes, limit, types);
+    final response = api.getNotificationsUnreadCountV2(accountId, excludeTypes, groupedTypes, limit, types);
+    print(response);
 } catch on DioException (e) {
     print('Exception when calling NotificationsApi->getNotificationsUnreadCountV2: $e\n');
 }
@@ -635,7 +638,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**GetNotificationsUnreadCount200Response**](GetNotificationsUnreadCount200Response.md)
 
 ### Authorization
 
