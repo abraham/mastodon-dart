@@ -36,7 +36,7 @@ final CreatePushSubscriptionRequest createPushSubscriptionRequest = ; // CreateP
 try {
     final response = api.createPushSubscription(createPushSubscriptionRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling PushApi->createPushSubscription: $e\n');
 }
 ```
@@ -81,7 +81,7 @@ final api = Mastodon().getPushApi();
 
 try {
     api.deletePushSubscription();
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling PushApi->deletePushSubscription: $e\n');
 }
 ```
@@ -124,7 +124,7 @@ final api = Mastodon().getPushApi();
 try {
     final response = api.getPushSubscription();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling PushApi->getPushSubscription: $e\n');
 }
 ```
@@ -168,7 +168,7 @@ final PutPushSubscriptionRequest putPushSubscriptionRequest = ; // PutPushSubscr
 try {
     final response = api.putPushSubscription(putPushSubscriptionRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling PushApi->putPushSubscription: $e\n');
 }
 ```

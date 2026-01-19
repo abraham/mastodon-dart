@@ -34,7 +34,7 @@ final String accountId = accountId_example; // String | account_id parameter
 
 try {
     api.deleteSuggestionsByAccountId(accountId);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling SuggestionsApi->deleteSuggestionsByAccountId: $e\n');
 }
 ```
@@ -81,7 +81,7 @@ final int limit = 56; // int | Maximum number of results to return. Defaults to 
 try {
     final response = api.getSuggestions(limit);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling SuggestionsApi->getSuggestions: $e\n');
 }
 ```
@@ -128,7 +128,7 @@ final int limit = 56; // int | Maximum number of results to return. Defaults to 
 try {
     final response = api.getSuggestionsV2(limit);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling SuggestionsApi->getSuggestionsV2: $e\n');
 }
 ```

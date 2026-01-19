@@ -34,7 +34,7 @@ final String id = id_example; // String | id parameter
 try {
     final response = api.getPoll(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling PollsApi->getPoll: $e\n');
 }
 ```
@@ -82,7 +82,7 @@ final PostPollVotesRequest postPollVotesRequest = ; // PostPollVotesRequest | JS
 try {
     final response = api.postPollVotes(id, postPollVotesRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling PollsApi->postPollVotes: $e\n');
 }
 ```

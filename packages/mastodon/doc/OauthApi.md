@@ -39,7 +39,7 @@ final String state = state_example; // String | Arbitrary value to pass through 
 
 try {
     api.getOauthAuthorize(clientId, redirectUri, responseType, codeChallenge, codeChallengeMethod, forceLogin, lang, scope, state);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling OauthApi->getOauthAuthorize: $e\n');
 }
 ```
@@ -92,7 +92,7 @@ final api = Mastodon().getOauthApi();
 
 try {
     api.getOauthUserinfo();
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling OauthApi->getOauthUserinfo: $e\n');
 }
 ```
@@ -131,7 +131,7 @@ final PostOauthRevokeRequest postOauthRevokeRequest = ; // PostOauthRevokeReques
 
 try {
     api.postOauthRevoke(postOauthRevokeRequest);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling OauthApi->postOauthRevoke: $e\n');
 }
 ```
@@ -174,7 +174,7 @@ final PostOauthTokenRequest postOauthTokenRequest = ; // PostOauthTokenRequest |
 try {
     final response = api.postOauthToken(postOauthTokenRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling OauthApi->postOauthToken: $e\n');
 }
 ```

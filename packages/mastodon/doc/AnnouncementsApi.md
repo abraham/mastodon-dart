@@ -36,7 +36,7 @@ final String name = name_example; // String | name parameter
 
 try {
     api.deleteAnnouncementReaction(id, name);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AnnouncementsApi->deleteAnnouncementReaction: $e\n');
 }
 ```
@@ -83,7 +83,7 @@ final api = Mastodon().getAnnouncementsApi();
 try {
     final response = api.getAnnouncements();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AnnouncementsApi->getAnnouncements: $e\n');
 }
 ```
@@ -126,7 +126,7 @@ final String id = id_example; // String | id parameter
 
 try {
     api.postAnnouncementDismiss(id);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AnnouncementsApi->postAnnouncementDismiss: $e\n');
 }
 ```
@@ -173,7 +173,7 @@ final String name = name_example; // String | name parameter
 
 try {
     api.updateAnnouncementReaction(id, name);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AnnouncementsApi->updateAnnouncementReaction: $e\n');
 }
 ```

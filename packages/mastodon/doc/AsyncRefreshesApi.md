@@ -33,7 +33,7 @@ final String id = id_example; // String | id parameter
 try {
     final response = api.getAsyncRefreshV1Alpha(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AsyncRefreshesApi->getAsyncRefreshV1Alpha: $e\n');
 }
 ```

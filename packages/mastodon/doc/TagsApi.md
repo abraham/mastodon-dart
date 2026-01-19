@@ -37,7 +37,7 @@ final String name = name_example; // String | name parameter
 try {
     final response = api.getTagsByName(name);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling TagsApi->getTagsByName: $e\n');
 }
 ```
@@ -84,7 +84,7 @@ final String id = id_example; // String | id parameter
 try {
     final response = api.postTagFeature(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling TagsApi->postTagFeature: $e\n');
 }
 ```
@@ -131,7 +131,7 @@ final String name = name_example; // String | name parameter
 try {
     final response = api.postTagFollow(name);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling TagsApi->postTagFollow: $e\n');
 }
 ```
@@ -178,7 +178,7 @@ final String id = id_example; // String | id parameter
 try {
     final response = api.postTagUnfeature(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling TagsApi->postTagUnfeature: $e\n');
 }
 ```
@@ -225,7 +225,7 @@ final String name = name_example; // String | name parameter
 try {
     final response = api.postTagUnfollow(name);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling TagsApi->postTagUnfollow: $e\n');
 }
 ```

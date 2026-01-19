@@ -99,7 +99,7 @@ class DiscoverOauthServerConfigurationResponse {
   @JsonKey(name: r'revocation_endpoint', required: true, includeIfNull: false)
   final Uri revocationEndpoint;
 
-  /// Array of OAuth scopes
+  /// Array of scopes_supported
   @JsonKey(name: r'scopes_supported', required: true, includeIfNull: false)
   final List<OAuthScope> scopesSupported;
 
