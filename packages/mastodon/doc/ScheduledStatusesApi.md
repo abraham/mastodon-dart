@@ -35,7 +35,7 @@ final String id = id_example; // String | id parameter
 
 try {
     api.deleteScheduledStatus(id);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling ScheduledStatusesApi->deleteScheduledStatus: $e\n');
 }
 ```
@@ -82,7 +82,7 @@ final String id = id_example; // String | id parameter
 try {
     final response = api.getScheduledStatus(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling ScheduledStatusesApi->getScheduledStatus: $e\n');
 }
 ```
@@ -132,7 +132,7 @@ final String sinceId = sinceId_example; // String | All results returned will be
 try {
     final response = api.getScheduledStatuses(limit, maxId, minId, sinceId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling ScheduledStatusesApi->getScheduledStatuses: $e\n');
 }
 ```
@@ -183,7 +183,7 @@ final UpdateScheduledStatusRequest updateScheduledStatusRequest = ; // UpdateSch
 try {
     final response = api.updateScheduledStatus(id, updateScheduledStatusRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling ScheduledStatusesApi->updateScheduledStatus: $e\n');
 }
 ```

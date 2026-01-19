@@ -42,7 +42,7 @@ final String type = type_example; // String | Specify whether to search for only
 try {
     final response = api.getSearchV2(q, accountId, excludeUnreviewed, following, limit, maxId, minId, offset, resolve, type);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling SearchApi->getSearchV2: $e\n');
 }
 ```

@@ -51,7 +51,7 @@ final CreateFilterRequest createFilterRequest = ; // CreateFilterRequest | JSON 
 try {
     final response = api.createFilter(createFilterRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FiltersApi->createFilter: $e\n');
 }
 ```
@@ -98,7 +98,7 @@ final CreateFilterV2Request createFilterV2Request = ; // CreateFilterV2Request |
 try {
     final response = api.createFilterV2(createFilterV2Request);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FiltersApi->createFilterV2: $e\n');
 }
 ```
@@ -144,7 +144,7 @@ final String id = id_example; // String | id parameter
 
 try {
     api.deleteFilter(id);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FiltersApi->deleteFilter: $e\n');
 }
 ```
@@ -190,7 +190,7 @@ final String id = id_example; // String | id parameter
 
 try {
     api.deleteFilterV2(id);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FiltersApi->deleteFilterV2: $e\n');
 }
 ```
@@ -236,7 +236,7 @@ final String id = id_example; // String | id parameter
 
 try {
     api.deleteFiltersKeywordsByIdV2(id);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FiltersApi->deleteFiltersKeywordsByIdV2: $e\n');
 }
 ```
@@ -283,7 +283,7 @@ final String id = id_example; // String | id parameter
 try {
     final response = api.deleteFiltersStatusesByIdV2(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FiltersApi->deleteFiltersStatusesByIdV2: $e\n');
 }
 ```
@@ -330,7 +330,7 @@ final String id = id_example; // String | id parameter
 try {
     final response = api.getFilter(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FiltersApi->getFilter: $e\n');
 }
 ```
@@ -377,7 +377,7 @@ final String filterId = filterId_example; // String | filter_id parameter
 try {
     final response = api.getFilterKeywordsV2(filterId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FiltersApi->getFilterKeywordsV2: $e\n');
 }
 ```
@@ -424,7 +424,7 @@ final String filterId = filterId_example; // String | filter_id parameter
 try {
     final response = api.getFilterStatusesV2(filterId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FiltersApi->getFilterStatusesV2: $e\n');
 }
 ```
@@ -471,7 +471,7 @@ final String id = id_example; // String | id parameter
 try {
     final response = api.getFilterV2(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FiltersApi->getFilterV2: $e\n');
 }
 ```
@@ -517,7 +517,7 @@ final api = Mastodon().getFiltersApi();
 try {
     final response = api.getFilters();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FiltersApi->getFilters: $e\n');
 }
 ```
@@ -561,7 +561,7 @@ final String id = id_example; // String | id parameter
 try {
     final response = api.getFiltersKeywordsByIdV2(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FiltersApi->getFiltersKeywordsByIdV2: $e\n');
 }
 ```
@@ -608,7 +608,7 @@ final String id = id_example; // String | id parameter
 try {
     final response = api.getFiltersStatusesByIdV2(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FiltersApi->getFiltersStatusesByIdV2: $e\n');
 }
 ```
@@ -654,7 +654,7 @@ final api = Mastodon().getFiltersApi();
 try {
     final response = api.getFiltersV2();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FiltersApi->getFiltersV2: $e\n');
 }
 ```
@@ -699,7 +699,7 @@ final PostFilterKeywordsV2Request postFilterKeywordsV2Request = ; // PostFilterK
 try {
     final response = api.postFilterKeywordsV2(filterId, postFilterKeywordsV2Request);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FiltersApi->postFilterKeywordsV2: $e\n');
 }
 ```
@@ -748,7 +748,7 @@ final PostFilterStatusesV2Request postFilterStatusesV2Request = ; // PostFilterS
 try {
     final response = api.postFilterStatusesV2(filterId, postFilterStatusesV2Request);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FiltersApi->postFilterStatusesV2: $e\n');
 }
 ```
@@ -797,7 +797,7 @@ final UpdateFilterRequest updateFilterRequest = ; // UpdateFilterRequest | JSON 
 try {
     final response = api.updateFilter(id, updateFilterRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FiltersApi->updateFilter: $e\n');
 }
 ```
@@ -846,7 +846,7 @@ final UpdateFilterV2Request updateFilterV2Request = ; // UpdateFilterV2Request |
 try {
     final response = api.updateFilterV2(id, updateFilterV2Request);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FiltersApi->updateFilterV2: $e\n');
 }
 ```
@@ -895,7 +895,7 @@ final PostFilterKeywordsV2Request postFilterKeywordsV2Request = ; // PostFilterK
 try {
     final response = api.updateFiltersKeywordsByIdV2(id, postFilterKeywordsV2Request);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FiltersApi->updateFiltersKeywordsByIdV2: $e\n');
 }
 ```

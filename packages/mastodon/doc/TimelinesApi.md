@@ -41,7 +41,7 @@ final String sinceId = sinceId_example; // String | All results returned will be
 try {
     final response = api.getTimelineDirect(limit, maxId, minId, sinceId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling TimelinesApi->getTimelineDirect: $e\n');
 }
 ```
@@ -94,7 +94,7 @@ final String sinceId = sinceId_example; // String | All results returned will be
 try {
     final response = api.getTimelineHome(limit, maxId, minId, sinceId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling TimelinesApi->getTimelineHome: $e\n');
 }
 ```
@@ -148,7 +148,7 @@ final String sinceId = sinceId_example; // String | All results returned will be
 try {
     final response = api.getTimelineLink(url, limit, maxId, minId, sinceId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling TimelinesApi->getTimelineLink: $e\n');
 }
 ```
@@ -205,7 +205,7 @@ final String sinceId = sinceId_example; // String | All results returned will be
 try {
     final response = api.getTimelinePublic(limit, local, maxId, minId, onlyMedia, remote, sinceId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling TimelinesApi->getTimelinePublic: $e\n');
 }
 ```
@@ -262,7 +262,7 @@ final String sinceId = sinceId_example; // String | All results returned will be
 try {
     final response = api.getTimelinesListByListId(listId, limit, maxId, minId, sinceId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling TimelinesApi->getTimelinesListByListId: $e\n');
 }
 ```
@@ -323,7 +323,7 @@ final String sinceId = sinceId_example; // String | All results returned will be
 try {
     final response = api.getTimelinesTagByHashtag(hashtag, all, any, limit, local, maxId, minId, none, onlyMedia, remote, sinceId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling TimelinesApi->getTimelinesTagByHashtag: $e\n');
 }
 ```

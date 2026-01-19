@@ -28,7 +28,7 @@ final api = Mastodon().getCustomEmojisApi();
 try {
     final response = api.getCustomEmojis();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling CustomEmojisApi->getCustomEmojis: $e\n');
 }
 ```

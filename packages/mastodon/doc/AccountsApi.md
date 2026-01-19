@@ -60,7 +60,7 @@ final CreateAccountRequest createAccountRequest = ; // CreateAccountRequest | JS
 try {
     final response = api.createAccount(createAccountRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AccountsApi->createAccount: $e\n');
 }
 ```
@@ -103,7 +103,7 @@ final String id = id_example; // String | id parameter
 try {
     final response = api.getAccount(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AccountsApi->getAccount: $e\n');
 }
 ```
@@ -149,7 +149,7 @@ final String sinceId = sinceId_example; // String | Internal parameter. Use HTTP
 try {
     final response = api.getAccountEndorsements(id, limit, maxId, sinceId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AccountsApi->getAccountEndorsements: $e\n');
 }
 ```
@@ -195,7 +195,7 @@ final String id = id_example; // String | id parameter
 try {
     final response = api.getAccountFeaturedTags(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AccountsApi->getAccountFeaturedTags: $e\n');
 }
 ```
@@ -242,7 +242,7 @@ final String sinceId = sinceId_example; // String | Internal parameter. Use HTTP
 try {
     final response = api.getAccountFollowers(id, limit, maxId, minId, sinceId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AccountsApi->getAccountFollowers: $e\n');
 }
 ```
@@ -293,7 +293,7 @@ final String sinceId = sinceId_example; // String | Internal parameter. Use HTTP
 try {
     final response = api.getAccountFollowing(id, limit, maxId, minId, sinceId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AccountsApi->getAccountFollowing: $e\n');
 }
 ```
@@ -344,7 +344,7 @@ final String id = id_example; // String | id parameter
 try {
     final response = api.getAccountIdentityProofs(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AccountsApi->getAccountIdentityProofs: $e\n');
 }
 ```
@@ -391,7 +391,7 @@ final String id = id_example; // String | id parameter
 try {
     final response = api.getAccountLists(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AccountsApi->getAccountLists: $e\n');
 }
 ```
@@ -438,7 +438,7 @@ final String acct = acct_example; // String | The username or WebFinger address 
 try {
     final response = api.getAccountLookup(acct);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AccountsApi->getAccountLookup: $e\n');
 }
 ```
@@ -486,7 +486,7 @@ final bool withSuspended = true; // bool | Whether relationships should be retur
 try {
     final response = api.getAccountRelationships(id, withSuspended);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AccountsApi->getAccountRelationships: $e\n');
 }
 ```
@@ -538,7 +538,7 @@ final bool resolve = true; // bool | Attempt WebFinger lookup. Defaults to false
 try {
     final response = api.getAccountSearch(q, following, limit, offset, resolve);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AccountsApi->getAccountSearch: $e\n');
 }
 ```
@@ -598,7 +598,7 @@ final String tagged = tagged_example; // String | Filter for statuses using a sp
 try {
     final response = api.getAccountStatuses(id, excludeReblogs, excludeReplies, limit, maxId, minId, onlyMedia, pinned, sinceId, tagged);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AccountsApi->getAccountStatuses: $e\n');
 }
 ```
@@ -650,7 +650,7 @@ final List<String> id = ; // List<String> | The IDs of the accounts.
 try {
     final response = api.getAccounts(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AccountsApi->getAccounts: $e\n');
 }
 ```
@@ -697,7 +697,7 @@ final List<String> id = ; // List<String> | Find familiar followers for the prov
 try {
     final response = api.getAccountsFamiliarFollowers(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AccountsApi->getAccountsFamiliarFollowers: $e\n');
 }
 ```
@@ -743,7 +743,7 @@ final api = Mastodon().getAccountsApi();
 try {
     final response = api.getAccountsVerifyCredentials();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AccountsApi->getAccountsVerifyCredentials: $e\n');
 }
 ```
@@ -787,7 +787,7 @@ final PatchAccountsUpdateCredentialsRequest patchAccountsUpdateCredentialsReques
 try {
     final response = api.patchAccountsUpdateCredentials(patchAccountsUpdateCredentialsRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AccountsApi->patchAccountsUpdateCredentials: $e\n');
 }
 ```
@@ -834,7 +834,7 @@ final String id = id_example; // String | id parameter
 try {
     final response = api.postAccountBlock(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AccountsApi->postAccountBlock: $e\n');
 }
 ```
@@ -881,7 +881,7 @@ final String id = id_example; // String | id parameter
 try {
     final response = api.postAccountEndorse(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AccountsApi->postAccountEndorse: $e\n');
 }
 ```
@@ -929,7 +929,7 @@ final PostAccountFollowRequest postAccountFollowRequest = ; // PostAccountFollow
 try {
     final response = api.postAccountFollow(id, postAccountFollowRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AccountsApi->postAccountFollow: $e\n');
 }
 ```
@@ -978,7 +978,7 @@ final PostAccountMuteRequest postAccountMuteRequest = ; // PostAccountMuteReques
 try {
     final response = api.postAccountMute(id, postAccountMuteRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AccountsApi->postAccountMute: $e\n');
 }
 ```
@@ -1027,7 +1027,7 @@ final PostAccountNoteRequest postAccountNoteRequest = ; // PostAccountNoteReques
 try {
     final response = api.postAccountNote(id, postAccountNoteRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AccountsApi->postAccountNote: $e\n');
 }
 ```
@@ -1075,7 +1075,7 @@ final String id = id_example; // String | id parameter
 try {
     final response = api.postAccountPin(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AccountsApi->postAccountPin: $e\n');
 }
 ```
@@ -1122,7 +1122,7 @@ final String id = id_example; // String | id parameter
 try {
     final response = api.postAccountRemoveFromFollowers(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AccountsApi->postAccountRemoveFromFollowers: $e\n');
 }
 ```
@@ -1169,7 +1169,7 @@ final String id = id_example; // String | id parameter
 try {
     final response = api.postAccountUnblock(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AccountsApi->postAccountUnblock: $e\n');
 }
 ```
@@ -1216,7 +1216,7 @@ final String id = id_example; // String | id parameter
 try {
     final response = api.postAccountUnendorse(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AccountsApi->postAccountUnendorse: $e\n');
 }
 ```
@@ -1263,7 +1263,7 @@ final String id = id_example; // String | id parameter
 try {
     final response = api.postAccountUnfollow(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AccountsApi->postAccountUnfollow: $e\n');
 }
 ```
@@ -1310,7 +1310,7 @@ final String id = id_example; // String | id parameter
 try {
     final response = api.postAccountUnmute(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AccountsApi->postAccountUnmute: $e\n');
 }
 ```
@@ -1357,7 +1357,7 @@ final String id = id_example; // String | id parameter
 try {
     final response = api.postAccountUnpin(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AccountsApi->postAccountUnpin: $e\n');
 }
 ```

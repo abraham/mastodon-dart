@@ -38,7 +38,7 @@ final api = Mastodon().getInstanceApi();
 try {
     final response = api.getInstance();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling InstanceApi->getInstance: $e\n');
 }
 ```
@@ -77,7 +77,7 @@ final api = Mastodon().getInstanceApi();
 try {
     final response = api.getInstanceActivity();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling InstanceApi->getInstanceActivity: $e\n');
 }
 ```
@@ -120,7 +120,7 @@ final api = Mastodon().getInstanceApi();
 try {
     final response = api.getInstanceDomainBlocks();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling InstanceApi->getInstanceDomainBlocks: $e\n');
 }
 ```
@@ -159,7 +159,7 @@ final api = Mastodon().getInstanceApi();
 try {
     final response = api.getInstanceExtendedDescription();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling InstanceApi->getInstanceExtendedDescription: $e\n');
 }
 ```
@@ -198,7 +198,7 @@ final api = Mastodon().getInstanceApi();
 try {
     final response = api.getInstancePeers();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling InstanceApi->getInstancePeers: $e\n');
 }
 ```
@@ -237,7 +237,7 @@ final api = Mastodon().getInstanceApi();
 try {
     final response = api.getInstancePrivacyPolicy();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling InstanceApi->getInstancePrivacyPolicy: $e\n');
 }
 ```
@@ -276,7 +276,7 @@ final api = Mastodon().getInstanceApi();
 try {
     final response = api.getInstanceRules();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling InstanceApi->getInstanceRules: $e\n');
 }
 ```
@@ -315,7 +315,7 @@ final api = Mastodon().getInstanceApi();
 try {
     final response = api.getInstanceTermsOfService();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling InstanceApi->getInstanceTermsOfService: $e\n');
 }
 ```
@@ -355,7 +355,7 @@ final String date = date_example; // String | date parameter
 try {
     final response = api.getInstanceTermsOfServiceByDate(date);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling InstanceApi->getInstanceTermsOfServiceByDate: $e\n');
 }
 ```
@@ -396,7 +396,7 @@ final api = Mastodon().getInstanceApi();
 
 try {
     api.getInstanceTranslationLanguages();
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling InstanceApi->getInstanceTranslationLanguages: $e\n');
 }
 ```
@@ -435,7 +435,7 @@ final api = Mastodon().getInstanceApi();
 try {
     final response = api.getInstanceV2();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling InstanceApi->getInstanceV2: $e\n');
 }
 ```

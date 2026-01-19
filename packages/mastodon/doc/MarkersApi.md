@@ -34,7 +34,7 @@ final CreateMarkerRequest createMarkerRequest = ; // CreateMarkerRequest | JSON 
 try {
     final response = api.createMarker(createMarkerRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MarkersApi->createMarker: $e\n');
 }
 ```
@@ -81,7 +81,7 @@ final List<FilterContextEnum> timeline = ; // List<FilterContextEnum> | Specify 
 try {
     final response = api.getMarkers(timeline);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MarkersApi->getMarkers: $e\n');
 }
 ```

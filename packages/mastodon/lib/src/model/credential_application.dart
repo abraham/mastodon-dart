@@ -111,7 +111,7 @@ class CredentialApplication {
       (clientSecretExpiresAt == null ? 0 : clientSecretExpiresAt.hashCode) +
       (redirectUri == null ? 0 : redirectUri.hashCode) +
       (redirectUris == null ? 0 : redirectUris.hashCode) +
-      scopes.hashCode +
+      (scopes == null ? 0 : scopes.hashCode) +
       (vapidKey == null ? 0 : vapidKey.hashCode) +
       (website == null ? 0 : website.hashCode);
 

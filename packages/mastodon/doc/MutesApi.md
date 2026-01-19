@@ -35,7 +35,7 @@ final String sinceId = sinceId_example; // String | Internal parameter. Use HTTP
 try {
     final response = api.getMutes(limit, maxId, sinceId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MutesApi->getMutes: $e\n');
 }
 ```

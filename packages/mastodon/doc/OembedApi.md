@@ -31,7 +31,7 @@ final int maxwidth = 56; // int | Width of the iframe. Defaults to 400
 try {
     final response = api.getOembed(url, maxheight, maxwidth);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling OembedApi->getOembed: $e\n');
 }
 ```

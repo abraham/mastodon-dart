@@ -40,7 +40,7 @@ final api = Mastodon().getStreamingApi();
 
 try {
     api.getStreamingDirect();
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling StreamingApi->getStreamingDirect: $e\n');
 }
 ```
@@ -83,7 +83,7 @@ final String tag = tag_example; // String | The name of the hashtag to watch.
 
 try {
     api.getStreamingHashtag(tag);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling StreamingApi->getStreamingHashtag: $e\n');
 }
 ```
@@ -129,7 +129,7 @@ final String tag = tag_example; // String | The name of the hashtag to watch.
 
 try {
     api.getStreamingHashtagLocal(tag);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling StreamingApi->getStreamingHashtagLocal: $e\n');
 }
 ```
@@ -170,7 +170,7 @@ final api = Mastodon().getStreamingApi();
 
 try {
     api.getStreamingHealth();
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling StreamingApi->getStreamingHealth: $e\n');
 }
 ```
@@ -213,7 +213,7 @@ final String list = list_example; // String | The ID of the list to watch.
 
 try {
     api.getStreamingList(list);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling StreamingApi->getStreamingList: $e\n');
 }
 ```
@@ -259,7 +259,7 @@ final bool onlyMedia = true; // bool | If true, return only statuses with media 
 
 try {
     api.getStreamingPublic(onlyMedia);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling StreamingApi->getStreamingPublic: $e\n');
 }
 ```
@@ -305,7 +305,7 @@ final bool onlyMedia = true; // bool | If true, return only statuses with media 
 
 try {
     api.getStreamingPublicLocal(onlyMedia);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling StreamingApi->getStreamingPublicLocal: $e\n');
 }
 ```
@@ -351,7 +351,7 @@ final bool onlyMedia = true; // bool | If true, return only statuses with media 
 
 try {
     api.getStreamingPublicRemote(onlyMedia);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling StreamingApi->getStreamingPublicRemote: $e\n');
 }
 ```
@@ -396,7 +396,7 @@ final api = Mastodon().getStreamingApi();
 
 try {
     api.getStreamingUser();
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling StreamingApi->getStreamingUser: $e\n');
 }
 ```
@@ -438,7 +438,7 @@ final api = Mastodon().getStreamingApi();
 
 try {
     api.getStreamingUserNotification();
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling StreamingApi->getStreamingUserNotification: $e\n');
 }
 ```

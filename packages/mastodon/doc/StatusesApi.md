@@ -57,7 +57,7 @@ final Object idempotencyKey = Object; // Object | Provide this header with any a
 try {
     final response = api.createStatus(createStatusRequest, idempotencyKey);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling StatusesApi->createStatus: $e\n');
 }
 ```
@@ -106,7 +106,7 @@ final bool deleteMedia = true; // bool | Whether to immediately delete the post'
 try {
     final response = api.deleteStatus(id, deleteMedia);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling StatusesApi->deleteStatus: $e\n');
 }
 ```
@@ -154,7 +154,7 @@ final String id = id_example; // String | id parameter
 try {
     final response = api.getStatus(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling StatusesApi->getStatus: $e\n');
 }
 ```
@@ -201,7 +201,7 @@ final String id = id_example; // String | id parameter
 try {
     final response = api.getStatusContext(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling StatusesApi->getStatusContext: $e\n');
 }
 ```
@@ -251,7 +251,7 @@ final String sinceId = sinceId_example; // String | Internal parameter. Use HTTP
 try {
     final response = api.getStatusFavouritedBy(id, limit, maxId, sinceId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling StatusesApi->getStatusFavouritedBy: $e\n');
 }
 ```
@@ -301,7 +301,7 @@ final String id = id_example; // String | id parameter
 try {
     final response = api.getStatusHistory(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling StatusesApi->getStatusHistory: $e\n');
 }
 ```
@@ -351,7 +351,7 @@ final String sinceId = sinceId_example; // String | Internal parameter. Use HTTP
 try {
     final response = api.getStatusQuotes(id, limit, maxId, sinceId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling StatusesApi->getStatusQuotes: $e\n');
 }
 ```
@@ -404,7 +404,7 @@ final String sinceId = sinceId_example; // String | Internal parameter. Use HTTP
 try {
     final response = api.getStatusRebloggedBy(id, limit, maxId, sinceId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling StatusesApi->getStatusRebloggedBy: $e\n');
 }
 ```
@@ -454,7 +454,7 @@ final String id = id_example; // String | id parameter
 try {
     final response = api.getStatusSource(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling StatusesApi->getStatusSource: $e\n');
 }
 ```
@@ -501,7 +501,7 @@ final List<String> id = ; // List<String> | The IDs of the Statuses in the datab
 try {
     final response = api.getStatuses(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling StatusesApi->getStatuses: $e\n');
 }
 ```
@@ -548,7 +548,7 @@ final String id = id_example; // String | id parameter
 try {
     final response = api.postStatusBookmark(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling StatusesApi->postStatusBookmark: $e\n');
 }
 ```
@@ -595,7 +595,7 @@ final String id = id_example; // String | id parameter
 try {
     final response = api.postStatusFavourite(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling StatusesApi->postStatusFavourite: $e\n');
 }
 ```
@@ -642,7 +642,7 @@ final String id = id_example; // String | id parameter
 try {
     final response = api.postStatusMute(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling StatusesApi->postStatusMute: $e\n');
 }
 ```
@@ -689,7 +689,7 @@ final String id = id_example; // String | id parameter
 try {
     final response = api.postStatusPin(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling StatusesApi->postStatusPin: $e\n');
 }
 ```
@@ -737,7 +737,7 @@ final PostStatusReblogRequest postStatusReblogRequest = ; // PostStatusReblogReq
 try {
     final response = api.postStatusReblog(id, postStatusReblogRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling StatusesApi->postStatusReblog: $e\n');
 }
 ```
@@ -786,7 +786,7 @@ final PostStatusTranslateRequest postStatusTranslateRequest = ; // PostStatusTra
 try {
     final response = api.postStatusTranslate(id, postStatusTranslateRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling StatusesApi->postStatusTranslate: $e\n');
 }
 ```
@@ -834,7 +834,7 @@ final String id = id_example; // String | id parameter
 try {
     final response = api.postStatusUnbookmark(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling StatusesApi->postStatusUnbookmark: $e\n');
 }
 ```
@@ -881,7 +881,7 @@ final String id = id_example; // String | id parameter
 try {
     final response = api.postStatusUnfavourite(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling StatusesApi->postStatusUnfavourite: $e\n');
 }
 ```
@@ -928,7 +928,7 @@ final String id = id_example; // String | id parameter
 try {
     final response = api.postStatusUnmute(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling StatusesApi->postStatusUnmute: $e\n');
 }
 ```
@@ -975,7 +975,7 @@ final String id = id_example; // String | id parameter
 try {
     final response = api.postStatusUnpin(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling StatusesApi->postStatusUnpin: $e\n');
 }
 ```
@@ -1022,7 +1022,7 @@ final String id = id_example; // String | id parameter
 try {
     final response = api.postStatusUnreblog(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling StatusesApi->postStatusUnreblog: $e\n');
 }
 ```
@@ -1070,7 +1070,7 @@ final String quotingStatusId = quotingStatusId_example; // String | quoting_stat
 try {
     final response = api.postStatusesByIdQuotesByQuotingStatusIdRevoke(id, quotingStatusId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling StatusesApi->postStatusesByIdQuotesByQuotingStatusIdRevoke: $e\n');
 }
 ```
@@ -1119,7 +1119,7 @@ final UpdateStatusRequest updateStatusRequest = ; // UpdateStatusRequest | JSON 
 try {
     final response = api.updateStatus(id, updateStatusRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling StatusesApi->updateStatus: $e\n');
 }
 ```
@@ -1168,7 +1168,7 @@ final UpdateStatusInteractionPolicyRequest updateStatusInteractionPolicyRequest 
 try {
     final response = api.updateStatusInteractionPolicy(id, updateStatusInteractionPolicyRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling StatusesApi->updateStatusInteractionPolicy: $e\n');
 }
 ```

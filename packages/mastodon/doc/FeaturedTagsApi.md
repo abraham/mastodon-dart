@@ -36,7 +36,7 @@ final CreateFeaturedTagRequest createFeaturedTagRequest = ; // CreateFeaturedTag
 try {
     final response = api.createFeaturedTag(createFeaturedTagRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FeaturedTagsApi->createFeaturedTag: $e\n');
 }
 ```
@@ -82,7 +82,7 @@ final String id = id_example; // String | id parameter
 
 try {
     api.deleteFeaturedTag(id);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FeaturedTagsApi->deleteFeaturedTag: $e\n');
 }
 ```
@@ -128,7 +128,7 @@ final api = Mastodon().getFeaturedTagsApi();
 try {
     final response = api.getFeaturedTagSuggestions();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FeaturedTagsApi->getFeaturedTagSuggestions: $e\n');
 }
 ```
@@ -171,7 +171,7 @@ final api = Mastodon().getFeaturedTagsApi();
 try {
     final response = api.getFeaturedTags();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FeaturedTagsApi->getFeaturedTags: $e\n');
 }
 ```
