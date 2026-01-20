@@ -36,7 +36,7 @@ final String sinceId = sinceId_example; // String | Internal parameter. Use HTTP
 try {
     final response = api.getFollowedTags(limit, maxId, minId, sinceId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FollowedTagsApi->getFollowedTags: $e\n');
 }
 ```

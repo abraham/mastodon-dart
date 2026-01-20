@@ -31,7 +31,7 @@ final api = Mastodon().getPreferencesApi();
 
 try {
     api.getPreferences();
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling PreferencesApi->getPreferences: $e\n');
 }
 ```

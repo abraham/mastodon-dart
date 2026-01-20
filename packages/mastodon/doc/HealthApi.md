@@ -27,7 +27,7 @@ final api = Mastodon().getHealthApi();
 
 try {
     api.getHealth();
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling HealthApi->getHealth: $e\n');
 }
 ```

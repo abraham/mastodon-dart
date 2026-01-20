@@ -36,7 +36,7 @@ final String sinceId = sinceId_example; // String | Internal parameter. Use HTTP
 try {
     final response = api.getBlocks(limit, maxId, minId, sinceId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling BlocksApi->getBlocks: $e\n');
 }
 ```

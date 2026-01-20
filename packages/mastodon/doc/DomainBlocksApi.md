@@ -34,7 +34,7 @@ final CreateDomainBlockRequest createDomainBlockRequest = ; // CreateDomainBlock
 
 try {
     api.createDomainBlock(createDomainBlockRequest);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling DomainBlocksApi->createDomainBlock: $e\n');
 }
 ```
@@ -80,7 +80,7 @@ final DeleteDomainBlocksRequest deleteDomainBlocksRequest = ; // DeleteDomainBlo
 
 try {
     api.deleteDomainBlocks(deleteDomainBlocksRequest);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling DomainBlocksApi->deleteDomainBlocks: $e\n');
 }
 ```
@@ -130,7 +130,7 @@ final String sinceId = sinceId_example; // String | Internal parameter. Use HTTP
 try {
     final response = api.getDomainBlocks(limit, maxId, minId, sinceId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling DomainBlocksApi->getDomainBlocks: $e\n');
 }
 ```

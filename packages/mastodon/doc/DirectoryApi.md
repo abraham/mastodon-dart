@@ -32,7 +32,7 @@ final String order = order_example; // String | Use `active` to sort by most rec
 try {
     final response = api.getDirectory(limit, local, offset, order);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling DirectoryApi->getDirectory: $e\n');
 }
 ```

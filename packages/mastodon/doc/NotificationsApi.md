@@ -48,7 +48,7 @@ final api = Mastodon().getNotificationsApi();
 
 try {
     api.createNotificationClear();
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling NotificationsApi->createNotificationClear: $e\n');
 }
 ```
@@ -90,7 +90,7 @@ final api = Mastodon().getNotificationsApi();
 
 try {
     api.createNotificationsRequestsAccept();
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling NotificationsApi->createNotificationsRequestsAccept: $e\n');
 }
 ```
@@ -132,7 +132,7 @@ final api = Mastodon().getNotificationsApi();
 
 try {
     api.createNotificationsRequestsDismiss();
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling NotificationsApi->createNotificationsRequestsDismiss: $e\n');
 }
 ```
@@ -176,7 +176,7 @@ final String id = id_example; // String | id parameter
 try {
     final response = api.getNotification(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling NotificationsApi->getNotification: $e\n');
 }
 ```
@@ -223,7 +223,7 @@ final String groupKey = groupKey_example; // String | group_key parameter
 try {
     final response = api.getNotificationAccountsV2(groupKey);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling NotificationsApi->getNotificationAccountsV2: $e\n');
 }
 ```
@@ -269,7 +269,7 @@ final api = Mastodon().getNotificationsApi();
 try {
     final response = api.getNotificationPolicyV2();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling NotificationsApi->getNotificationPolicyV2: $e\n');
 }
 ```
@@ -316,7 +316,7 @@ final String sinceId = sinceId_example; // String | All results returned will be
 try {
     final response = api.getNotificationRequests(limit, maxId, minId, sinceId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling NotificationsApi->getNotificationRequests: $e\n');
 }
 ```
@@ -373,7 +373,7 @@ final List<NotificationTypeEnum> types = ; // List<NotificationTypeEnum> | Types
 try {
     final response = api.getNotifications(accountId, excludeTypes, includeFiltered, limit, maxId, minId, sinceId, types);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling NotificationsApi->getNotifications: $e\n');
 }
 ```
@@ -427,7 +427,7 @@ final String groupKey = groupKey_example; // String | group_key parameter
 try {
     final response = api.getNotificationsByGroupKeyV2(groupKey);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling NotificationsApi->getNotificationsByGroupKeyV2: $e\n');
 }
 ```
@@ -474,7 +474,7 @@ final String id = id_example; // String | id parameter
 try {
     final response = api.getNotificationsRequestsById(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling NotificationsApi->getNotificationsRequestsById: $e\n');
 }
 ```
@@ -520,7 +520,7 @@ final api = Mastodon().getNotificationsApi();
 try {
     final response = api.getNotificationsRequestsMerged();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling NotificationsApi->getNotificationsRequestsMerged: $e\n');
 }
 ```
@@ -567,7 +567,7 @@ final List<String> types = ; // List<String> | Types of notifications that shoul
 try {
     final response = api.getNotificationsUnreadCount(accountId, excludeTypes, limit, types);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling NotificationsApi->getNotificationsUnreadCount: $e\n');
 }
 ```
@@ -621,7 +621,7 @@ final List<String> types = ; // List<String> | Types of notifications that shoul
 try {
     final response = api.getNotificationsUnreadCountV2(accountId, excludeTypes, groupedTypes, limit, types);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling NotificationsApi->getNotificationsUnreadCountV2: $e\n');
 }
 ```
@@ -681,7 +681,7 @@ final List<NotificationTypeEnum> types = ; // List<NotificationTypeEnum> | Types
 try {
     final response = api.getNotificationsV2(accountId, excludeTypes, expandAccounts, groupedTypes, includeFiltered, limit, maxId, minId, sinceId, types);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling NotificationsApi->getNotificationsV2: $e\n');
 }
 ```
@@ -736,7 +736,7 @@ final String id = id_example; // String | id parameter
 
 try {
     api.postNotificationDismiss(id);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling NotificationsApi->postNotificationDismiss: $e\n');
 }
 ```
@@ -782,7 +782,7 @@ final String groupKey = groupKey_example; // String | group_key parameter
 
 try {
     api.postNotificationDismissV2(groupKey);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling NotificationsApi->postNotificationDismissV2: $e\n');
 }
 ```
@@ -828,7 +828,7 @@ final String id = id_example; // String | id parameter
 
 try {
     api.postNotificationsRequestsByIdAccept(id);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling NotificationsApi->postNotificationsRequestsByIdAccept: $e\n');
 }
 ```
@@ -874,7 +874,7 @@ final String id = id_example; // String | id parameter
 
 try {
     api.postNotificationsRequestsByIdDismiss(id);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling NotificationsApi->postNotificationsRequestsByIdDismiss: $e\n');
 }
 ```

@@ -32,7 +32,7 @@ final CreateEmailConfirmationsRequest createEmailConfirmationsRequest = ; // Cre
 
 try {
     api.createEmailConfirmations(createEmailConfirmationsRequest);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling EmailsApi->createEmailConfirmations: $e\n');
 }
 ```

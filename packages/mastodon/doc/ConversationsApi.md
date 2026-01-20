@@ -34,7 +34,7 @@ final String id = id_example; // String | id parameter
 
 try {
     api.deleteConversation(id);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling ConversationsApi->deleteConversation: $e\n');
 }
 ```
@@ -84,7 +84,7 @@ final String sinceId = sinceId_example; // String | Internal parameter. Use HTTP
 try {
     final response = api.getConversations(limit, maxId, minId, sinceId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling ConversationsApi->getConversations: $e\n');
 }
 ```
@@ -134,7 +134,7 @@ final String id = id_example; // String | id parameter
 try {
     final response = api.postConversationRead(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling ConversationsApi->postConversationRead: $e\n');
 }
 ```

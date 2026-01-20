@@ -37,7 +37,7 @@ final String sinceId = sinceId_example; // String | Internal parameter. Use HTTP
 try {
     final response = api.getFollowRequests(limit, maxId, sinceId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FollowRequestsApi->getFollowRequests: $e\n');
 }
 ```
@@ -86,7 +86,7 @@ final String accountId = accountId_example; // String | account_id parameter
 try {
     final response = api.postFollowRequestAuthorize(accountId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FollowRequestsApi->postFollowRequestAuthorize: $e\n');
 }
 ```
@@ -133,7 +133,7 @@ final String accountId = accountId_example; // String | account_id parameter
 try {
     final response = api.postFollowRequestReject(accountId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FollowRequestsApi->postFollowRequestReject: $e\n');
 }
 ```

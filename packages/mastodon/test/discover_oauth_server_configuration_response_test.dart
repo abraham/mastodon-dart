@@ -56,7 +56,7 @@ void main() {
       // TODO
     });
 
-    // Array of OAuth scopes
+    // Array of scopes_supported
     // List<OAuthScope> scopesSupported
     test('to test the property `scopesSupported`', () async {
       // TODO

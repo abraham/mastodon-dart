@@ -33,7 +33,7 @@ final CreateReportRequest createReportRequest = ; // CreateReportRequest | JSON 
 try {
     final response = api.createReport(createReportRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling ReportsApi->createReport: $e\n');
 }
 ```

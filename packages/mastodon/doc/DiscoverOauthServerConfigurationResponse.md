@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **responseModesSupported** | **List&lt;String&gt;** | Array of response_modes_supported | 
 **responseTypesSupported** | **List&lt;String&gt;** | Array of response_types_supported | 
 **revocationEndpoint** | [**Uri**](Uri.md) | revocation_endpoint field | 
-**scopesSupported** | [**List&lt;OAuthScope&gt;**](OAuthScope.md) | Array of OAuth scopes | 
+**scopesSupported** | [**List&lt;OAuthScope&gt;**](OAuthScope.md) | Array of scopes_supported | 
 **serviceDocumentation** | [**Uri**](Uri.md) | service_documentation field | 
 **tokenEndpoint** | [**Uri**](Uri.md) | token_endpoint field | 
 **tokenEndpointAuthMethodsSupported** | **List&lt;String&gt;** | Array of token_endpoint_auth_methods_supported | 

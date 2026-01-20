@@ -30,7 +30,7 @@ final CreateAppRequest createAppRequest = ; // CreateAppRequest | JSON request b
 try {
     final response = api.createApp(createAppRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppsApi->createApp: $e\n');
 }
 ```
@@ -76,7 +76,7 @@ final api = Mastodon().getAppsApi();
 try {
     final response = api.getAppsVerifyCredentials();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppsApi->getAppsVerifyCredentials: $e\n');
 }
 ```

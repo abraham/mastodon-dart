@@ -32,7 +32,7 @@ final int offset = 56; // int | Skip the first n results.
 try {
     final response = api.getTrendLinks(limit, offset);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling TrendsApi->getTrendLinks: $e\n');
 }
 ```
@@ -77,7 +77,7 @@ final int offset = 56; // int | Skip the first n results.
 try {
     final response = api.getTrendStatuses(limit, offset);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling TrendsApi->getTrendStatuses: $e\n');
 }
 ```
@@ -122,7 +122,7 @@ final int offset = 56; // int | Skip the first n results.
 try {
     final response = api.getTrendTags(limit, offset);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling TrendsApi->getTrendTags: $e\n');
 }
 ```

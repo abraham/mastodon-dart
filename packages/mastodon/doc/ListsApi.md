@@ -40,7 +40,7 @@ final CreateListRequest createListRequest = ; // CreateListRequest | JSON reques
 try {
     final response = api.createList(createListRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling ListsApi->createList: $e\n');
 }
 ```
@@ -86,7 +86,7 @@ final String id = id_example; // String | id parameter
 
 try {
     api.deleteList(id);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling ListsApi->deleteList: $e\n');
 }
 ```
@@ -133,7 +133,7 @@ final DeleteListAccountsRequest deleteListAccountsRequest = ; // DeleteListAccou
 
 try {
     api.deleteListAccounts(id, deleteListAccountsRequest);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling ListsApi->deleteListAccounts: $e\n');
 }
 ```
@@ -181,7 +181,7 @@ final String id = id_example; // String | id parameter
 try {
     final response = api.getList(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling ListsApi->getList: $e\n');
 }
 ```
@@ -232,7 +232,7 @@ final String sinceId = sinceId_example; // String | Internal parameter. Use HTTP
 try {
     final response = api.getListAccounts(id, limit, maxId, minId, sinceId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling ListsApi->getListAccounts: $e\n');
 }
 ```
@@ -282,7 +282,7 @@ final api = Mastodon().getListsApi();
 try {
     final response = api.getLists();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling ListsApi->getLists: $e\n');
 }
 ```
@@ -326,7 +326,7 @@ final PostListAccountsRequest postListAccountsRequest = ; // PostListAccountsReq
 
 try {
     api.postListAccounts(id, postListAccountsRequest);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling ListsApi->postListAccounts: $e\n');
 }
 ```
@@ -375,7 +375,7 @@ final CreateListRequest createListRequest = ; // CreateListRequest | JSON reques
 try {
     final response = api.updateList(id, createListRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling ListsApi->updateList: $e\n');
 }
 ```

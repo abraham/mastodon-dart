@@ -40,7 +40,7 @@ final MultipartFile thumbnail = BINARY_DATA_HERE; // MultipartFile | The custom 
 try {
     final response = api.createMedia(file, description, focus, thumbnail);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MediaApi->createMedia: $e\n');
 }
 ```
@@ -93,7 +93,7 @@ final MultipartFile thumbnail = BINARY_DATA_HERE; // MultipartFile | The custom 
 try {
     final response = api.createMediaV2(file, description, focus, thumbnail);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MediaApi->createMediaV2: $e\n');
 }
 ```
@@ -142,7 +142,7 @@ final String id = id_example; // String | id parameter
 
 try {
     api.deleteMedia(id);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MediaApi->deleteMedia: $e\n');
 }
 ```
@@ -189,7 +189,7 @@ final String id = id_example; // String | id parameter
 try {
     final response = api.getMedia(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MediaApi->getMedia: $e\n');
 }
 ```
@@ -239,7 +239,7 @@ final MultipartFile thumbnail = BINARY_DATA_HERE; // MultipartFile | The custom 
 try {
     final response = api.updateMedia(id, description, focus, thumbnail);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MediaApi->updateMedia: $e\n');
 }
 ```
