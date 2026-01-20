@@ -1,5 +1,7 @@
 ## Unreleased
 
+## v1.0.0-beta.5
+
 ## v1.0.0-beta.4
 
 **Features**
