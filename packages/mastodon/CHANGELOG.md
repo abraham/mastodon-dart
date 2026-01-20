@@ -2,6 +2,11 @@
 
 ## v1.0.0-beta.5
 
+**Features**
+
+- Updated spec [9740b2a...a6fe37b](https://github.com/mastodon/documentation/compare/9740b2a386267ec66e064146516b820803657e5f...a6fe37b4fa2f1903dfd8bd141726d6398be420c1)
+- Updated OpenAPI Generator to [v7.19.0](https://github.com/OpenAPITools/openapi-generator/releases/tag/v7.19.0)
+
 ## v1.0.0-beta.4
 
 **Features**
