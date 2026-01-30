@@ -63,6 +63,8 @@ class CredentialAccount {
 
     required this.statusesCount,
 
+    required this.uri,
+
     required this.username,
 
     this.discoverable,
@@ -84,8 +86,6 @@ class CredentialAccount {
     this.roles,
 
     this.suspended,
-
-    this.uri,
 
     this.url,
   });
@@ -165,6 +165,10 @@ class CredentialAccount {
   @JsonKey(name: r'statuses_count', required: true, includeIfNull: false)
   final int statusesCount;
 
+  /// The user's ActivityPub actor identifier (used for federation).
+  @JsonKey(name: r'uri', required: true, includeIfNull: false)
+  final Uri uri;
+
   /// The username of the account, not including domain.
   @JsonKey(name: r'username', required: true, includeIfNull: false)
   final String username;
@@ -208,10 +212,6 @@ class CredentialAccount {
   @JsonKey(name: r'suspended', required: false, includeIfNull: false)
   final bool? suspended;
 
-  /// The user's ActivityPub actor identifier (used for federation).
-  @JsonKey(name: r'uri', required: false, includeIfNull: false)
-  final Uri? uri;
-
   /// The location of the user's profile page (web interface URL).
   @JsonKey(name: r'url', required: false, includeIfNull: false)
   final Uri? url;
@@ -239,6 +239,7 @@ class CredentialAccount {
           other.role == role &&
           other.source_ == source_ &&
           other.statusesCount == statusesCount &&
+          other.uri == uri &&
           other.username == username &&
           other.discoverable == discoverable &&
           other.hideCollections == hideCollections &&
@@ -250,7 +251,6 @@ class CredentialAccount {
           other.noindex == noindex &&
           other.roles == roles &&
           other.suspended == suspended &&
-          other.uri == uri &&
           other.url == url;
 
   @override
@@ -274,6 +274,7 @@ class CredentialAccount {
       role.hashCode +
       source_.hashCode +
       statusesCount.hashCode +
+      uri.hashCode +
       username.hashCode +
       (discoverable == null ? 0 : discoverable.hashCode) +
       (hideCollections == null ? 0 : hideCollections.hashCode) +
@@ -285,7 +286,6 @@ class CredentialAccount {
       (noindex == null ? 0 : noindex.hashCode) +
       (roles == null ? 0 : roles.hashCode) +
       (suspended == null ? 0 : suspended.hashCode) +
-      (uri == null ? 0 : uri.hashCode) +
       (url == null ? 0 : url.hashCode);
 
   factory CredentialAccount.fromJson(Map<String, dynamic> json) =>

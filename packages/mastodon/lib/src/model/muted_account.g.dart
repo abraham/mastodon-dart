@@ -41,6 +41,8 @@ abstract class _$MutedAccountCWProxy {
 
   MutedAccount statusesCount(int statusesCount);
 
+  MutedAccount uri(Uri uri);
+
   MutedAccount username(String username);
 
   MutedAccount discoverable(bool? discoverable);
@@ -64,8 +66,6 @@ abstract class _$MutedAccountCWProxy {
   MutedAccount roles(List<AccountRole>? roles);
 
   MutedAccount suspended(bool? suspended);
-
-  MutedAccount uri(Uri? uri);
 
   MutedAccount url(Uri? url);
 
@@ -94,6 +94,7 @@ abstract class _$MutedAccountCWProxy {
     bool locked,
     String note,
     int statusesCount,
+    Uri uri,
     String username,
     bool? discoverable,
     bool? hideCollections,
@@ -106,7 +107,6 @@ abstract class _$MutedAccountCWProxy {
     bool? noindex,
     List<AccountRole>? roles,
     bool? suspended,
-    Uri? uri,
     Uri? url,
   });
 }
@@ -176,6 +176,9 @@ class _$MutedAccountCWProxyImpl implements _$MutedAccountCWProxy {
       call(statusesCount: statusesCount);
 
   @override
+  MutedAccount uri(Uri uri) => call(uri: uri);
+
+  @override
   MutedAccount username(String username) => call(username: username);
 
   @override
@@ -216,9 +219,6 @@ class _$MutedAccountCWProxyImpl implements _$MutedAccountCWProxy {
   MutedAccount suspended(bool? suspended) => call(suspended: suspended);
 
   @override
-  MutedAccount uri(Uri? uri) => call(uri: uri);
-
-  @override
   MutedAccount url(Uri? url) => call(url: url);
 
   @override
@@ -247,6 +247,7 @@ class _$MutedAccountCWProxyImpl implements _$MutedAccountCWProxy {
     Object? locked = const $CopyWithPlaceholder(),
     Object? note = const $CopyWithPlaceholder(),
     Object? statusesCount = const $CopyWithPlaceholder(),
+    Object? uri = const $CopyWithPlaceholder(),
     Object? username = const $CopyWithPlaceholder(),
     Object? discoverable = const $CopyWithPlaceholder(),
     Object? hideCollections = const $CopyWithPlaceholder(),
@@ -259,7 +260,6 @@ class _$MutedAccountCWProxyImpl implements _$MutedAccountCWProxy {
     Object? noindex = const $CopyWithPlaceholder(),
     Object? roles = const $CopyWithPlaceholder(),
     Object? suspended = const $CopyWithPlaceholder(),
-    Object? uri = const $CopyWithPlaceholder(),
     Object? url = const $CopyWithPlaceholder(),
   }) {
     return MutedAccount(
@@ -339,6 +339,10 @@ class _$MutedAccountCWProxyImpl implements _$MutedAccountCWProxy {
           ? _value.statusesCount
           // ignore: cast_nullable_to_non_nullable
           : statusesCount as int,
+      uri: uri == const $CopyWithPlaceholder() || uri == null
+          ? _value.uri
+          // ignore: cast_nullable_to_non_nullable
+          : uri as Uri,
       username: username == const $CopyWithPlaceholder() || username == null
           ? _value.username
           // ignore: cast_nullable_to_non_nullable
@@ -387,10 +391,6 @@ class _$MutedAccountCWProxyImpl implements _$MutedAccountCWProxy {
           ? _value.suspended
           // ignore: cast_nullable_to_non_nullable
           : suspended as bool?,
-      uri: uri == const $CopyWithPlaceholder()
-          ? _value.uri
-          // ignore: cast_nullable_to_non_nullable
-          : uri as Uri?,
       url: url == const $CopyWithPlaceholder()
           ? _value.url
           // ignore: cast_nullable_to_non_nullable
@@ -435,6 +435,7 @@ MutedAccount _$MutedAccountFromJson(Map<String, dynamic> json) =>
             'locked',
             'note',
             'statuses_count',
+            'uri',
             'username',
           ],
         );
@@ -484,6 +485,7 @@ MutedAccount _$MutedAccountFromJson(Map<String, dynamic> json) =>
             'statuses_count',
             (v) => (v as num).toInt(),
           ),
+          uri: $checkedConvert('uri', (v) => Uri.parse(v as String)),
           username: $checkedConvert('username', (v) => v as String),
           discoverable: $checkedConvert('discoverable', (v) => v as bool?),
           hideCollections: $checkedConvert(
@@ -514,10 +516,6 @@ MutedAccount _$MutedAccountFromJson(Map<String, dynamic> json) =>
                 .toList(),
           ),
           suspended: $checkedConvert('suspended', (v) => v as bool?),
-          uri: $checkedConvert(
-            'uri',
-            (v) => v == null ? null : Uri.parse(v as String),
-          ),
           url: $checkedConvert(
             'url',
             (v) => v == null ? null : Uri.parse(v as String),
@@ -558,6 +556,7 @@ Map<String, dynamic> _$MutedAccountToJson(MutedAccount instance) =>
       'locked': instance.locked,
       'note': instance.note,
       'statuses_count': instance.statusesCount,
+      'uri': instance.uri.toString(),
       'username': instance.username,
       'discoverable': ?instance.discoverable,
       'hide_collections': ?instance.hideCollections,
@@ -570,6 +569,5 @@ Map<String, dynamic> _$MutedAccountToJson(MutedAccount instance) =>
       'noindex': ?instance.noindex,
       'roles': ?instance.roles?.map((e) => e.toJson()).toList(),
       'suspended': ?instance.suspended,
-      'uri': ?instance.uri?.toString(),
       'url': ?instance.url?.toString(),
     };

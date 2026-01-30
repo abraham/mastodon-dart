@@ -45,6 +45,8 @@ abstract class _$CredentialAccountCWProxy {
 
   CredentialAccount statusesCount(int statusesCount);
 
+  CredentialAccount uri(Uri uri);
+
   CredentialAccount username(String username);
 
   CredentialAccount discoverable(bool? discoverable);
@@ -66,8 +68,6 @@ abstract class _$CredentialAccountCWProxy {
   CredentialAccount roles(List<AccountRole>? roles);
 
   CredentialAccount suspended(bool? suspended);
-
-  CredentialAccount uri(Uri? uri);
 
   CredentialAccount url(Uri? url);
 
@@ -98,6 +98,7 @@ abstract class _$CredentialAccountCWProxy {
     Role role,
     CredentialAccountSource source_,
     int statusesCount,
+    Uri uri,
     String username,
     bool? discoverable,
     bool? hideCollections,
@@ -109,7 +110,6 @@ abstract class _$CredentialAccountCWProxy {
     bool? noindex,
     List<AccountRole>? roles,
     bool? suspended,
-    Uri? uri,
     Uri? url,
   });
 }
@@ -186,6 +186,9 @@ class _$CredentialAccountCWProxyImpl implements _$CredentialAccountCWProxy {
       call(statusesCount: statusesCount);
 
   @override
+  CredentialAccount uri(Uri uri) => call(uri: uri);
+
+  @override
   CredentialAccount username(String username) => call(username: username);
 
   @override
@@ -222,9 +225,6 @@ class _$CredentialAccountCWProxyImpl implements _$CredentialAccountCWProxy {
   CredentialAccount suspended(bool? suspended) => call(suspended: suspended);
 
   @override
-  CredentialAccount uri(Uri? uri) => call(uri: uri);
-
-  @override
   CredentialAccount url(Uri? url) => call(url: url);
 
   @override
@@ -255,6 +255,7 @@ class _$CredentialAccountCWProxyImpl implements _$CredentialAccountCWProxy {
     Object? role = const $CopyWithPlaceholder(),
     Object? source_ = const $CopyWithPlaceholder(),
     Object? statusesCount = const $CopyWithPlaceholder(),
+    Object? uri = const $CopyWithPlaceholder(),
     Object? username = const $CopyWithPlaceholder(),
     Object? discoverable = const $CopyWithPlaceholder(),
     Object? hideCollections = const $CopyWithPlaceholder(),
@@ -266,7 +267,6 @@ class _$CredentialAccountCWProxyImpl implements _$CredentialAccountCWProxy {
     Object? noindex = const $CopyWithPlaceholder(),
     Object? roles = const $CopyWithPlaceholder(),
     Object? suspended = const $CopyWithPlaceholder(),
-    Object? uri = const $CopyWithPlaceholder(),
     Object? url = const $CopyWithPlaceholder(),
   }) {
     return CredentialAccount(
@@ -354,6 +354,10 @@ class _$CredentialAccountCWProxyImpl implements _$CredentialAccountCWProxy {
           ? _value.statusesCount
           // ignore: cast_nullable_to_non_nullable
           : statusesCount as int,
+      uri: uri == const $CopyWithPlaceholder() || uri == null
+          ? _value.uri
+          // ignore: cast_nullable_to_non_nullable
+          : uri as Uri,
       username: username == const $CopyWithPlaceholder() || username == null
           ? _value.username
           // ignore: cast_nullable_to_non_nullable
@@ -398,10 +402,6 @@ class _$CredentialAccountCWProxyImpl implements _$CredentialAccountCWProxy {
           ? _value.suspended
           // ignore: cast_nullable_to_non_nullable
           : suspended as bool?,
-      uri: uri == const $CopyWithPlaceholder()
-          ? _value.uri
-          // ignore: cast_nullable_to_non_nullable
-          : uri as Uri?,
       url: url == const $CopyWithPlaceholder()
           ? _value.url
           // ignore: cast_nullable_to_non_nullable
@@ -449,6 +449,7 @@ CredentialAccount _$CredentialAccountFromJson(Map<String, dynamic> json) =>
             'role',
             'source',
             'statuses_count',
+            'uri',
             'username',
           ],
         );
@@ -506,6 +507,7 @@ CredentialAccount _$CredentialAccountFromJson(Map<String, dynamic> json) =>
             'statuses_count',
             (v) => (v as num).toInt(),
           ),
+          uri: $checkedConvert('uri', (v) => Uri.parse(v as String)),
           username: $checkedConvert('username', (v) => v as String),
           discoverable: $checkedConvert('discoverable', (v) => v as bool?),
           hideCollections: $checkedConvert(
@@ -532,10 +534,6 @@ CredentialAccount _$CredentialAccountFromJson(Map<String, dynamic> json) =>
                 .toList(),
           ),
           suspended: $checkedConvert('suspended', (v) => v as bool?),
-          uri: $checkedConvert(
-            'uri',
-            (v) => v == null ? null : Uri.parse(v as String),
-          ),
           url: $checkedConvert(
             'url',
             (v) => v == null ? null : Uri.parse(v as String),
@@ -578,6 +576,7 @@ Map<String, dynamic> _$CredentialAccountToJson(CredentialAccount instance) =>
       'role': instance.role.toJson(),
       'source': instance.source_.toJson(),
       'statuses_count': instance.statusesCount,
+      'uri': instance.uri.toString(),
       'username': instance.username,
       'discoverable': ?instance.discoverable,
       'hide_collections': ?instance.hideCollections,
@@ -589,6 +588,5 @@ Map<String, dynamic> _$CredentialAccountToJson(CredentialAccount instance) =>
       'noindex': ?instance.noindex,
       'roles': ?instance.roles?.map((e) => e.toJson()).toList(),
       'suspended': ?instance.suspended,
-      'uri': ?instance.uri?.toString(),
       'url': ?instance.url?.toString(),
     };

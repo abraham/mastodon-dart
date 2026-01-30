@@ -57,6 +57,8 @@ class MutedAccount {
 
     required this.statusesCount,
 
+    required this.uri,
+
     required this.username,
 
     this.discoverable,
@@ -80,8 +82,6 @@ class MutedAccount {
     this.roles,
 
     this.suspended,
-
-    this.uri,
 
     this.url,
   });
@@ -154,6 +154,10 @@ class MutedAccount {
   @JsonKey(name: r'statuses_count', required: true, includeIfNull: false)
   final int statusesCount;
 
+  /// The user's ActivityPub actor identifier (used for federation).
+  @JsonKey(name: r'uri', required: true, includeIfNull: false)
+  final Uri uri;
+
   /// The username of the account, not including domain.
   @JsonKey(name: r'username', required: true, includeIfNull: false)
   final String username;
@@ -201,10 +205,6 @@ class MutedAccount {
   @JsonKey(name: r'suspended', required: false, includeIfNull: false)
   final bool? suspended;
 
-  /// The user's ActivityPub actor identifier (used for federation).
-  @JsonKey(name: r'uri', required: false, includeIfNull: false)
-  final Uri? uri;
-
   /// The location of the user's profile page (web interface URL).
   @JsonKey(name: r'url', required: false, includeIfNull: false)
   final Uri? url;
@@ -230,6 +230,7 @@ class MutedAccount {
           other.locked == locked &&
           other.note == note &&
           other.statusesCount == statusesCount &&
+          other.uri == uri &&
           other.username == username &&
           other.discoverable == discoverable &&
           other.hideCollections == hideCollections &&
@@ -242,7 +243,6 @@ class MutedAccount {
           other.noindex == noindex &&
           other.roles == roles &&
           other.suspended == suspended &&
-          other.uri == uri &&
           other.url == url;
 
   @override
@@ -264,6 +264,7 @@ class MutedAccount {
       locked.hashCode +
       note.hashCode +
       statusesCount.hashCode +
+      uri.hashCode +
       username.hashCode +
       (discoverable == null ? 0 : discoverable.hashCode) +
       (hideCollections == null ? 0 : hideCollections.hashCode) +
@@ -276,7 +277,6 @@ class MutedAccount {
       (noindex == null ? 0 : noindex.hashCode) +
       (roles == null ? 0 : roles.hashCode) +
       (suspended == null ? 0 : suspended.hashCode) +
-      (uri == null ? 0 : uri.hashCode) +
       (url == null ? 0 : url.hashCode);
 
   factory MutedAccount.fromJson(Map<String, dynamic> json) =>

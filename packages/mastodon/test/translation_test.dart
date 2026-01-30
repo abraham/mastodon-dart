@@ -25,26 +25,26 @@ void main() {
       // TODO
     });
 
-    // The service that provided the machine translation.
-    // String provider
-    test('to test the property `provider`', () async {
-      // TODO
-    });
-
     // The translated media descriptions of the status.
     // List<TranslationAttachment> mediaAttachments
     test('to test the property `mediaAttachments`', () async {
       // TODO
     });
 
-    // TranslationPoll poll
-    test('to test the property `poll`', () async {
+    // The service that provided the machine translation.
+    // String provider
+    test('to test the property `provider`', () async {
       // TODO
     });
 
     // The translated spoiler warning of the status.
     // String spoilerText
     test('to test the property `spoilerText`', () async {
+      // TODO
+    });
+
+    // TranslationPoll poll
+    test('to test the property `poll`', () async {
       // TODO
     });
   });
