@@ -64,7 +64,7 @@ class PatchAccountsUpdateCredentialsRequest {
   @JsonKey(name: r'display_name', required: false, includeIfNull: false)
   final String? displayName;
 
-  /// The profile fields to be set. Inside this hash, the key is an integer cast to a string (although the exact integer does not matter), and the value is another hash including `name` and `value`. By default, max 4 fields.
+  /// The profile fields to be set. Inside this hash, the key is an integer cast to a string (although the exact integer does not matter), and the value is another hash including `name` and `value`. By default, max 4 fields (specified in [Instance#max_profile_fields]).
   @JsonKey(name: r'fields_attributes', required: false, includeIfNull: false)
   final Object? fieldsAttributes;
 

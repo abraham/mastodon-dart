@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **bot** | **bool** | Whether the account has a bot flag. | [optional] 
 **discoverable** | **bool** | Whether the account should be shown in the profile directory. | [optional] 
 **displayName** | **String** | The display name to use for the profile. | [optional] 
-**fieldsAttributes** | **Object** | The profile fields to be set. Inside this hash, the key is an integer cast to a string (although the exact integer does not matter), and the value is another hash including `name` and `value`. By default, max 4 fields. | [optional] 
+**fieldsAttributes** | **Object** | The profile fields to be set. Inside this hash, the key is an integer cast to a string (although the exact integer does not matter), and the value is another hash including `name` and `value`. By default, max 4 fields (specified in [Instance#max_profile_fields]). | [optional] 
 **header** | **String** | Header image encoded using `multipart/form-data` | [optional] 
 **hideCollections** | **bool** | Whether to hide followers and followed accounts. | [optional] 
 **indexable** | **bool** | Whether public posts should be searchable to anyone. | [optional] 
