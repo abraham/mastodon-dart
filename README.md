@@ -11,7 +11,6 @@ Mastodon API Dart client generated from [mastodon-openapi](https://github.com/ab
 - [mastodon](./packages/mastodon/README.md): The main package.
 - [mastodon_generator](./packages/mastodon_generator/README.md): The generator for building the API client from the OpenAPI spec.
 
-
 ## Release
 
 1. Run the [update](https://github.com/abraham/mastodon-dart/actions/workflows/update.yml) action and merge the resulting PR.
