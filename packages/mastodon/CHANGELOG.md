@@ -2,6 +2,10 @@
 
 ## v1.0.0-beta.7
 
+**Features**
+
+- Increased minimum supported Mastodon version to 4.3
+
 ## v1.0.0-beta.6
 
 **Features**
