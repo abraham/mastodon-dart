@@ -21,6 +21,12 @@ class InstanceConfigurationAccounts {
     required this.maxFeaturedTags,
 
     this.maxPinnedStatuses,
+
+    this.maxProfileFields,
+
+    this.profileFieldNameLimit,
+
+    this.profileFieldValueLimit,
   });
 
   /// The maximum number of featured tags allowed for each account.
@@ -31,17 +37,43 @@ class InstanceConfigurationAccounts {
   @JsonKey(name: r'max_pinned_statuses', required: false, includeIfNull: false)
   final int? maxPinnedStatuses;
 
+  /// The maximum number of custom profile fields allowed to be set.
+  @JsonKey(name: r'max_profile_fields', required: false, includeIfNull: false)
+  final int? maxProfileFields;
+
+  /// The maximum size of a profile field name, in characters.
+  @JsonKey(
+    name: r'profile_field_name_limit',
+    required: false,
+    includeIfNull: false,
+  )
+  final int? profileFieldNameLimit;
+
+  /// The maximum size of a profile field value, in characters.
+  @JsonKey(
+    name: r'profile_field_value_limit',
+    required: false,
+    includeIfNull: false,
+  )
+  final int? profileFieldValueLimit;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is InstanceConfigurationAccounts &&
           other.maxFeaturedTags == maxFeaturedTags &&
-          other.maxPinnedStatuses == maxPinnedStatuses;
+          other.maxPinnedStatuses == maxPinnedStatuses &&
+          other.maxProfileFields == maxProfileFields &&
+          other.profileFieldNameLimit == profileFieldNameLimit &&
+          other.profileFieldValueLimit == profileFieldValueLimit;
 
   @override
   int get hashCode =>
       maxFeaturedTags.hashCode +
-      (maxPinnedStatuses == null ? 0 : maxPinnedStatuses.hashCode);
+      (maxPinnedStatuses == null ? 0 : maxPinnedStatuses.hashCode) +
+      (maxProfileFields == null ? 0 : maxProfileFields.hashCode) +
+      (profileFieldNameLimit == null ? 0 : profileFieldNameLimit.hashCode) +
+      (profileFieldValueLimit == null ? 0 : profileFieldValueLimit.hashCode);
 
   factory InstanceConfigurationAccounts.fromJson(Map<String, dynamic> json) =>
       _$InstanceConfigurationAccountsFromJson(json);

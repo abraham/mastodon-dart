@@ -11,6 +11,16 @@ abstract class _$InstanceConfigurationAccountsCWProxy {
 
   InstanceConfigurationAccounts maxPinnedStatuses(int? maxPinnedStatuses);
 
+  InstanceConfigurationAccounts maxProfileFields(int? maxProfileFields);
+
+  InstanceConfigurationAccounts profileFieldNameLimit(
+    int? profileFieldNameLimit,
+  );
+
+  InstanceConfigurationAccounts profileFieldValueLimit(
+    int? profileFieldValueLimit,
+  );
+
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `InstanceConfigurationAccounts(...).copyWith.fieldName(value)`.
   ///
@@ -21,6 +31,9 @@ abstract class _$InstanceConfigurationAccountsCWProxy {
   InstanceConfigurationAccounts call({
     int maxFeaturedTags,
     int? maxPinnedStatuses,
+    int? maxProfileFields,
+    int? profileFieldNameLimit,
+    int? profileFieldValueLimit,
   });
 }
 
@@ -41,6 +54,20 @@ class _$InstanceConfigurationAccountsCWProxyImpl
       call(maxPinnedStatuses: maxPinnedStatuses);
 
   @override
+  InstanceConfigurationAccounts maxProfileFields(int? maxProfileFields) =>
+      call(maxProfileFields: maxProfileFields);
+
+  @override
+  InstanceConfigurationAccounts profileFieldNameLimit(
+    int? profileFieldNameLimit,
+  ) => call(profileFieldNameLimit: profileFieldNameLimit);
+
+  @override
+  InstanceConfigurationAccounts profileFieldValueLimit(
+    int? profileFieldValueLimit,
+  ) => call(profileFieldValueLimit: profileFieldValueLimit);
+
+  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `InstanceConfigurationAccounts(...).copyWith.fieldName(value)`.
   ///
@@ -51,6 +78,9 @@ class _$InstanceConfigurationAccountsCWProxyImpl
   InstanceConfigurationAccounts call({
     Object? maxFeaturedTags = const $CopyWithPlaceholder(),
     Object? maxPinnedStatuses = const $CopyWithPlaceholder(),
+    Object? maxProfileFields = const $CopyWithPlaceholder(),
+    Object? profileFieldNameLimit = const $CopyWithPlaceholder(),
+    Object? profileFieldValueLimit = const $CopyWithPlaceholder(),
   }) {
     return InstanceConfigurationAccounts(
       maxFeaturedTags:
@@ -63,6 +93,20 @@ class _$InstanceConfigurationAccountsCWProxyImpl
           ? _value.maxPinnedStatuses
           // ignore: cast_nullable_to_non_nullable
           : maxPinnedStatuses as int?,
+      maxProfileFields: maxProfileFields == const $CopyWithPlaceholder()
+          ? _value.maxProfileFields
+          // ignore: cast_nullable_to_non_nullable
+          : maxProfileFields as int?,
+      profileFieldNameLimit:
+          profileFieldNameLimit == const $CopyWithPlaceholder()
+          ? _value.profileFieldNameLimit
+          // ignore: cast_nullable_to_non_nullable
+          : profileFieldNameLimit as int?,
+      profileFieldValueLimit:
+          profileFieldValueLimit == const $CopyWithPlaceholder()
+          ? _value.profileFieldValueLimit
+          // ignore: cast_nullable_to_non_nullable
+          : profileFieldValueLimit as int?,
     );
   }
 }
@@ -96,12 +140,27 @@ InstanceConfigurationAccounts _$InstanceConfigurationAccountsFromJson(
         'max_pinned_statuses',
         (v) => (v as num?)?.toInt(),
       ),
+      maxProfileFields: $checkedConvert(
+        'max_profile_fields',
+        (v) => (v as num?)?.toInt(),
+      ),
+      profileFieldNameLimit: $checkedConvert(
+        'profile_field_name_limit',
+        (v) => (v as num?)?.toInt(),
+      ),
+      profileFieldValueLimit: $checkedConvert(
+        'profile_field_value_limit',
+        (v) => (v as num?)?.toInt(),
+      ),
     );
     return val;
   },
   fieldKeyMap: const {
     'maxFeaturedTags': 'max_featured_tags',
     'maxPinnedStatuses': 'max_pinned_statuses',
+    'maxProfileFields': 'max_profile_fields',
+    'profileFieldNameLimit': 'profile_field_name_limit',
+    'profileFieldValueLimit': 'profile_field_value_limit',
   },
 );
 
@@ -110,4 +169,7 @@ Map<String, dynamic> _$InstanceConfigurationAccountsToJson(
 ) => <String, dynamic>{
   'max_featured_tags': instance.maxFeaturedTags,
   'max_pinned_statuses': ?instance.maxPinnedStatuses,
+  'max_profile_fields': ?instance.maxProfileFields,
+  'profile_field_name_limit': ?instance.profileFieldNameLimit,
+  'profile_field_value_limit': ?instance.profileFieldValueLimit,
 };

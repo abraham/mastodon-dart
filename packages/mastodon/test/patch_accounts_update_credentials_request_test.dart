@@ -38,7 +38,7 @@ void main() {
       // TODO
     });
 
-    // The profile fields to be set. Inside this hash, the key is an integer cast to a string (although the exact integer does not matter), and the value is another hash including `name` and `value`. By default, max 4 fields.
+    // The profile fields to be set. Inside this hash, the key is an integer cast to a string (although the exact integer does not matter), and the value is another hash including `name` and `value`. By default, max 4 fields (specified in [Instance#max_profile_fields]).
     // Object fieldsAttributes
     test('to test the property `fieldsAttributes`', () async {
       // TODO
