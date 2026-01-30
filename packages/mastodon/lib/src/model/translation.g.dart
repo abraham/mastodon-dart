@@ -13,13 +13,13 @@ abstract class _$TranslationCWProxy {
 
   Translation language(String language);
 
+  Translation mediaAttachments(List<TranslationAttachment> mediaAttachments);
+
   Translation provider(String provider);
 
-  Translation mediaAttachments(List<TranslationAttachment>? mediaAttachments);
+  Translation spoilerText(String spoilerText);
 
   Translation poll(TranslationPoll? poll);
-
-  Translation spoilerText(String? spoilerText);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Translation(...).copyWith.fieldName(value)`.
@@ -32,10 +32,10 @@ abstract class _$TranslationCWProxy {
     String content,
     String detectedSourceLanguage,
     String language,
+    List<TranslationAttachment> mediaAttachments,
     String provider,
-    List<TranslationAttachment>? mediaAttachments,
+    String spoilerText,
     TranslationPoll? poll,
-    String? spoilerText,
   });
 }
 
@@ -57,18 +57,17 @@ class _$TranslationCWProxyImpl implements _$TranslationCWProxy {
   Translation language(String language) => call(language: language);
 
   @override
-  Translation provider(String provider) => call(provider: provider);
-
-  @override
-  Translation mediaAttachments(List<TranslationAttachment>? mediaAttachments) =>
+  Translation mediaAttachments(List<TranslationAttachment> mediaAttachments) =>
       call(mediaAttachments: mediaAttachments);
 
   @override
-  Translation poll(TranslationPoll? poll) => call(poll: poll);
+  Translation provider(String provider) => call(provider: provider);
 
   @override
-  Translation spoilerText(String? spoilerText) =>
-      call(spoilerText: spoilerText);
+  Translation spoilerText(String spoilerText) => call(spoilerText: spoilerText);
+
+  @override
+  Translation poll(TranslationPoll? poll) => call(poll: poll);
 
   @override
   /// Creates a new instance with the provided field values.
@@ -82,10 +81,10 @@ class _$TranslationCWProxyImpl implements _$TranslationCWProxy {
     Object? content = const $CopyWithPlaceholder(),
     Object? detectedSourceLanguage = const $CopyWithPlaceholder(),
     Object? language = const $CopyWithPlaceholder(),
-    Object? provider = const $CopyWithPlaceholder(),
     Object? mediaAttachments = const $CopyWithPlaceholder(),
-    Object? poll = const $CopyWithPlaceholder(),
+    Object? provider = const $CopyWithPlaceholder(),
     Object? spoilerText = const $CopyWithPlaceholder(),
+    Object? poll = const $CopyWithPlaceholder(),
   }) {
     return Translation(
       content: content == const $CopyWithPlaceholder() || content == null
@@ -102,22 +101,25 @@ class _$TranslationCWProxyImpl implements _$TranslationCWProxy {
           ? _value.language
           // ignore: cast_nullable_to_non_nullable
           : language as String,
+      mediaAttachments:
+          mediaAttachments == const $CopyWithPlaceholder() ||
+              mediaAttachments == null
+          ? _value.mediaAttachments
+          // ignore: cast_nullable_to_non_nullable
+          : mediaAttachments as List<TranslationAttachment>,
       provider: provider == const $CopyWithPlaceholder() || provider == null
           ? _value.provider
           // ignore: cast_nullable_to_non_nullable
           : provider as String,
-      mediaAttachments: mediaAttachments == const $CopyWithPlaceholder()
-          ? _value.mediaAttachments
+      spoilerText:
+          spoilerText == const $CopyWithPlaceholder() || spoilerText == null
+          ? _value.spoilerText
           // ignore: cast_nullable_to_non_nullable
-          : mediaAttachments as List<TranslationAttachment>?,
+          : spoilerText as String,
       poll: poll == const $CopyWithPlaceholder()
           ? _value.poll
           // ignore: cast_nullable_to_non_nullable
           : poll as TranslationPoll?,
-      spoilerText: spoilerText == const $CopyWithPlaceholder()
-          ? _value.spoilerText
-          // ignore: cast_nullable_to_non_nullable
-          : spoilerText as String?,
     );
   }
 }
@@ -143,7 +145,9 @@ Translation _$TranslationFromJson(Map<String, dynamic> json) => $checkedCreate(
         'content',
         'detected_source_language',
         'language',
+        'media_attachments',
         'provider',
+        'spoiler_text',
       ],
     );
     final val = Translation(
@@ -153,22 +157,22 @@ Translation _$TranslationFromJson(Map<String, dynamic> json) => $checkedCreate(
         (v) => v as String,
       ),
       language: $checkedConvert('language', (v) => v as String),
-      provider: $checkedConvert('provider', (v) => v as String),
       mediaAttachments: $checkedConvert(
         'media_attachments',
-        (v) => (v as List<dynamic>?)
-            ?.map(
+        (v) => (v as List<dynamic>)
+            .map(
               (e) => TranslationAttachment.fromJson(e as Map<String, dynamic>),
             )
             .toList(),
       ),
+      provider: $checkedConvert('provider', (v) => v as String),
+      spoilerText: $checkedConvert('spoiler_text', (v) => v as String),
       poll: $checkedConvert(
         'poll',
         (v) => v == null
             ? null
             : TranslationPoll.fromJson(v as Map<String, dynamic>),
       ),
-      spoilerText: $checkedConvert('spoiler_text', (v) => v as String?),
     );
     return val;
   },
@@ -184,10 +188,10 @@ Map<String, dynamic> _$TranslationToJson(Translation instance) =>
       'content': instance.content,
       'detected_source_language': instance.detectedSourceLanguage,
       'language': instance.language,
-      'provider': instance.provider,
-      'media_attachments': ?instance.mediaAttachments
-          ?.map((e) => e.toJson())
+      'media_attachments': instance.mediaAttachments
+          .map((e) => e.toJson())
           .toList(),
+      'provider': instance.provider,
+      'spoiler_text': instance.spoilerText,
       'poll': ?instance.poll?.toJson(),
-      'spoiler_text': ?instance.spoilerText,
     };

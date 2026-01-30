@@ -7,13 +7,13 @@ part of 'model_list.dart';
 // **************************************************************************
 
 abstract class _$ModelListCWProxy {
+  ModelList exclusive(bool exclusive);
+
   ModelList id(String id);
 
   ModelList repliesPolicy(ListRepliesPolicyEnum repliesPolicy);
 
   ModelList title(String title);
-
-  ModelList exclusive(bool? exclusive);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ModelList(...).copyWith.fieldName(value)`.
@@ -23,10 +23,10 @@ abstract class _$ModelListCWProxy {
   /// ModelList(...).copyWith(id: 12, name: "My name")
   /// ```
   ModelList call({
+    bool exclusive,
     String id,
     ListRepliesPolicyEnum repliesPolicy,
     String title,
-    bool? exclusive,
   });
 }
 
@@ -36,6 +36,9 @@ class _$ModelListCWProxyImpl implements _$ModelListCWProxy {
   const _$ModelListCWProxyImpl(this._value);
 
   final ModelList _value;
+
+  @override
+  ModelList exclusive(bool exclusive) => call(exclusive: exclusive);
 
   @override
   ModelList id(String id) => call(id: id);
@@ -48,9 +51,6 @@ class _$ModelListCWProxyImpl implements _$ModelListCWProxy {
   ModelList title(String title) => call(title: title);
 
   @override
-  ModelList exclusive(bool? exclusive) => call(exclusive: exclusive);
-
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ModelList(...).copyWith.fieldName(value)`.
   ///
@@ -59,12 +59,16 @@ class _$ModelListCWProxyImpl implements _$ModelListCWProxy {
   /// ModelList(...).copyWith(id: 12, name: "My name")
   /// ```
   ModelList call({
+    Object? exclusive = const $CopyWithPlaceholder(),
     Object? id = const $CopyWithPlaceholder(),
     Object? repliesPolicy = const $CopyWithPlaceholder(),
     Object? title = const $CopyWithPlaceholder(),
-    Object? exclusive = const $CopyWithPlaceholder(),
   }) {
     return ModelList(
+      exclusive: exclusive == const $CopyWithPlaceholder() || exclusive == null
+          ? _value.exclusive
+          // ignore: cast_nullable_to_non_nullable
+          : exclusive as bool,
       id: id == const $CopyWithPlaceholder() || id == null
           ? _value.id
           // ignore: cast_nullable_to_non_nullable
@@ -78,10 +82,6 @@ class _$ModelListCWProxyImpl implements _$ModelListCWProxy {
           ? _value.title
           // ignore: cast_nullable_to_non_nullable
           : title as String,
-      exclusive: exclusive == const $CopyWithPlaceholder()
-          ? _value.exclusive
-          // ignore: cast_nullable_to_non_nullable
-          : exclusive as bool?,
     );
   }
 }
@@ -99,24 +99,27 @@ extension $ModelListCopyWith on ModelList {
 
 ModelList _$ModelListFromJson(Map<String, dynamic> json) =>
     $checkedCreate('ModelList', json, ($checkedConvert) {
-      $checkKeys(json, requiredKeys: const ['id', 'replies_policy', 'title']);
+      $checkKeys(
+        json,
+        requiredKeys: const ['exclusive', 'id', 'replies_policy', 'title'],
+      );
       final val = ModelList(
+        exclusive: $checkedConvert('exclusive', (v) => v as bool),
         id: $checkedConvert('id', (v) => v as String),
         repliesPolicy: $checkedConvert(
           'replies_policy',
           (v) => $enumDecode(_$ListRepliesPolicyEnumEnumMap, v),
         ),
         title: $checkedConvert('title', (v) => v as String),
-        exclusive: $checkedConvert('exclusive', (v) => v as bool?),
       );
       return val;
     }, fieldKeyMap: const {'repliesPolicy': 'replies_policy'});
 
 Map<String, dynamic> _$ModelListToJson(ModelList instance) => <String, dynamic>{
+  'exclusive': instance.exclusive,
   'id': instance.id,
   'replies_policy': _$ListRepliesPolicyEnumEnumMap[instance.repliesPolicy]!,
   'title': instance.title,
-  'exclusive': ?instance.exclusive,
 };
 
 const _$ListRepliesPolicyEnumEnumMap = {

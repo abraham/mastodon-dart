@@ -41,6 +41,8 @@ abstract class _$AccountCWProxy {
 
   Account statusesCount(int statusesCount);
 
+  Account uri(Uri uri);
+
   Account username(String username);
 
   Account discoverable(bool? discoverable);
@@ -62,8 +64,6 @@ abstract class _$AccountCWProxy {
   Account roles(List<AccountRole>? roles);
 
   Account suspended(bool? suspended);
-
-  Account uri(Uri? uri);
 
   Account url(Uri? url);
 
@@ -92,6 +92,7 @@ abstract class _$AccountCWProxy {
     bool locked,
     String note,
     int statusesCount,
+    Uri uri,
     String username,
     bool? discoverable,
     bool? hideCollections,
@@ -103,7 +104,6 @@ abstract class _$AccountCWProxy {
     bool? noindex,
     List<AccountRole>? roles,
     bool? suspended,
-    Uri? uri,
     Uri? url,
   });
 }
@@ -170,6 +170,9 @@ class _$AccountCWProxyImpl implements _$AccountCWProxy {
       call(statusesCount: statusesCount);
 
   @override
+  Account uri(Uri uri) => call(uri: uri);
+
+  @override
   Account username(String username) => call(username: username);
 
   @override
@@ -205,9 +208,6 @@ class _$AccountCWProxyImpl implements _$AccountCWProxy {
   Account suspended(bool? suspended) => call(suspended: suspended);
 
   @override
-  Account uri(Uri? uri) => call(uri: uri);
-
-  @override
   Account url(Uri? url) => call(url: url);
 
   @override
@@ -236,6 +236,7 @@ class _$AccountCWProxyImpl implements _$AccountCWProxy {
     Object? locked = const $CopyWithPlaceholder(),
     Object? note = const $CopyWithPlaceholder(),
     Object? statusesCount = const $CopyWithPlaceholder(),
+    Object? uri = const $CopyWithPlaceholder(),
     Object? username = const $CopyWithPlaceholder(),
     Object? discoverable = const $CopyWithPlaceholder(),
     Object? hideCollections = const $CopyWithPlaceholder(),
@@ -247,7 +248,6 @@ class _$AccountCWProxyImpl implements _$AccountCWProxy {
     Object? noindex = const $CopyWithPlaceholder(),
     Object? roles = const $CopyWithPlaceholder(),
     Object? suspended = const $CopyWithPlaceholder(),
-    Object? uri = const $CopyWithPlaceholder(),
     Object? url = const $CopyWithPlaceholder(),
   }) {
     return Account(
@@ -327,6 +327,10 @@ class _$AccountCWProxyImpl implements _$AccountCWProxy {
           ? _value.statusesCount
           // ignore: cast_nullable_to_non_nullable
           : statusesCount as int,
+      uri: uri == const $CopyWithPlaceholder() || uri == null
+          ? _value.uri
+          // ignore: cast_nullable_to_non_nullable
+          : uri as Uri,
       username: username == const $CopyWithPlaceholder() || username == null
           ? _value.username
           // ignore: cast_nullable_to_non_nullable
@@ -371,10 +375,6 @@ class _$AccountCWProxyImpl implements _$AccountCWProxy {
           ? _value.suspended
           // ignore: cast_nullable_to_non_nullable
           : suspended as bool?,
-      uri: uri == const $CopyWithPlaceholder()
-          ? _value.uri
-          // ignore: cast_nullable_to_non_nullable
-          : uri as Uri?,
       url: url == const $CopyWithPlaceholder()
           ? _value.url
           // ignore: cast_nullable_to_non_nullable
@@ -418,6 +418,7 @@ Account _$AccountFromJson(Map<String, dynamic> json) => $checkedCreate(
         'locked',
         'note',
         'statuses_count',
+        'uri',
         'username',
       ],
     );
@@ -467,6 +468,7 @@ Account _$AccountFromJson(Map<String, dynamic> json) => $checkedCreate(
         'statuses_count',
         (v) => (v as num).toInt(),
       ),
+      uri: $checkedConvert('uri', (v) => Uri.parse(v as String)),
       username: $checkedConvert('username', (v) => v as String),
       discoverable: $checkedConvert('discoverable', (v) => v as bool?),
       hideCollections: $checkedConvert('hide_collections', (v) => v as bool?),
@@ -489,10 +491,6 @@ Account _$AccountFromJson(Map<String, dynamic> json) => $checkedCreate(
             .toList(),
       ),
       suspended: $checkedConvert('suspended', (v) => v as bool?),
-      uri: $checkedConvert(
-        'uri',
-        (v) => v == null ? null : Uri.parse(v as String),
-      ),
       url: $checkedConvert(
         'url',
         (v) => v == null ? null : Uri.parse(v as String),
@@ -531,6 +529,7 @@ Map<String, dynamic> _$AccountToJson(Account instance) => <String, dynamic>{
   'locked': instance.locked,
   'note': instance.note,
   'statuses_count': instance.statusesCount,
+  'uri': instance.uri.toString(),
   'username': instance.username,
   'discoverable': ?instance.discoverable,
   'hide_collections': ?instance.hideCollections,
@@ -542,6 +541,5 @@ Map<String, dynamic> _$AccountToJson(Account instance) => <String, dynamic>{
   'noindex': ?instance.noindex,
   'roles': ?instance.roles?.map((e) => e.toJson()).toList(),
   'suspended': ?instance.suspended,
-  'uri': ?instance.uri?.toString(),
   'url': ?instance.url?.toString(),
 };

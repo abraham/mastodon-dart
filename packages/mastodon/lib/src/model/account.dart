@@ -56,6 +56,8 @@ class Account {
 
     required this.statusesCount,
 
+    required this.uri,
+
     required this.username,
 
     this.discoverable,
@@ -77,8 +79,6 @@ class Account {
     this.roles,
 
     this.suspended,
-
-    this.uri,
 
     this.url,
   });
@@ -151,6 +151,10 @@ class Account {
   @JsonKey(name: r'statuses_count', required: true, includeIfNull: false)
   final int statusesCount;
 
+  /// The user's ActivityPub actor identifier (used for federation).
+  @JsonKey(name: r'uri', required: true, includeIfNull: false)
+  final Uri uri;
+
   /// The username of the account, not including domain.
   @JsonKey(name: r'username', required: true, includeIfNull: false)
   final String username;
@@ -194,10 +198,6 @@ class Account {
   @JsonKey(name: r'suspended', required: false, includeIfNull: false)
   final bool? suspended;
 
-  /// The user's ActivityPub actor identifier (used for federation).
-  @JsonKey(name: r'uri', required: false, includeIfNull: false)
-  final Uri? uri;
-
   /// The location of the user's profile page (web interface URL).
   @JsonKey(name: r'url', required: false, includeIfNull: false)
   final Uri? url;
@@ -223,6 +223,7 @@ class Account {
           other.locked == locked &&
           other.note == note &&
           other.statusesCount == statusesCount &&
+          other.uri == uri &&
           other.username == username &&
           other.discoverable == discoverable &&
           other.hideCollections == hideCollections &&
@@ -234,7 +235,6 @@ class Account {
           other.noindex == noindex &&
           other.roles == roles &&
           other.suspended == suspended &&
-          other.uri == uri &&
           other.url == url;
 
   @override
@@ -256,6 +256,7 @@ class Account {
       locked.hashCode +
       note.hashCode +
       statusesCount.hashCode +
+      uri.hashCode +
       username.hashCode +
       (discoverable == null ? 0 : discoverable.hashCode) +
       (hideCollections == null ? 0 : hideCollections.hashCode) +
@@ -267,7 +268,6 @@ class Account {
       (noindex == null ? 0 : noindex.hashCode) +
       (roles == null ? 0 : roles.hashCode) +
       (suspended == null ? 0 : suspended.hashCode) +
-      (uri == null ? 0 : uri.hashCode) +
       (url == null ? 0 : url.hashCode);
 
   factory Account.fromJson(Map<String, dynamic> json) =>

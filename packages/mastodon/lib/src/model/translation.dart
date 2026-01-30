@@ -26,13 +26,13 @@ class Translation {
 
     required this.language,
 
+    required this.mediaAttachments,
+
     required this.provider,
 
-    this.mediaAttachments,
+    required this.spoilerText,
 
     this.poll,
-
-    this.spoilerText,
   });
 
   /// HTML-encoded translated content of the status.
@@ -51,20 +51,20 @@ class Translation {
   @JsonKey(name: r'language', required: true, includeIfNull: false)
   final String language;
 
+  /// The translated media descriptions of the status.
+  @JsonKey(name: r'media_attachments', required: true, includeIfNull: false)
+  final List<TranslationAttachment> mediaAttachments;
+
   /// The service that provided the machine translation.
   @JsonKey(name: r'provider', required: true, includeIfNull: false)
   final String provider;
 
-  /// The translated media descriptions of the status.
-  @JsonKey(name: r'media_attachments', required: false, includeIfNull: false)
-  final List<TranslationAttachment>? mediaAttachments;
+  /// The translated spoiler warning of the status.
+  @JsonKey(name: r'spoiler_text', required: true, includeIfNull: false)
+  final String spoilerText;
 
   @JsonKey(name: r'poll', required: false, includeIfNull: false)
   final TranslationPoll? poll;
-
-  /// The translated spoiler warning of the status.
-  @JsonKey(name: r'spoiler_text', required: false, includeIfNull: false)
-  final String? spoilerText;
 
   @override
   bool operator ==(Object other) =>
@@ -73,20 +73,20 @@ class Translation {
           other.content == content &&
           other.detectedSourceLanguage == detectedSourceLanguage &&
           other.language == language &&
-          other.provider == provider &&
           other.mediaAttachments == mediaAttachments &&
-          other.poll == poll &&
-          other.spoilerText == spoilerText;
+          other.provider == provider &&
+          other.spoilerText == spoilerText &&
+          other.poll == poll;
 
   @override
   int get hashCode =>
       content.hashCode +
       detectedSourceLanguage.hashCode +
       language.hashCode +
+      mediaAttachments.hashCode +
       provider.hashCode +
-      (mediaAttachments == null ? 0 : mediaAttachments.hashCode) +
-      (poll == null ? 0 : poll.hashCode) +
-      (spoilerText == null ? 0 : spoilerText.hashCode);
+      spoilerText.hashCode +
+      (poll == null ? 0 : poll.hashCode);
 
   factory Translation.fromJson(Map<String, dynamic> json) =>
       _$TranslationFromJson(json);
