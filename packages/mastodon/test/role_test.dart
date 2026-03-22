@@ -31,7 +31,7 @@ void main() {
       // TODO
     });
 
-    // A bitmask that represents the sum of all permissions granted to the role.
+    // A bitmask that represents the sum of all permissions granted to the role. This is a potentially large integer in decimal representation. The absence of special permissions is denoted by `'0'`.
     // String permissions
     test('to test the property `permissions`', () async {
       // TODO
