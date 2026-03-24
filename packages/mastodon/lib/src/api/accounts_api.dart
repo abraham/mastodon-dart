@@ -807,7 +807,7 @@ class AccountsApi {
   }
 
   /// Check relationships to other accounts
-  /// Find out whether a given account is followed, blocked, muted, etc.  Version history:  0.0.0 - added\\ 4.3.0 - added &#x60;with_suspended&#x60; parameter
+  /// Find out whether a given account is followed, blocked, muted, etc.  Version history:  0.0.0 - added\\ 4.3.0 - added &#x60;with_suspended&#x60; parameter 4.6.0 - added &#x60;muting_expires_at&#x60;
   ///
   /// Parameters:
   /// * [id] - Check relationships for the provided account IDs.

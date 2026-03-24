@@ -9,7 +9,7 @@ void main() {
 
   group(PostStatusReblogRequest, () {
     // String (Enumerable, oneOf `public`, `unlisted`, or `private`). Defaults to public.
-    // StatusVisibilityEnum visibility (default value: 'public')
+    // StatusVisibilityEnum visibility (default value: StatusVisibilityEnum.public)
     test('to test the property `visibility`', () async {
       // TODO
     });
