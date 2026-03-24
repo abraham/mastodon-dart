@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+dart packages/mastodon_generator/lib/update_spec.dart
+
 cd packages/mastodon_generator
 
 dart run build_runner build --delete-conflicting-outputs
