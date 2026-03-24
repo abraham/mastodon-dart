@@ -469,7 +469,7 @@ Name | Type | Description  | Notes
 
 Check relationships to other accounts
 
-Find out whether a given account is followed, blocked, muted, etc.  Version history:  0.0.0 - added\\ 4.3.0 - added `with_suspended` parameter
+Find out whether a given account is followed, blocked, muted, etc.  Version history:  0.0.0 - added\\ 4.3.0 - added `with_suspended` parameter 4.6.0 - added `muting_expires_at`
 
 ### Example
 ```dart

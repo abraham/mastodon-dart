@@ -103,51 +103,6 @@ class Hack {
 void main() async {
   final hacks = [
     Hack(
-      filePath: 'packages/mastodon/lib/src/model/create_list_request.dart',
-      replacements: [
-        Replacement(
-          "this.repliesPolicy = 'list',",
-          'this.repliesPolicy = ListRepliesPolicyEnum.list,',
-        ),
-        Replacement(
-          "defaultValue: 'list',",
-          'defaultValue: ListRepliesPolicyEnum.list,',
-        ),
-      ],
-      description: "Replace 'list' with ListRepliesPolicyEnum.list",
-    ),
-    Hack(
-      filePath: 'packages/mastodon/lib/src/model/create_report_request.dart',
-      replacements: [
-        Replacement(
-          "this.category = 'other',",
-          'this.category = ReportCategoryEnum.other,',
-        ),
-        Replacement(
-          "defaultValue: 'other',",
-          "defaultValue: ReportCategoryEnum.other,",
-        ),
-      ],
-      description:
-          "Replace CreateReportRequestAdminReportCategoryEnum._('other') with CreateReportRequestAdminReportCategoryEnum.other",
-    ),
-    Hack(
-      filePath:
-          'packages/mastodon/lib/src/model/post_status_reblog_request.dart',
-      replacements: [
-        Replacement(
-          "PostStatusReblogRequest({this.visibility = 'public'});",
-          'PostStatusReblogRequest({this.visibility = StatusVisibilityEnum.public});',
-        ),
-        Replacement(
-          "defaultValue: 'public',",
-          'defaultValue: StatusVisibilityEnum.public,',
-        ),
-      ],
-      description:
-          "Replace CreateReportRequestAdminReportCategoryEnum._('other') with CreateReportRequestAdminReportCategoryEnum.other",
-    ),
-    Hack(
       filePath: 'packages/mastodon/lib/mastodon.dart',
       replacements: [
         Replacement(

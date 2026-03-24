@@ -45,7 +45,7 @@ class Role {
   @JsonKey(name: r'name', required: true, includeIfNull: false)
   final String name;
 
-  /// A bitmask that represents the sum of all permissions granted to the role.
+  /// A bitmask that represents the sum of all permissions granted to the role. This is a potentially large integer in decimal representation. The absence of special permissions is denoted by `'0'`.
   @JsonKey(name: r'permissions', required: true, includeIfNull: false)
   final String permissions;
 
