@@ -50,4 +50,5 @@ jobs:
           gh pr create \
             --title "chore: update generated code" \
             --body "Automated update of generated code" \
-            --base main
+            --base main \
+            --reviewer abraham
