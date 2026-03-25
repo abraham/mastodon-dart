@@ -14,6 +14,18 @@ void main() {
       // TODO
     });
 
+    // The maximum length allowed for an account's display name.
+    // int maxDisplayNameLength
+    test('to test the property `maxDisplayNameLength`', () async {
+      // TODO
+    });
+
+    // The maximum length allowed for an account's bio.
+    // int maxNoteLength
+    test('to test the property `maxNoteLength`', () async {
+      // TODO
+    });
+
     // The maximum number of pinned statuses for each account.
     // int maxPinnedStatuses
     test('to test the property `maxPinnedStatuses`', () async {

@@ -96,5 +96,11 @@ void main() {
     test('to test the property `image`', () async {
       // TODO
     });
+
+    // True if the linked article claims to be written by the current user without the user having the article's domain in their [`attribution_domains`]({{< relref \"entities/Account#source[attribution_domains]\" >}})). This is used to prompt them to review and add the domain.
+    // bool missingAttribution
+    test('to test the property `missingAttribution`', () async {
+      // TODO
+    });
   });
 }

@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **id** | **String** | The ID of the report in the database. | 
 **targetAccount** | [**Account**](Account.md) | The account that was reported. | 
 **actionTakenAt** | [**DateTime**](DateTime.md) | When an action was taken against the report. | [optional] 
+**collectionIds** | **List&lt;String&gt;** | IDs of Featured Collections that have been attached to this report for additional context. | [optional] 
 **ruleIds** | **List&lt;String&gt;** | IDs of the rules that have been cited as a violation by this report. | [optional] 
 **statusIds** | **List&lt;String&gt;** | IDs of statuses that have been attached to this report for additional context. | [optional] 
 

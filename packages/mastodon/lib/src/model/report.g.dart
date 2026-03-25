@@ -23,6 +23,8 @@ abstract class _$ReportCWProxy {
 
   Report actionTakenAt(DateTime? actionTakenAt);
 
+  Report collectionIds(List<String>? collectionIds);
+
   Report ruleIds(List<String>? ruleIds);
 
   Report statusIds(List<String>? statusIds);
@@ -43,6 +45,7 @@ abstract class _$ReportCWProxy {
     String id,
     Account targetAccount,
     DateTime? actionTakenAt,
+    List<String>? collectionIds,
     List<String>? ruleIds,
     List<String>? statusIds,
   });
@@ -82,6 +85,10 @@ class _$ReportCWProxyImpl implements _$ReportCWProxy {
       call(actionTakenAt: actionTakenAt);
 
   @override
+  Report collectionIds(List<String>? collectionIds) =>
+      call(collectionIds: collectionIds);
+
+  @override
   Report ruleIds(List<String>? ruleIds) => call(ruleIds: ruleIds);
 
   @override
@@ -104,6 +111,7 @@ class _$ReportCWProxyImpl implements _$ReportCWProxy {
     Object? id = const $CopyWithPlaceholder(),
     Object? targetAccount = const $CopyWithPlaceholder(),
     Object? actionTakenAt = const $CopyWithPlaceholder(),
+    Object? collectionIds = const $CopyWithPlaceholder(),
     Object? ruleIds = const $CopyWithPlaceholder(),
     Object? statusIds = const $CopyWithPlaceholder(),
   }) {
@@ -142,6 +150,10 @@ class _$ReportCWProxyImpl implements _$ReportCWProxy {
           ? _value.actionTakenAt
           // ignore: cast_nullable_to_non_nullable
           : actionTakenAt as DateTime?,
+      collectionIds: collectionIds == const $CopyWithPlaceholder()
+          ? _value.collectionIds
+          // ignore: cast_nullable_to_non_nullable
+          : collectionIds as List<String>?,
       ruleIds: ruleIds == const $CopyWithPlaceholder()
           ? _value.ruleIds
           // ignore: cast_nullable_to_non_nullable
@@ -202,6 +214,10 @@ Report _$ReportFromJson(Map<String, dynamic> json) => $checkedCreate(
         'action_taken_at',
         (v) => v == null ? null : DateTime.parse(v as String),
       ),
+      collectionIds: $checkedConvert(
+        'collection_ids',
+        (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+      ),
       ruleIds: $checkedConvert(
         'rule_ids',
         (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -218,6 +234,7 @@ Report _$ReportFromJson(Map<String, dynamic> json) => $checkedCreate(
     'createdAt': 'created_at',
     'targetAccount': 'target_account',
     'actionTakenAt': 'action_taken_at',
+    'collectionIds': 'collection_ids',
     'ruleIds': 'rule_ids',
     'statusIds': 'status_ids',
   },
@@ -232,6 +249,7 @@ Map<String, dynamic> _$ReportToJson(Report instance) => <String, dynamic>{
   'id': instance.id,
   'target_account': instance.targetAccount.toJson(),
   'action_taken_at': ?instance.actionTakenAt?.toIso8601String(),
+  'collection_ids': ?instance.collectionIds,
   'rule_ids': ?instance.ruleIds,
   'status_ids': ?instance.statusIds,
 };

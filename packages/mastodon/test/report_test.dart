@@ -55,6 +55,12 @@ void main() {
       // TODO
     });
 
+    // IDs of Featured Collections that have been attached to this report for additional context.
+    // List<String> collectionIds
+    test('to test the property `collectionIds`', () async {
+      // TODO
+    });
+
     // IDs of the rules that have been cited as a violation by this report.
     // List<String> ruleIds
     test('to test the property `ruleIds`', () async {

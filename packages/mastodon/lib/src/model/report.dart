@@ -36,6 +36,8 @@ class Report {
 
     this.actionTakenAt,
 
+    this.collectionIds,
+
     this.ruleIds,
 
     this.statusIds,
@@ -73,6 +75,10 @@ class Report {
   @JsonKey(name: r'action_taken_at', required: false, includeIfNull: false)
   final DateTime? actionTakenAt;
 
+  /// IDs of Featured Collections that have been attached to this report for additional context.
+  @JsonKey(name: r'collection_ids', required: false, includeIfNull: false)
+  final List<String>? collectionIds;
+
   /// IDs of the rules that have been cited as a violation by this report.
   @JsonKey(name: r'rule_ids', required: false, includeIfNull: false)
   final List<String>? ruleIds;
@@ -93,6 +99,7 @@ class Report {
           other.id == id &&
           other.targetAccount == targetAccount &&
           other.actionTakenAt == actionTakenAt &&
+          other.collectionIds == collectionIds &&
           other.ruleIds == ruleIds &&
           other.statusIds == statusIds;
 
@@ -106,6 +113,7 @@ class Report {
       id.hashCode +
       targetAccount.hashCode +
       (actionTakenAt == null ? 0 : actionTakenAt.hashCode) +
+      (collectionIds == null ? 0 : collectionIds.hashCode) +
       (ruleIds == null ? 0 : ruleIds.hashCode) +
       (statusIds == null ? 0 : statusIds.hashCode);
 

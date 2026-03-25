@@ -65,6 +65,12 @@ abstract class _$MutedAccountCWProxy {
 
   MutedAccount roles(List<AccountRole>? roles);
 
+  MutedAccount showFeatured(bool? showFeatured);
+
+  MutedAccount showMedia(bool? showMedia);
+
+  MutedAccount showMediaReplies(bool? showMediaReplies);
+
   MutedAccount suspended(bool? suspended);
 
   MutedAccount url(Uri? url);
@@ -106,6 +112,9 @@ abstract class _$MutedAccountCWProxy {
     DateTime? muteExpiresAt,
     bool? noindex,
     List<AccountRole>? roles,
+    bool? showFeatured,
+    bool? showMedia,
+    bool? showMediaReplies,
     bool? suspended,
     Uri? url,
   });
@@ -216,6 +225,17 @@ class _$MutedAccountCWProxyImpl implements _$MutedAccountCWProxy {
   MutedAccount roles(List<AccountRole>? roles) => call(roles: roles);
 
   @override
+  MutedAccount showFeatured(bool? showFeatured) =>
+      call(showFeatured: showFeatured);
+
+  @override
+  MutedAccount showMedia(bool? showMedia) => call(showMedia: showMedia);
+
+  @override
+  MutedAccount showMediaReplies(bool? showMediaReplies) =>
+      call(showMediaReplies: showMediaReplies);
+
+  @override
   MutedAccount suspended(bool? suspended) => call(suspended: suspended);
 
   @override
@@ -259,6 +279,9 @@ class _$MutedAccountCWProxyImpl implements _$MutedAccountCWProxy {
     Object? muteExpiresAt = const $CopyWithPlaceholder(),
     Object? noindex = const $CopyWithPlaceholder(),
     Object? roles = const $CopyWithPlaceholder(),
+    Object? showFeatured = const $CopyWithPlaceholder(),
+    Object? showMedia = const $CopyWithPlaceholder(),
+    Object? showMediaReplies = const $CopyWithPlaceholder(),
     Object? suspended = const $CopyWithPlaceholder(),
     Object? url = const $CopyWithPlaceholder(),
   }) {
@@ -387,6 +410,18 @@ class _$MutedAccountCWProxyImpl implements _$MutedAccountCWProxy {
           ? _value.roles
           // ignore: cast_nullable_to_non_nullable
           : roles as List<AccountRole>?,
+      showFeatured: showFeatured == const $CopyWithPlaceholder()
+          ? _value.showFeatured
+          // ignore: cast_nullable_to_non_nullable
+          : showFeatured as bool?,
+      showMedia: showMedia == const $CopyWithPlaceholder()
+          ? _value.showMedia
+          // ignore: cast_nullable_to_non_nullable
+          : showMedia as bool?,
+      showMediaReplies: showMediaReplies == const $CopyWithPlaceholder()
+          ? _value.showMediaReplies
+          // ignore: cast_nullable_to_non_nullable
+          : showMediaReplies as bool?,
       suspended: suspended == const $CopyWithPlaceholder()
           ? _value.suspended
           // ignore: cast_nullable_to_non_nullable
@@ -515,6 +550,12 @@ MutedAccount _$MutedAccountFromJson(Map<String, dynamic> json) =>
                 ?.map((e) => AccountRole.fromJson(e as Map<String, dynamic>))
                 .toList(),
           ),
+          showFeatured: $checkedConvert('show_featured', (v) => v as bool?),
+          showMedia: $checkedConvert('show_media', (v) => v as bool?),
+          showMediaReplies: $checkedConvert(
+            'show_media_replies',
+            (v) => v as bool?,
+          ),
           suspended: $checkedConvert('suspended', (v) => v as bool?),
           url: $checkedConvert(
             'url',
@@ -534,6 +575,9 @@ MutedAccount _$MutedAccountFromJson(Map<String, dynamic> json) =>
         'hideCollections': 'hide_collections',
         'lastStatusAt': 'last_status_at',
         'muteExpiresAt': 'mute_expires_at',
+        'showFeatured': 'show_featured',
+        'showMedia': 'show_media',
+        'showMediaReplies': 'show_media_replies',
       },
     );
 
@@ -568,6 +612,9 @@ Map<String, dynamic> _$MutedAccountToJson(MutedAccount instance) =>
       'mute_expires_at': ?instance.muteExpiresAt?.toIso8601String(),
       'noindex': ?instance.noindex,
       'roles': ?instance.roles?.map((e) => e.toJson()).toList(),
+      'show_featured': ?instance.showFeatured,
+      'show_media': ?instance.showMedia,
+      'show_media_replies': ?instance.showMediaReplies,
       'suspended': ?instance.suspended,
       'url': ?instance.url?.toString(),
     };
