@@ -185,6 +185,24 @@ void main() {
       // TODO
     });
 
+    // Whether the account wishes to have a “Featured” tab on their profile.
+    // bool showFeatured
+    test('to test the property `showFeatured`', () async {
+      // TODO
+    });
+
+    // Whether the account wishes to have a “Media” tab with media attachments on their profile.
+    // bool showMedia
+    test('to test the property `showMedia`', () async {
+      // TODO
+    });
+
+    // Whether the account wishes to have replies in the “Media” tab on their profile.
+    // bool showMediaReplies
+    test('to test the property `showMediaReplies`', () async {
+      // TODO
+    });
+
     // An extra attribute returned only when an account is suspended.
     // bool suspended
     test('to test the property `suspended`', () async {

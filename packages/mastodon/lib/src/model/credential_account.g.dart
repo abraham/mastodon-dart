@@ -67,6 +67,12 @@ abstract class _$CredentialAccountCWProxy {
 
   CredentialAccount roles(List<AccountRole>? roles);
 
+  CredentialAccount showFeatured(bool? showFeatured);
+
+  CredentialAccount showMedia(bool? showMedia);
+
+  CredentialAccount showMediaReplies(bool? showMediaReplies);
+
   CredentialAccount suspended(bool? suspended);
 
   CredentialAccount url(Uri? url);
@@ -109,6 +115,9 @@ abstract class _$CredentialAccountCWProxy {
     Account? moved,
     bool? noindex,
     List<AccountRole>? roles,
+    bool? showFeatured,
+    bool? showMedia,
+    bool? showMediaReplies,
     bool? suspended,
     Uri? url,
   });
@@ -222,6 +231,17 @@ class _$CredentialAccountCWProxyImpl implements _$CredentialAccountCWProxy {
   CredentialAccount roles(List<AccountRole>? roles) => call(roles: roles);
 
   @override
+  CredentialAccount showFeatured(bool? showFeatured) =>
+      call(showFeatured: showFeatured);
+
+  @override
+  CredentialAccount showMedia(bool? showMedia) => call(showMedia: showMedia);
+
+  @override
+  CredentialAccount showMediaReplies(bool? showMediaReplies) =>
+      call(showMediaReplies: showMediaReplies);
+
+  @override
   CredentialAccount suspended(bool? suspended) => call(suspended: suspended);
 
   @override
@@ -266,6 +286,9 @@ class _$CredentialAccountCWProxyImpl implements _$CredentialAccountCWProxy {
     Object? moved = const $CopyWithPlaceholder(),
     Object? noindex = const $CopyWithPlaceholder(),
     Object? roles = const $CopyWithPlaceholder(),
+    Object? showFeatured = const $CopyWithPlaceholder(),
+    Object? showMedia = const $CopyWithPlaceholder(),
+    Object? showMediaReplies = const $CopyWithPlaceholder(),
     Object? suspended = const $CopyWithPlaceholder(),
     Object? url = const $CopyWithPlaceholder(),
   }) {
@@ -398,6 +421,18 @@ class _$CredentialAccountCWProxyImpl implements _$CredentialAccountCWProxy {
           ? _value.roles
           // ignore: cast_nullable_to_non_nullable
           : roles as List<AccountRole>?,
+      showFeatured: showFeatured == const $CopyWithPlaceholder()
+          ? _value.showFeatured
+          // ignore: cast_nullable_to_non_nullable
+          : showFeatured as bool?,
+      showMedia: showMedia == const $CopyWithPlaceholder()
+          ? _value.showMedia
+          // ignore: cast_nullable_to_non_nullable
+          : showMedia as bool?,
+      showMediaReplies: showMediaReplies == const $CopyWithPlaceholder()
+          ? _value.showMediaReplies
+          // ignore: cast_nullable_to_non_nullable
+          : showMediaReplies as bool?,
       suspended: suspended == const $CopyWithPlaceholder()
           ? _value.suspended
           // ignore: cast_nullable_to_non_nullable
@@ -533,6 +568,12 @@ CredentialAccount _$CredentialAccountFromJson(Map<String, dynamic> json) =>
                 ?.map((e) => AccountRole.fromJson(e as Map<String, dynamic>))
                 .toList(),
           ),
+          showFeatured: $checkedConvert('show_featured', (v) => v as bool?),
+          showMedia: $checkedConvert('show_media', (v) => v as bool?),
+          showMediaReplies: $checkedConvert(
+            'show_media_replies',
+            (v) => v as bool?,
+          ),
           suspended: $checkedConvert('suspended', (v) => v as bool?),
           url: $checkedConvert(
             'url',
@@ -552,6 +593,9 @@ CredentialAccount _$CredentialAccountFromJson(Map<String, dynamic> json) =>
         'statusesCount': 'statuses_count',
         'hideCollections': 'hide_collections',
         'lastStatusAt': 'last_status_at',
+        'showFeatured': 'show_featured',
+        'showMedia': 'show_media',
+        'showMediaReplies': 'show_media_replies',
       },
     );
 
@@ -587,6 +631,9 @@ Map<String, dynamic> _$CredentialAccountToJson(CredentialAccount instance) =>
       'moved': ?instance.moved?.toJson(),
       'noindex': ?instance.noindex,
       'roles': ?instance.roles?.map((e) => e.toJson()).toList(),
+      'show_featured': ?instance.showFeatured,
+      'show_media': ?instance.showMedia,
+      'show_media_replies': ?instance.showMediaReplies,
       'suspended': ?instance.suspended,
       'url': ?instance.url?.toString(),
     };

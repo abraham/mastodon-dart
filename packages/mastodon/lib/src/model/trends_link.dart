@@ -53,6 +53,8 @@ class TrendsLink {
     this.blurhash,
 
     this.image,
+
+    this.missingAttribution,
   });
 
   /// Description of preview.
@@ -119,6 +121,10 @@ class TrendsLink {
   @JsonKey(name: r'image', required: false, includeIfNull: false)
   final Uri? image;
 
+  /// True if the linked article claims to be written by the current user without the user having the article's domain in their [`attribution_domains`]({{< relref \"entities/Account#source[attribution_domains]\" >}})). This is used to prompt them to review and add the domain.
+  @JsonKey(name: r'missing_attribution', required: false, includeIfNull: false)
+  final bool? missingAttribution;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -138,7 +144,8 @@ class TrendsLink {
           other.authorUrl == authorUrl &&
           other.authors == authors &&
           other.blurhash == blurhash &&
-          other.image == image;
+          other.image == image &&
+          other.missingAttribution == missingAttribution;
 
   @override
   int get hashCode =>
@@ -157,7 +164,8 @@ class TrendsLink {
       (authorUrl == null ? 0 : authorUrl.hashCode) +
       (authors == null ? 0 : authors.hashCode) +
       (blurhash == null ? 0 : blurhash.hashCode) +
-      (image == null ? 0 : image.hashCode);
+      (image == null ? 0 : image.hashCode) +
+      (missingAttribution == null ? 0 : missingAttribution.hashCode);
 
   factory TrendsLink.fromJson(Map<String, dynamic> json) =>
       _$TrendsLinkFromJson(json);

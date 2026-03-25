@@ -37,6 +37,8 @@ abstract class _$PreviewCardCWProxy {
 
   PreviewCard image(Uri? image);
 
+  PreviewCard missingAttribution(bool? missingAttribution);
+
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PreviewCard(...).copyWith.fieldName(value)`.
   ///
@@ -60,6 +62,7 @@ abstract class _$PreviewCardCWProxy {
     List<PreviewCardAuthor>? authors,
     String? blurhash,
     Uri? image,
+    bool? missingAttribution,
   });
 }
 
@@ -118,6 +121,10 @@ class _$PreviewCardCWProxyImpl implements _$PreviewCardCWProxy {
   PreviewCard image(Uri? image) => call(image: image);
 
   @override
+  PreviewCard missingAttribution(bool? missingAttribution) =>
+      call(missingAttribution: missingAttribution);
+
+  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PreviewCard(...).copyWith.fieldName(value)`.
   ///
@@ -141,6 +148,7 @@ class _$PreviewCardCWProxyImpl implements _$PreviewCardCWProxy {
     Object? authors = const $CopyWithPlaceholder(),
     Object? blurhash = const $CopyWithPlaceholder(),
     Object? image = const $CopyWithPlaceholder(),
+    Object? missingAttribution = const $CopyWithPlaceholder(),
   }) {
     return PreviewCard(
       description:
@@ -206,6 +214,10 @@ class _$PreviewCardCWProxyImpl implements _$PreviewCardCWProxy {
           ? _value.image
           // ignore: cast_nullable_to_non_nullable
           : image as Uri?,
+      missingAttribution: missingAttribution == const $CopyWithPlaceholder()
+          ? _value.missingAttribution
+          // ignore: cast_nullable_to_non_nullable
+          : missingAttribution as bool?,
     );
   }
 }
@@ -273,6 +285,10 @@ PreviewCard _$PreviewCardFromJson(Map<String, dynamic> json) => $checkedCreate(
         'image',
         (v) => v == null ? null : Uri.parse(v as String),
       ),
+      missingAttribution: $checkedConvert(
+        'missing_attribution',
+        (v) => v as bool?,
+      ),
     );
     return val;
   },
@@ -282,6 +298,7 @@ PreviewCard _$PreviewCardFromJson(Map<String, dynamic> json) => $checkedCreate(
     'providerUrl': 'provider_url',
     'authorName': 'author_name',
     'authorUrl': 'author_url',
+    'missingAttribution': 'missing_attribution',
   },
 );
 
@@ -302,6 +319,7 @@ Map<String, dynamic> _$PreviewCardToJson(PreviewCard instance) =>
       'authors': ?instance.authors?.map((e) => e.toJson()).toList(),
       'blurhash': ?instance.blurhash,
       'image': ?instance.image?.toString(),
+      'missing_attribution': ?instance.missingAttribution,
     };
 
 const _$TrendsLinkTypeEnumEnumMap = {

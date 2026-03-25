@@ -63,6 +63,12 @@ abstract class _$AccountCWProxy {
 
   Account roles(List<AccountRole>? roles);
 
+  Account showFeatured(bool? showFeatured);
+
+  Account showMedia(bool? showMedia);
+
+  Account showMediaReplies(bool? showMediaReplies);
+
   Account suspended(bool? suspended);
 
   Account url(Uri? url);
@@ -103,6 +109,9 @@ abstract class _$AccountCWProxy {
     Account? moved,
     bool? noindex,
     List<AccountRole>? roles,
+    bool? showFeatured,
+    bool? showMedia,
+    bool? showMediaReplies,
     bool? suspended,
     Uri? url,
   });
@@ -205,6 +214,16 @@ class _$AccountCWProxyImpl implements _$AccountCWProxy {
   Account roles(List<AccountRole>? roles) => call(roles: roles);
 
   @override
+  Account showFeatured(bool? showFeatured) => call(showFeatured: showFeatured);
+
+  @override
+  Account showMedia(bool? showMedia) => call(showMedia: showMedia);
+
+  @override
+  Account showMediaReplies(bool? showMediaReplies) =>
+      call(showMediaReplies: showMediaReplies);
+
+  @override
   Account suspended(bool? suspended) => call(suspended: suspended);
 
   @override
@@ -247,6 +266,9 @@ class _$AccountCWProxyImpl implements _$AccountCWProxy {
     Object? moved = const $CopyWithPlaceholder(),
     Object? noindex = const $CopyWithPlaceholder(),
     Object? roles = const $CopyWithPlaceholder(),
+    Object? showFeatured = const $CopyWithPlaceholder(),
+    Object? showMedia = const $CopyWithPlaceholder(),
+    Object? showMediaReplies = const $CopyWithPlaceholder(),
     Object? suspended = const $CopyWithPlaceholder(),
     Object? url = const $CopyWithPlaceholder(),
   }) {
@@ -371,6 +393,18 @@ class _$AccountCWProxyImpl implements _$AccountCWProxy {
           ? _value.roles
           // ignore: cast_nullable_to_non_nullable
           : roles as List<AccountRole>?,
+      showFeatured: showFeatured == const $CopyWithPlaceholder()
+          ? _value.showFeatured
+          // ignore: cast_nullable_to_non_nullable
+          : showFeatured as bool?,
+      showMedia: showMedia == const $CopyWithPlaceholder()
+          ? _value.showMedia
+          // ignore: cast_nullable_to_non_nullable
+          : showMedia as bool?,
+      showMediaReplies: showMediaReplies == const $CopyWithPlaceholder()
+          ? _value.showMediaReplies
+          // ignore: cast_nullable_to_non_nullable
+          : showMediaReplies as bool?,
       suspended: suspended == const $CopyWithPlaceholder()
           ? _value.suspended
           // ignore: cast_nullable_to_non_nullable
@@ -490,6 +524,12 @@ Account _$AccountFromJson(Map<String, dynamic> json) => $checkedCreate(
             ?.map((e) => AccountRole.fromJson(e as Map<String, dynamic>))
             .toList(),
       ),
+      showFeatured: $checkedConvert('show_featured', (v) => v as bool?),
+      showMedia: $checkedConvert('show_media', (v) => v as bool?),
+      showMediaReplies: $checkedConvert(
+        'show_media_replies',
+        (v) => v as bool?,
+      ),
       suspended: $checkedConvert('suspended', (v) => v as bool?),
       url: $checkedConvert(
         'url',
@@ -508,6 +548,9 @@ Account _$AccountFromJson(Map<String, dynamic> json) => $checkedCreate(
     'statusesCount': 'statuses_count',
     'hideCollections': 'hide_collections',
     'lastStatusAt': 'last_status_at',
+    'showFeatured': 'show_featured',
+    'showMedia': 'show_media',
+    'showMediaReplies': 'show_media_replies',
   },
 );
 
@@ -540,6 +583,9 @@ Map<String, dynamic> _$AccountToJson(Account instance) => <String, dynamic>{
   'moved': ?instance.moved?.toJson(),
   'noindex': ?instance.noindex,
   'roles': ?instance.roles?.map((e) => e.toJson()).toList(),
+  'show_featured': ?instance.showFeatured,
+  'show_media': ?instance.showMedia,
+  'show_media_replies': ?instance.showMediaReplies,
   'suspended': ?instance.suspended,
   'url': ?instance.url?.toString(),
 };

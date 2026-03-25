@@ -47,6 +47,8 @@ class Relationship {
     required this.showingReblogs,
 
     this.languages,
+
+    this.mutingExpiresAt,
   });
 
   /// Is this user blocking you?
@@ -85,7 +87,7 @@ class Relationship {
   @JsonKey(name: r'muting_notifications', required: true, includeIfNull: false)
   final bool mutingNotifications;
 
-  /// This user's profile bio
+  /// The authenticated user's personal comment about this account
   @JsonKey(name: r'note', required: true, includeIfNull: false)
   final String note;
 
@@ -109,6 +111,10 @@ class Relationship {
   @JsonKey(name: r'languages', required: false, includeIfNull: false)
   final List<String>? languages;
 
+  /// Date at which the mute expires, if there is any.
+  @JsonKey(name: r'muting_expires_at', required: false, includeIfNull: false)
+  final DateTime? mutingExpiresAt;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -127,7 +133,8 @@ class Relationship {
           other.requested == requested &&
           other.requestedBy == requestedBy &&
           other.showingReblogs == showingReblogs &&
-          other.languages == languages;
+          other.languages == languages &&
+          other.mutingExpiresAt == mutingExpiresAt;
 
   @override
   int get hashCode =>
@@ -145,7 +152,8 @@ class Relationship {
       requested.hashCode +
       requestedBy.hashCode +
       showingReblogs.hashCode +
-      (languages == null ? 0 : languages.hashCode);
+      (languages == null ? 0 : languages.hashCode) +
+      (mutingExpiresAt == null ? 0 : mutingExpiresAt.hashCode);
 
   factory Relationship.fromJson(Map<String, dynamic> json) =>
       _$RelationshipFromJson(json);

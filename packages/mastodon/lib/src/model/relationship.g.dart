@@ -37,6 +37,8 @@ abstract class _$RelationshipCWProxy {
 
   Relationship languages(List<String>? languages);
 
+  Relationship mutingExpiresAt(DateTime? mutingExpiresAt);
+
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Relationship(...).copyWith.fieldName(value)`.
   ///
@@ -60,6 +62,7 @@ abstract class _$RelationshipCWProxy {
     bool requestedBy,
     bool showingReblogs,
     List<String>? languages,
+    DateTime? mutingExpiresAt,
   });
 }
 
@@ -119,6 +122,10 @@ class _$RelationshipCWProxyImpl implements _$RelationshipCWProxy {
   Relationship languages(List<String>? languages) => call(languages: languages);
 
   @override
+  Relationship mutingExpiresAt(DateTime? mutingExpiresAt) =>
+      call(mutingExpiresAt: mutingExpiresAt);
+
+  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Relationship(...).copyWith.fieldName(value)`.
   ///
@@ -142,6 +149,7 @@ class _$RelationshipCWProxyImpl implements _$RelationshipCWProxy {
     Object? requestedBy = const $CopyWithPlaceholder(),
     Object? showingReblogs = const $CopyWithPlaceholder(),
     Object? languages = const $CopyWithPlaceholder(),
+    Object? mutingExpiresAt = const $CopyWithPlaceholder(),
   }) {
     return Relationship(
       blockedBy: blockedBy == const $CopyWithPlaceholder() || blockedBy == null
@@ -212,6 +220,10 @@ class _$RelationshipCWProxyImpl implements _$RelationshipCWProxy {
           ? _value.languages
           // ignore: cast_nullable_to_non_nullable
           : languages as List<String>?,
+      mutingExpiresAt: mutingExpiresAt == const $CopyWithPlaceholder()
+          ? _value.mutingExpiresAt
+          // ignore: cast_nullable_to_non_nullable
+          : mutingExpiresAt as DateTime?,
     );
   }
 }
@@ -273,6 +285,10 @@ Relationship _$RelationshipFromJson(Map<String, dynamic> json) =>
             'languages',
             (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
           ),
+          mutingExpiresAt: $checkedConvert(
+            'muting_expires_at',
+            (v) => v == null ? null : DateTime.parse(v as String),
+          ),
         );
         return val;
       },
@@ -283,6 +299,7 @@ Relationship _$RelationshipFromJson(Map<String, dynamic> json) =>
         'mutingNotifications': 'muting_notifications',
         'requestedBy': 'requested_by',
         'showingReblogs': 'showing_reblogs',
+        'mutingExpiresAt': 'muting_expires_at',
       },
     );
 
@@ -303,4 +320,5 @@ Map<String, dynamic> _$RelationshipToJson(Relationship instance) =>
       'requested_by': instance.requestedBy,
       'showing_reblogs': instance.showingReblogs,
       'languages': ?instance.languages,
+      'muting_expires_at': ?instance.mutingExpiresAt?.toIso8601String(),
     };

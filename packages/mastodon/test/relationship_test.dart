@@ -61,7 +61,7 @@ void main() {
       // TODO
     });
 
-    // This user's profile bio
+    // The authenticated user's personal comment about this account
     // String note
     test('to test the property `note`', () async {
       // TODO
@@ -94,6 +94,12 @@ void main() {
     // Which languages are you following from this user?
     // List<String> languages
     test('to test the property `languages`', () async {
+      // TODO
+    });
+
+    // Date at which the mute expires, if there is any.
+    // DateTime mutingExpiresAt
+    test('to test the property `mutingExpiresAt`', () async {
       // TODO
     });
   });

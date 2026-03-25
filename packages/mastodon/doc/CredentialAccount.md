@@ -38,6 +38,9 @@ Name | Type | Description | Notes
 **moved** | [**Account**](Account.md) |  | [optional] 
 **noindex** | **bool** | Whether the local user has opted out of being indexed by search engines. | [optional] 
 **roles** | [**List&lt;AccountRole&gt;**](AccountRole.md) | An array of roles assigned to the user that are publicly visible (highlighted roles only), if the account is local. Will be an empty array if no roles are highlighted or null if the account is remote. | [optional] 
+**showFeatured** | **bool** | Whether the account wishes to have a “Featured” tab on their profile. | [optional] 
+**showMedia** | **bool** | Whether the account wishes to have a “Media” tab with media attachments on their profile. | [optional] 
+**showMediaReplies** | **bool** | Whether the account wishes to have replies in the “Media” tab on their profile. | [optional] 
 **suspended** | **bool** | An extra attribute returned only when an account is suspended. | [optional] 
 **url** | [**Uri**](Uri.md) | The location of the user's profile page (web interface URL). | [optional] 
 

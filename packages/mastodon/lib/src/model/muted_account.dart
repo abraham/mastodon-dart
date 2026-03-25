@@ -81,6 +81,12 @@ class MutedAccount {
 
     this.roles,
 
+    this.showFeatured,
+
+    this.showMedia,
+
+    this.showMediaReplies,
+
     this.suspended,
 
     this.url,
@@ -201,6 +207,18 @@ class MutedAccount {
   @JsonKey(name: r'roles', required: false, includeIfNull: false)
   final List<AccountRole>? roles;
 
+  /// Whether the account wishes to have a “Featured” tab on their profile.
+  @JsonKey(name: r'show_featured', required: false, includeIfNull: false)
+  final bool? showFeatured;
+
+  /// Whether the account wishes to have a “Media” tab with media attachments on their profile.
+  @JsonKey(name: r'show_media', required: false, includeIfNull: false)
+  final bool? showMedia;
+
+  /// Whether the account wishes to have replies in the “Media” tab on their profile.
+  @JsonKey(name: r'show_media_replies', required: false, includeIfNull: false)
+  final bool? showMediaReplies;
+
   /// An extra attribute returned only when an account is suspended.
   @JsonKey(name: r'suspended', required: false, includeIfNull: false)
   final bool? suspended;
@@ -242,6 +260,9 @@ class MutedAccount {
           other.muteExpiresAt == muteExpiresAt &&
           other.noindex == noindex &&
           other.roles == roles &&
+          other.showFeatured == showFeatured &&
+          other.showMedia == showMedia &&
+          other.showMediaReplies == showMediaReplies &&
           other.suspended == suspended &&
           other.url == url;
 
@@ -276,6 +297,9 @@ class MutedAccount {
       (muteExpiresAt == null ? 0 : muteExpiresAt.hashCode) +
       (noindex == null ? 0 : noindex.hashCode) +
       (roles == null ? 0 : roles.hashCode) +
+      (showFeatured == null ? 0 : showFeatured.hashCode) +
+      (showMedia == null ? 0 : showMedia.hashCode) +
+      (showMediaReplies == null ? 0 : showMediaReplies.hashCode) +
       (suspended == null ? 0 : suspended.hashCode) +
       (url == null ? 0 : url.hashCode);
 
