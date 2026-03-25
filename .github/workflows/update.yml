@@ -15,16 +15,41 @@ jobs:
         with:
           token: ${{ secrets.PAT }}
 
+      - name: Check for new SHA
+        id: check_sha
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          CURRENT_SHA=$(jq -r '.sha' mastodon_openapi.json)
+          echo "Current SHA: $CURRENT_SHA"
+
+          LATEST_SHA=$(gh api repos/abraham/mastodon-openapi/commits/main --jq '.sha')
+          echo "Latest SHA: $LATEST_SHA"
+
+          if [ "$CURRENT_SHA" = "$LATEST_SHA" ]; then
+            echo "SHA is up to date, no update needed"
+            echo "sha_changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "SHA has changed, updating mastodon_openapi.json"
+            jq --arg sha "$LATEST_SHA" '.sha = $sha' mastodon_openapi.json > mastodon_openapi.json.tmp
+            mv mastodon_openapi.json.tmp mastodon_openapi.json
+            echo "sha_changed=true" >> $GITHUB_OUTPUT
+          fi
+
       - uses: dart-lang/setup-dart@v1
+        if: steps.check_sha.outputs.sha_changed == 'true'
 
       - name: Install dependencies
+        if: steps.check_sha.outputs.sha_changed == 'true'
         run: dart pub get
 
       - name: Run build script
+        if: steps.check_sha.outputs.sha_changed == 'true'
         run: ./scripts/build
 
       - name: Commit changes
         id: commit
+        if: steps.check_sha.outputs.sha_changed == 'true'
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
