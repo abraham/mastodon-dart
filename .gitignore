@@ -8,3 +8,4 @@ doc/api/
 pubspec.yaml.bak
 example/pubspec.lock
 *.iml
+packages/mastodon_generator/mastodon_openapi.json

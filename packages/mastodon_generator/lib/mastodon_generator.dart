@@ -11,10 +11,7 @@ import 'package:openapi_generator_annotations/openapi_generator_annotations.dart
     pubAuthor: 'Abraham Williams',
     serializationLibrary: DioSerializationLibrary.jsonSerializable,
   ),
-  inputSpec: RemoteSpec(
-    path:
-        'https://github.com/abraham/mastodon-openapi/raw/refs/heads/main/dist/schema.json',
-  ),
+  inputSpec: InputSpec(path: 'mastodon_openapi.json'),
   apiPackage: 'mastodon',
   generatorName: Generator.dio,
   runSourceGenOnOutput: true,
