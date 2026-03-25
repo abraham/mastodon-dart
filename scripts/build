@@ -1,7 +1,10 @@
 #!/bin/bash
 set -e
 
-dart packages/mastodon_generator/lib/update_spec.dart
+SHA=$(jq -r '.sha' mastodon_openapi.json)
+curl --silent --show-error --location \
+  "https://github.com/abraham/mastodon-openapi/raw/${SHA}/dist/schema.json" \
+  --output packages/mastodon_generator/mastodon_openapi.json
 
 cd packages/mastodon_generator
 
