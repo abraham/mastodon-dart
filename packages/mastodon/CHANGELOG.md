@@ -2,6 +2,10 @@
 
 ## v1.0.0-beta.8
 
+**Features**
+
+- Updated spec [43970e8...862b5fa](https://github.com/mastodon/documentation/compare/43970e819c95bb6e84722b6b5f92420f1a45fbd1...862b5fa815a713dbae501e80dfffcdd268337569)
+
 ## v1.0.0-beta.7
 
 **Features**
