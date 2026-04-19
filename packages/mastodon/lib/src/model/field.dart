@@ -19,11 +19,11 @@ class Field {
   /// Returns a new [Field] instance.
   Field({required this.name, required this.value, this.verifiedAt});
 
-  /// The key of a given field's key-value pair.
+  /// The key of a given field's key-value pair. This is the raw string before processing, not HTML.
   @JsonKey(name: r'name', required: true, includeIfNull: false)
   final String name;
 
-  /// The value associated with the `name` key.
+  /// The value associated with the `name` key. This is the raw string before processing, not HTML.
   @JsonKey(name: r'value', required: true, includeIfNull: false)
   final String value;
 

@@ -23,6 +23,7 @@ Method | HTTP request | Description
 [**getNotificationsUnreadCount**](NotificationsApi.md#getnotificationsunreadcount) | **GET** /api/v1/notifications/unread_count | Get the number of unread notifications
 [**getNotificationsUnreadCountV2**](NotificationsApi.md#getnotificationsunreadcountv2) | **GET** /api/v2/notifications/unread_count | Get the number of unread notifications
 [**getNotificationsV2**](NotificationsApi.md#getnotificationsv2) | **GET** /api/v2/notifications | Get all grouped notifications
+[**patchNotificationPolicyV2**](NotificationsApi.md#patchnotificationpolicyv2) | **PATCH** /api/v2/notifications/policy | Update the filtering policy for notifications
 [**postNotificationDismiss**](NotificationsApi.md#postnotificationdismiss) | **POST** /api/v1/notifications/{id}/dismiss | Dismiss a single notification
 [**postNotificationDismissV2**](NotificationsApi.md#postnotificationdismissv2) | **POST** /api/v2/notifications/{group_key}/dismiss | Dismiss a single notification group
 [**postNotificationsRequestsByIdAccept**](NotificationsApi.md#postnotificationsrequestsbyidaccept) | **POST** /api/v1/notifications/requests/{id}/accept | Accept a single notification request
@@ -704,6 +705,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GroupedNotificationsResults**](GroupedNotificationsResults.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patchNotificationPolicyV2**
+> NotificationPolicy patchNotificationPolicyV2()
+
+Update the filtering policy for notifications
+
+Update the user's notifications filtering policy.  Version history:  4.3.0 - added
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = Mastodon().getNotificationsApi();
+
+try {
+    final response = api.patchNotificationPolicyV2();
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling NotificationsApi->patchNotificationPolicyV2: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**NotificationPolicy**](NotificationPolicy.md)
 
 ### Authorization
 

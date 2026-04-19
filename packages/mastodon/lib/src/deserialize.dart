@@ -106,6 +106,7 @@ import 'package:mastodon/src/model/o_embed_response.dart';
 import 'package:mastodon/src/model/partial_account_with_avatar.dart';
 import 'package:mastodon/src/model/patch_accounts_update_credentials_request.dart';
 import 'package:mastodon/src/model/patch_accounts_update_credentials_request_source.dart';
+import 'package:mastodon/src/model/patch_profile_request.dart';
 import 'package:mastodon/src/model/poll.dart';
 import 'package:mastodon/src/model/poll_option.dart';
 import 'package:mastodon/src/model/poll_status.dart';
@@ -124,6 +125,7 @@ import 'package:mastodon/src/model/preferences.dart';
 import 'package:mastodon/src/model/preview_card.dart';
 import 'package:mastodon/src/model/preview_card_author.dart';
 import 'package:mastodon/src/model/privacy_policy.dart';
+import 'package:mastodon/src/model/profile.dart';
 import 'package:mastodon/src/model/put_push_subscription_request.dart';
 import 'package:mastodon/src/model/put_push_subscription_request_data.dart';
 import 'package:mastodon/src/model/put_push_subscription_request_data_alerts.dart';
@@ -550,6 +552,9 @@ ReturnType deserialize<ReturnType, BaseType>(
             value as Map<String, dynamic>,
           )
           as ReturnType;
+    case 'PatchProfileRequest':
+      return PatchProfileRequest.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'Poll':
       return Poll.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'PollOption':
@@ -600,6 +605,8 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'PrivacyPolicy':
       return PrivacyPolicy.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'Profile':
+      return Profile.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'PutPushSubscriptionRequest':
       return PutPushSubscriptionRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
