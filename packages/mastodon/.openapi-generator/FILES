@@ -150,6 +150,7 @@ doc/OembedApi.md
 doc/PartialAccountWithAvatar.md
 doc/PatchAccountsUpdateCredentialsRequest.md
 doc/PatchAccountsUpdateCredentialsRequestSource.md
+doc/PatchProfileRequest.md
 doc/Poll.md
 doc/PollOption.md
 doc/PollStatus.md
@@ -171,6 +172,8 @@ doc/PreferencesReadingExpandMediaEnum.md
 doc/PreviewCard.md
 doc/PreviewCardAuthor.md
 doc/PrivacyPolicy.md
+doc/Profile.md
+doc/ProfileApi.md
 doc/PushApi.md
 doc/PutPushSubscriptionRequest.md
 doc/PutPushSubscriptionRequestData.md
@@ -275,6 +278,7 @@ lib/src/api/oauth_api.dart
 lib/src/api/oembed_api.dart
 lib/src/api/polls_api.dart
 lib/src/api/preferences_api.dart
+lib/src/api/profile_api.dart
 lib/src/api/push_api.dart
 lib/src/api/reports_api.dart
 lib/src/api/scheduled_statuses_api.dart
@@ -414,6 +418,7 @@ lib/src/model/o_embed_response.dart
 lib/src/model/partial_account_with_avatar.dart
 lib/src/model/patch_accounts_update_credentials_request.dart
 lib/src/model/patch_accounts_update_credentials_request_source.dart
+lib/src/model/patch_profile_request.dart
 lib/src/model/poll.dart
 lib/src/model/poll_option.dart
 lib/src/model/poll_status.dart
@@ -433,6 +438,7 @@ lib/src/model/preferences_reading_expand_media_enum.dart
 lib/src/model/preview_card.dart
 lib/src/model/preview_card_author.dart
 lib/src/model/privacy_policy.dart
+lib/src/model/profile.dart
 lib/src/model/put_push_subscription_request.dart
 lib/src/model/put_push_subscription_request_data.dart
 lib/src/model/put_push_subscription_request_data_alerts.dart
@@ -644,6 +650,7 @@ test/oembed_api_test.dart
 test/partial_account_with_avatar_test.dart
 test/patch_accounts_update_credentials_request_source_test.dart
 test/patch_accounts_update_credentials_request_test.dart
+test/patch_profile_request_test.dart
 test/poll_option_test.dart
 test/poll_status_test.dart
 test/poll_test.dart
@@ -665,6 +672,8 @@ test/preferences_test.dart
 test/preview_card_author_test.dart
 test/preview_card_test.dart
 test/privacy_policy_test.dart
+test/profile_api_test.dart
+test/profile_test.dart
 test/push_api_test.dart
 test/put_push_subscription_request_data_alerts_test.dart
 test/put_push_subscription_request_data_test.dart

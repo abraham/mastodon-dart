@@ -132,6 +132,15 @@ void main() {
       // TODO
     });
 
+    // Update the filtering policy for notifications
+    //
+    // Update the user's notifications filtering policy.  Version history:  4.3.0 - added
+    //
+    //Future<NotificationPolicy> patchNotificationPolicyV2() async
+    test('test patchNotificationPolicyV2', () async {
+      // TODO
+    });
+
     // Dismiss a single notification
     //
     // Dismiss a single notification from the server.  Version history:  1.3.0 - added

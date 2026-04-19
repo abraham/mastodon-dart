@@ -35,6 +35,7 @@ import 'package:mastodon/src/api/oauth_api.dart';
 import 'package:mastodon/src/api/oembed_api.dart';
 import 'package:mastodon/src/api/polls_api.dart';
 import 'package:mastodon/src/api/preferences_api.dart';
+import 'package:mastodon/src/api/profile_api.dart';
 import 'package:mastodon/src/api/push_api.dart';
 import 'package:mastodon/src/api/reports_api.dart';
 import 'package:mastodon/src/api/scheduled_statuses_api.dart';
@@ -282,6 +283,12 @@ class Mastodon {
   /// by doing that all interceptors will not be executed
   PreferencesApi getPreferencesApi() {
     return PreferencesApi(dio);
+  }
+
+  /// Get ProfileApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  ProfileApi getProfileApi() {
+    return ProfileApi(dio);
   }
 
   /// Get PushApi instance, base route and serializer can be overridden by a given but be careful,

@@ -7,13 +7,13 @@ void main() {
   // TODO add properties to the entity
 
   group(Field, () {
-    // The key of a given field's key-value pair.
+    // The key of a given field's key-value pair. This is the raw string before processing, not HTML.
     // String name
     test('to test the property `name`', () async {
       // TODO
     });
 
-    // The value associated with the `name` key.
+    // The value associated with the `name` key. This is the raw string before processing, not HTML.
     // String value
     test('to test the property `value`', () async {
       // TODO
