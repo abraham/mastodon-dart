@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **getMutes**
-> List<Account> getMutes(limit, maxId, sinceId)
+> List<MutedAccount> getMutes(limit, maxId, sinceId)
 
 View muted accounts
 
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;Account&gt;**](Account.md)
+[**List&lt;MutedAccount&gt;**](MutedAccount.md)
 
 ### Authorization
 
