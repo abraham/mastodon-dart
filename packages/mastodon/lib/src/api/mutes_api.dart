@@ -9,7 +9,7 @@ import 'dart:convert';
 import 'package:mastodon/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:mastodon/src/model/account.dart';
+import 'package:mastodon/src/model/muted_account.dart';
 
 class MutesApi {
   final Dio _dio;
@@ -30,11 +30,11 @@ class MutesApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [List<Account>] as data
+  /// Returns a [Future] containing a [Response] with a [List<MutedAccount>] as data
   /// Throws [DioException] if API call or serialization fails
   /// Official Mastodon API documentation
   /// Also see [View muted accounts Documentation](https://docs.joinmastodon.org/methods/mutes/#get)
-  Future<Response<List<Account>>> getMutes({
+  Future<Response<List<MutedAccount>>> getMutes({
     int? limit = 40,
     String? maxId,
     String? sinceId,
@@ -74,15 +74,15 @@ class MutesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<Account>? _responseData;
+    List<MutedAccount>? _responseData;
 
     try {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<Account>, Account>(
+          : deserialize<List<MutedAccount>, MutedAccount>(
               rawData,
-              'List<Account>',
+              'List<MutedAccount>',
               growable: true,
             );
     } catch (error, stackTrace) {
@@ -95,7 +95,7 @@ class MutesApi {
       );
     }
 
-    return Response<List<Account>>(
+    return Response<List<MutedAccount>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
