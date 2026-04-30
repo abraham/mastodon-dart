@@ -110,6 +110,7 @@ class V1Instance {
   @JsonKey(name: r'version', required: true, includeIfNull: false)
   final String version;
 
+  /// A user that can be contacted, as an alternative to `email`.
   @JsonKey(name: r'contact_account', required: false, includeIfNull: false)
   final Account? contactAccount;
 

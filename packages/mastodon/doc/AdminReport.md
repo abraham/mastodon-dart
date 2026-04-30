@@ -20,8 +20,8 @@ Name | Type | Description | Notes
 **targetAccount** | [**AdminAccount**](AdminAccount.md) | The account being reported. | 
 **updatedAt** | [**DateTime**](DateTime.md) | The time of last action on this report. | 
 **actionTakenAt** | [**DateTime**](DateTime.md) | When an action was taken, if this report is currently resolved. | [optional] 
-**actionTakenByAccount** | [**AdminAccount**](AdminAccount.md) |  | [optional] 
-**assignedAccount** | [**AdminAccount**](AdminAccount.md) |  | [optional] 
+**actionTakenByAccount** | [**AdminAccount**](AdminAccount.md) | The account of the moderator who handled the report. | [optional] 
+**assignedAccount** | [**AdminAccount**](AdminAccount.md) | The account of the moderator assigned to this report. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

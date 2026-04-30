@@ -37,6 +37,7 @@ void main() {
       // TODO
     });
 
+    // Appeal submitted by the target account, if any.
     // Appeal appeal
     test('to test the property `appeal`', () async {
       // TODO

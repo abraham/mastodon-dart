@@ -37,6 +37,7 @@ void main() {
       // TODO
     });
 
+    // Summary of the event that caused follow relationships to be severed. Attached when `type` of the notification is `severed_relationships`.
     // RelationshipSeveranceEvent event
     test('to test the property `event`', () async {
       // TODO
@@ -48,6 +49,7 @@ void main() {
       // TODO
     });
 
+    // Moderation warning that caused the notification. Attached when `type` of the notification is `moderation_warning`.
     // AccountWarning moderationWarning
     test('to test the property `moderationWarning`', () async {
       // TODO
@@ -65,6 +67,7 @@ void main() {
       // TODO
     });
 
+    // Report that was the object of the notification. Attached when `type` of the notification is `admin.report`.
     // Report report
     test('to test the property `report`', () async {
       // TODO

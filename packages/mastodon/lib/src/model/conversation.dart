@@ -41,6 +41,7 @@ class Conversation {
   @JsonKey(name: r'unread', required: true, includeIfNull: false)
   final bool unread;
 
+  /// The last status in the conversation.
   @JsonKey(name: r'last_status', required: false, includeIfNull: false)
   final Status? lastStatus;
 

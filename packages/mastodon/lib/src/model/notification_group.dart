@@ -71,6 +71,7 @@ class NotificationGroup {
   @JsonKey(name: r'type', required: true, includeIfNull: false)
   final NotificationTypeEnum type;
 
+  /// Summary of the event that caused follow relationships to be severed. Attached when `type` of the notification is `severed_relationships`.
   @JsonKey(name: r'event', required: false, includeIfNull: false)
   final RelationshipSeveranceEvent? event;
 
@@ -82,6 +83,7 @@ class NotificationGroup {
   )
   final DateTime? latestPageNotificationAt;
 
+  /// Moderation warning that caused the notification. Attached when `type` of the notification is `moderation_warning`.
   @JsonKey(name: r'moderation_warning', required: false, includeIfNull: false)
   final AccountWarning? moderationWarning;
 
@@ -93,6 +95,7 @@ class NotificationGroup {
   @JsonKey(name: r'page_min_id', required: false, includeIfNull: false)
   final String? pageMinId;
 
+  /// Report that was the object of the notification. Attached when `type` of the notification is `admin.report`.
   @JsonKey(name: r'report', required: false, includeIfNull: false)
   final Report? report;
 

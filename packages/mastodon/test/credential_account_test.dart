@@ -168,6 +168,7 @@ void main() {
       // TODO
     });
 
+    // Indicates that the profile is currently inactive and that its user has moved to a new account.
     // Account moved
     test('to test the property `moved`', () async {
       // TODO

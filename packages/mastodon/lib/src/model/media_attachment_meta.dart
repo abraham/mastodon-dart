@@ -21,9 +21,11 @@ class MediaAttachmentMeta {
   /// Returns a new [MediaAttachmentMeta] instance.
   MediaAttachmentMeta({this.small, this.original, this.focus});
 
+  /// Details about the small preview version of the attachment.
   @JsonKey(name: r'small', required: false, includeIfNull: false)
   final MetaDetails? small;
 
+  /// Details about the original version of the attachment.
   @JsonKey(name: r'original', required: false, includeIfNull: false)
   final MetaDetails? original;
 

@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **mediaAttachments** | [**List&lt;TranslationAttachment&gt;**](TranslationAttachment.md) | The translated media descriptions of the status. | 
 **provider** | **String** | The service that provided the machine translation. | 
 **spoilerText** | **String** | The translated spoiler warning of the status. | 
-**poll** | [**TranslationPoll**](TranslationPoll.md) |  | [optional] 
+**poll** | [**TranslationPoll**](TranslationPoll.md) | The translated poll of the status. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

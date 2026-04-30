@@ -31,7 +31,7 @@ void main() {
       // TODO
     });
 
-    // Array of OAuth scopes
+    // The scopes for the application. This is the registered `scopes` string split on whitespace.
     // List<OAuthScope> scopes
     test('to test the property `scopes`', () async {
       // TODO

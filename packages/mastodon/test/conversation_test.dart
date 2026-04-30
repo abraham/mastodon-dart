@@ -25,6 +25,7 @@ void main() {
       // TODO
     });
 
+    // The last status in the conversation.
     // Status lastStatus
     test('to test the property `lastStatus`', () async {
       // TODO

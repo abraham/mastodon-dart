@@ -192,6 +192,7 @@ class MutedAccount {
   @JsonKey(name: r'memorial', required: false, includeIfNull: false)
   final bool? memorial;
 
+  /// Indicates that the profile is currently inactive and that its user has moved to a new account.
   @JsonKey(name: r'moved', required: false, includeIfNull: false)
   final Account? moved;
 

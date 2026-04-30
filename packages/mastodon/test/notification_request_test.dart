@@ -37,6 +37,7 @@ void main() {
       // TODO
     });
 
+    // Most recent status associated with a filtered notification from that account.
     // Status lastStatus
     test('to test the property `lastStatus`', () async {
       // TODO

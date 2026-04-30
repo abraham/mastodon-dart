@@ -56,6 +56,7 @@ class AccountWarning {
   @JsonKey(name: r'text', required: true, includeIfNull: false)
   final String text;
 
+  /// Appeal submitted by the target account, if any.
   @JsonKey(name: r'appeal', required: false, includeIfNull: false)
   final Appeal? appeal;
 

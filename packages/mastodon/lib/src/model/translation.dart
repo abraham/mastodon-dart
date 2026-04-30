@@ -63,6 +63,7 @@ class Translation {
   @JsonKey(name: r'spoiler_text', required: true, includeIfNull: false)
   final String spoilerText;
 
+  /// The translated poll of the status.
   @JsonKey(name: r'poll', required: false, includeIfNull: false)
   final TranslationPoll? poll;
 

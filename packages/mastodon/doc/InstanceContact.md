@@ -9,7 +9,7 @@ import 'package:mastodon/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **email** | **String** | An email address that can be messaged regarding inquiries or issues. | 
-**account** | [**Account**](Account.md) |  | [optional] 
+**account** | [**Account**](Account.md) | An account that can be contacted natively over the network regarding inquiries or issues. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

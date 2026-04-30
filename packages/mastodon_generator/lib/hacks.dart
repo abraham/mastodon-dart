@@ -103,50 +103,6 @@ class Hack {
 void main() async {
   final hacks = [
     Hack(
-      filePath: 'packages/mastodon/lib/mastodon.dart',
-      replacements: [
-        Replacement(
-          "export 'package:mastodon/src/model/create_status200_response.dart';",
-          "export 'package:mastodon/create_status200_response.dart';",
-        ),
-        Replacement(
-          "export 'package:mastodon/src/model/create_status_request.dart';",
-          "export 'package:mastodon/create_status_request.dart';",
-        ),
-      ],
-      description: "Replace CreateStatus200Response export",
-    ),
-    Hack(
-      filePath: 'packages/mastodon/lib/src/deserialize.dart',
-      replacements: [
-        Replacement(
-          "import 'package:mastodon/src/model/create_status200_response.dart';",
-          "import 'package:mastodon/create_status200_response.dart';",
-        ),
-        Replacement(
-          "import 'package:mastodon/src/model/create_status_request.dart';",
-          "import 'package:mastodon/create_status_request.dart';",
-        ),
-      ],
-      description: "Replace CreateStatus200Response import",
-    ),
-    Hack(
-      filePath: 'packages/mastodon/lib/src/api/media_api.dart',
-      replacements: [
-        Replacement(
-          "try {} catch (error, stackTrace) {",
-          "try {\n_bodyData = FormData.fromMap({ 'file': file, 'thumbnail': thumbnail, 'description': description, 'focus': focus });\n} catch (error, stackTrace) {",
-          [70, 169],
-        ),
-        Replacement(
-          "try {} catch (error, stackTrace) {",
-          "try {\n_bodyData = FormData.fromMap({ 'thumbnail': thumbnail, 'description': description, 'focus': focus });\n} catch (error, stackTrace) {",
-          [413],
-        ),
-      ],
-      description: "Fix Media API FormData construction",
-    ),
-    Hack(
       filePath: 'packages/mastodon/lib/src/api/accounts_api.dart',
       replacements: [
         Replacement(

@@ -66,11 +66,11 @@ class MediaApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = FormData.fromMap({
-        'file': file,
-        'thumbnail': thumbnail,
-        'description': description,
-        'focus': focus,
+      _bodyData = FormData.fromMap(<String, dynamic>{
+        r'file': file,
+        if (description != null) r'description': description,
+        if (focus != null) r'focus': focus,
+        if (thumbnail != null) r'thumbnail': thumbnail,
       });
     } catch (error, stackTrace) {
       throw DioException(
@@ -172,11 +172,11 @@ class MediaApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = FormData.fromMap({
-        'file': file,
-        'thumbnail': thumbnail,
-        'description': description,
-        'focus': focus,
+      _bodyData = FormData.fromMap(<String, dynamic>{
+        r'file': file,
+        if (description != null) r'description': description,
+        if (focus != null) r'focus': focus,
+        if (thumbnail != null) r'thumbnail': thumbnail,
       });
     } catch (error, stackTrace) {
       throw DioException(
@@ -423,10 +423,10 @@ class MediaApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = FormData.fromMap({
-        'thumbnail': thumbnail,
-        'description': description,
-        'focus': focus,
+      _bodyData = FormData.fromMap(<String, dynamic>{
+        if (description != null) r'description': description,
+        if (focus != null) r'focus': focus,
+        if (thumbnail != null) r'thumbnail': thumbnail,
       });
     } catch (error, stackTrace) {
       throw DioException(

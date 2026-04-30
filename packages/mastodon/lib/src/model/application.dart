@@ -52,7 +52,7 @@ class Application {
   @JsonKey(name: r'redirect_uris', required: false, includeIfNull: false)
   final List<Uri>? redirectUris;
 
-  /// Array of OAuth scopes
+  /// The scopes for the application. This is the registered `scopes` string split on whitespace.
   @JsonKey(name: r'scopes', required: false, includeIfNull: false)
   final List<OAuthScope>? scopes;
 
