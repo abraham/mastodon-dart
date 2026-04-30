@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **url** | [**Uri**](Uri.md) | The URL for the thumbnail image. | 
 **blurhash** | **String** | A hash computed by [the BlurHash algorithm](https://github.com/woltapp/blurhash), for generating colorful preview thumbnails when media has not been downloaded yet. | [optional] 
+**description** | **String** | The thumbnail's alt text (a description of the image to help people with visual impairments understand its content). | [optional] 
 **versions** | [**InstanceThumbnailVersions**](InstanceThumbnailVersions.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

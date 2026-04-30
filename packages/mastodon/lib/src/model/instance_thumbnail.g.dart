@@ -11,6 +11,8 @@ abstract class _$InstanceThumbnailCWProxy {
 
   InstanceThumbnail blurhash(String? blurhash);
 
+  InstanceThumbnail description(String? description);
+
   InstanceThumbnail versions(InstanceThumbnailVersions? versions);
 
   /// Creates a new instance with the provided field values.
@@ -23,6 +25,7 @@ abstract class _$InstanceThumbnailCWProxy {
   InstanceThumbnail call({
     Uri url,
     String? blurhash,
+    String? description,
     InstanceThumbnailVersions? versions,
   });
 }
@@ -41,6 +44,10 @@ class _$InstanceThumbnailCWProxyImpl implements _$InstanceThumbnailCWProxy {
   InstanceThumbnail blurhash(String? blurhash) => call(blurhash: blurhash);
 
   @override
+  InstanceThumbnail description(String? description) =>
+      call(description: description);
+
+  @override
   InstanceThumbnail versions(InstanceThumbnailVersions? versions) =>
       call(versions: versions);
 
@@ -55,6 +62,7 @@ class _$InstanceThumbnailCWProxyImpl implements _$InstanceThumbnailCWProxy {
   InstanceThumbnail call({
     Object? url = const $CopyWithPlaceholder(),
     Object? blurhash = const $CopyWithPlaceholder(),
+    Object? description = const $CopyWithPlaceholder(),
     Object? versions = const $CopyWithPlaceholder(),
   }) {
     return InstanceThumbnail(
@@ -66,6 +74,10 @@ class _$InstanceThumbnailCWProxyImpl implements _$InstanceThumbnailCWProxy {
           ? _value.blurhash
           // ignore: cast_nullable_to_non_nullable
           : blurhash as String?,
+      description: description == const $CopyWithPlaceholder()
+          ? _value.description
+          // ignore: cast_nullable_to_non_nullable
+          : description as String?,
       versions: versions == const $CopyWithPlaceholder()
           ? _value.versions
           // ignore: cast_nullable_to_non_nullable
@@ -92,6 +104,7 @@ InstanceThumbnail _$InstanceThumbnailFromJson(Map<String, dynamic> json) =>
       final val = InstanceThumbnail(
         url: $checkedConvert('url', (v) => Uri.parse(v as String)),
         blurhash: $checkedConvert('blurhash', (v) => v as String?),
+        description: $checkedConvert('description', (v) => v as String?),
         versions: $checkedConvert(
           'versions',
           (v) => v == null
@@ -106,5 +119,6 @@ Map<String, dynamic> _$InstanceThumbnailToJson(InstanceThumbnail instance) =>
     <String, dynamic>{
       'url': instance.url.toString(),
       'blurhash': ?instance.blurhash,
+      'description': ?instance.description,
       'versions': ?instance.versions?.toJson(),
     };

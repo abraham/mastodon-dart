@@ -424,7 +424,7 @@ No authorization required
 
 View server information
 
-Obtain general information about the server.  Version history:  4.0.0 - added\\ 4.1.0 - added `configuration.urls.status`\\ 4.2.0 - added `registrations.url`\\ 4.3.0 - added `configuration.vapid.public_key`, `api_versions`, `configuration.accounts.max_pinned_statuses`, `icon`\\ 4.4.0 - added `configuration.urls.about`, `configuration.urls.privacy_policy`, `configuration.urls.terms_of_service`, `registrations.min_age`, `registrations.reason_required`, `configuration.limited_federation`
+Obtain general information about the server.  Version history:  4.0.0 - added\\ 4.1.0 - added `configuration.urls.status`\\ 4.2.0 - added `registrations.url`\\ 4.3.0 - added `configuration.vapid.public_key`, `api_versions`, `configuration.accounts.max_pinned_statuses`, `icon`\\ 4.4.0 - added `configuration.urls.about`, `configuration.urls.privacy_policy`, `configuration.urls.terms_of_service`, `registrations.min_age`, `registrations.reason_required`, `configuration.limited_federation`\\ 4.6.0 - added `thumbnail.description`
 
 ### Example
 ```dart

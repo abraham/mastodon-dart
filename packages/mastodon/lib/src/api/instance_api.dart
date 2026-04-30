@@ -732,7 +732,7 @@ class InstanceApi {
   }
 
   /// View server information
-  /// Obtain general information about the server.  Version history:  4.0.0 - added\\ 4.1.0 - added &#x60;configuration.urls.status&#x60;\\ 4.2.0 - added &#x60;registrations.url&#x60;\\ 4.3.0 - added &#x60;configuration.vapid.public_key&#x60;, &#x60;api_versions&#x60;, &#x60;configuration.accounts.max_pinned_statuses&#x60;, &#x60;icon&#x60;\\ 4.4.0 - added &#x60;configuration.urls.about&#x60;, &#x60;configuration.urls.privacy_policy&#x60;, &#x60;configuration.urls.terms_of_service&#x60;, &#x60;registrations.min_age&#x60;, &#x60;registrations.reason_required&#x60;, &#x60;configuration.limited_federation&#x60;
+  /// Obtain general information about the server.  Version history:  4.0.0 - added\\ 4.1.0 - added &#x60;configuration.urls.status&#x60;\\ 4.2.0 - added &#x60;registrations.url&#x60;\\ 4.3.0 - added &#x60;configuration.vapid.public_key&#x60;, &#x60;api_versions&#x60;, &#x60;configuration.accounts.max_pinned_statuses&#x60;, &#x60;icon&#x60;\\ 4.4.0 - added &#x60;configuration.urls.about&#x60;, &#x60;configuration.urls.privacy_policy&#x60;, &#x60;configuration.urls.terms_of_service&#x60;, &#x60;registrations.min_age&#x60;, &#x60;registrations.reason_required&#x60;, &#x60;configuration.limited_federation&#x60;\\ 4.6.0 - added &#x60;thumbnail.description&#x60;
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
