@@ -19,6 +19,12 @@ void main() {
       // TODO
     });
 
+    // The thumbnail's alt text (a description of the image to help people with visual impairments understand its content).
+    // String description
+    test('to test the property `description`', () async {
+      // TODO
+    });
+
     // InstanceThumbnailVersions versions
     test('to test the property `versions`', () async {
       // TODO
