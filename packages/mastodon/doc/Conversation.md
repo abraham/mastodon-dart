@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **accounts** | [**List&lt;Account&gt;**](Account.md) | Participants in the conversation. | 
 **id** | **String** | The ID of the conversation in the database. | 
 **unread** | **bool** | Is the conversation currently marked as unread? | 
-**lastStatus** | [**Status**](Status.md) |  | [optional] 
+**lastStatus** | [**Status**](Status.md) | The last status in the conversation. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

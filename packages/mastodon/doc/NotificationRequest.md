@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **id** | **String** | The id of the notification request in the database. | 
 **notificationsCount** | **String** | How many of this account's notifications were filtered. | 
 **updatedAt** | [**DateTime**](DateTime.md) | The timestamp of when the notification request was last updated. | 
-**lastStatus** | [**Status**](Status.md) |  | [optional] 
+**lastStatus** | [**Status**](Status.md) | Most recent status associated with a filtered notification from that account. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

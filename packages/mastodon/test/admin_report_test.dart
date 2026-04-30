@@ -79,11 +79,13 @@ void main() {
       // TODO
     });
 
+    // The account of the moderator who handled the report.
     // AdminAccount actionTakenByAccount
     test('to test the property `actionTakenByAccount`', () async {
       // TODO
     });
 
+    // The account of the moderator assigned to this report.
     // AdminAccount assignedAccount
     test('to test the property `assignedAccount`', () async {
       // TODO

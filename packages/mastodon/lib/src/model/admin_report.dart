@@ -99,6 +99,7 @@ class AdminReport {
   @JsonKey(name: r'action_taken_at', required: false, includeIfNull: false)
   final DateTime? actionTakenAt;
 
+  /// The account of the moderator who handled the report.
   @JsonKey(
     name: r'action_taken_by_account',
     required: false,
@@ -106,6 +107,7 @@ class AdminReport {
   )
   final AdminAccount? actionTakenByAccount;
 
+  /// The account of the moderator assigned to this report.
   @JsonKey(name: r'assigned_account', required: false, includeIfNull: false)
   final AdminAccount? assignedAccount;
 

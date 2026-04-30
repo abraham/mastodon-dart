@@ -120,6 +120,7 @@ void main() {
       // TODO
     });
 
+    // Preview card for links included within status content.
     // PreviewCard card
     test('to test the property `card`', () async {
       // TODO
@@ -173,6 +174,7 @@ void main() {
       // TODO
     });
 
+    // The poll attached to the status.
     // Poll poll
     test('to test the property `poll`', () async {
       // TODO
@@ -183,6 +185,7 @@ void main() {
       // TODO
     });
 
+    // Summary of the post quote's approval policy and how it applies to the user making the request, that is, whether the user can be expected to be allowed to quote that post
     // QuoteApproval quoteApproval
     test('to test the property `quoteApproval`', () async {
       // TODO
@@ -194,6 +197,7 @@ void main() {
       // TODO
     });
 
+    // The status being reblogged.
     // Status reblog
     test('to test the property `reblog`', () async {
       // TODO

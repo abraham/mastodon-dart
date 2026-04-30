@@ -40,6 +40,7 @@ class PreviewCardAuthor {
     return Uri.tryParse(value);
   }
 
+  /// The fediverse account of the author.
   @JsonKey(name: r'account', required: false, includeIfNull: false)
   final Account? account;
 

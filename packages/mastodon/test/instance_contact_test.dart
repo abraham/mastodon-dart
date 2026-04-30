@@ -13,6 +13,7 @@ void main() {
       // TODO
     });
 
+    // An account that can be contacted natively over the network regarding inquiries or issues.
     // Account account
     test('to test the property `account`', () async {
       // TODO

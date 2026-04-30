@@ -59,6 +59,7 @@ class Notification {
   @JsonKey(name: r'type', required: true, includeIfNull: false)
   final NotificationTypeEnum type;
 
+  /// Summary of the event that caused follow relationships to be severed. Attached when `type` of the notification is `severed_relationships`.
   @JsonKey(name: r'event', required: false, includeIfNull: false)
   final RelationshipSeveranceEvent? event;
 
@@ -66,12 +67,15 @@ class Notification {
   @JsonKey(name: r'group_key', required: false, includeIfNull: false)
   final String? groupKey;
 
+  /// Moderation warning that caused the notification. Attached when `type` of the notification is `moderation_warning`.
   @JsonKey(name: r'moderation_warning', required: false, includeIfNull: false)
   final AccountWarning? moderationWarning;
 
+  /// Report that was the object of the notification. Attached when `type` of the notification is `admin.report`.
   @JsonKey(name: r'report', required: false, includeIfNull: false)
   final Report? report;
 
+  /// Status that was the object of the notification. Attached when `type` of the notification is `favourite`, `reblog`, `status`, `mention`, `poll`, `update`, `quote` or `quoted_update`. In the case of `quoted_update`, your quote of the edited status is attached, not the status that was edited.
   @JsonKey(name: r'status', required: false, includeIfNull: false)
   final Status? status;
 

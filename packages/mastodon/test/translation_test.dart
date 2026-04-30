@@ -43,6 +43,7 @@ void main() {
       // TODO
     });
 
+    // The translated poll of the status.
     // TranslationPoll poll
     test('to test the property `poll`', () async {
       // TODO

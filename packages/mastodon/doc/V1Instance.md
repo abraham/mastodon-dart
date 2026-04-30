@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **uri** | **String** | The WebFinger domain name of the instance (not a URI/URL). | 
 **urls** | [**V1InstanceUrls**](V1InstanceUrls.md) |  | 
 **version** | **String** | The version of Mastodon installed on the instance. | 
-**contactAccount** | [**Account**](Account.md) |  | [optional] 
+**contactAccount** | [**Account**](Account.md) | A user that can be contacted, as an alternative to `email`. | [optional] 
 **thumbnail** | [**Uri**](Uri.md) | Banner image for the website. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

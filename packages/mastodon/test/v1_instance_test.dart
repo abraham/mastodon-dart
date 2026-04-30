@@ -88,6 +88,7 @@ void main() {
       // TODO
     });
 
+    // A user that can be contacted, as an alternative to `email`.
     // Account contactAccount
     test('to test the property `contactAccount`', () async {
       // TODO

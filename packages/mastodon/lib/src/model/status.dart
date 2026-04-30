@@ -167,6 +167,7 @@ class Status {
   @JsonKey(name: r'bookmarked', required: false, includeIfNull: false)
   final bool? bookmarked;
 
+  /// Preview card for links included within status content.
   @JsonKey(name: r'card', required: false, includeIfNull: false)
   final PreviewCard? card;
 
@@ -206,12 +207,14 @@ class Status {
   @JsonKey(name: r'pinned', required: false, includeIfNull: false)
   final bool? pinned;
 
+  /// The poll attached to the status.
   @JsonKey(name: r'poll', required: false, includeIfNull: false)
   final Poll? poll;
 
   @JsonKey(name: r'quote', required: false, includeIfNull: false)
   final StatusQuote? quote;
 
+  /// Summary of the post quote's approval policy and how it applies to the user making the request, that is, whether the user can be expected to be allowed to quote that post
   @JsonKey(name: r'quote_approval', required: false, includeIfNull: false)
   final QuoteApproval? quoteApproval;
 
@@ -219,6 +222,7 @@ class Status {
   @JsonKey(name: r'quotes_count', required: false, includeIfNull: false)
   final int? quotesCount;
 
+  /// The status being reblogged.
   @JsonKey(name: r'reblog', required: false, includeIfNull: false)
   final Status? reblog;
 

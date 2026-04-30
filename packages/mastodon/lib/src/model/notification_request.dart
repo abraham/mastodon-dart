@@ -53,6 +53,7 @@ class NotificationRequest {
   @JsonKey(name: r'updated_at', required: true, includeIfNull: false)
   final DateTime updatedAt;
 
+  /// Most recent status associated with a filtered notification from that account.
   @JsonKey(name: r'last_status', required: false, includeIfNull: false)
   final Status? lastStatus;
 

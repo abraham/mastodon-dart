@@ -24,6 +24,7 @@ class InstanceContact {
   @JsonKey(name: r'email', required: true, includeIfNull: false)
   final String email;
 
+  /// An account that can be contacted natively over the network regarding inquiries or issues.
   @JsonKey(name: r'account', required: false, includeIfNull: false)
   final Account? account;
 
