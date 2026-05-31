@@ -19,6 +19,12 @@ void main() {
       // TODO
     });
 
+    // You can attach Collections to the report to provide additional context.
+    // List<String> collectionIds
+    test('to test the property `collectionIds`', () async {
+      // TODO
+    });
+
     // The reason for the report. Default maximum of 1000 characters.
     // String comment
     test('to test the property `comment`', () async {

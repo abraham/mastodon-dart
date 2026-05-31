@@ -11,6 +11,8 @@ abstract class _$CreateReportRequestCWProxy {
 
   CreateReportRequest category(ReportCategoryEnum? category);
 
+  CreateReportRequest collectionIds(List<String>? collectionIds);
+
   CreateReportRequest comment(String? comment);
 
   CreateReportRequest forward(bool? forward);
@@ -29,6 +31,7 @@ abstract class _$CreateReportRequestCWProxy {
   CreateReportRequest call({
     String accountId,
     ReportCategoryEnum? category,
+    List<String>? collectionIds,
     String? comment,
     bool? forward,
     List<String>? ruleIds,
@@ -49,6 +52,10 @@ class _$CreateReportRequestCWProxyImpl implements _$CreateReportRequestCWProxy {
   @override
   CreateReportRequest category(ReportCategoryEnum? category) =>
       call(category: category);
+
+  @override
+  CreateReportRequest collectionIds(List<String>? collectionIds) =>
+      call(collectionIds: collectionIds);
 
   @override
   CreateReportRequest comment(String? comment) => call(comment: comment);
@@ -74,6 +81,7 @@ class _$CreateReportRequestCWProxyImpl implements _$CreateReportRequestCWProxy {
   CreateReportRequest call({
     Object? accountId = const $CopyWithPlaceholder(),
     Object? category = const $CopyWithPlaceholder(),
+    Object? collectionIds = const $CopyWithPlaceholder(),
     Object? comment = const $CopyWithPlaceholder(),
     Object? forward = const $CopyWithPlaceholder(),
     Object? ruleIds = const $CopyWithPlaceholder(),
@@ -88,6 +96,10 @@ class _$CreateReportRequestCWProxyImpl implements _$CreateReportRequestCWProxy {
           ? _value.category
           // ignore: cast_nullable_to_non_nullable
           : category as ReportCategoryEnum?,
+      collectionIds: collectionIds == const $CopyWithPlaceholder()
+          ? _value.collectionIds
+          // ignore: cast_nullable_to_non_nullable
+          : collectionIds as List<String>?,
       comment: comment == const $CopyWithPlaceholder()
           ? _value.comment
           // ignore: cast_nullable_to_non_nullable
@@ -134,6 +146,10 @@ CreateReportRequest _$CreateReportRequestFromJson(Map<String, dynamic> json) =>
                 $enumDecodeNullable(_$ReportCategoryEnumEnumMap, v) ??
                 ReportCategoryEnum.other,
           ),
+          collectionIds: $checkedConvert(
+            'collection_ids',
+            (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+          ),
           comment: $checkedConvert('comment', (v) => v as String?),
           forward: $checkedConvert('forward', (v) => v as bool? ?? false),
           ruleIds: $checkedConvert(
@@ -149,6 +165,7 @@ CreateReportRequest _$CreateReportRequestFromJson(Map<String, dynamic> json) =>
       },
       fieldKeyMap: const {
         'accountId': 'account_id',
+        'collectionIds': 'collection_ids',
         'ruleIds': 'rule_ids',
         'statusIds': 'status_ids',
       },
@@ -159,6 +176,7 @@ Map<String, dynamic> _$CreateReportRequestToJson(
 ) => <String, dynamic>{
   'account_id': instance.accountId,
   'category': ?_$ReportCategoryEnumEnumMap[instance.category],
+  'collection_ids': ?instance.collectionIds,
   'comment': ?instance.comment,
   'forward': ?instance.forward,
   'rule_ids': ?instance.ruleIds,

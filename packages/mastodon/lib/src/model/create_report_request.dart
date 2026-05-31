@@ -23,6 +23,8 @@ class CreateReportRequest {
 
     this.category = ReportCategoryEnum.other,
 
+    this.collectionIds,
+
     this.comment,
 
     this.forward = false,
@@ -44,6 +46,10 @@ class CreateReportRequest {
     includeIfNull: false,
   )
   final ReportCategoryEnum? category;
+
+  /// You can attach Collections to the report to provide additional context.
+  @JsonKey(name: r'collection_ids', required: false, includeIfNull: false)
+  final List<String>? collectionIds;
 
   /// The reason for the report. Default maximum of 1000 characters.
   @JsonKey(name: r'comment', required: false, includeIfNull: false)
@@ -72,6 +78,7 @@ class CreateReportRequest {
       other is CreateReportRequest &&
           other.accountId == accountId &&
           other.category == category &&
+          other.collectionIds == collectionIds &&
           other.comment == comment &&
           other.forward == forward &&
           other.ruleIds == ruleIds &&
@@ -81,6 +88,7 @@ class CreateReportRequest {
   int get hashCode =>
       accountId.hashCode +
       category.hashCode +
+      collectionIds.hashCode +
       comment.hashCode +
       forward.hashCode +
       ruleIds.hashCode +
