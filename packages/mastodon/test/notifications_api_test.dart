@@ -35,9 +35,9 @@ void main() {
 
     // Get a single notification
     //
-    // View information about a notification with a given ID.  Version history:  0.0.0 - added
+    // View information about a notification with a given ID.  Version history:  0.0.0 - added\\ 4.6.0 (`mastodon` [API version] 10) - added `supported_types` optional parameter
     //
-    //Future<Notification> getNotification(String id) async
+    //Future<Notification> getNotification(String id, { List<String> supportedTypes }) async
     test('test getNotification', () async {
       // TODO
     });
@@ -71,18 +71,18 @@ void main() {
 
     // Get all notifications
     //
-    // Notifications concerning the user. This API returns Link headers containing links to the next/previous page. However, the links can also be constructed dynamically using query params and `id` values.  Version history:  0.0.0 - added\\ 2.6.0 - added `min_id`\\ 2.9.0 - added `account_id`\\ 3.1.0 - added `follow_request` type\\ 3.3.0 - added `status` type; both `min_id` and `max_id` can be used at the same time now\\ 3.5.0 - added `types`; add `update` and `admin.sign_up` types\\ 4.0.0 - added `admin.report` type\\ 4.1.0 - notification limit changed from 15 (max 30) to 40 (max 80)\\ 4.3.0 - added `include_filtered` parameter
+    // Notifications concerning the user. This API returns Link headers containing links to the next/previous page. However, the links can also be constructed dynamically using query params and `id` values.  Version history:  0.0.0 - added\\ 2.6.0 - added `min_id`\\ 2.9.0 - added `account_id`\\ 3.1.0 - added `follow_request` type\\ 3.3.0 - added `status` type; both `min_id` and `max_id` can be used at the same time now\\ 3.5.0 - added `types`; add `update` and `admin.sign_up` types\\ 4.0.0 - added `admin.report` type\\ 4.1.0 - notification limit changed from 15 (max 30) to 40 (max 80)\\ 4.3.0 - added `include_filtered` parameter\\ 4.6.0 (`mastodon` [API version] 10) - added `supported_types` optional parameter
     //
-    //Future<List<Notification>> getNotifications({ String accountId, List<NotificationTypeEnum> excludeTypes, bool includeFiltered, int limit, String maxId, String minId, String sinceId, List<NotificationTypeEnum> types }) async
+    //Future<List<Notification>> getNotifications({ String accountId, List<NotificationTypeEnum> excludeTypes, bool includeFiltered, int limit, String maxId, String minId, String sinceId, List<String> supportedTypes, List<NotificationTypeEnum> types }) async
     test('test getNotifications', () async {
       // TODO
     });
 
     // Get a single notification group
     //
-    // View information about a specific notification group with a given group key.  Version history:  4.3.0 (`mastodon` [API version] 2) - added
+    // View information about a specific notification group with a given group key.  Version history:  4.3.0 (`mastodon` [API version] 2) - added\\ 4.6.0 (`mastodon` [API version] 10) - added `supported_types` optional parameter
     //
-    //Future<GroupedNotificationsResults> getNotificationsByGroupKeyV2(String groupKey) async
+    //Future<GroupedNotificationsResults> getNotificationsByGroupKeyV2(String groupKey, { List<String> supportedTypes }) async
     test('test getNotificationsByGroupKeyV2', () async {
       // TODO
     });
@@ -125,9 +125,9 @@ void main() {
 
     // Get all grouped notifications
     //
-    // Return grouped notifications concerning the user. This API returns Link headers containing links to the next/previous page. However, the links can also be constructed dynamically using query params and `id` values.  Version history:  4.3.0 (`mastodon` [API version] 2) - added\\ 4.4.0 - added `admin.sign_up` to grouped notification types
+    // Return grouped notifications concerning the user. This API returns Link headers containing links to the next/previous page. However, the links can also be constructed dynamically using query params and `id` values.  Version history:  4.3.0 (`mastodon` [API version] 2) - added\\ 4.4.0 - added `admin.sign_up` to grouped notification types\\ 4.6.0 (`mastodon` [API version] 10) - added `supported_types` optional parameter
     //
-    //Future<GroupedNotificationsResults> getNotificationsV2({ String accountId, List<NotificationTypeEnum> excludeTypes, String expandAccounts, List<NotificationTypeEnum> groupedTypes, bool includeFiltered, int limit, String maxId, String minId, String sinceId, List<NotificationTypeEnum> types }) async
+    //Future<GroupedNotificationsResults> getNotificationsV2({ String accountId, List<NotificationTypeEnum> excludeTypes, String expandAccounts, List<NotificationTypeEnum> groupedTypes, bool includeFiltered, int limit, String maxId, String minId, String sinceId, List<String> supportedTypes, List<NotificationTypeEnum> types }) async
     test('test getNotificationsV2', () async {
       // TODO
     });

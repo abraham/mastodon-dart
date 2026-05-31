@@ -25,11 +25,15 @@ import 'package:mastodon/src/model/async_refresh.dart';
 import 'package:mastodon/src/model/async_refresh_response.dart';
 import 'package:mastodon/src/model/base_status.dart';
 import 'package:mastodon/src/model/cohort_data.dart';
+import 'package:mastodon/src/model/collection.dart';
+import 'package:mastodon/src/model/collection_item.dart';
+import 'package:mastodon/src/model/collection_with_accounts.dart';
 import 'package:mastodon/src/model/context.dart';
 import 'package:mastodon/src/model/conversation.dart';
 import 'package:mastodon/src/model/count_response.dart';
 import 'package:mastodon/src/model/create_account_request.dart';
 import 'package:mastodon/src/model/create_app_request.dart';
+import 'package:mastodon/src/model/create_collection_request.dart';
 import 'package:mastodon/src/model/create_domain_block_request.dart';
 import 'package:mastodon/src/model/create_email_confirmations_request.dart';
 import 'package:mastodon/src/model/create_featured_tag_request.dart';
@@ -52,6 +56,10 @@ import 'package:mastodon/src/model/credential_account.dart';
 import 'package:mastodon/src/model/credential_account_source.dart';
 import 'package:mastodon/src/model/credential_application.dart';
 import 'package:mastodon/src/model/custom_emoji.dart';
+import 'package:mastodon/src/model/custom_error422.dart';
+import 'package:mastodon/src/model/custom_error422_error.dart';
+import 'package:mastodon/src/model/custom_error422_error_details.dart';
+import 'package:mastodon/src/model/custom_error422_error_details_name_inner.dart';
 import 'package:mastodon/src/model/delete_domain_blocks_request.dart';
 import 'package:mastodon/src/model/delete_list_accounts_request.dart';
 import 'package:mastodon/src/model/discover_oauth_server_configuration_response.dart';
@@ -59,6 +67,7 @@ import 'package:mastodon/src/model/domain_block.dart';
 import 'package:mastodon/src/model/error.dart';
 import 'package:mastodon/src/model/extended_description.dart';
 import 'package:mastodon/src/model/familiar_followers.dart';
+import 'package:mastodon/src/model/feature_approval.dart';
 import 'package:mastodon/src/model/featured_tag.dart';
 import 'package:mastodon/src/model/field.dart';
 import 'package:mastodon/src/model/filter.dart';
@@ -98,6 +107,7 @@ import 'package:mastodon/src/model/meta_details.dart';
 import 'package:mastodon/src/model/model_list.dart';
 import 'package:mastodon/src/model/muted_account.dart';
 import 'package:mastodon/src/model/notification.dart';
+import 'package:mastodon/src/model/notification_fallback.dart';
 import 'package:mastodon/src/model/notification_group.dart';
 import 'package:mastodon/src/model/notification_policy.dart';
 import 'package:mastodon/src/model/notification_policy_summary.dart';
@@ -113,6 +123,7 @@ import 'package:mastodon/src/model/poll_status.dart';
 import 'package:mastodon/src/model/post_account_follow_request.dart';
 import 'package:mastodon/src/model/post_account_mute_request.dart';
 import 'package:mastodon/src/model/post_account_note_request.dart';
+import 'package:mastodon/src/model/post_collection_items_request.dart';
 import 'package:mastodon/src/model/post_filter_keywords_v2_request.dart';
 import 'package:mastodon/src/model/post_filter_statuses_v2_request.dart';
 import 'package:mastodon/src/model/post_list_accounts_request.dart';
@@ -142,6 +153,7 @@ import 'package:mastodon/src/model/scheduled_status_params.dart';
 import 'package:mastodon/src/model/scheduled_status_params_poll.dart';
 import 'package:mastodon/src/model/search.dart';
 import 'package:mastodon/src/model/shallow_quote.dart';
+import 'package:mastodon/src/model/shallow_tag.dart';
 import 'package:mastodon/src/model/status.dart';
 import 'package:mastodon/src/model/status_application.dart';
 import 'package:mastodon/src/model/status_edit.dart';
@@ -163,6 +175,7 @@ import 'package:mastodon/src/model/translation_poll.dart';
 import 'package:mastodon/src/model/translation_poll_option.dart';
 import 'package:mastodon/src/model/trends_link.dart';
 import 'package:mastodon/src/model/trends_link_history_inner.dart';
+import 'package:mastodon/src/model/update_collection_request.dart';
 import 'package:mastodon/src/model/update_filter_request.dart';
 import 'package:mastodon/src/model/update_filter_v2_request.dart';
 import 'package:mastodon/src/model/update_filter_v2_request_keywords_attributes_inner.dart';
@@ -279,6 +292,15 @@ ReturnType deserialize<ReturnType, BaseType>(
       return BaseStatus.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'CohortData':
       return CohortData.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'Collection':
+      return Collection.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'CollectionItem':
+      return CollectionItem.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'CollectionItemStateEnum':
+    case 'CollectionWithAccounts':
+      return CollectionWithAccounts.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'Context':
       return Context.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'Conversation':
@@ -291,6 +313,9 @@ ReturnType deserialize<ReturnType, BaseType>(
           as ReturnType;
     case 'CreateAppRequest':
       return CreateAppRequest.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'CreateCollectionRequest':
+      return CreateCollectionRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'CreateDomainBlockRequest':
       return CreateDomainBlockRequest.fromJson(value as Map<String, dynamic>)
@@ -374,6 +399,20 @@ ReturnType deserialize<ReturnType, BaseType>(
           as ReturnType;
     case 'CustomEmoji':
       return CustomEmoji.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'CustomError422':
+      return CustomError422.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'CustomError422Error':
+      return CustomError422Error.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'CustomError422ErrorDetails':
+      return CustomError422ErrorDetails.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'CustomError422ErrorDetailsNameInner':
+      return CustomError422ErrorDetailsNameInner.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'DeleteDomainBlocksRequest':
       return DeleteDomainBlocksRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -396,6 +435,10 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'FamiliarFollowers':
       return FamiliarFollowers.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'FeatureApproval':
+      return FeatureApproval.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'FeatureApprovalCurrentUserEnum':
     case 'FeaturedTag':
       return FeaturedTag.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'Field':
@@ -522,6 +565,9 @@ ReturnType deserialize<ReturnType, BaseType>(
       return MutedAccount.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'Notification':
       return Notification.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'NotificationFallback':
+      return NotificationFallback.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'NotificationGroup':
       return NotificationGroup.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -569,6 +615,9 @@ ReturnType deserialize<ReturnType, BaseType>(
           as ReturnType;
     case 'PostAccountNoteRequest':
       return PostAccountNoteRequest.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'PostCollectionItemsRequest':
+      return PostCollectionItemsRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'PostFilterKeywordsV2Request':
       return PostFilterKeywordsV2Request.fromJson(value as Map<String, dynamic>)
@@ -656,6 +705,8 @@ ReturnType deserialize<ReturnType, BaseType>(
       return Search.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'ShallowQuote':
       return ShallowQuote.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'ShallowTag':
+      return ShallowTag.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'Status':
       return Status.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'StatusApplication':
@@ -709,6 +760,9 @@ ReturnType deserialize<ReturnType, BaseType>(
       return TrendsLinkHistoryInner.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'TrendsLinkTypeEnum':
+    case 'UpdateCollectionRequest':
+      return UpdateCollectionRequest.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'UpdateFilterRequest':
       return UpdateFilterRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;

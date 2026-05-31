@@ -157,11 +157,11 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getNotification**
-> Notification getNotification(id)
+> Notification getNotification(id, supportedTypes)
 
 Get a single notification
 
-View information about a notification with a given ID.  Version history:  0.0.0 - added
+View information about a notification with a given ID.  Version history:  0.0.0 - added\\ 4.6.0 (`mastodon` [API version] 10) - added `supported_types` optional parameter
 
 ### Example
 ```dart
@@ -173,9 +173,10 @@ import 'package:mastodon/api.dart';
 
 final api = Mastodon().getNotificationsApi();
 final String id = id_example; // String | id parameter
+final List<String> supportedTypes = ; // List<String> | Notification types to not get fallback representation for even when some is available. Passing this parameter is required to get any notification fallback at all. When this parameter is used, and a notification which type is *not* included in `supported_types` has an available fallback representation, it will be included in the notification's `fallback` attribute.
 
 try {
-    final response = api.getNotification(id);
+    final response = api.getNotification(id, supportedTypes);
     print(response);
 } on DioException catch (e) {
     print('Exception when calling NotificationsApi->getNotification: $e\n');
@@ -187,6 +188,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| id parameter | 
+ **supportedTypes** | [**List&lt;String&gt;**](String.md)| Notification types to not get fallback representation for even when some is available. Passing this parameter is required to get any notification fallback at all. When this parameter is used, and a notification which type is *not* included in `supported_types` has an available fallback representation, it will be included in the notification's `fallback` attribute. | [optional] 
 
 ### Return type
 
@@ -347,11 +349,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getNotifications**
-> List<Notification> getNotifications(accountId, excludeTypes, includeFiltered, limit, maxId, minId, sinceId, types)
+> List<Notification> getNotifications(accountId, excludeTypes, includeFiltered, limit, maxId, minId, sinceId, supportedTypes, types)
 
 Get all notifications
 
-Notifications concerning the user. This API returns Link headers containing links to the next/previous page. However, the links can also be constructed dynamically using query params and `id` values.  Version history:  0.0.0 - added\\ 2.6.0 - added `min_id`\\ 2.9.0 - added `account_id`\\ 3.1.0 - added `follow_request` type\\ 3.3.0 - added `status` type; both `min_id` and `max_id` can be used at the same time now\\ 3.5.0 - added `types`; add `update` and `admin.sign_up` types\\ 4.0.0 - added `admin.report` type\\ 4.1.0 - notification limit changed from 15 (max 30) to 40 (max 80)\\ 4.3.0 - added `include_filtered` parameter
+Notifications concerning the user. This API returns Link headers containing links to the next/previous page. However, the links can also be constructed dynamically using query params and `id` values.  Version history:  0.0.0 - added\\ 2.6.0 - added `min_id`\\ 2.9.0 - added `account_id`\\ 3.1.0 - added `follow_request` type\\ 3.3.0 - added `status` type; both `min_id` and `max_id` can be used at the same time now\\ 3.5.0 - added `types`; add `update` and `admin.sign_up` types\\ 4.0.0 - added `admin.report` type\\ 4.1.0 - notification limit changed from 15 (max 30) to 40 (max 80)\\ 4.3.0 - added `include_filtered` parameter\\ 4.6.0 (`mastodon` [API version] 10) - added `supported_types` optional parameter
 
 ### Example
 ```dart
@@ -369,10 +371,11 @@ final int limit = 56; // int | Maximum number of results to return. Defaults to 
 final String maxId = maxId_example; // String | All results returned will be lesser than this ID. In effect, sets an upper bound on results.
 final String minId = minId_example; // String | Returns results immediately newer than this ID. In effect, sets a cursor at this ID and paginates forward.
 final String sinceId = sinceId_example; // String | All results returned will be greater than this ID. In effect, sets a lower bound on results.
+final List<String> supportedTypes = ; // List<String> | Notification types to not get fallback representation for even when some is available. Passing this parameter is required to get any notification fallback at all. When this parameter is used, and a notification which type is *not* included in `supported_types` has an available fallback representation, it will be included in the notification's `fallback` attribute.
 final List<NotificationTypeEnum> types = ; // List<NotificationTypeEnum> | Types to include in the result.
 
 try {
-    final response = api.getNotifications(accountId, excludeTypes, includeFiltered, limit, maxId, minId, sinceId, types);
+    final response = api.getNotifications(accountId, excludeTypes, includeFiltered, limit, maxId, minId, sinceId, supportedTypes, types);
     print(response);
 } on DioException catch (e) {
     print('Exception when calling NotificationsApi->getNotifications: $e\n');
@@ -390,6 +393,7 @@ Name | Type | Description  | Notes
  **maxId** | **String**| All results returned will be lesser than this ID. In effect, sets an upper bound on results. | [optional] 
  **minId** | **String**| Returns results immediately newer than this ID. In effect, sets a cursor at this ID and paginates forward. | [optional] 
  **sinceId** | **String**| All results returned will be greater than this ID. In effect, sets a lower bound on results. | [optional] 
+ **supportedTypes** | [**List&lt;String&gt;**](String.md)| Notification types to not get fallback representation for even when some is available. Passing this parameter is required to get any notification fallback at all. When this parameter is used, and a notification which type is *not* included in `supported_types` has an available fallback representation, it will be included in the notification's `fallback` attribute. | [optional] 
  **types** | [**List&lt;NotificationTypeEnum&gt;**](NotificationTypeEnum.md)| Types to include in the result. | [optional] 
 
 ### Return type
@@ -408,11 +412,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getNotificationsByGroupKeyV2**
-> GroupedNotificationsResults getNotificationsByGroupKeyV2(groupKey)
+> GroupedNotificationsResults getNotificationsByGroupKeyV2(groupKey, supportedTypes)
 
 Get a single notification group
 
-View information about a specific notification group with a given group key.  Version history:  4.3.0 (`mastodon` [API version] 2) - added
+View information about a specific notification group with a given group key.  Version history:  4.3.0 (`mastodon` [API version] 2) - added\\ 4.6.0 (`mastodon` [API version] 10) - added `supported_types` optional parameter
 
 ### Example
 ```dart
@@ -424,9 +428,10 @@ import 'package:mastodon/api.dart';
 
 final api = Mastodon().getNotificationsApi();
 final String groupKey = groupKey_example; // String | group_key parameter
+final List<String> supportedTypes = ; // List<String> | Notification types to not get fallback representation for even when some is available. Passing this parameter is required to get any notification fallback at all. When this parameter is used, and a notification which type is *not* included in `supported_types` has an available fallback representation, it will be included in the notification group's `fallback` attribute.
 
 try {
-    final response = api.getNotificationsByGroupKeyV2(groupKey);
+    final response = api.getNotificationsByGroupKeyV2(groupKey, supportedTypes);
     print(response);
 } on DioException catch (e) {
     print('Exception when calling NotificationsApi->getNotificationsByGroupKeyV2: $e\n');
@@ -438,6 +443,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **groupKey** | **String**| group_key parameter | 
+ **supportedTypes** | [**List&lt;String&gt;**](String.md)| Notification types to not get fallback representation for even when some is available. Passing this parameter is required to get any notification fallback at all. When this parameter is used, and a notification which type is *not* included in `supported_types` has an available fallback representation, it will be included in the notification group's `fallback` attribute. | [optional] 
 
 ### Return type
 
@@ -653,11 +659,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getNotificationsV2**
-> GroupedNotificationsResults getNotificationsV2(accountId, excludeTypes, expandAccounts, groupedTypes, includeFiltered, limit, maxId, minId, sinceId, types)
+> GroupedNotificationsResults getNotificationsV2(accountId, excludeTypes, expandAccounts, groupedTypes, includeFiltered, limit, maxId, minId, sinceId, supportedTypes, types)
 
 Get all grouped notifications
 
-Return grouped notifications concerning the user. This API returns Link headers containing links to the next/previous page. However, the links can also be constructed dynamically using query params and `id` values.  Version history:  4.3.0 (`mastodon` [API version] 2) - added\\ 4.4.0 - added `admin.sign_up` to grouped notification types
+Return grouped notifications concerning the user. This API returns Link headers containing links to the next/previous page. However, the links can also be constructed dynamically using query params and `id` values.  Version history:  4.3.0 (`mastodon` [API version] 2) - added\\ 4.4.0 - added `admin.sign_up` to grouped notification types\\ 4.6.0 (`mastodon` [API version] 10) - added `supported_types` optional parameter
 
 ### Example
 ```dart
@@ -677,10 +683,11 @@ final int limit = 56; // int | Maximum number of results to return. Defaults to 
 final String maxId = maxId_example; // String | All results returned will be about notifications strictly older than this notification ID. In effect, sets an upper bound on results.
 final String minId = minId_example; // String | Returns results about notifications immediately newer than this notification ID. In effect, sets a cursor at this ID and paginates forward.
 final String sinceId = sinceId_example; // String | All results returned will be about notifications strictly newer than this notification ID. In effect, sets a lower bound on results.
+final List<String> supportedTypes = ; // List<String> | Notification types to not get fallback representation for even when some is available. Passing this parameter is required to get any notification fallback at all. When this parameter is used, and a notification which type is *not* included in `supported_types` has an available fallback representation, it will be included in the notification group's `fallback` attribute.
 final List<NotificationTypeEnum> types = ; // List<NotificationTypeEnum> | Types to include in the result.
 
 try {
-    final response = api.getNotificationsV2(accountId, excludeTypes, expandAccounts, groupedTypes, includeFiltered, limit, maxId, minId, sinceId, types);
+    final response = api.getNotificationsV2(accountId, excludeTypes, expandAccounts, groupedTypes, includeFiltered, limit, maxId, minId, sinceId, supportedTypes, types);
     print(response);
 } on DioException catch (e) {
     print('Exception when calling NotificationsApi->getNotificationsV2: $e\n');
@@ -700,6 +707,7 @@ Name | Type | Description  | Notes
  **maxId** | **String**| All results returned will be about notifications strictly older than this notification ID. In effect, sets an upper bound on results. | [optional] 
  **minId** | **String**| Returns results about notifications immediately newer than this notification ID. In effect, sets a cursor at this ID and paginates forward. | [optional] 
  **sinceId** | **String**| All results returned will be about notifications strictly newer than this notification ID. In effect, sets a lower bound on results. | [optional] 
+ **supportedTypes** | [**List&lt;String&gt;**](String.md)| Notification types to not get fallback representation for even when some is available. Passing this parameter is required to get any notification fallback at all. When this parameter is used, and a notification which type is *not* included in `supported_types` has an available fallback representation, it will be included in the notification group's `fallback` attribute. | [optional] 
  **types** | [**List&lt;NotificationTypeEnum&gt;**](NotificationTypeEnum.md)| Types to include in the result. | [optional] 
 
 ### Return type

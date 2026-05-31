@@ -5,6 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:mastodon/src/model/report.dart';
 import 'package:mastodon/src/model/account_warning.dart';
+import 'package:mastodon/src/model/notification_fallback.dart';
 import 'package:mastodon/src/model/relationship_severance_event.dart';
 import 'package:mastodon/src/model/notification_type_enum.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
@@ -33,6 +34,8 @@ class NotificationGroup {
     required this.type,
 
     this.event,
+
+    this.fallback,
 
     this.latestPageNotificationAt,
 
@@ -75,6 +78,10 @@ class NotificationGroup {
   @JsonKey(name: r'event', required: false, includeIfNull: false)
   final RelationshipSeveranceEvent? event;
 
+  /// Fallback information available for some notification types that clients may not support. Only available for some notification types, and only if the `supported_types` parameter is used when querying.
+  @JsonKey(name: r'fallback', required: false, includeIfNull: false)
+  final NotificationFallback? fallback;
+
   /// Date at which the most recent notification from this group within the current page has been created. This is only returned when paginating through notification groups.
   @JsonKey(
     name: r'latest_page_notification_at',
@@ -113,6 +120,7 @@ class NotificationGroup {
           other.sampleAccountIds == sampleAccountIds &&
           other.type == type &&
           other.event == event &&
+          other.fallback == fallback &&
           other.latestPageNotificationAt == latestPageNotificationAt &&
           other.moderationWarning == moderationWarning &&
           other.pageMaxId == pageMaxId &&
@@ -128,6 +136,7 @@ class NotificationGroup {
       sampleAccountIds.hashCode +
       type.hashCode +
       (event == null ? 0 : event.hashCode) +
+      (fallback == null ? 0 : fallback.hashCode) +
       (latestPageNotificationAt == null
           ? 0
           : latestPageNotificationAt.hashCode) +

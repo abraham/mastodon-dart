@@ -19,6 +19,8 @@ abstract class _$NotificationGroupCWProxy {
 
   NotificationGroup event(RelationshipSeveranceEvent? event);
 
+  NotificationGroup fallback(NotificationFallback? fallback);
+
   NotificationGroup latestPageNotificationAt(
     DateTime? latestPageNotificationAt,
   );
@@ -47,6 +49,7 @@ abstract class _$NotificationGroupCWProxy {
     List<String> sampleAccountIds,
     NotificationTypeEnum type,
     RelationshipSeveranceEvent? event,
+    NotificationFallback? fallback,
     DateTime? latestPageNotificationAt,
     AccountWarning? moderationWarning,
     String? pageMaxId,
@@ -86,6 +89,10 @@ class _$NotificationGroupCWProxyImpl implements _$NotificationGroupCWProxy {
       call(event: event);
 
   @override
+  NotificationGroup fallback(NotificationFallback? fallback) =>
+      call(fallback: fallback);
+
+  @override
   NotificationGroup latestPageNotificationAt(
     DateTime? latestPageNotificationAt,
   ) => call(latestPageNotificationAt: latestPageNotificationAt);
@@ -121,6 +128,7 @@ class _$NotificationGroupCWProxyImpl implements _$NotificationGroupCWProxy {
     Object? sampleAccountIds = const $CopyWithPlaceholder(),
     Object? type = const $CopyWithPlaceholder(),
     Object? event = const $CopyWithPlaceholder(),
+    Object? fallback = const $CopyWithPlaceholder(),
     Object? latestPageNotificationAt = const $CopyWithPlaceholder(),
     Object? moderationWarning = const $CopyWithPlaceholder(),
     Object? pageMaxId = const $CopyWithPlaceholder(),
@@ -159,6 +167,10 @@ class _$NotificationGroupCWProxyImpl implements _$NotificationGroupCWProxy {
           ? _value.event
           // ignore: cast_nullable_to_non_nullable
           : event as RelationshipSeveranceEvent?,
+      fallback: fallback == const $CopyWithPlaceholder()
+          ? _value.fallback
+          // ignore: cast_nullable_to_non_nullable
+          : fallback as NotificationFallback?,
       latestPageNotificationAt:
           latestPageNotificationAt == const $CopyWithPlaceholder()
           ? _value.latestPageNotificationAt
@@ -241,6 +253,12 @@ NotificationGroup _$NotificationGroupFromJson(Map<String, dynamic> json) =>
                     v as Map<String, dynamic>,
                   ),
           ),
+          fallback: $checkedConvert(
+            'fallback',
+            (v) => v == null
+                ? null
+                : NotificationFallback.fromJson(v as Map<String, dynamic>),
+          ),
           latestPageNotificationAt: $checkedConvert(
             'latest_page_notification_at',
             (v) => v == null ? null : DateTime.parse(v as String),
@@ -283,6 +301,7 @@ Map<String, dynamic> _$NotificationGroupToJson(NotificationGroup instance) =>
       'sample_account_ids': instance.sampleAccountIds,
       'type': _$NotificationTypeEnumEnumMap[instance.type]!,
       'event': ?instance.event?.toJson(),
+      'fallback': ?instance.fallback?.toJson(),
       'latest_page_notification_at': ?instance.latestPageNotificationAt
           ?.toIso8601String(),
       'moderation_warning': ?instance.moderationWarning?.toJson(),

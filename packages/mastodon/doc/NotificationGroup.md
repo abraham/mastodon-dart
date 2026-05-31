@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **sampleAccountIds** | **List&lt;String&gt;** | IDs of some of the accounts who most recently triggered notifications in this group. | 
 **type** | [**NotificationTypeEnum**](NotificationTypeEnum.md) | The type of event that resulted in the notifications in this group. | 
 **event** | [**RelationshipSeveranceEvent**](RelationshipSeveranceEvent.md) | Summary of the event that caused follow relationships to be severed. Attached when `type` of the notification is `severed_relationships`. | [optional] 
+**fallback** | [**NotificationFallback**](NotificationFallback.md) | Fallback information available for some notification types that clients may not support. Only available for some notification types, and only if the `supported_types` parameter is used when querying. | [optional] 
 **latestPageNotificationAt** | [**DateTime**](DateTime.md) | Date at which the most recent notification from this group within the current page has been created. This is only returned when paginating through notification groups. | [optional] 
 **moderationWarning** | [**AccountWarning**](AccountWarning.md) | Moderation warning that caused the notification. Attached when `type` of the notification is `moderation_warning`. | [optional] 
 **pageMaxId** | **String** | ID of the newest notification from this group represented within the current page. This is only returned when paginating through notification groups. Useful when polling new notifications. | [optional] 

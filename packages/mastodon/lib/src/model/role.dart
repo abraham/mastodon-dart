@@ -27,6 +27,8 @@ class Role {
     required this.name,
 
     required this.permissions,
+
+    this.collectionLimit,
   });
 
   /// The hex code assigned to this role. If no hex code is assigned, the string will be empty.
@@ -49,6 +51,10 @@ class Role {
   @JsonKey(name: r'permissions', required: true, includeIfNull: false)
   final String permissions;
 
+  /// Maximum number of Collections that users with this role are allowed to create.
+  @JsonKey(name: r'collection_limit', required: false, includeIfNull: false)
+  final int? collectionLimit;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -57,7 +63,8 @@ class Role {
           other.highlighted == highlighted &&
           other.id == id &&
           other.name == name &&
-          other.permissions == permissions;
+          other.permissions == permissions &&
+          other.collectionLimit == collectionLimit;
 
   @override
   int get hashCode =>
@@ -65,7 +72,8 @@ class Role {
       highlighted.hashCode +
       id.hashCode +
       name.hashCode +
-      permissions.hashCode;
+      permissions.hashCode +
+      (collectionLimit == null ? 0 : collectionLimit.hashCode);
 
   factory Role.fromJson(Map<String, dynamic> json) => _$RoleFromJson(json);
 

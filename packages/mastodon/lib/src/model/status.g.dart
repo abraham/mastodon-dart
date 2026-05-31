@@ -71,6 +71,8 @@ abstract class _$StatusCWProxy {
 
   Status reblogged(bool? reblogged);
 
+  Status taggedCollections(List<Collection>? taggedCollections);
+
   Status text(String? text);
 
   Status url(Uri? url);
@@ -115,6 +117,7 @@ abstract class _$StatusCWProxy {
     int? quotesCount,
     Status? reblog,
     bool? reblogged,
+    List<Collection>? taggedCollections,
     String? text,
     Uri? url,
   });
@@ -230,6 +233,10 @@ class _$StatusCWProxyImpl implements _$StatusCWProxy {
   Status reblogged(bool? reblogged) => call(reblogged: reblogged);
 
   @override
+  Status taggedCollections(List<Collection>? taggedCollections) =>
+      call(taggedCollections: taggedCollections);
+
+  @override
   Status text(String? text) => call(text: text);
 
   @override
@@ -276,6 +283,7 @@ class _$StatusCWProxyImpl implements _$StatusCWProxy {
     Object? quotesCount = const $CopyWithPlaceholder(),
     Object? reblog = const $CopyWithPlaceholder(),
     Object? reblogged = const $CopyWithPlaceholder(),
+    Object? taggedCollections = const $CopyWithPlaceholder(),
     Object? text = const $CopyWithPlaceholder(),
     Object? url = const $CopyWithPlaceholder(),
   }) {
@@ -416,6 +424,10 @@ class _$StatusCWProxyImpl implements _$StatusCWProxy {
           ? _value.reblogged
           // ignore: cast_nullable_to_non_nullable
           : reblogged as bool?,
+      taggedCollections: taggedCollections == const $CopyWithPlaceholder()
+          ? _value.taggedCollections
+          // ignore: cast_nullable_to_non_nullable
+          : taggedCollections as List<Collection>?,
       text: text == const $CopyWithPlaceholder()
           ? _value.text
           // ignore: cast_nullable_to_non_nullable
@@ -563,6 +575,12 @@ Status _$StatusFromJson(Map<String, dynamic> json) => $checkedCreate(
         (v) => v == null ? null : Status.fromJson(v as Map<String, dynamic>),
       ),
       reblogged: $checkedConvert('reblogged', (v) => v as bool?),
+      taggedCollections: $checkedConvert(
+        'tagged_collections',
+        (v) => (v as List<dynamic>?)
+            ?.map((e) => Collection.fromJson(e as Map<String, dynamic>))
+            .toList(),
+      ),
       text: $checkedConvert('text', (v) => v as String?),
       url: $checkedConvert(
         'url',
@@ -583,6 +601,7 @@ Status _$StatusFromJson(Map<String, dynamic> json) => $checkedCreate(
     'inReplyToId': 'in_reply_to_id',
     'quoteApproval': 'quote_approval',
     'quotesCount': 'quotes_count',
+    'taggedCollections': 'tagged_collections',
   },
 );
 
@@ -621,6 +640,9 @@ Map<String, dynamic> _$StatusToJson(Status instance) => <String, dynamic>{
   'quotes_count': ?instance.quotesCount,
   'reblog': ?instance.reblog?.toJson(),
   'reblogged': ?instance.reblogged,
+  'tagged_collections': ?instance.taggedCollections
+      ?.map((e) => e.toJson())
+      .toList(),
   'text': ?instance.text,
   'url': ?instance.url?.toString(),
 };

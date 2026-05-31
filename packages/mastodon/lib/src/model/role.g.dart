@@ -17,6 +17,8 @@ abstract class _$RoleCWProxy {
 
   Role permissions(String permissions);
 
+  Role collectionLimit(int? collectionLimit);
+
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Role(...).copyWith.fieldName(value)`.
   ///
@@ -30,6 +32,7 @@ abstract class _$RoleCWProxy {
     String id,
     String name,
     String permissions,
+    int? collectionLimit,
   });
 }
 
@@ -56,6 +59,10 @@ class _$RoleCWProxyImpl implements _$RoleCWProxy {
   Role permissions(String permissions) => call(permissions: permissions);
 
   @override
+  Role collectionLimit(int? collectionLimit) =>
+      call(collectionLimit: collectionLimit);
+
+  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Role(...).copyWith.fieldName(value)`.
   ///
@@ -69,6 +76,7 @@ class _$RoleCWProxyImpl implements _$RoleCWProxy {
     Object? id = const $CopyWithPlaceholder(),
     Object? name = const $CopyWithPlaceholder(),
     Object? permissions = const $CopyWithPlaceholder(),
+    Object? collectionLimit = const $CopyWithPlaceholder(),
   }) {
     return Role(
       color: color == const $CopyWithPlaceholder() || color == null
@@ -93,6 +101,10 @@ class _$RoleCWProxyImpl implements _$RoleCWProxy {
           ? _value.permissions
           // ignore: cast_nullable_to_non_nullable
           : permissions as String,
+      collectionLimit: collectionLimit == const $CopyWithPlaceholder()
+          ? _value.collectionLimit
+          // ignore: cast_nullable_to_non_nullable
+          : collectionLimit as int?,
     );
   }
 }
@@ -121,9 +133,13 @@ Role _$RoleFromJson(Map<String, dynamic> json) => $checkedCreate('Role', json, (
     id: $checkedConvert('id', (v) => v as String),
     name: $checkedConvert('name', (v) => v as String),
     permissions: $checkedConvert('permissions', (v) => v as String),
+    collectionLimit: $checkedConvert(
+      'collection_limit',
+      (v) => (v as num?)?.toInt(),
+    ),
   );
   return val;
-});
+}, fieldKeyMap: const {'collectionLimit': 'collection_limit'});
 
 Map<String, dynamic> _$RoleToJson(Role instance) => <String, dynamic>{
   'color': instance.color,
@@ -131,4 +147,5 @@ Map<String, dynamic> _$RoleToJson(Role instance) => <String, dynamic>{
   'id': instance.id,
   'name': instance.name,
   'permissions': instance.permissions,
+  'collection_limit': ?instance.collectionLimit,
 };

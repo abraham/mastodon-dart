@@ -45,7 +45,13 @@ abstract class _$MutedAccountCWProxy {
 
   MutedAccount username(String username);
 
+  MutedAccount avatarDescription(String? avatarDescription);
+
   MutedAccount discoverable(bool? discoverable);
+
+  MutedAccount featureApproval(FeatureApproval? featureApproval);
+
+  MutedAccount headerDescription(String? headerDescription);
 
   MutedAccount hideCollections(bool? hideCollections);
 
@@ -102,7 +108,10 @@ abstract class _$MutedAccountCWProxy {
     int statusesCount,
     Uri uri,
     String username,
+    String? avatarDescription,
     bool? discoverable,
+    FeatureApproval? featureApproval,
+    String? headerDescription,
     bool? hideCollections,
     bool? indexable,
     DateTime? lastStatusAt,
@@ -191,8 +200,20 @@ class _$MutedAccountCWProxyImpl implements _$MutedAccountCWProxy {
   MutedAccount username(String username) => call(username: username);
 
   @override
+  MutedAccount avatarDescription(String? avatarDescription) =>
+      call(avatarDescription: avatarDescription);
+
+  @override
   MutedAccount discoverable(bool? discoverable) =>
       call(discoverable: discoverable);
+
+  @override
+  MutedAccount featureApproval(FeatureApproval? featureApproval) =>
+      call(featureApproval: featureApproval);
+
+  @override
+  MutedAccount headerDescription(String? headerDescription) =>
+      call(headerDescription: headerDescription);
 
   @override
   MutedAccount hideCollections(bool? hideCollections) =>
@@ -269,7 +290,10 @@ class _$MutedAccountCWProxyImpl implements _$MutedAccountCWProxy {
     Object? statusesCount = const $CopyWithPlaceholder(),
     Object? uri = const $CopyWithPlaceholder(),
     Object? username = const $CopyWithPlaceholder(),
+    Object? avatarDescription = const $CopyWithPlaceholder(),
     Object? discoverable = const $CopyWithPlaceholder(),
+    Object? featureApproval = const $CopyWithPlaceholder(),
+    Object? headerDescription = const $CopyWithPlaceholder(),
     Object? hideCollections = const $CopyWithPlaceholder(),
     Object? indexable = const $CopyWithPlaceholder(),
     Object? lastStatusAt = const $CopyWithPlaceholder(),
@@ -370,10 +394,22 @@ class _$MutedAccountCWProxyImpl implements _$MutedAccountCWProxy {
           ? _value.username
           // ignore: cast_nullable_to_non_nullable
           : username as String,
+      avatarDescription: avatarDescription == const $CopyWithPlaceholder()
+          ? _value.avatarDescription
+          // ignore: cast_nullable_to_non_nullable
+          : avatarDescription as String?,
       discoverable: discoverable == const $CopyWithPlaceholder()
           ? _value.discoverable
           // ignore: cast_nullable_to_non_nullable
           : discoverable as bool?,
+      featureApproval: featureApproval == const $CopyWithPlaceholder()
+          ? _value.featureApproval
+          // ignore: cast_nullable_to_non_nullable
+          : featureApproval as FeatureApproval?,
+      headerDescription: headerDescription == const $CopyWithPlaceholder()
+          ? _value.headerDescription
+          // ignore: cast_nullable_to_non_nullable
+          : headerDescription as String?,
       hideCollections: hideCollections == const $CopyWithPlaceholder()
           ? _value.hideCollections
           // ignore: cast_nullable_to_non_nullable
@@ -522,7 +558,21 @@ MutedAccount _$MutedAccountFromJson(Map<String, dynamic> json) =>
           ),
           uri: $checkedConvert('uri', (v) => Uri.parse(v as String)),
           username: $checkedConvert('username', (v) => v as String),
+          avatarDescription: $checkedConvert(
+            'avatar_description',
+            (v) => v as String?,
+          ),
           discoverable: $checkedConvert('discoverable', (v) => v as bool?),
+          featureApproval: $checkedConvert(
+            'feature_approval',
+            (v) => v == null
+                ? null
+                : FeatureApproval.fromJson(v as Map<String, dynamic>),
+          ),
+          headerDescription: $checkedConvert(
+            'header_description',
+            (v) => v as String?,
+          ),
           hideCollections: $checkedConvert(
             'hide_collections',
             (v) => v as bool?,
@@ -572,6 +622,9 @@ MutedAccount _$MutedAccountFromJson(Map<String, dynamic> json) =>
         'followingCount': 'following_count',
         'headerStatic': 'header_static',
         'statusesCount': 'statuses_count',
+        'avatarDescription': 'avatar_description',
+        'featureApproval': 'feature_approval',
+        'headerDescription': 'header_description',
         'hideCollections': 'hide_collections',
         'lastStatusAt': 'last_status_at',
         'muteExpiresAt': 'mute_expires_at',
@@ -602,7 +655,10 @@ Map<String, dynamic> _$MutedAccountToJson(MutedAccount instance) =>
       'statuses_count': instance.statusesCount,
       'uri': instance.uri.toString(),
       'username': instance.username,
+      'avatar_description': ?instance.avatarDescription,
       'discoverable': ?instance.discoverable,
+      'feature_approval': ?instance.featureApproval?.toJson(),
+      'header_description': ?instance.headerDescription,
       'hide_collections': ?instance.hideCollections,
       'indexable': ?instance.indexable,
       'last_status_at': ?instance.lastStatusAt?.toIso8601String(),

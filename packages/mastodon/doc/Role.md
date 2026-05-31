@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **id** | **String** | The ID of the Role in the database. | 
 **name** | **String** | The name of the role. | 
 **permissions** | **String** | A bitmask that represents the sum of all permissions granted to the role. This is a potentially large integer in decimal representation. The absence of special permissions is denoted by `'0'`. | 
+**collectionLimit** | **int** | Maximum number of Collections that users with this role are allowed to create. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

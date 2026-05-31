@@ -77,6 +77,10 @@ abstract class _$CreateStatus200ResponseCWProxy {
 
   CreateStatus200Response reblogged(bool? reblogged);
 
+  CreateStatus200Response taggedCollections(
+    List<Collection>? taggedCollections,
+  );
+
   CreateStatus200Response text(String? text);
 
   CreateStatus200Response url(Uri? url);
@@ -123,6 +127,7 @@ abstract class _$CreateStatus200ResponseCWProxy {
     int? quotesCount,
     Status? reblog,
     bool? reblogged,
+    List<Collection>? taggedCollections,
     String? text,
     Uri? url,
   });
@@ -263,6 +268,11 @@ class _$CreateStatus200ResponseCWProxyImpl
       call(reblogged: reblogged);
 
   @override
+  CreateStatus200Response taggedCollections(
+    List<Collection>? taggedCollections,
+  ) => call(taggedCollections: taggedCollections);
+
+  @override
   CreateStatus200Response text(String? text) => call(text: text);
 
   @override
@@ -311,6 +321,7 @@ class _$CreateStatus200ResponseCWProxyImpl
     Object? quotesCount = const $CopyWithPlaceholder(),
     Object? reblog = const $CopyWithPlaceholder(),
     Object? reblogged = const $CopyWithPlaceholder(),
+    Object? taggedCollections = const $CopyWithPlaceholder(),
     Object? text = const $CopyWithPlaceholder(),
     Object? url = const $CopyWithPlaceholder(),
   }) {
@@ -460,6 +471,10 @@ class _$CreateStatus200ResponseCWProxyImpl
           ? _value.reblogged
           // ignore: cast_nullable_to_non_nullable
           : reblogged as bool?,
+      taggedCollections: taggedCollections == const $CopyWithPlaceholder()
+          ? _value.taggedCollections
+          // ignore: cast_nullable_to_non_nullable
+          : taggedCollections as List<Collection>?,
       text: text == const $CopyWithPlaceholder()
           ? _value.text
           // ignore: cast_nullable_to_non_nullable
@@ -620,6 +635,12 @@ CreateStatus200Response _$CreateStatus200ResponseFromJson(
         (v) => v == null ? null : Status.fromJson(v as Map<String, dynamic>),
       ),
       reblogged: $checkedConvert('reblogged', (v) => v as bool?),
+      taggedCollections: $checkedConvert(
+        'tagged_collections',
+        (v) => (v as List<dynamic>?)
+            ?.map((e) => Collection.fromJson(e as Map<String, dynamic>))
+            .toList(),
+      ),
       text: $checkedConvert('text', (v) => v as String?),
       url: $checkedConvert(
         'url',
@@ -641,6 +662,7 @@ CreateStatus200Response _$CreateStatus200ResponseFromJson(
     'inReplyToId': 'in_reply_to_id',
     'quoteApproval': 'quote_approval',
     'quotesCount': 'quotes_count',
+    'taggedCollections': 'tagged_collections',
   },
 );
 
@@ -683,6 +705,9 @@ Map<String, dynamic> _$CreateStatus200ResponseToJson(
   'quotes_count': ?instance.quotesCount,
   'reblog': ?instance.reblog?.toJson(),
   'reblogged': ?instance.reblogged,
+  'tagged_collections': ?instance.taggedCollections
+      ?.map((e) => e.toJson())
+      .toList(),
   'text': ?instance.text,
   'url': ?instance.url?.toString(),
 };
