@@ -6,6 +6,7 @@
 import 'package:mastodon/src/model/report.dart';
 import 'package:mastodon/src/model/status.dart';
 import 'package:mastodon/src/model/account_warning.dart';
+import 'package:mastodon/src/model/notification_fallback.dart';
 import 'package:mastodon/src/model/account.dart';
 import 'package:mastodon/src/model/relationship_severance_event.dart';
 import 'package:mastodon/src/model/notification_type_enum.dart';
@@ -33,6 +34,8 @@ class Notification {
     required this.type,
 
     this.event,
+
+    this.fallback,
 
     this.groupKey,
 
@@ -63,6 +66,10 @@ class Notification {
   @JsonKey(name: r'event', required: false, includeIfNull: false)
   final RelationshipSeveranceEvent? event;
 
+  /// Fallback information available for some notification types that clients may not support. Only available for some notification types, and only if the `supported_types` parameter is used when querying.
+  @JsonKey(name: r'fallback', required: false, includeIfNull: false)
+  final NotificationFallback? fallback;
+
   /// Group key shared by similar notifications, to be used in the grouped notifications feature. Should be considered opaque, but ungrouped notifications can be assumed to have a `group_key` of the form `ungrouped-{notification_id}`.
   @JsonKey(name: r'group_key', required: false, includeIfNull: false)
   final String? groupKey;
@@ -88,6 +95,7 @@ class Notification {
           other.id == id &&
           other.type == type &&
           other.event == event &&
+          other.fallback == fallback &&
           other.groupKey == groupKey &&
           other.moderationWarning == moderationWarning &&
           other.report == report &&
@@ -100,6 +108,7 @@ class Notification {
       id.hashCode +
       type.hashCode +
       (event == null ? 0 : event.hashCode) +
+      (fallback == null ? 0 : fallback.hashCode) +
       (groupKey == null ? 0 : groupKey.hashCode) +
       (moderationWarning == null ? 0 : moderationWarning.hashCode) +
       (report == null ? 0 : report.hashCode) +

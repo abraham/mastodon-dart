@@ -27,7 +27,10 @@ Name | Type | Description | Notes
 **statusesCount** | **int** | How many statuses are attached to this account. | 
 **uri** | [**Uri**](Uri.md) | The user's ActivityPub actor identifier (used for federation). | 
 **username** | **String** | The username of the account, not including domain. | 
+**avatarDescription** | **String** | A textual description of the avatar image. | [optional] 
 **discoverable** | **bool** | Whether the account has opted into discovery features such as the profile directory. | [optional] 
+**featureApproval** | [**FeatureApproval**](FeatureApproval.md) | Summary of the account's policy with regards to being featured in a [Collection]({{< relref \"entities/Collection\" >}}) and how it applies to the user making the request. | [optional] 
+**headerDescription** | **String** | A textual description of the header image. | [optional] 
 **hideCollections** | **bool** | Whether the user hides the contents of their follows and followers collections. | [optional] 
 **indexable** | **bool** | Whether the account allows indexing by search engines. | [optional] 
 **lastStatusAt** | [**DateTime**](DateTime.md) | When the most recent status was posted. | [optional] 

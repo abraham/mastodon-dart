@@ -37,6 +37,12 @@ void main() {
       // TODO
     });
 
+    // Fallback information available for some notification types that clients may not support. Only available for some notification types, and only if the `supported_types` parameter is used when querying.
+    // NotificationFallback fallback
+    test('to test the property `fallback`', () async {
+      // TODO
+    });
+
     // Group key shared by similar notifications, to be used in the grouped notifications feature. Should be considered opaque, but ungrouped notifications can be assumed to have a `group_key` of the form `ungrouped-{notification_id}`.
     // String groupKey
     test('to test the property `groupKey`', () async {

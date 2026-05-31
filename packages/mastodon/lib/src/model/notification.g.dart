@@ -17,6 +17,8 @@ abstract class _$NotificationCWProxy {
 
   Notification event(RelationshipSeveranceEvent? event);
 
+  Notification fallback(NotificationFallback? fallback);
+
   Notification groupKey(String? groupKey);
 
   Notification moderationWarning(AccountWarning? moderationWarning);
@@ -38,6 +40,7 @@ abstract class _$NotificationCWProxy {
     String id,
     NotificationTypeEnum type,
     RelationshipSeveranceEvent? event,
+    NotificationFallback? fallback,
     String? groupKey,
     AccountWarning? moderationWarning,
     Report? report,
@@ -68,6 +71,10 @@ class _$NotificationCWProxyImpl implements _$NotificationCWProxy {
   Notification event(RelationshipSeveranceEvent? event) => call(event: event);
 
   @override
+  Notification fallback(NotificationFallback? fallback) =>
+      call(fallback: fallback);
+
+  @override
   Notification groupKey(String? groupKey) => call(groupKey: groupKey);
 
   @override
@@ -94,6 +101,7 @@ class _$NotificationCWProxyImpl implements _$NotificationCWProxy {
     Object? id = const $CopyWithPlaceholder(),
     Object? type = const $CopyWithPlaceholder(),
     Object? event = const $CopyWithPlaceholder(),
+    Object? fallback = const $CopyWithPlaceholder(),
     Object? groupKey = const $CopyWithPlaceholder(),
     Object? moderationWarning = const $CopyWithPlaceholder(),
     Object? report = const $CopyWithPlaceholder(),
@@ -120,6 +128,10 @@ class _$NotificationCWProxyImpl implements _$NotificationCWProxy {
           ? _value.event
           // ignore: cast_nullable_to_non_nullable
           : event as RelationshipSeveranceEvent?,
+      fallback: fallback == const $CopyWithPlaceholder()
+          ? _value.fallback
+          // ignore: cast_nullable_to_non_nullable
+          : fallback as NotificationFallback?,
       groupKey: groupKey == const $CopyWithPlaceholder()
           ? _value.groupKey
           // ignore: cast_nullable_to_non_nullable
@@ -182,6 +194,12 @@ Notification _$NotificationFromJson(Map<String, dynamic> json) =>
                     v as Map<String, dynamic>,
                   ),
           ),
+          fallback: $checkedConvert(
+            'fallback',
+            (v) => v == null
+                ? null
+                : NotificationFallback.fromJson(v as Map<String, dynamic>),
+          ),
           groupKey: $checkedConvert('group_key', (v) => v as String?),
           moderationWarning: $checkedConvert(
             'moderation_warning',
@@ -216,6 +234,7 @@ Map<String, dynamic> _$NotificationToJson(Notification instance) =>
       'id': instance.id,
       'type': _$NotificationTypeEnumEnumMap[instance.type]!,
       'event': ?instance.event?.toJson(),
+      'fallback': ?instance.fallback?.toJson(),
       'group_key': ?instance.groupKey,
       'moderation_warning': ?instance.moderationWarning?.toJson(),
       'report': ?instance.report?.toJson(),

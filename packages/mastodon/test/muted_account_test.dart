@@ -121,9 +121,27 @@ void main() {
       // TODO
     });
 
+    // A textual description of the avatar image.
+    // String avatarDescription
+    test('to test the property `avatarDescription`', () async {
+      // TODO
+    });
+
     // Whether the account has opted into discovery features such as the profile directory.
     // bool discoverable
     test('to test the property `discoverable`', () async {
+      // TODO
+    });
+
+    // Summary of the account's policy with regards to being featured in a [Collection]({{< relref \"entities/Collection\" >}}) and how it applies to the user making the request.
+    // FeatureApproval featureApproval
+    test('to test the property `featureApproval`', () async {
+      // TODO
+    });
+
+    // A textual description of the header image.
+    // String headerDescription
+    test('to test the property `headerDescription`', () async {
       // TODO
     });
 

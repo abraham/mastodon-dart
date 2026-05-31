@@ -43,6 +43,12 @@ void main() {
       // TODO
     });
 
+    // Fallback information available for some notification types that clients may not support. Only available for some notification types, and only if the `supported_types` parameter is used when querying.
+    // NotificationFallback fallback
+    test('to test the property `fallback`', () async {
+      // TODO
+    });
+
     // Date at which the most recent notification from this group within the current page has been created. This is only returned when paginating through notification groups.
     // DateTime latestPageNotificationAt
     test('to test the property `latestPageNotificationAt`', () async {

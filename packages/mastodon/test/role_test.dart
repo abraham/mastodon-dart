@@ -36,5 +36,11 @@ void main() {
     test('to test the property `permissions`', () async {
       // TODO
     });
+
+    // Maximum number of Collections that users with this role are allowed to create.
+    // int collectionLimit
+    test('to test the property `collectionLimit`', () async {
+      // TODO
+    });
   });
 }

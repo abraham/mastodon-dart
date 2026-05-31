@@ -5,6 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:mastodon/src/model/status_quote.dart';
 import 'package:mastodon/src/model/status_mention.dart';
+import 'package:mastodon/src/model/collection.dart';
 import 'package:mastodon/src/model/quote_approval.dart';
 import 'package:mastodon/src/model/media_attachment.dart';
 import 'package:mastodon/src/model/status_application.dart';
@@ -94,6 +95,8 @@ class Status {
     this.reblog,
 
     this.reblogged,
+
+    this.taggedCollections,
 
     this.text,
 
@@ -230,6 +233,10 @@ class Status {
   @JsonKey(name: r'reblogged', required: false, includeIfNull: false)
   final bool? reblogged;
 
+  /// If `content` includes links to Collections that the server recognized, this includes the actual Collections.
+  @JsonKey(name: r'tagged_collections', required: false, includeIfNull: false)
+  final List<Collection>? taggedCollections;
+
   /// Plain-text source of a status. Returned instead of `content` when status is deleted, so the user may redraft from the source text without the client having to reverse-engineer the original text from the HTML content.
   @JsonKey(name: r'text', required: false, includeIfNull: false)
   final String? text;
@@ -274,6 +281,7 @@ class Status {
           other.quotesCount == quotesCount &&
           other.reblog == reblog &&
           other.reblogged == reblogged &&
+          other.taggedCollections == taggedCollections &&
           other.text == text &&
           other.url == url;
 
@@ -311,6 +319,7 @@ class Status {
       (quotesCount == null ? 0 : quotesCount.hashCode) +
       (reblog == null ? 0 : reblog.hashCode) +
       (reblogged == null ? 0 : reblogged.hashCode) +
+      (taggedCollections == null ? 0 : taggedCollections.hashCode) +
       (text == null ? 0 : text.hashCode) +
       (url == null ? 0 : url.hashCode);
 

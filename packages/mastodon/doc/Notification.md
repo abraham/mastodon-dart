@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **id** | **String** | The id of the notification in the database. | 
 **type** | [**NotificationTypeEnum**](NotificationTypeEnum.md) | The type of event that resulted in the notification. | 
 **event** | [**RelationshipSeveranceEvent**](RelationshipSeveranceEvent.md) | Summary of the event that caused follow relationships to be severed. Attached when `type` of the notification is `severed_relationships`. | [optional] 
+**fallback** | [**NotificationFallback**](NotificationFallback.md) | Fallback information available for some notification types that clients may not support. Only available for some notification types, and only if the `supported_types` parameter is used when querying. | [optional] 
 **groupKey** | **String** | Group key shared by similar notifications, to be used in the grouped notifications feature. Should be considered opaque, but ungrouped notifications can be assumed to have a `group_key` of the form `ungrouped-{notification_id}`. | [optional] 
 **moderationWarning** | [**AccountWarning**](AccountWarning.md) | Moderation warning that caused the notification. Attached when `type` of the notification is `moderation_warning`. | [optional] 
 **report** | [**Report**](Report.md) | Report that was the object of the notification. Attached when `type` of the notification is `admin.report`. | [optional] 

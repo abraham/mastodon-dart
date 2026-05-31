@@ -49,7 +49,13 @@ abstract class _$CredentialAccountCWProxy {
 
   CredentialAccount username(String username);
 
+  CredentialAccount avatarDescription(String? avatarDescription);
+
   CredentialAccount discoverable(bool? discoverable);
+
+  CredentialAccount featureApproval(FeatureApproval? featureApproval);
+
+  CredentialAccount headerDescription(String? headerDescription);
 
   CredentialAccount hideCollections(bool? hideCollections);
 
@@ -106,7 +112,10 @@ abstract class _$CredentialAccountCWProxy {
     int statusesCount,
     Uri uri,
     String username,
+    String? avatarDescription,
     bool? discoverable,
+    FeatureApproval? featureApproval,
+    String? headerDescription,
     bool? hideCollections,
     bool? indexable,
     DateTime? lastStatusAt,
@@ -201,8 +210,20 @@ class _$CredentialAccountCWProxyImpl implements _$CredentialAccountCWProxy {
   CredentialAccount username(String username) => call(username: username);
 
   @override
+  CredentialAccount avatarDescription(String? avatarDescription) =>
+      call(avatarDescription: avatarDescription);
+
+  @override
   CredentialAccount discoverable(bool? discoverable) =>
       call(discoverable: discoverable);
+
+  @override
+  CredentialAccount featureApproval(FeatureApproval? featureApproval) =>
+      call(featureApproval: featureApproval);
+
+  @override
+  CredentialAccount headerDescription(String? headerDescription) =>
+      call(headerDescription: headerDescription);
 
   @override
   CredentialAccount hideCollections(bool? hideCollections) =>
@@ -277,7 +298,10 @@ class _$CredentialAccountCWProxyImpl implements _$CredentialAccountCWProxy {
     Object? statusesCount = const $CopyWithPlaceholder(),
     Object? uri = const $CopyWithPlaceholder(),
     Object? username = const $CopyWithPlaceholder(),
+    Object? avatarDescription = const $CopyWithPlaceholder(),
     Object? discoverable = const $CopyWithPlaceholder(),
+    Object? featureApproval = const $CopyWithPlaceholder(),
+    Object? headerDescription = const $CopyWithPlaceholder(),
     Object? hideCollections = const $CopyWithPlaceholder(),
     Object? indexable = const $CopyWithPlaceholder(),
     Object? lastStatusAt = const $CopyWithPlaceholder(),
@@ -385,10 +409,22 @@ class _$CredentialAccountCWProxyImpl implements _$CredentialAccountCWProxy {
           ? _value.username
           // ignore: cast_nullable_to_non_nullable
           : username as String,
+      avatarDescription: avatarDescription == const $CopyWithPlaceholder()
+          ? _value.avatarDescription
+          // ignore: cast_nullable_to_non_nullable
+          : avatarDescription as String?,
       discoverable: discoverable == const $CopyWithPlaceholder()
           ? _value.discoverable
           // ignore: cast_nullable_to_non_nullable
           : discoverable as bool?,
+      featureApproval: featureApproval == const $CopyWithPlaceholder()
+          ? _value.featureApproval
+          // ignore: cast_nullable_to_non_nullable
+          : featureApproval as FeatureApproval?,
+      headerDescription: headerDescription == const $CopyWithPlaceholder()
+          ? _value.headerDescription
+          // ignore: cast_nullable_to_non_nullable
+          : headerDescription as String?,
       hideCollections: hideCollections == const $CopyWithPlaceholder()
           ? _value.hideCollections
           // ignore: cast_nullable_to_non_nullable
@@ -544,7 +580,21 @@ CredentialAccount _$CredentialAccountFromJson(Map<String, dynamic> json) =>
           ),
           uri: $checkedConvert('uri', (v) => Uri.parse(v as String)),
           username: $checkedConvert('username', (v) => v as String),
+          avatarDescription: $checkedConvert(
+            'avatar_description',
+            (v) => v as String?,
+          ),
           discoverable: $checkedConvert('discoverable', (v) => v as bool?),
+          featureApproval: $checkedConvert(
+            'feature_approval',
+            (v) => v == null
+                ? null
+                : FeatureApproval.fromJson(v as Map<String, dynamic>),
+          ),
+          headerDescription: $checkedConvert(
+            'header_description',
+            (v) => v as String?,
+          ),
           hideCollections: $checkedConvert(
             'hide_collections',
             (v) => v as bool?,
@@ -591,6 +641,9 @@ CredentialAccount _$CredentialAccountFromJson(Map<String, dynamic> json) =>
         'headerStatic': 'header_static',
         'source_': 'source',
         'statusesCount': 'statuses_count',
+        'avatarDescription': 'avatar_description',
+        'featureApproval': 'feature_approval',
+        'headerDescription': 'header_description',
         'hideCollections': 'hide_collections',
         'lastStatusAt': 'last_status_at',
         'showFeatured': 'show_featured',
@@ -622,7 +675,10 @@ Map<String, dynamic> _$CredentialAccountToJson(CredentialAccount instance) =>
       'statuses_count': instance.statusesCount,
       'uri': instance.uri.toString(),
       'username': instance.username,
+      'avatar_description': ?instance.avatarDescription,
       'discoverable': ?instance.discoverable,
+      'feature_approval': ?instance.featureApproval?.toJson(),
+      'header_description': ?instance.headerDescription,
       'hide_collections': ?instance.hideCollections,
       'indexable': ?instance.indexable,
       'last_status_at': ?instance.lastStatusAt?.toIso8601String(),

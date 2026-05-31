@@ -7,6 +7,7 @@ import 'package:mastodon/src/model/role.dart';
 import 'package:mastodon/src/model/credential_account_source.dart';
 import 'package:mastodon/src/model/field.dart';
 import 'package:mastodon/src/model/custom_emoji.dart';
+import 'package:mastodon/src/model/feature_approval.dart';
 import 'package:mastodon/src/model/account.dart';
 import 'package:mastodon/src/model/account_role.dart';
 import 'dart:core';
@@ -67,7 +68,13 @@ class CredentialAccount {
 
     required this.username,
 
+    this.avatarDescription,
+
     this.discoverable,
+
+    this.featureApproval,
+
+    this.headerDescription,
 
     this.hideCollections,
 
@@ -179,9 +186,21 @@ class CredentialAccount {
   @JsonKey(name: r'username', required: true, includeIfNull: false)
   final String username;
 
+  /// A textual description of the avatar image.
+  @JsonKey(name: r'avatar_description', required: false, includeIfNull: false)
+  final String? avatarDescription;
+
   /// Whether the account has opted into discovery features such as the profile directory.
   @JsonKey(name: r'discoverable', required: false, includeIfNull: false)
   final bool? discoverable;
+
+  /// Summary of the account's policy with regards to being featured in a [Collection]({{< relref \"entities/Collection\" >}}) and how it applies to the user making the request.
+  @JsonKey(name: r'feature_approval', required: false, includeIfNull: false)
+  final FeatureApproval? featureApproval;
+
+  /// A textual description of the header image.
+  @JsonKey(name: r'header_description', required: false, includeIfNull: false)
+  final String? headerDescription;
 
   /// Whether the user hides the contents of their follows and followers collections.
   @JsonKey(name: r'hide_collections', required: false, includeIfNull: false)
@@ -260,7 +279,10 @@ class CredentialAccount {
           other.statusesCount == statusesCount &&
           other.uri == uri &&
           other.username == username &&
+          other.avatarDescription == avatarDescription &&
           other.discoverable == discoverable &&
+          other.featureApproval == featureApproval &&
+          other.headerDescription == headerDescription &&
           other.hideCollections == hideCollections &&
           other.indexable == indexable &&
           other.lastStatusAt == lastStatusAt &&
@@ -298,7 +320,10 @@ class CredentialAccount {
       statusesCount.hashCode +
       uri.hashCode +
       username.hashCode +
+      (avatarDescription == null ? 0 : avatarDescription.hashCode) +
       (discoverable == null ? 0 : discoverable.hashCode) +
+      (featureApproval == null ? 0 : featureApproval.hashCode) +
+      (headerDescription == null ? 0 : headerDescription.hashCode) +
       (hideCollections == null ? 0 : hideCollections.hashCode) +
       (indexable == null ? 0 : indexable.hashCode) +
       (lastStatusAt == null ? 0 : lastStatusAt.hashCode) +

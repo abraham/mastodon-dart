@@ -209,6 +209,12 @@ void main() {
       // TODO
     });
 
+    // If `content` includes links to Collections that the server recognized, this includes the actual Collections.
+    // List<Collection> taggedCollections
+    test('to test the property `taggedCollections`', () async {
+      // TODO
+    });
+
     // Plain-text source of a status. Returned instead of `content` when status is deleted, so the user may redraft from the source text without the client having to reverse-engineer the original text from the HTML content.
     // String text
     test('to test the property `text`', () async {

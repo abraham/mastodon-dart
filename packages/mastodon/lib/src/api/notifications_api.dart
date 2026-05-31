@@ -168,10 +168,11 @@ class NotificationsApi {
   }
 
   /// Get a single notification
-  /// View information about a notification with a given ID.  Version history:  0.0.0 - added
+  /// View information about a notification with a given ID.  Version history:  0.0.0 - added\\ 4.6.0 (&#x60;mastodon&#x60; [API version] 10) - added &#x60;supported_types&#x60; optional parameter
   ///
   /// Parameters:
   /// * [id] - id parameter
+  /// * [supportedTypes] - Notification types to not get fallback representation for even when some is available. Passing this parameter is required to get any notification fallback at all. When this parameter is used, and a notification which type is *not* included in `supported_types` has an available fallback representation, it will be included in the notification's `fallback` attribute.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -185,6 +186,7 @@ class NotificationsApi {
   /// Also see [Get a single notification Documentation](https://docs.joinmastodon.org/methods/notifications/#get-one)
   Future<Response<Notification>> getNotification({
     required String id,
+    List<String>? supportedTypes,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -211,9 +213,14 @@ class NotificationsApi {
       validateStatus: validateStatus,
     );
 
+    final _queryParameters = <String, dynamic>{
+      if (supportedTypes != null) r'supported_types': supportedTypes,
+    };
+
     final _response = await _dio.request<Object>(
       _path,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
@@ -510,7 +517,7 @@ class NotificationsApi {
   }
 
   /// Get all notifications
-  /// Notifications concerning the user. This API returns Link headers containing links to the next/previous page. However, the links can also be constructed dynamically using query params and &#x60;id&#x60; values.  Version history:  0.0.0 - added\\ 2.6.0 - added &#x60;min_id&#x60;\\ 2.9.0 - added &#x60;account_id&#x60;\\ 3.1.0 - added &#x60;follow_request&#x60; type\\ 3.3.0 - added &#x60;status&#x60; type; both &#x60;min_id&#x60; and &#x60;max_id&#x60; can be used at the same time now\\ 3.5.0 - added &#x60;types&#x60;; add &#x60;update&#x60; and &#x60;admin.sign_up&#x60; types\\ 4.0.0 - added &#x60;admin.report&#x60; type\\ 4.1.0 - notification limit changed from 15 (max 30) to 40 (max 80)\\ 4.3.0 - added &#x60;include_filtered&#x60; parameter
+  /// Notifications concerning the user. This API returns Link headers containing links to the next/previous page. However, the links can also be constructed dynamically using query params and &#x60;id&#x60; values.  Version history:  0.0.0 - added\\ 2.6.0 - added &#x60;min_id&#x60;\\ 2.9.0 - added &#x60;account_id&#x60;\\ 3.1.0 - added &#x60;follow_request&#x60; type\\ 3.3.0 - added &#x60;status&#x60; type; both &#x60;min_id&#x60; and &#x60;max_id&#x60; can be used at the same time now\\ 3.5.0 - added &#x60;types&#x60;; add &#x60;update&#x60; and &#x60;admin.sign_up&#x60; types\\ 4.0.0 - added &#x60;admin.report&#x60; type\\ 4.1.0 - notification limit changed from 15 (max 30) to 40 (max 80)\\ 4.3.0 - added &#x60;include_filtered&#x60; parameter\\ 4.6.0 (&#x60;mastodon&#x60; [API version] 10) - added &#x60;supported_types&#x60; optional parameter
   ///
   /// Parameters:
   /// * [accountId] - Return only notifications received from the specified account.
@@ -520,6 +527,7 @@ class NotificationsApi {
   /// * [maxId] - All results returned will be lesser than this ID. In effect, sets an upper bound on results.
   /// * [minId] - Returns results immediately newer than this ID. In effect, sets a cursor at this ID and paginates forward.
   /// * [sinceId] - All results returned will be greater than this ID. In effect, sets a lower bound on results.
+  /// * [supportedTypes] - Notification types to not get fallback representation for even when some is available. Passing this parameter is required to get any notification fallback at all. When this parameter is used, and a notification which type is *not* included in `supported_types` has an available fallback representation, it will be included in the notification's `fallback` attribute.
   /// * [types] - Types to include in the result.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -540,6 +548,7 @@ class NotificationsApi {
     String? maxId,
     String? minId,
     String? sinceId,
+    List<String>? supportedTypes,
     List<NotificationTypeEnum>? types,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -570,6 +579,7 @@ class NotificationsApi {
       if (maxId != null) r'max_id': maxId,
       if (minId != null) r'min_id': minId,
       if (sinceId != null) r'since_id': sinceId,
+      if (supportedTypes != null) r'supported_types': supportedTypes,
       if (types != null) r'types': types,
     };
 
@@ -616,10 +626,11 @@ class NotificationsApi {
   }
 
   /// Get a single notification group
-  /// View information about a specific notification group with a given group key.  Version history:  4.3.0 (&#x60;mastodon&#x60; [API version] 2) - added
+  /// View information about a specific notification group with a given group key.  Version history:  4.3.0 (&#x60;mastodon&#x60; [API version] 2) - added\\ 4.6.0 (&#x60;mastodon&#x60; [API version] 10) - added &#x60;supported_types&#x60; optional parameter
   ///
   /// Parameters:
   /// * [groupKey] - group_key parameter
+  /// * [supportedTypes] - Notification types to not get fallback representation for even when some is available. Passing this parameter is required to get any notification fallback at all. When this parameter is used, and a notification which type is *not* included in `supported_types` has an available fallback representation, it will be included in the notification group's `fallback` attribute.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -633,6 +644,7 @@ class NotificationsApi {
   /// Also see [Get a single notification group Documentation](https://docs.joinmastodon.org/methods/grouped_notifications/#get-notification-group)
   Future<Response<GroupedNotificationsResults>> getNotificationsByGroupKeyV2({
     required String groupKey,
+    List<String>? supportedTypes,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -659,9 +671,14 @@ class NotificationsApi {
       validateStatus: validateStatus,
     );
 
+    final _queryParameters = <String, dynamic>{
+      if (supportedTypes != null) r'supported_types': supportedTypes,
+    };
+
     final _response = await _dio.request<Object>(
       _path,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
@@ -1054,7 +1071,7 @@ class NotificationsApi {
   }
 
   /// Get all grouped notifications
-  /// Return grouped notifications concerning the user. This API returns Link headers containing links to the next/previous page. However, the links can also be constructed dynamically using query params and &#x60;id&#x60; values.  Version history:  4.3.0 (&#x60;mastodon&#x60; [API version] 2) - added\\ 4.4.0 - added &#x60;admin.sign_up&#x60; to grouped notification types
+  /// Return grouped notifications concerning the user. This API returns Link headers containing links to the next/previous page. However, the links can also be constructed dynamically using query params and &#x60;id&#x60; values.  Version history:  4.3.0 (&#x60;mastodon&#x60; [API version] 2) - added\\ 4.4.0 - added &#x60;admin.sign_up&#x60; to grouped notification types\\ 4.6.0 (&#x60;mastodon&#x60; [API version] 10) - added &#x60;supported_types&#x60; optional parameter
   ///
   /// Parameters:
   /// * [accountId] - Return only notifications received from the specified account.
@@ -1066,6 +1083,7 @@ class NotificationsApi {
   /// * [maxId] - All results returned will be about notifications strictly older than this notification ID. In effect, sets an upper bound on results.
   /// * [minId] - Returns results about notifications immediately newer than this notification ID. In effect, sets a cursor at this ID and paginates forward.
   /// * [sinceId] - All results returned will be about notifications strictly newer than this notification ID. In effect, sets a lower bound on results.
+  /// * [supportedTypes] - Notification types to not get fallback representation for even when some is available. Passing this parameter is required to get any notification fallback at all. When this parameter is used, and a notification which type is *not* included in `supported_types` has an available fallback representation, it will be included in the notification group's `fallback` attribute.
   /// * [types] - Types to include in the result.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -1088,6 +1106,7 @@ class NotificationsApi {
     String? maxId,
     String? minId,
     String? sinceId,
+    List<String>? supportedTypes,
     List<NotificationTypeEnum>? types,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -1120,6 +1139,7 @@ class NotificationsApi {
       if (maxId != null) r'max_id': maxId,
       if (minId != null) r'min_id': minId,
       if (sinceId != null) r'since_id': sinceId,
+      if (supportedTypes != null) r'supported_types': supportedTypes,
       if (types != null) r'types': types,
     };
 

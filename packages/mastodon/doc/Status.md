@@ -40,6 +40,7 @@ Name | Type | Description | Notes
 **quotesCount** | **int** | How many accepted quotes this status has. | [optional] 
 **reblog** | [**Status**](Status.md) | The status being reblogged. | [optional] 
 **reblogged** | **bool** | If the current token has an authorized user: Have you boosted this status? | [optional] 
+**taggedCollections** | [**List&lt;Collection&gt;**](Collection.md) | If `content` includes links to Collections that the server recognized, this includes the actual Collections. | [optional] 
 **text** | **String** | Plain-text source of a status. Returned instead of `content` when status is deleted, so the user may redraft from the source text without the client having to reverse-engineer the original text from the HTML content. | [optional] 
 **url** | [**Uri**](Uri.md) | A link to the status's HTML representation. | [optional] 
 

@@ -7,12 +7,14 @@ import 'package:mastodon/src/auth/api_key_auth.dart';
 import 'package:mastodon/src/auth/basic_auth.dart';
 import 'package:mastodon/src/auth/bearer_auth.dart';
 import 'package:mastodon/src/auth/oauth.dart';
+import 'package:mastodon/src/api/account_id_api.dart';
 import 'package:mastodon/src/api/accounts_api.dart';
 import 'package:mastodon/src/api/announcements_api.dart';
 import 'package:mastodon/src/api/apps_api.dart';
 import 'package:mastodon/src/api/async_refreshes_api.dart';
 import 'package:mastodon/src/api/blocks_api.dart';
 import 'package:mastodon/src/api/bookmarks_api.dart';
+import 'package:mastodon/src/api/collections_api.dart';
 import 'package:mastodon/src/api/conversations_api.dart';
 import 'package:mastodon/src/api/custom_emojis_api.dart';
 import 'package:mastodon/src/api/directory_api.dart';
@@ -171,6 +173,12 @@ class Mastodon {
     }
   }
 
+  /// Get AccountIdApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  AccountIdApi getAccountIdApi() {
+    return AccountIdApi(dio);
+  }
+
   /// Get AccountsApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   AccountsApi getAccountsApi() {
@@ -205,6 +213,12 @@ class Mastodon {
   /// by doing that all interceptors will not be executed
   BookmarksApi getBookmarksApi() {
     return BookmarksApi(dio);
+  }
+
+  /// Get CollectionsApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  CollectionsApi getCollectionsApi() {
+    return CollectionsApi(dio);
   }
 
   /// Get ConversationsApi instance, base route and serializer can be overridden by a given but be careful,

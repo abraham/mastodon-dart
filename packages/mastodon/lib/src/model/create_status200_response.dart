@@ -6,6 +6,7 @@
 import 'package:mastodon/src/model/status_quote.dart';
 import 'package:mastodon/src/model/status.dart';
 import 'package:mastodon/src/model/status_mention.dart';
+import 'package:mastodon/src/model/collection.dart';
 import 'package:mastodon/src/model/quote_approval.dart';
 import 'package:mastodon/src/model/media_attachment.dart';
 import 'package:mastodon/src/model/status_application.dart';
@@ -100,6 +101,8 @@ class CreateStatus200Response {
     this.reblog,
 
     this.reblogged,
+
+    this.taggedCollections,
 
     this.text,
 
@@ -243,6 +246,10 @@ class CreateStatus200Response {
   @JsonKey(name: r'reblogged', required: false, includeIfNull: false)
   final bool? reblogged;
 
+  /// If `content` includes links to Collections that the server recognized, this includes the actual Collections.
+  @JsonKey(name: r'tagged_collections', required: false, includeIfNull: false)
+  final List<Collection>? taggedCollections;
+
   /// Plain-text source of a status. Returned instead of `content` when status is deleted, so the user may redraft from the source text without the client having to reverse-engineer the original text from the HTML content.
   @JsonKey(name: r'text', required: false, includeIfNull: false)
   final String? text;
@@ -289,6 +296,7 @@ class CreateStatus200Response {
           other.quotesCount == quotesCount &&
           other.reblog == reblog &&
           other.reblogged == reblogged &&
+          other.taggedCollections == taggedCollections &&
           other.text == text &&
           other.url == url;
 
@@ -328,6 +336,7 @@ class CreateStatus200Response {
       quotesCount.hashCode +
       reblog.hashCode +
       reblogged.hashCode +
+      taggedCollections.hashCode +
       text.hashCode +
       url.hashCode;
 

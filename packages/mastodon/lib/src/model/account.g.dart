@@ -45,7 +45,13 @@ abstract class _$AccountCWProxy {
 
   Account username(String username);
 
+  Account avatarDescription(String? avatarDescription);
+
   Account discoverable(bool? discoverable);
+
+  Account featureApproval(FeatureApproval? featureApproval);
+
+  Account headerDescription(String? headerDescription);
 
   Account hideCollections(bool? hideCollections);
 
@@ -100,7 +106,10 @@ abstract class _$AccountCWProxy {
     int statusesCount,
     Uri uri,
     String username,
+    String? avatarDescription,
     bool? discoverable,
+    FeatureApproval? featureApproval,
+    String? headerDescription,
     bool? hideCollections,
     bool? indexable,
     DateTime? lastStatusAt,
@@ -185,7 +194,19 @@ class _$AccountCWProxyImpl implements _$AccountCWProxy {
   Account username(String username) => call(username: username);
 
   @override
+  Account avatarDescription(String? avatarDescription) =>
+      call(avatarDescription: avatarDescription);
+
+  @override
   Account discoverable(bool? discoverable) => call(discoverable: discoverable);
+
+  @override
+  Account featureApproval(FeatureApproval? featureApproval) =>
+      call(featureApproval: featureApproval);
+
+  @override
+  Account headerDescription(String? headerDescription) =>
+      call(headerDescription: headerDescription);
 
   @override
   Account hideCollections(bool? hideCollections) =>
@@ -257,7 +278,10 @@ class _$AccountCWProxyImpl implements _$AccountCWProxy {
     Object? statusesCount = const $CopyWithPlaceholder(),
     Object? uri = const $CopyWithPlaceholder(),
     Object? username = const $CopyWithPlaceholder(),
+    Object? avatarDescription = const $CopyWithPlaceholder(),
     Object? discoverable = const $CopyWithPlaceholder(),
+    Object? featureApproval = const $CopyWithPlaceholder(),
+    Object? headerDescription = const $CopyWithPlaceholder(),
     Object? hideCollections = const $CopyWithPlaceholder(),
     Object? indexable = const $CopyWithPlaceholder(),
     Object? lastStatusAt = const $CopyWithPlaceholder(),
@@ -357,10 +381,22 @@ class _$AccountCWProxyImpl implements _$AccountCWProxy {
           ? _value.username
           // ignore: cast_nullable_to_non_nullable
           : username as String,
+      avatarDescription: avatarDescription == const $CopyWithPlaceholder()
+          ? _value.avatarDescription
+          // ignore: cast_nullable_to_non_nullable
+          : avatarDescription as String?,
       discoverable: discoverable == const $CopyWithPlaceholder()
           ? _value.discoverable
           // ignore: cast_nullable_to_non_nullable
           : discoverable as bool?,
+      featureApproval: featureApproval == const $CopyWithPlaceholder()
+          ? _value.featureApproval
+          // ignore: cast_nullable_to_non_nullable
+          : featureApproval as FeatureApproval?,
+      headerDescription: headerDescription == const $CopyWithPlaceholder()
+          ? _value.headerDescription
+          // ignore: cast_nullable_to_non_nullable
+          : headerDescription as String?,
       hideCollections: hideCollections == const $CopyWithPlaceholder()
           ? _value.hideCollections
           // ignore: cast_nullable_to_non_nullable
@@ -504,7 +540,21 @@ Account _$AccountFromJson(Map<String, dynamic> json) => $checkedCreate(
       ),
       uri: $checkedConvert('uri', (v) => Uri.parse(v as String)),
       username: $checkedConvert('username', (v) => v as String),
+      avatarDescription: $checkedConvert(
+        'avatar_description',
+        (v) => v as String?,
+      ),
       discoverable: $checkedConvert('discoverable', (v) => v as bool?),
+      featureApproval: $checkedConvert(
+        'feature_approval',
+        (v) => v == null
+            ? null
+            : FeatureApproval.fromJson(v as Map<String, dynamic>),
+      ),
+      headerDescription: $checkedConvert(
+        'header_description',
+        (v) => v as String?,
+      ),
       hideCollections: $checkedConvert('hide_collections', (v) => v as bool?),
       indexable: $checkedConvert('indexable', (v) => v as bool?),
       lastStatusAt: $checkedConvert(
@@ -546,6 +596,9 @@ Account _$AccountFromJson(Map<String, dynamic> json) => $checkedCreate(
     'followingCount': 'following_count',
     'headerStatic': 'header_static',
     'statusesCount': 'statuses_count',
+    'avatarDescription': 'avatar_description',
+    'featureApproval': 'feature_approval',
+    'headerDescription': 'header_description',
     'hideCollections': 'hide_collections',
     'lastStatusAt': 'last_status_at',
     'showFeatured': 'show_featured',
@@ -574,7 +627,10 @@ Map<String, dynamic> _$AccountToJson(Account instance) => <String, dynamic>{
   'statuses_count': instance.statusesCount,
   'uri': instance.uri.toString(),
   'username': instance.username,
+  'avatar_description': ?instance.avatarDescription,
   'discoverable': ?instance.discoverable,
+  'feature_approval': ?instance.featureApproval?.toJson(),
+  'header_description': ?instance.headerDescription,
   'hide_collections': ?instance.hideCollections,
   'indexable': ?instance.indexable,
   'last_status_at': ?instance.lastStatusAt?.toIso8601String(),
