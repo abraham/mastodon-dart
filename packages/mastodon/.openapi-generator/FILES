@@ -30,6 +30,9 @@ doc/Announcement.md
 doc/AnnouncementAccount.md
 doc/AnnouncementStatus.md
 doc/AnnouncementsApi.md
+doc/AnnualReport.md
+doc/AnnualReportData.md
+doc/AnnualReportsApi.md
 doc/Appeal.md
 doc/AppealStateEnum.md
 doc/Application.md
@@ -270,6 +273,7 @@ lib/src/api.dart
 lib/src/api/account_id_api.dart
 lib/src/api/accounts_api.dart
 lib/src/api/announcements_api.dart
+lib/src/api/annual_reports_api.dart
 lib/src/api/apps_api.dart
 lib/src/api/async_refreshes_api.dart
 lib/src/api/blocks_api.dart
@@ -340,6 +344,8 @@ lib/src/model/admin_tag.dart
 lib/src/model/announcement.dart
 lib/src/model/announcement_account.dart
 lib/src/model/announcement_status.dart
+lib/src/model/annual_report.dart
+lib/src/model/annual_report_data.dart
 lib/src/model/appeal.dart
 lib/src/model/appeal_state_enum.dart
 lib/src/model/application.dart
@@ -564,6 +570,9 @@ test/announcement_account_test.dart
 test/announcement_status_test.dart
 test/announcement_test.dart
 test/announcements_api_test.dart
+test/annual_report_data_test.dart
+test/annual_report_test.dart
+test/annual_reports_api_test.dart
 test/appeal_state_enum_test.dart
 test/appeal_test.dart
 test/application_test.dart
