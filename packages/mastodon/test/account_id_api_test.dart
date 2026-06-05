@@ -14,5 +14,14 @@ void main() {
     test('test getByAccountIdCollections', () async {
       // TODO
     });
+
+    // Get all Collections an account is featured in
+    //
+    // Version history:  4.6.0 (`mastodon` [API version] 10) - added
+    //
+    //Future getByAccountIdInCollections(String accountId, { int limit, int offset }) async
+    test('test getByAccountIdInCollections', () async {
+      // TODO
+    });
   });
 }

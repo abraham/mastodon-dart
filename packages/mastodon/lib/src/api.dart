@@ -10,6 +10,7 @@ import 'package:mastodon/src/auth/oauth.dart';
 import 'package:mastodon/src/api/account_id_api.dart';
 import 'package:mastodon/src/api/accounts_api.dart';
 import 'package:mastodon/src/api/announcements_api.dart';
+import 'package:mastodon/src/api/annual_reports_api.dart';
 import 'package:mastodon/src/api/apps_api.dart';
 import 'package:mastodon/src/api/async_refreshes_api.dart';
 import 'package:mastodon/src/api/blocks_api.dart';
@@ -189,6 +190,12 @@ class Mastodon {
   /// by doing that all interceptors will not be executed
   AnnouncementsApi getAnnouncementsApi() {
     return AnnouncementsApi(dio);
+  }
+
+  /// Get AnnualReportsApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  AnnualReportsApi getAnnualReportsApi() {
+    return AnnualReportsApi(dio);
   }
 
   /// Get AppsApi instance, base route and serializer can be overridden by a given but be careful,

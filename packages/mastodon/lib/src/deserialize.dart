@@ -19,6 +19,8 @@ import 'package:mastodon/src/model/admin_tag.dart';
 import 'package:mastodon/src/model/announcement.dart';
 import 'package:mastodon/src/model/announcement_account.dart';
 import 'package:mastodon/src/model/announcement_status.dart';
+import 'package:mastodon/src/model/annual_report.dart';
+import 'package:mastodon/src/model/annual_report_data.dart';
 import 'package:mastodon/src/model/appeal.dart';
 import 'package:mastodon/src/model/application.dart';
 import 'package:mastodon/src/model/async_refresh.dart';
@@ -276,6 +278,11 @@ ReturnType deserialize<ReturnType, BaseType>(
           as ReturnType;
     case 'AnnouncementStatus':
       return AnnouncementStatus.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'AnnualReport':
+      return AnnualReport.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'AnnualReportData':
+      return AnnualReportData.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'Appeal':
       return Appeal.fromJson(value as Map<String, dynamic>) as ReturnType;
