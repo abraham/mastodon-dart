@@ -48,6 +48,10 @@ enum OAuthScope {
   readColonBookmarks(r'read:bookmarks'),
 
   /// OAuth scope for API access
+  @JsonValue(r'read:collections')
+  readColonCollections(r'read:collections'),
+
+  /// OAuth scope for API access
   @JsonValue(r'read:favourites')
   readColonFavourites(r'read:favourites'),
 
@@ -90,6 +94,10 @@ enum OAuthScope {
   /// OAuth scope for API access
   @JsonValue(r'write:bookmarks')
   writeColonBookmarks(r'write:bookmarks'),
+
+  /// OAuth scope for API access
+  @JsonValue(r'write:collections')
+  writeColonCollections(r'write:collections'),
 
   /// OAuth scope for API access
   @JsonValue(r'write:conversations')
