@@ -536,6 +536,7 @@ Authentication schemes defined for the API:
  - **read:accounts**: Read access to accounts
  - **read:blocks**: Read access to blocks
  - **read:bookmarks**: Read access to bookmarks
+ - **read:collections**: Read access to collections
  - **read:favourites**: Read access to favourites
  - **read:filters**: Read access to filters
  - **read:follows**: Read access to follows
@@ -547,6 +548,7 @@ Authentication schemes defined for the API:
  - **write:accounts**: Write access to accounts
  - **write:blocks**: Write access to blocks
  - **write:bookmarks**: Write access to bookmarks
+ - **write:collections**: Write access to collections
  - **write:conversations**: Write access to conversations
  - **write:favourites**: Write access to favourites
  - **write:filters**: Write access to filters
