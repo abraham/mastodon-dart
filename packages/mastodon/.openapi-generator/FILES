@@ -99,6 +99,7 @@ doc/ExtendedDescription.md
 doc/FamiliarFollowers.md
 doc/FavouritesApi.md
 doc/FeatureApproval.md
+doc/FeatureApprovalAutomaticEnum.md
 doc/FeatureApprovalCurrentUserEnum.md
 doc/FeaturedTag.md
 doc/FeaturedTagsApi.md
@@ -400,6 +401,7 @@ lib/src/model/error.dart
 lib/src/model/extended_description.dart
 lib/src/model/familiar_followers.dart
 lib/src/model/feature_approval.dart
+lib/src/model/feature_approval_automatic_enum.dart
 lib/src/model/feature_approval_current_user_enum.dart
 lib/src/model/featured_tag.dart
 lib/src/model/field.dart
@@ -638,6 +640,7 @@ test/error_test.dart
 test/extended_description_test.dart
 test/familiar_followers_test.dart
 test/favourites_api_test.dart
+test/feature_approval_automatic_enum_test.dart
 test/feature_approval_current_user_enum_test.dart
 test/feature_approval_test.dart
 test/featured_tag_test.dart

@@ -445,6 +445,7 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'FeatureApproval':
       return FeatureApproval.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'FeatureApprovalAutomaticEnum':
     case 'FeatureApprovalCurrentUserEnum':
     case 'FeaturedTag':
       return FeaturedTag.fromJson(value as Map<String, dynamic>) as ReturnType;

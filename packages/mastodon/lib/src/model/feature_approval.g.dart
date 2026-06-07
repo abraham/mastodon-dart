@@ -7,7 +7,7 @@ part of 'feature_approval.dart';
 // **************************************************************************
 
 abstract class _$FeatureApprovalCWProxy {
-  FeatureApproval automatic(List<QuoteApprovalAutomaticEnum> automatic);
+  FeatureApproval automatic(List<FeatureApprovalAutomaticEnum> automatic);
 
   FeatureApproval currentUser(FeatureApprovalCurrentUserEnum currentUser);
 
@@ -21,7 +21,7 @@ abstract class _$FeatureApprovalCWProxy {
   /// FeatureApproval(...).copyWith(id: 12, name: "My name")
   /// ```
   FeatureApproval call({
-    List<QuoteApprovalAutomaticEnum> automatic,
+    List<FeatureApprovalAutomaticEnum> automatic,
     FeatureApprovalCurrentUserEnum currentUser,
     List<QuoteApprovalAutomaticEnum> manual,
   });
@@ -35,7 +35,7 @@ class _$FeatureApprovalCWProxyImpl implements _$FeatureApprovalCWProxy {
   final FeatureApproval _value;
 
   @override
-  FeatureApproval automatic(List<QuoteApprovalAutomaticEnum> automatic) =>
+  FeatureApproval automatic(List<FeatureApprovalAutomaticEnum> automatic) =>
       call(automatic: automatic);
 
   @override
@@ -63,7 +63,7 @@ class _$FeatureApprovalCWProxyImpl implements _$FeatureApprovalCWProxy {
       automatic: automatic == const $CopyWithPlaceholder() || automatic == null
           ? _value.automatic
           // ignore: cast_nullable_to_non_nullable
-          : automatic as List<QuoteApprovalAutomaticEnum>,
+          : automatic as List<FeatureApprovalAutomaticEnum>,
       currentUser:
           currentUser == const $CopyWithPlaceholder() || currentUser == null
           ? _value.currentUser
@@ -98,7 +98,7 @@ FeatureApproval _$FeatureApprovalFromJson(Map<String, dynamic> json) =>
         automatic: $checkedConvert(
           'automatic',
           (v) => (v as List<dynamic>)
-              .map((e) => $enumDecode(_$QuoteApprovalAutomaticEnumEnumMap, e))
+              .map((e) => $enumDecode(_$FeatureApprovalAutomaticEnumEnumMap, e))
               .toList(),
         ),
         currentUser: $checkedConvert(
@@ -118,7 +118,7 @@ FeatureApproval _$FeatureApprovalFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$FeatureApprovalToJson(FeatureApproval instance) =>
     <String, dynamic>{
       'automatic': instance.automatic
-          .map((e) => _$QuoteApprovalAutomaticEnumEnumMap[e]!)
+          .map((e) => _$FeatureApprovalAutomaticEnumEnumMap[e]!)
           .toList(),
       'current_user':
           _$FeatureApprovalCurrentUserEnumEnumMap[instance.currentUser]!,
@@ -127,11 +127,12 @@ Map<String, dynamic> _$FeatureApprovalToJson(FeatureApproval instance) =>
           .toList(),
     };
 
-const _$QuoteApprovalAutomaticEnumEnumMap = {
-  QuoteApprovalAutomaticEnum.public: 'public',
-  QuoteApprovalAutomaticEnum.followers: 'followers',
-  QuoteApprovalAutomaticEnum.following: 'following',
-  QuoteApprovalAutomaticEnum.unsupportedPolicy: 'unsupported_policy',
+const _$FeatureApprovalAutomaticEnumEnumMap = {
+  FeatureApprovalAutomaticEnum.public: 'public',
+  FeatureApprovalAutomaticEnum.followers: 'followers',
+  FeatureApprovalAutomaticEnum.following: 'following',
+  FeatureApprovalAutomaticEnum.unsupportedPolicy: 'unsupported_policy',
+  FeatureApprovalAutomaticEnum.disabled: 'disabled',
 };
 
 const _$FeatureApprovalCurrentUserEnumEnumMap = {
@@ -140,4 +141,11 @@ const _$FeatureApprovalCurrentUserEnumEnumMap = {
   FeatureApprovalCurrentUserEnum.denied: 'denied',
   FeatureApprovalCurrentUserEnum.unknown: 'unknown',
   FeatureApprovalCurrentUserEnum.missing: 'missing',
+};
+
+const _$QuoteApprovalAutomaticEnumEnumMap = {
+  QuoteApprovalAutomaticEnum.public: 'public',
+  QuoteApprovalAutomaticEnum.followers: 'followers',
+  QuoteApprovalAutomaticEnum.following: 'following',
+  QuoteApprovalAutomaticEnum.unsupportedPolicy: 'unsupported_policy',
 };

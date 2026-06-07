@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:mastodon/src/model/feature_approval_current_user_enum.dart';
+import 'package:mastodon/src/model/feature_approval_automatic_enum.dart';
 import 'package:mastodon/src/model/quote_approval_automatic_enum.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -29,7 +30,7 @@ class FeatureApproval {
 
   /// Describes who is expected to be able to feature the account in a Collection and have this authorized automatically. An empty list means that nobody is expected to be able to feature this account with automatic approval. Other values may be added in the future, so unknown values should be treated as `unsupported_policy`.
   @JsonKey(name: r'automatic', required: true, includeIfNull: false)
-  final List<QuoteApprovalAutomaticEnum> automatic;
+  final List<FeatureApprovalAutomaticEnum> automatic;
 
   /// Describes how this account's feature approval policy applies to the current user.
   @JsonKey(name: r'current_user', required: true, includeIfNull: false)

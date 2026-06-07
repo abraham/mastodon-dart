@@ -133,6 +133,7 @@ export 'package:mastodon/src/model/error.dart';
 export 'package:mastodon/src/model/extended_description.dart';
 export 'package:mastodon/src/model/familiar_followers.dart';
 export 'package:mastodon/src/model/feature_approval.dart';
+export 'package:mastodon/src/model/feature_approval_automatic_enum.dart';
 export 'package:mastodon/src/model/feature_approval_current_user_enum.dart';
 export 'package:mastodon/src/model/featured_tag.dart';
 export 'package:mastodon/src/model/field.dart';
