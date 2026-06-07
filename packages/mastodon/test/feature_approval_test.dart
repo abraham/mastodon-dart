@@ -8,7 +8,7 @@ void main() {
 
   group(FeatureApproval, () {
     // Describes who is expected to be able to feature the account in a Collection and have this authorized automatically. An empty list means that nobody is expected to be able to feature this account with automatic approval. Other values may be added in the future, so unknown values should be treated as `unsupported_policy`.
-    // List<QuoteApprovalAutomaticEnum> automatic
+    // List<FeatureApprovalAutomaticEnum> automatic
     test('to test the property `automatic`', () async {
       // TODO
     });

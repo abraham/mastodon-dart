@@ -362,6 +362,7 @@ Class | Method | HTTP request | Description
  - [ExtendedDescription](doc/ExtendedDescription.md)
  - [FamiliarFollowers](doc/FamiliarFollowers.md)
  - [FeatureApproval](doc/FeatureApproval.md)
+ - [FeatureApprovalAutomaticEnum](doc/FeatureApprovalAutomaticEnum.md)
  - [FeatureApprovalCurrentUserEnum](doc/FeatureApprovalCurrentUserEnum.md)
  - [FeaturedTag](doc/FeaturedTag.md)
  - [Field](doc/Field.md)
