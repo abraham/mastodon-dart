@@ -2,12 +2,15 @@
 
 ## v1.0.0-beta.12
 
+**Features**
+
+- Add FeatureApproval#disabled
+
 ## v1.0.0-beta.11
 
 **Features**
 
 - Add collections oauth scopes
-
 
 ## v1.0.0-beta.10
 
