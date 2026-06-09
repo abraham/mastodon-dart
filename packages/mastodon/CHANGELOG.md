@@ -1,5 +1,11 @@
 ## Unreleased
 
+## v1.0.0-beta.13
+
+**Features**
+
+- Updated OpenAPI Generator to [v7.23.0](https://github.com/OpenAPITools/openapi-generator/releases/tag/v7.23.0)
+
 ## v1.0.0-beta.12
 
 **Features**
