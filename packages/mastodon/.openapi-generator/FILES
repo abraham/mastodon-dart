@@ -66,7 +66,6 @@ doc/CreateFilterV2RequestKeywordsAttributesInner.md
 doc/CreateListRequest.md
 doc/CreateMarkerRequest.md
 doc/CreateMarkerRequestHome.md
-doc/CreateMarkerRequestNotifications.md
 doc/CreatePushSubscriptionRequest.md
 doc/CreatePushSubscriptionRequestData.md
 doc/CreatePushSubscriptionRequestDataAlerts.md
@@ -85,8 +84,6 @@ doc/CustomError422.md
 doc/CustomError422Error.md
 doc/CustomError422ErrorDetails.md
 doc/CustomError422ErrorDetailsNameInner.md
-doc/DeleteDomainBlocksRequest.md
-doc/DeleteListAccountsRequest.md
 doc/DirectoryApi.md
 doc/DiscoverOauthServerConfigurationResponse.md
 doc/DomainBlock.md
@@ -128,7 +125,6 @@ doc/InstanceConfigurationStatuses.md
 doc/InstanceConfigurationTimelinesAccess.md
 doc/InstanceConfigurationTimelinesAccessHashtagFeeds.md
 doc/InstanceConfigurationTimelinesAccessLiveFeeds.md
-doc/InstanceConfigurationTimelinesAccessTrendingLinkFeeds.md
 doc/InstanceConfigurationTranslation.md
 doc/InstanceConfigurationUrls.md
 doc/InstanceContact.md
@@ -249,9 +245,7 @@ doc/TrendsLink.md
 doc/TrendsLinkHistoryInner.md
 doc/TrendsLinkTypeEnum.md
 doc/UpdateCollectionRequest.md
-doc/UpdateFilterRequest.md
 doc/UpdateFilterV2Request.md
-doc/UpdateFilterV2RequestKeywordsAttributesInner.md
 doc/UpdateScheduledStatusRequest.md
 doc/UpdateStatusInteractionPolicyRequest.md
 doc/UpdateStatusRequest.md
@@ -374,7 +368,6 @@ lib/src/model/create_filter_v2_request_keywords_attributes_inner.dart
 lib/src/model/create_list_request.dart
 lib/src/model/create_marker_request.dart
 lib/src/model/create_marker_request_home.dart
-lib/src/model/create_marker_request_notifications.dart
 lib/src/model/create_push_subscription_request.dart
 lib/src/model/create_push_subscription_request_data.dart
 lib/src/model/create_push_subscription_request_data_alerts.dart
@@ -392,8 +385,6 @@ lib/src/model/custom_error422.dart
 lib/src/model/custom_error422_error.dart
 lib/src/model/custom_error422_error_details.dart
 lib/src/model/custom_error422_error_details_name_inner.dart
-lib/src/model/delete_domain_blocks_request.dart
-lib/src/model/delete_list_accounts_request.dart
 lib/src/model/discover_oauth_server_configuration_response.dart
 lib/src/model/domain_block.dart
 lib/src/model/domain_block_severity_enum.dart
@@ -424,7 +415,6 @@ lib/src/model/instance_configuration_statuses.dart
 lib/src/model/instance_configuration_timelines_access.dart
 lib/src/model/instance_configuration_timelines_access_hashtag_feeds.dart
 lib/src/model/instance_configuration_timelines_access_live_feeds.dart
-lib/src/model/instance_configuration_timelines_access_trending_link_feeds.dart
 lib/src/model/instance_configuration_translation.dart
 lib/src/model/instance_configuration_urls.dart
 lib/src/model/instance_contact.dart
@@ -525,9 +515,7 @@ lib/src/model/trends_link.dart
 lib/src/model/trends_link_history_inner.dart
 lib/src/model/trends_link_type_enum.dart
 lib/src/model/update_collection_request.dart
-lib/src/model/update_filter_request.dart
 lib/src/model/update_filter_v2_request.dart
-lib/src/model/update_filter_v2_request_keywords_attributes_inner.dart
 lib/src/model/update_scheduled_status_request.dart
 lib/src/model/update_status_interaction_policy_request.dart
 lib/src/model/update_status_request.dart
@@ -607,7 +595,6 @@ test/create_filter_v2_request_keywords_attributes_inner_test.dart
 test/create_filter_v2_request_test.dart
 test/create_list_request_test.dart
 test/create_marker_request_home_test.dart
-test/create_marker_request_notifications_test.dart
 test/create_marker_request_test.dart
 test/create_push_subscription_request_data_alerts_test.dart
 test/create_push_subscription_request_data_test.dart
@@ -627,8 +614,6 @@ test/custom_error422_error_details_name_inner_test.dart
 test/custom_error422_error_details_test.dart
 test/custom_error422_error_test.dart
 test/custom_error422_test.dart
-test/delete_domain_blocks_request_test.dart
-test/delete_list_accounts_request_test.dart
 test/directory_api_test.dart
 test/discover_oauth_server_configuration_response_test.dart
 test/domain_block_severity_enum_test.dart
@@ -669,7 +654,6 @@ test/instance_configuration_test.dart
 test/instance_configuration_timelines_access_hashtag_feeds_test.dart
 test/instance_configuration_timelines_access_live_feeds_test.dart
 test/instance_configuration_timelines_access_test.dart
-test/instance_configuration_timelines_access_trending_link_feeds_test.dart
 test/instance_configuration_translation_test.dart
 test/instance_configuration_urls_test.dart
 test/instance_contact_test.dart
@@ -791,8 +775,6 @@ test/trends_link_history_inner_test.dart
 test/trends_link_test.dart
 test/trends_link_type_enum_test.dart
 test/update_collection_request_test.dart
-test/update_filter_request_test.dart
-test/update_filter_v2_request_keywords_attributes_inner_test.dart
 test/update_filter_v2_request_test.dart
 test/update_scheduled_status_request_test.dart
 test/update_status_interaction_policy_request_test.dart

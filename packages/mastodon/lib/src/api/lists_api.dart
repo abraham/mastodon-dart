@@ -12,7 +12,6 @@ import 'package:dio/dio.dart';
 import 'package:mastodon/src/model/account.dart';
 import 'package:mastodon/src/model/model_list.dart';
 import 'package:mastodon/src/model/create_list_request.dart';
-import 'package:mastodon/src/model/delete_list_accounts_request.dart';
 import 'package:mastodon/src/model/post_list_accounts_request.dart';
 
 class ListsApi {
@@ -175,7 +174,7 @@ class ListsApi {
   ///
   /// Parameters:
   /// * [id] - id parameter
-  /// * [deleteListAccountsRequest] - JSON request body parameters
+  /// * [postListAccountsRequest] - JSON request body parameters
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -189,7 +188,7 @@ class ListsApi {
   /// Also see [Remove accounts from list Documentation](https://docs.joinmastodon.org/methods/lists/#accounts-remove)
   Future<Response<void>> deleteListAccounts({
     required String id,
-    required DeleteListAccountsRequest deleteListAccountsRequest,
+    required PostListAccountsRequest postListAccountsRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -220,7 +219,7 @@ class ListsApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = jsonEncode(deleteListAccountsRequest);
+      _bodyData = jsonEncode(postListAccountsRequest);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(_dio.options, _path),

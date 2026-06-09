@@ -16,7 +16,7 @@ abstract class _$InstanceConfigurationTimelinesAccessCWProxy {
   );
 
   InstanceConfigurationTimelinesAccess trendingLinkFeeds(
-    InstanceConfigurationTimelinesAccessTrendingLinkFeeds? trendingLinkFeeds,
+    InstanceConfigurationTimelinesAccessHashtagFeeds? trendingLinkFeeds,
   );
 
   /// Creates a new instance with the provided field values.
@@ -29,7 +29,7 @@ abstract class _$InstanceConfigurationTimelinesAccessCWProxy {
   InstanceConfigurationTimelinesAccess call({
     InstanceConfigurationTimelinesAccessLiveFeeds? liveFeeds,
     InstanceConfigurationTimelinesAccessHashtagFeeds? hashtagFeeds,
-    InstanceConfigurationTimelinesAccessTrendingLinkFeeds? trendingLinkFeeds,
+    InstanceConfigurationTimelinesAccessHashtagFeeds? trendingLinkFeeds,
   });
 }
 
@@ -53,7 +53,7 @@ class _$InstanceConfigurationTimelinesAccessCWProxyImpl
 
   @override
   InstanceConfigurationTimelinesAccess trendingLinkFeeds(
-    InstanceConfigurationTimelinesAccessTrendingLinkFeeds? trendingLinkFeeds,
+    InstanceConfigurationTimelinesAccessHashtagFeeds? trendingLinkFeeds,
   ) => call(trendingLinkFeeds: trendingLinkFeeds);
 
   @override
@@ -82,7 +82,7 @@ class _$InstanceConfigurationTimelinesAccessCWProxyImpl
           ? _value.trendingLinkFeeds
           // ignore: cast_nullable_to_non_nullable
           : trendingLinkFeeds
-                as InstanceConfigurationTimelinesAccessTrendingLinkFeeds?,
+                as InstanceConfigurationTimelinesAccessHashtagFeeds?,
     );
   }
 }
@@ -101,46 +101,45 @@ extension $InstanceConfigurationTimelinesAccessCopyWith
 // **************************************************************************
 
 InstanceConfigurationTimelinesAccess
-_$InstanceConfigurationTimelinesAccessFromJson(
-  Map<String, dynamic> json,
-) => $checkedCreate(
-  'InstanceConfigurationTimelinesAccess',
-  json,
-  ($checkedConvert) {
-    final val = InstanceConfigurationTimelinesAccess(
-      liveFeeds: $checkedConvert(
-        'live_feeds',
-        (v) => v == null
-            ? null
-            : InstanceConfigurationTimelinesAccessLiveFeeds.fromJson(
-                v as Map<String, dynamic>,
-              ),
-      ),
-      hashtagFeeds: $checkedConvert(
-        'hashtag_feeds',
-        (v) => v == null
-            ? null
-            : InstanceConfigurationTimelinesAccessHashtagFeeds.fromJson(
-                v as Map<String, dynamic>,
-              ),
-      ),
-      trendingLinkFeeds: $checkedConvert(
-        'trending_link_feeds',
-        (v) => v == null
-            ? null
-            : InstanceConfigurationTimelinesAccessTrendingLinkFeeds.fromJson(
-                v as Map<String, dynamic>,
-              ),
-      ),
+_$InstanceConfigurationTimelinesAccessFromJson(Map<String, dynamic> json) =>
+    $checkedCreate(
+      'InstanceConfigurationTimelinesAccess',
+      json,
+      ($checkedConvert) {
+        final val = InstanceConfigurationTimelinesAccess(
+          liveFeeds: $checkedConvert(
+            'live_feeds',
+            (v) => v == null
+                ? null
+                : InstanceConfigurationTimelinesAccessLiveFeeds.fromJson(
+                    v as Map<String, dynamic>,
+                  ),
+          ),
+          hashtagFeeds: $checkedConvert(
+            'hashtag_feeds',
+            (v) => v == null
+                ? null
+                : InstanceConfigurationTimelinesAccessHashtagFeeds.fromJson(
+                    v as Map<String, dynamic>,
+                  ),
+          ),
+          trendingLinkFeeds: $checkedConvert(
+            'trending_link_feeds',
+            (v) => v == null
+                ? null
+                : InstanceConfigurationTimelinesAccessHashtagFeeds.fromJson(
+                    v as Map<String, dynamic>,
+                  ),
+          ),
+        );
+        return val;
+      },
+      fieldKeyMap: const {
+        'liveFeeds': 'live_feeds',
+        'hashtagFeeds': 'hashtag_feeds',
+        'trendingLinkFeeds': 'trending_link_feeds',
+      },
     );
-    return val;
-  },
-  fieldKeyMap: const {
-    'liveFeeds': 'live_feeds',
-    'hashtagFeeds': 'hashtag_feeds',
-    'trendingLinkFeeds': 'trending_link_feeds',
-  },
-);
 
 Map<String, dynamic> _$InstanceConfigurationTimelinesAccessToJson(
   InstanceConfigurationTimelinesAccess instance,

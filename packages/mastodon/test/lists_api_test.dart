@@ -28,7 +28,7 @@ void main() {
     //
     // Remove accounts from the given list.  Version history:  2.1.0 - added
     //
-    //Future deleteListAccounts(String id, DeleteListAccountsRequest deleteListAccountsRequest) async
+    //Future deleteListAccounts(String id, PostListAccountsRequest postListAccountsRequest) async
     test('test deleteListAccounts', () async {
       // TODO
     });

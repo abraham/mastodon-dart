@@ -16,7 +16,6 @@ import 'package:mastodon/src/model/filter_keyword.dart';
 import 'package:mastodon/src/model/filter_status.dart';
 import 'package:mastodon/src/model/post_filter_keywords_v2_request.dart';
 import 'package:mastodon/src/model/post_filter_statuses_v2_request.dart';
-import 'package:mastodon/src/model/update_filter_request.dart';
 import 'package:mastodon/src/model/update_filter_v2_request.dart';
 import 'package:mastodon/src/model/v1_filter.dart';
 
@@ -1336,7 +1335,7 @@ class FiltersApi {
   ///
   /// Parameters:
   /// * [id] - id parameter
-  /// * [updateFilterRequest] - JSON request body parameters
+  /// * [createFilterRequest] - JSON request body parameters
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -1351,7 +1350,7 @@ class FiltersApi {
   @Deprecated('This operation has been deprecated')
   Future<Response<V1Filter>> updateFilter({
     required String id,
-    required UpdateFilterRequest updateFilterRequest,
+    required CreateFilterRequest createFilterRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -1382,7 +1381,7 @@ class FiltersApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = jsonEncode(updateFilterRequest);
+      _bodyData = jsonEncode(createFilterRequest);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(_dio.options, _path),

@@ -776,7 +776,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateFilter**
-> V1Filter updateFilter(id, updateFilterRequest)
+> V1Filter updateFilter(id, createFilterRequest)
 
 Update a filter
 
@@ -792,10 +792,10 @@ import 'package:mastodon/api.dart';
 
 final api = Mastodon().getFiltersApi();
 final String id = id_example; // String | id parameter
-final UpdateFilterRequest updateFilterRequest = ; // UpdateFilterRequest | JSON request body parameters
+final CreateFilterRequest createFilterRequest = ; // CreateFilterRequest | JSON request body parameters
 
 try {
-    final response = api.updateFilter(id, updateFilterRequest);
+    final response = api.updateFilter(id, createFilterRequest);
     print(response);
 } on DioException catch (e) {
     print('Exception when calling FiltersApi->updateFilter: $e\n');
@@ -807,7 +807,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| id parameter | 
- **updateFilterRequest** | [**UpdateFilterRequest**](UpdateFilterRequest.md)| JSON request body parameters | 
+ **createFilterRequest** | [**CreateFilterRequest**](CreateFilterRequest.md)| JSON request body parameters | 
 
 ### Return type
 

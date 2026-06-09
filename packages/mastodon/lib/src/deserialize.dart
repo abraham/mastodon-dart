@@ -45,7 +45,6 @@ import 'package:mastodon/src/model/create_filter_v2_request_keywords_attributes_
 import 'package:mastodon/src/model/create_list_request.dart';
 import 'package:mastodon/src/model/create_marker_request.dart';
 import 'package:mastodon/src/model/create_marker_request_home.dart';
-import 'package:mastodon/src/model/create_marker_request_notifications.dart';
 import 'package:mastodon/src/model/create_push_subscription_request.dart';
 import 'package:mastodon/src/model/create_push_subscription_request_data.dart';
 import 'package:mastodon/src/model/create_push_subscription_request_data_alerts.dart';
@@ -62,8 +61,6 @@ import 'package:mastodon/src/model/custom_error422.dart';
 import 'package:mastodon/src/model/custom_error422_error.dart';
 import 'package:mastodon/src/model/custom_error422_error_details.dart';
 import 'package:mastodon/src/model/custom_error422_error_details_name_inner.dart';
-import 'package:mastodon/src/model/delete_domain_blocks_request.dart';
-import 'package:mastodon/src/model/delete_list_accounts_request.dart';
 import 'package:mastodon/src/model/discover_oauth_server_configuration_response.dart';
 import 'package:mastodon/src/model/domain_block.dart';
 import 'package:mastodon/src/model/error.dart';
@@ -89,7 +86,6 @@ import 'package:mastodon/src/model/instance_configuration_statuses.dart';
 import 'package:mastodon/src/model/instance_configuration_timelines_access.dart';
 import 'package:mastodon/src/model/instance_configuration_timelines_access_hashtag_feeds.dart';
 import 'package:mastodon/src/model/instance_configuration_timelines_access_live_feeds.dart';
-import 'package:mastodon/src/model/instance_configuration_timelines_access_trending_link_feeds.dart';
 import 'package:mastodon/src/model/instance_configuration_translation.dart';
 import 'package:mastodon/src/model/instance_configuration_urls.dart';
 import 'package:mastodon/src/model/instance_contact.dart';
@@ -178,9 +174,7 @@ import 'package:mastodon/src/model/translation_poll_option.dart';
 import 'package:mastodon/src/model/trends_link.dart';
 import 'package:mastodon/src/model/trends_link_history_inner.dart';
 import 'package:mastodon/src/model/update_collection_request.dart';
-import 'package:mastodon/src/model/update_filter_request.dart';
 import 'package:mastodon/src/model/update_filter_v2_request.dart';
-import 'package:mastodon/src/model/update_filter_v2_request_keywords_attributes_inner.dart';
 import 'package:mastodon/src/model/update_scheduled_status_request.dart';
 import 'package:mastodon/src/model/update_status_interaction_policy_request.dart';
 import 'package:mastodon/src/model/update_status_request.dart';
@@ -355,11 +349,6 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'CreateMarkerRequestHome':
       return CreateMarkerRequestHome.fromJson(value as Map<String, dynamic>)
           as ReturnType;
-    case 'CreateMarkerRequestNotifications':
-      return CreateMarkerRequestNotifications.fromJson(
-            value as Map<String, dynamic>,
-          )
-          as ReturnType;
     case 'CreatePushSubscriptionRequest':
       return CreatePushSubscriptionRequest.fromJson(
             value as Map<String, dynamic>,
@@ -419,12 +408,6 @@ ReturnType deserialize<ReturnType, BaseType>(
       return CustomError422ErrorDetailsNameInner.fromJson(
             value as Map<String, dynamic>,
           )
-          as ReturnType;
-    case 'DeleteDomainBlocksRequest':
-      return DeleteDomainBlocksRequest.fromJson(value as Map<String, dynamic>)
-          as ReturnType;
-    case 'DeleteListAccountsRequest':
-      return DeleteListAccountsRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'DiscoverOauthServerConfigurationResponse':
       return DiscoverOauthServerConfigurationResponse.fromJson(
@@ -511,11 +494,6 @@ ReturnType deserialize<ReturnType, BaseType>(
           as ReturnType;
     case 'InstanceConfigurationTimelinesAccessLiveFeeds':
       return InstanceConfigurationTimelinesAccessLiveFeeds.fromJson(
-            value as Map<String, dynamic>,
-          )
-          as ReturnType;
-    case 'InstanceConfigurationTimelinesAccessTrendingLinkFeeds':
-      return InstanceConfigurationTimelinesAccessTrendingLinkFeeds.fromJson(
             value as Map<String, dynamic>,
           )
           as ReturnType;
@@ -771,16 +749,8 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'UpdateCollectionRequest':
       return UpdateCollectionRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
-    case 'UpdateFilterRequest':
-      return UpdateFilterRequest.fromJson(value as Map<String, dynamic>)
-          as ReturnType;
     case 'UpdateFilterV2Request':
       return UpdateFilterV2Request.fromJson(value as Map<String, dynamic>)
-          as ReturnType;
-    case 'UpdateFilterV2RequestKeywordsAttributesInner':
-      return UpdateFilterV2RequestKeywordsAttributesInner.fromJson(
-            value as Map<String, dynamic>,
-          )
           as ReturnType;
     case 'UpdateScheduledStatusRequest':
       return UpdateScheduledStatusRequest.fromJson(

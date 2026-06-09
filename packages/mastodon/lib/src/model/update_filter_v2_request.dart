@@ -3,8 +3,8 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:mastodon/src/model/create_filter_v2_request_keywords_attributes_inner.dart';
 import 'package:mastodon/src/model/filter_context_enum.dart';
-import 'package:mastodon/src/model/update_filter_v2_request_keywords_attributes_inner.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -45,7 +45,7 @@ class UpdateFilterV2Request {
 
   /// Array of objects with properties: keyword, whole_word, id, _destroy
   @JsonKey(name: r'keywords_attributes', required: false, includeIfNull: false)
-  final List<UpdateFilterV2RequestKeywordsAttributesInner>? keywordsAttributes;
+  final List<CreateFilterV2RequestKeywordsAttributesInner>? keywordsAttributes;
 
   /// The name of the filter group.
   @JsonKey(name: r'title', required: false, includeIfNull: false)

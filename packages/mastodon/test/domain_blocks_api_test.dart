@@ -19,7 +19,7 @@ void main() {
     //
     // Remove a domain block, if it exists in the user's array of blocked domains.  Version history:  1.4.0 - added
     //
-    //Future deleteDomainBlocks(DeleteDomainBlocksRequest deleteDomainBlocksRequest) async
+    //Future deleteDomainBlocks(CreateDomainBlockRequest createDomainBlockRequest) async
     test('test deleteDomainBlocks', () async {
       // TODO
     });
