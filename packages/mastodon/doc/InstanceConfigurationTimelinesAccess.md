@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **liveFeeds** | [**InstanceConfigurationTimelinesAccessLiveFeeds**](InstanceConfigurationTimelinesAccessLiveFeeds.md) |  | [optional] 
 **hashtagFeeds** | [**InstanceConfigurationTimelinesAccessHashtagFeeds**](InstanceConfigurationTimelinesAccessHashtagFeeds.md) |  | [optional] 
-**trendingLinkFeeds** | [**InstanceConfigurationTimelinesAccessTrendingLinkFeeds**](InstanceConfigurationTimelinesAccessTrendingLinkFeeds.md) |  | [optional] 
+**trendingLinkFeeds** | [**InstanceConfigurationTimelinesAccessHashtagFeeds**](InstanceConfigurationTimelinesAccessHashtagFeeds.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

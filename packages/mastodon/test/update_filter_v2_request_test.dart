@@ -26,7 +26,7 @@ void main() {
     });
 
     // Array of objects with properties: keyword, whole_word, id, _destroy
-    // List<UpdateFilterV2RequestKeywordsAttributesInner> keywordsAttributes
+    // List<CreateFilterV2RequestKeywordsAttributesInner> keywordsAttributes
     test('to test the property `keywordsAttributes`', () async {
       // TODO
     });

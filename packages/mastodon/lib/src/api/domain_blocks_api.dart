@@ -10,7 +10,6 @@ import 'package:mastodon/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
 import 'package:mastodon/src/model/create_domain_block_request.dart';
-import 'package:mastodon/src/model/delete_domain_blocks_request.dart';
 
 class DomainBlocksApi {
   final Dio _dio;
@@ -86,7 +85,7 @@ class DomainBlocksApi {
   /// Remove a domain block, if it exists in the user&#39;s array of blocked domains.  Version history:  1.4.0 - added
   ///
   /// Parameters:
-  /// * [deleteDomainBlocksRequest] - JSON request body parameters
+  /// * [createDomainBlockRequest] - JSON request body parameters
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -99,7 +98,7 @@ class DomainBlocksApi {
   /// Official Mastodon API documentation
   /// Also see [Unblock a domain Documentation](https://docs.joinmastodon.org/methods/domain_blocks/#unblock)
   Future<Response<void>> deleteDomainBlocks({
-    required DeleteDomainBlocksRequest deleteDomainBlocksRequest,
+    required CreateDomainBlockRequest createDomainBlockRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -125,7 +124,7 @@ class DomainBlocksApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = jsonEncode(deleteDomainBlocksRequest);
+      _bodyData = jsonEncode(createDomainBlockRequest);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(_dio.options, _path),

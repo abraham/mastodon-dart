@@ -14,7 +14,7 @@ abstract class _$UpdateFilterV2RequestCWProxy {
   UpdateFilterV2Request filterAction(String? filterAction);
 
   UpdateFilterV2Request keywordsAttributes(
-    List<UpdateFilterV2RequestKeywordsAttributesInner>? keywordsAttributes,
+    List<CreateFilterV2RequestKeywordsAttributesInner>? keywordsAttributes,
   );
 
   UpdateFilterV2Request title(String? title);
@@ -30,7 +30,7 @@ abstract class _$UpdateFilterV2RequestCWProxy {
     List<FilterContextEnum>? context,
     int? expiresIn,
     String? filterAction,
-    List<UpdateFilterV2RequestKeywordsAttributesInner>? keywordsAttributes,
+    List<CreateFilterV2RequestKeywordsAttributesInner>? keywordsAttributes,
     String? title,
   });
 }
@@ -56,7 +56,7 @@ class _$UpdateFilterV2RequestCWProxyImpl
 
   @override
   UpdateFilterV2Request keywordsAttributes(
-    List<UpdateFilterV2RequestKeywordsAttributesInner>? keywordsAttributes,
+    List<CreateFilterV2RequestKeywordsAttributesInner>? keywordsAttributes,
   ) => call(keywordsAttributes: keywordsAttributes);
 
   @override
@@ -94,7 +94,7 @@ class _$UpdateFilterV2RequestCWProxyImpl
           ? _value.keywordsAttributes
           // ignore: cast_nullable_to_non_nullable
           : keywordsAttributes
-                as List<UpdateFilterV2RequestKeywordsAttributesInner>?,
+                as List<CreateFilterV2RequestKeywordsAttributesInner>?,
       title: title == const $CopyWithPlaceholder()
           ? _value.title
           // ignore: cast_nullable_to_non_nullable
@@ -134,7 +134,7 @@ UpdateFilterV2Request _$UpdateFilterV2RequestFromJson(
         'keywords_attributes',
         (v) => (v as List<dynamic>?)
             ?.map(
-              (e) => UpdateFilterV2RequestKeywordsAttributesInner.fromJson(
+              (e) => CreateFilterV2RequestKeywordsAttributesInner.fromJson(
                 e as Map<String, dynamic>,
               ),
             )

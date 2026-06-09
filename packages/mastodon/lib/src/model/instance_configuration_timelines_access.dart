@@ -3,7 +3,6 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:mastodon/src/model/instance_configuration_timelines_access_trending_link_feeds.dart';
 import 'package:mastodon/src/model/instance_configuration_timelines_access_hashtag_feeds.dart';
 import 'package:mastodon/src/model/instance_configuration_timelines_access_live_feeds.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
@@ -35,8 +34,7 @@ class InstanceConfigurationTimelinesAccess {
   final InstanceConfigurationTimelinesAccessHashtagFeeds? hashtagFeeds;
 
   @JsonKey(name: r'trending_link_feeds', required: false, includeIfNull: false)
-  final InstanceConfigurationTimelinesAccessTrendingLinkFeeds?
-  trendingLinkFeeds;
+  final InstanceConfigurationTimelinesAccessHashtagFeeds? trendingLinkFeeds;
 
   @override
   bool operator ==(Object other) =>

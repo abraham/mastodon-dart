@@ -113,7 +113,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteListAccounts**
-> deleteListAccounts(id, deleteListAccountsRequest)
+> deleteListAccounts(id, postListAccountsRequest)
 
 Remove accounts from list
 
@@ -129,10 +129,10 @@ import 'package:mastodon/api.dart';
 
 final api = Mastodon().getListsApi();
 final String id = id_example; // String | id parameter
-final DeleteListAccountsRequest deleteListAccountsRequest = ; // DeleteListAccountsRequest | JSON request body parameters
+final PostListAccountsRequest postListAccountsRequest = ; // PostListAccountsRequest | JSON request body parameters
 
 try {
-    api.deleteListAccounts(id, deleteListAccountsRequest);
+    api.deleteListAccounts(id, postListAccountsRequest);
 } on DioException catch (e) {
     print('Exception when calling ListsApi->deleteListAccounts: $e\n');
 }
@@ -143,7 +143,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| id parameter | 
- **deleteListAccountsRequest** | [**DeleteListAccountsRequest**](DeleteListAccountsRequest.md)| JSON request body parameters | 
+ **postListAccountsRequest** | [**PostListAccountsRequest**](PostListAccountsRequest.md)| JSON request body parameters | 
 
 ### Return type
 

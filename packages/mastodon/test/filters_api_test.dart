@@ -154,7 +154,7 @@ void main() {
     //
     // Replaces a filter's parameters in-place.  Version history:  2.4.3 - added\\ 3.1.0 - added `account` context to filter in profile views\\ 4.0.0 - deprecated. For compatibility purposes, now returns a V1::Filter representing one FilterKeyword (with the `keyword` being presented in the `phrase` attribute). This method will return an error if you attempt to change `expires_in`, `irreversible`, or `context` for a filter with multiple keywords. Changing `phrase` and `whole_word` is always safe.
     //
-    //Future<V1Filter> updateFilter(String id, UpdateFilterRequest updateFilterRequest) async
+    //Future<V1Filter> updateFilter(String id, CreateFilterRequest createFilterRequest) async
     test('test updateFilter', () async {
       // TODO
     });

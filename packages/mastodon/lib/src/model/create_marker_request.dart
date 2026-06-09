@@ -3,7 +3,6 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:mastodon/src/model/create_marker_request_notifications.dart';
 import 'package:mastodon/src/model/create_marker_request_home.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -25,7 +24,7 @@ class CreateMarkerRequest {
   final CreateMarkerRequestHome? home;
 
   @JsonKey(name: r'notifications', required: false, includeIfNull: false)
-  final CreateMarkerRequestNotifications? notifications;
+  final CreateMarkerRequestHome? notifications;
 
   @override
   bool operator ==(Object other) =>
