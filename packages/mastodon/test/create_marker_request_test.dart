@@ -12,7 +12,7 @@ void main() {
       // TODO
     });
 
-    // CreateMarkerRequestHome notifications
+    // CreateMarkerRequestNotifications notifications
     test('to test the property `notifications`', () async {
       // TODO
     });

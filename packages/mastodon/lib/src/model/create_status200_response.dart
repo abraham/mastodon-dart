@@ -319,7 +319,7 @@ class CreateStatus200Response {
       visibility.hashCode +
       params.hashCode +
       scheduledAt.hashCode +
-      application.hashCode +
+      (application == null ? 0 : application.hashCode) +
       bookmarked.hashCode +
       card.hashCode +
       editedAt.hashCode +

@@ -18,7 +18,7 @@ void main() {
       // TODO
     });
 
-    // InstanceConfigurationTimelinesAccessHashtagFeeds trendingLinkFeeds
+    // InstanceConfigurationTimelinesAccessTrendingLinkFeeds trendingLinkFeeds
     test('to test the property `trendingLinkFeeds`', () async {
       // TODO
     });

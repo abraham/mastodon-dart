@@ -61,7 +61,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteDomainBlocks**
-> deleteDomainBlocks(createDomainBlockRequest)
+> deleteDomainBlocks(deleteDomainBlocksRequest)
 
 Unblock a domain
 
@@ -76,10 +76,10 @@ import 'package:mastodon/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = Mastodon().getDomainBlocksApi();
-final CreateDomainBlockRequest createDomainBlockRequest = ; // CreateDomainBlockRequest | JSON request body parameters
+final DeleteDomainBlocksRequest deleteDomainBlocksRequest = ; // DeleteDomainBlocksRequest | JSON request body parameters
 
 try {
-    api.deleteDomainBlocks(createDomainBlockRequest);
+    api.deleteDomainBlocks(deleteDomainBlocksRequest);
 } on DioException catch (e) {
     print('Exception when calling DomainBlocksApi->deleteDomainBlocks: $e\n');
 }
@@ -89,7 +89,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createDomainBlockRequest** | [**CreateDomainBlockRequest**](CreateDomainBlockRequest.md)| JSON request body parameters | 
+ **deleteDomainBlocksRequest** | [**DeleteDomainBlocksRequest**](DeleteDomainBlocksRequest.md)| JSON request body parameters | 
 
 ### Return type
 

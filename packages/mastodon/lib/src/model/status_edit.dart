@@ -99,7 +99,7 @@ class StatusEdit {
       mediaAttachments.hashCode +
       sensitive.hashCode +
       spoilerText.hashCode +
-      poll.hashCode +
+      (poll == null ? 0 : poll.hashCode) +
       (quote == null ? 0 : quote.hashCode);
 
   factory StatusEdit.fromJson(Map<String, dynamic> json) =>

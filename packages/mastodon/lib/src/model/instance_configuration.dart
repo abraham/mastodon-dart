@@ -89,7 +89,7 @@ class InstanceConfiguration {
       translation.hashCode +
       urls.hashCode +
       (limitedFederation == null ? 0 : limitedFederation.hashCode) +
-      timelinesAccess.hashCode;
+      (timelinesAccess == null ? 0 : timelinesAccess.hashCode);
 
   factory InstanceConfiguration.fromJson(Map<String, dynamic> json) =>
       _$InstanceConfigurationFromJson(json);

@@ -302,7 +302,7 @@ class Status {
       tags.hashCode +
       uri.hashCode +
       visibility.hashCode +
-      application.hashCode +
+      (application == null ? 0 : application.hashCode) +
       (bookmarked == null ? 0 : bookmarked.hashCode) +
       (card == null ? 0 : card.hashCode) +
       (editedAt == null ? 0 : editedAt.hashCode) +

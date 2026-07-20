@@ -63,7 +63,7 @@ class AnnualReport {
   @override
   int get hashCode =>
       (accountId == null ? 0 : accountId.hashCode) +
-      data.hashCode +
+      (data == null ? 0 : data.hashCode) +
       (schemaVersion == null ? 0 : schemaVersion.hashCode) +
       (shareUrl == null ? 0 : shareUrl.hashCode) +
       (year == null ? 0 : year.hashCode);
