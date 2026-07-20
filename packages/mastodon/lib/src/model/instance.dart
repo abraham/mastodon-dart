@@ -139,7 +139,7 @@ class Instance {
       title.hashCode +
       usage.hashCode +
       version.hashCode +
-      apiVersions.hashCode +
+      (apiVersions == null ? 0 : apiVersions.hashCode) +
       (icon == null ? 0 : icon.hashCode);
 
   factory Instance.fromJson(Map<String, dynamic> json) =>

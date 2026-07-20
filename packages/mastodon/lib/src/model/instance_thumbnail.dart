@@ -58,7 +58,7 @@ class InstanceThumbnail {
       url.hashCode +
       (blurhash == null ? 0 : blurhash.hashCode) +
       (description == null ? 0 : description.hashCode) +
-      versions.hashCode;
+      (versions == null ? 0 : versions.hashCode);
 
   factory InstanceThumbnail.fromJson(Map<String, dynamic> json) =>
       _$InstanceThumbnailFromJson(json);

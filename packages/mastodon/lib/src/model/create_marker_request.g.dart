@@ -9,7 +9,9 @@ part of 'create_marker_request.dart';
 abstract class _$CreateMarkerRequestCWProxy {
   CreateMarkerRequest home(CreateMarkerRequestHome? home);
 
-  CreateMarkerRequest notifications(CreateMarkerRequestHome? notifications);
+  CreateMarkerRequest notifications(
+    CreateMarkerRequestNotifications? notifications,
+  );
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CreateMarkerRequest(...).copyWith.fieldName(value)`.
@@ -20,7 +22,7 @@ abstract class _$CreateMarkerRequestCWProxy {
   /// ```
   CreateMarkerRequest call({
     CreateMarkerRequestHome? home,
-    CreateMarkerRequestHome? notifications,
+    CreateMarkerRequestNotifications? notifications,
   });
 }
 
@@ -35,8 +37,9 @@ class _$CreateMarkerRequestCWProxyImpl implements _$CreateMarkerRequestCWProxy {
   CreateMarkerRequest home(CreateMarkerRequestHome? home) => call(home: home);
 
   @override
-  CreateMarkerRequest notifications(CreateMarkerRequestHome? notifications) =>
-      call(notifications: notifications);
+  CreateMarkerRequest notifications(
+    CreateMarkerRequestNotifications? notifications,
+  ) => call(notifications: notifications);
 
   @override
   /// Creates a new instance with the provided field values.
@@ -58,7 +61,7 @@ class _$CreateMarkerRequestCWProxyImpl implements _$CreateMarkerRequestCWProxy {
       notifications: notifications == const $CopyWithPlaceholder()
           ? _value.notifications
           // ignore: cast_nullable_to_non_nullable
-          : notifications as CreateMarkerRequestHome?,
+          : notifications as CreateMarkerRequestNotifications?,
     );
   }
 }
@@ -88,7 +91,9 @@ CreateMarkerRequest _$CreateMarkerRequestFromJson(Map<String, dynamic> json) =>
           'notifications',
           (v) => v == null
               ? null
-              : CreateMarkerRequestHome.fromJson(v as Map<String, dynamic>),
+              : CreateMarkerRequestNotifications.fromJson(
+                  v as Map<String, dynamic>,
+                ),
         ),
       );
       return val;

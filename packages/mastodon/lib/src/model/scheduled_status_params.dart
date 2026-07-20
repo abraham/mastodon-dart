@@ -121,7 +121,7 @@ class ScheduledStatusParams {
       (inReplyToId == null ? 0 : inReplyToId.hashCode) +
       (language == null ? 0 : language.hashCode) +
       (mediaIds == null ? 0 : mediaIds.hashCode) +
-      poll.hashCode +
+      (poll == null ? 0 : poll.hashCode) +
       (scheduledAt == null ? 0 : scheduledAt.hashCode) +
       (sensitive == null ? 0 : sensitive.hashCode) +
       (spoilerText == null ? 0 : spoilerText.hashCode);

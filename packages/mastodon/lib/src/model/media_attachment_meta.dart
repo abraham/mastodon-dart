@@ -44,7 +44,7 @@ class MediaAttachmentMeta {
   int get hashCode =>
       (small == null ? 0 : small.hashCode) +
       (original == null ? 0 : original.hashCode) +
-      focus.hashCode;
+      (focus == null ? 0 : focus.hashCode);
 
   factory MediaAttachmentMeta.fromJson(Map<String, dynamic> json) =>
       _$MediaAttachmentMetaFromJson(json);

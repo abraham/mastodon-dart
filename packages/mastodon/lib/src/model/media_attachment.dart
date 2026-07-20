@@ -88,7 +88,7 @@ class MediaAttachment {
       type.hashCode +
       (blurhash == null ? 0 : blurhash.hashCode) +
       (description == null ? 0 : description.hashCode) +
-      meta.hashCode +
+      (meta == null ? 0 : meta.hashCode) +
       (previewUrl == null ? 0 : previewUrl.hashCode) +
       (remoteUrl == null ? 0 : remoteUrl.hashCode) +
       (url == null ? 0 : url.hashCode);
