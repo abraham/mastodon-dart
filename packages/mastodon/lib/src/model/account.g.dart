@@ -35,6 +35,8 @@ abstract class _$AccountCWProxy {
 
   Account id(String id);
 
+  Account indexable(bool indexable);
+
   Account locked(bool locked);
 
   Account note(String note);
@@ -54,8 +56,6 @@ abstract class _$AccountCWProxy {
   Account headerDescription(String? headerDescription);
 
   Account hideCollections(bool? hideCollections);
-
-  Account indexable(bool? indexable);
 
   Account lastStatusAt(DateTime? lastStatusAt);
 
@@ -101,6 +101,7 @@ abstract class _$AccountCWProxy {
     Uri header,
     Uri headerStatic,
     String id,
+    bool indexable,
     bool locked,
     String note,
     int statusesCount,
@@ -111,7 +112,6 @@ abstract class _$AccountCWProxy {
     FeatureApproval? featureApproval,
     String? headerDescription,
     bool? hideCollections,
-    bool? indexable,
     DateTime? lastStatusAt,
     bool? limited,
     bool? memorial,
@@ -178,6 +178,9 @@ class _$AccountCWProxyImpl implements _$AccountCWProxy {
   Account id(String id) => call(id: id);
 
   @override
+  Account indexable(bool indexable) => call(indexable: indexable);
+
+  @override
   Account locked(bool locked) => call(locked: locked);
 
   @override
@@ -211,9 +214,6 @@ class _$AccountCWProxyImpl implements _$AccountCWProxy {
   @override
   Account hideCollections(bool? hideCollections) =>
       call(hideCollections: hideCollections);
-
-  @override
-  Account indexable(bool? indexable) => call(indexable: indexable);
 
   @override
   Account lastStatusAt(DateTime? lastStatusAt) =>
@@ -273,6 +273,7 @@ class _$AccountCWProxyImpl implements _$AccountCWProxy {
     Object? header = const $CopyWithPlaceholder(),
     Object? headerStatic = const $CopyWithPlaceholder(),
     Object? id = const $CopyWithPlaceholder(),
+    Object? indexable = const $CopyWithPlaceholder(),
     Object? locked = const $CopyWithPlaceholder(),
     Object? note = const $CopyWithPlaceholder(),
     Object? statusesCount = const $CopyWithPlaceholder(),
@@ -283,7 +284,6 @@ class _$AccountCWProxyImpl implements _$AccountCWProxy {
     Object? featureApproval = const $CopyWithPlaceholder(),
     Object? headerDescription = const $CopyWithPlaceholder(),
     Object? hideCollections = const $CopyWithPlaceholder(),
-    Object? indexable = const $CopyWithPlaceholder(),
     Object? lastStatusAt = const $CopyWithPlaceholder(),
     Object? limited = const $CopyWithPlaceholder(),
     Object? memorial = const $CopyWithPlaceholder(),
@@ -360,6 +360,10 @@ class _$AccountCWProxyImpl implements _$AccountCWProxy {
           ? _value.id
           // ignore: cast_nullable_to_non_nullable
           : id as String,
+      indexable: indexable == const $CopyWithPlaceholder() || indexable == null
+          ? _value.indexable
+          // ignore: cast_nullable_to_non_nullable
+          : indexable as bool,
       locked: locked == const $CopyWithPlaceholder() || locked == null
           ? _value.locked
           // ignore: cast_nullable_to_non_nullable
@@ -401,10 +405,6 @@ class _$AccountCWProxyImpl implements _$AccountCWProxy {
           ? _value.hideCollections
           // ignore: cast_nullable_to_non_nullable
           : hideCollections as bool?,
-      indexable: indexable == const $CopyWithPlaceholder()
-          ? _value.indexable
-          // ignore: cast_nullable_to_non_nullable
-          : indexable as bool?,
       lastStatusAt: lastStatusAt == const $CopyWithPlaceholder()
           ? _value.lastStatusAt
           // ignore: cast_nullable_to_non_nullable
@@ -485,6 +485,7 @@ Account _$AccountFromJson(Map<String, dynamic> json) => $checkedCreate(
         'header',
         'header_static',
         'id',
+        'indexable',
         'locked',
         'note',
         'statuses_count',
@@ -532,6 +533,7 @@ Account _$AccountFromJson(Map<String, dynamic> json) => $checkedCreate(
         (v) => Uri.parse(v as String),
       ),
       id: $checkedConvert('id', (v) => v as String),
+      indexable: $checkedConvert('indexable', (v) => v as bool),
       locked: $checkedConvert('locked', (v) => v as bool),
       note: $checkedConvert('note', (v) => v as String),
       statusesCount: $checkedConvert(
@@ -556,7 +558,6 @@ Account _$AccountFromJson(Map<String, dynamic> json) => $checkedCreate(
         (v) => v as String?,
       ),
       hideCollections: $checkedConvert('hide_collections', (v) => v as bool?),
-      indexable: $checkedConvert('indexable', (v) => v as bool?),
       lastStatusAt: $checkedConvert(
         'last_status_at',
         (v) => v == null ? null : DateTime.parse(v as String),
@@ -622,6 +623,7 @@ Map<String, dynamic> _$AccountToJson(Account instance) => <String, dynamic>{
   'header': instance.header.toString(),
   'header_static': instance.headerStatic.toString(),
   'id': instance.id,
+  'indexable': instance.indexable,
   'locked': instance.locked,
   'note': instance.note,
   'statuses_count': instance.statusesCount,
@@ -632,7 +634,6 @@ Map<String, dynamic> _$AccountToJson(Account instance) => <String, dynamic>{
   'feature_approval': ?instance.featureApproval?.toJson(),
   'header_description': ?instance.headerDescription,
   'hide_collections': ?instance.hideCollections,
-  'indexable': ?instance.indexable,
   'last_status_at': ?instance.lastStatusAt?.toIso8601String(),
   'limited': ?instance.limited,
   'memorial': ?instance.memorial,

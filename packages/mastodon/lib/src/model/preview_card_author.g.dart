@@ -9,7 +9,7 @@ part of 'preview_card_author.dart';
 abstract class _$PreviewCardAuthorCWProxy {
   PreviewCardAuthor name(String name);
 
-  PreviewCardAuthor url(Uri? url);
+  PreviewCardAuthor url(Uri url);
 
   PreviewCardAuthor account(Account? account);
 
@@ -20,7 +20,7 @@ abstract class _$PreviewCardAuthorCWProxy {
   /// ```dart
   /// PreviewCardAuthor(...).copyWith(id: 12, name: "My name")
   /// ```
-  PreviewCardAuthor call({String name, Uri? url, Account? account});
+  PreviewCardAuthor call({String name, Uri url, Account? account});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -34,7 +34,7 @@ class _$PreviewCardAuthorCWProxyImpl implements _$PreviewCardAuthorCWProxy {
   PreviewCardAuthor name(String name) => call(name: name);
 
   @override
-  PreviewCardAuthor url(Uri? url) => call(url: url);
+  PreviewCardAuthor url(Uri url) => call(url: url);
 
   @override
   PreviewCardAuthor account(Account? account) => call(account: account);
@@ -57,10 +57,10 @@ class _$PreviewCardAuthorCWProxyImpl implements _$PreviewCardAuthorCWProxy {
           ? _value.name
           // ignore: cast_nullable_to_non_nullable
           : name as String,
-      url: url == const $CopyWithPlaceholder()
+      url: url == const $CopyWithPlaceholder() || url == null
           ? _value.url
           // ignore: cast_nullable_to_non_nullable
-          : url as Uri?,
+          : url as Uri,
       account: account == const $CopyWithPlaceholder()
           ? _value.account
           // ignore: cast_nullable_to_non_nullable
@@ -83,13 +83,10 @@ extension $PreviewCardAuthorCopyWith on PreviewCardAuthor {
 
 PreviewCardAuthor _$PreviewCardAuthorFromJson(Map<String, dynamic> json) =>
     $checkedCreate('PreviewCardAuthor', json, ($checkedConvert) {
-      $checkKeys(json, requiredKeys: const ['name']);
+      $checkKeys(json, requiredKeys: const ['name', 'url']);
       final val = PreviewCardAuthor(
         name: $checkedConvert('name', (v) => v as String),
-        url: $checkedConvert(
-          'url',
-          (v) => PreviewCardAuthor._parseAuthorUrl(v as String),
-        ),
+        url: $checkedConvert('url', (v) => Uri.parse(v as String)),
         account: $checkedConvert(
           'account',
           (v) => v == null ? null : Account.fromJson(v as Map<String, dynamic>),
@@ -101,6 +98,6 @@ PreviewCardAuthor _$PreviewCardAuthorFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$PreviewCardAuthorToJson(PreviewCardAuthor instance) =>
     <String, dynamic>{
       'name': instance.name,
-      'url': ?instance.url?.toString(),
+      'url': instance.url.toString(),
       'account': ?instance.account?.toJson(),
     };

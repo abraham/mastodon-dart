@@ -11,15 +11,17 @@ abstract class _$NotificationCWProxy {
 
   Notification createdAt(DateTime createdAt);
 
+  Notification groupKey(String groupKey);
+
   Notification id(String id);
 
   Notification type(NotificationTypeEnum type);
 
+  Notification collection(Collection? collection);
+
   Notification event(RelationshipSeveranceEvent? event);
 
   Notification fallback(NotificationFallback? fallback);
-
-  Notification groupKey(String? groupKey);
 
   Notification moderationWarning(AccountWarning? moderationWarning);
 
@@ -37,11 +39,12 @@ abstract class _$NotificationCWProxy {
   Notification call({
     Account account,
     DateTime createdAt,
+    String groupKey,
     String id,
     NotificationTypeEnum type,
+    Collection? collection,
     RelationshipSeveranceEvent? event,
     NotificationFallback? fallback,
-    String? groupKey,
     AccountWarning? moderationWarning,
     Report? report,
     Status? status,
@@ -62,10 +65,17 @@ class _$NotificationCWProxyImpl implements _$NotificationCWProxy {
   Notification createdAt(DateTime createdAt) => call(createdAt: createdAt);
 
   @override
+  Notification groupKey(String groupKey) => call(groupKey: groupKey);
+
+  @override
   Notification id(String id) => call(id: id);
 
   @override
   Notification type(NotificationTypeEnum type) => call(type: type);
+
+  @override
+  Notification collection(Collection? collection) =>
+      call(collection: collection);
 
   @override
   Notification event(RelationshipSeveranceEvent? event) => call(event: event);
@@ -73,9 +83,6 @@ class _$NotificationCWProxyImpl implements _$NotificationCWProxy {
   @override
   Notification fallback(NotificationFallback? fallback) =>
       call(fallback: fallback);
-
-  @override
-  Notification groupKey(String? groupKey) => call(groupKey: groupKey);
 
   @override
   Notification moderationWarning(AccountWarning? moderationWarning) =>
@@ -98,11 +105,12 @@ class _$NotificationCWProxyImpl implements _$NotificationCWProxy {
   Notification call({
     Object? account = const $CopyWithPlaceholder(),
     Object? createdAt = const $CopyWithPlaceholder(),
+    Object? groupKey = const $CopyWithPlaceholder(),
     Object? id = const $CopyWithPlaceholder(),
     Object? type = const $CopyWithPlaceholder(),
+    Object? collection = const $CopyWithPlaceholder(),
     Object? event = const $CopyWithPlaceholder(),
     Object? fallback = const $CopyWithPlaceholder(),
-    Object? groupKey = const $CopyWithPlaceholder(),
     Object? moderationWarning = const $CopyWithPlaceholder(),
     Object? report = const $CopyWithPlaceholder(),
     Object? status = const $CopyWithPlaceholder(),
@@ -116,6 +124,10 @@ class _$NotificationCWProxyImpl implements _$NotificationCWProxy {
           ? _value.createdAt
           // ignore: cast_nullable_to_non_nullable
           : createdAt as DateTime,
+      groupKey: groupKey == const $CopyWithPlaceholder() || groupKey == null
+          ? _value.groupKey
+          // ignore: cast_nullable_to_non_nullable
+          : groupKey as String,
       id: id == const $CopyWithPlaceholder() || id == null
           ? _value.id
           // ignore: cast_nullable_to_non_nullable
@@ -124,6 +136,10 @@ class _$NotificationCWProxyImpl implements _$NotificationCWProxy {
           ? _value.type
           // ignore: cast_nullable_to_non_nullable
           : type as NotificationTypeEnum,
+      collection: collection == const $CopyWithPlaceholder()
+          ? _value.collection
+          // ignore: cast_nullable_to_non_nullable
+          : collection as Collection?,
       event: event == const $CopyWithPlaceholder()
           ? _value.event
           // ignore: cast_nullable_to_non_nullable
@@ -132,10 +148,6 @@ class _$NotificationCWProxyImpl implements _$NotificationCWProxy {
           ? _value.fallback
           // ignore: cast_nullable_to_non_nullable
           : fallback as NotificationFallback?,
-      groupKey: groupKey == const $CopyWithPlaceholder()
-          ? _value.groupKey
-          // ignore: cast_nullable_to_non_nullable
-          : groupKey as String?,
       moderationWarning: moderationWarning == const $CopyWithPlaceholder()
           ? _value.moderationWarning
           // ignore: cast_nullable_to_non_nullable
@@ -163,79 +175,82 @@ extension $NotificationCopyWith on Notification {
 // JsonSerializableGenerator
 // **************************************************************************
 
-Notification _$NotificationFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'Notification',
+Notification _$NotificationFromJson(
+  Map<String, dynamic> json,
+) => $checkedCreate(
+  'Notification',
+  json,
+  ($checkedConvert) {
+    $checkKeys(
       json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['account', 'created_at', 'id', 'type'],
-        );
-        final val = Notification(
-          account: $checkedConvert(
-            'account',
-            (v) => Account.fromJson(v as Map<String, dynamic>),
-          ),
-          createdAt: $checkedConvert(
-            'created_at',
-            (v) => DateTime.parse(v as String),
-          ),
-          id: $checkedConvert('id', (v) => v as String),
-          type: $checkedConvert(
-            'type',
-            (v) => $enumDecode(_$NotificationTypeEnumEnumMap, v),
-          ),
-          event: $checkedConvert(
-            'event',
-            (v) => v == null
-                ? null
-                : RelationshipSeveranceEvent.fromJson(
-                    v as Map<String, dynamic>,
-                  ),
-          ),
-          fallback: $checkedConvert(
-            'fallback',
-            (v) => v == null
-                ? null
-                : NotificationFallback.fromJson(v as Map<String, dynamic>),
-          ),
-          groupKey: $checkedConvert('group_key', (v) => v as String?),
-          moderationWarning: $checkedConvert(
-            'moderation_warning',
-            (v) => v == null
-                ? null
-                : AccountWarning.fromJson(v as Map<String, dynamic>),
-          ),
-          report: $checkedConvert(
-            'report',
-            (v) =>
-                v == null ? null : Report.fromJson(v as Map<String, dynamic>),
-          ),
-          status: $checkedConvert(
-            'status',
-            (v) =>
-                v == null ? null : Status.fromJson(v as Map<String, dynamic>),
-          ),
-        );
-        return val;
-      },
-      fieldKeyMap: const {
-        'createdAt': 'created_at',
-        'groupKey': 'group_key',
-        'moderationWarning': 'moderation_warning',
-      },
+      requiredKeys: const ['account', 'created_at', 'group_key', 'id', 'type'],
     );
+    final val = Notification(
+      account: $checkedConvert(
+        'account',
+        (v) => Account.fromJson(v as Map<String, dynamic>),
+      ),
+      createdAt: $checkedConvert(
+        'created_at',
+        (v) => DateTime.parse(v as String),
+      ),
+      groupKey: $checkedConvert('group_key', (v) => v as String),
+      id: $checkedConvert('id', (v) => v as String),
+      type: $checkedConvert(
+        'type',
+        (v) => $enumDecode(_$NotificationTypeEnumEnumMap, v),
+      ),
+      collection: $checkedConvert(
+        'collection',
+        (v) =>
+            v == null ? null : Collection.fromJson(v as Map<String, dynamic>),
+      ),
+      event: $checkedConvert(
+        'event',
+        (v) => v == null
+            ? null
+            : RelationshipSeveranceEvent.fromJson(v as Map<String, dynamic>),
+      ),
+      fallback: $checkedConvert(
+        'fallback',
+        (v) => v == null
+            ? null
+            : NotificationFallback.fromJson(v as Map<String, dynamic>),
+      ),
+      moderationWarning: $checkedConvert(
+        'moderation_warning',
+        (v) => v == null
+            ? null
+            : AccountWarning.fromJson(v as Map<String, dynamic>),
+      ),
+      report: $checkedConvert(
+        'report',
+        (v) => v == null ? null : Report.fromJson(v as Map<String, dynamic>),
+      ),
+      status: $checkedConvert(
+        'status',
+        (v) => v == null ? null : Status.fromJson(v as Map<String, dynamic>),
+      ),
+    );
+    return val;
+  },
+  fieldKeyMap: const {
+    'createdAt': 'created_at',
+    'groupKey': 'group_key',
+    'moderationWarning': 'moderation_warning',
+  },
+);
 
 Map<String, dynamic> _$NotificationToJson(Notification instance) =>
     <String, dynamic>{
       'account': instance.account.toJson(),
       'created_at': instance.createdAt.toIso8601String(),
+      'group_key': instance.groupKey,
       'id': instance.id,
       'type': _$NotificationTypeEnumEnumMap[instance.type]!,
+      'collection': ?instance.collection?.toJson(),
       'event': ?instance.event?.toJson(),
       'fallback': ?instance.fallback?.toJson(),
-      'group_key': ?instance.groupKey,
       'moderation_warning': ?instance.moderationWarning?.toJson(),
       'report': ?instance.report?.toJson(),
       'status': ?instance.status?.toJson(),
@@ -256,4 +271,6 @@ const _$NotificationTypeEnumEnumMap = {
   NotificationTypeEnum.moderationWarning: 'moderation_warning',
   NotificationTypeEnum.quote: 'quote',
   NotificationTypeEnum.quotedUpdate: 'quoted_update',
+  NotificationTypeEnum.addedToCollection: 'added_to_collection',
+  NotificationTypeEnum.collectionUpdate: 'collection_update',
 };

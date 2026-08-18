@@ -9,11 +9,19 @@ part of 'instance_configuration_accounts.dart';
 abstract class _$InstanceConfigurationAccountsCWProxy {
   InstanceConfigurationAccounts maxFeaturedTags(int maxFeaturedTags);
 
+  InstanceConfigurationAccounts maxPinnedStatuses(int maxPinnedStatuses);
+
+  InstanceConfigurationAccounts maxAvatarDescriptionLength(
+    int? maxAvatarDescriptionLength,
+  );
+
   InstanceConfigurationAccounts maxDisplayNameLength(int? maxDisplayNameLength);
 
-  InstanceConfigurationAccounts maxNoteLength(int? maxNoteLength);
+  InstanceConfigurationAccounts maxHeaderDescriptionLength(
+    int? maxHeaderDescriptionLength,
+  );
 
-  InstanceConfigurationAccounts maxPinnedStatuses(int? maxPinnedStatuses);
+  InstanceConfigurationAccounts maxNoteLength(int? maxNoteLength);
 
   InstanceConfigurationAccounts maxProfileFields(int? maxProfileFields);
 
@@ -34,9 +42,11 @@ abstract class _$InstanceConfigurationAccountsCWProxy {
   /// ```
   InstanceConfigurationAccounts call({
     int maxFeaturedTags,
+    int maxPinnedStatuses,
+    int? maxAvatarDescriptionLength,
     int? maxDisplayNameLength,
+    int? maxHeaderDescriptionLength,
     int? maxNoteLength,
-    int? maxPinnedStatuses,
     int? maxProfileFields,
     int? profileFieldNameLimit,
     int? profileFieldValueLimit,
@@ -56,17 +66,27 @@ class _$InstanceConfigurationAccountsCWProxyImpl
       call(maxFeaturedTags: maxFeaturedTags);
 
   @override
+  InstanceConfigurationAccounts maxPinnedStatuses(int maxPinnedStatuses) =>
+      call(maxPinnedStatuses: maxPinnedStatuses);
+
+  @override
+  InstanceConfigurationAccounts maxAvatarDescriptionLength(
+    int? maxAvatarDescriptionLength,
+  ) => call(maxAvatarDescriptionLength: maxAvatarDescriptionLength);
+
+  @override
   InstanceConfigurationAccounts maxDisplayNameLength(
     int? maxDisplayNameLength,
   ) => call(maxDisplayNameLength: maxDisplayNameLength);
 
   @override
-  InstanceConfigurationAccounts maxNoteLength(int? maxNoteLength) =>
-      call(maxNoteLength: maxNoteLength);
+  InstanceConfigurationAccounts maxHeaderDescriptionLength(
+    int? maxHeaderDescriptionLength,
+  ) => call(maxHeaderDescriptionLength: maxHeaderDescriptionLength);
 
   @override
-  InstanceConfigurationAccounts maxPinnedStatuses(int? maxPinnedStatuses) =>
-      call(maxPinnedStatuses: maxPinnedStatuses);
+  InstanceConfigurationAccounts maxNoteLength(int? maxNoteLength) =>
+      call(maxNoteLength: maxNoteLength);
 
   @override
   InstanceConfigurationAccounts maxProfileFields(int? maxProfileFields) =>
@@ -92,9 +112,11 @@ class _$InstanceConfigurationAccountsCWProxyImpl
   /// ```
   InstanceConfigurationAccounts call({
     Object? maxFeaturedTags = const $CopyWithPlaceholder(),
-    Object? maxDisplayNameLength = const $CopyWithPlaceholder(),
-    Object? maxNoteLength = const $CopyWithPlaceholder(),
     Object? maxPinnedStatuses = const $CopyWithPlaceholder(),
+    Object? maxAvatarDescriptionLength = const $CopyWithPlaceholder(),
+    Object? maxDisplayNameLength = const $CopyWithPlaceholder(),
+    Object? maxHeaderDescriptionLength = const $CopyWithPlaceholder(),
+    Object? maxNoteLength = const $CopyWithPlaceholder(),
     Object? maxProfileFields = const $CopyWithPlaceholder(),
     Object? profileFieldNameLimit = const $CopyWithPlaceholder(),
     Object? profileFieldValueLimit = const $CopyWithPlaceholder(),
@@ -106,18 +128,30 @@ class _$InstanceConfigurationAccountsCWProxyImpl
           ? _value.maxFeaturedTags
           // ignore: cast_nullable_to_non_nullable
           : maxFeaturedTags as int,
+      maxPinnedStatuses:
+          maxPinnedStatuses == const $CopyWithPlaceholder() ||
+              maxPinnedStatuses == null
+          ? _value.maxPinnedStatuses
+          // ignore: cast_nullable_to_non_nullable
+          : maxPinnedStatuses as int,
+      maxAvatarDescriptionLength:
+          maxAvatarDescriptionLength == const $CopyWithPlaceholder()
+          ? _value.maxAvatarDescriptionLength
+          // ignore: cast_nullable_to_non_nullable
+          : maxAvatarDescriptionLength as int?,
       maxDisplayNameLength: maxDisplayNameLength == const $CopyWithPlaceholder()
           ? _value.maxDisplayNameLength
           // ignore: cast_nullable_to_non_nullable
           : maxDisplayNameLength as int?,
+      maxHeaderDescriptionLength:
+          maxHeaderDescriptionLength == const $CopyWithPlaceholder()
+          ? _value.maxHeaderDescriptionLength
+          // ignore: cast_nullable_to_non_nullable
+          : maxHeaderDescriptionLength as int?,
       maxNoteLength: maxNoteLength == const $CopyWithPlaceholder()
           ? _value.maxNoteLength
           // ignore: cast_nullable_to_non_nullable
           : maxNoteLength as int?,
-      maxPinnedStatuses: maxPinnedStatuses == const $CopyWithPlaceholder()
-          ? _value.maxPinnedStatuses
-          // ignore: cast_nullable_to_non_nullable
-          : maxPinnedStatuses as int?,
       maxProfileFields: maxProfileFields == const $CopyWithPlaceholder()
           ? _value.maxProfileFields
           // ignore: cast_nullable_to_non_nullable
@@ -155,22 +189,33 @@ InstanceConfigurationAccounts _$InstanceConfigurationAccountsFromJson(
   'InstanceConfigurationAccounts',
   json,
   ($checkedConvert) {
-    $checkKeys(json, requiredKeys: const ['max_featured_tags']);
+    $checkKeys(
+      json,
+      requiredKeys: const ['max_featured_tags', 'max_pinned_statuses'],
+    );
     final val = InstanceConfigurationAccounts(
       maxFeaturedTags: $checkedConvert(
         'max_featured_tags',
         (v) => (v as num).toInt(),
       ),
+      maxPinnedStatuses: $checkedConvert(
+        'max_pinned_statuses',
+        (v) => (v as num).toInt(),
+      ),
+      maxAvatarDescriptionLength: $checkedConvert(
+        'max_avatar_description_length',
+        (v) => (v as num?)?.toInt(),
+      ),
       maxDisplayNameLength: $checkedConvert(
         'max_display_name_length',
         (v) => (v as num?)?.toInt(),
       ),
-      maxNoteLength: $checkedConvert(
-        'max_note_length',
+      maxHeaderDescriptionLength: $checkedConvert(
+        'max_header_description_length',
         (v) => (v as num?)?.toInt(),
       ),
-      maxPinnedStatuses: $checkedConvert(
-        'max_pinned_statuses',
+      maxNoteLength: $checkedConvert(
+        'max_note_length',
         (v) => (v as num?)?.toInt(),
       ),
       maxProfileFields: $checkedConvert(
@@ -190,9 +235,11 @@ InstanceConfigurationAccounts _$InstanceConfigurationAccountsFromJson(
   },
   fieldKeyMap: const {
     'maxFeaturedTags': 'max_featured_tags',
-    'maxDisplayNameLength': 'max_display_name_length',
-    'maxNoteLength': 'max_note_length',
     'maxPinnedStatuses': 'max_pinned_statuses',
+    'maxAvatarDescriptionLength': 'max_avatar_description_length',
+    'maxDisplayNameLength': 'max_display_name_length',
+    'maxHeaderDescriptionLength': 'max_header_description_length',
+    'maxNoteLength': 'max_note_length',
     'maxProfileFields': 'max_profile_fields',
     'profileFieldNameLimit': 'profile_field_name_limit',
     'profileFieldValueLimit': 'profile_field_value_limit',
@@ -203,9 +250,11 @@ Map<String, dynamic> _$InstanceConfigurationAccountsToJson(
   InstanceConfigurationAccounts instance,
 ) => <String, dynamic>{
   'max_featured_tags': instance.maxFeaturedTags,
+  'max_pinned_statuses': instance.maxPinnedStatuses,
+  'max_avatar_description_length': ?instance.maxAvatarDescriptionLength,
   'max_display_name_length': ?instance.maxDisplayNameLength,
+  'max_header_description_length': ?instance.maxHeaderDescriptionLength,
   'max_note_length': ?instance.maxNoteLength,
-  'max_pinned_statuses': ?instance.maxPinnedStatuses,
   'max_profile_fields': ?instance.maxProfileFields,
   'profile_field_name_limit': ?instance.profileFieldNameLimit,
   'profile_field_value_limit': ?instance.profileFieldValueLimit,

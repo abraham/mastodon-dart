@@ -4,8 +4,8 @@
 
 // ignore_for_file: unused_element
 import 'package:mastodon/src/model/field.dart';
+import 'package:mastodon/src/model/scheduled_status_params_quote_approval_policy_enum.dart';
 import 'package:mastodon/src/model/status_visibility_enum.dart';
-import 'package:mastodon/src/model/credential_account_source_quote_policy_enum.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -25,6 +25,8 @@ class CredentialAccountSource {
 
     required this.followRequestsCount,
 
+    required this.indexable,
+
     required this.note,
 
     required this.privacy,
@@ -36,8 +38,6 @@ class CredentialAccountSource {
     this.discoverable,
 
     this.hideCollections,
-
-    this.indexable,
 
     this.language,
 
@@ -51,6 +51,10 @@ class CredentialAccountSource {
   /// The number of pending follow requests.
   @JsonKey(name: r'follow_requests_count', required: true, includeIfNull: false)
   final int followRequestsCount;
+
+  /// Whether public posts should be searchable to anyone.
+  @JsonKey(name: r'indexable', required: true, includeIfNull: false)
+  final bool indexable;
 
   /// Profile bio, in plain text instead of HTML.
   @JsonKey(name: r'note', required: true, includeIfNull: false)
@@ -76,17 +80,13 @@ class CredentialAccountSource {
   @JsonKey(name: r'hide_collections', required: false, includeIfNull: false)
   final bool? hideCollections;
 
-  /// Whether public posts should be searchable to anyone.
-  @JsonKey(name: r'indexable', required: false, includeIfNull: false)
-  final bool? indexable;
-
   /// The default posting language for new statuses.
   @JsonKey(name: r'language', required: false, includeIfNull: false)
   final String? language;
 
   /// The default quote policy to be used for new statuses.
   @JsonKey(name: r'quote_policy', required: false, includeIfNull: false)
-  final CredentialAccountSourceQuotePolicyEnum? quotePolicy;
+  final ScheduledStatusParamsQuoteApprovalPolicyEnum? quotePolicy;
 
   @override
   bool operator ==(Object other) =>
@@ -94,13 +94,13 @@ class CredentialAccountSource {
       other is CredentialAccountSource &&
           other.fields == fields &&
           other.followRequestsCount == followRequestsCount &&
+          other.indexable == indexable &&
           other.note == note &&
           other.privacy == privacy &&
           other.sensitive == sensitive &&
           other.attributionDomains == attributionDomains &&
           other.discoverable == discoverable &&
           other.hideCollections == hideCollections &&
-          other.indexable == indexable &&
           other.language == language &&
           other.quotePolicy == quotePolicy;
 
@@ -108,13 +108,13 @@ class CredentialAccountSource {
   int get hashCode =>
       fields.hashCode +
       followRequestsCount.hashCode +
+      indexable.hashCode +
       note.hashCode +
       privacy.hashCode +
       sensitive.hashCode +
       (attributionDomains == null ? 0 : attributionDomains.hashCode) +
       (discoverable == null ? 0 : discoverable.hashCode) +
       (hideCollections == null ? 0 : hideCollections.hashCode) +
-      (indexable == null ? 0 : indexable.hashCode) +
       (language == null ? 0 : language.hashCode) +
       quotePolicy.hashCode;
 

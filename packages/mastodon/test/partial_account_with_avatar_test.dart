@@ -20,12 +20,6 @@ void main() {
       // TODO
     });
 
-    // A textual description of the avatar image.
-    // String avatarDescription
-    test('to test the property `avatarDescription`', () async {
-      // TODO
-    });
-
     // A static version of the avatar. Equal to `avatar` if its value is a static image; different if `avatar` is an animated GIF.
     // Uri avatarStatic
     test('to test the property `avatarStatic`', () async {
@@ -53,6 +47,12 @@ void main() {
     // The location of the user's profile page.
     // Uri url
     test('to test the property `url`', () async {
+      // TODO
+    });
+
+    // A textual description of the avatar image.
+    // String avatarDescription
+    test('to test the property `avatarDescription`', () async {
       // TODO
     });
   });

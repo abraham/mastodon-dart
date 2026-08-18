@@ -9,6 +9,8 @@ part of 'admin_domain_block.dart';
 abstract class _$AdminDomainBlockCWProxy {
   AdminDomainBlock createdAt(DateTime createdAt);
 
+  AdminDomainBlock digest(String digest);
+
   AdminDomainBlock domain(String domain);
 
   AdminDomainBlock id(String id);
@@ -20,8 +22,6 @@ abstract class _$AdminDomainBlockCWProxy {
   AdminDomainBlock rejectReports(bool rejectReports);
 
   AdminDomainBlock severity(AdminDomainBlockSeverityEnum severity);
-
-  AdminDomainBlock digest(String? digest);
 
   AdminDomainBlock privateComment(String? privateComment);
 
@@ -36,13 +36,13 @@ abstract class _$AdminDomainBlockCWProxy {
   /// ```
   AdminDomainBlock call({
     DateTime createdAt,
+    String digest,
     String domain,
     String id,
     bool obfuscate,
     bool rejectMedia,
     bool rejectReports,
     AdminDomainBlockSeverityEnum severity,
-    String? digest,
     String? privateComment,
     String? publicComment,
   });
@@ -57,6 +57,9 @@ class _$AdminDomainBlockCWProxyImpl implements _$AdminDomainBlockCWProxy {
 
   @override
   AdminDomainBlock createdAt(DateTime createdAt) => call(createdAt: createdAt);
+
+  @override
+  AdminDomainBlock digest(String digest) => call(digest: digest);
 
   @override
   AdminDomainBlock domain(String domain) => call(domain: domain);
@@ -80,9 +83,6 @@ class _$AdminDomainBlockCWProxyImpl implements _$AdminDomainBlockCWProxy {
       call(severity: severity);
 
   @override
-  AdminDomainBlock digest(String? digest) => call(digest: digest);
-
-  @override
   AdminDomainBlock privateComment(String? privateComment) =>
       call(privateComment: privateComment);
 
@@ -100,13 +100,13 @@ class _$AdminDomainBlockCWProxyImpl implements _$AdminDomainBlockCWProxy {
   /// ```
   AdminDomainBlock call({
     Object? createdAt = const $CopyWithPlaceholder(),
+    Object? digest = const $CopyWithPlaceholder(),
     Object? domain = const $CopyWithPlaceholder(),
     Object? id = const $CopyWithPlaceholder(),
     Object? obfuscate = const $CopyWithPlaceholder(),
     Object? rejectMedia = const $CopyWithPlaceholder(),
     Object? rejectReports = const $CopyWithPlaceholder(),
     Object? severity = const $CopyWithPlaceholder(),
-    Object? digest = const $CopyWithPlaceholder(),
     Object? privateComment = const $CopyWithPlaceholder(),
     Object? publicComment = const $CopyWithPlaceholder(),
   }) {
@@ -115,6 +115,10 @@ class _$AdminDomainBlockCWProxyImpl implements _$AdminDomainBlockCWProxy {
           ? _value.createdAt
           // ignore: cast_nullable_to_non_nullable
           : createdAt as DateTime,
+      digest: digest == const $CopyWithPlaceholder() || digest == null
+          ? _value.digest
+          // ignore: cast_nullable_to_non_nullable
+          : digest as String,
       domain: domain == const $CopyWithPlaceholder() || domain == null
           ? _value.domain
           // ignore: cast_nullable_to_non_nullable
@@ -141,10 +145,6 @@ class _$AdminDomainBlockCWProxyImpl implements _$AdminDomainBlockCWProxy {
           ? _value.severity
           // ignore: cast_nullable_to_non_nullable
           : severity as AdminDomainBlockSeverityEnum,
-      digest: digest == const $CopyWithPlaceholder()
-          ? _value.digest
-          // ignore: cast_nullable_to_non_nullable
-          : digest as String?,
       privateComment: privateComment == const $CopyWithPlaceholder()
           ? _value.privateComment
           // ignore: cast_nullable_to_non_nullable
@@ -177,6 +177,7 @@ AdminDomainBlock _$AdminDomainBlockFromJson(Map<String, dynamic> json) =>
           json,
           requiredKeys: const [
             'created_at',
+            'digest',
             'domain',
             'id',
             'obfuscate',
@@ -190,6 +191,7 @@ AdminDomainBlock _$AdminDomainBlockFromJson(Map<String, dynamic> json) =>
             'created_at',
             (v) => DateTime.parse(v as String),
           ),
+          digest: $checkedConvert('digest', (v) => v as String),
           domain: $checkedConvert('domain', (v) => v as String),
           id: $checkedConvert('id', (v) => v as String),
           obfuscate: $checkedConvert('obfuscate', (v) => v as bool),
@@ -199,7 +201,6 @@ AdminDomainBlock _$AdminDomainBlockFromJson(Map<String, dynamic> json) =>
             'severity',
             (v) => $enumDecode(_$AdminDomainBlockSeverityEnumEnumMap, v),
           ),
-          digest: $checkedConvert('digest', (v) => v as String?),
           privateComment: $checkedConvert(
             'private_comment',
             (v) => v as String?,
@@ -220,13 +221,13 @@ AdminDomainBlock _$AdminDomainBlockFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$AdminDomainBlockToJson(AdminDomainBlock instance) =>
     <String, dynamic>{
       'created_at': instance.createdAt.toIso8601String(),
+      'digest': instance.digest,
       'domain': instance.domain,
       'id': instance.id,
       'obfuscate': instance.obfuscate,
       'reject_media': instance.rejectMedia,
       'reject_reports': instance.rejectReports,
       'severity': _$AdminDomainBlockSeverityEnumEnumMap[instance.severity]!,
-      'digest': ?instance.digest,
       'private_comment': ?instance.privateComment,
       'public_comment': ?instance.publicComment,
     };

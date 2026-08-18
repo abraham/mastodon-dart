@@ -7,6 +7,8 @@ part of 'instance.dart';
 // **************************************************************************
 
 abstract class _$InstanceCWProxy {
+  Instance apiVersions(InstanceApiVersions apiVersions);
+
   Instance configuration(InstanceConfiguration configuration);
 
   Instance contact(InstanceContact contact);
@@ -14,6 +16,8 @@ abstract class _$InstanceCWProxy {
   Instance description(String description);
 
   Instance domain(String domain);
+
+  Instance icon(List<InstanceIcon> icon);
 
   Instance languages(List<String> languages);
 
@@ -31,9 +35,7 @@ abstract class _$InstanceCWProxy {
 
   Instance version(String version);
 
-  Instance apiVersions(InstanceApiVersions? apiVersions);
-
-  Instance icon(List<InstanceIcon>? icon);
+  Instance wrapstodon(String? wrapstodon);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Instance(...).copyWith.fieldName(value)`.
@@ -43,10 +45,12 @@ abstract class _$InstanceCWProxy {
   /// Instance(...).copyWith(id: 12, name: "My name")
   /// ```
   Instance call({
+    InstanceApiVersions apiVersions,
     InstanceConfiguration configuration,
     InstanceContact contact,
     String description,
     String domain,
+    List<InstanceIcon> icon,
     List<String> languages,
     InstanceRegistrations registrations,
     List<Rule> rules,
@@ -55,8 +59,7 @@ abstract class _$InstanceCWProxy {
     String title,
     InstanceUsage usage,
     String version,
-    InstanceApiVersions? apiVersions,
-    List<InstanceIcon>? icon,
+    String? wrapstodon,
   });
 }
 
@@ -66,6 +69,10 @@ class _$InstanceCWProxyImpl implements _$InstanceCWProxy {
   const _$InstanceCWProxyImpl(this._value);
 
   final Instance _value;
+
+  @override
+  Instance apiVersions(InstanceApiVersions apiVersions) =>
+      call(apiVersions: apiVersions);
 
   @override
   Instance configuration(InstanceConfiguration configuration) =>
@@ -79,6 +86,9 @@ class _$InstanceCWProxyImpl implements _$InstanceCWProxy {
 
   @override
   Instance domain(String domain) => call(domain: domain);
+
+  @override
+  Instance icon(List<InstanceIcon> icon) => call(icon: icon);
 
   @override
   Instance languages(List<String> languages) => call(languages: languages);
@@ -106,11 +116,7 @@ class _$InstanceCWProxyImpl implements _$InstanceCWProxy {
   Instance version(String version) => call(version: version);
 
   @override
-  Instance apiVersions(InstanceApiVersions? apiVersions) =>
-      call(apiVersions: apiVersions);
-
-  @override
-  Instance icon(List<InstanceIcon>? icon) => call(icon: icon);
+  Instance wrapstodon(String? wrapstodon) => call(wrapstodon: wrapstodon);
 
   @override
   /// Creates a new instance with the provided field values.
@@ -121,10 +127,12 @@ class _$InstanceCWProxyImpl implements _$InstanceCWProxy {
   /// Instance(...).copyWith(id: 12, name: "My name")
   /// ```
   Instance call({
+    Object? apiVersions = const $CopyWithPlaceholder(),
     Object? configuration = const $CopyWithPlaceholder(),
     Object? contact = const $CopyWithPlaceholder(),
     Object? description = const $CopyWithPlaceholder(),
     Object? domain = const $CopyWithPlaceholder(),
+    Object? icon = const $CopyWithPlaceholder(),
     Object? languages = const $CopyWithPlaceholder(),
     Object? registrations = const $CopyWithPlaceholder(),
     Object? rules = const $CopyWithPlaceholder(),
@@ -133,10 +141,14 @@ class _$InstanceCWProxyImpl implements _$InstanceCWProxy {
     Object? title = const $CopyWithPlaceholder(),
     Object? usage = const $CopyWithPlaceholder(),
     Object? version = const $CopyWithPlaceholder(),
-    Object? apiVersions = const $CopyWithPlaceholder(),
-    Object? icon = const $CopyWithPlaceholder(),
+    Object? wrapstodon = const $CopyWithPlaceholder(),
   }) {
     return Instance(
+      apiVersions:
+          apiVersions == const $CopyWithPlaceholder() || apiVersions == null
+          ? _value.apiVersions
+          // ignore: cast_nullable_to_non_nullable
+          : apiVersions as InstanceApiVersions,
       configuration:
           configuration == const $CopyWithPlaceholder() || configuration == null
           ? _value.configuration
@@ -155,6 +167,10 @@ class _$InstanceCWProxyImpl implements _$InstanceCWProxy {
           ? _value.domain
           // ignore: cast_nullable_to_non_nullable
           : domain as String,
+      icon: icon == const $CopyWithPlaceholder() || icon == null
+          ? _value.icon
+          // ignore: cast_nullable_to_non_nullable
+          : icon as List<InstanceIcon>,
       languages: languages == const $CopyWithPlaceholder() || languages == null
           ? _value.languages
           // ignore: cast_nullable_to_non_nullable
@@ -188,14 +204,10 @@ class _$InstanceCWProxyImpl implements _$InstanceCWProxy {
           ? _value.version
           // ignore: cast_nullable_to_non_nullable
           : version as String,
-      apiVersions: apiVersions == const $CopyWithPlaceholder()
-          ? _value.apiVersions
+      wrapstodon: wrapstodon == const $CopyWithPlaceholder()
+          ? _value.wrapstodon
           // ignore: cast_nullable_to_non_nullable
-          : apiVersions as InstanceApiVersions?,
-      icon: icon == const $CopyWithPlaceholder()
-          ? _value.icon
-          // ignore: cast_nullable_to_non_nullable
-          : icon as List<InstanceIcon>?,
+          : wrapstodon as String?,
     );
   }
 }
@@ -218,10 +230,12 @@ Instance _$InstanceFromJson(Map<String, dynamic> json) => $checkedCreate(
     $checkKeys(
       json,
       requiredKeys: const [
+        'api_versions',
         'configuration',
         'contact',
         'description',
         'domain',
+        'icon',
         'languages',
         'registrations',
         'rules',
@@ -233,6 +247,10 @@ Instance _$InstanceFromJson(Map<String, dynamic> json) => $checkedCreate(
       ],
     );
     final val = Instance(
+      apiVersions: $checkedConvert(
+        'api_versions',
+        (v) => InstanceApiVersions.fromJson(v as Map<String, dynamic>),
+      ),
       configuration: $checkedConvert(
         'configuration',
         (v) => InstanceConfiguration.fromJson(v as Map<String, dynamic>),
@@ -243,6 +261,12 @@ Instance _$InstanceFromJson(Map<String, dynamic> json) => $checkedCreate(
       ),
       description: $checkedConvert('description', (v) => v as String),
       domain: $checkedConvert('domain', (v) => v as String),
+      icon: $checkedConvert(
+        'icon',
+        (v) => (v as List<dynamic>)
+            .map((e) => InstanceIcon.fromJson(e as Map<String, dynamic>))
+            .toList(),
+      ),
       languages: $checkedConvert(
         'languages',
         (v) => (v as List<dynamic>).map((e) => e as String).toList(),
@@ -268,29 +292,20 @@ Instance _$InstanceFromJson(Map<String, dynamic> json) => $checkedCreate(
         (v) => InstanceUsage.fromJson(v as Map<String, dynamic>),
       ),
       version: $checkedConvert('version', (v) => v as String),
-      apiVersions: $checkedConvert(
-        'api_versions',
-        (v) => v == null
-            ? null
-            : InstanceApiVersions.fromJson(v as Map<String, dynamic>),
-      ),
-      icon: $checkedConvert(
-        'icon',
-        (v) => (v as List<dynamic>?)
-            ?.map((e) => InstanceIcon.fromJson(e as Map<String, dynamic>))
-            .toList(),
-      ),
+      wrapstodon: $checkedConvert('wrapstodon', (v) => v as String?),
     );
     return val;
   },
-  fieldKeyMap: const {'sourceUrl': 'source_url', 'apiVersions': 'api_versions'},
+  fieldKeyMap: const {'apiVersions': 'api_versions', 'sourceUrl': 'source_url'},
 );
 
 Map<String, dynamic> _$InstanceToJson(Instance instance) => <String, dynamic>{
+  'api_versions': instance.apiVersions.toJson(),
   'configuration': instance.configuration.toJson(),
   'contact': instance.contact.toJson(),
   'description': instance.description,
   'domain': instance.domain,
+  'icon': instance.icon.map((e) => e.toJson()).toList(),
   'languages': instance.languages,
   'registrations': instance.registrations.toJson(),
   'rules': instance.rules.map((e) => e.toJson()).toList(),
@@ -299,6 +314,5 @@ Map<String, dynamic> _$InstanceToJson(Instance instance) => <String, dynamic>{
   'title': instance.title,
   'usage': instance.usage.toJson(),
   'version': instance.version,
-  'api_versions': ?instance.apiVersions?.toJson(),
-  'icon': ?instance.icon?.map((e) => e.toJson()).toList(),
+  'wrapstodon': ?instance.wrapstodon,
 };

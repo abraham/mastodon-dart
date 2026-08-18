@@ -14,7 +14,7 @@ void main() {
     });
 
     // A list of reasons this account is being suggested. This replaces `source`
-    // List<String> sources
+    // List<SuggestionSourcesEnum> sources
     test('to test the property `sources`', () async {
       // TODO
     });

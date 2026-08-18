@@ -20,11 +20,15 @@ class InstanceConfigurationAccounts {
   InstanceConfigurationAccounts({
     required this.maxFeaturedTags,
 
+    required this.maxPinnedStatuses,
+
+    this.maxAvatarDescriptionLength,
+
     this.maxDisplayNameLength,
 
-    this.maxNoteLength,
+    this.maxHeaderDescriptionLength,
 
-    this.maxPinnedStatuses,
+    this.maxNoteLength,
 
     this.maxProfileFields,
 
@@ -37,6 +41,18 @@ class InstanceConfigurationAccounts {
   @JsonKey(name: r'max_featured_tags', required: true, includeIfNull: false)
   final int maxFeaturedTags;
 
+  /// The maximum number of pinned statuses for each account.
+  @JsonKey(name: r'max_pinned_statuses', required: true, includeIfNull: false)
+  final int maxPinnedStatuses;
+
+  /// The maximum length allowed for an account's avatar description.
+  @JsonKey(
+    name: r'max_avatar_description_length',
+    required: false,
+    includeIfNull: false,
+  )
+  final int? maxAvatarDescriptionLength;
+
   /// The maximum length allowed for an account's display name.
   @JsonKey(
     name: r'max_display_name_length',
@@ -45,13 +61,17 @@ class InstanceConfigurationAccounts {
   )
   final int? maxDisplayNameLength;
 
+  /// The maximum length allowed for an account's profile header description.
+  @JsonKey(
+    name: r'max_header_description_length',
+    required: false,
+    includeIfNull: false,
+  )
+  final int? maxHeaderDescriptionLength;
+
   /// The maximum length allowed for an account's bio.
   @JsonKey(name: r'max_note_length', required: false, includeIfNull: false)
   final int? maxNoteLength;
-
-  /// The maximum number of pinned statuses for each account.
-  @JsonKey(name: r'max_pinned_statuses', required: false, includeIfNull: false)
-  final int? maxPinnedStatuses;
 
   /// The maximum number of custom profile fields allowed to be set.
   @JsonKey(name: r'max_profile_fields', required: false, includeIfNull: false)
@@ -78,9 +98,11 @@ class InstanceConfigurationAccounts {
       identical(this, other) ||
       other is InstanceConfigurationAccounts &&
           other.maxFeaturedTags == maxFeaturedTags &&
-          other.maxDisplayNameLength == maxDisplayNameLength &&
-          other.maxNoteLength == maxNoteLength &&
           other.maxPinnedStatuses == maxPinnedStatuses &&
+          other.maxAvatarDescriptionLength == maxAvatarDescriptionLength &&
+          other.maxDisplayNameLength == maxDisplayNameLength &&
+          other.maxHeaderDescriptionLength == maxHeaderDescriptionLength &&
+          other.maxNoteLength == maxNoteLength &&
           other.maxProfileFields == maxProfileFields &&
           other.profileFieldNameLimit == profileFieldNameLimit &&
           other.profileFieldValueLimit == profileFieldValueLimit;
@@ -88,9 +110,15 @@ class InstanceConfigurationAccounts {
   @override
   int get hashCode =>
       maxFeaturedTags.hashCode +
+      maxPinnedStatuses.hashCode +
+      (maxAvatarDescriptionLength == null
+          ? 0
+          : maxAvatarDescriptionLength.hashCode) +
       (maxDisplayNameLength == null ? 0 : maxDisplayNameLength.hashCode) +
+      (maxHeaderDescriptionLength == null
+          ? 0
+          : maxHeaderDescriptionLength.hashCode) +
       (maxNoteLength == null ? 0 : maxNoteLength.hashCode) +
-      (maxPinnedStatuses == null ? 0 : maxPinnedStatuses.hashCode) +
       (maxProfileFields == null ? 0 : maxProfileFields.hashCode) +
       (profileFieldNameLimit == null ? 0 : profileFieldNameLimit.hashCode) +
       (profileFieldValueLimit == null ? 0 : profileFieldValueLimit.hashCode);

@@ -24,6 +24,15 @@ void main() {
       // TODO
     });
 
+    // Get all Collections from a given account
+    //
+    // Version history:  4.6.0 (`mastodon` [API version] 10) - added
+    //
+    //Future getAccountCollections(String accountId, { int limit, int offset }) async
+    test('test getAccountCollections', () async {
+      // TODO
+    });
+
     // Get featured accounts
     //
     // Accounts that the user is currently featuring on their profile.  Version history:  4.4.0 - added
@@ -66,6 +75,15 @@ void main() {
     //
     //Future<List<IdentityProof>> getAccountIdentityProofs(String id) async
     test('test getAccountIdentityProofs', () async {
+      // TODO
+    });
+
+    // Get all Collections the current account is featured in
+    //
+    // Version history:  4.6.0 (`mastodon` [API version] 10) - added
+    //
+    //Future getAccountInCollections(String accountId, { int limit, int offset }) async
+    test('test getAccountInCollections', () async {
       // TODO
     });
 
@@ -143,7 +161,7 @@ void main() {
 
     // Update account credentials
     //
-    // Update the user's display and preferences.  Version history:  1.1.1 - added\\ 2.3.0 - added `locked` parameter\\ 2.4.0 - added `source[privacy,sensitive]` parameters\\ 2.4.2 - added `source[language]` parameter\\ 2.7.0 - added `discoverable` parameter\\ 4.1.0 - added `hide_collections` parameter\\ 4.2.0 - added `indexable` parameter\\ 4.4.0 (`mastodon` [API version] 3) - added `attribution_domains` parameter\\ 4.5.0 (`mastodon` [API version] 7) - added `quote_policy` parameter
+    // Update the user's display and preferences.  Version history:  1.1.1 - added\\ 2.3.0 - added `locked` parameter\\ 2.4.0 - added `source[privacy,sensitive]` parameters\\ 2.4.2 - added `source[language]` parameter\\ 2.7.0 - added `discoverable` parameter\\ 4.1.0 - added `hide_collections` parameter\\ 4.2.0 - added `indexable` parameter\\ 4.4.0 (`mastodon` [API version] 3) - added `attribution_domains` parameter\\ 4.5.0 (`mastodon` [API version] 7) - added `quote_policy` parameter\\ 4.6.1 (`mastodon` [API version] 11) - added `avatar_description` and `header_description` parameter
     //
     //Future<CredentialAccount> patchAccountsUpdateCredentials({ PatchAccountsUpdateCredentialsRequest patchAccountsUpdateCredentialsRequest }) async
     test('test patchAccountsUpdateCredentials', () async {

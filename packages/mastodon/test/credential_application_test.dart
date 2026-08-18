@@ -31,12 +31,6 @@ void main() {
       // TODO
     });
 
-    // When the client secret key will expire. Presently this always returns `0` indicating that OAuth Clients do not expire.
-    // int clientSecretExpiresAt
-    test('to test the property `clientSecretExpiresAt`', () async {
-      // TODO
-    });
-
     // The registered redirection URI(s) for the application stored as a single string. Multiple URIs are separated by whitespace characters. May contain `\\n` characters when multiple redirect URIs are registered.
     // String redirectUri
     test('to test the property `redirectUri`', () async {
@@ -58,6 +52,12 @@ void main() {
     // Used for Push Streaming API. Returned with [POST /api/v1/apps]({{< relref \"methods/apps#create\" >}}). Equivalent to [WebPushSubscription#server_key]({{< relref \"entities/WebPushSubscription#server_key\" >}}) and [Instance#vapid_public_key]({{< relref \"entities/Instance#vapid_public_key\" >}})
     // String vapidKey
     test('to test the property `vapidKey`', () async {
+      // TODO
+    });
+
+    // When the client secret key will expire. Presently this always returns `0` indicating that OAuth Clients do not expire.
+    // int clientSecretExpiresAt
+    test('to test the property `clientSecretExpiresAt`', () async {
       // TODO
     });
 

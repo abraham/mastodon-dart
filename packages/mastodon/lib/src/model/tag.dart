@@ -22,6 +22,8 @@ class Tag {
   Tag({
     required this.history,
 
+    required this.id,
+
     required this.name,
 
     required this.url,
@@ -29,13 +31,15 @@ class Tag {
     this.featuring,
 
     this.following,
-
-    this.id,
   });
 
   /// Usage statistics for given days (typically the past week).
   @JsonKey(name: r'history', required: true, includeIfNull: false)
   final List<TagHistory> history;
+
+  /// ID of the hashtag in the database. Useful for constructing URLs for the moderation tools & Admin API.
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
+  final String id;
 
   /// The value of the hashtag after the # sign.
   @JsonKey(name: r'name', required: true, includeIfNull: false)
@@ -53,29 +57,25 @@ class Tag {
   @JsonKey(name: r'following', required: false, includeIfNull: false)
   final bool? following;
 
-  /// ID of the hashtag in the database. Useful for constructing URLs for the moderation tools & Admin API.
-  @JsonKey(name: r'id', required: false, includeIfNull: false)
-  final String? id;
-
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is Tag &&
           other.history == history &&
+          other.id == id &&
           other.name == name &&
           other.url == url &&
           other.featuring == featuring &&
-          other.following == following &&
-          other.id == id;
+          other.following == following;
 
   @override
   int get hashCode =>
       history.hashCode +
+      id.hashCode +
       name.hashCode +
       url.hashCode +
       (featuring == null ? 0 : featuring.hashCode) +
-      (following == null ? 0 : following.hashCode) +
-      (id == null ? 0 : id.hashCode);
+      (following == null ? 0 : following.hashCode);
 
   factory Tag.fromJson(Map<String, dynamic> json) => _$TagFromJson(json);
 

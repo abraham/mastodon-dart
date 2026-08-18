@@ -6,6 +6,7 @@
 import 'package:mastodon/src/model/status.dart';
 import 'package:mastodon/src/model/tag.dart';
 import 'package:mastodon/src/model/account.dart';
+import 'package:mastodon/src/model/collection.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -26,6 +27,8 @@ class Search {
     required this.hashtags,
 
     required this.statuses,
+
+    this.collections,
   });
 
   /// Accounts which match the given query
@@ -40,16 +43,25 @@ class Search {
   @JsonKey(name: r'statuses', required: true, includeIfNull: false)
   final List<Status> statuses;
 
+  /// Collections which match the given query
+  @JsonKey(name: r'collections', required: false, includeIfNull: false)
+  final List<Collection>? collections;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is Search &&
           other.accounts == accounts &&
           other.hashtags == hashtags &&
-          other.statuses == statuses;
+          other.statuses == statuses &&
+          other.collections == collections;
 
   @override
-  int get hashCode => accounts.hashCode + hashtags.hashCode + statuses.hashCode;
+  int get hashCode =>
+      accounts.hashCode +
+      hashtags.hashCode +
+      statuses.hashCode +
+      (collections == null ? 0 : collections.hashCode);
 
   factory Search.fromJson(Map<String, dynamic> json) => _$SearchFromJson(json);
 

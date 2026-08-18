@@ -400,7 +400,6 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'CredentialAccountSource':
       return CredentialAccountSource.fromJson(value as Map<String, dynamic>)
           as ReturnType;
-    case 'CredentialAccountSourceQuotePolicyEnum':
     case 'CredentialApplication':
       return CredentialApplication.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -579,6 +578,7 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'NotificationGroup':
       return NotificationGroup.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'NotificationGroupTypeEnum':
     case 'NotificationPolicy':
       return NotificationPolicy.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -709,6 +709,7 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'ScheduledStatusParamsPoll':
       return ScheduledStatusParamsPoll.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'ScheduledStatusParamsQuoteApprovalPolicyEnum':
     case 'Search':
       return Search.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'ShallowQuote':
@@ -740,6 +741,7 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'StatusVisibilityEnum':
     case 'Suggestion':
       return Suggestion.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'SuggestionSourcesEnum':
     case 'Tag':
       return Tag.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'TagHistory':

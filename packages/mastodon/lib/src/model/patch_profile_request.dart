@@ -67,7 +67,7 @@ class PatchProfileRequest {
   @JsonKey(name: r'bot', required: false, includeIfNull: false)
   final bool? bot;
 
-  /// Whether the account should be shown in the profile directory.
+  /// Whether the account should be shown in the profile directory and be available for other discovery features, like being included in Collections.
   @JsonKey(name: r'discoverable', required: false, includeIfNull: false)
   final bool? discoverable;
 
@@ -87,7 +87,7 @@ class PatchProfileRequest {
   @JsonKey(name: r'header_description', required: false, includeIfNull: false)
   final String? headerDescription;
 
-  /// Whether to hide followers and followed accounts.
+  /// Whether to hide followers and followed accounts. This field predates the Collections feature and has nothing to do with it, despite the name.
   @JsonKey(name: r'hide_collections', required: false, includeIfNull: false)
   final bool? hideCollections;
 

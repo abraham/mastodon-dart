@@ -7,6 +7,12 @@ part of 'preview_card.dart';
 // **************************************************************************
 
 abstract class _$PreviewCardCWProxy {
+  PreviewCard authorName(String authorName);
+
+  PreviewCard authorUrl(Uri authorUrl);
+
+  PreviewCard authors(List<PreviewCardAuthor> authors);
+
   PreviewCard description(String description);
 
   PreviewCard embedUrl(Uri embedUrl);
@@ -19,6 +25,8 @@ abstract class _$PreviewCardCWProxy {
 
   PreviewCard providerUrl(Uri providerUrl);
 
+  PreviewCard publishedAt(DateTime publishedAt);
+
   PreviewCard title(String title);
 
   PreviewCard type(TrendsLinkTypeEnum type);
@@ -26,12 +34,6 @@ abstract class _$PreviewCardCWProxy {
   PreviewCard url(Uri url);
 
   PreviewCard width(int width);
-
-  PreviewCard authorName(String? authorName);
-
-  PreviewCard authorUrl(Uri? authorUrl);
-
-  PreviewCard authors(List<PreviewCardAuthor>? authors);
 
   PreviewCard blurhash(String? blurhash);
 
@@ -47,19 +49,20 @@ abstract class _$PreviewCardCWProxy {
   /// PreviewCard(...).copyWith(id: 12, name: "My name")
   /// ```
   PreviewCard call({
+    String authorName,
+    Uri authorUrl,
+    List<PreviewCardAuthor> authors,
     String description,
     Uri embedUrl,
     int height,
     String html,
     String providerName,
     Uri providerUrl,
+    DateTime publishedAt,
     String title,
     TrendsLinkTypeEnum type,
     Uri url,
     int width,
-    String? authorName,
-    Uri? authorUrl,
-    List<PreviewCardAuthor>? authors,
     String? blurhash,
     Uri? image,
     bool? missingAttribution,
@@ -72,6 +75,16 @@ class _$PreviewCardCWProxyImpl implements _$PreviewCardCWProxy {
   const _$PreviewCardCWProxyImpl(this._value);
 
   final PreviewCard _value;
+
+  @override
+  PreviewCard authorName(String authorName) => call(authorName: authorName);
+
+  @override
+  PreviewCard authorUrl(Uri authorUrl) => call(authorUrl: authorUrl);
+
+  @override
+  PreviewCard authors(List<PreviewCardAuthor> authors) =>
+      call(authors: authors);
 
   @override
   PreviewCard description(String description) => call(description: description);
@@ -93,6 +106,10 @@ class _$PreviewCardCWProxyImpl implements _$PreviewCardCWProxy {
   PreviewCard providerUrl(Uri providerUrl) => call(providerUrl: providerUrl);
 
   @override
+  PreviewCard publishedAt(DateTime publishedAt) =>
+      call(publishedAt: publishedAt);
+
+  @override
   PreviewCard title(String title) => call(title: title);
 
   @override
@@ -103,16 +120,6 @@ class _$PreviewCardCWProxyImpl implements _$PreviewCardCWProxy {
 
   @override
   PreviewCard width(int width) => call(width: width);
-
-  @override
-  PreviewCard authorName(String? authorName) => call(authorName: authorName);
-
-  @override
-  PreviewCard authorUrl(Uri? authorUrl) => call(authorUrl: authorUrl);
-
-  @override
-  PreviewCard authors(List<PreviewCardAuthor>? authors) =>
-      call(authors: authors);
 
   @override
   PreviewCard blurhash(String? blurhash) => call(blurhash: blurhash);
@@ -133,24 +140,38 @@ class _$PreviewCardCWProxyImpl implements _$PreviewCardCWProxy {
   /// PreviewCard(...).copyWith(id: 12, name: "My name")
   /// ```
   PreviewCard call({
+    Object? authorName = const $CopyWithPlaceholder(),
+    Object? authorUrl = const $CopyWithPlaceholder(),
+    Object? authors = const $CopyWithPlaceholder(),
     Object? description = const $CopyWithPlaceholder(),
     Object? embedUrl = const $CopyWithPlaceholder(),
     Object? height = const $CopyWithPlaceholder(),
     Object? html = const $CopyWithPlaceholder(),
     Object? providerName = const $CopyWithPlaceholder(),
     Object? providerUrl = const $CopyWithPlaceholder(),
+    Object? publishedAt = const $CopyWithPlaceholder(),
     Object? title = const $CopyWithPlaceholder(),
     Object? type = const $CopyWithPlaceholder(),
     Object? url = const $CopyWithPlaceholder(),
     Object? width = const $CopyWithPlaceholder(),
-    Object? authorName = const $CopyWithPlaceholder(),
-    Object? authorUrl = const $CopyWithPlaceholder(),
-    Object? authors = const $CopyWithPlaceholder(),
     Object? blurhash = const $CopyWithPlaceholder(),
     Object? image = const $CopyWithPlaceholder(),
     Object? missingAttribution = const $CopyWithPlaceholder(),
   }) {
     return PreviewCard(
+      authorName:
+          authorName == const $CopyWithPlaceholder() || authorName == null
+          ? _value.authorName
+          // ignore: cast_nullable_to_non_nullable
+          : authorName as String,
+      authorUrl: authorUrl == const $CopyWithPlaceholder() || authorUrl == null
+          ? _value.authorUrl
+          // ignore: cast_nullable_to_non_nullable
+          : authorUrl as Uri,
+      authors: authors == const $CopyWithPlaceholder() || authors == null
+          ? _value.authors
+          // ignore: cast_nullable_to_non_nullable
+          : authors as List<PreviewCardAuthor>,
       description:
           description == const $CopyWithPlaceholder() || description == null
           ? _value.description
@@ -178,6 +199,11 @@ class _$PreviewCardCWProxyImpl implements _$PreviewCardCWProxy {
           ? _value.providerUrl
           // ignore: cast_nullable_to_non_nullable
           : providerUrl as Uri,
+      publishedAt:
+          publishedAt == const $CopyWithPlaceholder() || publishedAt == null
+          ? _value.publishedAt
+          // ignore: cast_nullable_to_non_nullable
+          : publishedAt as DateTime,
       title: title == const $CopyWithPlaceholder() || title == null
           ? _value.title
           // ignore: cast_nullable_to_non_nullable
@@ -194,18 +220,6 @@ class _$PreviewCardCWProxyImpl implements _$PreviewCardCWProxy {
           ? _value.width
           // ignore: cast_nullable_to_non_nullable
           : width as int,
-      authorName: authorName == const $CopyWithPlaceholder()
-          ? _value.authorName
-          // ignore: cast_nullable_to_non_nullable
-          : authorName as String?,
-      authorUrl: authorUrl == const $CopyWithPlaceholder()
-          ? _value.authorUrl
-          // ignore: cast_nullable_to_non_nullable
-          : authorUrl as Uri?,
-      authors: authors == const $CopyWithPlaceholder()
-          ? _value.authors
-          // ignore: cast_nullable_to_non_nullable
-          : authors as List<PreviewCardAuthor>?,
       blurhash: blurhash == const $CopyWithPlaceholder()
           ? _value.blurhash
           // ignore: cast_nullable_to_non_nullable
@@ -240,12 +254,16 @@ PreviewCard _$PreviewCardFromJson(Map<String, dynamic> json) => $checkedCreate(
     $checkKeys(
       json,
       requiredKeys: const [
+        'author_name',
+        'author_url',
+        'authors',
         'description',
         'embed_url',
         'height',
         'html',
         'provider_name',
         'provider_url',
+        'published_at',
         'title',
         'type',
         'url',
@@ -253,6 +271,14 @@ PreviewCard _$PreviewCardFromJson(Map<String, dynamic> json) => $checkedCreate(
       ],
     );
     final val = PreviewCard(
+      authorName: $checkedConvert('author_name', (v) => v as String),
+      authorUrl: $checkedConvert('author_url', (v) => Uri.parse(v as String)),
+      authors: $checkedConvert(
+        'authors',
+        (v) => (v as List<dynamic>)
+            .map((e) => PreviewCardAuthor.fromJson(e as Map<String, dynamic>))
+            .toList(),
+      ),
       description: $checkedConvert('description', (v) => v as String),
       embedUrl: $checkedConvert('embed_url', (v) => Uri.parse(v as String)),
       height: $checkedConvert('height', (v) => (v as num).toInt()),
@@ -262,6 +288,10 @@ PreviewCard _$PreviewCardFromJson(Map<String, dynamic> json) => $checkedCreate(
         'provider_url',
         (v) => Uri.parse(v as String),
       ),
+      publishedAt: $checkedConvert(
+        'published_at',
+        (v) => DateTime.parse(v as String),
+      ),
       title: $checkedConvert('title', (v) => v as String),
       type: $checkedConvert(
         'type',
@@ -269,17 +299,6 @@ PreviewCard _$PreviewCardFromJson(Map<String, dynamic> json) => $checkedCreate(
       ),
       url: $checkedConvert('url', (v) => Uri.parse(v as String)),
       width: $checkedConvert('width', (v) => (v as num).toInt()),
-      authorName: $checkedConvert('author_name', (v) => v as String?),
-      authorUrl: $checkedConvert(
-        'author_url',
-        (v) => PreviewCard._parseAuthorUrl(v as String?),
-      ),
-      authors: $checkedConvert(
-        'authors',
-        (v) => (v as List<dynamic>?)
-            ?.map((e) => PreviewCardAuthor.fromJson(e as Map<String, dynamic>))
-            .toList(),
-      ),
       blurhash: $checkedConvert('blurhash', (v) => v as String?),
       image: $checkedConvert(
         'image',
@@ -293,30 +312,32 @@ PreviewCard _$PreviewCardFromJson(Map<String, dynamic> json) => $checkedCreate(
     return val;
   },
   fieldKeyMap: const {
+    'authorName': 'author_name',
+    'authorUrl': 'author_url',
     'embedUrl': 'embed_url',
     'providerName': 'provider_name',
     'providerUrl': 'provider_url',
-    'authorName': 'author_name',
-    'authorUrl': 'author_url',
+    'publishedAt': 'published_at',
     'missingAttribution': 'missing_attribution',
   },
 );
 
 Map<String, dynamic> _$PreviewCardToJson(PreviewCard instance) =>
     <String, dynamic>{
+      'author_name': instance.authorName,
+      'author_url': instance.authorUrl.toString(),
+      'authors': instance.authors.map((e) => e.toJson()).toList(),
       'description': instance.description,
       'embed_url': instance.embedUrl.toString(),
       'height': instance.height,
       'html': instance.html,
       'provider_name': instance.providerName,
       'provider_url': instance.providerUrl.toString(),
+      'published_at': instance.publishedAt.toIso8601String(),
       'title': instance.title,
       'type': _$TrendsLinkTypeEnumEnumMap[instance.type]!,
       'url': instance.url.toString(),
       'width': instance.width,
-      'author_name': ?instance.authorName,
-      'author_url': ?instance.authorUrl?.toString(),
-      'authors': ?instance.authors?.map((e) => e.toJson()).toList(),
       'blurhash': ?instance.blurhash,
       'image': ?instance.image?.toString(),
       'missing_attribution': ?instance.missingAttribution,

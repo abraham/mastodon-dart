@@ -12,15 +12,15 @@ abstract class _$ApplicationCWProxy {
   Application name(String name);
 
   Application redirectUri(
-    @Deprecated('redirectUri has been deprecated') String? redirectUri,
+    @Deprecated('redirectUri has been deprecated') String redirectUri,
   );
 
-  Application redirectUris(List<Uri>? redirectUris);
+  Application redirectUris(List<Uri> redirectUris);
 
-  Application scopes(List<OAuthScope>? scopes);
+  Application scopes(List<OAuthScope> scopes);
 
   Application vapidKey(
-    @Deprecated('vapidKey has been deprecated') String? vapidKey,
+    @Deprecated('vapidKey has been deprecated') String vapidKey,
   );
 
   Application website(Uri? website);
@@ -35,10 +35,10 @@ abstract class _$ApplicationCWProxy {
   Application call({
     String id,
     String name,
-    @Deprecated('redirectUri has been deprecated') String? redirectUri,
-    List<Uri>? redirectUris,
-    List<OAuthScope>? scopes,
-    @Deprecated('vapidKey has been deprecated') String? vapidKey,
+    @Deprecated('redirectUri has been deprecated') String redirectUri,
+    List<Uri> redirectUris,
+    List<OAuthScope> scopes,
+    @Deprecated('vapidKey has been deprecated') String vapidKey,
     Uri? website,
   });
 }
@@ -58,19 +58,19 @@ class _$ApplicationCWProxyImpl implements _$ApplicationCWProxy {
 
   @override
   Application redirectUri(
-    @Deprecated('redirectUri has been deprecated') String? redirectUri,
+    @Deprecated('redirectUri has been deprecated') String redirectUri,
   ) => call(redirectUri: redirectUri);
 
   @override
-  Application redirectUris(List<Uri>? redirectUris) =>
+  Application redirectUris(List<Uri> redirectUris) =>
       call(redirectUris: redirectUris);
 
   @override
-  Application scopes(List<OAuthScope>? scopes) => call(scopes: scopes);
+  Application scopes(List<OAuthScope> scopes) => call(scopes: scopes);
 
   @override
   Application vapidKey(
-    @Deprecated('vapidKey has been deprecated') String? vapidKey,
+    @Deprecated('vapidKey has been deprecated') String vapidKey,
   ) => call(vapidKey: vapidKey);
 
   @override
@@ -104,22 +104,24 @@ class _$ApplicationCWProxyImpl implements _$ApplicationCWProxy {
           ? _value.name
           // ignore: cast_nullable_to_non_nullable
           : name as String,
-      redirectUri: redirectUri == const $CopyWithPlaceholder()
+      redirectUri:
+          redirectUri == const $CopyWithPlaceholder() || redirectUri == null
           ? _value.redirectUri
           // ignore: cast_nullable_to_non_nullable
-          : redirectUri as String?,
-      redirectUris: redirectUris == const $CopyWithPlaceholder()
+          : redirectUri as String,
+      redirectUris:
+          redirectUris == const $CopyWithPlaceholder() || redirectUris == null
           ? _value.redirectUris
           // ignore: cast_nullable_to_non_nullable
-          : redirectUris as List<Uri>?,
-      scopes: scopes == const $CopyWithPlaceholder()
+          : redirectUris as List<Uri>,
+      scopes: scopes == const $CopyWithPlaceholder() || scopes == null
           ? _value.scopes
           // ignore: cast_nullable_to_non_nullable
-          : scopes as List<OAuthScope>?,
-      vapidKey: vapidKey == const $CopyWithPlaceholder()
+          : scopes as List<OAuthScope>,
+      vapidKey: vapidKey == const $CopyWithPlaceholder() || vapidKey == null
           ? _value.vapidKey
           // ignore: cast_nullable_to_non_nullable
-          : vapidKey as String?,
+          : vapidKey as String,
       website: website == const $CopyWithPlaceholder()
           ? _value.website
           // ignore: cast_nullable_to_non_nullable
@@ -143,23 +145,32 @@ Application _$ApplicationFromJson(Map<String, dynamic> json) => $checkedCreate(
   'Application',
   json,
   ($checkedConvert) {
-    $checkKeys(json, requiredKeys: const ['id', 'name']);
+    $checkKeys(
+      json,
+      requiredKeys: const [
+        'id',
+        'name',
+        'redirect_uri',
+        'redirect_uris',
+        'scopes',
+        'vapid_key',
+      ],
+    );
     final val = Application(
       id: $checkedConvert('id', (v) => v as String),
       name: $checkedConvert('name', (v) => v as String),
-      redirectUri: $checkedConvert('redirect_uri', (v) => v as String?),
+      redirectUri: $checkedConvert('redirect_uri', (v) => v as String),
       redirectUris: $checkedConvert(
         'redirect_uris',
-        (v) =>
-            (v as List<dynamic>?)?.map((e) => Uri.parse(e as String)).toList(),
+        (v) => (v as List<dynamic>).map((e) => Uri.parse(e as String)).toList(),
       ),
       scopes: $checkedConvert(
         'scopes',
-        (v) => (v as List<dynamic>?)
-            ?.map((e) => $enumDecode(_$OAuthScopeEnumMap, e))
+        (v) => (v as List<dynamic>)
+            .map((e) => $enumDecode(_$OAuthScopeEnumMap, e))
             .toList(),
       ),
-      vapidKey: $checkedConvert('vapid_key', (v) => v as String?),
+      vapidKey: $checkedConvert('vapid_key', (v) => v as String),
       website: $checkedConvert(
         'website',
         (v) => v == null ? null : Uri.parse(v as String),
@@ -174,17 +185,16 @@ Application _$ApplicationFromJson(Map<String, dynamic> json) => $checkedCreate(
   },
 );
 
-Map<String, dynamic> _$ApplicationToJson(
-  Application instance,
-) => <String, dynamic>{
-  'id': instance.id,
-  'name': instance.name,
-  'redirect_uri': ?instance.redirectUri,
-  'redirect_uris': ?instance.redirectUris?.map((e) => e.toString()).toList(),
-  'scopes': ?instance.scopes?.map((e) => _$OAuthScopeEnumMap[e]!).toList(),
-  'vapid_key': ?instance.vapidKey,
-  'website': ?instance.website?.toString(),
-};
+Map<String, dynamic> _$ApplicationToJson(Application instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'redirect_uri': instance.redirectUri,
+      'redirect_uris': instance.redirectUris.map((e) => e.toString()).toList(),
+      'scopes': instance.scopes.map((e) => _$OAuthScopeEnumMap[e]!).toList(),
+      'vapid_key': instance.vapidKey,
+      'website': ?instance.website?.toString(),
+    };
 
 const _$OAuthScopeEnumMap = {
   OAuthScope.profile: 'profile',

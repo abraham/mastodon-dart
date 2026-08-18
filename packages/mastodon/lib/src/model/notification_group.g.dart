@@ -15,7 +15,7 @@ abstract class _$NotificationGroupCWProxy {
 
   NotificationGroup sampleAccountIds(List<String> sampleAccountIds);
 
-  NotificationGroup type(NotificationTypeEnum type);
+  NotificationGroup type(NotificationGroupTypeEnum type);
 
   NotificationGroup event(RelationshipSeveranceEvent? event);
 
@@ -47,7 +47,7 @@ abstract class _$NotificationGroupCWProxy {
     int mostRecentNotificationId,
     int notificationsCount,
     List<String> sampleAccountIds,
-    NotificationTypeEnum type,
+    NotificationGroupTypeEnum type,
     RelationshipSeveranceEvent? event,
     NotificationFallback? fallback,
     DateTime? latestPageNotificationAt,
@@ -82,7 +82,7 @@ class _$NotificationGroupCWProxyImpl implements _$NotificationGroupCWProxy {
       call(sampleAccountIds: sampleAccountIds);
 
   @override
-  NotificationGroup type(NotificationTypeEnum type) => call(type: type);
+  NotificationGroup type(NotificationGroupTypeEnum type) => call(type: type);
 
   @override
   NotificationGroup event(RelationshipSeveranceEvent? event) =>
@@ -162,7 +162,7 @@ class _$NotificationGroupCWProxyImpl implements _$NotificationGroupCWProxy {
       type: type == const $CopyWithPlaceholder() || type == null
           ? _value.type
           // ignore: cast_nullable_to_non_nullable
-          : type as NotificationTypeEnum,
+          : type as NotificationGroupTypeEnum,
       event: event == const $CopyWithPlaceholder()
           ? _value.event
           // ignore: cast_nullable_to_non_nullable
@@ -243,7 +243,7 @@ NotificationGroup _$NotificationGroupFromJson(Map<String, dynamic> json) =>
           ),
           type: $checkedConvert(
             'type',
-            (v) => $enumDecode(_$NotificationTypeEnumEnumMap, v),
+            (v) => $enumDecode(_$NotificationGroupTypeEnumEnumMap, v),
           ),
           event: $checkedConvert(
             'event',
@@ -299,7 +299,7 @@ Map<String, dynamic> _$NotificationGroupToJson(NotificationGroup instance) =>
       'most_recent_notification_id': instance.mostRecentNotificationId,
       'notifications_count': instance.notificationsCount,
       'sample_account_ids': instance.sampleAccountIds,
-      'type': _$NotificationTypeEnumEnumMap[instance.type]!,
+      'type': _$NotificationGroupTypeEnumEnumMap[instance.type]!,
       'event': ?instance.event?.toJson(),
       'fallback': ?instance.fallback?.toJson(),
       'latest_page_notification_at': ?instance.latestPageNotificationAt
@@ -311,19 +311,19 @@ Map<String, dynamic> _$NotificationGroupToJson(NotificationGroup instance) =>
       'status_id': ?instance.statusId,
     };
 
-const _$NotificationTypeEnumEnumMap = {
-  NotificationTypeEnum.mention: 'mention',
-  NotificationTypeEnum.status: 'status',
-  NotificationTypeEnum.reblog: 'reblog',
-  NotificationTypeEnum.follow: 'follow',
-  NotificationTypeEnum.followRequest: 'follow_request',
-  NotificationTypeEnum.favourite: 'favourite',
-  NotificationTypeEnum.poll: 'poll',
-  NotificationTypeEnum.edit: 'update',
-  NotificationTypeEnum.adminPeriodSignUp: 'admin.sign_up',
-  NotificationTypeEnum.adminPeriodReport: 'admin.report',
-  NotificationTypeEnum.severedRelationships: 'severed_relationships',
-  NotificationTypeEnum.moderationWarning: 'moderation_warning',
-  NotificationTypeEnum.quote: 'quote',
-  NotificationTypeEnum.quotedUpdate: 'quoted_update',
+const _$NotificationGroupTypeEnumEnumMap = {
+  NotificationGroupTypeEnum.mention: 'mention',
+  NotificationGroupTypeEnum.status: 'status',
+  NotificationGroupTypeEnum.reblog: 'reblog',
+  NotificationGroupTypeEnum.follow: 'follow',
+  NotificationGroupTypeEnum.followRequest: 'follow_request',
+  NotificationGroupTypeEnum.favourite: 'favourite',
+  NotificationGroupTypeEnum.poll: 'poll',
+  NotificationGroupTypeEnum.edit: 'update',
+  NotificationGroupTypeEnum.adminPeriodSignUp: 'admin.sign_up',
+  NotificationGroupTypeEnum.adminPeriodReport: 'admin.report',
+  NotificationGroupTypeEnum.severedRelationships: 'severed_relationships',
+  NotificationGroupTypeEnum.moderationWarning: 'moderation_warning',
+  NotificationGroupTypeEnum.quote: 'quote',
+  NotificationGroupTypeEnum.quotedUpdate: 'quoted_update',
 };

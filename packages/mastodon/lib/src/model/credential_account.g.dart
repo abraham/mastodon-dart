@@ -35,6 +35,8 @@ abstract class _$CredentialAccountCWProxy {
 
   CredentialAccount id(String id);
 
+  CredentialAccount indexable(bool indexable);
+
   CredentialAccount locked(bool locked);
 
   CredentialAccount note(String note);
@@ -58,8 +60,6 @@ abstract class _$CredentialAccountCWProxy {
   CredentialAccount headerDescription(String? headerDescription);
 
   CredentialAccount hideCollections(bool? hideCollections);
-
-  CredentialAccount indexable(bool? indexable);
 
   CredentialAccount lastStatusAt(DateTime? lastStatusAt);
 
@@ -105,6 +105,7 @@ abstract class _$CredentialAccountCWProxy {
     Uri header,
     Uri headerStatic,
     String id,
+    bool indexable,
     bool locked,
     String note,
     Role role,
@@ -117,7 +118,6 @@ abstract class _$CredentialAccountCWProxy {
     FeatureApproval? featureApproval,
     String? headerDescription,
     bool? hideCollections,
-    bool? indexable,
     DateTime? lastStatusAt,
     bool? limited,
     bool? memorial,
@@ -187,6 +187,9 @@ class _$CredentialAccountCWProxyImpl implements _$CredentialAccountCWProxy {
   CredentialAccount id(String id) => call(id: id);
 
   @override
+  CredentialAccount indexable(bool indexable) => call(indexable: indexable);
+
+  @override
   CredentialAccount locked(bool locked) => call(locked: locked);
 
   @override
@@ -228,9 +231,6 @@ class _$CredentialAccountCWProxyImpl implements _$CredentialAccountCWProxy {
   @override
   CredentialAccount hideCollections(bool? hideCollections) =>
       call(hideCollections: hideCollections);
-
-  @override
-  CredentialAccount indexable(bool? indexable) => call(indexable: indexable);
 
   @override
   CredentialAccount lastStatusAt(DateTime? lastStatusAt) =>
@@ -291,6 +291,7 @@ class _$CredentialAccountCWProxyImpl implements _$CredentialAccountCWProxy {
     Object? header = const $CopyWithPlaceholder(),
     Object? headerStatic = const $CopyWithPlaceholder(),
     Object? id = const $CopyWithPlaceholder(),
+    Object? indexable = const $CopyWithPlaceholder(),
     Object? locked = const $CopyWithPlaceholder(),
     Object? note = const $CopyWithPlaceholder(),
     Object? role = const $CopyWithPlaceholder(),
@@ -303,7 +304,6 @@ class _$CredentialAccountCWProxyImpl implements _$CredentialAccountCWProxy {
     Object? featureApproval = const $CopyWithPlaceholder(),
     Object? headerDescription = const $CopyWithPlaceholder(),
     Object? hideCollections = const $CopyWithPlaceholder(),
-    Object? indexable = const $CopyWithPlaceholder(),
     Object? lastStatusAt = const $CopyWithPlaceholder(),
     Object? limited = const $CopyWithPlaceholder(),
     Object? memorial = const $CopyWithPlaceholder(),
@@ -380,6 +380,10 @@ class _$CredentialAccountCWProxyImpl implements _$CredentialAccountCWProxy {
           ? _value.id
           // ignore: cast_nullable_to_non_nullable
           : id as String,
+      indexable: indexable == const $CopyWithPlaceholder() || indexable == null
+          ? _value.indexable
+          // ignore: cast_nullable_to_non_nullable
+          : indexable as bool,
       locked: locked == const $CopyWithPlaceholder() || locked == null
           ? _value.locked
           // ignore: cast_nullable_to_non_nullable
@@ -429,10 +433,6 @@ class _$CredentialAccountCWProxyImpl implements _$CredentialAccountCWProxy {
           ? _value.hideCollections
           // ignore: cast_nullable_to_non_nullable
           : hideCollections as bool?,
-      indexable: indexable == const $CopyWithPlaceholder()
-          ? _value.indexable
-          // ignore: cast_nullable_to_non_nullable
-          : indexable as bool?,
       lastStatusAt: lastStatusAt == const $CopyWithPlaceholder()
           ? _value.lastStatusAt
           // ignore: cast_nullable_to_non_nullable
@@ -515,6 +515,7 @@ CredentialAccount _$CredentialAccountFromJson(Map<String, dynamic> json) =>
             'header',
             'header_static',
             'id',
+            'indexable',
             'locked',
             'note',
             'role',
@@ -564,6 +565,7 @@ CredentialAccount _$CredentialAccountFromJson(Map<String, dynamic> json) =>
             (v) => Uri.parse(v as String),
           ),
           id: $checkedConvert('id', (v) => v as String),
+          indexable: $checkedConvert('indexable', (v) => v as bool),
           locked: $checkedConvert('locked', (v) => v as bool),
           note: $checkedConvert('note', (v) => v as String),
           role: $checkedConvert(
@@ -599,7 +601,6 @@ CredentialAccount _$CredentialAccountFromJson(Map<String, dynamic> json) =>
             'hide_collections',
             (v) => v as bool?,
           ),
-          indexable: $checkedConvert('indexable', (v) => v as bool?),
           lastStatusAt: $checkedConvert(
             'last_status_at',
             (v) => v == null ? null : DateTime.parse(v as String),
@@ -668,6 +669,7 @@ Map<String, dynamic> _$CredentialAccountToJson(CredentialAccount instance) =>
       'header': instance.header.toString(),
       'header_static': instance.headerStatic.toString(),
       'id': instance.id,
+      'indexable': instance.indexable,
       'locked': instance.locked,
       'note': instance.note,
       'role': instance.role.toJson(),
@@ -680,7 +682,6 @@ Map<String, dynamic> _$CredentialAccountToJson(CredentialAccount instance) =>
       'feature_approval': ?instance.featureApproval?.toJson(),
       'header_description': ?instance.headerDescription,
       'hide_collections': ?instance.hideCollections,
-      'indexable': ?instance.indexable,
       'last_status_at': ?instance.lastStatusAt?.toIso8601String(),
       'limited': ?instance.limited,
       'memorial': ?instance.memorial,

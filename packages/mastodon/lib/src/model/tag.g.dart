@@ -9,6 +9,8 @@ part of 'tag.dart';
 abstract class _$TagCWProxy {
   Tag history(List<TagHistory> history);
 
+  Tag id(String id);
+
   Tag name(String name);
 
   Tag url(Uri url);
@@ -16,8 +18,6 @@ abstract class _$TagCWProxy {
   Tag featuring(bool? featuring);
 
   Tag following(bool? following);
-
-  Tag id(String? id);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Tag(...).copyWith.fieldName(value)`.
@@ -28,11 +28,11 @@ abstract class _$TagCWProxy {
   /// ```
   Tag call({
     List<TagHistory> history,
+    String id,
     String name,
     Uri url,
     bool? featuring,
     bool? following,
-    String? id,
   });
 }
 
@@ -47,6 +47,9 @@ class _$TagCWProxyImpl implements _$TagCWProxy {
   Tag history(List<TagHistory> history) => call(history: history);
 
   @override
+  Tag id(String id) => call(id: id);
+
+  @override
   Tag name(String name) => call(name: name);
 
   @override
@@ -59,9 +62,6 @@ class _$TagCWProxyImpl implements _$TagCWProxy {
   Tag following(bool? following) => call(following: following);
 
   @override
-  Tag id(String? id) => call(id: id);
-
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Tag(...).copyWith.fieldName(value)`.
   ///
@@ -71,17 +71,21 @@ class _$TagCWProxyImpl implements _$TagCWProxy {
   /// ```
   Tag call({
     Object? history = const $CopyWithPlaceholder(),
+    Object? id = const $CopyWithPlaceholder(),
     Object? name = const $CopyWithPlaceholder(),
     Object? url = const $CopyWithPlaceholder(),
     Object? featuring = const $CopyWithPlaceholder(),
     Object? following = const $CopyWithPlaceholder(),
-    Object? id = const $CopyWithPlaceholder(),
   }) {
     return Tag(
       history: history == const $CopyWithPlaceholder() || history == null
           ? _value.history
           // ignore: cast_nullable_to_non_nullable
           : history as List<TagHistory>,
+      id: id == const $CopyWithPlaceholder() || id == null
+          ? _value.id
+          // ignore: cast_nullable_to_non_nullable
+          : id as String,
       name: name == const $CopyWithPlaceholder() || name == null
           ? _value.name
           // ignore: cast_nullable_to_non_nullable
@@ -98,10 +102,6 @@ class _$TagCWProxyImpl implements _$TagCWProxy {
           ? _value.following
           // ignore: cast_nullable_to_non_nullable
           : following as bool?,
-      id: id == const $CopyWithPlaceholder()
-          ? _value.id
-          // ignore: cast_nullable_to_non_nullable
-          : id as String?,
     );
   }
 }
@@ -119,7 +119,7 @@ extension $TagCopyWith on Tag {
 
 Tag _$TagFromJson(Map<String, dynamic> json) =>
     $checkedCreate('Tag', json, ($checkedConvert) {
-      $checkKeys(json, requiredKeys: const ['history', 'name', 'url']);
+      $checkKeys(json, requiredKeys: const ['history', 'id', 'name', 'url']);
       final val = Tag(
         history: $checkedConvert(
           'history',
@@ -127,20 +127,20 @@ Tag _$TagFromJson(Map<String, dynamic> json) =>
               .map((e) => TagHistory.fromJson(e as Map<String, dynamic>))
               .toList(),
         ),
+        id: $checkedConvert('id', (v) => v as String),
         name: $checkedConvert('name', (v) => v as String),
         url: $checkedConvert('url', (v) => Uri.parse(v as String)),
         featuring: $checkedConvert('featuring', (v) => v as bool?),
         following: $checkedConvert('following', (v) => v as bool?),
-        id: $checkedConvert('id', (v) => v as String?),
       );
       return val;
     });
 
 Map<String, dynamic> _$TagToJson(Tag instance) => <String, dynamic>{
   'history': instance.history.map((e) => e.toJson()).toList(),
+  'id': instance.id,
   'name': instance.name,
   'url': instance.url.toString(),
   'featuring': ?instance.featuring,
   'following': ?instance.following,
-  'id': ?instance.id,
 };

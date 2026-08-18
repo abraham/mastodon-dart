@@ -11,6 +11,8 @@ abstract class _$CredentialAccountSourceCWProxy {
 
   CredentialAccountSource followRequestsCount(int followRequestsCount);
 
+  CredentialAccountSource indexable(bool indexable);
+
   CredentialAccountSource note(String note);
 
   CredentialAccountSource privacy(StatusVisibilityEnum privacy);
@@ -23,12 +25,10 @@ abstract class _$CredentialAccountSourceCWProxy {
 
   CredentialAccountSource hideCollections(bool? hideCollections);
 
-  CredentialAccountSource indexable(bool? indexable);
-
   CredentialAccountSource language(String? language);
 
   CredentialAccountSource quotePolicy(
-    CredentialAccountSourceQuotePolicyEnum? quotePolicy,
+    ScheduledStatusParamsQuoteApprovalPolicyEnum? quotePolicy,
   );
 
   /// Creates a new instance with the provided field values.
@@ -41,15 +41,15 @@ abstract class _$CredentialAccountSourceCWProxy {
   CredentialAccountSource call({
     List<Field> fields,
     int followRequestsCount,
+    bool indexable,
     String note,
     StatusVisibilityEnum privacy,
     bool sensitive,
     List<String>? attributionDomains,
     bool? discoverable,
     bool? hideCollections,
-    bool? indexable,
     String? language,
-    CredentialAccountSourceQuotePolicyEnum? quotePolicy,
+    ScheduledStatusParamsQuoteApprovalPolicyEnum? quotePolicy,
   });
 }
 
@@ -67,6 +67,10 @@ class _$CredentialAccountSourceCWProxyImpl
   @override
   CredentialAccountSource followRequestsCount(int followRequestsCount) =>
       call(followRequestsCount: followRequestsCount);
+
+  @override
+  CredentialAccountSource indexable(bool indexable) =>
+      call(indexable: indexable);
 
   @override
   CredentialAccountSource note(String note) => call(note: note);
@@ -93,16 +97,12 @@ class _$CredentialAccountSourceCWProxyImpl
       call(hideCollections: hideCollections);
 
   @override
-  CredentialAccountSource indexable(bool? indexable) =>
-      call(indexable: indexable);
-
-  @override
   CredentialAccountSource language(String? language) =>
       call(language: language);
 
   @override
   CredentialAccountSource quotePolicy(
-    CredentialAccountSourceQuotePolicyEnum? quotePolicy,
+    ScheduledStatusParamsQuoteApprovalPolicyEnum? quotePolicy,
   ) => call(quotePolicy: quotePolicy);
 
   @override
@@ -116,13 +116,13 @@ class _$CredentialAccountSourceCWProxyImpl
   CredentialAccountSource call({
     Object? fields = const $CopyWithPlaceholder(),
     Object? followRequestsCount = const $CopyWithPlaceholder(),
+    Object? indexable = const $CopyWithPlaceholder(),
     Object? note = const $CopyWithPlaceholder(),
     Object? privacy = const $CopyWithPlaceholder(),
     Object? sensitive = const $CopyWithPlaceholder(),
     Object? attributionDomains = const $CopyWithPlaceholder(),
     Object? discoverable = const $CopyWithPlaceholder(),
     Object? hideCollections = const $CopyWithPlaceholder(),
-    Object? indexable = const $CopyWithPlaceholder(),
     Object? language = const $CopyWithPlaceholder(),
     Object? quotePolicy = const $CopyWithPlaceholder(),
   }) {
@@ -137,6 +137,10 @@ class _$CredentialAccountSourceCWProxyImpl
           ? _value.followRequestsCount
           // ignore: cast_nullable_to_non_nullable
           : followRequestsCount as int,
+      indexable: indexable == const $CopyWithPlaceholder() || indexable == null
+          ? _value.indexable
+          // ignore: cast_nullable_to_non_nullable
+          : indexable as bool,
       note: note == const $CopyWithPlaceholder() || note == null
           ? _value.note
           // ignore: cast_nullable_to_non_nullable
@@ -161,10 +165,6 @@ class _$CredentialAccountSourceCWProxyImpl
           ? _value.hideCollections
           // ignore: cast_nullable_to_non_nullable
           : hideCollections as bool?,
-      indexable: indexable == const $CopyWithPlaceholder()
-          ? _value.indexable
-          // ignore: cast_nullable_to_non_nullable
-          : indexable as bool?,
       language: language == const $CopyWithPlaceholder()
           ? _value.language
           // ignore: cast_nullable_to_non_nullable
@@ -172,7 +172,7 @@ class _$CredentialAccountSourceCWProxyImpl
       quotePolicy: quotePolicy == const $CopyWithPlaceholder()
           ? _value.quotePolicy
           // ignore: cast_nullable_to_non_nullable
-          : quotePolicy as CredentialAccountSourceQuotePolicyEnum?,
+          : quotePolicy as ScheduledStatusParamsQuoteApprovalPolicyEnum?,
     );
   }
 }
@@ -200,6 +200,7 @@ CredentialAccountSource _$CredentialAccountSourceFromJson(
       requiredKeys: const [
         'fields',
         'follow_requests_count',
+        'indexable',
         'note',
         'privacy',
         'sensitive',
@@ -216,6 +217,7 @@ CredentialAccountSource _$CredentialAccountSourceFromJson(
         'follow_requests_count',
         (v) => (v as num).toInt(),
       ),
+      indexable: $checkedConvert('indexable', (v) => v as bool),
       note: $checkedConvert('note', (v) => v as String),
       privacy: $checkedConvert(
         'privacy',
@@ -228,12 +230,11 @@ CredentialAccountSource _$CredentialAccountSourceFromJson(
       ),
       discoverable: $checkedConvert('discoverable', (v) => v as bool?),
       hideCollections: $checkedConvert('hide_collections', (v) => v as bool?),
-      indexable: $checkedConvert('indexable', (v) => v as bool?),
       language: $checkedConvert('language', (v) => v as String?),
       quotePolicy: $checkedConvert(
         'quote_policy',
         (v) => $enumDecodeNullable(
-          _$CredentialAccountSourceQuotePolicyEnumEnumMap,
+          _$ScheduledStatusParamsQuoteApprovalPolicyEnumEnumMap,
           v,
         ),
       ),
@@ -253,16 +254,17 @@ Map<String, dynamic> _$CredentialAccountSourceToJson(
 ) => <String, dynamic>{
   'fields': instance.fields.map((e) => e.toJson()).toList(),
   'follow_requests_count': instance.followRequestsCount,
+  'indexable': instance.indexable,
   'note': instance.note,
   'privacy': _$StatusVisibilityEnumEnumMap[instance.privacy]!,
   'sensitive': instance.sensitive,
   'attribution_domains': ?instance.attributionDomains,
   'discoverable': ?instance.discoverable,
   'hide_collections': ?instance.hideCollections,
-  'indexable': ?instance.indexable,
   'language': ?instance.language,
   'quote_policy':
-      ?_$CredentialAccountSourceQuotePolicyEnumEnumMap[instance.quotePolicy],
+      ?_$ScheduledStatusParamsQuoteApprovalPolicyEnumEnumMap[instance
+          .quotePolicy],
 };
 
 const _$StatusVisibilityEnumEnumMap = {
@@ -272,8 +274,8 @@ const _$StatusVisibilityEnumEnumMap = {
   StatusVisibilityEnum.direct: 'direct',
 };
 
-const _$CredentialAccountSourceQuotePolicyEnumEnumMap = {
-  CredentialAccountSourceQuotePolicyEnum.public: 'public',
-  CredentialAccountSourceQuotePolicyEnum.followers: 'followers',
-  CredentialAccountSourceQuotePolicyEnum.nobody: 'nobody',
+const _$ScheduledStatusParamsQuoteApprovalPolicyEnumEnumMap = {
+  ScheduledStatusParamsQuoteApprovalPolicyEnum.public: 'public',
+  ScheduledStatusParamsQuoteApprovalPolicyEnum.followers: 'followers',
+  ScheduledStatusParamsQuoteApprovalPolicyEnum.nobody: 'nobody',
 };

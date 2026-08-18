@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:mastodon/src/model/scheduled_status_params_quote_approval_policy_enum.dart';
 import 'package:mastodon/src/model/status_visibility_enum.dart';
 import 'package:mastodon/src/model/scheduled_status_params_poll.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
@@ -37,6 +38,10 @@ class ScheduledStatusParams {
     this.mediaIds,
 
     this.poll,
+
+    this.quoteApprovalPolicy,
+
+    this.quotedStatusId,
 
     this.scheduledAt,
 
@@ -82,6 +87,18 @@ class ScheduledStatusParams {
   @JsonKey(name: r'poll', required: false, includeIfNull: false)
   final ScheduledStatusParamsPoll? poll;
 
+  /// The quote policy for the Status.
+  @JsonKey(
+    name: r'quote_approval_policy',
+    required: false,
+    includeIfNull: false,
+  )
+  final ScheduledStatusParamsQuoteApprovalPolicyEnum? quoteApprovalPolicy;
+
+  /// ID of the Status being quoted.
+  @JsonKey(name: r'quoted_status_id', required: false, includeIfNull: false)
+  final String? quotedStatusId;
+
   /// When the status will be scheduled. This will be null because the status is only scheduled once.
   @JsonKey(name: r'scheduled_at', required: false, includeIfNull: false)
   final String? scheduledAt;
@@ -107,6 +124,8 @@ class ScheduledStatusParams {
           other.language == language &&
           other.mediaIds == mediaIds &&
           other.poll == poll &&
+          other.quoteApprovalPolicy == quoteApprovalPolicy &&
+          other.quotedStatusId == quotedStatusId &&
           other.scheduledAt == scheduledAt &&
           other.sensitive == sensitive &&
           other.spoilerText == spoilerText;
@@ -122,6 +141,8 @@ class ScheduledStatusParams {
       (language == null ? 0 : language.hashCode) +
       (mediaIds == null ? 0 : mediaIds.hashCode) +
       (poll == null ? 0 : poll.hashCode) +
+      quoteApprovalPolicy.hashCode +
+      (quotedStatusId == null ? 0 : quotedStatusId.hashCode) +
       (scheduledAt == null ? 0 : scheduledAt.hashCode) +
       (sensitive == null ? 0 : sensitive.hashCode) +
       (spoilerText == null ? 0 : spoilerText.hashCode);

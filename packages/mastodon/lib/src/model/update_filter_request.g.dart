@@ -109,31 +109,24 @@ extension $UpdateFilterRequestCopyWith on UpdateFilterRequest {
 // JsonSerializableGenerator
 // **************************************************************************
 
-UpdateFilterRequest _$UpdateFilterRequestFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'UpdateFilterRequest',
-      json,
-      ($checkedConvert) {
-        $checkKeys(json, requiredKeys: const ['context', 'phrase']);
-        final val = UpdateFilterRequest(
-          context: $checkedConvert(
-            'context',
-            (v) => (v as List<dynamic>)
-                .map((e) => $enumDecode(_$FilterContextEnumEnumMap, e))
-                .toList(),
-          ),
-          phrase: $checkedConvert('phrase', (v) => v as String),
-          expiresIn: $checkedConvert('expires_in', (v) => (v as num?)?.toInt()),
-          irreversible: $checkedConvert(
-            'irreversible',
-            (v) => v as bool? ?? false,
-          ),
-          wholeWord: $checkedConvert('whole_word', (v) => v as bool? ?? false),
-        );
-        return val;
-      },
-      fieldKeyMap: const {'expiresIn': 'expires_in', 'wholeWord': 'whole_word'},
-    );
+UpdateFilterRequest _$UpdateFilterRequestFromJson(
+  Map<String, dynamic> json,
+) => $checkedCreate('UpdateFilterRequest', json, ($checkedConvert) {
+  $checkKeys(json, requiredKeys: const ['context', 'phrase']);
+  final val = UpdateFilterRequest(
+    context: $checkedConvert(
+      'context',
+      (v) => (v as List<dynamic>)
+          .map((e) => $enumDecode(_$FilterContextEnumEnumMap, e))
+          .toList(),
+    ),
+    phrase: $checkedConvert('phrase', (v) => v as String),
+    expiresIn: $checkedConvert('expires_in', (v) => (v as num?)?.toInt()),
+    irreversible: $checkedConvert('irreversible', (v) => v as bool? ?? false),
+    wholeWord: $checkedConvert('whole_word', (v) => v as bool? ?? false),
+  );
+  return val;
+}, fieldKeyMap: const {'expiresIn': 'expires_in', 'wholeWord': 'whole_word'});
 
 Map<String, dynamic> _$UpdateFilterRequestToJson(
   UpdateFilterRequest instance,

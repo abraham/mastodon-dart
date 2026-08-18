@@ -24,5 +24,11 @@ void main() {
     test('to test the property `statuses`', () async {
       // TODO
     });
+
+    // Collections which match the given query
+    // List<Collection> collections
+    test('to test the property `collections`', () async {
+      // TODO
+    });
   });
 }

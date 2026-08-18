@@ -15,19 +15,19 @@ abstract class _$CredentialApplicationCWProxy {
 
   CredentialApplication name(String name);
 
-  CredentialApplication clientSecretExpiresAt(int? clientSecretExpiresAt);
-
   CredentialApplication redirectUri(
-    @Deprecated('redirectUri has been deprecated') String? redirectUri,
+    @Deprecated('redirectUri has been deprecated') String redirectUri,
   );
 
-  CredentialApplication redirectUris(List<Uri>? redirectUris);
+  CredentialApplication redirectUris(List<Uri> redirectUris);
 
-  CredentialApplication scopes(List<OAuthScope>? scopes);
+  CredentialApplication scopes(List<OAuthScope> scopes);
 
   CredentialApplication vapidKey(
-    @Deprecated('vapidKey has been deprecated') String? vapidKey,
+    @Deprecated('vapidKey has been deprecated') String vapidKey,
   );
+
+  CredentialApplication clientSecretExpiresAt(int? clientSecretExpiresAt);
 
   CredentialApplication website(Uri? website);
 
@@ -43,11 +43,11 @@ abstract class _$CredentialApplicationCWProxy {
     String clientSecret,
     String id,
     String name,
+    @Deprecated('redirectUri has been deprecated') String redirectUri,
+    List<Uri> redirectUris,
+    List<OAuthScope> scopes,
+    @Deprecated('vapidKey has been deprecated') String vapidKey,
     int? clientSecretExpiresAt,
-    @Deprecated('redirectUri has been deprecated') String? redirectUri,
-    List<Uri>? redirectUris,
-    List<OAuthScope>? scopes,
-    @Deprecated('vapidKey has been deprecated') String? vapidKey,
     Uri? website,
   });
 }
@@ -74,26 +74,25 @@ class _$CredentialApplicationCWProxyImpl
   CredentialApplication name(String name) => call(name: name);
 
   @override
-  CredentialApplication clientSecretExpiresAt(int? clientSecretExpiresAt) =>
-      call(clientSecretExpiresAt: clientSecretExpiresAt);
-
-  @override
   CredentialApplication redirectUri(
-    @Deprecated('redirectUri has been deprecated') String? redirectUri,
+    @Deprecated('redirectUri has been deprecated') String redirectUri,
   ) => call(redirectUri: redirectUri);
 
   @override
-  CredentialApplication redirectUris(List<Uri>? redirectUris) =>
+  CredentialApplication redirectUris(List<Uri> redirectUris) =>
       call(redirectUris: redirectUris);
 
   @override
-  CredentialApplication scopes(List<OAuthScope>? scopes) =>
-      call(scopes: scopes);
+  CredentialApplication scopes(List<OAuthScope> scopes) => call(scopes: scopes);
 
   @override
   CredentialApplication vapidKey(
-    @Deprecated('vapidKey has been deprecated') String? vapidKey,
+    @Deprecated('vapidKey has been deprecated') String vapidKey,
   ) => call(vapidKey: vapidKey);
+
+  @override
+  CredentialApplication clientSecretExpiresAt(int? clientSecretExpiresAt) =>
+      call(clientSecretExpiresAt: clientSecretExpiresAt);
 
   @override
   CredentialApplication website(Uri? website) => call(website: website);
@@ -111,13 +110,13 @@ class _$CredentialApplicationCWProxyImpl
     Object? clientSecret = const $CopyWithPlaceholder(),
     Object? id = const $CopyWithPlaceholder(),
     Object? name = const $CopyWithPlaceholder(),
-    Object? clientSecretExpiresAt = const $CopyWithPlaceholder(),
     @Deprecated('redirectUri has been deprecated')
     Object? redirectUri = const $CopyWithPlaceholder(),
     Object? redirectUris = const $CopyWithPlaceholder(),
     Object? scopes = const $CopyWithPlaceholder(),
     @Deprecated('vapidKey has been deprecated')
     Object? vapidKey = const $CopyWithPlaceholder(),
+    Object? clientSecretExpiresAt = const $CopyWithPlaceholder(),
     Object? website = const $CopyWithPlaceholder(),
   }) {
     return CredentialApplication(
@@ -138,27 +137,29 @@ class _$CredentialApplicationCWProxyImpl
           ? _value.name
           // ignore: cast_nullable_to_non_nullable
           : name as String,
+      redirectUri:
+          redirectUri == const $CopyWithPlaceholder() || redirectUri == null
+          ? _value.redirectUri
+          // ignore: cast_nullable_to_non_nullable
+          : redirectUri as String,
+      redirectUris:
+          redirectUris == const $CopyWithPlaceholder() || redirectUris == null
+          ? _value.redirectUris
+          // ignore: cast_nullable_to_non_nullable
+          : redirectUris as List<Uri>,
+      scopes: scopes == const $CopyWithPlaceholder() || scopes == null
+          ? _value.scopes
+          // ignore: cast_nullable_to_non_nullable
+          : scopes as List<OAuthScope>,
+      vapidKey: vapidKey == const $CopyWithPlaceholder() || vapidKey == null
+          ? _value.vapidKey
+          // ignore: cast_nullable_to_non_nullable
+          : vapidKey as String,
       clientSecretExpiresAt:
           clientSecretExpiresAt == const $CopyWithPlaceholder()
           ? _value.clientSecretExpiresAt
           // ignore: cast_nullable_to_non_nullable
           : clientSecretExpiresAt as int?,
-      redirectUri: redirectUri == const $CopyWithPlaceholder()
-          ? _value.redirectUri
-          // ignore: cast_nullable_to_non_nullable
-          : redirectUri as String?,
-      redirectUris: redirectUris == const $CopyWithPlaceholder()
-          ? _value.redirectUris
-          // ignore: cast_nullable_to_non_nullable
-          : redirectUris as List<Uri>?,
-      scopes: scopes == const $CopyWithPlaceholder()
-          ? _value.scopes
-          // ignore: cast_nullable_to_non_nullable
-          : scopes as List<OAuthScope>?,
-      vapidKey: vapidKey == const $CopyWithPlaceholder()
-          ? _value.vapidKey
-          // ignore: cast_nullable_to_non_nullable
-          : vapidKey as String?,
       website: website == const $CopyWithPlaceholder()
           ? _value.website
           // ignore: cast_nullable_to_non_nullable
@@ -187,30 +188,38 @@ CredentialApplication _$CredentialApplicationFromJson(
   ($checkedConvert) {
     $checkKeys(
       json,
-      requiredKeys: const ['client_id', 'client_secret', 'id', 'name'],
+      requiredKeys: const [
+        'client_id',
+        'client_secret',
+        'id',
+        'name',
+        'redirect_uri',
+        'redirect_uris',
+        'scopes',
+        'vapid_key',
+      ],
     );
     final val = CredentialApplication(
       clientId: $checkedConvert('client_id', (v) => v as String),
       clientSecret: $checkedConvert('client_secret', (v) => v as String),
       id: $checkedConvert('id', (v) => v as String),
       name: $checkedConvert('name', (v) => v as String),
+      redirectUri: $checkedConvert('redirect_uri', (v) => v as String),
+      redirectUris: $checkedConvert(
+        'redirect_uris',
+        (v) => (v as List<dynamic>).map((e) => Uri.parse(e as String)).toList(),
+      ),
+      scopes: $checkedConvert(
+        'scopes',
+        (v) => (v as List<dynamic>)
+            .map((e) => $enumDecode(_$OAuthScopeEnumMap, e))
+            .toList(),
+      ),
+      vapidKey: $checkedConvert('vapid_key', (v) => v as String),
       clientSecretExpiresAt: $checkedConvert(
         'client_secret_expires_at',
         (v) => (v as num?)?.toInt(),
       ),
-      redirectUri: $checkedConvert('redirect_uri', (v) => v as String?),
-      redirectUris: $checkedConvert(
-        'redirect_uris',
-        (v) =>
-            (v as List<dynamic>?)?.map((e) => Uri.parse(e as String)).toList(),
-      ),
-      scopes: $checkedConvert(
-        'scopes',
-        (v) => (v as List<dynamic>?)
-            ?.map((e) => $enumDecode(_$OAuthScopeEnumMap, e))
-            .toList(),
-      ),
-      vapidKey: $checkedConvert('vapid_key', (v) => v as String?),
       website: $checkedConvert(
         'website',
         (v) => v == null ? null : Uri.parse(v as String),
@@ -221,10 +230,10 @@ CredentialApplication _$CredentialApplicationFromJson(
   fieldKeyMap: const {
     'clientId': 'client_id',
     'clientSecret': 'client_secret',
-    'clientSecretExpiresAt': 'client_secret_expires_at',
     'redirectUri': 'redirect_uri',
     'redirectUris': 'redirect_uris',
     'vapidKey': 'vapid_key',
+    'clientSecretExpiresAt': 'client_secret_expires_at',
   },
 );
 
@@ -235,11 +244,11 @@ Map<String, dynamic> _$CredentialApplicationToJson(
   'client_secret': instance.clientSecret,
   'id': instance.id,
   'name': instance.name,
+  'redirect_uri': instance.redirectUri,
+  'redirect_uris': instance.redirectUris.map((e) => e.toString()).toList(),
+  'scopes': instance.scopes.map((e) => _$OAuthScopeEnumMap[e]!).toList(),
+  'vapid_key': instance.vapidKey,
   'client_secret_expires_at': ?instance.clientSecretExpiresAt,
-  'redirect_uri': ?instance.redirectUri,
-  'redirect_uris': ?instance.redirectUris?.map((e) => e.toString()).toList(),
-  'scopes': ?instance.scopes?.map((e) => _$OAuthScopeEnumMap[e]!).toList(),
-  'vapid_key': ?instance.vapidKey,
   'website': ?instance.website?.toString(),
 };
 

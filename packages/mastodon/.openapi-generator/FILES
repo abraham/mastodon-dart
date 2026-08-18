@@ -3,7 +3,6 @@ README.md
 analysis_options.yaml
 build.yaml
 doc/Account.md
-doc/AccountIdApi.md
 doc/AccountRole.md
 doc/AccountWarning.md
 doc/AccountWarningActionEnum.md
@@ -77,7 +76,6 @@ doc/CreateStatus200Response.md
 doc/CreateStatusRequest.md
 doc/CredentialAccount.md
 doc/CredentialAccountSource.md
-doc/CredentialAccountSourceQuotePolicyEnum.md
 doc/CredentialApplication.md
 doc/CustomEmoji.md
 doc/CustomEmojisApi.md
@@ -156,6 +154,7 @@ doc/MutesApi.md
 doc/Notification.md
 doc/NotificationFallback.md
 doc/NotificationGroup.md
+doc/NotificationGroupTypeEnum.md
 doc/NotificationPolicy.md
 doc/NotificationPolicySummary.md
 doc/NotificationRequest.md
@@ -214,6 +213,7 @@ doc/Rule.md
 doc/ScheduledStatus.md
 doc/ScheduledStatusParams.md
 doc/ScheduledStatusParamsPoll.md
+doc/ScheduledStatusParamsQuoteApprovalPolicyEnum.md
 doc/ScheduledStatusesApi.md
 doc/Search.md
 doc/SearchApi.md
@@ -232,6 +232,7 @@ doc/StatusVisibilityEnum.md
 doc/StatusesApi.md
 doc/StreamingApi.md
 doc/Suggestion.md
+doc/SuggestionSourcesEnum.md
 doc/SuggestionsApi.md
 doc/Tag.md
 doc/TagHistory.md
@@ -271,7 +272,6 @@ doc/WebPushSubscriptionAlerts.md
 doc/WellKnownApi.md
 lib/mastodon.dart
 lib/src/api.dart
-lib/src/api/account_id_api.dart
 lib/src/api/accounts_api.dart
 lib/src/api/announcements_api.dart
 lib/src/api/annual_reports_api.dart
@@ -385,7 +385,6 @@ lib/src/model/create_status200_response.dart
 lib/src/model/create_status_request.dart
 lib/src/model/credential_account.dart
 lib/src/model/credential_account_source.dart
-lib/src/model/credential_account_source_quote_policy_enum.dart
 lib/src/model/credential_application.dart
 lib/src/model/custom_emoji.dart
 lib/src/model/custom_error422.dart
@@ -448,6 +447,7 @@ lib/src/model/muted_account.dart
 lib/src/model/notification.dart
 lib/src/model/notification_fallback.dart
 lib/src/model/notification_group.dart
+lib/src/model/notification_group_type_enum.dart
 lib/src/model/notification_policy.dart
 lib/src/model/notification_policy_summary.dart
 lib/src/model/notification_request.dart
@@ -498,6 +498,7 @@ lib/src/model/rule.dart
 lib/src/model/scheduled_status.dart
 lib/src/model/scheduled_status_params.dart
 lib/src/model/scheduled_status_params_poll.dart
+lib/src/model/scheduled_status_params_quote_approval_policy_enum.dart
 lib/src/model/search.dart
 lib/src/model/shallow_quote.dart
 lib/src/model/shallow_tag.dart
@@ -512,6 +513,7 @@ lib/src/model/status_source.dart
 lib/src/model/status_tag.dart
 lib/src/model/status_visibility_enum.dart
 lib/src/model/suggestion.dart
+lib/src/model/suggestion_sources_enum.dart
 lib/src/model/tag.dart
 lib/src/model/tag_history.dart
 lib/src/model/terms_of_service.dart
@@ -544,7 +546,6 @@ lib/src/model/validation_error.dart
 lib/src/model/validation_error_details_value_inner.dart
 lib/src/model/web_push_subscription.dart
 lib/src/model/web_push_subscription_alerts.dart
-test/account_id_api_test.dart
 test/account_role_test.dart
 test/account_test.dart
 test/account_warning_action_enum_test.dart
@@ -617,7 +618,6 @@ test/create_push_subscription_request_test.dart
 test/create_report_request_test.dart
 test/create_status200_response_test.dart
 test/create_status_request_test.dart
-test/credential_account_source_quote_policy_enum_test.dart
 test/credential_account_source_test.dart
 test/credential_account_test.dart
 test/credential_application_test.dart
@@ -697,6 +697,7 @@ test/muted_account_test.dart
 test/mutes_api_test.dart
 test/notification_fallback_test.dart
 test/notification_group_test.dart
+test/notification_group_type_enum_test.dart
 test/notification_policy_summary_test.dart
 test/notification_policy_test.dart
 test/notification_request_test.dart
@@ -754,6 +755,7 @@ test/reports_api_test.dart
 test/role_test.dart
 test/rule_test.dart
 test/scheduled_status_params_poll_test.dart
+test/scheduled_status_params_quote_approval_policy_enum_test.dart
 test/scheduled_status_params_test.dart
 test/scheduled_status_test.dart
 test/scheduled_statuses_api_test.dart
@@ -773,6 +775,7 @@ test/status_test.dart
 test/status_visibility_enum_test.dart
 test/statuses_api_test.dart
 test/streaming_api_test.dart
+test/suggestion_sources_enum_test.dart
 test/suggestion_test.dart
 test/suggestions_api_test.dart
 test/tag_history_test.dart

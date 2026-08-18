@@ -26,19 +26,8 @@ class PreviewCardAuthor {
   final String name;
 
   /// A link to the author of the original resource. Replaces the deprecated `author_url` attribute of the preview card.
-  @JsonKey(
-    name: r'url',
-    required: false,
-    includeIfNull: false,
-    fromJson: _parseAuthorUrl,
-  )
-  final Uri? url;
-  static Uri? _parseAuthorUrl(String value) {
-    if (value.isEmpty) {
-      return null;
-    }
-    return Uri.tryParse(value);
-  }
+  @JsonKey(name: r'url', required: true, includeIfNull: false)
+  final Uri url;
 
   /// The fediverse account of the author.
   @JsonKey(name: r'account', required: false, includeIfNull: false)

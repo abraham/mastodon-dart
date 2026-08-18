@@ -129,4 +129,6 @@ Map<String, dynamic> _$CollectionItemToJson(CollectionItem instance) =>
 const _$CollectionItemStateEnumEnumMap = {
   CollectionItemStateEnum.pending: 'pending',
   CollectionItemStateEnum.accepted: 'accepted',
+  CollectionItemStateEnum.rejected: 'rejected',
+  CollectionItemStateEnum.revoked: 'revoked',
 };

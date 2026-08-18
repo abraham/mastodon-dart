@@ -60,6 +60,18 @@ void main() {
       // TODO
     });
 
+    // The quote policy for the Status.
+    // ScheduledStatusParamsQuoteApprovalPolicyEnum quoteApprovalPolicy
+    test('to test the property `quoteApprovalPolicy`', () async {
+      // TODO
+    });
+
+    // ID of the Status being quoted.
+    // String quotedStatusId
+    test('to test the property `quotedStatusId`', () async {
+      // TODO
+    });
+
     // When the status will be scheduled. This will be null because the status is only scheduled once.
     // String scheduledAt
     test('to test the property `scheduledAt`', () async {

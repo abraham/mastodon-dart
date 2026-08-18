@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **mostRecentNotificationId** | **int** | ID of the most recent notification in the group. | 
 **notificationsCount** | **int** | Total number of individual notifications that are part of this notification group. | 
 **sampleAccountIds** | **List&lt;String&gt;** | IDs of some of the accounts who most recently triggered notifications in this group. | 
-**type** | [**NotificationTypeEnum**](NotificationTypeEnum.md) | The type of event that resulted in the notifications in this group. | 
+**type** | [**NotificationGroupTypeEnum**](NotificationGroupTypeEnum.md) | The type of event that resulted in the notifications in this group. | 
 **event** | [**RelationshipSeveranceEvent**](RelationshipSeveranceEvent.md) | Summary of the event that caused follow relationships to be severed. Attached when `type` of the notification is `severed_relationships`. | [optional] 
 **fallback** | [**NotificationFallback**](NotificationFallback.md) | Fallback information available for some notification types that clients may not support. Only available for some notification types, and only if the `supported_types` parameter is used when querying. | [optional] 
 **latestPageNotificationAt** | [**DateTime**](DateTime.md) | Date at which the most recent notification from this group within the current page has been created. This is only returned when paginating through notification groups. | [optional] 

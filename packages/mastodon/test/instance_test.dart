@@ -7,6 +7,11 @@ void main() {
   // TODO add properties to the entity
 
   group(Instance, () {
+    // InstanceApiVersions apiVersions
+    test('to test the property `apiVersions`', () async {
+      // TODO
+    });
+
     // InstanceConfiguration configuration
     test('to test the property `configuration`', () async {
       // TODO
@@ -26,6 +31,12 @@ void main() {
     // The WebFinger domain name of the server.
     // String domain
     test('to test the property `domain`', () async {
+      // TODO
+    });
+
+    // The list of available size variants for this server's configured icon.
+    // List<InstanceIcon> icon
+    test('to test the property `icon`', () async {
       // TODO
     });
 
@@ -74,14 +85,9 @@ void main() {
       // TODO
     });
 
-    // InstanceApiVersions apiVersions
-    test('to test the property `apiVersions`', () async {
-      // TODO
-    });
-
-    // The list of available size variants for this server's configured icon.
-    // List<InstanceIcon> icon
-    test('to test the property `icon`', () async {
+    // The current Wrapstodon ([Annual report]({{< relref \"methods/annual_reports\" >}}) campaign identifier (year), if any.
+    // String wrapstodon
+    test('to test the property `wrapstodon`', () async {
       // TODO
     });
   });

@@ -13,6 +13,10 @@ abstract class _$PatchAccountsUpdateCredentialsRequestCWProxy {
 
   PatchAccountsUpdateCredentialsRequest avatar(String? avatar);
 
+  PatchAccountsUpdateCredentialsRequest avatarDescription(
+    String? avatarDescription,
+  );
+
   PatchAccountsUpdateCredentialsRequest bot(bool? bot);
 
   PatchAccountsUpdateCredentialsRequest discoverable(bool? discoverable);
@@ -24,6 +28,10 @@ abstract class _$PatchAccountsUpdateCredentialsRequestCWProxy {
   );
 
   PatchAccountsUpdateCredentialsRequest header(String? header);
+
+  PatchAccountsUpdateCredentialsRequest headerDescription(
+    String? headerDescription,
+  );
 
   PatchAccountsUpdateCredentialsRequest hideCollections(bool? hideCollections);
 
@@ -47,11 +55,13 @@ abstract class _$PatchAccountsUpdateCredentialsRequestCWProxy {
   PatchAccountsUpdateCredentialsRequest call({
     List<String>? attributionDomains,
     String? avatar,
+    String? avatarDescription,
     bool? bot,
     bool? discoverable,
     String? displayName,
     Object? fieldsAttributes,
     String? header,
+    String? headerDescription,
     bool? hideCollections,
     bool? indexable,
     bool? locked,
@@ -78,6 +88,11 @@ class _$PatchAccountsUpdateCredentialsRequestCWProxyImpl
       call(avatar: avatar);
 
   @override
+  PatchAccountsUpdateCredentialsRequest avatarDescription(
+    String? avatarDescription,
+  ) => call(avatarDescription: avatarDescription);
+
+  @override
   PatchAccountsUpdateCredentialsRequest bot(bool? bot) => call(bot: bot);
 
   @override
@@ -96,6 +111,11 @@ class _$PatchAccountsUpdateCredentialsRequestCWProxyImpl
   @override
   PatchAccountsUpdateCredentialsRequest header(String? header) =>
       call(header: header);
+
+  @override
+  PatchAccountsUpdateCredentialsRequest headerDescription(
+    String? headerDescription,
+  ) => call(headerDescription: headerDescription);
 
   @override
   PatchAccountsUpdateCredentialsRequest hideCollections(
@@ -129,11 +149,13 @@ class _$PatchAccountsUpdateCredentialsRequestCWProxyImpl
   PatchAccountsUpdateCredentialsRequest call({
     Object? attributionDomains = const $CopyWithPlaceholder(),
     Object? avatar = const $CopyWithPlaceholder(),
+    Object? avatarDescription = const $CopyWithPlaceholder(),
     Object? bot = const $CopyWithPlaceholder(),
     Object? discoverable = const $CopyWithPlaceholder(),
     Object? displayName = const $CopyWithPlaceholder(),
     Object? fieldsAttributes = const $CopyWithPlaceholder(),
     Object? header = const $CopyWithPlaceholder(),
+    Object? headerDescription = const $CopyWithPlaceholder(),
     Object? hideCollections = const $CopyWithPlaceholder(),
     Object? indexable = const $CopyWithPlaceholder(),
     Object? locked = const $CopyWithPlaceholder(),
@@ -149,6 +171,10 @@ class _$PatchAccountsUpdateCredentialsRequestCWProxyImpl
           ? _value.avatar
           // ignore: cast_nullable_to_non_nullable
           : avatar as String?,
+      avatarDescription: avatarDescription == const $CopyWithPlaceholder()
+          ? _value.avatarDescription
+          // ignore: cast_nullable_to_non_nullable
+          : avatarDescription as String?,
       bot: bot == const $CopyWithPlaceholder()
           ? _value.bot
           // ignore: cast_nullable_to_non_nullable
@@ -169,6 +195,10 @@ class _$PatchAccountsUpdateCredentialsRequestCWProxyImpl
           ? _value.header
           // ignore: cast_nullable_to_non_nullable
           : header as String?,
+      headerDescription: headerDescription == const $CopyWithPlaceholder()
+          ? _value.headerDescription
+          // ignore: cast_nullable_to_non_nullable
+          : headerDescription as String?,
       hideCollections: hideCollections == const $CopyWithPlaceholder()
           ? _value.hideCollections
           // ignore: cast_nullable_to_non_nullable
@@ -218,11 +248,19 @@ _$PatchAccountsUpdateCredentialsRequestFromJson(Map<String, dynamic> json) =>
             (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
           ),
           avatar: $checkedConvert('avatar', (v) => v as String?),
+          avatarDescription: $checkedConvert(
+            'avatar_description',
+            (v) => v as String?,
+          ),
           bot: $checkedConvert('bot', (v) => v as bool?),
           discoverable: $checkedConvert('discoverable', (v) => v as bool?),
           displayName: $checkedConvert('display_name', (v) => v as String?),
           fieldsAttributes: $checkedConvert('fields_attributes', (v) => v),
           header: $checkedConvert('header', (v) => v as String?),
+          headerDescription: $checkedConvert(
+            'header_description',
+            (v) => v as String?,
+          ),
           hideCollections: $checkedConvert(
             'hide_collections',
             (v) => v as bool?,
@@ -243,8 +281,10 @@ _$PatchAccountsUpdateCredentialsRequestFromJson(Map<String, dynamic> json) =>
       },
       fieldKeyMap: const {
         'attributionDomains': 'attribution_domains',
+        'avatarDescription': 'avatar_description',
         'displayName': 'display_name',
         'fieldsAttributes': 'fields_attributes',
+        'headerDescription': 'header_description',
         'hideCollections': 'hide_collections',
         'source_': 'source',
       },
@@ -255,11 +295,13 @@ Map<String, dynamic> _$PatchAccountsUpdateCredentialsRequestToJson(
 ) => <String, dynamic>{
   'attribution_domains': ?instance.attributionDomains,
   'avatar': ?instance.avatar,
+  'avatar_description': ?instance.avatarDescription,
   'bot': ?instance.bot,
   'discoverable': ?instance.discoverable,
   'display_name': ?instance.displayName,
   'fields_attributes': ?instance.fieldsAttributes,
   'header': ?instance.header,
+  'header_description': ?instance.headerDescription,
   'hide_collections': ?instance.hideCollections,
   'indexable': ?instance.indexable,
   'locked': ?instance.locked,

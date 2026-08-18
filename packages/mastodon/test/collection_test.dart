@@ -25,7 +25,7 @@ void main() {
       // TODO
     });
 
-    // Whether the Collection should show up in search results and recommendations.
+    // Whether the Collection should show up on the owner's profile, in search results and recommendations.
     // bool discoverable
     test('to test the property `discoverable`', () async {
       // TODO

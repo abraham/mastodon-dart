@@ -21,6 +21,8 @@ class AdminDomainBlock {
   AdminDomainBlock({
     required this.createdAt,
 
+    required this.digest,
+
     required this.domain,
 
     required this.id,
@@ -33,8 +35,6 @@ class AdminDomainBlock {
 
     required this.severity,
 
-    this.digest,
-
     this.privateComment,
 
     this.publicComment,
@@ -43,6 +43,10 @@ class AdminDomainBlock {
   /// When the domain was blocked from federating.
   @JsonKey(name: r'created_at', required: true, includeIfNull: false)
   final DateTime createdAt;
+
+  /// The sha256 hex digest of the domain that is not allowed to federated.
+  @JsonKey(name: r'digest', required: true, includeIfNull: false)
+  final String digest;
 
   /// The domain that is not allowed to federate.
   @JsonKey(name: r'domain', required: true, includeIfNull: false)
@@ -68,10 +72,6 @@ class AdminDomainBlock {
   @JsonKey(name: r'severity', required: true, includeIfNull: false)
   final AdminDomainBlockSeverityEnum severity;
 
-  /// The sha256 hex digest of the domain that is not allowed to federated.
-  @JsonKey(name: r'digest', required: false, includeIfNull: false)
-  final String? digest;
-
   ///
   @JsonKey(name: r'private_comment', required: false, includeIfNull: false)
   final String? privateComment;
@@ -85,26 +85,26 @@ class AdminDomainBlock {
       identical(this, other) ||
       other is AdminDomainBlock &&
           other.createdAt == createdAt &&
+          other.digest == digest &&
           other.domain == domain &&
           other.id == id &&
           other.obfuscate == obfuscate &&
           other.rejectMedia == rejectMedia &&
           other.rejectReports == rejectReports &&
           other.severity == severity &&
-          other.digest == digest &&
           other.privateComment == privateComment &&
           other.publicComment == publicComment;
 
   @override
   int get hashCode =>
       createdAt.hashCode +
+      digest.hashCode +
       domain.hashCode +
       id.hashCode +
       obfuscate.hashCode +
       rejectMedia.hashCode +
       rejectReports.hashCode +
       severity.hashCode +
-      (digest == null ? 0 : digest.hashCode) +
       (privateComment == null ? 0 : privateComment.hashCode) +
       (publicComment == null ? 0 : publicComment.hashCode);
 
