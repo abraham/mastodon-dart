@@ -7,6 +7,12 @@ part of 'trends_link.dart';
 // **************************************************************************
 
 abstract class _$TrendsLinkCWProxy {
+  TrendsLink authorName(String authorName);
+
+  TrendsLink authorUrl(Uri authorUrl);
+
+  TrendsLink authors(List<PreviewCardAuthor> authors);
+
   TrendsLink description(String description);
 
   TrendsLink embedUrl(Uri embedUrl);
@@ -21,6 +27,8 @@ abstract class _$TrendsLinkCWProxy {
 
   TrendsLink providerUrl(Uri providerUrl);
 
+  TrendsLink publishedAt(DateTime publishedAt);
+
   TrendsLink title(String title);
 
   TrendsLink type(TrendsLinkTypeEnum type);
@@ -28,12 +36,6 @@ abstract class _$TrendsLinkCWProxy {
   TrendsLink url(Uri url);
 
   TrendsLink width(int width);
-
-  TrendsLink authorName(String? authorName);
-
-  TrendsLink authorUrl(Uri? authorUrl);
-
-  TrendsLink authors(List<PreviewCardAuthor>? authors);
 
   TrendsLink blurhash(String? blurhash);
 
@@ -49,6 +51,9 @@ abstract class _$TrendsLinkCWProxy {
   /// TrendsLink(...).copyWith(id: 12, name: "My name")
   /// ```
   TrendsLink call({
+    String authorName,
+    Uri authorUrl,
+    List<PreviewCardAuthor> authors,
     String description,
     Uri embedUrl,
     int height,
@@ -56,13 +61,11 @@ abstract class _$TrendsLinkCWProxy {
     String html,
     String providerName,
     Uri providerUrl,
+    DateTime publishedAt,
     String title,
     TrendsLinkTypeEnum type,
     Uri url,
     int width,
-    String? authorName,
-    Uri? authorUrl,
-    List<PreviewCardAuthor>? authors,
     String? blurhash,
     Uri? image,
     bool? missingAttribution,
@@ -75,6 +78,15 @@ class _$TrendsLinkCWProxyImpl implements _$TrendsLinkCWProxy {
   const _$TrendsLinkCWProxyImpl(this._value);
 
   final TrendsLink _value;
+
+  @override
+  TrendsLink authorName(String authorName) => call(authorName: authorName);
+
+  @override
+  TrendsLink authorUrl(Uri authorUrl) => call(authorUrl: authorUrl);
+
+  @override
+  TrendsLink authors(List<PreviewCardAuthor> authors) => call(authors: authors);
 
   @override
   TrendsLink description(String description) => call(description: description);
@@ -100,6 +112,10 @@ class _$TrendsLinkCWProxyImpl implements _$TrendsLinkCWProxy {
   TrendsLink providerUrl(Uri providerUrl) => call(providerUrl: providerUrl);
 
   @override
+  TrendsLink publishedAt(DateTime publishedAt) =>
+      call(publishedAt: publishedAt);
+
+  @override
   TrendsLink title(String title) => call(title: title);
 
   @override
@@ -110,16 +126,6 @@ class _$TrendsLinkCWProxyImpl implements _$TrendsLinkCWProxy {
 
   @override
   TrendsLink width(int width) => call(width: width);
-
-  @override
-  TrendsLink authorName(String? authorName) => call(authorName: authorName);
-
-  @override
-  TrendsLink authorUrl(Uri? authorUrl) => call(authorUrl: authorUrl);
-
-  @override
-  TrendsLink authors(List<PreviewCardAuthor>? authors) =>
-      call(authors: authors);
 
   @override
   TrendsLink blurhash(String? blurhash) => call(blurhash: blurhash);
@@ -140,6 +146,9 @@ class _$TrendsLinkCWProxyImpl implements _$TrendsLinkCWProxy {
   /// TrendsLink(...).copyWith(id: 12, name: "My name")
   /// ```
   TrendsLink call({
+    Object? authorName = const $CopyWithPlaceholder(),
+    Object? authorUrl = const $CopyWithPlaceholder(),
+    Object? authors = const $CopyWithPlaceholder(),
     Object? description = const $CopyWithPlaceholder(),
     Object? embedUrl = const $CopyWithPlaceholder(),
     Object? height = const $CopyWithPlaceholder(),
@@ -147,18 +156,29 @@ class _$TrendsLinkCWProxyImpl implements _$TrendsLinkCWProxy {
     Object? html = const $CopyWithPlaceholder(),
     Object? providerName = const $CopyWithPlaceholder(),
     Object? providerUrl = const $CopyWithPlaceholder(),
+    Object? publishedAt = const $CopyWithPlaceholder(),
     Object? title = const $CopyWithPlaceholder(),
     Object? type = const $CopyWithPlaceholder(),
     Object? url = const $CopyWithPlaceholder(),
     Object? width = const $CopyWithPlaceholder(),
-    Object? authorName = const $CopyWithPlaceholder(),
-    Object? authorUrl = const $CopyWithPlaceholder(),
-    Object? authors = const $CopyWithPlaceholder(),
     Object? blurhash = const $CopyWithPlaceholder(),
     Object? image = const $CopyWithPlaceholder(),
     Object? missingAttribution = const $CopyWithPlaceholder(),
   }) {
     return TrendsLink(
+      authorName:
+          authorName == const $CopyWithPlaceholder() || authorName == null
+          ? _value.authorName
+          // ignore: cast_nullable_to_non_nullable
+          : authorName as String,
+      authorUrl: authorUrl == const $CopyWithPlaceholder() || authorUrl == null
+          ? _value.authorUrl
+          // ignore: cast_nullable_to_non_nullable
+          : authorUrl as Uri,
+      authors: authors == const $CopyWithPlaceholder() || authors == null
+          ? _value.authors
+          // ignore: cast_nullable_to_non_nullable
+          : authors as List<PreviewCardAuthor>,
       description:
           description == const $CopyWithPlaceholder() || description == null
           ? _value.description
@@ -190,6 +210,11 @@ class _$TrendsLinkCWProxyImpl implements _$TrendsLinkCWProxy {
           ? _value.providerUrl
           // ignore: cast_nullable_to_non_nullable
           : providerUrl as Uri,
+      publishedAt:
+          publishedAt == const $CopyWithPlaceholder() || publishedAt == null
+          ? _value.publishedAt
+          // ignore: cast_nullable_to_non_nullable
+          : publishedAt as DateTime,
       title: title == const $CopyWithPlaceholder() || title == null
           ? _value.title
           // ignore: cast_nullable_to_non_nullable
@@ -206,18 +231,6 @@ class _$TrendsLinkCWProxyImpl implements _$TrendsLinkCWProxy {
           ? _value.width
           // ignore: cast_nullable_to_non_nullable
           : width as int,
-      authorName: authorName == const $CopyWithPlaceholder()
-          ? _value.authorName
-          // ignore: cast_nullable_to_non_nullable
-          : authorName as String?,
-      authorUrl: authorUrl == const $CopyWithPlaceholder()
-          ? _value.authorUrl
-          // ignore: cast_nullable_to_non_nullable
-          : authorUrl as Uri?,
-      authors: authors == const $CopyWithPlaceholder()
-          ? _value.authors
-          // ignore: cast_nullable_to_non_nullable
-          : authors as List<PreviewCardAuthor>?,
       blurhash: blurhash == const $CopyWithPlaceholder()
           ? _value.blurhash
           // ignore: cast_nullable_to_non_nullable
@@ -252,6 +265,9 @@ TrendsLink _$TrendsLinkFromJson(Map<String, dynamic> json) => $checkedCreate(
     $checkKeys(
       json,
       requiredKeys: const [
+        'author_name',
+        'author_url',
+        'authors',
         'description',
         'embed_url',
         'height',
@@ -259,6 +275,7 @@ TrendsLink _$TrendsLinkFromJson(Map<String, dynamic> json) => $checkedCreate(
         'html',
         'provider_name',
         'provider_url',
+        'published_at',
         'title',
         'type',
         'url',
@@ -266,6 +283,14 @@ TrendsLink _$TrendsLinkFromJson(Map<String, dynamic> json) => $checkedCreate(
       ],
     );
     final val = TrendsLink(
+      authorName: $checkedConvert('author_name', (v) => v as String),
+      authorUrl: $checkedConvert('author_url', (v) => Uri.parse(v as String)),
+      authors: $checkedConvert(
+        'authors',
+        (v) => (v as List<dynamic>)
+            .map((e) => PreviewCardAuthor.fromJson(e as Map<String, dynamic>))
+            .toList(),
+      ),
       description: $checkedConvert('description', (v) => v as String),
       embedUrl: $checkedConvert('embed_url', (v) => Uri.parse(v as String)),
       height: $checkedConvert('height', (v) => (v as num).toInt()),
@@ -283,6 +308,10 @@ TrendsLink _$TrendsLinkFromJson(Map<String, dynamic> json) => $checkedCreate(
         'provider_url',
         (v) => Uri.parse(v as String),
       ),
+      publishedAt: $checkedConvert(
+        'published_at',
+        (v) => DateTime.parse(v as String),
+      ),
       title: $checkedConvert('title', (v) => v as String),
       type: $checkedConvert(
         'type',
@@ -290,17 +319,6 @@ TrendsLink _$TrendsLinkFromJson(Map<String, dynamic> json) => $checkedCreate(
       ),
       url: $checkedConvert('url', (v) => Uri.parse(v as String)),
       width: $checkedConvert('width', (v) => (v as num).toInt()),
-      authorName: $checkedConvert('author_name', (v) => v as String?),
-      authorUrl: $checkedConvert(
-        'author_url',
-        (v) => v == null ? null : Uri.parse(v as String),
-      ),
-      authors: $checkedConvert(
-        'authors',
-        (v) => (v as List<dynamic>?)
-            ?.map((e) => PreviewCardAuthor.fromJson(e as Map<String, dynamic>))
-            .toList(),
-      ),
       blurhash: $checkedConvert('blurhash', (v) => v as String?),
       image: $checkedConvert(
         'image',
@@ -314,17 +332,21 @@ TrendsLink _$TrendsLinkFromJson(Map<String, dynamic> json) => $checkedCreate(
     return val;
   },
   fieldKeyMap: const {
+    'authorName': 'author_name',
+    'authorUrl': 'author_url',
     'embedUrl': 'embed_url',
     'providerName': 'provider_name',
     'providerUrl': 'provider_url',
-    'authorName': 'author_name',
-    'authorUrl': 'author_url',
+    'publishedAt': 'published_at',
     'missingAttribution': 'missing_attribution',
   },
 );
 
 Map<String, dynamic> _$TrendsLinkToJson(TrendsLink instance) =>
     <String, dynamic>{
+      'author_name': instance.authorName,
+      'author_url': instance.authorUrl.toString(),
+      'authors': instance.authors.map((e) => e.toJson()).toList(),
       'description': instance.description,
       'embed_url': instance.embedUrl.toString(),
       'height': instance.height,
@@ -332,13 +354,11 @@ Map<String, dynamic> _$TrendsLinkToJson(TrendsLink instance) =>
       'html': instance.html,
       'provider_name': instance.providerName,
       'provider_url': instance.providerUrl.toString(),
+      'published_at': instance.publishedAt.toIso8601String(),
       'title': instance.title,
       'type': _$TrendsLinkTypeEnumEnumMap[instance.type]!,
       'url': instance.url.toString(),
       'width': instance.width,
-      'author_name': ?instance.authorName,
-      'author_url': ?instance.authorUrl?.toString(),
-      'authors': ?instance.authors?.map((e) => e.toJson()).toList(),
       'blurhash': ?instance.blurhash,
       'image': ?instance.image?.toString(),
       'missing_attribution': ?instance.missingAttribution,

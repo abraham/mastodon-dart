@@ -66,17 +66,13 @@ extension $CreateMarkerRequestNotificationsCopyWith
 
 CreateMarkerRequestNotifications _$CreateMarkerRequestNotificationsFromJson(
   Map<String, dynamic> json,
-) => $checkedCreate(
-  'CreateMarkerRequestNotifications',
-  json,
-  ($checkedConvert) {
-    final val = CreateMarkerRequestNotifications(
-      lastReadId: $checkedConvert('last_read_id', (v) => v as String?),
-    );
-    return val;
-  },
-  fieldKeyMap: const {'lastReadId': 'last_read_id'},
-);
+) =>
+    $checkedCreate('CreateMarkerRequestNotifications', json, ($checkedConvert) {
+      final val = CreateMarkerRequestNotifications(
+        lastReadId: $checkedConvert('last_read_id', (v) => v as String?),
+      );
+      return val;
+    }, fieldKeyMap: const {'lastReadId': 'last_read_id'});
 
 Map<String, dynamic> _$CreateMarkerRequestNotificationsToJson(
   CreateMarkerRequestNotifications instance,

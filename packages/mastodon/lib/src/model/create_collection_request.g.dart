@@ -137,24 +137,19 @@ extension $CreateCollectionRequestCopyWith on CreateCollectionRequest {
 
 CreateCollectionRequest _$CreateCollectionRequestFromJson(
   Map<String, dynamic> json,
-) => $checkedCreate(
-  'CreateCollectionRequest',
-  json,
-  ($checkedConvert) {
-    $checkKeys(json, requiredKeys: const ['name']);
-    final val = CreateCollectionRequest(
-      name: $checkedConvert('name', (v) => v as String),
-      accountIds: $checkedConvert('account_ids', (v) => v as String?),
-      description: $checkedConvert('description', (v) => v as String?),
-      discoverable: $checkedConvert('discoverable', (v) => v as bool?),
-      language: $checkedConvert('language', (v) => v as String?),
-      sensitive: $checkedConvert('sensitive', (v) => v as bool?),
-      tagName: $checkedConvert('tag_name', (v) => v as String?),
-    );
-    return val;
-  },
-  fieldKeyMap: const {'accountIds': 'account_ids', 'tagName': 'tag_name'},
-);
+) => $checkedCreate('CreateCollectionRequest', json, ($checkedConvert) {
+  $checkKeys(json, requiredKeys: const ['name']);
+  final val = CreateCollectionRequest(
+    name: $checkedConvert('name', (v) => v as String),
+    accountIds: $checkedConvert('account_ids', (v) => v as String?),
+    description: $checkedConvert('description', (v) => v as String?),
+    discoverable: $checkedConvert('discoverable', (v) => v as bool?),
+    language: $checkedConvert('language', (v) => v as String?),
+    sensitive: $checkedConvert('sensitive', (v) => v as bool?),
+    tagName: $checkedConvert('tag_name', (v) => v as String?),
+  );
+  return val;
+}, fieldKeyMap: const {'accountIds': 'account_ids', 'tagName': 'tag_name'});
 
 Map<String, dynamic> _$CreateCollectionRequestToJson(
   CreateCollectionRequest instance,

@@ -8,6 +8,7 @@ import 'package:mastodon/src/model/status.dart';
 import 'package:mastodon/src/model/account_warning.dart';
 import 'package:mastodon/src/model/notification_fallback.dart';
 import 'package:mastodon/src/model/account.dart';
+import 'package:mastodon/src/model/collection.dart';
 import 'package:mastodon/src/model/relationship_severance_event.dart';
 import 'package:mastodon/src/model/notification_type_enum.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
@@ -29,15 +30,17 @@ class Notification {
 
     required this.createdAt,
 
+    required this.groupKey,
+
     required this.id,
 
     required this.type,
 
+    this.collection,
+
     this.event,
 
     this.fallback,
-
-    this.groupKey,
 
     this.moderationWarning,
 
@@ -54,6 +57,10 @@ class Notification {
   @JsonKey(name: r'created_at', required: true, includeIfNull: false)
   final DateTime createdAt;
 
+  /// Group key shared by similar notifications, to be used in the grouped notifications feature. Should be considered opaque, but ungrouped notifications can be assumed to have a `group_key` of the form `ungrouped-{notification_id}`.
+  @JsonKey(name: r'group_key', required: true, includeIfNull: false)
+  final String groupKey;
+
   /// The id of the notification in the database.
   @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
@@ -62,6 +69,10 @@ class Notification {
   @JsonKey(name: r'type', required: true, includeIfNull: false)
   final NotificationTypeEnum type;
 
+  /// Collection that was the object of the notification. Attached when `type` of the notification is `added_to_collection` or `collection_update`.
+  @JsonKey(name: r'collection', required: false, includeIfNull: false)
+  final Collection? collection;
+
   /// Summary of the event that caused follow relationships to be severed. Attached when `type` of the notification is `severed_relationships`.
   @JsonKey(name: r'event', required: false, includeIfNull: false)
   final RelationshipSeveranceEvent? event;
@@ -69,10 +80,6 @@ class Notification {
   /// Fallback information available for some notification types that clients may not support. Only available for some notification types, and only if the `supported_types` parameter is used when querying.
   @JsonKey(name: r'fallback', required: false, includeIfNull: false)
   final NotificationFallback? fallback;
-
-  /// Group key shared by similar notifications, to be used in the grouped notifications feature. Should be considered opaque, but ungrouped notifications can be assumed to have a `group_key` of the form `ungrouped-{notification_id}`.
-  @JsonKey(name: r'group_key', required: false, includeIfNull: false)
-  final String? groupKey;
 
   /// Moderation warning that caused the notification. Attached when `type` of the notification is `moderation_warning`.
   @JsonKey(name: r'moderation_warning', required: false, includeIfNull: false)
@@ -92,11 +99,12 @@ class Notification {
       other is Notification &&
           other.account == account &&
           other.createdAt == createdAt &&
+          other.groupKey == groupKey &&
           other.id == id &&
           other.type == type &&
+          other.collection == collection &&
           other.event == event &&
           other.fallback == fallback &&
-          other.groupKey == groupKey &&
           other.moderationWarning == moderationWarning &&
           other.report == report &&
           other.status == status;
@@ -105,11 +113,12 @@ class Notification {
   int get hashCode =>
       account.hashCode +
       createdAt.hashCode +
+      groupKey.hashCode +
       id.hashCode +
       type.hashCode +
+      (collection == null ? 0 : collection.hashCode) +
       (event == null ? 0 : event.hashCode) +
       (fallback == null ? 0 : fallback.hashCode) +
-      (groupKey == null ? 0 : groupKey.hashCode) +
       (moderationWarning == null ? 0 : moderationWarning.hashCode) +
       (report == null ? 0 : report.hashCode) +
       (status == null ? 0 : status.hashCode);

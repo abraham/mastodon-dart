@@ -5,7 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:json_annotation/json_annotation.dart';
 
-enum NotificationTypeEnum {
+enum NotificationGroupTypeEnum {
   @JsonValue(r'mention')
   mention(r'mention'),
   @JsonValue(r'status')
@@ -33,13 +33,9 @@ enum NotificationTypeEnum {
   @JsonValue(r'quote')
   quote(r'quote'),
   @JsonValue(r'quoted_update')
-  quotedUpdate(r'quoted_update'),
-  @JsonValue(r'added_to_collection')
-  addedToCollection(r'added_to_collection'),
-  @JsonValue(r'collection_update')
-  collectionUpdate(r'collection_update');
+  quotedUpdate(r'quoted_update');
 
-  const NotificationTypeEnum(this.value);
+  const NotificationGroupTypeEnum(this.value);
 
   final String value;
 

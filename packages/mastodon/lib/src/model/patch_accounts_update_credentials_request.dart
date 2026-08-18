@@ -23,6 +23,8 @@ class PatchAccountsUpdateCredentialsRequest {
 
     this.avatar,
 
+    this.avatarDescription,
+
     this.bot,
 
     this.discoverable,
@@ -32,6 +34,8 @@ class PatchAccountsUpdateCredentialsRequest {
     this.fieldsAttributes,
 
     this.header,
+
+    this.headerDescription,
 
     this.hideCollections,
 
@@ -52,6 +56,10 @@ class PatchAccountsUpdateCredentialsRequest {
   @JsonKey(name: r'avatar', required: false, includeIfNull: false)
   final String? avatar;
 
+  /// A plain-text description of the avatar, for accessibility purposes.
+  @JsonKey(name: r'avatar_description', required: false, includeIfNull: false)
+  final String? avatarDescription;
+
   /// Whether the account has a bot flag.
   @JsonKey(name: r'bot', required: false, includeIfNull: false)
   final bool? bot;
@@ -71,6 +79,10 @@ class PatchAccountsUpdateCredentialsRequest {
   /// Header image encoded using `multipart/form-data`
   @JsonKey(name: r'header', required: false, includeIfNull: false)
   final String? header;
+
+  /// A plain-text description of the header, for accessibility purposes.
+  @JsonKey(name: r'header_description', required: false, includeIfNull: false)
+  final String? headerDescription;
 
   /// Whether to hide followers and followed accounts.
   @JsonKey(name: r'hide_collections', required: false, includeIfNull: false)
@@ -97,11 +109,13 @@ class PatchAccountsUpdateCredentialsRequest {
       other is PatchAccountsUpdateCredentialsRequest &&
           other.attributionDomains == attributionDomains &&
           other.avatar == avatar &&
+          other.avatarDescription == avatarDescription &&
           other.bot == bot &&
           other.discoverable == discoverable &&
           other.displayName == displayName &&
           other.fieldsAttributes == fieldsAttributes &&
           other.header == header &&
+          other.headerDescription == headerDescription &&
           other.hideCollections == hideCollections &&
           other.indexable == indexable &&
           other.locked == locked &&
@@ -112,11 +126,13 @@ class PatchAccountsUpdateCredentialsRequest {
   int get hashCode =>
       attributionDomains.hashCode +
       avatar.hashCode +
+      avatarDescription.hashCode +
       bot.hashCode +
       discoverable.hashCode +
       displayName.hashCode +
       fieldsAttributes.hashCode +
       header.hashCode +
+      headerDescription.hashCode +
       hideCollections.hashCode +
       indexable.hashCode +
       locked.hashCode +

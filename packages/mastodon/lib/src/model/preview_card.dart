@@ -21,6 +21,12 @@ part 'preview_card.g.dart';
 class PreviewCard {
   /// Returns a new [PreviewCard] instance.
   PreviewCard({
+    required this.authorName,
+
+    required this.authorUrl,
+
+    required this.authors,
+
     required this.description,
 
     required this.embedUrl,
@@ -33,6 +39,8 @@ class PreviewCard {
 
     required this.providerUrl,
 
+    required this.publishedAt,
+
     required this.title,
 
     required this.type,
@@ -41,18 +49,24 @@ class PreviewCard {
 
     required this.width,
 
-    this.authorName,
-
-    this.authorUrl,
-
-    this.authors,
-
     this.blurhash,
 
     this.image,
 
     this.missingAttribution,
   });
+
+  /// The author of the original resource. Deprecated since 4.3.0, clients should use `authors` instead.
+  @JsonKey(name: r'author_name', required: true, includeIfNull: false)
+  final String authorName;
+
+  /// A link to the author of the original resource. Deprecated since 4.3.0, clients should use `authors` instead.
+  @JsonKey(name: r'author_url', required: true, includeIfNull: false)
+  final Uri authorUrl;
+
+  /// Fediverse account of the authors of the original resource.
+  @JsonKey(name: r'authors', required: true, includeIfNull: false)
+  final List<PreviewCardAuthor> authors;
 
   /// Description of preview.
   @JsonKey(name: r'description', required: true, includeIfNull: false)
@@ -78,6 +92,10 @@ class PreviewCard {
   @JsonKey(name: r'provider_url', required: true, includeIfNull: false)
   final Uri providerUrl;
 
+  /// UNIX timestamp of publication date.
+  @JsonKey(name: r'published_at', required: true, includeIfNull: false)
+  final DateTime publishedAt;
+
   /// Title of linked resource.
   @JsonKey(name: r'title', required: true, includeIfNull: false)
   final String title;
@@ -93,29 +111,6 @@ class PreviewCard {
   /// Width of preview, in pixels.
   @JsonKey(name: r'width', required: true, includeIfNull: false)
   final int width;
-
-  /// The author of the original resource. Deprecated since 4.3.0, clients should use `authors` instead.
-  @JsonKey(name: r'author_name', required: false, includeIfNull: false)
-  final String? authorName;
-
-  /// A link to the author of the original resource. Deprecated since 4.3.0, clients should use `authors` instead.
-  @JsonKey(
-    name: r'author_url',
-    required: false,
-    includeIfNull: false,
-    fromJson: _parseAuthorUrl,
-  )
-  final Uri? authorUrl;
-  static Uri? _parseAuthorUrl(String? value) {
-    if (value == null) {
-      return null;
-    }
-    return Uri.tryParse(value);
-  }
-
-  /// Fediverse account of the authors of the original resource.
-  @JsonKey(name: r'authors', required: false, includeIfNull: false)
-  final List<PreviewCardAuthor>? authors;
 
   /// A hash computed by [the BlurHash algorithm](https://github.com/woltapp/blurhash), for generating colorful preview thumbnails when media has not been downloaded yet.
   @JsonKey(name: r'blurhash', required: false, includeIfNull: false)
@@ -133,38 +128,40 @@ class PreviewCard {
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is PreviewCard &&
+          other.authorName == authorName &&
+          other.authorUrl == authorUrl &&
+          other.authors == authors &&
           other.description == description &&
           other.embedUrl == embedUrl &&
           other.height == height &&
           other.html == html &&
           other.providerName == providerName &&
           other.providerUrl == providerUrl &&
+          other.publishedAt == publishedAt &&
           other.title == title &&
           other.type == type &&
           other.url == url &&
           other.width == width &&
-          other.authorName == authorName &&
-          other.authorUrl == authorUrl &&
-          other.authors == authors &&
           other.blurhash == blurhash &&
           other.image == image &&
           other.missingAttribution == missingAttribution;
 
   @override
   int get hashCode =>
+      authorName.hashCode +
+      authorUrl.hashCode +
+      authors.hashCode +
       description.hashCode +
       embedUrl.hashCode +
       height.hashCode +
       html.hashCode +
       providerName.hashCode +
       providerUrl.hashCode +
+      publishedAt.hashCode +
       title.hashCode +
       type.hashCode +
       url.hashCode +
       width.hashCode +
-      (authorName == null ? 0 : authorName.hashCode) +
-      (authorUrl == null ? 0 : authorUrl.hashCode) +
-      (authors == null ? 0 : authors.hashCode) +
       (blurhash == null ? 0 : blurhash.hashCode) +
       (image == null ? 0 : image.hashCode) +
       (missingAttribution == null ? 0 : missingAttribution.hashCode);

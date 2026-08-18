@@ -7,7 +7,6 @@ import 'package:mastodon/src/auth/api_key_auth.dart';
 import 'package:mastodon/src/auth/basic_auth.dart';
 import 'package:mastodon/src/auth/bearer_auth.dart';
 import 'package:mastodon/src/auth/oauth.dart';
-import 'package:mastodon/src/api/account_id_api.dart';
 import 'package:mastodon/src/api/accounts_api.dart';
 import 'package:mastodon/src/api/announcements_api.dart';
 import 'package:mastodon/src/api/annual_reports_api.dart';
@@ -172,12 +171,6 @@ class Mastodon {
           .apiKeys
           .remove(name);
     }
-  }
-
-  /// Get AccountIdApi instance, base route and serializer can be overridden by a given but be careful,
-  /// by doing that all interceptors will not be executed
-  AccountIdApi getAccountIdApi() {
-    return AccountIdApi(dio);
   }
 
   /// Get AccountsApi instance, base route and serializer can be overridden by a given but be careful,

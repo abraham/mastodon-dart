@@ -24,13 +24,13 @@ class Application {
 
     required this.name,
 
-    this.redirectUri,
+    required this.redirectUri,
 
-    this.redirectUris,
+    required this.redirectUris,
 
-    this.scopes,
+    required this.scopes,
 
-    this.vapidKey,
+    required this.vapidKey,
 
     this.website,
   });
@@ -45,21 +45,21 @@ class Application {
 
   /// The registered redirection URI(s) for the application stored as a single string. Multiple URIs are separated by whitespace characters. May contain `\\n` characters when multiple redirect URIs are registered.
   @Deprecated('redirectUri has been deprecated')
-  @JsonKey(name: r'redirect_uri', required: false, includeIfNull: false)
-  final String? redirectUri;
+  @JsonKey(name: r'redirect_uri', required: true, includeIfNull: false)
+  final String redirectUri;
 
   /// The registered redirection URI(s) for the application.
-  @JsonKey(name: r'redirect_uris', required: false, includeIfNull: false)
-  final List<Uri>? redirectUris;
+  @JsonKey(name: r'redirect_uris', required: true, includeIfNull: false)
+  final List<Uri> redirectUris;
 
   /// The scopes for the application. This is the registered `scopes` string split on whitespace.
-  @JsonKey(name: r'scopes', required: false, includeIfNull: false)
-  final List<OAuthScope>? scopes;
+  @JsonKey(name: r'scopes', required: true, includeIfNull: false)
+  final List<OAuthScope> scopes;
 
   /// Used for Push Streaming API. Returned with [POST /api/v1/apps]({{< relref \"methods/apps#create\" >}}). Equivalent to [WebPushSubscription#server_key]({{< relref \"entities/WebPushSubscription#server_key\" >}}) and [Instance#vapid_public_key]({{< relref \"entities/Instance#vapid_public_key\" >}})
   @Deprecated('vapidKey has been deprecated')
-  @JsonKey(name: r'vapid_key', required: false, includeIfNull: false)
-  final String? vapidKey;
+  @JsonKey(name: r'vapid_key', required: true, includeIfNull: false)
+  final String vapidKey;
 
   /// The website associated with the application.
   @JsonKey(name: r'website', required: false, includeIfNull: false)
@@ -81,10 +81,10 @@ class Application {
   int get hashCode =>
       id.hashCode +
       name.hashCode +
-      (redirectUri == null ? 0 : redirectUri.hashCode) +
-      (redirectUris == null ? 0 : redirectUris.hashCode) +
-      (scopes == null ? 0 : scopes.hashCode) +
-      (vapidKey == null ? 0 : vapidKey.hashCode) +
+      redirectUri.hashCode +
+      redirectUris.hashCode +
+      scopes.hashCode +
+      vapidKey.hashCode +
       (website == null ? 0 : website.hashCode);
 
   factory Application.fromJson(Map<String, dynamic> json) =>

@@ -5,7 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:json_annotation/json_annotation.dart';
 
-enum CredentialAccountSourceQuotePolicyEnum {
+enum ScheduledStatusParamsQuoteApprovalPolicyEnum {
   @JsonValue(r'public')
   public(r'public'),
   @JsonValue(r'followers')
@@ -13,7 +13,7 @@ enum CredentialAccountSourceQuotePolicyEnum {
   @JsonValue(r'nobody')
   nobody(r'nobody');
 
-  const CredentialAccountSourceQuotePolicyEnum(this.value);
+  const ScheduledStatusParamsQuoteApprovalPolicyEnum(this.value);
 
   final String value;
 

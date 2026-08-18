@@ -17,6 +17,8 @@ Name | Type | Description | Notes
 **language** | **String** | The language that will be used for the status. | [optional] 
 **mediaIds** | **List&lt;String&gt;** | IDs of the MediaAttachments that will be attached to the status. | [optional] 
 **poll** | [**ScheduledStatusParamsPoll**](ScheduledStatusParamsPoll.md) |  | [optional] 
+**quoteApprovalPolicy** | [**ScheduledStatusParamsQuoteApprovalPolicyEnum**](ScheduledStatusParamsQuoteApprovalPolicyEnum.md) | The quote policy for the Status. | [optional] 
+**quotedStatusId** | **String** | ID of the Status being quoted. | [optional] 
 **scheduledAt** | **String** | When the status will be scheduled. This will be null because the status is only scheduled once. | [optional] 
 **sensitive** | **bool** | Whether the status will be marked as sensitive. | [optional] 
 **spoilerText** | **String** | The text of the content warning or summary for the status. | [optional] 

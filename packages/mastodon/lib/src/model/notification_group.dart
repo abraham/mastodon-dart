@@ -6,8 +6,8 @@
 import 'package:mastodon/src/model/report.dart';
 import 'package:mastodon/src/model/account_warning.dart';
 import 'package:mastodon/src/model/notification_fallback.dart';
+import 'package:mastodon/src/model/notification_group_type_enum.dart';
 import 'package:mastodon/src/model/relationship_severance_event.dart';
-import 'package:mastodon/src/model/notification_type_enum.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -72,7 +72,7 @@ class NotificationGroup {
 
   /// The type of event that resulted in the notifications in this group.
   @JsonKey(name: r'type', required: true, includeIfNull: false)
-  final NotificationTypeEnum type;
+  final NotificationGroupTypeEnum type;
 
   /// Summary of the event that caused follow relationships to be severed. Attached when `type` of the notification is `severed_relationships`.
   @JsonKey(name: r'event', required: false, includeIfNull: false)

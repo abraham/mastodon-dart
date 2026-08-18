@@ -64,7 +64,7 @@ class Collection {
   @JsonKey(name: r'description', required: true, includeIfNull: false)
   final String description;
 
-  /// Whether the Collection should show up in search results and recommendations.
+  /// Whether the Collection should show up on the owner's profile, in search results and recommendations.
   @JsonKey(name: r'discoverable', required: true, includeIfNull: false)
   final bool discoverable;
 

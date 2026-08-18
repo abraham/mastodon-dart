@@ -91,6 +91,12 @@ void main() {
       // TODO
     });
 
+    // Whether the account allows indexing by search engines.
+    // bool indexable
+    test('to test the property `indexable`', () async {
+      // TODO
+    });
+
     // Whether the account manually approves follow requests.
     // bool locked
     test('to test the property `locked`', () async {
@@ -148,12 +154,6 @@ void main() {
     // Whether the user hides the contents of their follows and followers collections.
     // bool hideCollections
     test('to test the property `hideCollections`', () async {
-      // TODO
-    });
-
-    // Whether the account allows indexing by search engines.
-    // bool indexable
-    test('to test the property `indexable`', () async {
       // TODO
     });
 

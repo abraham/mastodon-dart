@@ -1,4 +1,4 @@
-# mastodon.model.CredentialAccountSourceQuotePolicyEnum
+# mastodon.model.SuggestionSourcesEnum
 
 ## Load the model package
 ```dart

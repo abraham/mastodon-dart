@@ -14,21 +14,33 @@ void main() {
       // TODO
     });
 
+    // The maximum number of pinned statuses for each account.
+    // int maxPinnedStatuses
+    test('to test the property `maxPinnedStatuses`', () async {
+      // TODO
+    });
+
+    // The maximum length allowed for an account's avatar description.
+    // int maxAvatarDescriptionLength
+    test('to test the property `maxAvatarDescriptionLength`', () async {
+      // TODO
+    });
+
     // The maximum length allowed for an account's display name.
     // int maxDisplayNameLength
     test('to test the property `maxDisplayNameLength`', () async {
       // TODO
     });
 
-    // The maximum length allowed for an account's bio.
-    // int maxNoteLength
-    test('to test the property `maxNoteLength`', () async {
+    // The maximum length allowed for an account's profile header description.
+    // int maxHeaderDescriptionLength
+    test('to test the property `maxHeaderDescriptionLength`', () async {
       // TODO
     });
 
-    // The maximum number of pinned statuses for each account.
-    // int maxPinnedStatuses
-    test('to test the property `maxPinnedStatuses`', () async {
+    // The maximum length allowed for an account's bio.
+    // int maxNoteLength
+    test('to test the property `maxNoteLength`', () async {
       // TODO
     });
 

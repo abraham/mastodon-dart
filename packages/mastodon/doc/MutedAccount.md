@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **header** | [**Uri**](Uri.md) | An image banner that is shown above the profile and in profile cards. Will end `/headers/original/missing.png` if the user has not set a header image. | 
 **headerStatic** | [**Uri**](Uri.md) | A static version of the header. Equal to `header` if its value is a static image; different if `header` is an animated GIF. | 
 **id** | **String** | The account id. | 
+**indexable** | **bool** | Whether the account allows indexing by search engines. | 
 **locked** | **bool** | Whether the account manually approves follow requests. | 
 **note** | **String** | The profile's bio or description. | 
 **statusesCount** | **int** | How many statuses are attached to this account. | 
@@ -32,7 +33,6 @@ Name | Type | Description | Notes
 **featureApproval** | [**FeatureApproval**](FeatureApproval.md) | Summary of the account's policy with regards to being featured in a [Collection]({{< relref \"entities/Collection\" >}}) and how it applies to the user making the request. | [optional] 
 **headerDescription** | **String** | A textual description of the header image. | [optional] 
 **hideCollections** | **bool** | Whether the user hides the contents of their follows and followers collections. | [optional] 
-**indexable** | **bool** | Whether the account allows indexing by search engines. | [optional] 
 **lastStatusAt** | [**DateTime**](DateTime.md) | When the most recent status was posted. | [optional] 
 **limited** | **bool** | An extra attribute returned only when an account is silenced. If true, indicates that the account should be hidden behind a warning screen. | [optional] 
 **memorial** | **bool** | An extra attribute returned only when an account is memorialized (when `memorial` is true). | [optional] 

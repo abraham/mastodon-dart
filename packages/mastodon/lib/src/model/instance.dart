@@ -27,6 +27,8 @@ part 'instance.g.dart';
 class Instance {
   /// Returns a new [Instance] instance.
   Instance({
+    required this.apiVersions,
+
     required this.configuration,
 
     required this.contact,
@@ -34,6 +36,8 @@ class Instance {
     required this.description,
 
     required this.domain,
+
+    required this.icon,
 
     required this.languages,
 
@@ -51,10 +55,11 @@ class Instance {
 
     required this.version,
 
-    this.apiVersions,
-
-    this.icon,
+    this.wrapstodon,
   });
+
+  @JsonKey(name: r'api_versions', required: true, includeIfNull: false)
+  final InstanceApiVersions apiVersions;
 
   @JsonKey(name: r'configuration', required: true, includeIfNull: false)
   final InstanceConfiguration configuration;
@@ -69,6 +74,10 @@ class Instance {
   /// The WebFinger domain name of the server.
   @JsonKey(name: r'domain', required: true, includeIfNull: false)
   final String domain;
+
+  /// The list of available size variants for this server's configured icon.
+  @JsonKey(name: r'icon', required: true, includeIfNull: false)
+  final List<InstanceIcon> icon;
 
   /// Primary languages of the website and its staff.
   @JsonKey(name: r'languages', required: true, includeIfNull: false)
@@ -99,21 +108,20 @@ class Instance {
   @JsonKey(name: r'version', required: true, includeIfNull: false)
   final String version;
 
-  @JsonKey(name: r'api_versions', required: false, includeIfNull: false)
-  final InstanceApiVersions? apiVersions;
-
-  /// The list of available size variants for this server's configured icon.
-  @JsonKey(name: r'icon', required: false, includeIfNull: false)
-  final List<InstanceIcon>? icon;
+  /// The current Wrapstodon ([Annual report]({{< relref \"methods/annual_reports\" >}}) campaign identifier (year), if any.
+  @JsonKey(name: r'wrapstodon', required: false, includeIfNull: false)
+  final String? wrapstodon;
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is Instance &&
+          other.apiVersions == apiVersions &&
           other.configuration == configuration &&
           other.contact == contact &&
           other.description == description &&
           other.domain == domain &&
+          other.icon == icon &&
           other.languages == languages &&
           other.registrations == registrations &&
           other.rules == rules &&
@@ -122,15 +130,16 @@ class Instance {
           other.title == title &&
           other.usage == usage &&
           other.version == version &&
-          other.apiVersions == apiVersions &&
-          other.icon == icon;
+          other.wrapstodon == wrapstodon;
 
   @override
   int get hashCode =>
+      apiVersions.hashCode +
       configuration.hashCode +
       contact.hashCode +
       description.hashCode +
       domain.hashCode +
+      icon.hashCode +
       languages.hashCode +
       registrations.hashCode +
       rules.hashCode +
@@ -139,8 +148,7 @@ class Instance {
       title.hashCode +
       usage.hashCode +
       version.hashCode +
-      (apiVersions == null ? 0 : apiVersions.hashCode) +
-      (icon == null ? 0 : icon.hashCode);
+      (wrapstodon == null ? 0 : wrapstodon.hashCode);
 
   factory Instance.fromJson(Map<String, dynamic> json) =>
       _$InstanceFromJson(json);

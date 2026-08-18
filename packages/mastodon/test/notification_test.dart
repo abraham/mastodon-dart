@@ -19,6 +19,12 @@ void main() {
       // TODO
     });
 
+    // Group key shared by similar notifications, to be used in the grouped notifications feature. Should be considered opaque, but ungrouped notifications can be assumed to have a `group_key` of the form `ungrouped-{notification_id}`.
+    // String groupKey
+    test('to test the property `groupKey`', () async {
+      // TODO
+    });
+
     // The id of the notification in the database.
     // String id
     test('to test the property `id`', () async {
@@ -31,6 +37,12 @@ void main() {
       // TODO
     });
 
+    // Collection that was the object of the notification. Attached when `type` of the notification is `added_to_collection` or `collection_update`.
+    // Collection collection
+    test('to test the property `collection`', () async {
+      // TODO
+    });
+
     // Summary of the event that caused follow relationships to be severed. Attached when `type` of the notification is `severed_relationships`.
     // RelationshipSeveranceEvent event
     test('to test the property `event`', () async {
@@ -40,12 +52,6 @@ void main() {
     // Fallback information available for some notification types that clients may not support. Only available for some notification types, and only if the `supported_types` parameter is used when querying.
     // NotificationFallback fallback
     test('to test the property `fallback`', () async {
-      // TODO
-    });
-
-    // Group key shared by similar notifications, to be used in the grouped notifications feature. Should be considered opaque, but ungrouped notifications can be assumed to have a `group_key` of the form `ungrouped-{notification_id}`.
-    // String groupKey
-    test('to test the property `groupKey`', () async {
       // TODO
     });
 

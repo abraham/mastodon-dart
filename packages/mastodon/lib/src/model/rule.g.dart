@@ -7,11 +7,11 @@ part of 'rule.dart';
 // **************************************************************************
 
 abstract class _$RuleCWProxy {
+  Rule hint(String hint);
+
   Rule id(String id);
 
   Rule text(String text);
-
-  Rule hint(String? hint);
 
   Rule translations(Object? translations);
 
@@ -22,7 +22,7 @@ abstract class _$RuleCWProxy {
   /// ```dart
   /// Rule(...).copyWith(id: 12, name: "My name")
   /// ```
-  Rule call({String id, String text, String? hint, Object? translations});
+  Rule call({String hint, String id, String text, Object? translations});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -33,13 +33,13 @@ class _$RuleCWProxyImpl implements _$RuleCWProxy {
   final Rule _value;
 
   @override
+  Rule hint(String hint) => call(hint: hint);
+
+  @override
   Rule id(String id) => call(id: id);
 
   @override
   Rule text(String text) => call(text: text);
-
-  @override
-  Rule hint(String? hint) => call(hint: hint);
 
   @override
   Rule translations(Object? translations) => call(translations: translations);
@@ -53,12 +53,16 @@ class _$RuleCWProxyImpl implements _$RuleCWProxy {
   /// Rule(...).copyWith(id: 12, name: "My name")
   /// ```
   Rule call({
+    Object? hint = const $CopyWithPlaceholder(),
     Object? id = const $CopyWithPlaceholder(),
     Object? text = const $CopyWithPlaceholder(),
-    Object? hint = const $CopyWithPlaceholder(),
     Object? translations = const $CopyWithPlaceholder(),
   }) {
     return Rule(
+      hint: hint == const $CopyWithPlaceholder() || hint == null
+          ? _value.hint
+          // ignore: cast_nullable_to_non_nullable
+          : hint as String,
       id: id == const $CopyWithPlaceholder() || id == null
           ? _value.id
           // ignore: cast_nullable_to_non_nullable
@@ -67,10 +71,6 @@ class _$RuleCWProxyImpl implements _$RuleCWProxy {
           ? _value.text
           // ignore: cast_nullable_to_non_nullable
           : text as String,
-      hint: hint == const $CopyWithPlaceholder()
-          ? _value.hint
-          // ignore: cast_nullable_to_non_nullable
-          : hint as String?,
       translations: translations == const $CopyWithPlaceholder()
           ? _value.translations
           // ignore: cast_nullable_to_non_nullable
@@ -92,19 +92,19 @@ extension $RuleCopyWith on Rule {
 
 Rule _$RuleFromJson(Map<String, dynamic> json) =>
     $checkedCreate('Rule', json, ($checkedConvert) {
-      $checkKeys(json, requiredKeys: const ['id', 'text']);
+      $checkKeys(json, requiredKeys: const ['hint', 'id', 'text']);
       final val = Rule(
+        hint: $checkedConvert('hint', (v) => v as String),
         id: $checkedConvert('id', (v) => v as String),
         text: $checkedConvert('text', (v) => v as String),
-        hint: $checkedConvert('hint', (v) => v as String?),
         translations: $checkedConvert('translations', (v) => v),
       );
       return val;
     });
 
 Map<String, dynamic> _$RuleToJson(Rule instance) => <String, dynamic>{
+  'hint': instance.hint,
   'id': instance.id,
   'text': instance.text,
-  'hint': ?instance.hint,
   'translations': ?instance.translations,
 };

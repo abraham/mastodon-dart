@@ -11,11 +11,13 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createAccount**](AccountsApi.md#createaccount) | **POST** /api/v1/accounts | Register an account
 [**getAccount**](AccountsApi.md#getaccount) | **GET** /api/v1/accounts/{id} | Get account
+[**getAccountCollections**](AccountsApi.md#getaccountcollections) | **GET** /api/v1/accounts/{account_id}/collections | Get all Collections from a given account
 [**getAccountEndorsements**](AccountsApi.md#getaccountendorsements) | **GET** /api/v1/accounts/{id}/endorsements | Get featured accounts
 [**getAccountFeaturedTags**](AccountsApi.md#getaccountfeaturedtags) | **GET** /api/v1/accounts/{id}/featured_tags | Get account&#39;s featured tags
 [**getAccountFollowers**](AccountsApi.md#getaccountfollowers) | **GET** /api/v1/accounts/{id}/followers | Get account&#39;s followers
 [**getAccountFollowing**](AccountsApi.md#getaccountfollowing) | **GET** /api/v1/accounts/{id}/following | Get account&#39;s following
 [**getAccountIdentityProofs**](AccountsApi.md#getaccountidentityproofs) | **GET** /api/v1/accounts/{id}/identity_proofs | Identity proofs
+[**getAccountInCollections**](AccountsApi.md#getaccountincollections) | **GET** /api/v1/accounts/{account_id}/in_collections | Get all Collections the current account is featured in
 [**getAccountLists**](AccountsApi.md#getaccountlists) | **GET** /api/v1/accounts/{id}/lists | Get lists containing this account
 [**getAccountLookup**](AccountsApi.md#getaccountlookup) | **GET** /api/v1/accounts/lookup | Lookup account ID from WebFinger address
 [**getAccountRelationships**](AccountsApi.md#getaccountrelationships) | **GET** /api/v1/accounts/relationships | Check relationships to other accounts
@@ -121,6 +123,56 @@ Name | Type | Description  | Notes
 ### Authorization
 
 No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getAccountCollections**
+> getAccountCollections(accountId, limit, offset)
+
+Get all Collections from a given account
+
+Version history:  4.6.0 (`mastodon` [API version] 10) - added
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = Mastodon().getAccountsApi();
+final String accountId = accountId_example; // String | account_id parameter
+final int limit = 56; // int | Maximum number of results. Defaults to 40 Collections. Max 80 Collections.
+final int offset = 56; // int | Skip the first n results. Defaults to 0.
+
+try {
+    api.getAccountCollections(accountId, limit, offset);
+} on DioException catch (e) {
+    print('Exception when calling AccountsApi->getAccountCollections: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **String**| account_id parameter | 
+ **limit** | **int**| Maximum number of results. Defaults to 40 Collections. Max 80 Collections. | [optional] [default to 40]
+ **offset** | **int**| Skip the first n results. Defaults to 0. | [optional] [default to 0]
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -358,6 +410,56 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**List&lt;IdentityProof&gt;**](IdentityProof.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getAccountInCollections**
+> getAccountInCollections(accountId, limit, offset)
+
+Get all Collections the current account is featured in
+
+Version history:  4.6.0 (`mastodon` [API version] 10) - added
+
+### Example
+```dart
+import 'package:mastodon/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = Mastodon().getAccountsApi();
+final String accountId = accountId_example; // String | account_id parameter
+final int limit = 56; // int | Maximum number of results. Defaults to 40 Collections. Max 80 Collections.
+final int offset = 56; // int | Skip the first n results. Defaults to 0.
+
+try {
+    api.getAccountInCollections(accountId, limit, offset);
+} on DioException catch (e) {
+    print('Exception when calling AccountsApi->getAccountInCollections: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **String**| account_id parameter | 
+ **limit** | **int**| Maximum number of results. Defaults to 40 Collections. Max 80 Collections. | [optional] [default to 40]
+ **offset** | **int**| Skip the first n results. Defaults to 0. | [optional] [default to 0]
+
+### Return type
+
+void (empty response body)
 
 ### Authorization
 
@@ -771,7 +873,7 @@ This endpoint does not need any parameter.
 
 Update account credentials
 
-Update the user's display and preferences.  Version history:  1.1.1 - added\\ 2.3.0 - added `locked` parameter\\ 2.4.0 - added `source[privacy,sensitive]` parameters\\ 2.4.2 - added `source[language]` parameter\\ 2.7.0 - added `discoverable` parameter\\ 4.1.0 - added `hide_collections` parameter\\ 4.2.0 - added `indexable` parameter\\ 4.4.0 (`mastodon` [API version] 3) - added `attribution_domains` parameter\\ 4.5.0 (`mastodon` [API version] 7) - added `quote_policy` parameter
+Update the user's display and preferences.  Version history:  1.1.1 - added\\ 2.3.0 - added `locked` parameter\\ 2.4.0 - added `source[privacy,sensitive]` parameters\\ 2.4.2 - added `source[language]` parameter\\ 2.7.0 - added `discoverable` parameter\\ 4.1.0 - added `hide_collections` parameter\\ 4.2.0 - added `indexable` parameter\\ 4.4.0 (`mastodon` [API version] 3) - added `attribution_domains` parameter\\ 4.5.0 (`mastodon` [API version] 7) - added `quote_policy` parameter\\ 4.6.1 (`mastodon` [API version] 11) - added `avatar_description` and `header_description` parameter
 
 ### Example
 ```dart

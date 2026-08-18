@@ -195,6 +195,71 @@ class AccountsApi {
     );
   }
 
+  /// Get all Collections from a given account
+  /// Version history:  4.6.0 (&#x60;mastodon&#x60; [API version] 10) - added
+  ///
+  /// Parameters:
+  /// * [accountId] - account_id parameter
+  /// * [limit] - Maximum number of results. Defaults to 40 Collections. Max 80 Collections.
+  /// * [offset] - Skip the first n results. Defaults to 0.
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future]
+  /// Throws [DioException] if API call or serialization fails
+  /// Official Mastodon API documentation
+  /// Also see [Get all Collections from a given account Documentation](https://docs.joinmastodon.org/methods/collections/#get_collections)
+  Future<Response<void>> getAccountCollections({
+    required String accountId,
+    int? limit = 40,
+    int? offset = 0,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/api/v1/accounts/{account_id}/collections'.replaceAll(
+      '{'
+      r'account_id'
+      '}',
+      accountId.toString(),
+    );
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {'type': 'oauth2', 'name': 'OAuth2'},
+          {'type': 'oauth2', 'name': 'OAuth2'},
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _queryParameters = <String, dynamic>{
+      if (limit != null) r'limit': limit,
+      if (offset != null) r'offset': offset,
+    };
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      queryParameters: _queryParameters,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    return _response;
+  }
+
   /// Get featured accounts
   /// Accounts that the user is currently featuring on their profile.  Version history:  4.4.0 - added
   ///
@@ -640,6 +705,71 @@ class AccountsApi {
       statusMessage: _response.statusMessage,
       extra: _response.extra,
     );
+  }
+
+  /// Get all Collections the current account is featured in
+  /// Version history:  4.6.0 (&#x60;mastodon&#x60; [API version] 10) - added
+  ///
+  /// Parameters:
+  /// * [accountId] - account_id parameter
+  /// * [limit] - Maximum number of results. Defaults to 40 Collections. Max 80 Collections.
+  /// * [offset] - Skip the first n results. Defaults to 0.
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future]
+  /// Throws [DioException] if API call or serialization fails
+  /// Official Mastodon API documentation
+  /// Also see [Get all Collections the current account is featured in Documentation](https://docs.joinmastodon.org/methods/collections/#in_collections)
+  Future<Response<void>> getAccountInCollections({
+    required String accountId,
+    int? limit = 40,
+    int? offset = 0,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/api/v1/accounts/{account_id}/in_collections'.replaceAll(
+      '{'
+      r'account_id'
+      '}',
+      accountId.toString(),
+    );
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {'type': 'oauth2', 'name': 'OAuth2'},
+          {'type': 'oauth2', 'name': 'OAuth2'},
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _queryParameters = <String, dynamic>{
+      if (limit != null) r'limit': limit,
+      if (offset != null) r'offset': offset,
+    };
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      queryParameters: _queryParameters,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    return _response;
   }
 
   /// Get lists containing this account
@@ -1346,7 +1476,7 @@ class AccountsApi {
   }
 
   /// Update account credentials
-  /// Update the user&#39;s display and preferences.  Version history:  1.1.1 - added\\ 2.3.0 - added &#x60;locked&#x60; parameter\\ 2.4.0 - added &#x60;source[privacy,sensitive]&#x60; parameters\\ 2.4.2 - added &#x60;source[language]&#x60; parameter\\ 2.7.0 - added &#x60;discoverable&#x60; parameter\\ 4.1.0 - added &#x60;hide_collections&#x60; parameter\\ 4.2.0 - added &#x60;indexable&#x60; parameter\\ 4.4.0 (&#x60;mastodon&#x60; [API version] 3) - added &#x60;attribution_domains&#x60; parameter\\ 4.5.0 (&#x60;mastodon&#x60; [API version] 7) - added &#x60;quote_policy&#x60; parameter
+  /// Update the user&#39;s display and preferences.  Version history:  1.1.1 - added\\ 2.3.0 - added &#x60;locked&#x60; parameter\\ 2.4.0 - added &#x60;source[privacy,sensitive]&#x60; parameters\\ 2.4.2 - added &#x60;source[language]&#x60; parameter\\ 2.7.0 - added &#x60;discoverable&#x60; parameter\\ 4.1.0 - added &#x60;hide_collections&#x60; parameter\\ 4.2.0 - added &#x60;indexable&#x60; parameter\\ 4.4.0 (&#x60;mastodon&#x60; [API version] 3) - added &#x60;attribution_domains&#x60; parameter\\ 4.5.0 (&#x60;mastodon&#x60; [API version] 7) - added &#x60;quote_policy&#x60; parameter\\ 4.6.1 (&#x60;mastodon&#x60; [API version] 11) - added &#x60;avatar_description&#x60; and &#x60;header_description&#x60; parameter
   ///
   /// Parameters:
   /// * [patchAccountsUpdateCredentialsRequest] - JSON request body parameters

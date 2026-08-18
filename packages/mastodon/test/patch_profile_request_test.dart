@@ -31,7 +31,7 @@ void main() {
       // TODO
     });
 
-    // Whether the account should be shown in the profile directory.
+    // Whether the account should be shown in the profile directory and be available for other discovery features, like being included in Collections.
     // bool discoverable
     test('to test the property `discoverable`', () async {
       // TODO
@@ -61,7 +61,7 @@ void main() {
       // TODO
     });
 
-    // Whether to hide followers and followed accounts.
+    // Whether to hide followers and followed accounts. This field predates the Collections feature and has nothing to do with it, despite the name.
     // bool hideCollections
     test('to test the property `hideCollections`', () async {
       // TODO

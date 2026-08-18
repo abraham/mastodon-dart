@@ -7,6 +7,8 @@ part of 'annual_report.dart';
 // **************************************************************************
 
 abstract class _$AnnualReportCWProxy {
+  AnnualReport year(int year);
+
   AnnualReport accountId(String? accountId);
 
   AnnualReport data(AnnualReportData? data);
@@ -14,8 +16,6 @@ abstract class _$AnnualReportCWProxy {
   AnnualReport schemaVersion(int? schemaVersion);
 
   AnnualReport shareUrl(Uri? shareUrl);
-
-  AnnualReport year(int? year);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `AnnualReport(...).copyWith.fieldName(value)`.
@@ -25,11 +25,11 @@ abstract class _$AnnualReportCWProxy {
   /// AnnualReport(...).copyWith(id: 12, name: "My name")
   /// ```
   AnnualReport call({
+    int year,
     String? accountId,
     AnnualReportData? data,
     int? schemaVersion,
     Uri? shareUrl,
-    int? year,
   });
 }
 
@@ -39,6 +39,9 @@ class _$AnnualReportCWProxyImpl implements _$AnnualReportCWProxy {
   const _$AnnualReportCWProxyImpl(this._value);
 
   final AnnualReport _value;
+
+  @override
+  AnnualReport year(int year) => call(year: year);
 
   @override
   AnnualReport accountId(String? accountId) => call(accountId: accountId);
@@ -54,9 +57,6 @@ class _$AnnualReportCWProxyImpl implements _$AnnualReportCWProxy {
   AnnualReport shareUrl(Uri? shareUrl) => call(shareUrl: shareUrl);
 
   @override
-  AnnualReport year(int? year) => call(year: year);
-
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `AnnualReport(...).copyWith.fieldName(value)`.
   ///
@@ -65,13 +65,17 @@ class _$AnnualReportCWProxyImpl implements _$AnnualReportCWProxy {
   /// AnnualReport(...).copyWith(id: 12, name: "My name")
   /// ```
   AnnualReport call({
+    Object? year = const $CopyWithPlaceholder(),
     Object? accountId = const $CopyWithPlaceholder(),
     Object? data = const $CopyWithPlaceholder(),
     Object? schemaVersion = const $CopyWithPlaceholder(),
     Object? shareUrl = const $CopyWithPlaceholder(),
-    Object? year = const $CopyWithPlaceholder(),
   }) {
     return AnnualReport(
+      year: year == const $CopyWithPlaceholder() || year == null
+          ? _value.year
+          // ignore: cast_nullable_to_non_nullable
+          : year as int,
       accountId: accountId == const $CopyWithPlaceholder()
           ? _value.accountId
           // ignore: cast_nullable_to_non_nullable
@@ -88,10 +92,6 @@ class _$AnnualReportCWProxyImpl implements _$AnnualReportCWProxy {
           ? _value.shareUrl
           // ignore: cast_nullable_to_non_nullable
           : shareUrl as Uri?,
-      year: year == const $CopyWithPlaceholder()
-          ? _value.year
-          // ignore: cast_nullable_to_non_nullable
-          : year as int?,
     );
   }
 }
@@ -112,7 +112,9 @@ AnnualReport _$AnnualReportFromJson(Map<String, dynamic> json) =>
       'AnnualReport',
       json,
       ($checkedConvert) {
+        $checkKeys(json, requiredKeys: const ['year']);
         final val = AnnualReport(
+          year: $checkedConvert('year', (v) => (v as num).toInt()),
           accountId: $checkedConvert('account_id', (v) => v as String?),
           data: $checkedConvert(
             'data',
@@ -128,7 +130,6 @@ AnnualReport _$AnnualReportFromJson(Map<String, dynamic> json) =>
             'share_url',
             (v) => v == null ? null : Uri.parse(v as String),
           ),
-          year: $checkedConvert('year', (v) => (v as num?)?.toInt()),
         );
         return val;
       },
@@ -141,9 +142,9 @@ AnnualReport _$AnnualReportFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$AnnualReportToJson(AnnualReport instance) =>
     <String, dynamic>{
+      'year': instance.year,
       'account_id': ?instance.accountId,
       'data': ?instance.data?.toJson(),
       'schema_version': ?instance.schemaVersion,
       'share_url': ?instance.shareUrl?.toString(),
-      'year': ?instance.year,
     };

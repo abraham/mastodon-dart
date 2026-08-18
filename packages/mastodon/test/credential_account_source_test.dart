@@ -20,6 +20,12 @@ void main() {
       // TODO
     });
 
+    // Whether public posts should be searchable to anyone.
+    // bool indexable
+    test('to test the property `indexable`', () async {
+      // TODO
+    });
+
     // Profile bio, in plain text instead of HTML.
     // String note
     test('to test the property `note`', () async {
@@ -56,12 +62,6 @@ void main() {
       // TODO
     });
 
-    // Whether public posts should be searchable to anyone.
-    // bool indexable
-    test('to test the property `indexable`', () async {
-      // TODO
-    });
-
     // The default posting language for new statuses.
     // String language
     test('to test the property `language`', () async {
@@ -69,7 +69,7 @@ void main() {
     });
 
     // The default quote policy to be used for new statuses.
-    // CredentialAccountSourceQuotePolicyEnum quotePolicy
+    // ScheduledStatusParamsQuoteApprovalPolicyEnum quotePolicy
     test('to test the property `quotePolicy`', () async {
       // TODO
     });

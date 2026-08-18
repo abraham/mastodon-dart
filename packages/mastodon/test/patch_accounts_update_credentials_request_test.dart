@@ -20,6 +20,12 @@ void main() {
       // TODO
     });
 
+    // A plain-text description of the avatar, for accessibility purposes.
+    // String avatarDescription
+    test('to test the property `avatarDescription`', () async {
+      // TODO
+    });
+
     // Whether the account has a bot flag.
     // bool bot
     test('to test the property `bot`', () async {
@@ -47,6 +53,12 @@ void main() {
     // Header image encoded using `multipart/form-data`
     // String header
     test('to test the property `header`', () async {
+      // TODO
+    });
+
+    // A plain-text description of the header, for accessibility purposes.
+    // String headerDescription
+    test('to test the property `headerDescription`', () async {
       // TODO
     });
 

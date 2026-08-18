@@ -7,6 +7,12 @@ void main() {
   // TODO add properties to the entity
 
   group(AnnualReport, () {
+    // The year this report is from.
+    // int year
+    test('to test the property `year`', () async {
+      // TODO
+    });
+
     // The account ID the report is about.
     // String accountId
     test('to test the property `accountId`', () async {
@@ -27,12 +33,6 @@ void main() {
     // An optional link to a shareable version of the report.
     // Uri shareUrl
     test('to test the property `shareUrl`', () async {
-      // TODO
-    });
-
-    // The year this report is from.
-    // int year
-    test('to test the property `year`', () async {
       // TODO
     });
   });

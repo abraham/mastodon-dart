@@ -20,6 +20,8 @@ part 'annual_report.g.dart';
 class AnnualReport {
   /// Returns a new [AnnualReport] instance.
   AnnualReport({
+    required this.year,
+
     this.accountId,
 
     this.data,
@@ -27,9 +29,11 @@ class AnnualReport {
     this.schemaVersion,
 
     this.shareUrl,
-
-    this.year,
   });
+
+  /// The year this report is from.
+  @JsonKey(name: r'year', required: true, includeIfNull: false)
+  final int year;
 
   /// The account ID the report is about.
   @JsonKey(name: r'account_id', required: false, includeIfNull: false)
@@ -46,27 +50,23 @@ class AnnualReport {
   @JsonKey(name: r'share_url', required: false, includeIfNull: false)
   final Uri? shareUrl;
 
-  /// The year this report is from.
-  @JsonKey(name: r'year', required: false, includeIfNull: false)
-  final int? year;
-
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is AnnualReport &&
+          other.year == year &&
           other.accountId == accountId &&
           other.data == data &&
           other.schemaVersion == schemaVersion &&
-          other.shareUrl == shareUrl &&
-          other.year == year;
+          other.shareUrl == shareUrl;
 
   @override
   int get hashCode =>
+      year.hashCode +
       (accountId == null ? 0 : accountId.hashCode) +
       (data == null ? 0 : data.hashCode) +
       (schemaVersion == null ? 0 : schemaVersion.hashCode) +
-      (shareUrl == null ? 0 : shareUrl.hashCode) +
-      (year == null ? 0 : year.hashCode);
+      (shareUrl == null ? 0 : shareUrl.hashCode);
 
   factory AnnualReport.fromJson(Map<String, dynamic> json) =>
       _$AnnualReportFromJson(json);

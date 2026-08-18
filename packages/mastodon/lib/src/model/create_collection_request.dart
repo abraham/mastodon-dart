@@ -33,7 +33,7 @@ class CreateCollectionRequest {
     this.tagName,
   });
 
-  /// A name for this Collection, max. 40 characters
+  /// A name for this Collection, max. 40 characters. String is taken \"as is\", which means there is currently no special handling of URLs and hashtags and no support for custom emoji.
   @JsonKey(name: r'name', required: true, includeIfNull: false)
   final String name;
 
@@ -41,11 +41,11 @@ class CreateCollectionRequest {
   @JsonKey(name: r'account_ids', required: false, includeIfNull: false)
   final String? accountIds;
 
-  /// A longer description of this Collection, max. 100 characters
+  /// A longer description of this Collection, max. 100 characters. String is taken \"as is\", which means there is currently no special handling of URLs a
   @JsonKey(name: r'description', required: false, includeIfNull: false)
   final String? description;
 
-  /// Whether this Collection should appear in search results and other discovery mechanisms
+  /// Whether this Collection should appear on the user's profile, in search results and other discovery mechanisms
   @JsonKey(name: r'discoverable', required: false, includeIfNull: false)
   final bool? discoverable;
 

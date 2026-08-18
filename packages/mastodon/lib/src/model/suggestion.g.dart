@@ -9,7 +9,7 @@ part of 'suggestion.dart';
 abstract class _$SuggestionCWProxy {
   Suggestion account(Account account);
 
-  Suggestion sources(List<SuggestionSourcesEnum>? sources);
+  Suggestion sources(List<SuggestionSourcesEnum> sources);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Suggestion(...).copyWith.fieldName(value)`.
@@ -18,7 +18,7 @@ abstract class _$SuggestionCWProxy {
   /// ```dart
   /// Suggestion(...).copyWith(id: 12, name: "My name")
   /// ```
-  Suggestion call({Account account, List<SuggestionSourcesEnum>? sources});
+  Suggestion call({Account account, List<SuggestionSourcesEnum> sources});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -32,7 +32,7 @@ class _$SuggestionCWProxyImpl implements _$SuggestionCWProxy {
   Suggestion account(Account account) => call(account: account);
 
   @override
-  Suggestion sources(List<SuggestionSourcesEnum>? sources) =>
+  Suggestion sources(List<SuggestionSourcesEnum> sources) =>
       call(sources: sources);
 
   @override
@@ -52,10 +52,10 @@ class _$SuggestionCWProxyImpl implements _$SuggestionCWProxy {
           ? _value.account
           // ignore: cast_nullable_to_non_nullable
           : account as Account,
-      sources: sources == const $CopyWithPlaceholder()
+      sources: sources == const $CopyWithPlaceholder() || sources == null
           ? _value.sources
           // ignore: cast_nullable_to_non_nullable
-          : sources as List<SuggestionSourcesEnum>?,
+          : sources as List<SuggestionSourcesEnum>,
     );
   }
 }
@@ -73,7 +73,7 @@ extension $SuggestionCopyWith on Suggestion {
 
 Suggestion _$SuggestionFromJson(Map<String, dynamic> json) =>
     $checkedCreate('Suggestion', json, ($checkedConvert) {
-      $checkKeys(json, requiredKeys: const ['account']);
+      $checkKeys(json, requiredKeys: const ['account', 'sources']);
       final val = Suggestion(
         account: $checkedConvert(
           'account',
@@ -81,8 +81,8 @@ Suggestion _$SuggestionFromJson(Map<String, dynamic> json) =>
         ),
         sources: $checkedConvert(
           'sources',
-          (v) => (v as List<dynamic>?)
-              ?.map((e) => $enumDecode(_$SuggestionSourcesEnumEnumMap, e))
+          (v) => (v as List<dynamic>)
+              .map((e) => $enumDecode(_$SuggestionSourcesEnumEnumMap, e))
               .toList(),
         ),
       );
@@ -92,8 +92,8 @@ Suggestion _$SuggestionFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$SuggestionToJson(Suggestion instance) =>
     <String, dynamic>{
       'account': instance.account.toJson(),
-      'sources': ?instance.sources
-          ?.map((e) => _$SuggestionSourcesEnumEnumMap[e]!)
+      'sources': instance.sources
+          .map((e) => _$SuggestionSourcesEnumEnumMap[e]!)
           .toList(),
     };
 

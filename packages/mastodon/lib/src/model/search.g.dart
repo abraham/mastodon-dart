@@ -13,6 +13,8 @@ abstract class _$SearchCWProxy {
 
   Search statuses(List<Status> statuses);
 
+  Search collections(List<Collection>? collections);
+
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Search(...).copyWith.fieldName(value)`.
   ///
@@ -24,6 +26,7 @@ abstract class _$SearchCWProxy {
     List<Account> accounts,
     List<Tag> hashtags,
     List<Status> statuses,
+    List<Collection>? collections,
   });
 }
 
@@ -44,6 +47,10 @@ class _$SearchCWProxyImpl implements _$SearchCWProxy {
   Search statuses(List<Status> statuses) => call(statuses: statuses);
 
   @override
+  Search collections(List<Collection>? collections) =>
+      call(collections: collections);
+
+  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Search(...).copyWith.fieldName(value)`.
   ///
@@ -55,6 +62,7 @@ class _$SearchCWProxyImpl implements _$SearchCWProxy {
     Object? accounts = const $CopyWithPlaceholder(),
     Object? hashtags = const $CopyWithPlaceholder(),
     Object? statuses = const $CopyWithPlaceholder(),
+    Object? collections = const $CopyWithPlaceholder(),
   }) {
     return Search(
       accounts: accounts == const $CopyWithPlaceholder() || accounts == null
@@ -69,6 +77,10 @@ class _$SearchCWProxyImpl implements _$SearchCWProxy {
           ? _value.statuses
           // ignore: cast_nullable_to_non_nullable
           : statuses as List<Status>,
+      collections: collections == const $CopyWithPlaceholder()
+          ? _value.collections
+          // ignore: cast_nullable_to_non_nullable
+          : collections as List<Collection>?,
     );
   }
 }
@@ -108,6 +120,12 @@ Search _$SearchFromJson(Map<String, dynamic> json) => $checkedCreate(
             .map((e) => Status.fromJson(e as Map<String, dynamic>))
             .toList(),
       ),
+      collections: $checkedConvert(
+        'collections',
+        (v) => (v as List<dynamic>?)
+            ?.map((e) => Collection.fromJson(e as Map<String, dynamic>))
+            .toList(),
+      ),
     );
     return val;
   },
@@ -117,4 +135,5 @@ Map<String, dynamic> _$SearchToJson(Search instance) => <String, dynamic>{
   'accounts': instance.accounts.map((e) => e.toJson()).toList(),
   'hashtags': instance.hashtags.map((e) => e.toJson()).toList(),
   'statuses': instance.statuses.map((e) => e.toJson()).toList(),
+  'collections': ?instance.collections?.map((e) => e.toJson()).toList(),
 };

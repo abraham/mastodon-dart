@@ -8,7 +8,7 @@ void main() {
   // TODO add properties to the entity
 
   group(CreateCollectionRequest, () {
-    // A name for this Collection, max. 40 characters
+    // A name for this Collection, max. 40 characters. String is taken \"as is\", which means there is currently no special handling of URLs and hashtags and no support for custom emoji.
     // String name
     test('to test the property `name`', () async {
       // TODO
@@ -20,13 +20,13 @@ void main() {
       // TODO
     });
 
-    // A longer description of this Collection, max. 100 characters
+    // A longer description of this Collection, max. 100 characters. String is taken \"as is\", which means there is currently no special handling of URLs a
     // String description
     test('to test the property `description`', () async {
       // TODO
     });
 
-    // Whether this Collection should appear in search results and other discovery mechanisms
+    // Whether this Collection should appear on the user's profile, in search results and other discovery mechanisms
     // bool discoverable
     test('to test the property `discoverable`', () async {
       // TODO

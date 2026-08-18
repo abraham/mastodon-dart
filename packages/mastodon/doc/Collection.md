@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **accountId** | **String** | The id of the account that curates this Collection. | 
 **createdAt** | [**DateTime**](DateTime.md) | When the Collection was created. | 
 **description** | **String** | An optional description of the Collection. | 
-**discoverable** | **bool** | Whether the Collection should show up in search results and recommendations. | 
+**discoverable** | **bool** | Whether the Collection should show up on the owner's profile, in search results and recommendations. | 
 **id** | **String** | The collection id. | 
 **itemCount** | **int** | The number of items in this Collection. | 
 **items** | [**List&lt;CollectionItem&gt;**](CollectionItem.md) | The items in this Collection. | 

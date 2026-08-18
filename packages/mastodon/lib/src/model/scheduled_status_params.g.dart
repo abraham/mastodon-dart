@@ -29,6 +29,12 @@ abstract class _$ScheduledStatusParamsCWProxy {
 
   ScheduledStatusParams poll(ScheduledStatusParamsPoll? poll);
 
+  ScheduledStatusParams quoteApprovalPolicy(
+    ScheduledStatusParamsQuoteApprovalPolicyEnum? quoteApprovalPolicy,
+  );
+
+  ScheduledStatusParams quotedStatusId(String? quotedStatusId);
+
   ScheduledStatusParams scheduledAt(String? scheduledAt);
 
   ScheduledStatusParams sensitive(bool? sensitive);
@@ -52,6 +58,8 @@ abstract class _$ScheduledStatusParamsCWProxy {
     String? language,
     List<String>? mediaIds,
     ScheduledStatusParamsPoll? poll,
+    ScheduledStatusParamsQuoteApprovalPolicyEnum? quoteApprovalPolicy,
+    String? quotedStatusId,
     String? scheduledAt,
     bool? sensitive,
     String? spoilerText,
@@ -103,6 +111,15 @@ class _$ScheduledStatusParamsCWProxyImpl
       call(poll: poll);
 
   @override
+  ScheduledStatusParams quoteApprovalPolicy(
+    ScheduledStatusParamsQuoteApprovalPolicyEnum? quoteApprovalPolicy,
+  ) => call(quoteApprovalPolicy: quoteApprovalPolicy);
+
+  @override
+  ScheduledStatusParams quotedStatusId(String? quotedStatusId) =>
+      call(quotedStatusId: quotedStatusId);
+
+  @override
   ScheduledStatusParams scheduledAt(String? scheduledAt) =>
       call(scheduledAt: scheduledAt);
 
@@ -134,6 +151,8 @@ class _$ScheduledStatusParamsCWProxyImpl
     Object? language = const $CopyWithPlaceholder(),
     Object? mediaIds = const $CopyWithPlaceholder(),
     Object? poll = const $CopyWithPlaceholder(),
+    Object? quoteApprovalPolicy = const $CopyWithPlaceholder(),
+    Object? quotedStatusId = const $CopyWithPlaceholder(),
     Object? scheduledAt = const $CopyWithPlaceholder(),
     Object? sensitive = const $CopyWithPlaceholder(),
     Object? spoilerText = const $CopyWithPlaceholder(),
@@ -178,6 +197,15 @@ class _$ScheduledStatusParamsCWProxyImpl
           ? _value.poll
           // ignore: cast_nullable_to_non_nullable
           : poll as ScheduledStatusParamsPoll?,
+      quoteApprovalPolicy: quoteApprovalPolicy == const $CopyWithPlaceholder()
+          ? _value.quoteApprovalPolicy
+          // ignore: cast_nullable_to_non_nullable
+          : quoteApprovalPolicy
+                as ScheduledStatusParamsQuoteApprovalPolicyEnum?,
+      quotedStatusId: quotedStatusId == const $CopyWithPlaceholder()
+          ? _value.quotedStatusId
+          // ignore: cast_nullable_to_non_nullable
+          : quotedStatusId as String?,
       scheduledAt: scheduledAt == const $CopyWithPlaceholder()
           ? _value.scheduledAt
           // ignore: cast_nullable_to_non_nullable
@@ -248,6 +276,14 @@ ScheduledStatusParams _$ScheduledStatusParamsFromJson(
             ? null
             : ScheduledStatusParamsPoll.fromJson(v as Map<String, dynamic>),
       ),
+      quoteApprovalPolicy: $checkedConvert(
+        'quote_approval_policy',
+        (v) => $enumDecodeNullable(
+          _$ScheduledStatusParamsQuoteApprovalPolicyEnumEnumMap,
+          v,
+        ),
+      ),
+      quotedStatusId: $checkedConvert('quoted_status_id', (v) => v as String?),
       scheduledAt: $checkedConvert('scheduled_at', (v) => v as String?),
       sensitive: $checkedConvert('sensitive', (v) => v as bool?),
       spoilerText: $checkedConvert('spoiler_text', (v) => v as String?),
@@ -259,6 +295,8 @@ ScheduledStatusParams _$ScheduledStatusParamsFromJson(
     'withRateLimit': 'with_rate_limit',
     'inReplyToId': 'in_reply_to_id',
     'mediaIds': 'media_ids',
+    'quoteApprovalPolicy': 'quote_approval_policy',
+    'quotedStatusId': 'quoted_status_id',
     'scheduledAt': 'scheduled_at',
     'spoilerText': 'spoiler_text',
   },
@@ -276,6 +314,10 @@ Map<String, dynamic> _$ScheduledStatusParamsToJson(
   'language': ?instance.language,
   'media_ids': ?instance.mediaIds,
   'poll': ?instance.poll?.toJson(),
+  'quote_approval_policy':
+      ?_$ScheduledStatusParamsQuoteApprovalPolicyEnumEnumMap[instance
+          .quoteApprovalPolicy],
+  'quoted_status_id': ?instance.quotedStatusId,
   'scheduled_at': ?instance.scheduledAt,
   'sensitive': ?instance.sensitive,
   'spoiler_text': ?instance.spoilerText,
@@ -286,4 +328,10 @@ const _$StatusVisibilityEnumEnumMap = {
   StatusVisibilityEnum.unlisted: 'unlisted',
   StatusVisibilityEnum.private: 'private',
   StatusVisibilityEnum.direct: 'direct',
+};
+
+const _$ScheduledStatusParamsQuoteApprovalPolicyEnumEnumMap = {
+  ScheduledStatusParamsQuoteApprovalPolicyEnum.public: 'public',
+  ScheduledStatusParamsQuoteApprovalPolicyEnum.followers: 'followers',
+  ScheduledStatusParamsQuoteApprovalPolicyEnum.nobody: 'nobody',
 };

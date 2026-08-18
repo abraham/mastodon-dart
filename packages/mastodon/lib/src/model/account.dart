@@ -51,6 +51,8 @@ class Account {
 
     required this.id,
 
+    required this.indexable,
+
     required this.locked,
 
     required this.note,
@@ -70,8 +72,6 @@ class Account {
     this.headerDescription,
 
     this.hideCollections,
-
-    this.indexable,
 
     this.lastStatusAt,
 
@@ -152,6 +152,10 @@ class Account {
   @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
+  /// Whether the account allows indexing by search engines.
+  @JsonKey(name: r'indexable', required: true, includeIfNull: false)
+  final bool indexable;
+
   /// Whether the account manually approves follow requests.
   @JsonKey(name: r'locked', required: true, includeIfNull: false)
   final bool locked;
@@ -191,10 +195,6 @@ class Account {
   /// Whether the user hides the contents of their follows and followers collections.
   @JsonKey(name: r'hide_collections', required: false, includeIfNull: false)
   final bool? hideCollections;
-
-  /// Whether the account allows indexing by search engines.
-  @JsonKey(name: r'indexable', required: false, includeIfNull: false)
-  final bool? indexable;
 
   /// When the most recent status was posted.
   @JsonKey(name: r'last_status_at', required: false, includeIfNull: false)
@@ -258,6 +258,7 @@ class Account {
           other.header == header &&
           other.headerStatic == headerStatic &&
           other.id == id &&
+          other.indexable == indexable &&
           other.locked == locked &&
           other.note == note &&
           other.statusesCount == statusesCount &&
@@ -268,7 +269,6 @@ class Account {
           other.featureApproval == featureApproval &&
           other.headerDescription == headerDescription &&
           other.hideCollections == hideCollections &&
-          other.indexable == indexable &&
           other.lastStatusAt == lastStatusAt &&
           other.limited == limited &&
           other.memorial == memorial &&
@@ -297,6 +297,7 @@ class Account {
       header.hashCode +
       headerStatic.hashCode +
       id.hashCode +
+      indexable.hashCode +
       locked.hashCode +
       note.hashCode +
       statusesCount.hashCode +
@@ -307,7 +308,6 @@ class Account {
       (featureApproval == null ? 0 : featureApproval.hashCode) +
       (headerDescription == null ? 0 : headerDescription.hashCode) +
       (hideCollections == null ? 0 : hideCollections.hashCode) +
-      (indexable == null ? 0 : indexable.hashCode) +
       (lastStatusAt == null ? 0 : lastStatusAt.hashCode) +
       (limited == null ? 0 : limited.hashCode) +
       (memorial == null ? 0 : memorial.hashCode) +

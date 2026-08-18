@@ -18,48 +18,60 @@ part 'annual_report_data.g.dart';
 class AnnualReportData {
   /// Returns a new [AnnualReportData] instance.
   AnnualReportData({
-    this.archetype,
+    required this.archetype,
 
-    this.typeDistribution,
+    required this.typeDistribution,
+
+    required this.mostUsedApps,
+
+    required this.commonlyInteractedWithAccounts,
+
+    required this.mostRebloggedAccounts,
+
+    required this.percentiles,
 
     this.topStatuses,
-
-    this.mostUsedApps,
-
-    this.commonlyInteractedWithAccounts,
 
     this.timeSeries,
 
     this.topHashtags,
-
-    this.mostRebloggedAccounts,
-
-    this.percentiles,
   });
 
   /// Archetype the user corresponds to. This is meant to represent a playful and very coarse overview of the user's posting habits over the year.
-  @JsonKey(name: r'archetype', required: false, includeIfNull: false)
-  final AnnualReportDataArchetypeEnum? archetype;
+  @JsonKey(name: r'archetype', required: true, includeIfNull: false)
+  final AnnualReportDataArchetypeEnum archetype;
 
   /// Provides a breakdown of the user's posts statistics over the year. Only available in schema version 1.
-  @JsonKey(name: r'type_distribution', required: false, includeIfNull: false)
-  final Object? typeDistribution;
-
-  /// Provides a breakdown of the user's most-interacted statuses by type of interaction (reblogs, favourites, replies) over the year.
-  @JsonKey(name: r'top_statuses', required: false, includeIfNull: false)
-  final Object? topStatuses;
+  @JsonKey(name: r'type_distribution', required: true, includeIfNull: false)
+  final Object typeDistribution;
 
   /// Provides a breakdown of the apps the user used the most for posting statuses over the year. Only available in schema version 1.
-  @JsonKey(name: r'most_used_apps', required: false, includeIfNull: false)
-  final List<Object>? mostUsedApps;
+  @JsonKey(name: r'most_used_apps', required: true, includeIfNull: false)
+  final List<Object> mostUsedApps;
 
   /// Provides a breakdown of the accounts the user have the most frequently replied to over the year. Only available in schema version 1.
   @JsonKey(
     name: r'commonly_interacted_with_accounts',
-    required: false,
+    required: true,
     includeIfNull: false,
   )
-  final List<Object>? commonlyInteractedWithAccounts;
+  final List<Object> commonlyInteractedWithAccounts;
+
+  /// Provides a breakdown of the accounts the user has reblogged the most over the year. Only available in schema version 1.
+  @JsonKey(
+    name: r'most_reblogged_accounts',
+    required: true,
+    includeIfNull: false,
+  )
+  final List<Object> mostRebloggedAccounts;
+
+  /// Which percentile of the most prolific posters on the same server the user is in. Only available in schema version 1.
+  @JsonKey(name: r'percentiles', required: true, includeIfNull: false)
+  final num percentiles;
+
+  /// Provides a breakdown of the user's most-interacted statuses by type of interaction (reblogs, favourites, replies) over the year.
+  @JsonKey(name: r'top_statuses', required: false, includeIfNull: false)
+  final Object? topStatuses;
 
   /// Provides a breakdown of new statuses, follows and followers per month.
   @JsonKey(name: r'time_series', required: false, includeIfNull: false)
@@ -69,46 +81,32 @@ class AnnualReportData {
   @JsonKey(name: r'top_hashtags', required: false, includeIfNull: false)
   final List<Object>? topHashtags;
 
-  /// Provides a breakdown of the accounts the user has reblogged the most over the year. Only available in schema version 1.
-  @JsonKey(
-    name: r'most_reblogged_accounts',
-    required: false,
-    includeIfNull: false,
-  )
-  final List<Object>? mostRebloggedAccounts;
-
-  /// Which percentile of the most prolific posters on the same server the user is in. Only available in schema version 1.
-  @JsonKey(name: r'percentiles', required: false, includeIfNull: false)
-  final num? percentiles;
-
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is AnnualReportData &&
           other.archetype == archetype &&
           other.typeDistribution == typeDistribution &&
-          other.topStatuses == topStatuses &&
           other.mostUsedApps == mostUsedApps &&
           other.commonlyInteractedWithAccounts ==
               commonlyInteractedWithAccounts &&
-          other.timeSeries == timeSeries &&
-          other.topHashtags == topHashtags &&
           other.mostRebloggedAccounts == mostRebloggedAccounts &&
-          other.percentiles == percentiles;
+          other.percentiles == percentiles &&
+          other.topStatuses == topStatuses &&
+          other.timeSeries == timeSeries &&
+          other.topHashtags == topHashtags;
 
   @override
   int get hashCode =>
-      (archetype == null ? 0 : archetype.hashCode) +
-      (typeDistribution == null ? 0 : typeDistribution.hashCode) +
+      archetype.hashCode +
+      typeDistribution.hashCode +
+      mostUsedApps.hashCode +
+      commonlyInteractedWithAccounts.hashCode +
+      mostRebloggedAccounts.hashCode +
+      percentiles.hashCode +
       (topStatuses == null ? 0 : topStatuses.hashCode) +
-      (mostUsedApps == null ? 0 : mostUsedApps.hashCode) +
-      (commonlyInteractedWithAccounts == null
-          ? 0
-          : commonlyInteractedWithAccounts.hashCode) +
       (timeSeries == null ? 0 : timeSeries.hashCode) +
-      (topHashtags == null ? 0 : topHashtags.hashCode) +
-      (mostRebloggedAccounts == null ? 0 : mostRebloggedAccounts.hashCode) +
-      (percentiles == null ? 0 : percentiles.hashCode);
+      (topHashtags == null ? 0 : topHashtags.hashCode);
 
   factory AnnualReportData.fromJson(Map<String, dynamic> json) =>
       _$AnnualReportDataFromJson(json);

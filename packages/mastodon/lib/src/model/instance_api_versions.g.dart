@@ -7,7 +7,7 @@ part of 'instance_api_versions.dart';
 // **************************************************************************
 
 abstract class _$InstanceApiVersionsCWProxy {
-  InstanceApiVersions mastodon(int? mastodon);
+  InstanceApiVersions mastodon(int mastodon);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `InstanceApiVersions(...).copyWith.fieldName(value)`.
@@ -16,7 +16,7 @@ abstract class _$InstanceApiVersionsCWProxy {
   /// ```dart
   /// InstanceApiVersions(...).copyWith(id: 12, name: "My name")
   /// ```
-  InstanceApiVersions call({int? mastodon});
+  InstanceApiVersions call({int mastodon});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -27,7 +27,7 @@ class _$InstanceApiVersionsCWProxyImpl implements _$InstanceApiVersionsCWProxy {
   final InstanceApiVersions _value;
 
   @override
-  InstanceApiVersions mastodon(int? mastodon) => call(mastodon: mastodon);
+  InstanceApiVersions mastodon(int mastodon) => call(mastodon: mastodon);
 
   @override
   /// Creates a new instance with the provided field values.
@@ -39,10 +39,10 @@ class _$InstanceApiVersionsCWProxyImpl implements _$InstanceApiVersionsCWProxy {
   /// ```
   InstanceApiVersions call({Object? mastodon = const $CopyWithPlaceholder()}) {
     return InstanceApiVersions(
-      mastodon: mastodon == const $CopyWithPlaceholder()
+      mastodon: mastodon == const $CopyWithPlaceholder() || mastodon == null
           ? _value.mastodon
           // ignore: cast_nullable_to_non_nullable
-          : mastodon as int?,
+          : mastodon as int,
     );
   }
 }
@@ -61,12 +61,13 @@ extension $InstanceApiVersionsCopyWith on InstanceApiVersions {
 
 InstanceApiVersions _$InstanceApiVersionsFromJson(Map<String, dynamic> json) =>
     $checkedCreate('InstanceApiVersions', json, ($checkedConvert) {
+      $checkKeys(json, requiredKeys: const ['mastodon']);
       final val = InstanceApiVersions(
-        mastodon: $checkedConvert('mastodon', (v) => (v as num?)?.toInt()),
+        mastodon: $checkedConvert('mastodon', (v) => (v as num).toInt()),
       );
       return val;
     });
 
 Map<String, dynamic> _$InstanceApiVersionsToJson(
   InstanceApiVersions instance,
-) => <String, dynamic>{'mastodon': ?instance.mastodon};
+) => <String, dynamic>{'mastodon': instance.mastodon};
