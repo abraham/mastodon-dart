@@ -50,7 +50,6 @@ class _$SearchCWProxyImpl implements _$SearchCWProxy {
   Search collections(List<Collection>? collections) =>
       call(collections: collections);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Search(...).copyWith.fieldName(value)`.
   ///
@@ -58,6 +57,7 @@ class _$SearchCWProxyImpl implements _$SearchCWProxy {
   /// ```dart
   /// Search(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   Search call({
     Object? accounts = const $CopyWithPlaceholder(),
     Object? hashtags = const $CopyWithPlaceholder(),

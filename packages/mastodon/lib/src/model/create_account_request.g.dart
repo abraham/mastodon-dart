@@ -69,7 +69,6 @@ class _$CreateAccountRequestCWProxyImpl
   @override
   CreateAccountRequest reason(String? reason) => call(reason: reason);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CreateAccountRequest(...).copyWith.fieldName(value)`.
   ///
@@ -77,6 +76,7 @@ class _$CreateAccountRequestCWProxyImpl
   /// ```dart
   /// CreateAccountRequest(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   CreateAccountRequest call({
     Object? agreement = const $CopyWithPlaceholder(),
     Object? email = const $CopyWithPlaceholder(),

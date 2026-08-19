@@ -36,7 +36,6 @@ class _$PostAccountMuteRequestCWProxyImpl
   PostAccountMuteRequest notifications(bool? notifications) =>
       call(notifications: notifications);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PostAccountMuteRequest(...).copyWith.fieldName(value)`.
   ///
@@ -44,6 +43,7 @@ class _$PostAccountMuteRequestCWProxyImpl
   /// ```dart
   /// PostAccountMuteRequest(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   PostAccountMuteRequest call({
     Object? duration = const $CopyWithPlaceholder(),
     Object? notifications = const $CopyWithPlaceholder(),

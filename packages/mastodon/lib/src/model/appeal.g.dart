@@ -34,7 +34,6 @@ class _$AppealCWProxyImpl implements _$AppealCWProxy {
   @override
   Appeal text(String text) => call(text: text);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Appeal(...).copyWith.fieldName(value)`.
   ///
@@ -42,6 +41,7 @@ class _$AppealCWProxyImpl implements _$AppealCWProxy {
   /// ```dart
   /// Appeal(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   Appeal call({
     Object? state = const $CopyWithPlaceholder(),
     Object? text = const $CopyWithPlaceholder(),

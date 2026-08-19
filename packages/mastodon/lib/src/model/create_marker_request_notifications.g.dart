@@ -31,7 +31,6 @@ class _$CreateMarkerRequestNotificationsCWProxyImpl
   CreateMarkerRequestNotifications lastReadId(String? lastReadId) =>
       call(lastReadId: lastReadId);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CreateMarkerRequestNotifications(...).copyWith.fieldName(value)`.
   ///
@@ -39,6 +38,7 @@ class _$CreateMarkerRequestNotificationsCWProxyImpl
   /// ```dart
   /// CreateMarkerRequestNotifications(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   CreateMarkerRequestNotifications call({
     Object? lastReadId = const $CopyWithPlaceholder(),
   }) {

@@ -29,7 +29,6 @@ class _$MergedResponseCWProxyImpl implements _$MergedResponseCWProxy {
   @override
   MergedResponse merged(bool merged) => call(merged: merged);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `MergedResponse(...).copyWith.fieldName(value)`.
   ///
@@ -37,6 +36,7 @@ class _$MergedResponseCWProxyImpl implements _$MergedResponseCWProxy {
   /// ```dart
   /// MergedResponse(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   MergedResponse call({Object? merged = const $CopyWithPlaceholder()}) {
     return MergedResponse(
       merged: merged == const $CopyWithPlaceholder() || merged == null

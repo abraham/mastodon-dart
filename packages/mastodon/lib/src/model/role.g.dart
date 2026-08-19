@@ -62,7 +62,6 @@ class _$RoleCWProxyImpl implements _$RoleCWProxy {
   Role collectionLimit(int? collectionLimit) =>
       call(collectionLimit: collectionLimit);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Role(...).copyWith.fieldName(value)`.
   ///
@@ -70,6 +69,7 @@ class _$RoleCWProxyImpl implements _$RoleCWProxy {
   /// ```dart
   /// Role(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   Role call({
     Object? color = const $CopyWithPlaceholder(),
     Object? highlighted = const $CopyWithPlaceholder(),

@@ -62,7 +62,6 @@ class _$CreateFilterV2RequestCWProxyImpl
     List<CreateFilterV2RequestKeywordsAttributesInner>? keywordsAttributes,
   ) => call(keywordsAttributes: keywordsAttributes);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CreateFilterV2Request(...).copyWith.fieldName(value)`.
   ///
@@ -70,6 +69,7 @@ class _$CreateFilterV2RequestCWProxyImpl
   /// ```dart
   /// CreateFilterV2Request(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   CreateFilterV2Request call({
     Object? context = const $CopyWithPlaceholder(),
     Object? title = const $CopyWithPlaceholder(),

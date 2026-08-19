@@ -51,7 +51,6 @@ class _$TermsOfServiceCWProxyImpl implements _$TermsOfServiceCWProxy {
   TermsOfService succeededBy(DateTime? succeededBy) =>
       call(succeededBy: succeededBy);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `TermsOfService(...).copyWith.fieldName(value)`.
   ///
@@ -59,6 +58,7 @@ class _$TermsOfServiceCWProxyImpl implements _$TermsOfServiceCWProxy {
   /// ```dart
   /// TermsOfService(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   TermsOfService call({
     Object? content = const $CopyWithPlaceholder(),
     Object? effective = const $CopyWithPlaceholder(),

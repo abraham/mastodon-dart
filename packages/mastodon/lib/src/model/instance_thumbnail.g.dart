@@ -51,7 +51,6 @@ class _$InstanceThumbnailCWProxyImpl implements _$InstanceThumbnailCWProxy {
   InstanceThumbnail versions(InstanceThumbnailVersions? versions) =>
       call(versions: versions);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `InstanceThumbnail(...).copyWith.fieldName(value)`.
   ///
@@ -59,6 +58,7 @@ class _$InstanceThumbnailCWProxyImpl implements _$InstanceThumbnailCWProxy {
   /// ```dart
   /// InstanceThumbnail(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   InstanceThumbnail call({
     Object? url = const $CopyWithPlaceholder(),
     Object? blurhash = const $CopyWithPlaceholder(),

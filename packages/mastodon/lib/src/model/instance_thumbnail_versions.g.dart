@@ -35,7 +35,6 @@ class _$InstanceThumbnailVersionsCWProxyImpl
   @override
   InstanceThumbnailVersions at2x(Uri? at2x) => call(at2x: at2x);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `InstanceThumbnailVersions(...).copyWith.fieldName(value)`.
   ///
@@ -43,6 +42,7 @@ class _$InstanceThumbnailVersionsCWProxyImpl
   /// ```dart
   /// InstanceThumbnailVersions(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   InstanceThumbnailVersions call({
     Object? at1x = const $CopyWithPlaceholder(),
     Object? at2x = const $CopyWithPlaceholder(),

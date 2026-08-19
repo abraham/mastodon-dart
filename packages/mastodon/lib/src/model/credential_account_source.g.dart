@@ -105,7 +105,6 @@ class _$CredentialAccountSourceCWProxyImpl
     ScheduledStatusParamsQuoteApprovalPolicyEnum? quotePolicy,
   ) => call(quotePolicy: quotePolicy);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CredentialAccountSource(...).copyWith.fieldName(value)`.
   ///
@@ -113,6 +112,7 @@ class _$CredentialAccountSourceCWProxyImpl
   /// ```dart
   /// CredentialAccountSource(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   CredentialAccountSource call({
     Object? fields = const $CopyWithPlaceholder(),
     Object? followRequestsCount = const $CopyWithPlaceholder(),

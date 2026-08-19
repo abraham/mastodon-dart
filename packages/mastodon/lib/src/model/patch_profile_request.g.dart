@@ -130,7 +130,6 @@ class _$PatchProfileRequestCWProxyImpl implements _$PatchProfileRequestCWProxy {
   PatchProfileRequest showMediaReplies(bool? showMediaReplies) =>
       call(showMediaReplies: showMediaReplies);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PatchProfileRequest(...).copyWith.fieldName(value)`.
   ///
@@ -138,6 +137,7 @@ class _$PatchProfileRequestCWProxyImpl implements _$PatchProfileRequestCWProxy {
   /// ```dart
   /// PatchProfileRequest(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   PatchProfileRequest call({
     Object? attributionDomains = const $CopyWithPlaceholder(),
     Object? avatar = const $CopyWithPlaceholder(),

@@ -53,7 +53,6 @@ class _$UpdateFilterV2RequestKeywordsAttributesInnerCWProxyImpl
   UpdateFilterV2RequestKeywordsAttributesInner destroy(bool? destroy) =>
       call(destroy: destroy);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `UpdateFilterV2RequestKeywordsAttributesInner(...).copyWith.fieldName(value)`.
   ///
@@ -61,6 +60,7 @@ class _$UpdateFilterV2RequestKeywordsAttributesInnerCWProxyImpl
   /// ```dart
   /// UpdateFilterV2RequestKeywordsAttributesInner(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   UpdateFilterV2RequestKeywordsAttributesInner call({
     Object? keyword = const $CopyWithPlaceholder(),
     Object? wholeWord = const $CopyWithPlaceholder(),

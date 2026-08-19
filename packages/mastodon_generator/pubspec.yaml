@@ -4,12 +4,12 @@ environment:
   sdk: ^3.9.0
 resolution: workspace
 dependencies:
-  openapi_generator_annotations: 6.1.0
+  openapi_generator_annotations: ^7.0.0
 dev_dependencies:
-  # openapi_generator: any
-  openapi_generator:
-    git:
-      url: https://github.com/abraham/openapi-generator-dart.git
-      path: openapi-generator
-      ref: 31cb3d8aa68567be55b6efd66dfd354c8f7fe3c6
-  build_runner: 2.9.0
+  openapi_generator: ^7.0.0
+  # openapi_generator:
+  #   git:
+  #     url: https://github.com/abraham/openapi-generator-dart.git
+  #     path: openapi-generator
+  #     ref: 31cb3d8aa68567be55b6efd66dfd354c8f7fe3c6
+  build_runner: ^2.15.1

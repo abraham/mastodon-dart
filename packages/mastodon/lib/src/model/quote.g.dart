@@ -34,7 +34,6 @@ class _$QuoteCWProxyImpl implements _$QuoteCWProxy {
   @override
   Quote quotedStatus(Status? quotedStatus) => call(quotedStatus: quotedStatus);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Quote(...).copyWith.fieldName(value)`.
   ///
@@ -42,6 +41,7 @@ class _$QuoteCWProxyImpl implements _$QuoteCWProxy {
   /// ```dart
   /// Quote(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   Quote call({
     Object? state = const $CopyWithPlaceholder(),
     Object? quotedStatus = const $CopyWithPlaceholder(),

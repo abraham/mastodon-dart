@@ -65,7 +65,6 @@ class _$NotificationRequestCWProxyImpl implements _$NotificationRequestCWProxy {
   NotificationRequest lastStatus(Status? lastStatus) =>
       call(lastStatus: lastStatus);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `NotificationRequest(...).copyWith.fieldName(value)`.
   ///
@@ -73,6 +72,7 @@ class _$NotificationRequestCWProxyImpl implements _$NotificationRequestCWProxy {
   /// ```dart
   /// NotificationRequest(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   NotificationRequest call({
     Object? account = const $CopyWithPlaceholder(),
     Object? createdAt = const $CopyWithPlaceholder(),

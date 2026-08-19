@@ -49,7 +49,6 @@ class _$CollectionItemCWProxyImpl implements _$CollectionItemCWProxy {
   @override
   CollectionItem accountId(String? accountId) => call(accountId: accountId);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CollectionItem(...).copyWith.fieldName(value)`.
   ///
@@ -57,6 +56,7 @@ class _$CollectionItemCWProxyImpl implements _$CollectionItemCWProxy {
   /// ```dart
   /// CollectionItem(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   CollectionItem call({
     Object? createdAt = const $CopyWithPlaceholder(),
     Object? id = const $CopyWithPlaceholder(),

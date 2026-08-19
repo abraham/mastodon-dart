@@ -262,7 +262,6 @@ class _$MutedAccountCWProxyImpl implements _$MutedAccountCWProxy {
   @override
   MutedAccount url(Uri? url) => call(url: url);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `MutedAccount(...).copyWith.fieldName(value)`.
   ///
@@ -270,6 +269,7 @@ class _$MutedAccountCWProxyImpl implements _$MutedAccountCWProxy {
   /// ```dart
   /// MutedAccount(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   MutedAccount call({
     Object? acct = const $CopyWithPlaceholder(),
     Object? avatar = const $CopyWithPlaceholder(),

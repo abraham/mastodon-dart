@@ -30,7 +30,6 @@ class _$CreateDomainBlockRequestCWProxyImpl
   @override
   CreateDomainBlockRequest domain(String domain) => call(domain: domain);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CreateDomainBlockRequest(...).copyWith.fieldName(value)`.
   ///
@@ -38,6 +37,7 @@ class _$CreateDomainBlockRequestCWProxyImpl
   /// ```dart
   /// CreateDomainBlockRequest(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   CreateDomainBlockRequest call({
     Object? domain = const $CopyWithPlaceholder(),
   }) {

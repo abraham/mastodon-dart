@@ -35,7 +35,6 @@ class _$ContextCWProxyImpl implements _$ContextCWProxy {
   Context descendants(List<Status> descendants) =>
       call(descendants: descendants);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Context(...).copyWith.fieldName(value)`.
   ///
@@ -43,6 +42,7 @@ class _$ContextCWProxyImpl implements _$ContextCWProxy {
   /// ```dart
   /// Context(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   Context call({
     Object? ancestors = const $CopyWithPlaceholder(),
     Object? descendants = const $CopyWithPlaceholder(),

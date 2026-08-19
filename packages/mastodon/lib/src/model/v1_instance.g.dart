@@ -127,7 +127,6 @@ class _$V1InstanceCWProxyImpl implements _$V1InstanceCWProxy {
   @override
   V1Instance thumbnail(Uri? thumbnail) => call(thumbnail: thumbnail);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `V1Instance(...).copyWith.fieldName(value)`.
   ///
@@ -135,6 +134,7 @@ class _$V1InstanceCWProxyImpl implements _$V1InstanceCWProxy {
   /// ```dart
   /// V1Instance(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   V1Instance call({
     Object? approvalRequired = const $CopyWithPlaceholder(),
     Object? configuration = const $CopyWithPlaceholder(),

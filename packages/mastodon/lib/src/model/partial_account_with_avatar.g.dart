@@ -76,7 +76,6 @@ class _$PartialAccountWithAvatarCWProxyImpl
   PartialAccountWithAvatar avatarDescription(String? avatarDescription) =>
       call(avatarDescription: avatarDescription);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PartialAccountWithAvatar(...).copyWith.fieldName(value)`.
   ///
@@ -84,6 +83,7 @@ class _$PartialAccountWithAvatarCWProxyImpl
   /// ```dart
   /// PartialAccountWithAvatar(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   PartialAccountWithAvatar call({
     Object? acct = const $CopyWithPlaceholder(),
     Object? avatar = const $CopyWithPlaceholder(),

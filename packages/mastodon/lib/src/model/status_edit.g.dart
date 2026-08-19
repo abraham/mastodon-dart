@@ -80,7 +80,6 @@ class _$StatusEditCWProxyImpl implements _$StatusEditCWProxy {
   @override
   StatusEdit quote(StatusQuote? quote) => call(quote: quote);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `StatusEdit(...).copyWith.fieldName(value)`.
   ///
@@ -88,6 +87,7 @@ class _$StatusEditCWProxyImpl implements _$StatusEditCWProxy {
   /// ```dart
   /// StatusEdit(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   StatusEdit call({
     Object? account = const $CopyWithPlaceholder(),
     Object? content = const $CopyWithPlaceholder(),

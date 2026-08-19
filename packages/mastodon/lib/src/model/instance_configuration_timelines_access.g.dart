@@ -56,7 +56,6 @@ class _$InstanceConfigurationTimelinesAccessCWProxyImpl
     InstanceConfigurationTimelinesAccessTrendingLinkFeeds? trendingLinkFeeds,
   ) => call(trendingLinkFeeds: trendingLinkFeeds);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `InstanceConfigurationTimelinesAccess(...).copyWith.fieldName(value)`.
   ///
@@ -64,6 +63,7 @@ class _$InstanceConfigurationTimelinesAccessCWProxyImpl
   /// ```dart
   /// InstanceConfigurationTimelinesAccess(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   InstanceConfigurationTimelinesAccess call({
     Object? liveFeeds = const $CopyWithPlaceholder(),
     Object? hashtagFeeds = const $CopyWithPlaceholder(),

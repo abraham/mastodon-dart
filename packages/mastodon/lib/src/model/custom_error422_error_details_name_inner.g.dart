@@ -36,7 +36,6 @@ class _$CustomError422ErrorDetailsNameInnerCWProxyImpl
   @override
   CustomError422ErrorDetailsNameInner error(String error) => call(error: error);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CustomError422ErrorDetailsNameInner(...).copyWith.fieldName(value)`.
   ///
@@ -44,6 +43,7 @@ class _$CustomError422ErrorDetailsNameInnerCWProxyImpl
   /// ```dart
   /// CustomError422ErrorDetailsNameInner(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   CustomError422ErrorDetailsNameInner call({
     Object? description = const $CopyWithPlaceholder(),
     Object? error = const $CopyWithPlaceholder(),

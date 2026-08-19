@@ -43,7 +43,6 @@ class _$NotificationPolicySummaryCWProxyImpl
   NotificationPolicySummary pendingRequestsCount(int pendingRequestsCount) =>
       call(pendingRequestsCount: pendingRequestsCount);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `NotificationPolicySummary(...).copyWith.fieldName(value)`.
   ///
@@ -51,6 +50,7 @@ class _$NotificationPolicySummaryCWProxyImpl
   /// ```dart
   /// NotificationPolicySummary(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   NotificationPolicySummary call({
     Object? pendingNotificationsCount = const $CopyWithPlaceholder(),
     Object? pendingRequestsCount = const $CopyWithPlaceholder(),

@@ -36,7 +36,6 @@ class _$TranslationAttachmentCWProxyImpl
   @override
   TranslationAttachment id(String id) => call(id: id);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `TranslationAttachment(...).copyWith.fieldName(value)`.
   ///
@@ -44,6 +43,7 @@ class _$TranslationAttachmentCWProxyImpl
   /// ```dart
   /// TranslationAttachment(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   TranslationAttachment call({
     Object? description = const $CopyWithPlaceholder(),
     Object? id = const $CopyWithPlaceholder(),

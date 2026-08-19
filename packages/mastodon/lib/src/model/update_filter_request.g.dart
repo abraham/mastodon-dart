@@ -57,7 +57,6 @@ class _$UpdateFilterRequestCWProxyImpl implements _$UpdateFilterRequestCWProxy {
   @override
   UpdateFilterRequest wholeWord(bool? wholeWord) => call(wholeWord: wholeWord);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `UpdateFilterRequest(...).copyWith.fieldName(value)`.
   ///
@@ -65,6 +64,7 @@ class _$UpdateFilterRequestCWProxyImpl implements _$UpdateFilterRequestCWProxy {
   /// ```dart
   /// UpdateFilterRequest(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   UpdateFilterRequest call({
     Object? context = const $CopyWithPlaceholder(),
     Object? phrase = const $CopyWithPlaceholder(),

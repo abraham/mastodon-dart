@@ -107,7 +107,6 @@ class _$AnnouncementCWProxyImpl implements _$AnnouncementCWProxy {
   @override
   Announcement startsAt(DateTime? startsAt) => call(startsAt: startsAt);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Announcement(...).copyWith.fieldName(value)`.
   ///
@@ -115,6 +114,7 @@ class _$AnnouncementCWProxyImpl implements _$AnnouncementCWProxy {
   /// ```dart
   /// Announcement(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   Announcement call({
     Object? allDay = const $CopyWithPlaceholder(),
     Object? content = const $CopyWithPlaceholder(),

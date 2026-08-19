@@ -40,7 +40,6 @@ class _$NotificationFallbackCWProxyImpl
   @override
   NotificationFallback summary(String? summary) => call(summary: summary);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `NotificationFallback(...).copyWith.fieldName(value)`.
   ///
@@ -48,6 +47,7 @@ class _$NotificationFallbackCWProxyImpl
   /// ```dart
   /// NotificationFallback(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   NotificationFallback call({
     Object? title = const $CopyWithPlaceholder(),
     Object? details = const $CopyWithPlaceholder(),

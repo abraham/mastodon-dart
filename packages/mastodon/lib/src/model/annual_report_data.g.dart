@@ -91,7 +91,6 @@ class _$AnnualReportDataCWProxyImpl implements _$AnnualReportDataCWProxy {
   AnnualReportData topHashtags(List<Object>? topHashtags) =>
       call(topHashtags: topHashtags);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `AnnualReportData(...).copyWith.fieldName(value)`.
   ///
@@ -99,6 +98,7 @@ class _$AnnualReportDataCWProxyImpl implements _$AnnualReportDataCWProxy {
   /// ```dart
   /// AnnualReportData(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   AnnualReportData call({
     Object? archetype = const $CopyWithPlaceholder(),
     Object? typeDistribution = const $CopyWithPlaceholder(),

@@ -30,7 +30,6 @@ class _$InstanceUsageUsersCWProxyImpl implements _$InstanceUsageUsersCWProxy {
   InstanceUsageUsers activeMonth(int activeMonth) =>
       call(activeMonth: activeMonth);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `InstanceUsageUsers(...).copyWith.fieldName(value)`.
   ///
@@ -38,6 +37,7 @@ class _$InstanceUsageUsersCWProxyImpl implements _$InstanceUsageUsersCWProxy {
   /// ```dart
   /// InstanceUsageUsers(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   InstanceUsageUsers call({
     Object? activeMonth = const $CopyWithPlaceholder(),
   }) {

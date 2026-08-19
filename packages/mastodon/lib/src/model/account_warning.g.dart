@@ -70,7 +70,6 @@ class _$AccountWarningCWProxyImpl implements _$AccountWarningCWProxy {
   AccountWarning statusIds(List<String>? statusIds) =>
       call(statusIds: statusIds);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `AccountWarning(...).copyWith.fieldName(value)`.
   ///
@@ -78,6 +77,7 @@ class _$AccountWarningCWProxyImpl implements _$AccountWarningCWProxy {
   /// ```dart
   /// AccountWarning(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   AccountWarning call({
     Object? action = const $CopyWithPlaceholder(),
     Object? createdAt = const $CopyWithPlaceholder(),

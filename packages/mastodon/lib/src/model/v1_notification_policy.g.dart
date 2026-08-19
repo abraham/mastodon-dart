@@ -61,7 +61,6 @@ class _$V1NotificationPolicyCWProxyImpl
   V1NotificationPolicy summary(NotificationPolicySummary summary) =>
       call(summary: summary);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `V1NotificationPolicy(...).copyWith.fieldName(value)`.
   ///
@@ -69,6 +68,7 @@ class _$V1NotificationPolicyCWProxyImpl
   /// ```dart
   /// V1NotificationPolicy(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   V1NotificationPolicy call({
     Object? filterNewAccounts = const $CopyWithPlaceholder(),
     Object? filterNotFollowers = const $CopyWithPlaceholder(),

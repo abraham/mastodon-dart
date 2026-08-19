@@ -61,7 +61,6 @@ class _$V1FilterCWProxyImpl implements _$V1FilterCWProxy {
   @override
   V1Filter expiresAt(DateTime? expiresAt) => call(expiresAt: expiresAt);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `V1Filter(...).copyWith.fieldName(value)`.
   ///
@@ -69,6 +68,7 @@ class _$V1FilterCWProxyImpl implements _$V1FilterCWProxy {
   /// ```dart
   /// V1Filter(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   V1Filter call({
     Object? context = const $CopyWithPlaceholder(),
     Object? id = const $CopyWithPlaceholder(),

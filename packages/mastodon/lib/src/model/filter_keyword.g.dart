@@ -39,7 +39,6 @@ class _$FilterKeywordCWProxyImpl implements _$FilterKeywordCWProxy {
   @override
   FilterKeyword wholeWord(bool wholeWord) => call(wholeWord: wholeWord);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `FilterKeyword(...).copyWith.fieldName(value)`.
   ///
@@ -47,6 +46,7 @@ class _$FilterKeywordCWProxyImpl implements _$FilterKeywordCWProxy {
   /// ```dart
   /// FilterKeyword(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   FilterKeyword call({
     Object? id = const $CopyWithPlaceholder(),
     Object? keyword = const $CopyWithPlaceholder(),

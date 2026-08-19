@@ -30,7 +30,6 @@ class _$StatusEditPollCWProxyImpl implements _$StatusEditPollCWProxy {
   StatusEditPoll options(List<StatusEditPollOptionsInner> options) =>
       call(options: options);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `StatusEditPoll(...).copyWith.fieldName(value)`.
   ///
@@ -38,6 +37,7 @@ class _$StatusEditPollCWProxyImpl implements _$StatusEditPollCWProxy {
   /// ```dart
   /// StatusEditPoll(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   StatusEditPoll call({Object? options = const $CopyWithPlaceholder()}) {
     return StatusEditPoll(
       options: options == const $CopyWithPlaceholder() || options == null

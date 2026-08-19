@@ -1,4 +1,4 @@
-// Openapi Generator last run: : 2026-08-19T01:42:38.930247
+// Openapi Generator last run: : 2026-08-19T11:18:23.296220
 import 'package:openapi_generator_annotations/openapi_generator_annotations.dart';
 
 @Openapi(
@@ -25,8 +25,6 @@ import 'package:openapi_generator_annotations/openapi_generator_annotations.dart
   },
   outputDirectory: '../mastodon',
   cleanSubOutputDirectory: ['lib/src', 'doc', 'test'],
-  forceAlwaysRun: true, // TODO: remove this
-  skipIfSpecIsUnchanged: false, // TODO: remove this
   // debugLogging: true,
 )
 class MastodonClient {}

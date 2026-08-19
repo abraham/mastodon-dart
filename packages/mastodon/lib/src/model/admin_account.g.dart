@@ -142,7 +142,6 @@ class _$AdminAccountCWProxyImpl implements _$AdminAccountCWProxy {
   @override
   AdminAccount ip(String? ip) => call(ip: ip);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `AdminAccount(...).copyWith.fieldName(value)`.
   ///
@@ -150,6 +149,7 @@ class _$AdminAccountCWProxyImpl implements _$AdminAccountCWProxy {
   /// ```dart
   /// AdminAccount(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   AdminAccount call({
     Object? account = const $CopyWithPlaceholder(),
     Object? approved = const $CopyWithPlaceholder(),

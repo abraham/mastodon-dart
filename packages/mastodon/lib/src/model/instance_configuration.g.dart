@@ -91,7 +91,6 @@ class _$InstanceConfigurationCWProxyImpl
     InstanceConfigurationTimelinesAccess? timelinesAccess,
   ) => call(timelinesAccess: timelinesAccess);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `InstanceConfiguration(...).copyWith.fieldName(value)`.
   ///
@@ -99,6 +98,7 @@ class _$InstanceConfigurationCWProxyImpl
   /// ```dart
   /// InstanceConfiguration(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   InstanceConfiguration call({
     Object? accounts = const $CopyWithPlaceholder(),
     Object? mediaAttachments = const $CopyWithPlaceholder(),

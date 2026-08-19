@@ -91,7 +91,6 @@ class _$MediaStatusCWProxyImpl implements _$MediaStatusCWProxy {
   @override
   MediaStatus status(String? status) => call(status: status);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `MediaStatus(...).copyWith.fieldName(value)`.
   ///
@@ -99,6 +98,7 @@ class _$MediaStatusCWProxyImpl implements _$MediaStatusCWProxy {
   /// ```dart
   /// MediaStatus(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   MediaStatus call({
     Object? mediaIds = const $CopyWithPlaceholder(),
     Object? inReplyToId = const $CopyWithPlaceholder(),

@@ -34,7 +34,6 @@ class _$AnnouncementStatusCWProxyImpl implements _$AnnouncementStatusCWProxy {
   @override
   AnnouncementStatus url(Uri url) => call(url: url);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `AnnouncementStatus(...).copyWith.fieldName(value)`.
   ///
@@ -42,6 +41,7 @@ class _$AnnouncementStatusCWProxyImpl implements _$AnnouncementStatusCWProxy {
   /// ```dart
   /// AnnouncementStatus(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   AnnouncementStatus call({
     Object? id = const $CopyWithPlaceholder(),
     Object? url = const $CopyWithPlaceholder(),

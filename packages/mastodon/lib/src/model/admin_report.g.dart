@@ -113,7 +113,6 @@ class _$AdminReportCWProxyImpl implements _$AdminReportCWProxy {
   AdminReport assignedAccount(AdminAccount? assignedAccount) =>
       call(assignedAccount: assignedAccount);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `AdminReport(...).copyWith.fieldName(value)`.
   ///
@@ -121,6 +120,7 @@ class _$AdminReportCWProxyImpl implements _$AdminReportCWProxy {
   /// ```dart
   /// AdminReport(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   AdminReport call({
     Object? account = const $CopyWithPlaceholder(),
     Object? actionTaken = const $CopyWithPlaceholder(),

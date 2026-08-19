@@ -97,7 +97,6 @@ class _$CredentialApplicationCWProxyImpl
   @override
   CredentialApplication website(Uri? website) => call(website: website);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CredentialApplication(...).copyWith.fieldName(value)`.
   ///
@@ -105,6 +104,7 @@ class _$CredentialApplicationCWProxyImpl
   /// ```dart
   /// CredentialApplication(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   CredentialApplication call({
     Object? clientId = const $CopyWithPlaceholder(),
     Object? clientSecret = const $CopyWithPlaceholder(),

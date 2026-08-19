@@ -30,7 +30,6 @@ class _$CreateFeaturedTagRequestCWProxyImpl
   @override
   CreateFeaturedTagRequest name(String name) => call(name: name);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CreateFeaturedTagRequest(...).copyWith.fieldName(value)`.
   ///
@@ -38,6 +37,7 @@ class _$CreateFeaturedTagRequestCWProxyImpl
   /// ```dart
   /// CreateFeaturedTagRequest(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   CreateFeaturedTagRequest call({Object? name = const $CopyWithPlaceholder()}) {
     return CreateFeaturedTagRequest(
       name: name == const $CopyWithPlaceholder() || name == null

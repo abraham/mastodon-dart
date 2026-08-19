@@ -131,7 +131,6 @@ class _$PreviewCardCWProxyImpl implements _$PreviewCardCWProxy {
   PreviewCard missingAttribution(bool? missingAttribution) =>
       call(missingAttribution: missingAttribution);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PreviewCard(...).copyWith.fieldName(value)`.
   ///
@@ -139,6 +138,7 @@ class _$PreviewCardCWProxyImpl implements _$PreviewCardCWProxy {
   /// ```dart
   /// PreviewCard(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   PreviewCard call({
     Object? authorName = const $CopyWithPlaceholder(),
     Object? authorUrl = const $CopyWithPlaceholder(),

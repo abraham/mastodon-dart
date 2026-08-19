@@ -39,7 +39,6 @@ class _$PreviewCardAuthorCWProxyImpl implements _$PreviewCardAuthorCWProxy {
   @override
   PreviewCardAuthor account(Account? account) => call(account: account);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PreviewCardAuthor(...).copyWith.fieldName(value)`.
   ///
@@ -47,6 +46,7 @@ class _$PreviewCardAuthorCWProxyImpl implements _$PreviewCardAuthorCWProxy {
   /// ```dart
   /// PreviewCardAuthor(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   PreviewCardAuthor call({
     Object? name = const $CopyWithPlaceholder(),
     Object? url = const $CopyWithPlaceholder(),

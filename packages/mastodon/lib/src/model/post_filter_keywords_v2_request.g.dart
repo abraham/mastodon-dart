@@ -36,7 +36,6 @@ class _$PostFilterKeywordsV2RequestCWProxyImpl
   PostFilterKeywordsV2Request wholeWord(bool? wholeWord) =>
       call(wholeWord: wholeWord);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PostFilterKeywordsV2Request(...).copyWith.fieldName(value)`.
   ///
@@ -44,6 +43,7 @@ class _$PostFilterKeywordsV2RequestCWProxyImpl
   /// ```dart
   /// PostFilterKeywordsV2Request(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   PostFilterKeywordsV2Request call({
     Object? keyword = const $CopyWithPlaceholder(),
     Object? wholeWord = const $CopyWithPlaceholder(),

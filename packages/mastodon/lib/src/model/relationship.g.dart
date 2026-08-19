@@ -125,7 +125,6 @@ class _$RelationshipCWProxyImpl implements _$RelationshipCWProxy {
   Relationship mutingExpiresAt(DateTime? mutingExpiresAt) =>
       call(mutingExpiresAt: mutingExpiresAt);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Relationship(...).copyWith.fieldName(value)`.
   ///
@@ -133,6 +132,7 @@ class _$RelationshipCWProxyImpl implements _$RelationshipCWProxy {
   /// ```dart
   /// Relationship(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   Relationship call({
     Object? blockedBy = const $CopyWithPlaceholder(),
     Object? blocking = const $CopyWithPlaceholder(),

@@ -57,7 +57,6 @@ class _$V1InstanceConfigurationCWProxyImpl
   V1InstanceConfiguration statuses(InstanceConfigurationStatuses statuses) =>
       call(statuses: statuses);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `V1InstanceConfiguration(...).copyWith.fieldName(value)`.
   ///
@@ -65,6 +64,7 @@ class _$V1InstanceConfigurationCWProxyImpl
   /// ```dart
   /// V1InstanceConfiguration(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   V1InstanceConfiguration call({
     Object? accounts = const $CopyWithPlaceholder(),
     Object? mediaAttachments = const $CopyWithPlaceholder(),

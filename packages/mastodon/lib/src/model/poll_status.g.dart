@@ -89,7 +89,6 @@ class _$PollStatusCWProxyImpl implements _$PollStatusCWProxy {
   @override
   PollStatus status(String? status) => call(status: status);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PollStatus(...).copyWith.fieldName(value)`.
   ///
@@ -97,6 +96,7 @@ class _$PollStatusCWProxyImpl implements _$PollStatusCWProxy {
   /// ```dart
   /// PollStatus(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   PollStatus call({
     Object? poll = const $CopyWithPlaceholder(),
     Object? inReplyToId = const $CopyWithPlaceholder(),

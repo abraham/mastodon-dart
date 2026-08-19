@@ -61,7 +61,6 @@ class _$TagCWProxyImpl implements _$TagCWProxy {
   @override
   Tag following(bool? following) => call(following: following);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Tag(...).copyWith.fieldName(value)`.
   ///
@@ -69,6 +68,7 @@ class _$TagCWProxyImpl implements _$TagCWProxy {
   /// ```dart
   /// Tag(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   Tag call({
     Object? history = const $CopyWithPlaceholder(),
     Object? id = const $CopyWithPlaceholder(),

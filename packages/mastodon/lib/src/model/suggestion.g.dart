@@ -35,7 +35,6 @@ class _$SuggestionCWProxyImpl implements _$SuggestionCWProxy {
   Suggestion sources(List<SuggestionSourcesEnum> sources) =>
       call(sources: sources);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Suggestion(...).copyWith.fieldName(value)`.
   ///
@@ -43,6 +42,7 @@ class _$SuggestionCWProxyImpl implements _$SuggestionCWProxy {
   /// ```dart
   /// Suggestion(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   Suggestion call({
     Object? account = const $CopyWithPlaceholder(),
     Object? sources = const $CopyWithPlaceholder(),

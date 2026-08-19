@@ -250,7 +250,6 @@ class _$AccountCWProxyImpl implements _$AccountCWProxy {
   @override
   Account url(Uri? url) => call(url: url);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Account(...).copyWith.fieldName(value)`.
   ///
@@ -258,6 +257,7 @@ class _$AccountCWProxyImpl implements _$AccountCWProxy {
   /// ```dart
   /// Account(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   Account call({
     Object? acct = const $CopyWithPlaceholder(),
     Object? avatar = const $CopyWithPlaceholder(),

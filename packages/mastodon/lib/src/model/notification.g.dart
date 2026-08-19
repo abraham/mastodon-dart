@@ -94,7 +94,6 @@ class _$NotificationCWProxyImpl implements _$NotificationCWProxy {
   @override
   Notification status(Status? status) => call(status: status);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Notification(...).copyWith.fieldName(value)`.
   ///
@@ -102,6 +101,7 @@ class _$NotificationCWProxyImpl implements _$NotificationCWProxy {
   /// ```dart
   /// Notification(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   Notification call({
     Object? account = const $CopyWithPlaceholder(),
     Object? createdAt = const $CopyWithPlaceholder(),

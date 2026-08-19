@@ -31,7 +31,6 @@ class _$AsyncRefreshResponseCWProxyImpl
   AsyncRefreshResponse asyncRefresh(AsyncRefresh asyncRefresh) =>
       call(asyncRefresh: asyncRefresh);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `AsyncRefreshResponse(...).copyWith.fieldName(value)`.
   ///
@@ -39,6 +38,7 @@ class _$AsyncRefreshResponseCWProxyImpl
   /// ```dart
   /// AsyncRefreshResponse(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   AsyncRefreshResponse call({
     Object? asyncRefresh = const $CopyWithPlaceholder(),
   }) {

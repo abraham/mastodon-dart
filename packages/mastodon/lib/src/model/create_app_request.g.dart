@@ -51,7 +51,6 @@ class _$CreateAppRequestCWProxyImpl implements _$CreateAppRequestCWProxy {
   @override
   CreateAppRequest website(String? website) => call(website: website);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CreateAppRequest(...).copyWith.fieldName(value)`.
   ///
@@ -59,6 +58,7 @@ class _$CreateAppRequestCWProxyImpl implements _$CreateAppRequestCWProxy {
   /// ```dart
   /// CreateAppRequest(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   CreateAppRequest call({
     Object? clientName = const $CopyWithPlaceholder(),
     Object? redirectUris = const $CopyWithPlaceholder(),

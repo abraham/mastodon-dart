@@ -44,7 +44,6 @@ class _$CreateListRequestCWProxyImpl implements _$CreateListRequestCWProxy {
   CreateListRequest repliesPolicy(ListRepliesPolicyEnum? repliesPolicy) =>
       call(repliesPolicy: repliesPolicy);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CreateListRequest(...).copyWith.fieldName(value)`.
   ///
@@ -52,6 +51,7 @@ class _$CreateListRequestCWProxyImpl implements _$CreateListRequestCWProxy {
   /// ```dart
   /// CreateListRequest(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   CreateListRequest call({
     Object? title = const $CopyWithPlaceholder(),
     Object? exclusive = const $CopyWithPlaceholder(),
