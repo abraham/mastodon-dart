@@ -42,8 +42,6 @@ class TrendsLink {
 
     required this.providerUrl,
 
-    required this.publishedAt,
-
     required this.title,
 
     required this.type,
@@ -57,6 +55,8 @@ class TrendsLink {
     this.image,
 
     this.missingAttribution,
+
+    this.publishedAt,
   });
 
   /// The author of the original resource. Deprecated since 4.3.0, clients should use `authors` instead.
@@ -99,10 +99,6 @@ class TrendsLink {
   @JsonKey(name: r'provider_url', required: true, includeIfNull: false)
   final Uri providerUrl;
 
-  /// UNIX timestamp of publication date.
-  @JsonKey(name: r'published_at', required: true, includeIfNull: false)
-  final DateTime publishedAt;
-
   /// Title of linked resource.
   @JsonKey(name: r'title', required: true, includeIfNull: false)
   final String title;
@@ -131,6 +127,10 @@ class TrendsLink {
   @JsonKey(name: r'missing_attribution', required: false, includeIfNull: false)
   final bool? missingAttribution;
 
+  /// UNIX timestamp of publication date.
+  @JsonKey(name: r'published_at', required: false, includeIfNull: false)
+  final DateTime? publishedAt;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -145,14 +145,14 @@ class TrendsLink {
           other.html == html &&
           other.providerName == providerName &&
           other.providerUrl == providerUrl &&
-          other.publishedAt == publishedAt &&
           other.title == title &&
           other.type == type &&
           other.url == url &&
           other.width == width &&
           other.blurhash == blurhash &&
           other.image == image &&
-          other.missingAttribution == missingAttribution;
+          other.missingAttribution == missingAttribution &&
+          other.publishedAt == publishedAt;
 
   @override
   int get hashCode =>
@@ -166,14 +166,14 @@ class TrendsLink {
       html.hashCode +
       providerName.hashCode +
       providerUrl.hashCode +
-      publishedAt.hashCode +
       title.hashCode +
       type.hashCode +
       url.hashCode +
       width.hashCode +
       (blurhash == null ? 0 : blurhash.hashCode) +
       (image == null ? 0 : image.hashCode) +
-      (missingAttribution == null ? 0 : missingAttribution.hashCode);
+      (missingAttribution == null ? 0 : missingAttribution.hashCode) +
+      (publishedAt == null ? 0 : publishedAt.hashCode);
 
   factory TrendsLink.fromJson(Map<String, dynamic> json) =>
       _$TrendsLinkFromJson(json);

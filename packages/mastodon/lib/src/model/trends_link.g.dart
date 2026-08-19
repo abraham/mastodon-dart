@@ -27,8 +27,6 @@ abstract class _$TrendsLinkCWProxy {
 
   TrendsLink providerUrl(Uri providerUrl);
 
-  TrendsLink publishedAt(DateTime publishedAt);
-
   TrendsLink title(String title);
 
   TrendsLink type(TrendsLinkTypeEnum type);
@@ -42,6 +40,8 @@ abstract class _$TrendsLinkCWProxy {
   TrendsLink image(Uri? image);
 
   TrendsLink missingAttribution(bool? missingAttribution);
+
+  TrendsLink publishedAt(DateTime? publishedAt);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `TrendsLink(...).copyWith.fieldName(value)`.
@@ -61,7 +61,6 @@ abstract class _$TrendsLinkCWProxy {
     String html,
     String providerName,
     Uri providerUrl,
-    DateTime publishedAt,
     String title,
     TrendsLinkTypeEnum type,
     Uri url,
@@ -69,6 +68,7 @@ abstract class _$TrendsLinkCWProxy {
     String? blurhash,
     Uri? image,
     bool? missingAttribution,
+    DateTime? publishedAt,
   });
 }
 
@@ -112,10 +112,6 @@ class _$TrendsLinkCWProxyImpl implements _$TrendsLinkCWProxy {
   TrendsLink providerUrl(Uri providerUrl) => call(providerUrl: providerUrl);
 
   @override
-  TrendsLink publishedAt(DateTime publishedAt) =>
-      call(publishedAt: publishedAt);
-
-  @override
   TrendsLink title(String title) => call(title: title);
 
   @override
@@ -137,6 +133,10 @@ class _$TrendsLinkCWProxyImpl implements _$TrendsLinkCWProxy {
   TrendsLink missingAttribution(bool? missingAttribution) =>
       call(missingAttribution: missingAttribution);
 
+  @override
+  TrendsLink publishedAt(DateTime? publishedAt) =>
+      call(publishedAt: publishedAt);
+
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `TrendsLink(...).copyWith.fieldName(value)`.
   ///
@@ -156,7 +156,6 @@ class _$TrendsLinkCWProxyImpl implements _$TrendsLinkCWProxy {
     Object? html = const $CopyWithPlaceholder(),
     Object? providerName = const $CopyWithPlaceholder(),
     Object? providerUrl = const $CopyWithPlaceholder(),
-    Object? publishedAt = const $CopyWithPlaceholder(),
     Object? title = const $CopyWithPlaceholder(),
     Object? type = const $CopyWithPlaceholder(),
     Object? url = const $CopyWithPlaceholder(),
@@ -164,6 +163,7 @@ class _$TrendsLinkCWProxyImpl implements _$TrendsLinkCWProxy {
     Object? blurhash = const $CopyWithPlaceholder(),
     Object? image = const $CopyWithPlaceholder(),
     Object? missingAttribution = const $CopyWithPlaceholder(),
+    Object? publishedAt = const $CopyWithPlaceholder(),
   }) {
     return TrendsLink(
       authorName:
@@ -210,11 +210,6 @@ class _$TrendsLinkCWProxyImpl implements _$TrendsLinkCWProxy {
           ? _value.providerUrl
           // ignore: cast_nullable_to_non_nullable
           : providerUrl as Uri,
-      publishedAt:
-          publishedAt == const $CopyWithPlaceholder() || publishedAt == null
-          ? _value.publishedAt
-          // ignore: cast_nullable_to_non_nullable
-          : publishedAt as DateTime,
       title: title == const $CopyWithPlaceholder() || title == null
           ? _value.title
           // ignore: cast_nullable_to_non_nullable
@@ -243,6 +238,10 @@ class _$TrendsLinkCWProxyImpl implements _$TrendsLinkCWProxy {
           ? _value.missingAttribution
           // ignore: cast_nullable_to_non_nullable
           : missingAttribution as bool?,
+      publishedAt: publishedAt == const $CopyWithPlaceholder()
+          ? _value.publishedAt
+          // ignore: cast_nullable_to_non_nullable
+          : publishedAt as DateTime?,
     );
   }
 }
@@ -275,7 +274,6 @@ TrendsLink _$TrendsLinkFromJson(Map<String, dynamic> json) => $checkedCreate(
         'html',
         'provider_name',
         'provider_url',
-        'published_at',
         'title',
         'type',
         'url',
@@ -308,10 +306,6 @@ TrendsLink _$TrendsLinkFromJson(Map<String, dynamic> json) => $checkedCreate(
         'provider_url',
         (v) => Uri.parse(v as String),
       ),
-      publishedAt: $checkedConvert(
-        'published_at',
-        (v) => DateTime.parse(v as String),
-      ),
       title: $checkedConvert('title', (v) => v as String),
       type: $checkedConvert(
         'type',
@@ -328,6 +322,10 @@ TrendsLink _$TrendsLinkFromJson(Map<String, dynamic> json) => $checkedCreate(
         'missing_attribution',
         (v) => v as bool?,
       ),
+      publishedAt: $checkedConvert(
+        'published_at',
+        (v) => v == null ? null : DateTime.parse(v as String),
+      ),
     );
     return val;
   },
@@ -337,8 +335,8 @@ TrendsLink _$TrendsLinkFromJson(Map<String, dynamic> json) => $checkedCreate(
     'embedUrl': 'embed_url',
     'providerName': 'provider_name',
     'providerUrl': 'provider_url',
-    'publishedAt': 'published_at',
     'missingAttribution': 'missing_attribution',
+    'publishedAt': 'published_at',
   },
 );
 
@@ -354,7 +352,6 @@ Map<String, dynamic> _$TrendsLinkToJson(TrendsLink instance) =>
       'html': instance.html,
       'provider_name': instance.providerName,
       'provider_url': instance.providerUrl.toString(),
-      'published_at': instance.publishedAt.toIso8601String(),
       'title': instance.title,
       'type': _$TrendsLinkTypeEnumEnumMap[instance.type]!,
       'url': instance.url.toString(),
@@ -362,6 +359,7 @@ Map<String, dynamic> _$TrendsLinkToJson(TrendsLink instance) =>
       'blurhash': ?instance.blurhash,
       'image': ?instance.image?.toString(),
       'missing_attribution': ?instance.missingAttribution,
+      'published_at': ?instance.publishedAt?.toIso8601String(),
     };
 
 const _$TrendsLinkTypeEnumEnumMap = {
