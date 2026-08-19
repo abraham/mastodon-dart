@@ -55,7 +55,6 @@ class _$InstanceConfigurationPollsCWProxyImpl
   InstanceConfigurationPolls minExpiration(int minExpiration) =>
       call(minExpiration: minExpiration);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `InstanceConfigurationPolls(...).copyWith.fieldName(value)`.
   ///
@@ -63,6 +62,7 @@ class _$InstanceConfigurationPollsCWProxyImpl
   /// ```dart
   /// InstanceConfigurationPolls(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   InstanceConfigurationPolls call({
     Object? maxCharactersPerOption = const $CopyWithPlaceholder(),
     Object? maxExpiration = const $CopyWithPlaceholder(),

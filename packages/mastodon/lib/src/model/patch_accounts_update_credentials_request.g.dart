@@ -138,7 +138,6 @@ class _$PatchAccountsUpdateCredentialsRequestCWProxyImpl
     PatchAccountsUpdateCredentialsRequestSource? source_,
   ) => call(source_: source_);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PatchAccountsUpdateCredentialsRequest(...).copyWith.fieldName(value)`.
   ///
@@ -146,6 +145,7 @@ class _$PatchAccountsUpdateCredentialsRequestCWProxyImpl
   /// ```dart
   /// PatchAccountsUpdateCredentialsRequest(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   PatchAccountsUpdateCredentialsRequest call({
     Object? attributionDomains = const $CopyWithPlaceholder(),
     Object? avatar = const $CopyWithPlaceholder(),

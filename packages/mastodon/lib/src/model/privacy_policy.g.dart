@@ -34,7 +34,6 @@ class _$PrivacyPolicyCWProxyImpl implements _$PrivacyPolicyCWProxy {
   @override
   PrivacyPolicy updatedAt(DateTime updatedAt) => call(updatedAt: updatedAt);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PrivacyPolicy(...).copyWith.fieldName(value)`.
   ///
@@ -42,6 +41,7 @@ class _$PrivacyPolicyCWProxyImpl implements _$PrivacyPolicyCWProxy {
   /// ```dart
   /// PrivacyPolicy(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   PrivacyPolicy call({
     Object? content = const $CopyWithPlaceholder(),
     Object? updatedAt = const $CopyWithPlaceholder(),

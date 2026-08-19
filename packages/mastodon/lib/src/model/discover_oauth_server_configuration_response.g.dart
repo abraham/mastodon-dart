@@ -152,7 +152,6 @@ class _$DiscoverOauthServerConfigurationResponseCWProxyImpl
     Uri userinfoEndpoint,
   ) => call(userinfoEndpoint: userinfoEndpoint);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `DiscoverOauthServerConfigurationResponse(...).copyWith.fieldName(value)`.
   ///
@@ -160,6 +159,7 @@ class _$DiscoverOauthServerConfigurationResponseCWProxyImpl
   /// ```dart
   /// DiscoverOauthServerConfigurationResponse(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   DiscoverOauthServerConfigurationResponse call({
     Object? appRegistrationEndpoint = const $CopyWithPlaceholder(),
     Object? authorizationEndpoint = const $CopyWithPlaceholder(),

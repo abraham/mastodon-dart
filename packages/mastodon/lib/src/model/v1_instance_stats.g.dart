@@ -41,7 +41,6 @@ class _$V1InstanceStatsCWProxyImpl implements _$V1InstanceStatsCWProxy {
   @override
   V1InstanceStats userCount(int userCount) => call(userCount: userCount);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `V1InstanceStats(...).copyWith.fieldName(value)`.
   ///
@@ -49,6 +48,7 @@ class _$V1InstanceStatsCWProxyImpl implements _$V1InstanceStatsCWProxy {
   /// ```dart
   /// V1InstanceStats(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   V1InstanceStats call({
     Object? domainCount = const $CopyWithPlaceholder(),
     Object? statusCount = const $CopyWithPlaceholder(),

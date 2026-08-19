@@ -39,7 +39,6 @@ class _$FieldCWProxyImpl implements _$FieldCWProxy {
   @override
   Field verifiedAt(DateTime? verifiedAt) => call(verifiedAt: verifiedAt);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Field(...).copyWith.fieldName(value)`.
   ///
@@ -47,6 +46,7 @@ class _$FieldCWProxyImpl implements _$FieldCWProxy {
   /// ```dart
   /// Field(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   Field call({
     Object? name = const $CopyWithPlaceholder(),
     Object? value = const $CopyWithPlaceholder(),

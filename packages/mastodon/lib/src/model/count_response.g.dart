@@ -29,7 +29,6 @@ class _$CountResponseCWProxyImpl implements _$CountResponseCWProxy {
   @override
   CountResponse count(int count) => call(count: count);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CountResponse(...).copyWith.fieldName(value)`.
   ///
@@ -37,6 +36,7 @@ class _$CountResponseCWProxyImpl implements _$CountResponseCWProxy {
   /// ```dart
   /// CountResponse(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   CountResponse call({Object? count = const $CopyWithPlaceholder()}) {
     return CountResponse(
       count: count == const $CopyWithPlaceholder() || count == null

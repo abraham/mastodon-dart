@@ -56,7 +56,6 @@ class _$IdentityProofCWProxyImpl implements _$IdentityProofCWProxy {
   @override
   IdentityProof updatedAt(DateTime updatedAt) => call(updatedAt: updatedAt);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `IdentityProof(...).copyWith.fieldName(value)`.
   ///
@@ -64,6 +63,7 @@ class _$IdentityProofCWProxyImpl implements _$IdentityProofCWProxy {
   /// ```dart
   /// IdentityProof(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   IdentityProof call({
     Object? profileUrl = const $CopyWithPlaceholder(),
     Object? proofUrl = const $CopyWithPlaceholder(),

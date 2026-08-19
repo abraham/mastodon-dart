@@ -50,7 +50,6 @@ class _$InstanceConfigurationStatusesCWProxyImpl
   InstanceConfigurationStatuses maxMediaAttachments(int maxMediaAttachments) =>
       call(maxMediaAttachments: maxMediaAttachments);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `InstanceConfigurationStatuses(...).copyWith.fieldName(value)`.
   ///
@@ -58,6 +57,7 @@ class _$InstanceConfigurationStatusesCWProxyImpl
   /// ```dart
   /// InstanceConfigurationStatuses(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   InstanceConfigurationStatuses call({
     Object? charactersReservedPerUrl = const $CopyWithPlaceholder(),
     Object? maxCharacters = const $CopyWithPlaceholder(),

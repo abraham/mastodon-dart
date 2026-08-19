@@ -44,7 +44,6 @@ class _$AdminCohortCWProxyImpl implements _$AdminCohortCWProxy {
   @override
   AdminCohort period(DateTime period) => call(period: period);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `AdminCohort(...).copyWith.fieldName(value)`.
   ///
@@ -52,6 +51,7 @@ class _$AdminCohortCWProxyImpl implements _$AdminCohortCWProxy {
   /// ```dart
   /// AdminCohort(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   AdminCohort call({
     Object? data = const $CopyWithPlaceholder(),
     Object? frequency = const $CopyWithPlaceholder(),

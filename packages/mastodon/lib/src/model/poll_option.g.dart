@@ -34,7 +34,6 @@ class _$PollOptionCWProxyImpl implements _$PollOptionCWProxy {
   @override
   PollOption votesCount(int? votesCount) => call(votesCount: votesCount);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PollOption(...).copyWith.fieldName(value)`.
   ///
@@ -42,6 +41,7 @@ class _$PollOptionCWProxyImpl implements _$PollOptionCWProxy {
   /// ```dart
   /// PollOption(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   PollOption call({
     Object? title = const $CopyWithPlaceholder(),
     Object? votesCount = const $CopyWithPlaceholder(),

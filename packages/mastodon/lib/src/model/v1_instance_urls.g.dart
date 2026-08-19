@@ -30,7 +30,6 @@ class _$V1InstanceUrlsCWProxyImpl implements _$V1InstanceUrlsCWProxy {
   V1InstanceUrls streamingApi(Uri streamingApi) =>
       call(streamingApi: streamingApi);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `V1InstanceUrls(...).copyWith.fieldName(value)`.
   ///
@@ -38,6 +37,7 @@ class _$V1InstanceUrlsCWProxyImpl implements _$V1InstanceUrlsCWProxy {
   /// ```dart
   /// V1InstanceUrls(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   V1InstanceUrls call({Object? streamingApi = const $CopyWithPlaceholder()}) {
     return V1InstanceUrls(
       streamingApi:

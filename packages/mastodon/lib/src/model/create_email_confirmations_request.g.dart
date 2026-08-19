@@ -30,7 +30,6 @@ class _$CreateEmailConfirmationsRequestCWProxyImpl
   @override
   CreateEmailConfirmationsRequest email(String? email) => call(email: email);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CreateEmailConfirmationsRequest(...).copyWith.fieldName(value)`.
   ///
@@ -38,6 +37,7 @@ class _$CreateEmailConfirmationsRequestCWProxyImpl
   /// ```dart
   /// CreateEmailConfirmationsRequest(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   CreateEmailConfirmationsRequest call({
     Object? email = const $CopyWithPlaceholder(),
   }) {

@@ -131,7 +131,6 @@ class _$ScheduledStatusParamsCWProxyImpl
   ScheduledStatusParams spoilerText(String? spoilerText) =>
       call(spoilerText: spoilerText);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ScheduledStatusParams(...).copyWith.fieldName(value)`.
   ///
@@ -139,6 +138,7 @@ class _$ScheduledStatusParamsCWProxyImpl
   /// ```dart
   /// ScheduledStatusParams(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   ScheduledStatusParams call({
     @Deprecated('applicationId has been deprecated')
     Object? applicationId = const $CopyWithPlaceholder(),

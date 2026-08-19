@@ -73,7 +73,6 @@ class _$RelationshipSeveranceEventCWProxyImpl
   RelationshipSeveranceEvent type(RelationshipSeveranceEventTypeEnum type) =>
       call(type: type);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `RelationshipSeveranceEvent(...).copyWith.fieldName(value)`.
   ///
@@ -81,6 +80,7 @@ class _$RelationshipSeveranceEventCWProxyImpl
   /// ```dart
   /// RelationshipSeveranceEvent(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   RelationshipSeveranceEvent call({
     Object? createdAt = const $CopyWithPlaceholder(),
     Object? followersCount = const $CopyWithPlaceholder(),

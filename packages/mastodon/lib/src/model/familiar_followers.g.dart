@@ -35,7 +35,6 @@ class _$FamiliarFollowersCWProxyImpl implements _$FamiliarFollowersCWProxy {
   @override
   FamiliarFollowers id(String id) => call(id: id);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `FamiliarFollowers(...).copyWith.fieldName(value)`.
   ///
@@ -43,6 +42,7 @@ class _$FamiliarFollowersCWProxyImpl implements _$FamiliarFollowersCWProxy {
   /// ```dart
   /// FamiliarFollowers(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   FamiliarFollowers call({
     Object? accounts = const $CopyWithPlaceholder(),
     Object? id = const $CopyWithPlaceholder(),

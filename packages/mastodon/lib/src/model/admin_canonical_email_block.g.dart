@@ -36,7 +36,6 @@ class _$AdminCanonicalEmailBlockCWProxyImpl
   @override
   AdminCanonicalEmailBlock id(String id) => call(id: id);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `AdminCanonicalEmailBlock(...).copyWith.fieldName(value)`.
   ///
@@ -44,6 +43,7 @@ class _$AdminCanonicalEmailBlockCWProxyImpl
   /// ```dart
   /// AdminCanonicalEmailBlock(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   AdminCanonicalEmailBlock call({
     Object? canonicalEmailHash = const $CopyWithPlaceholder(),
     Object? id = const $CopyWithPlaceholder(),

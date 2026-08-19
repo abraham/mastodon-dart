@@ -79,7 +79,6 @@ class _$PreferencesCWProxyImpl implements _$PreferencesCWProxy {
     String? postingColonDefaultColonLanguage,
   ) => call(postingColonDefaultColonLanguage: postingColonDefaultColonLanguage);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Preferences(...).copyWith.fieldName(value)`.
   ///
@@ -87,6 +86,7 @@ class _$PreferencesCWProxyImpl implements _$PreferencesCWProxy {
   /// ```dart
   /// Preferences(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   Preferences call({
     Object? postingColonDefaultColonSensitive = const $CopyWithPlaceholder(),
     Object? postingColonDefaultColonVisibility = const $CopyWithPlaceholder(),

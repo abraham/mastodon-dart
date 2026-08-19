@@ -51,7 +51,6 @@ class _$ScheduledStatusCWProxyImpl implements _$ScheduledStatusCWProxy {
   ScheduledStatus scheduledAt(DateTime scheduledAt) =>
       call(scheduledAt: scheduledAt);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ScheduledStatus(...).copyWith.fieldName(value)`.
   ///
@@ -59,6 +58,7 @@ class _$ScheduledStatusCWProxyImpl implements _$ScheduledStatusCWProxy {
   /// ```dart
   /// ScheduledStatus(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   ScheduledStatus call({
     Object? id = const $CopyWithPlaceholder(),
     Object? mediaAttachments = const $CopyWithPlaceholder(),

@@ -113,7 +113,6 @@ class _$NotificationGroupCWProxyImpl implements _$NotificationGroupCWProxy {
   @override
   NotificationGroup statusId(String? statusId) => call(statusId: statusId);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `NotificationGroup(...).copyWith.fieldName(value)`.
   ///
@@ -121,6 +120,7 @@ class _$NotificationGroupCWProxyImpl implements _$NotificationGroupCWProxy {
   /// ```dart
   /// NotificationGroup(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   NotificationGroup call({
     Object? groupKey = const $CopyWithPlaceholder(),
     Object? mostRecentNotificationId = const $CopyWithPlaceholder(),

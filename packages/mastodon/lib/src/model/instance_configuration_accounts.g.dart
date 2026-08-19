@@ -102,7 +102,6 @@ class _$InstanceConfigurationAccountsCWProxyImpl
     int? profileFieldValueLimit,
   ) => call(profileFieldValueLimit: profileFieldValueLimit);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `InstanceConfigurationAccounts(...).copyWith.fieldName(value)`.
   ///
@@ -110,6 +109,7 @@ class _$InstanceConfigurationAccountsCWProxyImpl
   /// ```dart
   /// InstanceConfigurationAccounts(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   InstanceConfigurationAccounts call({
     Object? maxFeaturedTags = const $CopyWithPlaceholder(),
     Object? maxPinnedStatuses = const $CopyWithPlaceholder(),

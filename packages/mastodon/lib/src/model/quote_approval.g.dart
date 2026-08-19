@@ -46,7 +46,6 @@ class _$QuoteApprovalCWProxyImpl implements _$QuoteApprovalCWProxy {
   QuoteApproval manual(List<QuoteApprovalAutomaticEnum> manual) =>
       call(manual: manual);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `QuoteApproval(...).copyWith.fieldName(value)`.
   ///
@@ -54,6 +53,7 @@ class _$QuoteApprovalCWProxyImpl implements _$QuoteApprovalCWProxy {
   /// ```dart
   /// QuoteApproval(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   QuoteApproval call({
     Object? automatic = const $CopyWithPlaceholder(),
     Object? currentUser = const $CopyWithPlaceholder(),

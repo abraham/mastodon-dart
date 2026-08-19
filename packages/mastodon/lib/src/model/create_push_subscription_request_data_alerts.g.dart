@@ -114,7 +114,6 @@ class _$CreatePushSubscriptionRequestDataAlertsCWProxyImpl
     bool? adminPeriodReport,
   ) => call(adminPeriodReport: adminPeriodReport);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CreatePushSubscriptionRequestDataAlerts(...).copyWith.fieldName(value)`.
   ///
@@ -122,6 +121,7 @@ class _$CreatePushSubscriptionRequestDataAlertsCWProxyImpl
   /// ```dart
   /// CreatePushSubscriptionRequestDataAlerts(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   CreatePushSubscriptionRequestDataAlerts call({
     Object? mention = const $CopyWithPlaceholder(),
     Object? quote = const $CopyWithPlaceholder(),

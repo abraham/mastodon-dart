@@ -34,7 +34,6 @@ class _$UpdateStatusInteractionPolicyRequestCWProxyImpl
     String? quoteApprovalPolicy,
   ) => call(quoteApprovalPolicy: quoteApprovalPolicy);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `UpdateStatusInteractionPolicyRequest(...).copyWith.fieldName(value)`.
   ///
@@ -42,6 +41,7 @@ class _$UpdateStatusInteractionPolicyRequestCWProxyImpl
   /// ```dart
   /// UpdateStatusInteractionPolicyRequest(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   UpdateStatusInteractionPolicyRequest call({
     Object? quoteApprovalPolicy = const $CopyWithPlaceholder(),
   }) {

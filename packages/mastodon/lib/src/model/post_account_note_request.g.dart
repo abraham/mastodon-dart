@@ -30,7 +30,6 @@ class _$PostAccountNoteRequestCWProxyImpl
   @override
   PostAccountNoteRequest comment(String? comment) => call(comment: comment);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PostAccountNoteRequest(...).copyWith.fieldName(value)`.
   ///
@@ -38,6 +37,7 @@ class _$PostAccountNoteRequestCWProxyImpl
   /// ```dart
   /// PostAccountNoteRequest(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   PostAccountNoteRequest call({
     Object? comment = const $CopyWithPlaceholder(),
   }) {

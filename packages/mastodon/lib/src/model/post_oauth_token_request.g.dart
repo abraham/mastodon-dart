@@ -72,7 +72,6 @@ class _$PostOauthTokenRequestCWProxyImpl
   @override
   PostOauthTokenRequest scope(String? scope) => call(scope: scope);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PostOauthTokenRequest(...).copyWith.fieldName(value)`.
   ///
@@ -80,6 +79,7 @@ class _$PostOauthTokenRequestCWProxyImpl
   /// ```dart
   /// PostOauthTokenRequest(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   PostOauthTokenRequest call({
     Object? clientId = const $CopyWithPlaceholder(),
     Object? clientSecret = const $CopyWithPlaceholder(),

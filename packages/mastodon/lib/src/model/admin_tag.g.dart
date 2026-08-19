@@ -40,7 +40,6 @@ class _$AdminTagCWProxyImpl implements _$AdminTagCWProxy {
   @override
   AdminTag usable(bool usable) => call(usable: usable);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `AdminTag(...).copyWith.fieldName(value)`.
   ///
@@ -48,6 +47,7 @@ class _$AdminTagCWProxyImpl implements _$AdminTagCWProxy {
   /// ```dart
   /// AdminTag(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   AdminTag call({
     Object? requiresReview = const $CopyWithPlaceholder(),
     Object? trendable = const $CopyWithPlaceholder(),

@@ -43,7 +43,6 @@ class _$AsyncRefreshCWProxyImpl implements _$AsyncRefreshCWProxy {
   @override
   AsyncRefresh resultCount(int? resultCount) => call(resultCount: resultCount);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `AsyncRefresh(...).copyWith.fieldName(value)`.
   ///
@@ -51,6 +50,7 @@ class _$AsyncRefreshCWProxyImpl implements _$AsyncRefreshCWProxy {
   /// ```dart
   /// AsyncRefresh(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   AsyncRefresh call({
     Object? id = const $CopyWithPlaceholder(),
     Object? status = const $CopyWithPlaceholder(),

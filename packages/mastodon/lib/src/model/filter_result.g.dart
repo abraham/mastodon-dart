@@ -45,7 +45,6 @@ class _$FilterResultCWProxyImpl implements _$FilterResultCWProxy {
   FilterResult statusMatches(List<String>? statusMatches) =>
       call(statusMatches: statusMatches);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `FilterResult(...).copyWith.fieldName(value)`.
   ///
@@ -53,6 +52,7 @@ class _$FilterResultCWProxyImpl implements _$FilterResultCWProxy {
   /// ```dart
   /// FilterResult(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   FilterResult call({
     Object? filter = const $CopyWithPlaceholder(),
     Object? keywordMatches = const $CopyWithPlaceholder(),

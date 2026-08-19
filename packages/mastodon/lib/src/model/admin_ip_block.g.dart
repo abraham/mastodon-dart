@@ -62,7 +62,6 @@ class _$AdminIpBlockCWProxyImpl implements _$AdminIpBlockCWProxy {
   @override
   AdminIpBlock expiresAt(DateTime? expiresAt) => call(expiresAt: expiresAt);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `AdminIpBlock(...).copyWith.fieldName(value)`.
   ///
@@ -70,6 +69,7 @@ class _$AdminIpBlockCWProxyImpl implements _$AdminIpBlockCWProxy {
   /// ```dart
   /// AdminIpBlock(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   AdminIpBlock call({
     Object? comment = const $CopyWithPlaceholder(),
     Object? createdAt = const $CopyWithPlaceholder(),

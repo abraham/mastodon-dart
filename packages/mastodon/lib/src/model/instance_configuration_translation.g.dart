@@ -31,7 +31,6 @@ class _$InstanceConfigurationTranslationCWProxyImpl
   InstanceConfigurationTranslation enabled(bool enabled) =>
       call(enabled: enabled);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `InstanceConfigurationTranslation(...).copyWith.fieldName(value)`.
   ///
@@ -39,6 +38,7 @@ class _$InstanceConfigurationTranslationCWProxyImpl
   /// ```dart
   /// InstanceConfigurationTranslation(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   InstanceConfigurationTranslation call({
     Object? enabled = const $CopyWithPlaceholder(),
   }) {

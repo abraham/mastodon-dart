@@ -45,7 +45,6 @@ class _$MediaAttachmentMetaCWProxyImpl implements _$MediaAttachmentMetaCWProxy {
   MediaAttachmentMeta focus(MediaAttachmentMetaFocus? focus) =>
       call(focus: focus);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `MediaAttachmentMeta(...).copyWith.fieldName(value)`.
   ///
@@ -53,6 +52,7 @@ class _$MediaAttachmentMetaCWProxyImpl implements _$MediaAttachmentMetaCWProxy {
   /// ```dart
   /// MediaAttachmentMeta(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   MediaAttachmentMeta call({
     Object? small = const $CopyWithPlaceholder(),
     Object? original = const $CopyWithPlaceholder(),

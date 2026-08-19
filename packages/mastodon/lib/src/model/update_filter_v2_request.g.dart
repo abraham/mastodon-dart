@@ -62,7 +62,6 @@ class _$UpdateFilterV2RequestCWProxyImpl
   @override
   UpdateFilterV2Request title(String? title) => call(title: title);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `UpdateFilterV2Request(...).copyWith.fieldName(value)`.
   ///
@@ -70,6 +69,7 @@ class _$UpdateFilterV2RequestCWProxyImpl
   /// ```dart
   /// UpdateFilterV2Request(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   UpdateFilterV2Request call({
     Object? context = const $CopyWithPlaceholder(),
     Object? expiresIn = const $CopyWithPlaceholder(),

@@ -61,7 +61,6 @@ class _$MetaDetailsCWProxyImpl implements _$MetaDetailsCWProxy {
   @override
   MetaDetails width(int? width) => call(width: width);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `MetaDetails(...).copyWith.fieldName(value)`.
   ///
@@ -69,6 +68,7 @@ class _$MetaDetailsCWProxyImpl implements _$MetaDetailsCWProxy {
   /// ```dart
   /// MetaDetails(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   MetaDetails call({
     Object? aspect = const $CopyWithPlaceholder(),
     Object? bitrate = const $CopyWithPlaceholder(),

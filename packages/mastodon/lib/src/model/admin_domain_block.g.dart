@@ -90,7 +90,6 @@ class _$AdminDomainBlockCWProxyImpl implements _$AdminDomainBlockCWProxy {
   AdminDomainBlock publicComment(String? publicComment) =>
       call(publicComment: publicComment);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `AdminDomainBlock(...).copyWith.fieldName(value)`.
   ///
@@ -98,6 +97,7 @@ class _$AdminDomainBlockCWProxyImpl implements _$AdminDomainBlockCWProxy {
   /// ```dart
   /// AdminDomainBlock(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   AdminDomainBlock call({
     Object? createdAt = const $CopyWithPlaceholder(),
     Object? digest = const $CopyWithPlaceholder(),

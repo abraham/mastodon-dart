@@ -48,7 +48,6 @@ class _$InstanceConfigurationTimelinesAccessTrendingLinkFeedsCWProxyImpl
     InstanceConfigurationTimelinesAccessTrendingLinkFeedsRemoteEnum? remote,
   ) => call(remote: remote);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `InstanceConfigurationTimelinesAccessTrendingLinkFeeds(...).copyWith.fieldName(value)`.
   ///
@@ -56,6 +55,7 @@ class _$InstanceConfigurationTimelinesAccessTrendingLinkFeedsCWProxyImpl
   /// ```dart
   /// InstanceConfigurationTimelinesAccessTrendingLinkFeeds(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   InstanceConfigurationTimelinesAccessTrendingLinkFeeds call({
     Object? local = const $CopyWithPlaceholder(),
     Object? remote = const $CopyWithPlaceholder(),

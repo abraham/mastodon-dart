@@ -34,7 +34,6 @@ class _$AdminMeasureDataCWProxyImpl implements _$AdminMeasureDataCWProxy {
   @override
   AdminMeasureData value(String value) => call(value: value);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `AdminMeasureData(...).copyWith.fieldName(value)`.
   ///
@@ -42,6 +41,7 @@ class _$AdminMeasureDataCWProxyImpl implements _$AdminMeasureDataCWProxy {
   /// ```dart
   /// AdminMeasureData(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   AdminMeasureData call({
     Object? date = const $CopyWithPlaceholder(),
     Object? value = const $CopyWithPlaceholder(),

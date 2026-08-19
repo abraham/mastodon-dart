@@ -98,7 +98,6 @@ class _$CreateStatusRequestCWProxyImpl implements _$CreateStatusRequestCWProxy {
   CreateStatusRequest visibility(StatusVisibilityEnum? visibility) =>
       call(visibility: visibility);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CreateStatusRequest(...).copyWith.fieldName(value)`.
   ///
@@ -106,6 +105,7 @@ class _$CreateStatusRequestCWProxyImpl implements _$CreateStatusRequestCWProxy {
   /// ```dart
   /// CreateStatusRequest(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   CreateStatusRequest call({
     Object? status = const $CopyWithPlaceholder(),
     Object? mediaIds = const $CopyWithPlaceholder(),

@@ -56,7 +56,6 @@ class _$AnnualReportCWProxyImpl implements _$AnnualReportCWProxy {
   @override
   AnnualReport shareUrl(Uri? shareUrl) => call(shareUrl: shareUrl);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `AnnualReport(...).copyWith.fieldName(value)`.
   ///
@@ -64,6 +63,7 @@ class _$AnnualReportCWProxyImpl implements _$AnnualReportCWProxy {
   /// ```dart
   /// AnnualReport(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   AnnualReport call({
     Object? year = const $CopyWithPlaceholder(),
     Object? accountId = const $CopyWithPlaceholder(),

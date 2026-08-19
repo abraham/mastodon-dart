@@ -56,7 +56,6 @@ class _$CustomEmojiCWProxyImpl implements _$CustomEmojiCWProxy {
   @override
   CustomEmoji category(String? category) => call(category: category);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CustomEmoji(...).copyWith.fieldName(value)`.
   ///
@@ -64,6 +63,7 @@ class _$CustomEmojiCWProxyImpl implements _$CustomEmojiCWProxy {
   /// ```dart
   /// CustomEmoji(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   CustomEmoji call({
     Object? shortcode = const $CopyWithPlaceholder(),
     Object? staticUrl = const $CopyWithPlaceholder(),

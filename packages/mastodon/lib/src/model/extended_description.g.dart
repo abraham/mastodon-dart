@@ -35,7 +35,6 @@ class _$ExtendedDescriptionCWProxyImpl implements _$ExtendedDescriptionCWProxy {
   ExtendedDescription updatedAt(DateTime updatedAt) =>
       call(updatedAt: updatedAt);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ExtendedDescription(...).copyWith.fieldName(value)`.
   ///
@@ -43,6 +42,7 @@ class _$ExtendedDescriptionCWProxyImpl implements _$ExtendedDescriptionCWProxy {
   /// ```dart
   /// ExtendedDescription(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   ExtendedDescription call({
     Object? content = const $CopyWithPlaceholder(),
     Object? updatedAt = const $CopyWithPlaceholder(),

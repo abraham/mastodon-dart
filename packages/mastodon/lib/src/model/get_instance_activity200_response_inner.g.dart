@@ -53,7 +53,6 @@ class _$GetInstanceActivity200ResponseInnerCWProxyImpl
   GetInstanceActivity200ResponseInner registrations(String? registrations) =>
       call(registrations: registrations);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `GetInstanceActivity200ResponseInner(...).copyWith.fieldName(value)`.
   ///
@@ -61,6 +60,7 @@ class _$GetInstanceActivity200ResponseInnerCWProxyImpl
   /// ```dart
   /// GetInstanceActivity200ResponseInner(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   GetInstanceActivity200ResponseInner call({
     Object? week = const $CopyWithPlaceholder(),
     Object? statuses = const $CopyWithPlaceholder(),

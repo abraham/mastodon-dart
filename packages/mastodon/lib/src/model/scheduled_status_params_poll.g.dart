@@ -53,7 +53,6 @@ class _$ScheduledStatusParamsPollCWProxyImpl
   ScheduledStatusParamsPoll hideTotals(bool hideTotals) =>
       call(hideTotals: hideTotals);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ScheduledStatusParamsPoll(...).copyWith.fieldName(value)`.
   ///
@@ -61,6 +60,7 @@ class _$ScheduledStatusParamsPollCWProxyImpl
   /// ```dart
   /// ScheduledStatusParamsPoll(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   ScheduledStatusParamsPoll call({
     Object? options = const $CopyWithPlaceholder(),
     Object? expiresIn = const $CopyWithPlaceholder(),

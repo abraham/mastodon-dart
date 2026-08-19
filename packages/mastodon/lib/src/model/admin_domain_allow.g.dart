@@ -39,7 +39,6 @@ class _$AdminDomainAllowCWProxyImpl implements _$AdminDomainAllowCWProxy {
   @override
   AdminDomainAllow id(String id) => call(id: id);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `AdminDomainAllow(...).copyWith.fieldName(value)`.
   ///
@@ -47,6 +46,7 @@ class _$AdminDomainAllowCWProxyImpl implements _$AdminDomainAllowCWProxy {
   /// ```dart
   /// AdminDomainAllow(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   AdminDomainAllow call({
     Object? createdAt = const $CopyWithPlaceholder(),
     Object? domain = const $CopyWithPlaceholder(),

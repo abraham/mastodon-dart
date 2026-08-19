@@ -50,7 +50,6 @@ class _$ModelListCWProxyImpl implements _$ModelListCWProxy {
   @override
   ModelList title(String title) => call(title: title);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ModelList(...).copyWith.fieldName(value)`.
   ///
@@ -58,6 +57,7 @@ class _$ModelListCWProxyImpl implements _$ModelListCWProxy {
   /// ```dart
   /// ModelList(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   ModelList call({
     Object? exclusive = const $CopyWithPlaceholder(),
     Object? id = const $CopyWithPlaceholder(),

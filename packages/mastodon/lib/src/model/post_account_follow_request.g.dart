@@ -45,7 +45,6 @@ class _$PostAccountFollowRequestCWProxyImpl
   @override
   PostAccountFollowRequest reblogs(bool? reblogs) => call(reblogs: reblogs);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PostAccountFollowRequest(...).copyWith.fieldName(value)`.
   ///
@@ -53,6 +52,7 @@ class _$PostAccountFollowRequestCWProxyImpl
   /// ```dart
   /// PostAccountFollowRequest(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   PostAccountFollowRequest call({
     Object? languages = const $CopyWithPlaceholder(),
     Object? notify = const $CopyWithPlaceholder(),

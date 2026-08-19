@@ -39,7 +39,6 @@ class _$PutPushSubscriptionRequestCWProxyImpl
   @override
   PutPushSubscriptionRequest policy(String? policy) => call(policy: policy);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PutPushSubscriptionRequest(...).copyWith.fieldName(value)`.
   ///
@@ -47,6 +46,7 @@ class _$PutPushSubscriptionRequestCWProxyImpl
   /// ```dart
   /// PutPushSubscriptionRequest(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   PutPushSubscriptionRequest call({
     Object? data = const $CopyWithPlaceholder(),
     Object? policy = const $CopyWithPlaceholder(),

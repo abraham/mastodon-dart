@@ -30,7 +30,6 @@ class _$StatusEditPollOptionsInnerCWProxyImpl
   @override
   StatusEditPollOptionsInner title(String title) => call(title: title);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `StatusEditPollOptionsInner(...).copyWith.fieldName(value)`.
   ///
@@ -38,6 +37,7 @@ class _$StatusEditPollOptionsInnerCWProxyImpl
   /// ```dart
   /// StatusEditPollOptionsInner(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   StatusEditPollOptionsInner call({
     Object? title = const $CopyWithPlaceholder(),
   }) {

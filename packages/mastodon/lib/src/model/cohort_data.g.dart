@@ -39,7 +39,6 @@ class _$CohortDataCWProxyImpl implements _$CohortDataCWProxy {
   @override
   CohortData value(String value) => call(value: value);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CohortData(...).copyWith.fieldName(value)`.
   ///
@@ -47,6 +46,7 @@ class _$CohortDataCWProxyImpl implements _$CohortDataCWProxy {
   /// ```dart
   /// CohortData(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   CohortData call({
     Object? date = const $CopyWithPlaceholder(),
     Object? rate = const $CopyWithPlaceholder(),

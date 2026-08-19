@@ -50,7 +50,6 @@ class _$CreatePushSubscriptionRequestSubscriptionCWProxyImpl
   CreatePushSubscriptionRequestSubscription standard(bool? standard) =>
       call(standard: standard);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CreatePushSubscriptionRequestSubscription(...).copyWith.fieldName(value)`.
   ///
@@ -58,6 +57,7 @@ class _$CreatePushSubscriptionRequestSubscriptionCWProxyImpl
   /// ```dart
   /// CreatePushSubscriptionRequestSubscription(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   CreatePushSubscriptionRequestSubscription call({
     Object? keys = const $CopyWithPlaceholder(),
     Object? endpoint = const $CopyWithPlaceholder(),

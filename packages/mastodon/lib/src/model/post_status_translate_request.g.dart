@@ -30,7 +30,6 @@ class _$PostStatusTranslateRequestCWProxyImpl
   @override
   PostStatusTranslateRequest lang(String? lang) => call(lang: lang);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PostStatusTranslateRequest(...).copyWith.fieldName(value)`.
   ///
@@ -38,6 +37,7 @@ class _$PostStatusTranslateRequestCWProxyImpl
   /// ```dart
   /// PostStatusTranslateRequest(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   PostStatusTranslateRequest call({
     Object? lang = const $CopyWithPlaceholder(),
   }) {

@@ -67,7 +67,6 @@ class _$NotificationPolicyCWProxyImpl implements _$NotificationPolicyCWProxy {
   NotificationPolicy summary(NotificationPolicySummary summary) =>
       call(summary: summary);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `NotificationPolicy(...).copyWith.fieldName(value)`.
   ///
@@ -75,6 +74,7 @@ class _$NotificationPolicyCWProxyImpl implements _$NotificationPolicyCWProxy {
   /// ```dart
   /// NotificationPolicy(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   NotificationPolicy call({
     Object? forLimitedAccounts = const $CopyWithPlaceholder(),
     Object? forNewAccounts = const $CopyWithPlaceholder(),

@@ -242,7 +242,6 @@ class _$StatusCWProxyImpl implements _$StatusCWProxy {
   @override
   Status url(Uri? url) => call(url: url);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Status(...).copyWith.fieldName(value)`.
   ///
@@ -250,6 +249,7 @@ class _$StatusCWProxyImpl implements _$StatusCWProxy {
   /// ```dart
   /// Status(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   Status call({
     Object? account = const $CopyWithPlaceholder(),
     Object? content = const $CopyWithPlaceholder(),

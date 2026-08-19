@@ -94,7 +94,6 @@ class _$ReportCWProxyImpl implements _$ReportCWProxy {
   @override
   Report statusIds(List<String>? statusIds) => call(statusIds: statusIds);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Report(...).copyWith.fieldName(value)`.
   ///
@@ -102,6 +101,7 @@ class _$ReportCWProxyImpl implements _$ReportCWProxy {
   /// ```dart
   /// Report(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   Report call({
     Object? actionTaken = const $CopyWithPlaceholder(),
     Object? category = const $CopyWithPlaceholder(),

@@ -34,7 +34,6 @@ class _$FilterStatusCWProxyImpl implements _$FilterStatusCWProxy {
   @override
   FilterStatus statusId(String statusId) => call(statusId: statusId);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `FilterStatus(...).copyWith.fieldName(value)`.
   ///
@@ -42,6 +41,7 @@ class _$FilterStatusCWProxyImpl implements _$FilterStatusCWProxy {
   /// ```dart
   /// FilterStatus(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   FilterStatus call({
     Object? id = const $CopyWithPlaceholder(),
     Object? statusId = const $CopyWithPlaceholder(),

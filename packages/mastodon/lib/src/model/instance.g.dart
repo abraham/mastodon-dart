@@ -118,7 +118,6 @@ class _$InstanceCWProxyImpl implements _$InstanceCWProxy {
   @override
   Instance wrapstodon(String? wrapstodon) => call(wrapstodon: wrapstodon);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Instance(...).copyWith.fieldName(value)`.
   ///
@@ -126,6 +125,7 @@ class _$InstanceCWProxyImpl implements _$InstanceCWProxy {
   /// ```dart
   /// Instance(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   Instance call({
     Object? apiVersions = const $CopyWithPlaceholder(),
     Object? configuration = const $CopyWithPlaceholder(),

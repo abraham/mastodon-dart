@@ -44,7 +44,6 @@ class _$StatusMentionCWProxyImpl implements _$StatusMentionCWProxy {
   @override
   StatusMention username(String username) => call(username: username);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `StatusMention(...).copyWith.fieldName(value)`.
   ///
@@ -52,6 +51,7 @@ class _$StatusMentionCWProxyImpl implements _$StatusMentionCWProxy {
   /// ```dart
   /// StatusMention(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   StatusMention call({
     Object? acct = const $CopyWithPlaceholder(),
     Object? id = const $CopyWithPlaceholder(),

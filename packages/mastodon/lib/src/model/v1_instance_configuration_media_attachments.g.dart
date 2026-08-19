@@ -80,7 +80,6 @@ class _$V1InstanceConfigurationMediaAttachmentsCWProxyImpl
   V1InstanceConfigurationMediaAttachments videoSizeLimit(int videoSizeLimit) =>
       call(videoSizeLimit: videoSizeLimit);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `V1InstanceConfigurationMediaAttachments(...).copyWith.fieldName(value)`.
   ///
@@ -88,6 +87,7 @@ class _$V1InstanceConfigurationMediaAttachmentsCWProxyImpl
   /// ```dart
   /// V1InstanceConfigurationMediaAttachments(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   V1InstanceConfigurationMediaAttachments call({
     Object? imageMatrixLimit = const $CopyWithPlaceholder(),
     Object? imageSizeLimit = const $CopyWithPlaceholder(),

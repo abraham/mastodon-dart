@@ -34,7 +34,6 @@ class _$InstanceContactCWProxyImpl implements _$InstanceContactCWProxy {
   @override
   InstanceContact account(Account? account) => call(account: account);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `InstanceContact(...).copyWith.fieldName(value)`.
   ///
@@ -42,6 +41,7 @@ class _$InstanceContactCWProxyImpl implements _$InstanceContactCWProxy {
   /// ```dart
   /// InstanceContact(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   InstanceContact call({
     Object? email = const $CopyWithPlaceholder(),
     Object? account = const $CopyWithPlaceholder(),

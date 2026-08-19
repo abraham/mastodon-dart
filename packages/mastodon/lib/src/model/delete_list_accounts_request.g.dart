@@ -31,7 +31,6 @@ class _$DeleteListAccountsRequestCWProxyImpl
   DeleteListAccountsRequest accountIds(List<String> accountIds) =>
       call(accountIds: accountIds);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `DeleteListAccountsRequest(...).copyWith.fieldName(value)`.
   ///
@@ -39,6 +38,7 @@ class _$DeleteListAccountsRequestCWProxyImpl
   /// ```dart
   /// DeleteListAccountsRequest(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   DeleteListAccountsRequest call({
     Object? accountIds = const $CopyWithPlaceholder(),
   }) {

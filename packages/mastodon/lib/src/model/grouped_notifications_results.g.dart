@@ -60,7 +60,6 @@ class _$GroupedNotificationsResultsCWProxyImpl
     List<PartialAccountWithAvatar>? partialAccounts,
   ) => call(partialAccounts: partialAccounts);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `GroupedNotificationsResults(...).copyWith.fieldName(value)`.
   ///
@@ -68,6 +67,7 @@ class _$GroupedNotificationsResultsCWProxyImpl
   /// ```dart
   /// GroupedNotificationsResults(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   GroupedNotificationsResults call({
     Object? accounts = const $CopyWithPlaceholder(),
     Object? notificationGroups = const $CopyWithPlaceholder(),

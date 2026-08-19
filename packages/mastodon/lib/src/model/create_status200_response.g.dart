@@ -278,7 +278,6 @@ class _$CreateStatus200ResponseCWProxyImpl
   @override
   CreateStatus200Response url(Uri? url) => call(url: url);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CreateStatus200Response(...).copyWith.fieldName(value)`.
   ///
@@ -286,6 +285,7 @@ class _$CreateStatus200ResponseCWProxyImpl
   /// ```dart
   /// CreateStatus200Response(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   CreateStatus200Response call({
     Object? account = const $CopyWithPlaceholder(),
     Object? content = const $CopyWithPlaceholder(),

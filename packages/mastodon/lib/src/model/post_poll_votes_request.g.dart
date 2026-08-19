@@ -30,7 +30,6 @@ class _$PostPollVotesRequestCWProxyImpl
   @override
   PostPollVotesRequest choices(List<int> choices) => call(choices: choices);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PostPollVotesRequest(...).copyWith.fieldName(value)`.
   ///
@@ -38,6 +37,7 @@ class _$PostPollVotesRequestCWProxyImpl
   /// ```dart
   /// PostPollVotesRequest(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   PostPollVotesRequest call({Object? choices = const $CopyWithPlaceholder()}) {
     return PostPollVotesRequest(
       choices: choices == const $CopyWithPlaceholder() || choices == null

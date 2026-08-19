@@ -56,7 +56,6 @@ class _$AdminDimensionDataCWProxyImpl implements _$AdminDimensionDataCWProxy {
   @override
   AdminDimensionData unit(String? unit) => call(unit: unit);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `AdminDimensionData(...).copyWith.fieldName(value)`.
   ///
@@ -64,6 +63,7 @@ class _$AdminDimensionDataCWProxyImpl implements _$AdminDimensionDataCWProxy {
   /// ```dart
   /// AdminDimensionData(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   AdminDimensionData call({
     Object? humanKey = const $CopyWithPlaceholder(),
     Object? key = const $CopyWithPlaceholder(),

@@ -35,7 +35,6 @@ class _$ErrorCWProxyImpl implements _$ErrorCWProxy {
   Error errorDescription(String? errorDescription) =>
       call(errorDescription: errorDescription);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Error(...).copyWith.fieldName(value)`.
   ///
@@ -43,6 +42,7 @@ class _$ErrorCWProxyImpl implements _$ErrorCWProxy {
   /// ```dart
   /// Error(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   Error call({
     Object? error = const $CopyWithPlaceholder(),
     Object? errorDescription = const $CopyWithPlaceholder(),

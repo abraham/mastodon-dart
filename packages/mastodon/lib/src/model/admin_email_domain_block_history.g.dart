@@ -41,7 +41,6 @@ class _$AdminEmailDomainBlockHistoryCWProxyImpl
   @override
   AdminEmailDomainBlockHistory uses(String uses) => call(uses: uses);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `AdminEmailDomainBlockHistory(...).copyWith.fieldName(value)`.
   ///
@@ -49,6 +48,7 @@ class _$AdminEmailDomainBlockHistoryCWProxyImpl
   /// ```dart
   /// AdminEmailDomainBlockHistory(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   AdminEmailDomainBlockHistory call({
     Object? accounts = const $CopyWithPlaceholder(),
     Object? day = const $CopyWithPlaceholder(),

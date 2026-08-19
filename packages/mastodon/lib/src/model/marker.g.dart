@@ -39,7 +39,6 @@ class _$MarkerCWProxyImpl implements _$MarkerCWProxy {
   @override
   Marker version(int version) => call(version: version);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Marker(...).copyWith.fieldName(value)`.
   ///
@@ -47,6 +46,7 @@ class _$MarkerCWProxyImpl implements _$MarkerCWProxy {
   /// ```dart
   /// Marker(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   Marker call({
     Object? lastReadId = const $CopyWithPlaceholder(),
     Object? updatedAt = const $CopyWithPlaceholder(),

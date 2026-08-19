@@ -39,7 +39,6 @@ class _$TagHistoryCWProxyImpl implements _$TagHistoryCWProxy {
   @override
   TagHistory uses(String uses) => call(uses: uses);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `TagHistory(...).copyWith.fieldName(value)`.
   ///
@@ -47,6 +46,7 @@ class _$TagHistoryCWProxyImpl implements _$TagHistoryCWProxy {
   /// ```dart
   /// TagHistory(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   TagHistory call({
     Object? accounts = const $CopyWithPlaceholder(),
     Object? day = const $CopyWithPlaceholder(),

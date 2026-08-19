@@ -34,7 +34,6 @@ class _$AdminDimensionCWProxyImpl implements _$AdminDimensionCWProxy {
   @override
   AdminDimension key(String key) => call(key: key);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `AdminDimension(...).copyWith.fieldName(value)`.
   ///
@@ -42,6 +41,7 @@ class _$AdminDimensionCWProxyImpl implements _$AdminDimensionCWProxy {
   /// ```dart
   /// AdminDimension(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   AdminDimension call({
     Object? data = const $CopyWithPlaceholder(),
     Object? key = const $CopyWithPlaceholder(),

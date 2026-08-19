@@ -66,7 +66,6 @@ class _$UpdateCollectionRequestCWProxyImpl
   @override
   UpdateCollectionRequest tagName(String? tagName) => call(tagName: tagName);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `UpdateCollectionRequest(...).copyWith.fieldName(value)`.
   ///
@@ -74,6 +73,7 @@ class _$UpdateCollectionRequestCWProxyImpl
   /// ```dart
   /// UpdateCollectionRequest(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   UpdateCollectionRequest call({
     Object? description = const $CopyWithPlaceholder(),
     Object? discoverable = const $CopyWithPlaceholder(),

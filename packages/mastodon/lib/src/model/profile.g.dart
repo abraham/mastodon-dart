@@ -144,7 +144,6 @@ class _$ProfileCWProxyImpl implements _$ProfileCWProxy {
   Profile hideCollections(bool? hideCollections) =>
       call(hideCollections: hideCollections);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Profile(...).copyWith.fieldName(value)`.
   ///
@@ -152,6 +151,7 @@ class _$ProfileCWProxyImpl implements _$ProfileCWProxy {
   /// ```dart
   /// Profile(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   Profile call({
     Object? attributionDomains = const $CopyWithPlaceholder(),
     Object? avatarDescription = const $CopyWithPlaceholder(),

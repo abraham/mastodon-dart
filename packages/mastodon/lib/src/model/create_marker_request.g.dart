@@ -41,7 +41,6 @@ class _$CreateMarkerRequestCWProxyImpl implements _$CreateMarkerRequestCWProxy {
     CreateMarkerRequestNotifications? notifications,
   ) => call(notifications: notifications);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CreateMarkerRequest(...).copyWith.fieldName(value)`.
   ///
@@ -49,6 +48,7 @@ class _$CreateMarkerRequestCWProxyImpl implements _$CreateMarkerRequestCWProxy {
   /// ```dart
   /// CreateMarkerRequest(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   CreateMarkerRequest call({
     Object? home = const $CopyWithPlaceholder(),
     Object? notifications = const $CopyWithPlaceholder(),

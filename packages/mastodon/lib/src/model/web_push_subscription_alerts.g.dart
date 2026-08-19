@@ -90,7 +90,6 @@ class _$WebPushSubscriptionAlertsCWProxyImpl
   @override
   WebPushSubscriptionAlerts edit(bool edit) => call(edit: edit);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `WebPushSubscriptionAlerts(...).copyWith.fieldName(value)`.
   ///
@@ -98,6 +97,7 @@ class _$WebPushSubscriptionAlertsCWProxyImpl
   /// ```dart
   /// WebPushSubscriptionAlerts(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   WebPushSubscriptionAlerts call({
     Object? adminPeriodReport = const $CopyWithPlaceholder(),
     Object? adminPeriodSignUp = const $CopyWithPlaceholder(),

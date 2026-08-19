@@ -29,7 +29,6 @@ class _$InstanceApiVersionsCWProxyImpl implements _$InstanceApiVersionsCWProxy {
   @override
   InstanceApiVersions mastodon(int mastodon) => call(mastodon: mastodon);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `InstanceApiVersions(...).copyWith.fieldName(value)`.
   ///
@@ -37,6 +36,7 @@ class _$InstanceApiVersionsCWProxyImpl implements _$InstanceApiVersionsCWProxy {
   /// ```dart
   /// InstanceApiVersions(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   InstanceApiVersions call({Object? mastodon = const $CopyWithPlaceholder()}) {
     return InstanceApiVersions(
       mastodon: mastodon == const $CopyWithPlaceholder() || mastodon == null

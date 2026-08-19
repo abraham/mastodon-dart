@@ -34,7 +34,6 @@ class _$StatusTagCWProxyImpl implements _$StatusTagCWProxy {
   @override
   StatusTag url(Uri url) => call(url: url);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `StatusTag(...).copyWith.fieldName(value)`.
   ///
@@ -42,6 +41,7 @@ class _$StatusTagCWProxyImpl implements _$StatusTagCWProxy {
   /// ```dart
   /// StatusTag(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   StatusTag call({
     Object? name = const $CopyWithPlaceholder(),
     Object? url = const $CopyWithPlaceholder(),

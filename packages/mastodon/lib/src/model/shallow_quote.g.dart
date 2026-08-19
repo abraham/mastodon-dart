@@ -35,7 +35,6 @@ class _$ShallowQuoteCWProxyImpl implements _$ShallowQuoteCWProxy {
   ShallowQuote quotedStatusId(String? quotedStatusId) =>
       call(quotedStatusId: quotedStatusId);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ShallowQuote(...).copyWith.fieldName(value)`.
   ///
@@ -43,6 +42,7 @@ class _$ShallowQuoteCWProxyImpl implements _$ShallowQuoteCWProxy {
   /// ```dart
   /// ShallowQuote(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   ShallowQuote call({
     Object? state = const $CopyWithPlaceholder(),
     Object? quotedStatusId = const $CopyWithPlaceholder(),

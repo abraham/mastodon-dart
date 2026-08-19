@@ -31,7 +31,6 @@ class _$PostFilterStatusesV2RequestCWProxyImpl
   PostFilterStatusesV2Request statusId(String statusId) =>
       call(statusId: statusId);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PostFilterStatusesV2Request(...).copyWith.fieldName(value)`.
   ///
@@ -39,6 +38,7 @@ class _$PostFilterStatusesV2RequestCWProxyImpl
   /// ```dart
   /// PostFilterStatusesV2Request(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   PostFilterStatusesV2Request call({
     Object? statusId = const $CopyWithPlaceholder(),
   }) {

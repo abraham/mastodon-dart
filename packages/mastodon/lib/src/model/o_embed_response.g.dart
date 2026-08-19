@@ -92,7 +92,6 @@ class _$OEmbedResponseCWProxyImpl implements _$OEmbedResponseCWProxy {
   @override
   OEmbedResponse height(String? height) => call(height: height);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `OEmbedResponse(...).copyWith.fieldName(value)`.
   ///
@@ -100,6 +99,7 @@ class _$OEmbedResponseCWProxyImpl implements _$OEmbedResponseCWProxy {
   /// ```dart
   /// OEmbedResponse(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   OEmbedResponse call({
     Object? authorName = const $CopyWithPlaceholder(),
     Object? authorUrl = const $CopyWithPlaceholder(),

@@ -31,7 +31,6 @@ class _$CreateMarkerRequestHomeCWProxyImpl
   CreateMarkerRequestHome lastReadId(String? lastReadId) =>
       call(lastReadId: lastReadId);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CreateMarkerRequestHome(...).copyWith.fieldName(value)`.
   ///
@@ -39,6 +38,7 @@ class _$CreateMarkerRequestHomeCWProxyImpl
   /// ```dart
   /// CreateMarkerRequestHome(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   CreateMarkerRequestHome call({
     Object? lastReadId = const $CopyWithPlaceholder(),
   }) {

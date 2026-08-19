@@ -29,7 +29,6 @@ class _$InstanceUsageCWProxyImpl implements _$InstanceUsageCWProxy {
   @override
   InstanceUsage users(InstanceUsageUsers users) => call(users: users);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `InstanceUsage(...).copyWith.fieldName(value)`.
   ///
@@ -37,6 +36,7 @@ class _$InstanceUsageCWProxyImpl implements _$InstanceUsageCWProxy {
   /// ```dart
   /// InstanceUsage(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   InstanceUsage call({Object? users = const $CopyWithPlaceholder()}) {
     return InstanceUsage(
       users: users == const $CopyWithPlaceholder() || users == null

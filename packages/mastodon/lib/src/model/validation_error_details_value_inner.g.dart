@@ -36,7 +36,6 @@ class _$ValidationErrorDetailsValueInnerCWProxyImpl
   ValidationErrorDetailsValueInner description(String description) =>
       call(description: description);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ValidationErrorDetailsValueInner(...).copyWith.fieldName(value)`.
   ///
@@ -44,6 +43,7 @@ class _$ValidationErrorDetailsValueInnerCWProxyImpl
   /// ```dart
   /// ValidationErrorDetailsValueInner(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   ValidationErrorDetailsValueInner call({
     Object? error = const $CopyWithPlaceholder(),
     Object? description = const $CopyWithPlaceholder(),

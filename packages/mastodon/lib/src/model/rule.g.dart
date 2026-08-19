@@ -44,7 +44,6 @@ class _$RuleCWProxyImpl implements _$RuleCWProxy {
   @override
   Rule translations(Object? translations) => call(translations: translations);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Rule(...).copyWith.fieldName(value)`.
   ///
@@ -52,6 +51,7 @@ class _$RuleCWProxyImpl implements _$RuleCWProxy {
   /// ```dart
   /// Rule(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   Rule call({
     Object? hint = const $CopyWithPlaceholder(),
     Object? id = const $CopyWithPlaceholder(),

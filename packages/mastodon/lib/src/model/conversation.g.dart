@@ -49,7 +49,6 @@ class _$ConversationCWProxyImpl implements _$ConversationCWProxy {
   @override
   Conversation lastStatus(Status? lastStatus) => call(lastStatus: lastStatus);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Conversation(...).copyWith.fieldName(value)`.
   ///
@@ -57,6 +56,7 @@ class _$ConversationCWProxyImpl implements _$ConversationCWProxy {
   /// ```dart
   /// Conversation(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   Conversation call({
     Object? accounts = const $CopyWithPlaceholder(),
     Object? id = const $CopyWithPlaceholder(),

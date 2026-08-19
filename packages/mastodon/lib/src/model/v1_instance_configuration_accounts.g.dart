@@ -31,7 +31,6 @@ class _$V1InstanceConfigurationAccountsCWProxyImpl
   V1InstanceConfigurationAccounts maxFeaturedTags(int maxFeaturedTags) =>
       call(maxFeaturedTags: maxFeaturedTags);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `V1InstanceConfigurationAccounts(...).copyWith.fieldName(value)`.
   ///
@@ -39,6 +38,7 @@ class _$V1InstanceConfigurationAccountsCWProxyImpl
   /// ```dart
   /// V1InstanceConfigurationAccounts(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   V1InstanceConfigurationAccounts call({
     Object? maxFeaturedTags = const $CopyWithPlaceholder(),
   }) {

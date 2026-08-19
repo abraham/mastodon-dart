@@ -69,7 +69,6 @@ class _$TranslationCWProxyImpl implements _$TranslationCWProxy {
   @override
   Translation poll(TranslationPoll? poll) => call(poll: poll);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Translation(...).copyWith.fieldName(value)`.
   ///
@@ -77,6 +76,7 @@ class _$TranslationCWProxyImpl implements _$TranslationCWProxy {
   /// ```dart
   /// Translation(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   Translation call({
     Object? content = const $CopyWithPlaceholder(),
     Object? detectedSourceLanguage = const $CopyWithPlaceholder(),

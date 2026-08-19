@@ -30,7 +30,6 @@ class _$TranslationPollOptionCWProxyImpl
   @override
   TranslationPollOption title(String title) => call(title: title);
 
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `TranslationPollOption(...).copyWith.fieldName(value)`.
   ///
@@ -38,6 +37,7 @@ class _$TranslationPollOptionCWProxyImpl
   /// ```dart
   /// TranslationPollOption(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   TranslationPollOption call({Object? title = const $CopyWithPlaceholder()}) {
     return TranslationPollOption(
       title: title == const $CopyWithPlaceholder() || title == null
