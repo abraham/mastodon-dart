@@ -25,8 +25,6 @@ abstract class _$PreviewCardCWProxy {
 
   PreviewCard providerUrl(Uri providerUrl);
 
-  PreviewCard publishedAt(DateTime publishedAt);
-
   PreviewCard title(String title);
 
   PreviewCard type(TrendsLinkTypeEnum type);
@@ -40,6 +38,8 @@ abstract class _$PreviewCardCWProxy {
   PreviewCard image(Uri? image);
 
   PreviewCard missingAttribution(bool? missingAttribution);
+
+  PreviewCard publishedAt(DateTime? publishedAt);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PreviewCard(...).copyWith.fieldName(value)`.
@@ -58,7 +58,6 @@ abstract class _$PreviewCardCWProxy {
     String html,
     String providerName,
     Uri providerUrl,
-    DateTime publishedAt,
     String title,
     TrendsLinkTypeEnum type,
     Uri url,
@@ -66,6 +65,7 @@ abstract class _$PreviewCardCWProxy {
     String? blurhash,
     Uri? image,
     bool? missingAttribution,
+    DateTime? publishedAt,
   });
 }
 
@@ -106,10 +106,6 @@ class _$PreviewCardCWProxyImpl implements _$PreviewCardCWProxy {
   PreviewCard providerUrl(Uri providerUrl) => call(providerUrl: providerUrl);
 
   @override
-  PreviewCard publishedAt(DateTime publishedAt) =>
-      call(publishedAt: publishedAt);
-
-  @override
   PreviewCard title(String title) => call(title: title);
 
   @override
@@ -131,6 +127,10 @@ class _$PreviewCardCWProxyImpl implements _$PreviewCardCWProxy {
   PreviewCard missingAttribution(bool? missingAttribution) =>
       call(missingAttribution: missingAttribution);
 
+  @override
+  PreviewCard publishedAt(DateTime? publishedAt) =>
+      call(publishedAt: publishedAt);
+
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PreviewCard(...).copyWith.fieldName(value)`.
   ///
@@ -149,7 +149,6 @@ class _$PreviewCardCWProxyImpl implements _$PreviewCardCWProxy {
     Object? html = const $CopyWithPlaceholder(),
     Object? providerName = const $CopyWithPlaceholder(),
     Object? providerUrl = const $CopyWithPlaceholder(),
-    Object? publishedAt = const $CopyWithPlaceholder(),
     Object? title = const $CopyWithPlaceholder(),
     Object? type = const $CopyWithPlaceholder(),
     Object? url = const $CopyWithPlaceholder(),
@@ -157,6 +156,7 @@ class _$PreviewCardCWProxyImpl implements _$PreviewCardCWProxy {
     Object? blurhash = const $CopyWithPlaceholder(),
     Object? image = const $CopyWithPlaceholder(),
     Object? missingAttribution = const $CopyWithPlaceholder(),
+    Object? publishedAt = const $CopyWithPlaceholder(),
   }) {
     return PreviewCard(
       authorName:
@@ -199,11 +199,6 @@ class _$PreviewCardCWProxyImpl implements _$PreviewCardCWProxy {
           ? _value.providerUrl
           // ignore: cast_nullable_to_non_nullable
           : providerUrl as Uri,
-      publishedAt:
-          publishedAt == const $CopyWithPlaceholder() || publishedAt == null
-          ? _value.publishedAt
-          // ignore: cast_nullable_to_non_nullable
-          : publishedAt as DateTime,
       title: title == const $CopyWithPlaceholder() || title == null
           ? _value.title
           // ignore: cast_nullable_to_non_nullable
@@ -232,6 +227,10 @@ class _$PreviewCardCWProxyImpl implements _$PreviewCardCWProxy {
           ? _value.missingAttribution
           // ignore: cast_nullable_to_non_nullable
           : missingAttribution as bool?,
+      publishedAt: publishedAt == const $CopyWithPlaceholder()
+          ? _value.publishedAt
+          // ignore: cast_nullable_to_non_nullable
+          : publishedAt as DateTime?,
     );
   }
 }
@@ -263,7 +262,6 @@ PreviewCard _$PreviewCardFromJson(Map<String, dynamic> json) => $checkedCreate(
         'html',
         'provider_name',
         'provider_url',
-        'published_at',
         'title',
         'type',
         'url',
@@ -288,10 +286,6 @@ PreviewCard _$PreviewCardFromJson(Map<String, dynamic> json) => $checkedCreate(
         'provider_url',
         (v) => Uri.parse(v as String),
       ),
-      publishedAt: $checkedConvert(
-        'published_at',
-        (v) => DateTime.parse(v as String),
-      ),
       title: $checkedConvert('title', (v) => v as String),
       type: $checkedConvert(
         'type',
@@ -308,6 +302,10 @@ PreviewCard _$PreviewCardFromJson(Map<String, dynamic> json) => $checkedCreate(
         'missing_attribution',
         (v) => v as bool?,
       ),
+      publishedAt: $checkedConvert(
+        'published_at',
+        (v) => v == null ? null : DateTime.parse(v as String),
+      ),
     );
     return val;
   },
@@ -317,8 +315,8 @@ PreviewCard _$PreviewCardFromJson(Map<String, dynamic> json) => $checkedCreate(
     'embedUrl': 'embed_url',
     'providerName': 'provider_name',
     'providerUrl': 'provider_url',
-    'publishedAt': 'published_at',
     'missingAttribution': 'missing_attribution',
+    'publishedAt': 'published_at',
   },
 );
 
@@ -333,7 +331,6 @@ Map<String, dynamic> _$PreviewCardToJson(PreviewCard instance) =>
       'html': instance.html,
       'provider_name': instance.providerName,
       'provider_url': instance.providerUrl.toString(),
-      'published_at': instance.publishedAt.toIso8601String(),
       'title': instance.title,
       'type': _$TrendsLinkTypeEnumEnumMap[instance.type]!,
       'url': instance.url.toString(),
@@ -341,6 +338,7 @@ Map<String, dynamic> _$PreviewCardToJson(PreviewCard instance) =>
       'blurhash': ?instance.blurhash,
       'image': ?instance.image?.toString(),
       'missing_attribution': ?instance.missingAttribution,
+      'published_at': ?instance.publishedAt?.toIso8601String(),
     };
 
 const _$TrendsLinkTypeEnumEnumMap = {
