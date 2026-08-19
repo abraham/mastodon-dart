@@ -9,7 +9,7 @@ part of 'create_collection_request.dart';
 abstract class _$CreateCollectionRequestCWProxy {
   CreateCollectionRequest name(String name);
 
-  CreateCollectionRequest accountIds(String? accountIds);
+  CreateCollectionRequest accountIds(List<String>? accountIds);
 
   CreateCollectionRequest description(String? description);
 
@@ -30,7 +30,7 @@ abstract class _$CreateCollectionRequestCWProxy {
   /// ```
   CreateCollectionRequest call({
     String name,
-    String? accountIds,
+    List<String>? accountIds,
     String? description,
     bool? discoverable,
     String? language,
@@ -51,7 +51,7 @@ class _$CreateCollectionRequestCWProxyImpl
   CreateCollectionRequest name(String name) => call(name: name);
 
   @override
-  CreateCollectionRequest accountIds(String? accountIds) =>
+  CreateCollectionRequest accountIds(List<String>? accountIds) =>
       call(accountIds: accountIds);
 
   @override
@@ -98,7 +98,7 @@ class _$CreateCollectionRequestCWProxyImpl
       accountIds: accountIds == const $CopyWithPlaceholder()
           ? _value.accountIds
           // ignore: cast_nullable_to_non_nullable
-          : accountIds as String?,
+          : accountIds as List<String>?,
       description: description == const $CopyWithPlaceholder()
           ? _value.description
           // ignore: cast_nullable_to_non_nullable
@@ -141,7 +141,10 @@ CreateCollectionRequest _$CreateCollectionRequestFromJson(
   $checkKeys(json, requiredKeys: const ['name']);
   final val = CreateCollectionRequest(
     name: $checkedConvert('name', (v) => v as String),
-    accountIds: $checkedConvert('account_ids', (v) => v as String?),
+    accountIds: $checkedConvert(
+      'account_ids',
+      (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+    ),
     description: $checkedConvert('description', (v) => v as String?),
     discoverable: $checkedConvert('discoverable', (v) => v as bool?),
     language: $checkedConvert('language', (v) => v as String?),

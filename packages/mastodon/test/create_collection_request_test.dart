@@ -15,7 +15,7 @@ void main() {
     });
 
     // IDs of the accounts to feature in this Collection
-    // String accountIds
+    // List<String> accountIds
     test('to test the property `accountIds`', () async {
       // TODO
     });
