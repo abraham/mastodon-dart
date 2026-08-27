@@ -2,6 +2,10 @@
 
 ## v1.0.0-beta.16
 
+**Features**
+
+- Improve collection response types
+
 ## v1.0.0-beta.15
 
 **Features**
