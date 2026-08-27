@@ -6,7 +6,10 @@ import 'dart:async';
 
 // ignore: unused_import
 import 'dart:convert';
+import 'package:mastodon/src/deserialize.dart';
 import 'package:dio/dio.dart';
+
+import 'package:mastodon/src/model/wrapped_annual_reports.dart';
 
 class AnnualReportsApi {
   final Dio _dio;
@@ -79,11 +82,11 @@ class AnnualReportsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future]
+  /// Returns a [Future] containing a [Response] with a [WrappedAnnualReports] as data
   /// Throws [DioException] if API call or serialization fails
   /// Official Mastodon API documentation
   /// Also see [Get all annual reports Documentation](https://docs.joinmastodon.org/methods/annual_reports/#index)
-  Future<Response<void>> getAnnualReports({
+  Future<Response<WrappedAnnualReports>> getAnnualReports({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -113,7 +116,37 @@ class AnnualReportsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    return _response;
+    WrappedAnnualReports? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<WrappedAnnualReports, WrappedAnnualReports>(
+              rawData,
+              'WrappedAnnualReports',
+              growable: true,
+            );
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<WrappedAnnualReports>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
   /// Get a single annual report
@@ -128,11 +161,11 @@ class AnnualReportsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future]
+  /// Returns a [Future] containing a [Response] with a [WrappedAnnualReports] as data
   /// Throws [DioException] if API call or serialization fails
   /// Official Mastodon API documentation
   /// Also see [Get a single annual report Documentation](https://docs.joinmastodon.org/methods/annual_reports/#get)
-  Future<Response<void>> getAnnualReportsByYear({
+  Future<Response<WrappedAnnualReports>> getAnnualReportsByYear({
     required String year,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -168,7 +201,37 @@ class AnnualReportsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    return _response;
+    WrappedAnnualReports? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<WrappedAnnualReports, WrappedAnnualReports>(
+              rawData,
+              'WrappedAnnualReports',
+              growable: true,
+            );
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<WrappedAnnualReports>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
   /// Generate a new annual report {generate}

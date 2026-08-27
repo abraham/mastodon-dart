@@ -19,7 +19,7 @@ void main() {
     //
     // Returns all of the current user's generated annual reports, if any.  Version history:  4.3.0 - added
     //
-    //Future getAnnualReports() async
+    //Future<WrappedAnnualReports> getAnnualReports() async
     test('test getAnnualReports', () async {
       // TODO
     });
@@ -28,7 +28,7 @@ void main() {
     //
     // Returns the current user's generated annual report for the given year, if it exists.  Version history:  4.4.0 - added
     //
-    //Future getAnnualReportsByYear(String year) async
+    //Future<WrappedAnnualReports> getAnnualReportsByYear(String year) async
     test('test getAnnualReportsByYear', () async {
       // TODO
     });

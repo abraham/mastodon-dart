@@ -28,7 +28,7 @@ void main() {
     //
     // Version history:  4.6.0 (`mastodon` [API version] 10) - added
     //
-    //Future getAccountCollections(String accountId, { int limit, int offset }) async
+    //Future<Collections> getAccountCollections(String accountId, { int limit, int offset }) async
     test('test getAccountCollections', () async {
       // TODO
     });
@@ -82,7 +82,7 @@ void main() {
     //
     // Version history:  4.6.0 (`mastodon` [API version] 10) - added
     //
-    //Future getAccountInCollections(String accountId, { int limit, int offset }) async
+    //Future<Collections> getAccountInCollections(String accountId, { int limit, int offset }) async
     test('test getAccountInCollections', () async {
       // TODO
     });

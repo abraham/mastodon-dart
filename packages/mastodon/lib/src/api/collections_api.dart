@@ -13,6 +13,8 @@ import 'package:mastodon/src/model/collection_with_accounts.dart';
 import 'package:mastodon/src/model/create_collection_request.dart';
 import 'package:mastodon/src/model/post_collection_items_request.dart';
 import 'package:mastodon/src/model/update_collection_request.dart';
+import 'package:mastodon/src/model/wrapped_collection.dart';
+import 'package:mastodon/src/model/wrapped_collection_item.dart';
 
 class CollectionsApi {
   final Dio _dio;
@@ -31,11 +33,11 @@ class CollectionsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future]
+  /// Returns a [Future] containing a [Response] with a [WrappedCollection] as data
   /// Throws [DioException] if API call or serialization fails
   /// Official Mastodon API documentation
   /// Also see [Create a Collection Documentation](https://docs.joinmastodon.org/methods/collections/#create)
-  Future<Response<void>> createCollection({
+  Future<Response<WrappedCollection>> createCollection({
     required CreateCollectionRequest createCollectionRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -81,7 +83,37 @@ class CollectionsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    return _response;
+    WrappedCollection? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<WrappedCollection, WrappedCollection>(
+              rawData,
+              'WrappedCollection',
+              growable: true,
+            );
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<WrappedCollection>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
   /// Delete a Collection
@@ -301,11 +333,11 @@ class CollectionsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future]
+  /// Returns a [Future] containing a [Response] with a [WrappedCollectionItem] as data
   /// Throws [DioException] if API call or serialization fails
   /// Official Mastodon API documentation
   /// Also see [Add an account to a Collection Documentation](https://docs.joinmastodon.org/methods/collections/#add_account)
-  Future<Response<void>> postCollectionItems({
+  Future<Response<WrappedCollectionItem>> postCollectionItems({
     required String collectionId,
     PostCollectionItemsRequest? postCollectionItemsRequest,
     CancelToken? cancelToken,
@@ -357,7 +389,37 @@ class CollectionsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    return _response;
+    WrappedCollectionItem? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<WrappedCollectionItem, WrappedCollectionItem>(
+              rawData,
+              'WrappedCollectionItem',
+              growable: true,
+            );
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<WrappedCollectionItem>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
   /// Revoke inclusion in a Collection
@@ -437,11 +499,11 @@ class CollectionsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future]
+  /// Returns a [Future] containing a [Response] with a [WrappedCollection] as data
   /// Throws [DioException] if API call or serialization fails
   /// Official Mastodon API documentation
   /// Also see [Update a Collection Documentation](https://docs.joinmastodon.org/methods/collections/#update_collection)
-  Future<Response<void>> updateCollection({
+  Future<Response<WrappedCollection>> updateCollection({
     required String id,
     UpdateCollectionRequest? updateCollectionRequest,
     CancelToken? cancelToken,
@@ -493,6 +555,36 @@ class CollectionsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    return _response;
+    WrappedCollection? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<WrappedCollection, WrappedCollection>(
+              rawData,
+              'WrappedCollection',
+              growable: true,
+            );
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<WrappedCollection>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 }

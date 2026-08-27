@@ -63,7 +63,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getAnnualReports**
-> getAnnualReports()
+> WrappedAnnualReports getAnnualReports()
 
 Get all annual reports
 
@@ -80,7 +80,8 @@ import 'package:mastodon/api.dart';
 final api = Mastodon().getAnnualReportsApi();
 
 try {
-    api.getAnnualReports();
+    final response = api.getAnnualReports();
+    print(response);
 } on DioException catch (e) {
     print('Exception when calling AnnualReportsApi->getAnnualReports: $e\n');
 }
@@ -91,7 +92,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-void (empty response body)
+[**WrappedAnnualReports**](WrappedAnnualReports.md)
 
 ### Authorization
 
@@ -105,7 +106,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getAnnualReportsByYear**
-> getAnnualReportsByYear(year)
+> WrappedAnnualReports getAnnualReportsByYear(year)
 
 Get a single annual report
 
@@ -123,7 +124,8 @@ final api = Mastodon().getAnnualReportsApi();
 final String year = year_example; // String | year parameter
 
 try {
-    api.getAnnualReportsByYear(year);
+    final response = api.getAnnualReportsByYear(year);
+    print(response);
 } on DioException catch (e) {
     print('Exception when calling AnnualReportsApi->getAnnualReportsByYear: $e\n');
 }
@@ -137,7 +139,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**WrappedAnnualReports**](WrappedAnnualReports.md)
 
 ### Authorization
 

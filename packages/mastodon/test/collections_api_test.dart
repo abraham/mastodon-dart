@@ -10,7 +10,7 @@ void main() {
     //
     // Create a new Collection.  Version history:  4.6.0 (`mastodon` [API version] 10) - added
     //
-    //Future createCollection(CreateCollectionRequest createCollectionRequest) async
+    //Future<WrappedCollection> createCollection(CreateCollectionRequest createCollectionRequest) async
     test('test createCollection', () async {
       // TODO
     });
@@ -46,7 +46,7 @@ void main() {
     //
     // Add an account to a Collection.  Version history:  4.6.0 (`mastodon` [API version] 10) - added
     //
-    //Future postCollectionItems(String collectionId, { PostCollectionItemsRequest postCollectionItemsRequest }) async
+    //Future<WrappedCollectionItem> postCollectionItems(String collectionId, { PostCollectionItemsRequest postCollectionItemsRequest }) async
     test('test postCollectionItems', () async {
       // TODO
     });
@@ -64,7 +64,7 @@ void main() {
     //
     // Update an existing Collection.  Version history:  4.6.0 (`mastodon` [API version] 10) - added
     //
-    //Future updateCollection(String id, { UpdateCollectionRequest updateCollectionRequest }) async
+    //Future<WrappedCollection> updateCollection(String id, { UpdateCollectionRequest updateCollectionRequest }) async
     test('test updateCollection', () async {
       // TODO
     });
