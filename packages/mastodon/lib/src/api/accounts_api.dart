@@ -11,6 +11,7 @@ import 'package:dio/dio.dart';
 
 import 'package:mastodon/src/model/account.dart';
 import 'package:mastodon/src/model/model_list.dart';
+import 'package:mastodon/src/model/collections.dart';
 import 'package:mastodon/src/model/create_account_request.dart';
 import 'package:mastodon/src/model/credential_account.dart';
 import 'package:mastodon/src/model/familiar_followers.dart';
@@ -209,11 +210,11 @@ class AccountsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future]
+  /// Returns a [Future] containing a [Response] with a [Collections] as data
   /// Throws [DioException] if API call or serialization fails
   /// Official Mastodon API documentation
   /// Also see [Get all Collections from a given account Documentation](https://docs.joinmastodon.org/methods/collections/#get_collections)
-  Future<Response<void>> getAccountCollections({
+  Future<Response<Collections>> getAccountCollections({
     required String accountId,
     int? limit = 40,
     int? offset = 0,
@@ -257,7 +258,37 @@ class AccountsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    return _response;
+    Collections? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Collections, Collections>(
+              rawData,
+              'Collections',
+              growable: true,
+            );
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<Collections>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
   /// Get featured accounts
@@ -721,11 +752,11 @@ class AccountsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future]
+  /// Returns a [Future] containing a [Response] with a [Collections] as data
   /// Throws [DioException] if API call or serialization fails
   /// Official Mastodon API documentation
   /// Also see [Get all Collections the current account is featured in Documentation](https://docs.joinmastodon.org/methods/collections/#in_collections)
-  Future<Response<void>> getAccountInCollections({
+  Future<Response<Collections>> getAccountInCollections({
     required String accountId,
     int? limit = 40,
     int? offset = 0,
@@ -769,7 +800,37 @@ class AccountsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    return _response;
+    Collections? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<Collections, Collections>(
+              rawData,
+              'Collections',
+              growable: true,
+            );
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<Collections>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
   /// Get lists containing this account

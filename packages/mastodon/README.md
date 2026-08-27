@@ -319,6 +319,7 @@ Class | Method | HTTP request | Description
  - [CollectionItem](doc/CollectionItem.md)
  - [CollectionItemStateEnum](doc/CollectionItemStateEnum.md)
  - [CollectionWithAccounts](doc/CollectionWithAccounts.md)
+ - [Collections](doc/Collections.md)
  - [Context](doc/Context.md)
  - [Conversation](doc/Conversation.md)
  - [CountResponse](doc/CountResponse.md)
@@ -506,6 +507,9 @@ Class | Method | HTTP request | Description
  - [ValidationErrorDetailsValueInner](doc/ValidationErrorDetailsValueInner.md)
  - [WebPushSubscription](doc/WebPushSubscription.md)
  - [WebPushSubscriptionAlerts](doc/WebPushSubscriptionAlerts.md)
+ - [WrappedAnnualReports](doc/WrappedAnnualReports.md)
+ - [WrappedCollection](doc/WrappedCollection.md)
+ - [WrappedCollectionItem](doc/WrappedCollectionItem.md)
 
 
 ## Documentation For Authorization

@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 
 # **createCollection**
-> createCollection(createCollectionRequest)
+> WrappedCollection createCollection(createCollectionRequest)
 
 Create a Collection
 
@@ -37,7 +37,8 @@ final api = Mastodon().getCollectionsApi();
 final CreateCollectionRequest createCollectionRequest = ; // CreateCollectionRequest | JSON request body parameters
 
 try {
-    api.createCollection(createCollectionRequest);
+    final response = api.createCollection(createCollectionRequest);
+    print(response);
 } on DioException catch (e) {
     print('Exception when calling CollectionsApi->createCollection: $e\n');
 }
@@ -51,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**WrappedCollection**](WrappedCollection.md)
 
 ### Authorization
 
@@ -206,7 +207,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postCollectionItems**
-> postCollectionItems(collectionId, postCollectionItemsRequest)
+> WrappedCollectionItem postCollectionItems(collectionId, postCollectionItemsRequest)
 
 Add an account to a Collection
 
@@ -225,7 +226,8 @@ final String collectionId = collectionId_example; // String | collection_id para
 final PostCollectionItemsRequest postCollectionItemsRequest = ; // PostCollectionItemsRequest | JSON request body parameters
 
 try {
-    api.postCollectionItems(collectionId, postCollectionItemsRequest);
+    final response = api.postCollectionItems(collectionId, postCollectionItemsRequest);
+    print(response);
 } on DioException catch (e) {
     print('Exception when calling CollectionsApi->postCollectionItems: $e\n');
 }
@@ -240,7 +242,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**WrappedCollectionItem**](WrappedCollectionItem.md)
 
 ### Authorization
 
@@ -302,7 +304,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateCollection**
-> updateCollection(id, updateCollectionRequest)
+> WrappedCollection updateCollection(id, updateCollectionRequest)
 
 Update a Collection
 
@@ -321,7 +323,8 @@ final String id = id_example; // String | id parameter
 final UpdateCollectionRequest updateCollectionRequest = ; // UpdateCollectionRequest | JSON request body parameters
 
 try {
-    api.updateCollection(id, updateCollectionRequest);
+    final response = api.updateCollection(id, updateCollectionRequest);
+    print(response);
 } on DioException catch (e) {
     print('Exception when calling CollectionsApi->updateCollection: $e\n');
 }
@@ -336,7 +339,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**WrappedCollection**](WrappedCollection.md)
 
 ### Authorization
 

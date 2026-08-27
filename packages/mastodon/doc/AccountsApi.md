@@ -132,7 +132,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getAccountCollections**
-> getAccountCollections(accountId, limit, offset)
+> Collections getAccountCollections(accountId, limit, offset)
 
 Get all Collections from a given account
 
@@ -152,7 +152,8 @@ final int limit = 56; // int | Maximum number of results. Defaults to 40 Collect
 final int offset = 56; // int | Skip the first n results. Defaults to 0.
 
 try {
-    api.getAccountCollections(accountId, limit, offset);
+    final response = api.getAccountCollections(accountId, limit, offset);
+    print(response);
 } on DioException catch (e) {
     print('Exception when calling AccountsApi->getAccountCollections: $e\n');
 }
@@ -168,7 +169,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**Collections**](Collections.md)
 
 ### Authorization
 
@@ -423,7 +424,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getAccountInCollections**
-> getAccountInCollections(accountId, limit, offset)
+> Collections getAccountInCollections(accountId, limit, offset)
 
 Get all Collections the current account is featured in
 
@@ -443,7 +444,8 @@ final int limit = 56; // int | Maximum number of results. Defaults to 40 Collect
 final int offset = 56; // int | Skip the first n results. Defaults to 0.
 
 try {
-    api.getAccountInCollections(accountId, limit, offset);
+    final response = api.getAccountInCollections(accountId, limit, offset);
+    print(response);
 } on DioException catch (e) {
     print('Exception when calling AccountsApi->getAccountInCollections: $e\n');
 }
@@ -459,7 +461,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**Collections**](Collections.md)
 
 ### Authorization
 

@@ -48,6 +48,7 @@ doc/Collection.md
 doc/CollectionItem.md
 doc/CollectionItemStateEnum.md
 doc/CollectionWithAccounts.md
+doc/Collections.md
 doc/CollectionsApi.md
 doc/Context.md
 doc/Conversation.md
@@ -270,6 +271,9 @@ doc/ValidationErrorDetailsValueInner.md
 doc/WebPushSubscription.md
 doc/WebPushSubscriptionAlerts.md
 doc/WellKnownApi.md
+doc/WrappedAnnualReports.md
+doc/WrappedCollection.md
+doc/WrappedCollectionItem.md
 lib/mastodon.dart
 lib/src/api.dart
 lib/src/api/accounts_api.dart
@@ -359,6 +363,7 @@ lib/src/model/collection.dart
 lib/src/model/collection_item.dart
 lib/src/model/collection_item_state_enum.dart
 lib/src/model/collection_with_accounts.dart
+lib/src/model/collections.dart
 lib/src/model/context.dart
 lib/src/model/conversation.dart
 lib/src/model/count_response.dart
@@ -546,6 +551,9 @@ lib/src/model/validation_error.dart
 lib/src/model/validation_error_details_value_inner.dart
 lib/src/model/web_push_subscription.dart
 lib/src/model/web_push_subscription_alerts.dart
+lib/src/model/wrapped_annual_reports.dart
+lib/src/model/wrapped_collection.dart
+lib/src/model/wrapped_collection_item.dart
 test/account_role_test.dart
 test/account_test.dart
 test/account_warning_action_enum_test.dart
@@ -593,6 +601,7 @@ test/collection_item_test.dart
 test/collection_test.dart
 test/collection_with_accounts_test.dart
 test/collections_api_test.dart
+test/collections_test.dart
 test/context_test.dart
 test/conversation_test.dart
 test/conversations_api_test.dart
@@ -814,3 +823,6 @@ test/validation_error_test.dart
 test/web_push_subscription_alerts_test.dart
 test/web_push_subscription_test.dart
 test/well_known_api_test.dart
+test/wrapped_annual_reports_test.dart
+test/wrapped_collection_item_test.dart
+test/wrapped_collection_test.dart

@@ -30,6 +30,7 @@ import 'package:mastodon/src/model/cohort_data.dart';
 import 'package:mastodon/src/model/collection.dart';
 import 'package:mastodon/src/model/collection_item.dart';
 import 'package:mastodon/src/model/collection_with_accounts.dart';
+import 'package:mastodon/src/model/collections.dart';
 import 'package:mastodon/src/model/context.dart';
 import 'package:mastodon/src/model/conversation.dart';
 import 'package:mastodon/src/model/count_response.dart';
@@ -197,6 +198,9 @@ import 'package:mastodon/src/model/validation_error.dart';
 import 'package:mastodon/src/model/validation_error_details_value_inner.dart';
 import 'package:mastodon/src/model/web_push_subscription.dart';
 import 'package:mastodon/src/model/web_push_subscription_alerts.dart';
+import 'package:mastodon/src/model/wrapped_annual_reports.dart';
+import 'package:mastodon/src/model/wrapped_collection.dart';
+import 'package:mastodon/src/model/wrapped_collection_item.dart';
 
 final _regList = RegExp(r'^List<(.*)>$');
 final _regSet = RegExp(r'^Set<(.*)>$');
@@ -308,6 +312,8 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'CollectionWithAccounts':
       return CollectionWithAccounts.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'Collections':
+      return Collections.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'Context':
       return Context.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'Conversation':
@@ -839,6 +845,15 @@ ReturnType deserialize<ReturnType, BaseType>(
           as ReturnType;
     case 'WebPushSubscriptionAlerts':
       return WebPushSubscriptionAlerts.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'WrappedAnnualReports':
+      return WrappedAnnualReports.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'WrappedCollection':
+      return WrappedCollection.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'WrappedCollectionItem':
+      return WrappedCollectionItem.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     default:
       RegExpMatch? match;
