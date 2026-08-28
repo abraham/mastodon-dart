@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accountId** | **String** | The id of the account that curates this Collection. | 
 **createdAt** | [**DateTime**](DateTime.md) | When the Collection was created. | 
-**description** | **String** | An optional description of the Collection. | 
 **discoverable** | **bool** | Whether the Collection should show up on the owner's profile, in search results and recommendations. | 
 **id** | **String** | The collection id. | 
 **itemCount** | **int** | The number of items in this Collection. | 
@@ -20,6 +19,7 @@ Name | Type | Description | Notes
 **sensitive** | **bool** | Whether the Collection has been marked as including sensitive content. | 
 **updatedAt** | [**DateTime**](DateTime.md) | When the Collection was last updated. | 
 **uri** | [**Uri**](Uri.md) | The Collection's ActivityPub identifier (used for federation). | 
+**description** | **String** | An optional description of the Collection. | [optional] 
 **language** | **String** | Primary language of this Collection. | [optional] 
 **tag** | [**ShallowTag**](ShallowTag.md) | A single hashtag that describes this Collection. | [optional] 
 **url** | [**Uri**](Uri.md) | The url of the Collection's HTML page (web interface URL). | [optional] 

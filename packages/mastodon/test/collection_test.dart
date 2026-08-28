@@ -19,12 +19,6 @@ void main() {
       // TODO
     });
 
-    // An optional description of the Collection.
-    // String description
-    test('to test the property `description`', () async {
-      // TODO
-    });
-
     // Whether the Collection should show up on the owner's profile, in search results and recommendations.
     // bool discoverable
     test('to test the property `discoverable`', () async {
@@ -76,6 +70,12 @@ void main() {
     // The Collection's ActivityPub identifier (used for federation).
     // Uri uri
     test('to test the property `uri`', () async {
+      // TODO
+    });
+
+    // An optional description of the Collection.
+    // String description
+    test('to test the property `description`', () async {
       // TODO
     });
 

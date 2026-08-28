@@ -11,8 +11,6 @@ abstract class _$CollectionCWProxy {
 
   Collection createdAt(DateTime createdAt);
 
-  Collection description(String description);
-
   Collection discoverable(bool discoverable);
 
   Collection id(String id);
@@ -31,6 +29,8 @@ abstract class _$CollectionCWProxy {
 
   Collection uri(Uri uri);
 
+  Collection description(String? description);
+
   Collection language(String? language);
 
   Collection tag(ShallowTag? tag);
@@ -47,7 +47,6 @@ abstract class _$CollectionCWProxy {
   Collection call({
     String accountId,
     DateTime createdAt,
-    String description,
     bool discoverable,
     String id,
     int itemCount,
@@ -57,6 +56,7 @@ abstract class _$CollectionCWProxy {
     bool sensitive,
     DateTime updatedAt,
     Uri uri,
+    String? description,
     String? language,
     ShallowTag? tag,
     Uri? url,
@@ -75,9 +75,6 @@ class _$CollectionCWProxyImpl implements _$CollectionCWProxy {
 
   @override
   Collection createdAt(DateTime createdAt) => call(createdAt: createdAt);
-
-  @override
-  Collection description(String description) => call(description: description);
 
   @override
   Collection discoverable(bool discoverable) =>
@@ -108,6 +105,9 @@ class _$CollectionCWProxyImpl implements _$CollectionCWProxy {
   Collection uri(Uri uri) => call(uri: uri);
 
   @override
+  Collection description(String? description) => call(description: description);
+
+  @override
   Collection language(String? language) => call(language: language);
 
   @override
@@ -127,7 +127,6 @@ class _$CollectionCWProxyImpl implements _$CollectionCWProxy {
   Collection call({
     Object? accountId = const $CopyWithPlaceholder(),
     Object? createdAt = const $CopyWithPlaceholder(),
-    Object? description = const $CopyWithPlaceholder(),
     Object? discoverable = const $CopyWithPlaceholder(),
     Object? id = const $CopyWithPlaceholder(),
     Object? itemCount = const $CopyWithPlaceholder(),
@@ -137,6 +136,7 @@ class _$CollectionCWProxyImpl implements _$CollectionCWProxy {
     Object? sensitive = const $CopyWithPlaceholder(),
     Object? updatedAt = const $CopyWithPlaceholder(),
     Object? uri = const $CopyWithPlaceholder(),
+    Object? description = const $CopyWithPlaceholder(),
     Object? language = const $CopyWithPlaceholder(),
     Object? tag = const $CopyWithPlaceholder(),
     Object? url = const $CopyWithPlaceholder(),
@@ -150,11 +150,6 @@ class _$CollectionCWProxyImpl implements _$CollectionCWProxy {
           ? _value.createdAt
           // ignore: cast_nullable_to_non_nullable
           : createdAt as DateTime,
-      description:
-          description == const $CopyWithPlaceholder() || description == null
-          ? _value.description
-          // ignore: cast_nullable_to_non_nullable
-          : description as String,
       discoverable:
           discoverable == const $CopyWithPlaceholder() || discoverable == null
           ? _value.discoverable
@@ -192,6 +187,10 @@ class _$CollectionCWProxyImpl implements _$CollectionCWProxy {
           ? _value.uri
           // ignore: cast_nullable_to_non_nullable
           : uri as Uri,
+      description: description == const $CopyWithPlaceholder()
+          ? _value.description
+          // ignore: cast_nullable_to_non_nullable
+          : description as String?,
       language: language == const $CopyWithPlaceholder()
           ? _value.language
           // ignore: cast_nullable_to_non_nullable
@@ -228,7 +227,6 @@ Collection _$CollectionFromJson(Map<String, dynamic> json) => $checkedCreate(
       requiredKeys: const [
         'account_id',
         'created_at',
-        'description',
         'discoverable',
         'id',
         'item_count',
@@ -246,7 +244,6 @@ Collection _$CollectionFromJson(Map<String, dynamic> json) => $checkedCreate(
         'created_at',
         (v) => DateTime.parse(v as String),
       ),
-      description: $checkedConvert('description', (v) => v as String),
       discoverable: $checkedConvert('discoverable', (v) => v as bool),
       id: $checkedConvert('id', (v) => v as String),
       itemCount: $checkedConvert('item_count', (v) => (v as num).toInt()),
@@ -264,6 +261,7 @@ Collection _$CollectionFromJson(Map<String, dynamic> json) => $checkedCreate(
         (v) => DateTime.parse(v as String),
       ),
       uri: $checkedConvert('uri', (v) => Uri.parse(v as String)),
+      description: $checkedConvert('description', (v) => v as String?),
       language: $checkedConvert('language', (v) => v as String?),
       tag: $checkedConvert(
         'tag',
@@ -289,7 +287,6 @@ Map<String, dynamic> _$CollectionToJson(Collection instance) =>
     <String, dynamic>{
       'account_id': instance.accountId,
       'created_at': instance.createdAt.toIso8601String(),
-      'description': instance.description,
       'discoverable': instance.discoverable,
       'id': instance.id,
       'item_count': instance.itemCount,
@@ -299,6 +296,7 @@ Map<String, dynamic> _$CollectionToJson(Collection instance) =>
       'sensitive': instance.sensitive,
       'updated_at': instance.updatedAt.toIso8601String(),
       'uri': instance.uri.toString(),
+      'description': ?instance.description,
       'language': ?instance.language,
       'tag': ?instance.tag?.toJson(),
       'url': ?instance.url?.toString(),
