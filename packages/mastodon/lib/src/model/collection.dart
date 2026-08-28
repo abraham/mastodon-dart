@@ -25,8 +25,6 @@ class Collection {
 
     required this.createdAt,
 
-    required this.description,
-
     required this.discoverable,
 
     required this.id,
@@ -45,6 +43,8 @@ class Collection {
 
     required this.uri,
 
+    this.description,
+
     this.language,
 
     this.tag,
@@ -59,10 +59,6 @@ class Collection {
   /// When the Collection was created.
   @JsonKey(name: r'created_at', required: true, includeIfNull: false)
   final DateTime createdAt;
-
-  /// An optional description of the Collection.
-  @JsonKey(name: r'description', required: true, includeIfNull: false)
-  final String description;
 
   /// Whether the Collection should show up on the owner's profile, in search results and recommendations.
   @JsonKey(name: r'discoverable', required: true, includeIfNull: false)
@@ -100,6 +96,10 @@ class Collection {
   @JsonKey(name: r'uri', required: true, includeIfNull: false)
   final Uri uri;
 
+  /// An optional description of the Collection.
+  @JsonKey(name: r'description', required: false, includeIfNull: false)
+  final String? description;
+
   /// Primary language of this Collection.
   @JsonKey(name: r'language', required: false, includeIfNull: false)
   final String? language;
@@ -118,7 +118,6 @@ class Collection {
       other is Collection &&
           other.accountId == accountId &&
           other.createdAt == createdAt &&
-          other.description == description &&
           other.discoverable == discoverable &&
           other.id == id &&
           other.itemCount == itemCount &&
@@ -128,6 +127,7 @@ class Collection {
           other.sensitive == sensitive &&
           other.updatedAt == updatedAt &&
           other.uri == uri &&
+          other.description == description &&
           other.language == language &&
           other.tag == tag &&
           other.url == url;
@@ -136,7 +136,6 @@ class Collection {
   int get hashCode =>
       accountId.hashCode +
       createdAt.hashCode +
-      description.hashCode +
       discoverable.hashCode +
       id.hashCode +
       itemCount.hashCode +
@@ -146,6 +145,7 @@ class Collection {
       sensitive.hashCode +
       updatedAt.hashCode +
       uri.hashCode +
+      (description == null ? 0 : description.hashCode) +
       (language == null ? 0 : language.hashCode) +
       (tag == null ? 0 : tag.hashCode) +
       (url == null ? 0 : url.hashCode);
