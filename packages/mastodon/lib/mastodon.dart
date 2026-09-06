@@ -179,7 +179,6 @@ export 'package:mastodon/src/model/muted_account.dart';
 export 'package:mastodon/src/model/notification.dart';
 export 'package:mastodon/src/model/notification_fallback.dart';
 export 'package:mastodon/src/model/notification_group.dart';
-export 'package:mastodon/src/model/notification_group_type_enum.dart';
 export 'package:mastodon/src/model/notification_policy.dart';
 export 'package:mastodon/src/model/notification_policy_summary.dart';
 export 'package:mastodon/src/model/notification_request.dart';

@@ -6,8 +6,9 @@
 import 'package:mastodon/src/model/report.dart';
 import 'package:mastodon/src/model/account_warning.dart';
 import 'package:mastodon/src/model/notification_fallback.dart';
-import 'package:mastodon/src/model/notification_group_type_enum.dart';
+import 'package:mastodon/src/model/collection.dart';
 import 'package:mastodon/src/model/relationship_severance_event.dart';
+import 'package:mastodon/src/model/notification_type_enum.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -32,6 +33,8 @@ class NotificationGroup {
     required this.sampleAccountIds,
 
     required this.type,
+
+    this.collection,
 
     this.event,
 
@@ -72,7 +75,11 @@ class NotificationGroup {
 
   /// The type of event that resulted in the notifications in this group.
   @JsonKey(name: r'type', required: true, includeIfNull: false)
-  final NotificationGroupTypeEnum type;
+  final NotificationTypeEnum type;
+
+  /// Collection that was the object of the notification. Attached when `type` of the notification is `added_to_collection` or `collection_update`.
+  @JsonKey(name: r'collection', required: false, includeIfNull: false)
+  final Collection? collection;
 
   /// Summary of the event that caused follow relationships to be severed. Attached when `type` of the notification is `severed_relationships`.
   @JsonKey(name: r'event', required: false, includeIfNull: false)
@@ -119,6 +126,7 @@ class NotificationGroup {
           other.notificationsCount == notificationsCount &&
           other.sampleAccountIds == sampleAccountIds &&
           other.type == type &&
+          other.collection == collection &&
           other.event == event &&
           other.fallback == fallback &&
           other.latestPageNotificationAt == latestPageNotificationAt &&
@@ -135,6 +143,7 @@ class NotificationGroup {
       notificationsCount.hashCode +
       sampleAccountIds.hashCode +
       type.hashCode +
+      (collection == null ? 0 : collection.hashCode) +
       (event == null ? 0 : event.hashCode) +
       (fallback == null ? 0 : fallback.hashCode) +
       (latestPageNotificationAt == null

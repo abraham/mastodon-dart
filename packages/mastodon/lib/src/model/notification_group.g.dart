@@ -15,7 +15,9 @@ abstract class _$NotificationGroupCWProxy {
 
   NotificationGroup sampleAccountIds(List<String> sampleAccountIds);
 
-  NotificationGroup type(NotificationGroupTypeEnum type);
+  NotificationGroup type(NotificationTypeEnum type);
+
+  NotificationGroup collection(Collection? collection);
 
   NotificationGroup event(RelationshipSeveranceEvent? event);
 
@@ -47,7 +49,8 @@ abstract class _$NotificationGroupCWProxy {
     int mostRecentNotificationId,
     int notificationsCount,
     List<String> sampleAccountIds,
-    NotificationGroupTypeEnum type,
+    NotificationTypeEnum type,
+    Collection? collection,
     RelationshipSeveranceEvent? event,
     NotificationFallback? fallback,
     DateTime? latestPageNotificationAt,
@@ -82,7 +85,11 @@ class _$NotificationGroupCWProxyImpl implements _$NotificationGroupCWProxy {
       call(sampleAccountIds: sampleAccountIds);
 
   @override
-  NotificationGroup type(NotificationGroupTypeEnum type) => call(type: type);
+  NotificationGroup type(NotificationTypeEnum type) => call(type: type);
+
+  @override
+  NotificationGroup collection(Collection? collection) =>
+      call(collection: collection);
 
   @override
   NotificationGroup event(RelationshipSeveranceEvent? event) =>
@@ -127,6 +134,7 @@ class _$NotificationGroupCWProxyImpl implements _$NotificationGroupCWProxy {
     Object? notificationsCount = const $CopyWithPlaceholder(),
     Object? sampleAccountIds = const $CopyWithPlaceholder(),
     Object? type = const $CopyWithPlaceholder(),
+    Object? collection = const $CopyWithPlaceholder(),
     Object? event = const $CopyWithPlaceholder(),
     Object? fallback = const $CopyWithPlaceholder(),
     Object? latestPageNotificationAt = const $CopyWithPlaceholder(),
@@ -162,7 +170,11 @@ class _$NotificationGroupCWProxyImpl implements _$NotificationGroupCWProxy {
       type: type == const $CopyWithPlaceholder() || type == null
           ? _value.type
           // ignore: cast_nullable_to_non_nullable
-          : type as NotificationGroupTypeEnum,
+          : type as NotificationTypeEnum,
+      collection: collection == const $CopyWithPlaceholder()
+          ? _value.collection
+          // ignore: cast_nullable_to_non_nullable
+          : collection as Collection?,
       event: event == const $CopyWithPlaceholder()
           ? _value.event
           // ignore: cast_nullable_to_non_nullable
@@ -212,86 +224,89 @@ extension $NotificationGroupCopyWith on NotificationGroup {
 // JsonSerializableGenerator
 // **************************************************************************
 
-NotificationGroup _$NotificationGroupFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'NotificationGroup',
+NotificationGroup _$NotificationGroupFromJson(
+  Map<String, dynamic> json,
+) => $checkedCreate(
+  'NotificationGroup',
+  json,
+  ($checkedConvert) {
+    $checkKeys(
       json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const [
-            'group_key',
-            'most_recent_notification_id',
-            'notifications_count',
-            'sample_account_ids',
-            'type',
-          ],
-        );
-        final val = NotificationGroup(
-          groupKey: $checkedConvert('group_key', (v) => v as String),
-          mostRecentNotificationId: $checkedConvert(
-            'most_recent_notification_id',
-            (v) => (v as num).toInt(),
-          ),
-          notificationsCount: $checkedConvert(
-            'notifications_count',
-            (v) => (v as num).toInt(),
-          ),
-          sampleAccountIds: $checkedConvert(
-            'sample_account_ids',
-            (v) => (v as List<dynamic>).map((e) => e as String).toList(),
-          ),
-          type: $checkedConvert(
-            'type',
-            (v) => $enumDecode(_$NotificationGroupTypeEnumEnumMap, v),
-          ),
-          event: $checkedConvert(
-            'event',
-            (v) => v == null
-                ? null
-                : RelationshipSeveranceEvent.fromJson(
-                    v as Map<String, dynamic>,
-                  ),
-          ),
-          fallback: $checkedConvert(
-            'fallback',
-            (v) => v == null
-                ? null
-                : NotificationFallback.fromJson(v as Map<String, dynamic>),
-          ),
-          latestPageNotificationAt: $checkedConvert(
-            'latest_page_notification_at',
-            (v) => v == null ? null : DateTime.parse(v as String),
-          ),
-          moderationWarning: $checkedConvert(
-            'moderation_warning',
-            (v) => v == null
-                ? null
-                : AccountWarning.fromJson(v as Map<String, dynamic>),
-          ),
-          pageMaxId: $checkedConvert('page_max_id', (v) => v as String?),
-          pageMinId: $checkedConvert('page_min_id', (v) => v as String?),
-          report: $checkedConvert(
-            'report',
-            (v) =>
-                v == null ? null : Report.fromJson(v as Map<String, dynamic>),
-          ),
-          statusId: $checkedConvert('status_id', (v) => v as String?),
-        );
-        return val;
-      },
-      fieldKeyMap: const {
-        'groupKey': 'group_key',
-        'mostRecentNotificationId': 'most_recent_notification_id',
-        'notificationsCount': 'notifications_count',
-        'sampleAccountIds': 'sample_account_ids',
-        'latestPageNotificationAt': 'latest_page_notification_at',
-        'moderationWarning': 'moderation_warning',
-        'pageMaxId': 'page_max_id',
-        'pageMinId': 'page_min_id',
-        'statusId': 'status_id',
-      },
+      requiredKeys: const [
+        'group_key',
+        'most_recent_notification_id',
+        'notifications_count',
+        'sample_account_ids',
+        'type',
+      ],
     );
+    final val = NotificationGroup(
+      groupKey: $checkedConvert('group_key', (v) => v as String),
+      mostRecentNotificationId: $checkedConvert(
+        'most_recent_notification_id',
+        (v) => (v as num).toInt(),
+      ),
+      notificationsCount: $checkedConvert(
+        'notifications_count',
+        (v) => (v as num).toInt(),
+      ),
+      sampleAccountIds: $checkedConvert(
+        'sample_account_ids',
+        (v) => (v as List<dynamic>).map((e) => e as String).toList(),
+      ),
+      type: $checkedConvert(
+        'type',
+        (v) => $enumDecode(_$NotificationTypeEnumEnumMap, v),
+      ),
+      collection: $checkedConvert(
+        'collection',
+        (v) =>
+            v == null ? null : Collection.fromJson(v as Map<String, dynamic>),
+      ),
+      event: $checkedConvert(
+        'event',
+        (v) => v == null
+            ? null
+            : RelationshipSeveranceEvent.fromJson(v as Map<String, dynamic>),
+      ),
+      fallback: $checkedConvert(
+        'fallback',
+        (v) => v == null
+            ? null
+            : NotificationFallback.fromJson(v as Map<String, dynamic>),
+      ),
+      latestPageNotificationAt: $checkedConvert(
+        'latest_page_notification_at',
+        (v) => v == null ? null : DateTime.parse(v as String),
+      ),
+      moderationWarning: $checkedConvert(
+        'moderation_warning',
+        (v) => v == null
+            ? null
+            : AccountWarning.fromJson(v as Map<String, dynamic>),
+      ),
+      pageMaxId: $checkedConvert('page_max_id', (v) => v as String?),
+      pageMinId: $checkedConvert('page_min_id', (v) => v as String?),
+      report: $checkedConvert(
+        'report',
+        (v) => v == null ? null : Report.fromJson(v as Map<String, dynamic>),
+      ),
+      statusId: $checkedConvert('status_id', (v) => v as String?),
+    );
+    return val;
+  },
+  fieldKeyMap: const {
+    'groupKey': 'group_key',
+    'mostRecentNotificationId': 'most_recent_notification_id',
+    'notificationsCount': 'notifications_count',
+    'sampleAccountIds': 'sample_account_ids',
+    'latestPageNotificationAt': 'latest_page_notification_at',
+    'moderationWarning': 'moderation_warning',
+    'pageMaxId': 'page_max_id',
+    'pageMinId': 'page_min_id',
+    'statusId': 'status_id',
+  },
+);
 
 Map<String, dynamic> _$NotificationGroupToJson(NotificationGroup instance) =>
     <String, dynamic>{
@@ -299,7 +314,8 @@ Map<String, dynamic> _$NotificationGroupToJson(NotificationGroup instance) =>
       'most_recent_notification_id': instance.mostRecentNotificationId,
       'notifications_count': instance.notificationsCount,
       'sample_account_ids': instance.sampleAccountIds,
-      'type': _$NotificationGroupTypeEnumEnumMap[instance.type]!,
+      'type': _$NotificationTypeEnumEnumMap[instance.type]!,
+      'collection': ?instance.collection?.toJson(),
       'event': ?instance.event?.toJson(),
       'fallback': ?instance.fallback?.toJson(),
       'latest_page_notification_at': ?instance.latestPageNotificationAt
@@ -311,19 +327,21 @@ Map<String, dynamic> _$NotificationGroupToJson(NotificationGroup instance) =>
       'status_id': ?instance.statusId,
     };
 
-const _$NotificationGroupTypeEnumEnumMap = {
-  NotificationGroupTypeEnum.mention: 'mention',
-  NotificationGroupTypeEnum.status: 'status',
-  NotificationGroupTypeEnum.reblog: 'reblog',
-  NotificationGroupTypeEnum.follow: 'follow',
-  NotificationGroupTypeEnum.followRequest: 'follow_request',
-  NotificationGroupTypeEnum.favourite: 'favourite',
-  NotificationGroupTypeEnum.poll: 'poll',
-  NotificationGroupTypeEnum.edit: 'update',
-  NotificationGroupTypeEnum.adminPeriodSignUp: 'admin.sign_up',
-  NotificationGroupTypeEnum.adminPeriodReport: 'admin.report',
-  NotificationGroupTypeEnum.severedRelationships: 'severed_relationships',
-  NotificationGroupTypeEnum.moderationWarning: 'moderation_warning',
-  NotificationGroupTypeEnum.quote: 'quote',
-  NotificationGroupTypeEnum.quotedUpdate: 'quoted_update',
+const _$NotificationTypeEnumEnumMap = {
+  NotificationTypeEnum.mention: 'mention',
+  NotificationTypeEnum.status: 'status',
+  NotificationTypeEnum.reblog: 'reblog',
+  NotificationTypeEnum.follow: 'follow',
+  NotificationTypeEnum.followRequest: 'follow_request',
+  NotificationTypeEnum.favourite: 'favourite',
+  NotificationTypeEnum.poll: 'poll',
+  NotificationTypeEnum.edit: 'update',
+  NotificationTypeEnum.adminPeriodSignUp: 'admin.sign_up',
+  NotificationTypeEnum.adminPeriodReport: 'admin.report',
+  NotificationTypeEnum.severedRelationships: 'severed_relationships',
+  NotificationTypeEnum.moderationWarning: 'moderation_warning',
+  NotificationTypeEnum.quote: 'quote',
+  NotificationTypeEnum.quotedUpdate: 'quoted_update',
+  NotificationTypeEnum.addedToCollection: 'added_to_collection',
+  NotificationTypeEnum.collectionUpdate: 'collection_update',
 };

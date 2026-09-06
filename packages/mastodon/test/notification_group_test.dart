@@ -32,8 +32,14 @@ void main() {
     });
 
     // The type of event that resulted in the notifications in this group.
-    // NotificationGroupTypeEnum type
+    // NotificationTypeEnum type
     test('to test the property `type`', () async {
+      // TODO
+    });
+
+    // Collection that was the object of the notification. Attached when `type` of the notification is `added_to_collection` or `collection_update`.
+    // Collection collection
+    test('to test the property `collection`', () async {
       // TODO
     });
 
