@@ -2,6 +2,10 @@
 
 ## v1.0.0-beta.18
 
+**Features**
+
+- Add GroupeNotificationType override
+
 ## v1.0.0-beta.17
 
 **Features**
