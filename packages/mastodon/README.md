@@ -408,7 +408,6 @@ Class | Method | HTTP request | Description
  - [Notification](doc/Notification.md)
  - [NotificationFallback](doc/NotificationFallback.md)
  - [NotificationGroup](doc/NotificationGroup.md)
- - [NotificationGroupTypeEnum](doc/NotificationGroupTypeEnum.md)
  - [NotificationPolicy](doc/NotificationPolicy.md)
  - [NotificationPolicySummary](doc/NotificationPolicySummary.md)
  - [NotificationRequest](doc/NotificationRequest.md)

@@ -584,7 +584,6 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'NotificationGroup':
       return NotificationGroup.fromJson(value as Map<String, dynamic>)
           as ReturnType;
-    case 'NotificationGroupTypeEnum':
     case 'NotificationPolicy':
       return NotificationPolicy.fromJson(value as Map<String, dynamic>)
           as ReturnType;
