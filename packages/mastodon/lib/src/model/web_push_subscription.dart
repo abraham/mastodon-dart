@@ -40,7 +40,7 @@ class WebPushSubscription {
 
   /// The ID of the Web Push subscription in the database.
   @JsonKey(name: r'id', required: true, includeIfNull: false)
-  final String id;
+  final int id;
 
   /// The streaming server's VAPID key.
   @JsonKey(name: r'server_key', required: true, includeIfNull: false)

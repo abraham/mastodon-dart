@@ -11,7 +11,7 @@ abstract class _$WebPushSubscriptionCWProxy {
 
   WebPushSubscription endpoint(Uri endpoint);
 
-  WebPushSubscription id(String id);
+  WebPushSubscription id(int id);
 
   WebPushSubscription serverKey(String serverKey);
 
@@ -27,7 +27,7 @@ abstract class _$WebPushSubscriptionCWProxy {
   WebPushSubscription call({
     WebPushSubscriptionAlerts alerts,
     Uri endpoint,
-    String id,
+    int id,
     String serverKey,
     bool? standard,
   });
@@ -48,7 +48,7 @@ class _$WebPushSubscriptionCWProxyImpl implements _$WebPushSubscriptionCWProxy {
   WebPushSubscription endpoint(Uri endpoint) => call(endpoint: endpoint);
 
   @override
-  WebPushSubscription id(String id) => call(id: id);
+  WebPushSubscription id(int id) => call(id: id);
 
   @override
   WebPushSubscription serverKey(String serverKey) => call(serverKey: serverKey);
@@ -83,7 +83,7 @@ class _$WebPushSubscriptionCWProxyImpl implements _$WebPushSubscriptionCWProxy {
       id: id == const $CopyWithPlaceholder() || id == null
           ? _value.id
           // ignore: cast_nullable_to_non_nullable
-          : id as String,
+          : id as int,
       serverKey: serverKey == const $CopyWithPlaceholder() || serverKey == null
           ? _value.serverKey
           // ignore: cast_nullable_to_non_nullable
@@ -120,7 +120,7 @@ WebPushSubscription _$WebPushSubscriptionFromJson(Map<String, dynamic> json) =>
           (v) => WebPushSubscriptionAlerts.fromJson(v as Map<String, dynamic>),
         ),
         endpoint: $checkedConvert('endpoint', (v) => Uri.parse(v as String)),
-        id: $checkedConvert('id', (v) => v as String),
+        id: $checkedConvert('id', (v) => (v as num).toInt()),
         serverKey: $checkedConvert('server_key', (v) => v as String),
         standard: $checkedConvert('standard', (v) => v as bool?),
       );
