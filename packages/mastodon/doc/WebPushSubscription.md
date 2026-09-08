@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **alerts** | [**WebPushSubscriptionAlerts**](WebPushSubscriptionAlerts.md) |  | 
 **endpoint** | [**Uri**](Uri.md) | Where push alerts will be sent to. | 
-**id** | **String** | The ID of the Web Push subscription in the database. | 
+**id** | **int** | The ID of the Web Push subscription in the database. | 
 **serverKey** | **String** | The streaming server's VAPID key. | 
 **standard** | **bool** | If the push messages follow the standardized specifications (RFC8030+RFC8291+RFC8292). Else they follow a legacy version of the specifications (4th draft of RFC8291 and 1st draft of RFC8292). | [optional] 
 
