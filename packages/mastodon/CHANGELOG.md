@@ -2,6 +2,10 @@
 
 ## v1.0.0-beta.19
 
+**Features**
+
+- Add WebPushSubscription#id override
+
 ## v1.0.0-beta.18
 
 **Features**
